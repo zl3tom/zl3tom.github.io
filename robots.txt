@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://zl3tom.com/sitemap.xml
