@@ -1,0 +1,1 @@
+ssh -i "C:\Users\thoma\Documents\GitHub\zl3tom\zl3tom.github.io\log\ssh-key-2026-01-05.key" ubuntu@152.67.121.60
