@@ -2,6 +2,10 @@
   margin-top: 4rem;
 }
 
+.contact-intro .lead-copy {
+  margin-bottom: 1.5rem;
+}
+
 .contact-form-card {
   background: #ffffff;
   border: 1px solid #d4ded8;

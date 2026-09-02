@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="contact-form-heading">
           <p class="eyebrow">SEND A MESSAGE</p>
           <h2 id="contact-form-title">Contact Thomas — ZL3TOM</h2>
-          <p>Your message will go directly to <a href="mailto:thomas@zl3tom.com">thomas@zl3tom.com</a>. Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+          <p>Your message will go directly to Thomas. Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
         </div>
         <form id="contact-form" novalidate>
           <div class="contact-field-row">
@@ -164,6 +164,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const turnstileContainer = formSection.querySelector("#contact-turnstile");
     let turnstileToken = "";
     let widgetId;
+
+    const requestedTopic = new URLSearchParams(window.location.search).get("topic");
+    if (["qsl", "radio", "website", "other"].includes(requestedTopic)) {
+      form.elements.namedItem("topic").value = requestedTopic;
+    }
 
     function showStatus(message, state = "") {
       status.textContent = message;

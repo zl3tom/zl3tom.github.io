@@ -240,6 +240,26 @@ function escapeHtml(value) {
   })[character]);
 }
 
+function formatNewZealandDateTime(date) {
+  const time = new Intl.DateTimeFormat("en-NZ", {
+    timeZone: "Pacific/Auckland",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+    timeZoneName: "short"
+  })
+    .format(date)
+    .replace(/\b(am|pm)\b/gi, (value) => value.toUpperCase());
+  const calendarDate = new Intl.DateTimeFormat("en-NZ", {
+    timeZone: "Pacific/Auckland",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  }).format(date);
+
+  return `${time} — ${calendarDate}`;
+}
+
 async function handleContactSubmission(request, response) {
   if (!contactConfigured || !mailTransport) {
     sendJson(response, 503, {
@@ -293,7 +313,7 @@ async function handleContactSubmission(request, response) {
 
   const topicLabel = topicLabels.get(form.topic);
   const subjectIdentity = form.callsign || form.name;
-  const sentAt = new Date().toISOString();
+  const sentAt = formatNewZealandDateTime(new Date());
   const textBody = [
     "New message from zl3tom.com",
     "",
