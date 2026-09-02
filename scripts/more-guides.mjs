@@ -174,7 +174,7 @@ export const additionalGuides = [
     description: "Understand AllStarLink nodes, linked radio contacts, connecting and disconnecting, operator etiquette, basic node setup and security.",
     keywords: "AllStarLink beginner guide, AllStar node, node 40452, linked amateur radio, AllStar etiquette, app_rpt, ZL3TOM",
     asideTitle: "ZL3TOM AllStar node",
-    asideHtml: "<p>My multimode system includes AllStar node <strong>40452</strong>.</p><a href=\"http://165.22.121.189/controlpanel.php?node=40452\" target=\"_blank\" rel=\"noreferrer\">Open node 40452 control panel ↗</a>",
+    asideHtml: "<p>My multimode system includes AllStar node <strong>40452</strong>.</p><a href=\"http://165.22.121.189/link.php?nodes=40452\" target=\"_blank\" rel=\"noreferrer\">Open the AllStar Dashboard ↗</a>",
     sections: [
       {
         title: "What AllStarLink is",
@@ -190,7 +190,7 @@ export const additionalGuides = [
       },
       {
         title: "ZL3TOM node 40452",
-        html: `<p>AllStar node <strong>40452</strong> is part of my multimode system with EchoLink node <strong>304602 (ZL3TOM-L)</strong> and my APRS presence.</p><div class="guide-callout"><a href="http://165.22.121.189/controlpanel.php?node=40452" target="_blank" rel="noreferrer"><strong>Open the ZL3TOM AllStar control panel for node 40452 ↗</strong></a></div>`
+        html: `<p>AllStar node <strong>40452</strong> and EchoLink node <strong>304602 (ZL3TOM-L)</strong> are the two linked-radio nodes in my multimode system.</p><div class="guide-callout"><a href="http://165.22.121.189/link.php?nodes=40452" target="_blank" rel="noreferrer"><strong>Open the ZL3TOM AllStar Dashboard for node 40452 ↗</strong></a></div>`
       },
       {
         title: "If you want to build your own node",

@@ -12,8 +12,6 @@ const links = [
 ].map(([label, href]) => `<a href="${href}"${label === "Radio Fun" ? ' aria-current="page"' : ""}>${label}</a>`).join("");
 
 const networks = [
-  ["EchoLink", "Node 304602 · ZL3TOM-L"],
-  ["AllStarLink", "Node 40452"],
   ["BrandMeister DMR", "Worldwide TG 91"],
   ["ZL DMR", "New Zealand channels"],
   ["Zello", "International Radio Network"],
@@ -76,20 +74,17 @@ const html = `<!doctype html>
   <nav id="main-navigation" class="main-nav" aria-label="Main navigation">${links}<a class="nav-qrz" href="https://qrz.com/db/ZL3TOM" target="_blank" rel="noreferrer">View on QRZ <span aria-hidden="true">↗</span></a></nav>
 </div></header>
 <main id="main">
-  <section class="page-hero"><div class="signal-grid" aria-hidden="true"></div><div class="site-container page-hero-inner"><div class="page-icon">${radioIcon}</div><div><p class="section-kicker">ZL3TOM on the air</p><h1>My station, nodes and radio networks</h1><p>EchoLink, AllStar and APRS make up my multimode system in Christchurch, New Zealand. I am also active across several internet-linked amateur radio networks.</p></div></div></section>
+  <section class="page-hero"><div class="signal-grid" aria-hidden="true"></div><div class="site-container page-hero-inner"><div class="page-icon">${radioIcon}</div><div><p class="section-kicker">ZL3TOM on the air</p><h1>My station, nodes and radio networks</h1><p>My multimode system has two linked-radio nodes: EchoLink 304602 (ZL3TOM-L) and AllStar 40452. My APRS station and other networks are listed separately below.</p></div></div></section>
 
   <section class="inner-section light"><div class="site-container">
-    <div class="id-card-grid">
-      <a href="https://www.echolink.org/" target="_blank" rel="noreferrer" class="id-card"><span aria-hidden="true">🎧</span><span><small>ECHOLINK NODE</small><strong>304602</strong><em>ZL3TOM-L</em></span><span aria-hidden="true">→</span></a>
-      <a href="http://165.22.121.189/controlpanel.php?node=40452" target="_blank" rel="noreferrer" class="id-card"><span aria-hidden="true">◉</span><span><small>ALLSTAR NODE</small><strong>40452</strong><em>Open node control panel</em></span><span aria-hidden="true">→</span></a>
-      <a href="https://aprs.fi/info/a/ZL3TOM" target="_blank" rel="noreferrer" class="id-card"><span aria-hidden="true">⌖</span><span><small>APRS CALLSIGN</small><strong>ZL3TOM</strong><em>View on APRS.fi</em></span><span aria-hidden="true">→</span></a>
+    <div class="content-title node-section-title"><p class="section-kicker">My multimode system</p><h2>My two linked-radio nodes</h2><p>These are my own EchoLink and AllStar nodes. Select either card to open its public page.</p></div>
+    <div class="id-card-grid node-card-grid">
+      <a href="https://www.echolink.org/" target="_blank" rel="noreferrer" class="id-card"><span aria-hidden="true">🎧</span><span><small>MY ECHOLINK NODE</small><strong>304602</strong><em>ZL3TOM-L · Open EchoLink</em></span><span aria-hidden="true">→</span></a>
+      <a href="http://165.22.121.189/link.php?nodes=40452" target="_blank" rel="noreferrer" class="id-card"><span aria-hidden="true">◉</span><span><small>MY ALLSTAR NODE</small><strong>40452</strong><em>Open AllStar Dashboard</em></span><span aria-hidden="true">→</span></a>
     </div>
-    <div class="content-title"><p class="section-kicker">My multimode system</p><h2>Connect with ZL3TOM</h2><p>The three parts of my multimode system are EchoLink <strong>304602 (ZL3TOM-L)</strong>, AllStar node <strong>40452</strong>, and APRS under callsign <strong>ZL3TOM</strong>.</p></div>
-    <div class="network-grid">
-      <a href="https://www.echolink.org/" target="_blank" rel="noreferrer" class="network-card"><span>ECHOLINK</span><h3>ZL3TOM-L</h3><p>Licensed amateur radio linking through node 304602.</p><em>Open EchoLink ↗</em></a>
-      <a href="http://165.22.121.189/controlpanel.php?node=40452" target="_blank" rel="noreferrer" class="network-card"><span>ALLSTARLINK</span><h3>Node 40452</h3><p>My AllStar node for linked amateur radio contacts.</p><em>Open node control panel ↗</em></a>
-      <a href="https://brandmeister.network/" target="_blank" rel="noreferrer" class="network-card"><span>DMR</span><h3>BrandMeister TG 91</h3><p>Often active on worldwide talkgroup 91 and New Zealand DMR channels.</p><em>Open BrandMeister ↗</em></a>
-      <a href="https://aprs.fi/info/a/ZL3TOM" target="_blank" rel="noreferrer" class="network-card"><span>APRS</span><h3>ZL3TOM on APRS.fi</h3><p>View station reports and APRS information for my callsign.</p><em>View APRS.fi ↗</em></a>
+    <div class="aprs-station-block">
+      <div><p class="section-kicker">APRS station</p><h2>ZL3TOM on APRS.fi</h2><p>APRS is shown separately from my two linked-radio nodes. View station reports and APRS information under my callsign ZL3TOM.</p></div>
+      <a href="https://aprs.fi/info/a/ZL3TOM" target="_blank" rel="noreferrer" class="id-card"><span aria-hidden="true">⌖</span><span><small>MY APRS CALLSIGN</small><strong>ZL3TOM</strong><em>View station on APRS.fi</em></span><span aria-hidden="true">→</span></a>
     </div>
   </div></section>
 
