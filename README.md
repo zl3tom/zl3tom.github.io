@@ -1,6 +1,6 @@
 # ZL3TOM Node.js Website
 
-This package runs the ZL3TOM amateur-radio website as a small Node.js service on an Oracle Cloud Free VM. The About-page photos form a horizontal gallery that supports touch swiping, mouse/trackpad scrolling, keyboard scrolling, and Previous/Next buttons.
+This package runs the ZL3TOM amateur-radio website as a small Node.js service on an Oracle Cloud Free VM. The About-page photos form a horizontal gallery that supports touch swiping, mouse/trackpad scrolling, keyboard scrolling, and Previous/Next buttons. The Contact page includes a secure form protected by Cloudflare Turnstile; messages are delivered to `thomas@zl3tom.com` through Fastmail SMTP.
 
 The Node server listens only on `127.0.0.1:3000`. Your existing Apache server handles public traffic for `zl3tom.com` and forwards it to Node. This keeps the existing Cloudlog site at `log.zl3tom.com` separate.
 
@@ -147,6 +147,53 @@ Test the public website:
 curl -I https://zl3tom.com
 ```
 
+## 9. Connect the secure contact form
+
+The form is already built into the website. It stays disabled until the private Fastmail and Cloudflare settings below are added on the VM.
+
+### Create a Fastmail app password
+
+1. Sign in to Fastmail.
+2. Open **Settings → Privacy & Security → Connected apps & API tokens**.
+3. Create an app password named `ZL3TOM website` with mail access.
+4. Copy it once. Use this app password below, not your normal Fastmail password.
+
+### Create a Cloudflare Turnstile widget
+
+1. In Cloudflare, open **Turnstile** and choose **Add widget**.
+2. Name it `ZL3TOM contact form` and select **Managed** mode.
+3. Add both hostnames: `zl3tom.com` and `www.zl3tom.com`.
+4. Copy the site key and secret key.
+
+### Add the private settings on the VM
+
+```bash
+cd /home/ubuntu/zl3tom-site
+cp -n .env.example .env
+nano .env
+```
+
+Fill in these three private values:
+
+```dotenv
+SMTP_PASS=your-fastmail-app-password
+TURNSTILE_SITE_KEY=your-turnstile-site-key
+TURNSTILE_SECRET=your-turnstile-secret-key
+```
+
+Save in nano with `Ctrl+O`, press `Enter`, then exit with `Ctrl+X`. Lock down the file, install the dependency, and restart the site:
+
+```bash
+chmod 600 .env
+npm install --omit=dev
+npm run check
+pm2 restart zl3tom
+pm2 save
+curl http://127.0.0.1:3000/api/contact-config
+```
+
+The final command should show `"enabled":true`. The site key is public by design; the secret and Fastmail app password must never be committed to GitHub. The `.gitignore` file already excludes `.env`.
+
 ## Useful management commands
 
 ```bash
@@ -159,10 +206,16 @@ sudo apache2ctl configtest
 
 ## Updating the website later
 
-Upload a new package, replace the files in `/home/ubuntu/ZL3TOM-Node-Oracle-VM`, and run:
+After committing and pushing website changes to GitHub, update the live VM with:
 
 ```bash
-cd /home/ubuntu/ZL3TOM-Node-Oracle-VM
+cd /home/ubuntu/zl3tom-site
+git pull --ff-only
+npm install --omit=dev
 npm run check
 pm2 restart zl3tom
+pm2 save
+curl http://127.0.0.1:3000/healthz
 ```
+
+The private `.env` file remains on the VM and is not replaced by `git pull`.

@@ -6,9 +6,12 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "check": "node --check server.js"
+    "check": "node --check server.js && node --check public/script.js"
   },
   "engines": {
     "node": ">=24"
+  },
+  "dependencies": {
+    "nodemailer": "^9.1.1"
   }
 }
