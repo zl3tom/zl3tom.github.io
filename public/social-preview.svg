@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">ZL3TOM Amateur Radio</title>
+  <desc id="description">Social sharing card for Thomas Bernard, ZL3TOM, an amateur radio operator in Christchurch, New Zealand.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06131b"/>
+      <stop offset="1" stop-color="#0b2930"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="15%" r="70%">
+      <stop offset="0" stop-color="#1d9d70" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#1d9d70" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#69f0ae" stroke-opacity=".07" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="0" y="0" width="16" height="630" fill="#69f0ae"/>
+
+  <g transform="translate(78 73)">
+    <rect width="76" height="76" rx="18" fill="#69f0ae" fill-opacity=".12" stroke="#69f0ae" stroke-opacity=".6" stroke-width="2"/>
+    <g transform="translate(14 14)" fill="none" stroke="#69f0ae" stroke-width="4" stroke-linecap="round">
+      <path d="M32.5 15.5a12 12 0 0 1 0 17"/>
+      <path d="M39 9a21 21 0 0 1 0 30"/>
+      <path d="M15.5 32.5a12 12 0 0 1 0-17"/>
+      <path d="M9 39A21 21 0 0 1 9 9"/>
+      <circle cx="24" cy="24" r="4" fill="#69f0ae" stroke="none"/>
+    </g>
+  </g>
+
+  <text x="180" y="104" fill="#9bb2ba" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="5">ON AIR FROM AOTEAROA</text>
+  <text x="78" y="263" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="118" font-weight="800" letter-spacing="-5">ZL3TOM</text>
+  <text x="84" y="320" fill="#69f0ae" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700">AMATEUR RADIO</text>
+  <text x="84" y="366" fill="#c3d1d5" font-family="Arial, Helvetica, sans-serif" font-size="27">Thomas Bernard · Christchurch, New Zealand</text>
+
+  <g transform="translate(82 426)" font-family="Arial, Helvetica, sans-serif">
+    <rect width="360" height="82" rx="14" fill="#ffffff" fill-opacity=".07" stroke="#69f0ae" stroke-opacity=".35"/>
+    <circle cx="38" cy="41" r="8" fill="#69f0ae"/>
+    <text x="62" y="34" fill="#91ffc7" font-size="15" font-weight="700" letter-spacing="2">ECHOLINK NODE</text>
+    <text x="62" y="61" fill="#ffffff" font-size="24" font-weight="700">304602 · ZL3TOM-L</text>
+  </g>
+  <g transform="translate(462 426)" font-family="Arial, Helvetica, sans-serif">
+    <rect width="310" height="82" rx="14" fill="#ffffff" fill-opacity=".07" stroke="#69f0ae" stroke-opacity=".35"/>
+    <circle cx="38" cy="41" r="13" fill="none" stroke="#69f0ae" stroke-width="3"/>
+    <circle cx="38" cy="41" r="5" fill="#69f0ae"/>
+    <text x="65" y="34" fill="#91ffc7" font-size="15" font-weight="700" letter-spacing="2">ALLSTAR NODE</text>
+    <text x="65" y="61" fill="#ffffff" font-size="24" font-weight="700">40452</text>
+  </g>
+
+  <g transform="translate(84 571)" font-family="Arial, Helvetica, sans-serif">
+    <text fill="#ffffff" font-size="24" font-weight="700">zl3tom.com</text>
+    <text x="929" fill="#9bb2ba" font-size="19" text-anchor="end">Guides · Station · QSL</text>
+  </g>
+</svg>

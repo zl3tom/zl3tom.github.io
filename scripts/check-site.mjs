@@ -46,7 +46,13 @@ for (const filePath of htmlFiles) {
     ["rel=\"canonical\"", "a canonical URL"],
     ["<h1", "an H1"],
     ["/script.js", "the site script"],
-    ["site-extras.css", "the enhancement stylesheet"]
+    ["site-extras.css", "the enhancement stylesheet"],
+    ["property=\"og:image\" content=\"https://zl3tom.com/social-preview.png\"", "an Open Graph preview image"],
+    ["name=\"twitter:card\" content=\"summary_large_image\"", "a large Twitter/X preview card"],
+    ["name=\"twitter:image\" content=\"https://zl3tom.com/social-preview.png\"", "a Twitter/X preview image"],
+    ["property=\"og:image:width\" content=\"1200\"", "the social image width"],
+    ["property=\"og:image:height\" content=\"630\"", "the social image height"],
+    ["property=\"og:image:alt\"", "social preview alt text"]
   ];
   for (const [needle, description] of requiredMarkup) {
     if (!html.includes(needle)) problems.push(`${relativeFile} is missing ${description}.`);
@@ -82,11 +88,32 @@ for (const filePath of htmlFiles) {
   if (/tabindex=["'][1-9]\d*["']/i.test(html)) {
     problems.push(`${relativeFile} uses a positive tabindex that can disrupt keyboard navigation.`);
   }
+
+  const canonicalUrl = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)/i)?.[1];
+  const openGraphUrl = html.match(/<meta\s+property=["']og:url["']\s+content=["']([^"']+)/i)?.[1];
+  if (canonicalUrl && openGraphUrl !== canonicalUrl) {
+    problems.push(`${relativeFile} has an Open Graph URL that does not match its canonical URL.`);
+  }
 }
 
 const sitemap = await readFile(path.join(publicRoot, "sitemap.xml"), "utf8");
 const sitemapUrlCount = [...sitemap.matchAll(/<loc>https:\/\/zl3tom\.com[^<]*<\/loc>/g)].length;
 if (sitemapUrlCount !== 24) problems.push(`sitemap.xml has ${sitemapUrlCount} site URLs; expected 24.`);
+if (!sitemap.includes("<image:loc>https://zl3tom.com/social-preview.png</image:loc>")) {
+  problems.push("sitemap.xml is missing the social preview image.");
+}
+
+try {
+  const previewImage = await readFile(path.join(publicRoot, "social-preview.png"));
+  const pngSignature = previewImage.subarray(0, 8).toString("hex");
+  const width = previewImage.readUInt32BE(16);
+  const height = previewImage.readUInt32BE(20);
+  if (pngSignature !== "89504e470d0a1a0a" || width !== 1200 || height !== 630) {
+    problems.push(`social-preview.png is ${width}×${height}; expected a 1200×630 PNG.`);
+  }
+} catch {
+  problems.push("social-preview.png is missing or invalid.");
+}
 
 const guidesIndex = await readFile(path.join(publicRoot, "guides.html"), "utf8");
 const guideCardCount = (guidesIndex.match(/class="guide-card"/g) || []).length;
