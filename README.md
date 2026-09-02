@@ -1,6 +1,6 @@
 # ZL3TOM Node.js Website
 
-This package runs the ZL3TOM amateur-radio website as a small Node.js service on an Oracle Cloud Free VM. It includes a responsive photo gallery, Flag Counter, QRZ Logbook widget, global site search, live international radio clocks, SEO metadata and 12 beginner-friendly guides. The Contact page includes a secure form protected by Cloudflare Turnstile; messages are delivered to `thomas@zl3tom.com` through Fastmail SMTP.
+This package runs the ZL3TOM amateur-radio website as a small Node.js service on an Oracle Cloud Free VM. It includes a responsive photo gallery, Flag Counter, QRZ Logbook widget, full-content global site search, live international radio clocks, SEO metadata and 18 beginner-friendly guides. The Contact page includes a secure form protected by Cloudflare Turnstile; messages are delivered to `thomas@zl3tom.com` through Fastmail SMTP.
 
 The Node server listens only on `127.0.0.1:3000`. Your existing Apache server handles public traffic for `zl3tom.com` and forwards it to Node. This keeps the existing Cloudlog site at `log.zl3tom.com` separate.
 

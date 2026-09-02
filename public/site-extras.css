@@ -100,8 +100,17 @@
 }
 
 .site-search-result strong,
+.site-search-result small,
 .site-search-result span {
   display: block;
+}
+
+.site-search-result small {
+  margin-top: .25rem;
+  color: #42575e;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.45;
 }
 
 .nav-search {
@@ -275,6 +284,40 @@
 .guide-definitions dd {
   margin: .18rem 0 0;
   color: #42575e;
+}
+
+.guide-table-wrap {
+  max-width: 100%;
+  margin-top: 1rem;
+  overflow-x: auto;
+  border: 1px solid #d7e2dd;
+  border-radius: 12px;
+}
+
+.guide-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.guide-table th,
+.guide-table td {
+  padding: .75rem .85rem;
+  border-bottom: 1px solid #e1e9e5;
+  text-align: left;
+  vertical-align: top;
+}
+
+.guide-table th {
+  background: #e9f8f0;
+  color: #0a5d44;
+  font-size: .88rem;
+  letter-spacing: .025em;
+}
+
+.guide-table tr:last-child td {
+  border-bottom: 0;
 }
 
 .guide-sources,

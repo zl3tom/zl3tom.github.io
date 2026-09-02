@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { additionalGuides } from "./more-guides.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const publicRoot = path.join(projectRoot, "public");
@@ -286,7 +287,10 @@ const newGuides = [
   }
 ];
 
-const allGuides = [...existingGuides, ...newGuides];
+const priorityGuides = additionalGuides.slice(0, 3);
+const extraGuides = additionalGuides.slice(3);
+const allGuides = [...priorityGuides, ...existingGuides, ...newGuides, ...extraGuides];
+const generatedGuides = [...newGuides, ...additionalGuides];
 const bySlug = new Map(allGuides.map((guide) => [guide.slug, guide]));
 
 const radioIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg>`;
@@ -423,7 +427,7 @@ ${personSchema()}
 }
 
 function guidesIndex() {
-  const description = "Beginner-friendly amateur radio guides by Thomas Bernard ZL3TOM, covering operating, EchoLink, DMR IDs, digital voice, QSO One, antennas, audio and emergency communications.";
+  const description = "Beginner-friendly amateur radio guides by Thomas Bernard ZL3TOM, including New Zealand and USA band plans, APRS, AllStar, QRZ logging, EchoLink, DMR and operating.";
   const cards = allGuides.map((guide, index) => `<a href="/guides/${guide.slug}" class="guide-card"><div class="guide-card-top"><span>${String(index + 1).padStart(2, "0")}</span>${radioIcon}</div><h2>${guide.cardTitle}</h2><p>${guide.description}</p><em>Read guide →</em></a>`).join("\n");
   const schema = {
     "@context": "https://schema.org",
@@ -444,7 +448,7 @@ ${documentHead({
     title: "Amateur Radio Beginner Guides | ZL3TOM",
     description,
     canonical: "https://zl3tom.com/guides",
-    keywords: "amateur radio beginner guides, ham radio New Zealand, EchoLink setup, DMR ID, digital voice, QSO One guide, ZL3TOM",
+    keywords: "amateur radio beginner guides, New Zealand band plans, USA band plans, APRS guide, AllStarLink, QRZ logging, EchoLink setup, DMR ID, ZL3TOM",
     type: "website"
   })}
 <body>
@@ -464,7 +468,7 @@ ${personSchema()}
 </html>\n`;
 }
 
-for (const guide of newGuides) {
+for (const guide of generatedGuides) {
   const html = guidePage(guide);
   await writeFile(path.join(publicRoot, `guides-${guide.slug}.html`), html);
   const friendlyDirectory = path.join(publicRoot, "guides", guide.slug);
@@ -477,4 +481,4 @@ await writeFile(path.join(publicRoot, "guides.html"), indexHtml);
 await mkdir(path.join(publicRoot, "guides"), { recursive: true });
 await writeFile(path.join(publicRoot, "guides", "index.html"), indexHtml);
 
-console.log(`Generated ${newGuides.length} guide pages and an index with ${allGuides.length} guides.`);
+console.log(`Generated ${generatedGuides.length} guide pages and an index with ${allGuides.length} guides.`);

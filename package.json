@@ -6,10 +6,11 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "check": "node --check server.js && node --check public/script.js && node --check scripts/generate-guides.mjs && node --check scripts/generate-radio-fun.mjs && node scripts/check-site.mjs",
+    "check": "node --check server.js && node --check public/script.js && node --check scripts/generate-guides.mjs && node --check scripts/more-guides.mjs && node --check scripts/generate-radio-fun.mjs && node --check scripts/generate-search-index.mjs && node scripts/check-site.mjs",
     "build:guides": "node scripts/generate-guides.mjs",
     "build:radio": "node scripts/generate-radio-fun.mjs",
-    "build": "npm run build:guides && npm run build:radio"
+    "build:search": "node scripts/generate-search-index.mjs",
+    "build": "npm run build:guides && npm run build:radio && npm run build:search"
   },
   "engines": {
     "node": ">=24"

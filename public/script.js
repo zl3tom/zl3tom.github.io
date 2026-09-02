@@ -288,41 +288,67 @@ document.addEventListener("DOMContentLoaded", () => {
     initialiseContactForm();
   }
 
-  const siteSearchIndex = [
-    ["Home", "/", "ZL3TOM Thomas Bernard amateur radio Christchurch New Zealand station guides"],
-    ["About Thomas — ZL3TOM", "/about", "about photos gallery callsigns ZL3TOM ZL3KY Christchurch"],
-    ["Station and radio networks", "/radio-fun", "EchoLink 304602 ZL3TOM-L AllStar 40452 APRS Zello IRN ZMR RemoteHams DMR TG 91 QRZ logbook"],
-    ["QSL confirmation", "/qsl", "QSL request card contact confirm radio contact logbook"],
-    ["Contact ZL3TOM", "/contact", "contact Thomas message question QSL website"],
-    ["Amateur radio operating basics", "/guides/operating-basics", "operating HF VHF UHF linked systems transmit listen logging"],
-    ["HF CQ and contacts", "/guides/hf-cq-and-contacts", "HF CQ calling contact QSO pileup signal report"],
-    ["Repeaters and nets", "/guides/repeaters-and-nets", "repeater offset tone net AllStar EchoLink"],
-    ["Audio and levels", "/guides/audio-and-levels", "microphone gain ALC audio SSB FM digital clean signal"],
-    ["Antenna basics", "/guides/antenna-basics", "antenna feedline SWR dipole vertical safety"],
-    ["Q codes and jargon", "/guides/q-codes-and-jargon", "QTH QSL QSO QRZ 73 radio terms"],
-    ["Emergency communications basics", "/guides/emergency-comms-basics", "emergency communications message traffic directed net priority"],
-    ["How to install and use EchoLink", "/guides/echolink-getting-started", "EchoLink download install Android iPhone Windows web validation callsign audio connection"],
-    ["How to get a DMR ID", "/guides/getting-a-dmr-id", "DMR ID RadioID register BrandMeister codeplug hotspot talkgroup"],
-    ["Radio apps for phone and computer", "/guides/amateur-radio-apps", "apps software Android iPhone Windows computer CHIRP WSJT-X APRSdroid Ham2K logging"],
-    ["Digital voice for beginners", "/guides/digital-voice-for-beginners", "digital voice DMR D-STAR C4FM System Fusion M17 talkgroup reflector room hotspot"],
-    ["QSO One setup guide", "/guides/qso-one-guide", "QSO One QSO1 app DMR EchoLink AllStar IAX BrandMeister TGIF System Fusion M17 Windows Android"]
-  ].map(([title, url, terms]) => ({ title, url, terms: `${title} ${terms}`.toLowerCase() }));
+  let siteSearchIndexPromise;
 
-  function searchWebsite(query) {
-    const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  function loadSiteSearchIndex() {
+    if (!siteSearchIndexPromise) {
+      siteSearchIndexPromise = fetch("/search-index.json", { headers: { Accept: "application/json" } })
+        .then((response) => {
+          if (!response.ok) throw new Error("Search index unavailable");
+          return response.json();
+        });
+    }
+    return siteSearchIndexPromise;
+  }
+
+  function normaliseSearchText(value) {
+    return value.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  async function searchWebsite(query) {
+    const phrase = normaliseSearchText(query.trim());
+    const words = phrase.split(/\s+/).filter(Boolean);
     if (words.length === 0) return [];
+    const siteSearchIndex = await loadSiteSearchIndex();
     return siteSearchIndex
-      .map((page) => ({ page, score: words.reduce((total, word) => total + (page.terms.includes(word) ? 1 : 0), 0) }))
-      .filter(({ score }) => score === words.length)
+      .map((page) => {
+        const title = normaliseSearchText(page.title);
+        const description = normaliseSearchText(page.description);
+        const content = normaliseSearchText(page.content);
+        const completeText = `${title} ${description} ${content}`;
+        if (!words.every((word) => completeText.includes(word))) return null;
+        const score = words.reduce((total, word) => total
+          + (title.includes(word) ? 12 : 0)
+          + (description.includes(word) ? 5 : 0)
+          + (content.includes(word) ? 1 : 0), 0)
+          + (title.includes(phrase) ? 20 : 0)
+          + (content.includes(phrase) ? 4 : 0);
+        const firstMatch = Math.max(0, content.indexOf(words[0]));
+        const start = Math.max(0, firstMatch - 85);
+        const end = Math.min(page.content.length, start + 220);
+        const snippet = `${start > 0 ? "…" : ""}${page.content.slice(start, end).trim()}${end < page.content.length ? "…" : ""}`;
+        return { page: { ...page, snippet }, score };
+      })
+      .filter(Boolean)
       .sort((left, right) => right.score - left.score)
-      .slice(0, 8)
+      .slice(0, 10)
       .map(({ page }) => page);
   }
 
-  function renderSearchResults(query, resultsContainer) {
+  async function renderSearchResults(query, resultsContainer) {
     resultsContainer.replaceChildren();
     if (!query.trim()) return;
-    const matches = searchWebsite(query);
+    const loading = document.createElement("p");
+    loading.textContent = "Searching every page…";
+    resultsContainer.appendChild(loading);
+    let matches;
+    try {
+      matches = await searchWebsite(query);
+    } catch {
+      loading.textContent = "Search could not load. Please refresh the page and try again.";
+      return;
+    }
+    resultsContainer.replaceChildren();
     if (matches.length === 0) {
       const emptyMessage = document.createElement("p");
       emptyMessage.textContent = `No pages matched “${query.trim()}”. Try a shorter radio term.`;
@@ -341,7 +367,9 @@ document.addEventListener("DOMContentLoaded", () => {
       title.textContent = page.title;
       const url = document.createElement("span");
       url.textContent = page.url;
-      link.append(title, url);
+      const snippet = document.createElement("small");
+      snippet.textContent = page.snippet || page.description;
+      link.append(title, snippet, url);
       resultsContainer.appendChild(link);
     });
   }
@@ -350,12 +378,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const input = form.querySelector("input[type='search']");
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      renderSearchResults(input.value, resultsContainer);
-      resultsContainer.querySelector("a")?.focus();
+      renderSearchResults(input.value, resultsContainer).then(() => resultsContainer.querySelector("a")?.focus());
     });
+    let searchTimer;
     input.addEventListener("input", () => {
-      if (input.value.trim().length >= 2) renderSearchResults(input.value, resultsContainer);
-      else resultsContainer.replaceChildren();
+      window.clearTimeout(searchTimer);
+      if (input.value.trim().length >= 2) {
+        searchTimer = window.setTimeout(() => renderSearchResults(input.value, resultsContainer), 140);
+      } else resultsContainer.replaceChildren();
     });
   }
 
