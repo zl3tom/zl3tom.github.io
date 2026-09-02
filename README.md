@@ -1,6 +1,6 @@
 # ZL3TOM Node.js Website
 
-This package runs the ZL3TOM amateur-radio website as a small Node.js service on an Oracle Cloud Free VM. The About-page photos form a horizontal gallery that supports touch swiping, mouse/trackpad scrolling, keyboard scrolling, and Previous/Next buttons. The Contact page includes a secure form protected by Cloudflare Turnstile; messages are delivered to `thomas@zl3tom.com` through Fastmail SMTP.
+This package runs the ZL3TOM amateur-radio website as a small Node.js service on an Oracle Cloud Free VM. It includes a responsive photo gallery, Flag Counter, QRZ Logbook widget, global site search, live international radio clocks, SEO metadata and 12 beginner-friendly guides. The Contact page includes a secure form protected by Cloudflare Turnstile; messages are delivered to `thomas@zl3tom.com` through Fastmail SMTP.
 
 The Node server listens only on `127.0.0.1:3000`. Your existing Apache server handles public traffic for `zl3tom.com` and forwards it to Node. This keeps the existing Cloudlog site at `log.zl3tom.com` separate.
 
@@ -173,10 +173,13 @@ cp -n .env.example .env
 nano .env
 ```
 
-Fill in these three private values:
+The Fastmail sign-in address is `thomas@tdbnz.email`, while messages are sent to and shown as coming from the public `thomas@zl3tom.com` address. Fill in the private values and confirm these addresses:
 
 ```dotenv
+SMTP_USER=thomas@tdbnz.email
 SMTP_PASS=your-fastmail-app-password
+CONTACT_TO=thomas@zl3tom.com
+CONTACT_FROM=thomas@zl3tom.com
 TURNSTILE_SITE_KEY=your-turnstile-site-key
 TURNSTILE_SECRET=your-turnstile-secret-key
 ```
@@ -219,3 +222,10 @@ curl http://127.0.0.1:3000/healthz
 ```
 
 The private `.env` file remains on the VM and is not replaced by `git pull`.
+
+If you edit the guide generator or station-page generator, rebuild those pages before checking and restarting:
+
+```bash
+npm run build
+npm run check
+```

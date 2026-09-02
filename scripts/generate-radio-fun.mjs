@@ -1,4 +1,50 @@
-<!doctype html>
+import { mkdir, writeFile } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const publicRoot = path.join(projectRoot, "public");
+const radioIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg>`;
+
+const links = [
+  ["Home", "/"], ["About", "/about"], ["Radio Fun", "/radio-fun"],
+  ["Guides", "/guides"], ["QSL", "/qsl"], ["Contact", "/contact"]
+].map(([label, href]) => `<a href="${href}"${label === "Radio Fun" ? ' aria-current="page"' : ""}>${label}</a>`).join("");
+
+const networks = [
+  ["EchoLink", "Node 304602 · ZL3TOM-L"],
+  ["AllStarLink", "Node 40452"],
+  ["BrandMeister DMR", "Worldwide TG 91"],
+  ["ZL DMR", "New Zealand channels"],
+  ["Zello", "International Radio Network"],
+  ["Network Radios", "Internet-linked radio community"],
+  ["ZMR Radio", "Zello and network radio"],
+  ["RemoteHams", "Remote amateur stations"]
+].map(([name, detail]) => `<div class="activity-chip"><strong>${name}</strong><span>${detail}</span></div>`).join("");
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "ZL3TOM Amateur Radio Station, Nodes and Networks",
+      description: "Find ZL3TOM on EchoLink node 304602, AllStar node 40452, APRS, BrandMeister DMR TG 91, ZL DMR, Zello, Network Radios, ZMR Radio and RemoteHams.",
+      url: "https://zl3tom.com/radio-fun",
+      inLanguage: "en-NZ",
+      dateModified: "2026-09-03",
+      about: { "@type": "Person", name: "Thomas Bernard", alternateName: "ZL3TOM" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://zl3tom.com/" },
+        { "@type": "ListItem", position: 2, name: "Radio Fun", item: "https://zl3tom.com/radio-fun" }
+      ]
+    }
+  ]
+};
+
+const html = `<!doctype html>
 <html lang="en-NZ">
 <head>
   <meta charset="utf-8">
@@ -25,12 +71,12 @@
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header"><div class="site-container nav-wrap">
-  <a class="brand" href="/" aria-label="ZL3TOM Amateur Radio home"><span class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg></span><span><strong>ZL3TOM</strong><small>Amateur Radio</small></span></a>
+  <a class="brand" href="/" aria-label="ZL3TOM Amateur Radio home"><span class="brand-icon">${radioIcon}</span><span><strong>ZL3TOM</strong><small>Amateur Radio</small></span></a>
   <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
-  <nav id="main-navigation" class="main-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/about">About</a><a href="/radio-fun" aria-current="page">Radio Fun</a><a href="/guides">Guides</a><a href="/qsl">QSL</a><a href="/contact">Contact</a><a class="nav-qrz" href="https://qrz.com/db/ZL3TOM" target="_blank" rel="noreferrer">View on QRZ <span aria-hidden="true">↗</span></a></nav>
+  <nav id="main-navigation" class="main-nav" aria-label="Main navigation">${links}<a class="nav-qrz" href="https://qrz.com/db/ZL3TOM" target="_blank" rel="noreferrer">View on QRZ <span aria-hidden="true">↗</span></a></nav>
 </div></header>
 <main id="main">
-  <section class="page-hero"><div class="signal-grid" aria-hidden="true"></div><div class="site-container page-hero-inner"><div class="page-icon"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg></div><div><p class="section-kicker">ZL3TOM on the air</p><h1>My station, nodes and radio networks</h1><p>My multimode system in Christchurch, New Zealand, and the internet-linked amateur radio networks where I am active.</p></div></div></section>
+  <section class="page-hero"><div class="signal-grid" aria-hidden="true"></div><div class="site-container page-hero-inner"><div class="page-icon">${radioIcon}</div><div><p class="section-kicker">ZL3TOM on the air</p><h1>My station, nodes and radio networks</h1><p>My multimode system in Christchurch, New Zealand, and the internet-linked amateur radio networks where I am active.</p></div></div></section>
 
   <section class="inner-section light"><div class="site-container">
     <div class="id-card-grid">
@@ -47,18 +93,23 @@
     </div>
   </div></section>
 
-  <section class="radio-activity-section" aria-labelledby="active-networks-title"><div class="site-container"><header><p class="section-kicker">Around the airwaves</p><h2 id="active-networks-title">Networks where I am active</h2><p>I enjoy a mix of RF, linked amateur radio and network-radio communities. Availability changes, so call and listen for ZL3TOM.</p></header><div class="activity-chip-grid"><div class="activity-chip"><strong>EchoLink</strong><span>Node 304602 · ZL3TOM-L</span></div><div class="activity-chip"><strong>AllStarLink</strong><span>Node 40452</span></div><div class="activity-chip"><strong>BrandMeister DMR</strong><span>Worldwide TG 91</span></div><div class="activity-chip"><strong>ZL DMR</strong><span>New Zealand channels</span></div><div class="activity-chip"><strong>Zello</strong><span>International Radio Network</span></div><div class="activity-chip"><strong>Network Radios</strong><span>Internet-linked radio community</span></div><div class="activity-chip"><strong>ZMR Radio</strong><span>Zello and network radio</span></div><div class="activity-chip"><strong>RemoteHams</strong><span>Remote amateur stations</span></div></div></div></section>
+  <section class="radio-activity-section" aria-labelledby="active-networks-title"><div class="site-container"><header><p class="section-kicker">Around the airwaves</p><h2 id="active-networks-title">Networks where I am active</h2><p>I enjoy a mix of RF, linked amateur radio and network-radio communities. Availability changes, so call and listen for ZL3TOM.</p></header><div class="activity-chip-grid">${networks}</div></div></section>
 
   <section class="qrz-logbook-section" aria-labelledby="qrz-logbook-title"><div class="site-container"><header><p class="section-kicker">Recent radio contacts</p><h2 id="qrz-logbook-title">QRZ Logbook</h2><p>Browse the ZL3TOM QRZ Logbook widget below. On a small screen, scroll inside the logbook if more columns are available.</p></header><div class="qrz-frame-wrap"><iframe title="ZL3TOM QRZ Logbook statistics" frameborder="0" height="500" scrolling="yes" src="https://logbook.qrz.com/lbstat/ZL3TOM/" width="640" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"><a href="https://logbook.qrz.com/lbstat/ZL3TOM/">Open the ZL3TOM QRZ Logbook</a></iframe><p><a href="https://logbook.qrz.com/lbstat/ZL3TOM/" target="_blank" rel="noopener noreferrer">Open the ZL3TOM QRZ Logbook in a new tab ↗</a></p></div></div></section>
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"ZL3TOM Amateur Radio Station, Nodes and Networks","description":"Find ZL3TOM on EchoLink node 304602, AllStar node 40452, APRS, BrandMeister DMR TG 91, ZL DMR, Zello, Network Radios, ZMR Radio and RemoteHams.","url":"https://zl3tom.com/radio-fun","inLanguage":"en-NZ","dateModified":"2026-09-03","about":{"@type":"Person","name":"Thomas Bernard","alternateName":"ZL3TOM"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://zl3tom.com/"},{"@type":"ListItem","position":2,"name":"Radio Fun","item":"https://zl3tom.com/radio-fun"}]}]}</script>
+  <script type="application/ld+json">${JSON.stringify(schema)}</script>
 </main>
 <footer class="site-footer"><div class="site-container footer-grid">
-  <div><a class="brand footer-brand" href="/"><span class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg></span><span><strong>ZL3TOM</strong><small>On air from Aotearoa</small></span></a><p>Thomas Bernard · ZL3TOM / ZL3KY<br>Christchurch, New Zealand</p></div>
+  <div><a class="brand footer-brand" href="/"><span class="brand-icon">${radioIcon}</span><span><strong>ZL3TOM</strong><small>On air from Aotearoa</small></span></a><p>Thomas Bernard · ZL3TOM / ZL3KY<br>Christchurch, New Zealand</p></div>
   <div><strong>Explore</strong><a href="/about">About Thomas</a><a href="/radio-fun">Station &amp; networks</a><a href="/guides">Radio guides</a></div>
   <div><strong>Connect</strong><a href="/qsl">QSL confirmation</a><a href="/contact">Contact ZL3TOM</a><a href="https://aprs.fi/info/a/ZL3TOM" target="_blank" rel="noreferrer">APRS position ↗</a></div>
 </div><div class="site-container footer-bottom"><span>© 2026 Thomas Bernard. 73!</span><span>Built for amateur radio operators everywhere.</span></div></footer>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Thomas Bernard","alternateName":["ZL3TOM","ZL3KY"],"url":"https://zl3tom.com","address":{"@type":"PostalAddress","addressLocality":"Christchurch","addressCountry":"NZ"},"sameAs":["https://qrz.com/db/ZL3TOM","https://aprs.fi/info/a/ZL3TOM"]}</script>
+<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "Person", name: "Thomas Bernard", alternateName: ["ZL3TOM", "ZL3KY"], url: "https://zl3tom.com", address: { "@type": "PostalAddress", addressLocality: "Christchurch", addressCountry: "NZ" }, sameAs: ["https://qrz.com/db/ZL3TOM", "https://aprs.fi/info/a/ZL3TOM"] })}</script>
 <script src="/script.js" defer></script>
 </body>
-</html>
+</html>\n`;
+
+await writeFile(path.join(publicRoot, "radio-fun.html"), html);
+await mkdir(path.join(publicRoot, "radio-fun"), { recursive: true });
+await writeFile(path.join(publicRoot, "radio-fun", "index.html"), html);
+console.log("Generated the Radio Fun page with QRZ Logbook and station networks.");

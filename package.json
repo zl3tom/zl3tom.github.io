@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "check": "node --check server.js && node --check public/script.js"
+    "check": "node --check server.js && node --check public/script.js && node --check scripts/generate-guides.mjs && node --check scripts/generate-radio-fun.mjs && node scripts/check-site.mjs",
+    "build:guides": "node scripts/generate-guides.mjs",
+    "build:radio": "node scripts/generate-radio-fun.mjs",
+    "build": "npm run build:guides && npm run build:radio"
   },
   "engines": {
     "node": ">=24"

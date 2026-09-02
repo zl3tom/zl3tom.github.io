@@ -287,4 +287,173 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initialiseContactForm();
   }
+
+  const siteSearchIndex = [
+    ["Home", "/", "ZL3TOM Thomas Bernard amateur radio Christchurch New Zealand station guides"],
+    ["About Thomas — ZL3TOM", "/about", "about photos gallery callsigns ZL3TOM ZL3KY Christchurch"],
+    ["Station and radio networks", "/radio-fun", "EchoLink 304602 ZL3TOM-L AllStar 40452 APRS Zello IRN ZMR RemoteHams DMR TG 91 QRZ logbook"],
+    ["QSL confirmation", "/qsl", "QSL request card contact confirm radio contact logbook"],
+    ["Contact ZL3TOM", "/contact", "contact Thomas message question QSL website"],
+    ["Amateur radio operating basics", "/guides/operating-basics", "operating HF VHF UHF linked systems transmit listen logging"],
+    ["HF CQ and contacts", "/guides/hf-cq-and-contacts", "HF CQ calling contact QSO pileup signal report"],
+    ["Repeaters and nets", "/guides/repeaters-and-nets", "repeater offset tone net AllStar EchoLink"],
+    ["Audio and levels", "/guides/audio-and-levels", "microphone gain ALC audio SSB FM digital clean signal"],
+    ["Antenna basics", "/guides/antenna-basics", "antenna feedline SWR dipole vertical safety"],
+    ["Q codes and jargon", "/guides/q-codes-and-jargon", "QTH QSL QSO QRZ 73 radio terms"],
+    ["Emergency communications basics", "/guides/emergency-comms-basics", "emergency communications message traffic directed net priority"],
+    ["How to install and use EchoLink", "/guides/echolink-getting-started", "EchoLink download install Android iPhone Windows web validation callsign audio connection"],
+    ["How to get a DMR ID", "/guides/getting-a-dmr-id", "DMR ID RadioID register BrandMeister codeplug hotspot talkgroup"],
+    ["Radio apps for phone and computer", "/guides/amateur-radio-apps", "apps software Android iPhone Windows computer CHIRP WSJT-X APRSdroid Ham2K logging"],
+    ["Digital voice for beginners", "/guides/digital-voice-for-beginners", "digital voice DMR D-STAR C4FM System Fusion M17 talkgroup reflector room hotspot"],
+    ["QSO One setup guide", "/guides/qso-one-guide", "QSO One QSO1 app DMR EchoLink AllStar IAX BrandMeister TGIF System Fusion M17 Windows Android"]
+  ].map(([title, url, terms]) => ({ title, url, terms: `${title} ${terms}`.toLowerCase() }));
+
+  function searchWebsite(query) {
+    const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    if (words.length === 0) return [];
+    return siteSearchIndex
+      .map((page) => ({ page, score: words.reduce((total, word) => total + (page.terms.includes(word) ? 1 : 0), 0) }))
+      .filter(({ score }) => score === words.length)
+      .sort((left, right) => right.score - left.score)
+      .slice(0, 8)
+      .map(({ page }) => page);
+  }
+
+  function renderSearchResults(query, resultsContainer) {
+    resultsContainer.replaceChildren();
+    if (!query.trim()) return;
+    const matches = searchWebsite(query);
+    if (matches.length === 0) {
+      const emptyMessage = document.createElement("p");
+      emptyMessage.textContent = `No pages matched “${query.trim()}”. Try a shorter radio term.`;
+      resultsContainer.appendChild(emptyMessage);
+      return;
+    }
+
+    const summary = document.createElement("p");
+    summary.textContent = `${matches.length} result${matches.length === 1 ? "" : "s"}`;
+    resultsContainer.appendChild(summary);
+    matches.forEach((page) => {
+      const link = document.createElement("a");
+      link.className = "site-search-result";
+      link.href = page.url;
+      const title = document.createElement("strong");
+      title.textContent = page.title;
+      const url = document.createElement("span");
+      url.textContent = page.url;
+      link.append(title, url);
+      resultsContainer.appendChild(link);
+    });
+  }
+
+  function connectSearchForm(form, resultsContainer) {
+    const input = form.querySelector("input[type='search']");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      renderSearchResults(input.value, resultsContainer);
+      resultsContainer.querySelector("a")?.focus();
+    });
+    input.addEventListener("input", () => {
+      if (input.value.trim().length >= 2) renderSearchResults(input.value, resultsContainer);
+      else resultsContainer.replaceChildren();
+    });
+  }
+
+  const websiteSearch = document.querySelector(".site-search");
+  const searchResults = document.getElementById("site-search-results");
+  if (websiteSearch && searchResults) connectSearchForm(websiteSearch, searchResults);
+
+  const mainNavigation = document.getElementById("main-navigation");
+  if (mainNavigation) {
+    const searchButton = document.createElement("button");
+    searchButton.className = "nav-search";
+    searchButton.type = "button";
+    searchButton.setAttribute("aria-haspopup", "dialog");
+    searchButton.textContent = "⌕ Search";
+    const qrzLink = mainNavigation.querySelector(".nav-qrz");
+    if (qrzLink) qrzLink.before(searchButton);
+    else mainNavigation.appendChild(searchButton);
+
+    const searchDialog = document.createElement("dialog");
+    searchDialog.className = "site-search-dialog";
+    searchDialog.setAttribute("aria-labelledby", "global-search-title");
+    searchDialog.innerHTML = `<div class="search-dialog-card"><div class="search-dialog-heading"><div><p>SEARCH ZL3TOM.COM</p><h2 id="global-search-title">Find a page or radio guide</h2></div><button class="search-dialog-close" type="button" aria-label="Close search">×</button></div><form class="global-search" role="search"><label class="sr-only" for="global-search-input">Search the ZL3TOM website</label><div><input id="global-search-input" type="search" inputmode="search" autocomplete="off" placeholder="Try EchoLink, DMR, antennas or QSL…"><button type="submit">Search</button></div></form><div class="site-search-results global-search-results" aria-live="polite"></div></div>`;
+    document.body.appendChild(searchDialog);
+    const globalSearchForm = searchDialog.querySelector(".global-search");
+    const globalSearchResults = searchDialog.querySelector(".global-search-results");
+    const globalSearchInput = globalSearchForm.querySelector("input");
+    connectSearchForm(globalSearchForm, globalSearchResults);
+
+    searchButton.addEventListener("click", () => {
+      searchDialog.showModal();
+      window.setTimeout(() => globalSearchInput.focus(), 0);
+    });
+    searchDialog.querySelector(".search-dialog-close").addEventListener("click", () => searchDialog.close());
+    searchDialog.addEventListener("click", (event) => {
+      if (event.target === searchDialog) searchDialog.close();
+    });
+  }
+
+  const siteFooter = document.querySelector(".site-footer");
+  if (siteFooter && !document.querySelector(".world-clock")) {
+    const clocks = [
+      ["UTC", "Etc/UTC", "Universal time"],
+      ["Eastern (ET)", "America/New_York", "US & Canada"],
+      ["United Kingdom", "Europe/London", "London"],
+      ["Australia", "Australia/Sydney", "Sydney"],
+      ["New Zealand", "Pacific/Auckland", "Auckland / Christchurch"]
+    ];
+    const clockSection = document.createElement("section");
+    clockSection.className = "world-clock";
+    clockSection.setAttribute("aria-labelledby", "world-clock-title");
+    clockSection.innerHTML = `<div class="site-container"><div class="world-clock-header"><strong id="world-clock-title">On-Air World Clock</strong><span>Live local times for planning contacts</span></div><div class="world-clock-grid"></div></div>`;
+    const clockGrid = clockSection.querySelector(".world-clock-grid");
+
+    clocks.forEach(([label, timeZone, location]) => {
+      const card = document.createElement("div");
+      card.className = "world-clock-card";
+      card.dataset.timeZone = timeZone;
+      const heading = document.createElement("span");
+      heading.textContent = label;
+      const time = document.createElement("time");
+      const place = document.createElement("small");
+      place.textContent = location;
+      card.append(heading, time, place);
+      clockGrid.appendChild(card);
+    });
+
+    function updateWorldClocks() {
+      const now = new Date();
+      clockGrid.querySelectorAll(".world-clock-card").forEach((card) => {
+        const timeZone = card.dataset.timeZone;
+        const localTime = new Intl.DateTimeFormat("en-NZ", {
+          timeZone,
+          hour: "numeric",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: true,
+          timeZoneName: "short"
+        }).format(now).replace(/\b(am|pm)\b/gi, (value) => value.toUpperCase());
+        const localDate = new Intl.DateTimeFormat("en-NZ", {
+          timeZone,
+          weekday: "short",
+          day: "numeric",
+          month: "short"
+        }).format(now);
+        const time = card.querySelector("time");
+        time.dateTime = now.toISOString();
+        time.textContent = localTime;
+        card.querySelector("small").textContent = `${card.querySelector("small").dataset.location || card.querySelector("small").textContent.split(" · ")[0]} · ${localDate}`;
+        card.querySelector("small").dataset.location = card.querySelector("small").textContent.split(" · ")[0];
+      });
+    }
+
+    siteFooter.before(clockSection);
+    updateWorldClocks();
+    const clockTimer = window.setInterval(updateWorldClocks, 1000);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) updateWorldClocks();
+    });
+    window.addEventListener("pagehide", () => window.clearInterval(clockTimer), { once: true });
+  }
 });
