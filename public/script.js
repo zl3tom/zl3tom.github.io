@@ -424,6 +424,62 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const qrzViewer = document.querySelector("[data-qrz-viewer]");
+  if (qrzViewer) {
+    const frameStage = qrzViewer.querySelector(".qrz-frame-stage");
+    const qrzFrame = frameStage?.querySelector("iframe");
+    const sizeButtons = [...document.querySelectorAll("[data-qrz-size]")];
+    const viewStatus = document.getElementById("qrz-view-status");
+    const baseWidth = 640;
+    const baseHeight = 500;
+    let selectedSize = "auto";
+
+    try {
+      const savedSize = window.localStorage.getItem("zl3tom-qrz-size");
+      if (["auto", "1", "1.25"].includes(savedSize)) selectedSize = savedSize;
+    } catch {
+      // Local storage is optional; automatic sizing still works without it.
+    }
+
+    function qrzScale() {
+      if (selectedSize !== "auto") return Number.parseFloat(selectedSize);
+      const availableWidth = Math.max(0, qrzViewer.clientWidth - 32);
+      return Math.min(1.35, Math.max(1, availableWidth / baseWidth));
+    }
+
+    function updateQrzDisplay(announce = false) {
+      if (!frameStage || !qrzFrame) return;
+      const scale = qrzScale();
+      frameStage.style.width = `${Math.round(baseWidth * scale)}px`;
+      frameStage.style.height = `${Math.round(baseHeight * scale)}px`;
+      qrzFrame.style.transform = `scale(${scale})`;
+      sizeButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.qrzSize === selectedSize));
+      });
+      if (announce && viewStatus) {
+        const label = selectedSize === "auto" ? "Automatic responsive size" : selectedSize === "1.25" ? "Larger logbook view" : "One hundred percent logbook view";
+        viewStatus.textContent = `${label} selected.`;
+      }
+    }
+
+    sizeButtons.forEach((button) => button.addEventListener("click", () => {
+      selectedSize = button.dataset.qrzSize;
+      try {
+        window.localStorage.setItem("zl3tom-qrz-size", selectedSize);
+      } catch {
+        // The choice applies for this visit when local storage is unavailable.
+      }
+      updateQrzDisplay(true);
+    }));
+
+    if (window.ResizeObserver) {
+      new ResizeObserver(() => updateQrzDisplay()).observe(qrzViewer);
+    } else {
+      window.addEventListener("resize", () => updateQrzDisplay());
+    }
+    updateQrzDisplay();
+  }
+
   const siteFooter = document.querySelector(".site-footer");
   if (siteFooter && !document.querySelector(".world-clock")) {
     const clocks = [

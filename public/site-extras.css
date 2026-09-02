@@ -1,4 +1,21 @@
 /* Enhancements shared by the ZL3TOM guides, station page and world clock. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #f4c542 !important;
+  outline-offset: 3px;
+}
+
+:where(button, input, select, textarea) {
+  min-height: 44px;
+}
+
+:where(p, li, dd) {
+  overflow-wrap: break-word;
+}
 .guide-intro {
   max-width: 760px;
   margin: 0 auto 2rem;
@@ -401,34 +418,29 @@
 }
 
 .node-section-title {
-  margin-top: 0;
+  margin: 0 0 1.35rem;
 }
 
 .node-card-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.aprs-station-block {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, .8fr);
-  align-items: center;
-  gap: 2rem;
-  margin-top: 3rem;
-  padding-top: 3rem;
-  border-top: 1px solid #d6e0dc;
+.station-overview-section {
+  padding-top: 2.5rem;
 }
 
-.aprs-station-block h2 {
-  margin: .35rem 0 .65rem;
-  color: #07151e;
-  font-size: clamp(1.6rem, 3vw, 2.3rem);
+.node-section-title > p:last-child {
+  max-width: 880px;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
-.aprs-station-block > div > p:last-child {
-  max-width: 620px;
-  margin: 0;
-  color: #52666c;
-  line-height: 1.65;
+.inline-aprs-link {
+  color: #075f43;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: .1em;
+  text-underline-offset: .2em;
 }
 
 .radio-activity-section,
@@ -495,41 +507,113 @@
 }
 
 .qrz-logbook-section {
-  background: #eef3ef;
+  background: #f1f5f2;
+  color: #07151e;
 }
 
 .qrz-logbook-section header > p:last-child {
-  color: #52656b;
+  color: #344d53;
+  font-size: 1.05rem;
+}
+
+.qrz-display-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  border-radius: 14px 14px 0 0;
+  background: #0b2029;
+  color: #fff;
+}
+
+.qrz-display-bar strong,
+.qrz-display-bar span {
+  display: block;
+}
+
+.qrz-display-bar strong {
+  font-size: 1rem;
+}
+
+.qrz-display-bar span {
+  margin-top: .15rem;
+  color: #c4d5d9;
+  font-size: .88rem;
+}
+
+.qrz-display-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: .5rem;
+}
+
+.qrz-display-actions button,
+.qrz-display-actions a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: .55rem .8rem;
+  border: 1px solid #7e9da5;
+  border-radius: 9px;
+  background: #fff;
+  color: #09232b;
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.qrz-display-actions button[aria-pressed="true"] {
+  border-color: #69f0ae;
+  background: #69f0ae;
+  color: #05271c;
+}
+
+.qrz-display-actions a {
+  border-color: #69f0ae;
+  background: transparent;
+  color: #91ffc7;
 }
 
 .qrz-frame-wrap {
-  max-width: 760px;
-  margin-top: 1.5rem;
+  width: 100%;
   padding: 1rem;
-  border: 1px solid #d2ded8;
-  border-radius: 16px;
+  border: 2px solid #0b2029;
+  border-top: 0;
+  border-radius: 0 0 14px 14px;
   background: #fff;
   box-shadow: 0 16px 36px rgb(7 21 30 / 9%);
-  overflow-x: auto;
+  overflow: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
+}
+
+.qrz-frame-stage {
+  width: 640px;
+  height: 500px;
+  margin-inline: auto;
 }
 
 .qrz-frame-wrap iframe {
   display: block;
-  width: 100%;
-  min-width: 300px;
-  max-width: 640px;
+  width: 640px;
   height: 500px;
   border: 0;
   background: #fff;
+  transform-origin: top left;
 }
 
-.qrz-frame-wrap p {
-  margin: .8rem 0 0;
-}
-
-.qrz-frame-wrap a {
-  color: #0a6648;
-  font-weight: 750;
+.qrz-scroll-help {
+  margin: .9rem 0 0;
+  color: #344d53;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .world-clock {
@@ -614,9 +698,6 @@
     grid-template-columns: 1fr;
   }
 
-  .aprs-station-block {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 800px) {
@@ -662,10 +743,23 @@
   }
 
   .qrz-frame-wrap {
-    margin-right: -.4rem;
-    margin-left: -.4rem;
-    padding: .55rem;
-    border-radius: 12px;
+    width: calc(100% + .5rem);
+    margin-left: -.25rem;
+    padding: .65rem;
+  }
+
+  .qrz-display-bar {
+    display: block;
+  }
+
+  .qrz-display-actions {
+    justify-content: flex-start;
+    margin-top: .8rem;
+  }
+
+  .qrz-display-actions button,
+  .qrz-display-actions a {
+    flex: 1 1 auto;
   }
 }
 
@@ -678,5 +772,31 @@
 @media (prefers-reduced-motion: reduce) {
   .related-guides a {
     transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .qrz-frame-wrap,
+  .id-card,
+  .guide-card,
+  .site-search-result {
+    border-width: 2px;
+    border-color: currentColor;
+  }
+
+  .qrz-logbook-section header > p:last-child,
+  .qrz-scroll-help,
+  .node-section-title > p:last-child {
+    color: #07151e;
+  }
+}
+
+@media (forced-colors: active) {
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid Highlight !important;
+  }
+
+  .qrz-display-actions button[aria-pressed="true"] {
+    border: 2px solid Highlight;
   }
 }

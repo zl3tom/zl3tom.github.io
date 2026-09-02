@@ -66,6 +66,22 @@ for (const filePath of htmlFiles) {
       problems.push(`${relativeFile} contains a broken internal link to ${match[1]}.`);
     }
   }
+
+  for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
+    if (!/\salt=("[^"]*"|'[^']*')/i.test(match[0])) {
+      problems.push(`${relativeFile} contains an image without alt text.`);
+    }
+  }
+
+  for (const match of html.matchAll(/<iframe\b[^>]*>/gi)) {
+    if (!/\stitle=("[^"]+"|'[^']+')/i.test(match[0])) {
+      problems.push(`${relativeFile} contains an iframe without an accessible title.`);
+    }
+  }
+
+  if (/tabindex=["'][1-9]\d*["']/i.test(html)) {
+    problems.push(`${relativeFile} uses a positive tabindex that can disrupt keyboard navigation.`);
+  }
 }
 
 const sitemap = await readFile(path.join(publicRoot, "sitemap.xml"), "utf8");
@@ -93,6 +109,19 @@ try {
 const radioPage = await readFile(path.join(publicRoot, "radio-fun.html"), "utf8");
 if (!radioPage.includes("https://logbook.qrz.com/lbstat/ZL3TOM/")) {
   problems.push("The Radio Fun page is missing the QRZ Logbook widget.");
+}
+if (!radioPage.includes("This is my multimode system:")
+  || !radioPage.includes("MY ECHOLINK NODE")
+  || !radioPage.includes("MY ALLSTAR NODE")) {
+  problems.push("The Radio Fun page does not clearly identify the EchoLink and AllStar nodes.");
+}
+if (!radioPage.includes("http://165.22.121.189/link.php?nodes=40452")) {
+  problems.push("The Radio Fun page is missing the correct AllStar Dashboard link.");
+}
+if (!radioPage.includes("data-qrz-viewer")
+  || !radioPage.includes("data-qrz-size=\"auto\"")
+  || !radioPage.includes("Open full-size")) {
+  problems.push("The QRZ Logbook is missing its responsive accessible viewing controls.");
 }
 
 if (problems.length > 0) {
