@@ -350,7 +350,7 @@ function documentHead({ title, description, canonical, keywords, type = "article
   <meta name="author" content="Thomas Bernard — ZL3TOM">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="${canonical}">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css?v=20260903-search-unified2">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="${type}">
   <meta property="og:locale" content="en_NZ">
@@ -420,7 +420,7 @@ ${header("guides")}
 </main>
 ${footer()}
 ${personSchema()}
-<script src="/script.js?v=20260903-search-allpages" defer></script>
+<script src="/script.js?v=20260903-search-unified2" defer></script>
 </body>
 </html>\n`;
 }
@@ -462,7 +462,7 @@ ${header("guides")}
 </main>
 ${footer()}
 ${personSchema()}
-<script src="/script.js?v=20260903-search-allpages" defer></script>
+<script src="/script.js?v=20260903-search-unified2" defer></script>
 </body>
 </html>\n`;
 }
