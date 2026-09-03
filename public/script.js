@@ -570,6 +570,32 @@ document.addEventListener("DOMContentLoaded", () => {
     updateQrzDisplay();
   }
 
+
+  // Load the third-party Flag Counter only when its section is close to the viewport.
+  // This keeps it out of the initial GTmetrix/Lighthouse network waterfall while
+  // preserving the counter for real visitors on desktop and mobile.
+  const deferredFlag = document.querySelector('.flag-counter-image[data-src]');
+  if (deferredFlag) {
+    const loadFlagCounter = () => {
+      const src = deferredFlag.dataset.src;
+      if (src) {
+        deferredFlag.src = src;
+        deferredFlag.removeAttribute('data-src');
+      }
+    };
+    if ('IntersectionObserver' in window) {
+      const flagObserver = new IntersectionObserver((entries, observer) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          loadFlagCounter();
+          observer.disconnect();
+        }
+      }, { rootMargin: '120px 0px' });
+      flagObserver.observe(deferredFlag);
+    } else {
+      window.addEventListener('load', loadFlagCounter, { once: true });
+    }
+  }
+
   const siteFooter = document.querySelector(".site-footer");
   if (siteFooter && !document.querySelector(".world-clock")) {
     const clocks = [
