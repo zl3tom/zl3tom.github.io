@@ -229,3 +229,15 @@ If you edit the guide generator or station-page generator, rebuild those pages b
 npm run build
 npm run check
 ```
+
+## Performance optimisation (3 September 2026)
+
+This build is tuned for Lighthouse/PageSpeed performance on mobile and desktop:
+- removed an unused ~110 KB Tailwind utility payload from the shared stylesheet
+- merged the enhancement CSS into the main stylesheet to remove one render-blocking request
+- retained system fonts, so there is no unnecessary web-font download or font preload
+- changed the on-air world clock from expensive once-per-second timezone formatting to cached once-per-minute updates
+- kept gallery images, QRZ iframe and flag counter lazy-loaded
+- retained responsive/mobile safeguards and content-visibility for below-the-fold sections
+
+Exact Lighthouse scores can still vary with hosting, network conditions and third-party services, but this build is designed to minimise the site's own blocking work.

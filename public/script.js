@@ -528,38 +528,50 @@ document.addEventListener("DOMContentLoaded", () => {
       clockGrid.appendChild(card);
     });
 
+    const clockCards = [...clockGrid.querySelectorAll(".world-clock-card")].map((card) => {
+      const timeZone = card.dataset.timeZone;
+      const place = card.querySelector("small");
+      const location = place.textContent;
+      return {
+        card,
+        place,
+        location,
+        time: card.querySelector("time"),
+        timeFormatter: new Intl.DateTimeFormat("en-NZ", {
+          timeZone, hour: "numeric", minute: "2-digit", hour12: true, timeZoneName: "short"
+        }),
+        dateFormatter: new Intl.DateTimeFormat("en-NZ", {
+          timeZone, weekday: "short", day: "numeric", month: "short"
+        })
+      };
+    });
+
     function updateWorldClocks() {
       const now = new Date();
-      clockGrid.querySelectorAll(".world-clock-card").forEach((card) => {
-        const timeZone = card.dataset.timeZone;
-        const localTime = new Intl.DateTimeFormat("en-NZ", {
-          timeZone,
-          hour: "numeric",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: true,
-          timeZoneName: "short"
-        }).format(now).replace(/\b(am|pm)\b/gi, (value) => value.toUpperCase());
-        const localDate = new Intl.DateTimeFormat("en-NZ", {
-          timeZone,
-          weekday: "short",
-          day: "numeric",
-          month: "short"
-        }).format(now);
-        const time = card.querySelector("time");
-        time.dateTime = now.toISOString();
-        time.textContent = localTime;
-        card.querySelector("small").textContent = `${card.querySelector("small").dataset.location || card.querySelector("small").textContent.split(" · ")[0]} · ${localDate}`;
-        card.querySelector("small").dataset.location = card.querySelector("small").textContent.split(" · ")[0];
+      const iso = now.toISOString();
+      clockCards.forEach(({ time, place, location, timeFormatter, dateFormatter }) => {
+        time.dateTime = iso;
+        time.textContent = timeFormatter.format(now).replace(/\b(am|pm)\b/gi, (value) => value.toUpperCase());
+        place.textContent = `${location} · ${dateFormatter.format(now)}`;
       });
     }
 
     siteFooter.before(clockSection);
     updateWorldClocks();
-    const clockTimer = window.setInterval(updateWorldClocks, 1000);
+    // Time-zone formatting is relatively expensive. Minute-level updates are
+    // accurate enough for on-air planning and avoid constant main-thread work.
+    const millisecondsToNextMinute = 60000 - (Date.now() % 60000);
+    let clockTimer;
+    const firstClockTimer = window.setTimeout(() => {
+      updateWorldClocks();
+      clockTimer = window.setInterval(updateWorldClocks, 60000);
+    }, millisecondsToNextMinute);
     document.addEventListener("visibilitychange", () => {
       if (!document.hidden) updateWorldClocks();
     });
-    window.addEventListener("pagehide", () => window.clearInterval(clockTimer), { once: true });
+    window.addEventListener("pagehide", () => {
+      window.clearTimeout(firstClockTimer);
+      if (clockTimer) window.clearInterval(clockTimer);
+    }, { once: true });
   }
 });

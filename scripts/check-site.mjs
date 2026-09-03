@@ -46,7 +46,7 @@ for (const filePath of htmlFiles) {
     ["rel=\"canonical\"", "a canonical URL"],
     ["<h1", "an H1"],
     ["/script.js", "the site script"],
-    ["site-extras.css", "the enhancement stylesheet"],
+    ["/style.css", "the shared stylesheet"],
     ["property=\"og:image\" content=\"https://zl3tom.com/social-preview.png\"", "an Open Graph preview image"],
     ["name=\"twitter:card\" content=\"summary_large_image\"", "a large Twitter/X preview card"],
     ["name=\"twitter:image\" content=\"https://zl3tom.com/social-preview.png\"", "a Twitter/X preview image"],
@@ -167,7 +167,7 @@ if (!usaGuide.includes("Who this USA band-plan guide is for")
   problems.push("The USA band-plan guide is not written for an international audience.");
 }
 
-const responsiveCss = await readFile(path.join(publicRoot, "site-extras.css"), "utf8");
+const responsiveCss = await readFile(path.join(publicRoot, "style.css"), "utf8");
 if (!responsiveCss.includes("body.menu-open")
   || !responsiveCss.includes("overflow-wrap: anywhere")
   || !responsiveCss.includes("max-height: calc(100svh - 68px)")) {
