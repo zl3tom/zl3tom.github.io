@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZL3TOM Server Quick Guide</title>
+  <meta name="description" content="Quick reference for SSH access, backing up, and updating the ZL3TOM website server.">
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #111827;
+      --card2: #172033;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+      --good: #34d399;
+      --warn: #fbbf24;
+      --border: #334155;
+      --code: #020617;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #07111f, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      width: min(100% - 28px, 980px);
+      margin: 0 auto;
+      padding: 40px 0 60px;
+    }
+    header {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(17,24,39,.92);
+      box-shadow: 0 18px 45px rgba(0,0,0,.25);
+      margin-bottom: 24px;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 { margin: 0 0 10px; font-size: clamp(2rem, 5vw, 3.2rem); }
+    h2 { margin-top: 0; font-size: 1.55rem; }
+    p { color: var(--muted); }
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.2);
+    }
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #0c4a6e;
+      color: #e0f2fe;
+      font-size: .85rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .note {
+      padding: 14px 16px;
+      border-left: 4px solid var(--warn);
+      background: #3b2f0a;
+      border-radius: 10px;
+      color: #fef3c7;
+      margin: 14px 0;
+    }
+    .ok {
+      border-left-color: var(--good);
+      background: #073d31;
+      color: #d1fae5;
+    }
+    .codebox {
+      position: relative;
+      margin: 14px 0;
+    }
+    pre {
+      margin: 0;
+      overflow-x: auto;
+      padding: 18px;
+      padding-top: 48px;
+      border-radius: 14px;
+      background: var(--code);
+      border: 1px solid #1e293b;
+      color: #e2e8f0;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: .95rem;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    .copy {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: 1px solid #475569;
+      background: #1e293b;
+      color: white;
+      border-radius: 9px;
+      padding: 7px 11px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .copy:hover { background: #334155; }
+    ol, ul { color: var(--muted); padding-left: 1.35rem; }
+    code {
+      background: #0f172a;
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #bae6fd;
+    }
+    footer {
+      text-align: center;
+      color: #94a3b8;
+      margin-top: 28px;
+      font-size: .9rem;
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 18px, 980px); padding-top: 18px; }
+      header, .card { padding: 18px; }
+      pre { font-size: .86rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="badge">ZL3TOM SERVER QUICK GUIDE</div>
+      <h1>SSH, Backup & Website Update</h1>
+      <p>A simple reference for connecting to the Ubuntu server, creating a safe backup, and updating the ZL3TOM website.</p>
+    </header>
+
+    <div class="grid">
+
+      <section class="card">
+        <h2>1. SSH into the server</h2>
+        <p>Open <strong>PowerShell</strong> or <strong>Windows Terminal</strong> on your computer and run:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>ssh -i "C:\Users\thoma\Documents\GitHub\zl3tom\zl3tom.github.io\log\ssh-key-2026-01-05.key" ubuntu@152.67.121.60</pre>
+        </div>
+        <p>If Windows asks whether you trust the host the first time, type:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>yes</pre>
+        </div>
+        <div class="note">Keep the SSH private key file private. Do not upload the <code>.key</code> file to a public GitHub repository.</div>
+      </section>
+
+      <section class="card">
+        <h2>2. Create a new website backup</h2>
+        <p>Your live site is:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>/home/ubuntu/zl3tom-site</pre>
+        </div>
+        <p>Your backup folder is:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>/backup/zl3tom/</pre>
+        </div>
+
+        <p>Create the backup folder if needed:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>sudo mkdir -p /backup/zl3tom
+sudo chown ubuntu:ubuntu /backup/zl3tom</pre>
+        </div>
+
+        <p>Create a fresh full backup:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>cd /home/ubuntu
+tar -czf /backup/zl3tom/zl3tom-site-$(date +%Y-%m-%d-%H%M).tar.gz zl3tom-site</pre>
+        </div>
+
+        <p>Check the backup exists:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>ls -lh /backup/zl3tom/</pre>
+        </div>
+
+        <p>Verify the newest backup:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>LATEST=$(ls -t /backup/zl3tom/zl3tom-site-*.tar.gz | head -1)
+tar -tzf "$LATEST" &gt; /dev/null &amp;&amp; echo "BACKUP OK: $LATEST"</pre>
+        </div>
+
+        <div class="note ok">Do the backup and confirm you see <strong>BACKUP OK</strong> before updating the website.</div>
+      </section>
+
+      <section class="card">
+        <h2>3. Delete an old backup</h2>
+        <p>First list the backups:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>ls -lh /backup/zl3tom/</pre>
+        </div>
+
+        <p>Then delete only the old backup you no longer want:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>rm /backup/zl3tom/OLD-BACKUP-FILENAME.tar.gz</pre>
+        </div>
+
+        <p>Example:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>rm /backup/zl3tom/zl3tom-site-2026-09-01-1200.tar.gz</pre>
+        </div>
+
+        <div class="note">Safer order: create the new backup first, verify it, then remove the older backup.</div>
+      </section>
+
+      <section class="card">
+        <h2>4. Update the ZL3TOM website</h2>
+        <p>After your updated files have been pushed to GitHub, run these commands on the server:</p>
+        <div class="codebox">
+          <button class="copy" onclick="copyCode(this)">Copy</button>
+          <pre>cd /home/ubuntu/zl3tom-site
+git pull --ff-only
+npm ci
+npm run build
+npm run check
+pm2 restart zl3tom --update-env
+pm2 save</pre>
+        </div>
+
+        <p>The important part is that:</p>
+        <ul>
+          <li><code>git pull --ff-only</code> downloads the latest GitHub version.</li>
+          <li><code>npm ci</code> installs the required packages.</li>
+          <li><code>npm run build</code> rebuilds the website.</li>
+          <li><code>npm run check</code> checks the site before restarting it.</li>
+          <li><code>pm2 restart zl3tom --update-env</code> restarts the live website.</li>
+          <li><code>pm2 save</code> saves the PM2 process configuration.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Recommended full routine</h2>
+        <p>For a normal website update, use this order:</p>
+        <ol>
+          <li>SSH into the server.</li>
+          <li>Create a new backup.</li>
+          <li>Verify the backup says <strong>BACKUP OK</strong>.</li>
+          <li>Update the website from GitHub.</li>
+          <li>Make sure <code>npm run check</code> passes.</li>
+          <li>Restart PM2.</li>
+          <li>Open <strong>zl3tom.com</strong> and check the site.</li>
+          <li>Only then remove any old backup you no longer need.</li>
+        </ol>
+      </section>
+
+    </div>
+
+    <footer>
+      ZL3TOM Amateur Radio • Server Quick Reference
+    </footer>
+  </main>
+
+  <script>
+    function copyCode(button) {
+      const pre = button.nextElementSibling;
+      navigator.clipboard.writeText(pre.innerText).then(() => {
+        const original = button.textContent;
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = original, 1200);
+      });
+    }
+  </script>
+</body>
+</html>

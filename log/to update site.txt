@@ -1,7 +1,0 @@
-cd /home/ubuntu/zl3tom-site
-git pull --ff-only
-npm ci
-npm run build
-npm run check
-pm2 restart zl3tom --update-env
-pm2 save
