@@ -2,6 +2,33 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+:where(main, section, article, aside, .site-container, .article-content, .guide-section > div, .footer-grid > div) {
+  min-width: 0;
+}
+
+:where(h1, h2, h3, p, li, dd, dt, a, strong) {
+  overflow-wrap: anywhere;
+}
+
+:where(img, video, canvas, svg) {
+  max-width: 100%;
 }
 
 :where(a, button, input, select, textarea, [tabindex]):focus-visible {
@@ -15,6 +42,10 @@ html {
 
 :where(p, li, dd) {
   overflow-wrap: break-word;
+}
+
+.operator-card .operator-social-link {
+  margin-top: .75rem;
 }
 .guide-intro {
   max-width: 760px;
@@ -700,7 +731,19 @@ html {
 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .main-nav {
+    z-index: 100;
+    max-height: calc(100svh - 68px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .main-nav .nav-search {
     width: 100%;
     padding: 12px 13px;
@@ -708,6 +751,37 @@ html {
 }
 
 @media (max-width: 560px) {
+  .site-container {
+    width: min(calc(100% - 24px), var(--max));
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.35rem, 13vw, 4rem);
+    line-height: 1.02;
+  }
+
+  .page-hero-inner {
+    min-height: 0;
+    padding-block: 2.75rem;
+  }
+
+  .inner-section,
+  .content-section {
+    padding-block: 3.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: auto;
+  }
+
+  .footer-grid > div:not(:first-child) {
+    font-size: .9rem;
+  }
+
   .node-card-grid {
     grid-template-columns: 1fr;
   }
@@ -760,6 +834,10 @@ html {
   .qrz-display-actions button,
   .qrz-display-actions a {
     flex: 1 1 auto;
+  }
+
+  .guide-table {
+    min-width: 500px;
   }
 }
 

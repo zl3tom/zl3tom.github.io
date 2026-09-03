@@ -87,14 +87,14 @@ export const additionalGuides = [
     slug: "usa-amateur-radio-band-plans",
     title: "USA Amateur Radio Band Plans: Beginner Guide",
     cardTitle: "USA band plans",
-    description: "A clear guide to USA amateur radio bands, FCC licence classes, ARRL band plans and the checks operators should make before transmitting.",
-    keywords: "USA amateur radio band plan, US ham radio frequencies, FCC Part 97, ARRL frequency chart, Technician General Extra bands, ZL3TOM",
+    description: "A worldwide beginner guide to USA amateur radio bands, FCC licence classes, ARRL band plans, visiting privileges and working US stations from any country.",
+    keywords: "USA amateur radio band plan, US ham radio frequencies, FCC Part 97, ARRL frequency chart, Technician General Extra bands, international ham radio, visiting USA amateur radio, ZL3TOM",
     asideTitle: "Check before transmitting",
     asideHtml: "<p>US privileges vary by licence class, band and mode. Use the current FCC rules and ARRL chart.</p><a href=\"https://www.arrl.org/graphical-frequency-allocations\" target=\"_blank\" rel=\"noreferrer\">Open the ARRL frequency chart ↗</a>",
     sections: [
       {
-        title: "Why a New Zealand operator may need the US plan",
-        html: `<p>Knowing the US allocations helps when working American stations on HF, visiting the United States or following a US-based net or event. US privileges are not the same as New Zealand privileges, and US operators must stay within the sub-bands allowed by their licence class.</p>`
+        title: "Who this USA band-plan guide is for",
+        html: `<p>This guide is for anyone learning the United States amateur allocations: new US licensees, international operators working American stations, visitors planning to operate in the USA, and listeners following US-based nets or events.</p><p>US privileges can differ from those in your own country. A US operator must stay within the frequencies, modes and power limits allowed by FCC rules and their licence class.</p>`
       },
       {
         title: "The three US licence classes",
@@ -113,8 +113,8 @@ export const additionalGuides = [
         html: `<ul><li>Check the operator's licence class and the exact authorised sub-band.</li><li>Allow for the entire occupied signal, not just the displayed dial frequency.</li><li>Check mode and emission restrictions.</li><li>Use no more transmitter power than needed for reliable communication.</li><li>Listen before calling and respect established activity.</li></ul>`
       },
       {
-        title: "Working US stations from New Zealand",
-        html: `<p>You operate under New Zealand rules at your transmitter; the US station operates under FCC rules at theirs. Agree on a frequency that is legal for both operators, use UTC when arranging or logging the QSO, and move if either station is too close to a band edge.</p>`
+        title: "Working US stations from another country",
+        html: `<p>You normally operate under the rules that apply at your transmitter, while the US station operates under FCC rules at theirs. Choose a frequency, mode and power level that both stations may legally use, use UTC when arranging or logging the QSO, and leave safe room for the full signal near band edges.</p><p>If you plan to transmit while physically in the United States, check the current FCC rules and any reciprocal operating arrangements before you travel. Your home-country licence does not automatically grant every US privilege.</p>`
       }
     ],
     sources: [
@@ -124,7 +124,7 @@ export const additionalGuides = [
       ["ARRL: US licence classes", "https://www.arrl.org/getting-licensed"],
       ["eCFR: FCC Part 97 Amateur Radio Service", "https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97"]
     ],
-    related: ["new-zealand-band-plans", "hf-cq-and-contacts", "operating-basics"]
+    related: ["operating-basics", "hf-cq-and-contacts", "antenna-basics"]
   },
   {
     slug: "aprs-for-beginners",

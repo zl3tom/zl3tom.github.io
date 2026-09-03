@@ -6,6 +6,9 @@ const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
 const publicRoot = path.join(projectRoot, "public");
 const previewUrl = "https://zl3tom.com/social-preview.png";
 const previewAlt = "ZL3TOM Amateur Radio — Thomas Bernard in Christchurch, New Zealand";
+const facebookUrl = "https://www.facebook.com/zl3tom";
+const facebookFooterLink = `<a href="${facebookUrl}" target="_blank" rel="noopener noreferrer">ZL3TOM on Facebook ↗</a>`;
+const facebookAboutLink = `<a class="button button-secondary operator-social-link" href="${facebookUrl}" target="_blank" rel="noopener noreferrer">Visit my Facebook page ↗</a>`;
 const htmlFiles = [];
 
 async function walk(directory) {
@@ -37,8 +40,20 @@ for (const filePath of htmlFiles) {
   const canonical = valueFrom(html, /<link\s+rel=["']canonical["']\s+href=["']([^"']+)["'][^>]*>/i, "https://zl3tom.com/");
 
   html = html
+    .replaceAll("https://facebook.com/zl3tom", facebookUrl)
     .replace(/\s*<!-- ZL3TOM social sharing preview -->[\s\S]*?<!-- End ZL3TOM social sharing preview -->\s*/gi, "")
     .replace(/<meta\b[^>]*(?:property|name)=["'](?:og:(?:title|description|url|site_name|locale|image(?::(?:secure_url|type|width|height|alt))?)|twitter:(?:card|title|description|image(?::alt)?))["'][^>]*>\s*/gi, "");
+
+  if (!html.includes(facebookFooterLink)) {
+    html = html.replace(
+      '<a href="/contact">Contact ZL3TOM</a>',
+      `<a href="/contact">Contact ZL3TOM</a>${facebookFooterLink}`
+    );
+  }
+
+  if (canonical === "https://zl3tom.com/about" && !html.includes("operator-social-link")) {
+    html = html.replace("</svg></a></aside>", `</svg></a>${facebookAboutLink}</aside>`);
+  }
 
   const socialBlock = `
   <!-- ZL3TOM social sharing preview -->
@@ -58,6 +73,7 @@ for (const filePath of htmlFiles) {
   <meta name="twitter:description" content="${escapeAttribute(description)}">
   <meta name="twitter:image" content="${previewUrl}">
   <meta name="twitter:image:alt" content="${previewAlt}">
+  <link rel="me" href="${facebookUrl}">
   <!-- End ZL3TOM social sharing preview -->
 `;
 

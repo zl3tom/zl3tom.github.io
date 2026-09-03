@@ -2,15 +2,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.querySelector(".menu-button");
   const navigation = document.getElementById("main-navigation");
   if (menuButton && navigation) {
-    menuButton.addEventListener("click", () => {
-      const isOpen = navigation.classList.toggle("open");
+    function setNavigationOpen(isOpen) {
+      navigation.classList.toggle("open", isOpen);
+      document.body.classList.toggle("menu-open", isOpen);
       menuButton.setAttribute("aria-expanded", String(isOpen));
       menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    }
+
+    menuButton.addEventListener("click", () => {
+      setNavigationOpen(!navigation.classList.contains("open"));
     });
     navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
-      navigation.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
+      setNavigationOpen(false);
     }));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && navigation.classList.contains("open")) {
+        setNavigationOpen(false);
+        menuButton.focus();
+      }
+    });
+    document.addEventListener("click", (event) => {
+      if (navigation.classList.contains("open")
+        && !navigation.contains(event.target)
+        && !menuButton.contains(event.target)) {
+        setNavigationOpen(false);
+      }
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 900) setNavigationOpen(false);
+    });
   }
 
   const copyButton = document.querySelector(".template-box button");

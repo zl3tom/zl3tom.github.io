@@ -52,7 +52,9 @@ for (const filePath of htmlFiles) {
     ["name=\"twitter:image\" content=\"https://zl3tom.com/social-preview.png\"", "a Twitter/X preview image"],
     ["property=\"og:image:width\" content=\"1200\"", "the social image width"],
     ["property=\"og:image:height\" content=\"630\"", "the social image height"],
-    ["property=\"og:image:alt\"", "social preview alt text"]
+    ["property=\"og:image:alt\"", "social preview alt text"],
+    ["rel=\"me\" href=\"https://www.facebook.com/zl3tom\"", "the official Facebook identity link"],
+    [">ZL3TOM on Facebook ↗</a>", "the Facebook footer link"]
   ];
   for (const [needle, description] of requiredMarkup) {
     if (!html.includes(needle)) problems.push(`${relativeFile} is missing ${description}.`);
@@ -149,6 +151,27 @@ if (!radioPage.includes("data-qrz-viewer")
   || !radioPage.includes("data-qrz-size=\"auto\"")
   || !radioPage.includes("Open full-size")) {
   problems.push("The QRZ Logbook is missing its responsive accessible viewing controls.");
+}
+
+const aboutPage = await readFile(path.join(publicRoot, "about.html"), "utf8");
+if (!aboutPage.includes("operator-social-link")
+  || !aboutPage.includes(">Visit my Facebook page ↗</a>")) {
+  problems.push("The About page is missing its visible Facebook link.");
+}
+
+const usaGuide = await readFile(path.join(publicRoot, "guides-usa-amateur-radio-band-plans.html"), "utf8");
+if (!usaGuide.includes("Who this USA band-plan guide is for")
+  || !usaGuide.includes("Working US stations from another country")
+  || usaGuide.includes("Why a New Zealand operator may need the US plan")
+  || usaGuide.includes("Working US stations from New Zealand")) {
+  problems.push("The USA band-plan guide is not written for an international audience.");
+}
+
+const responsiveCss = await readFile(path.join(publicRoot, "site-extras.css"), "utf8");
+if (!responsiveCss.includes("body.menu-open")
+  || !responsiveCss.includes("overflow-wrap: anywhere")
+  || !responsiveCss.includes("max-height: calc(100svh - 68px)")) {
+  problems.push("The shared mobile overflow and navigation safeguards are incomplete.");
 }
 
 if (problems.length > 0) {
