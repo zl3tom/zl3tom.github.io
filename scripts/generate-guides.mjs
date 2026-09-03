@@ -351,7 +351,6 @@ function documentHead({ title, description, canonical, keywords, type = "article
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="${canonical}">
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/site-extras.css">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="${type}">
   <meta property="og:locale" content="en_NZ">
@@ -421,7 +420,7 @@ ${header("guides")}
 </main>
 ${footer()}
 ${personSchema()}
-<script src="/script.js" defer></script>
+<script src="/script.js?v=20260903-search-allpages" defer></script>
 </body>
 </html>\n`;
 }
@@ -463,7 +462,7 @@ ${header("guides")}
 </main>
 ${footer()}
 ${personSchema()}
-<script src="/script.js" defer></script>
+<script src="/script.js?v=20260903-search-allpages" defer></script>
 </body>
 </html>\n`;
 }

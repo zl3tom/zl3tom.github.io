@@ -4,3 +4,14 @@ html{-webkit-text-size-adjust:100%}*,:before,:after{box-sizing:border-box}img,sv
 .visitor-panel a{width:min(100%,640px);display:block}
 .visitor-panel img{display:block;width:100%;max-width:640px;height:auto;aspect-ratio:32/9;object-fit:contain;margin-inline:auto}
 @media (max-width:620px){.visitor-panel a{width:100%;justify-self:stretch}.visitor-panel img{width:100%;max-width:100%}}
+
+/* Shared mobile overflow and navigation safeguards */
+body.menu-open { overflow: hidden; }
+main, section, article, .card, .guide-content, .search-results { overflow-wrap: anywhere; }
+@media (max-width: 900px) {
+  .main-nav {
+    max-height: calc(100svh - 68px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
