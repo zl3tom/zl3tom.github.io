@@ -1089,3 +1089,10 @@ body.menu-open {
     padding: 12px;
   }
 }
+
+/* Search robustness: supports native <dialog> and fallback open mode. */
+body.search-open { overflow: hidden; }
+.site-search-dialog[open] { display: block; }
+@media (max-width: 900px) {
+  .site-search-dialog[open] { max-height: calc(100dvh - 1rem); }
+}

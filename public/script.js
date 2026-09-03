@@ -310,13 +310,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let siteSearchIndexPromise;
 
-  function loadSiteSearchIndex() {
+  function searchIndexUrls() {
+    const urls = [];
+    const add = (value) => {
+      try {
+        const url = new URL(value, window.location.href).href;
+        if (!urls.includes(url)) urls.push(url);
+      } catch {
+        // Ignore malformed fallback URLs and try the next candidate.
+      }
+    };
+
+    // Normal custom-domain/GitHub Pages root deployment.
+    add("/search-index.json");
+
+    // Also resolve next to script.js so search survives a sub-folder deployment.
+    const scriptElement = [...document.scripts].find((script) => /\/script\.js(?:[?#].*)?$/.test(script.src));
+    if (scriptElement?.src) {
+      try {
+        add(new URL("search-index.json", scriptElement.src).href);
+      } catch {
+        // The root candidate above remains available.
+      }
+    }
+
+    // Last fallback: beside the current document. Useful for local/static previews.
+    add("search-index.json");
+    return urls;
+  }
+
+  async function loadSiteSearchIndex() {
     if (!siteSearchIndexPromise) {
-      siteSearchIndexPromise = fetch("/search-index.json", { headers: { Accept: "application/json" } })
-        .then((response) => {
-          if (!response.ok) throw new Error("Search index unavailable");
-          return response.json();
-        });
+      siteSearchIndexPromise = (async () => {
+        let lastError;
+        for (const url of searchIndexUrls()) {
+          try {
+            const response = await fetch(url, {
+              headers: { Accept: "application/json" },
+              cache: "no-cache"
+            });
+            if (!response.ok) throw new Error(`Search index returned ${response.status}`);
+            const index = await response.json();
+            if (!Array.isArray(index)) throw new Error("Search index has an invalid format");
+            return index;
+          } catch (error) {
+            lastError = error;
+          }
+        }
+        throw lastError || new Error("Search index unavailable");
+      })();
     }
     return siteSearchIndexPromise;
   }
@@ -434,14 +476,42 @@ document.addEventListener("DOMContentLoaded", () => {
     const globalSearchInput = globalSearchForm.querySelector("input");
     connectSearchForm(globalSearchForm, globalSearchResults);
 
-    searchButton.addEventListener("click", () => {
-      searchDialog.showModal();
+    function openSearchDialog() {
+      // Close the mobile navigation first so it cannot sit over the search UI.
+      if (navigation?.classList.contains("open")) {
+        navigation.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menuButton?.setAttribute("aria-expanded", "false");
+        menuButton?.setAttribute("aria-label", "Open navigation");
+      }
+
+      try {
+        if (typeof searchDialog.showModal === "function") searchDialog.showModal();
+        else searchDialog.setAttribute("open", "");
+      } catch {
+        // Fallback for browsers/webviews that reject showModal().
+        searchDialog.setAttribute("open", "");
+      }
+      document.body.classList.add("search-open");
       window.setTimeout(() => globalSearchInput.focus(), 0);
-    });
-    searchDialog.querySelector(".search-dialog-close").addEventListener("click", () => searchDialog.close());
+    }
+
+    function closeSearchDialog() {
+      try {
+        if (typeof searchDialog.close === "function" && searchDialog.open) searchDialog.close();
+        else searchDialog.removeAttribute("open");
+      } catch {
+        searchDialog.removeAttribute("open");
+      }
+      document.body.classList.remove("search-open");
+    }
+
+    searchButton.addEventListener("click", openSearchDialog);
+    searchDialog.querySelector(".search-dialog-close").addEventListener("click", closeSearchDialog);
     searchDialog.addEventListener("click", (event) => {
-      if (event.target === searchDialog) searchDialog.close();
+      if (event.target === searchDialog) closeSearchDialog();
     });
+    searchDialog.addEventListener("close", () => document.body.classList.remove("search-open"));
   }
 
   const qrzViewer = document.querySelector("[data-qrz-viewer]");
