@@ -76,7 +76,7 @@ for (const filePath of htmlFiles) {
 
 const sitemap = await readFile(path.join(publicRoot, "sitemap.xml"), "utf8");
 const sitemapUrlCount = [...sitemap.matchAll(/<loc>https:\/\/zl3tom\.com[^<]*<\/loc>/g)].length;
-if (sitemapUrlCount !== 33) problems.push(`sitemap.xml has ${sitemapUrlCount} site URLs; expected 33.`);
+if (sitemapUrlCount !== 40) problems.push(`sitemap.xml has ${sitemapUrlCount} site URLs; expected 40.`);
 if (!sitemap.includes("<image:loc>https://zl3tom.com/social-preview.png</image:loc>")) problems.push("sitemap.xml is missing the social preview image.");
 if (!sitemap.includes("<loc>https://zl3tom.com/tools</loc>")) problems.push("sitemap.xml is missing the Radio Tools page.");
 
@@ -127,6 +127,17 @@ try {
     if (!toolsPage.includes(needle)) problems.push(`The Radio Tools page is missing ${needle}.`);
   }
   if (!toolsPage.includes('href="/tools" aria-current="page"')) problems.push("The Radio Tools page is missing its active navigation link.");
+  for (const slug of ["swr-calculator","watts-to-dbm","repeater-offset-calculator","dipole-calculator","coax-loss-calculator","maidenhead-grid-calculator","ohms-law-rf-power-calculator"]) {
+    if (!toolsPage.includes(`href="/tools/${slug}"`)) problems.push(`The Radio Tools page is missing its ${slug} full-page link.`);
+    if (!sitemap.includes(`<loc>https://zl3tom.com/tools/${slug}</loc>`)) problems.push(`sitemap.xml is missing /tools/${slug}.`);
+    try {
+      const html = await readFile(path.join(publicRoot,"tools",slug,"index.html"),"utf8");
+      if (!html.includes(`https://zl3tom.com/tools/${slug}`)) problems.push(`${slug} calculator is missing its canonical/SEO URL.`);
+    } catch { problems.push(`${slug} calculator page is missing.`); }
+  }
+  const qsoPos=toolsPage.lastIndexOf("QSO Note Generator");
+  const ohmsPos=toolsPage.lastIndexOf("Ohm's Law &amp; RF Power Calculator");
+  if (qsoPos < ohmsPos) problems.push("QSO Note Generator is not at the end of the Tools page.");
 } catch { problems.push("The Radio Tools page is missing."); }
 
 const usaGuide = await readFile(path.join(publicRoot, "guides-usa-amateur-radio-band-plans.html"), "utf8");
