@@ -15,14 +15,19 @@ async function walk(dir) {
   }
 }
 
-const footer = `<footer class="site-footer"><div class="site-container footer-grid"><div><strong>ZL3TOM</strong><p>Thomas Bernard · ZL3TOM / ZL3KY<br>Christchurch, New Zealand</p></div><div><strong>Quick links</strong><a href="/guides">Guides</a><a href="/tools">Tools</a><a href="/qsl">QSL</a></div><div><strong>Contact</strong><a href="/contact">Contact</a><a href="https://www.qrz.com/db/ZL3TOM" target="_blank" rel="noopener noreferrer">QRZ ↗</a><a href="https://www.facebook.com/zl3tom" target="_blank" rel="noopener noreferrer">Facebook ↗</a></div></div></footer>`;
+const footer = `<footer class="site-footer"><div class="site-container footer-grid"><div><strong>ZL3TOM</strong><p>Thomas Bernard · ZL3TOM / ZL3KY<br>Christchurch, New Zealand</p></div><div><strong>Quick links</strong><a href="/guides">Guides</a><a href="/tools">Tools</a><a href="/qsl">QSL</a></div><div><strong>Contact</strong><a href="/contact">Contact</a><a href="https://www.qrz.com/db/ZL3TOM" target="_blank" rel="noopener noreferrer">QRZ ↗</a><a href="https://www.facebook.com/zl3tom" target="_blank" rel="me noopener noreferrer">ZL3TOM on Facebook ↗</a></div></div></footer>`;
 
 await walk(publicRoot);
 let updated = 0;
 for (const file of htmlFiles) {
   let html = await readFile(file, "utf8");
   if (!/<footer\b/i.test(html)) continue;
-  const next = html.replace(/<footer\b[^>]*>[\s\S]*?<\/footer>/i, footer);
+
+  // Replace only the site footer. Guide/article bylines are separate footers and must remain intact.
+  const siteFooterPattern = /<footer\s+class=["']site-footer["'][^>]*>[\s\S]*?<\/footer>/i;
+  if (!siteFooterPattern.test(html)) continue;
+
+  const next = html.replace(siteFooterPattern, footer);
   if (next !== html) {
     await writeFile(file, next);
     updated += 1;
