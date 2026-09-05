@@ -76,8 +76,9 @@ for (const filePath of htmlFiles) {
 
 const sitemap = await readFile(path.join(publicRoot, "sitemap.xml"), "utf8");
 const sitemapUrlCount = [...sitemap.matchAll(/<loc>https:\/\/zl3tom\.com[^<]*<\/loc>/g)].length;
-if (sitemapUrlCount !== 32) problems.push(`sitemap.xml has ${sitemapUrlCount} site URLs; expected 32.`);
+if (sitemapUrlCount !== 33) problems.push(`sitemap.xml has ${sitemapUrlCount} site URLs; expected 33.`);
 if (!sitemap.includes("<image:loc>https://zl3tom.com/social-preview.png</image:loc>")) problems.push("sitemap.xml is missing the social preview image.");
+if (!sitemap.includes("<loc>https://zl3tom.com/tools</loc>")) problems.push("sitemap.xml is missing the Radio Tools page.");
 
 try {
   const previewImage = await readFile(path.join(publicRoot, "social-preview.png"));
@@ -119,6 +120,14 @@ if (!radioPage.includes("data-qrz-viewer") || !radioPage.includes("data-qrz-size
 
 const aboutPage = await readFile(path.join(publicRoot, "about.html"), "utf8");
 if (!aboutPage.includes("operator-social-link") || !aboutPage.includes(">Visit my Facebook page ↗</a>")) problems.push("The About page is missing its visible Facebook link.");
+
+try {
+  const toolsPage = await readFile(path.join(publicRoot, "tools.html"), "utf8");
+  for (const needle of ["Maidenhead Grid Locator", "Distance &amp; Bearing", "Frequency ↔ Wavelength", "Antenna Length Calculator", "QSO Note Generator"]) {
+    if (!toolsPage.includes(needle)) problems.push(`The Radio Tools page is missing ${needle}.`);
+  }
+  if (!toolsPage.includes('href="/tools" aria-current="page"')) problems.push("The Radio Tools page is missing its active navigation link.");
+} catch { problems.push("The Radio Tools page is missing."); }
 
 const usaGuide = await readFile(path.join(publicRoot, "guides-usa-amateur-radio-band-plans.html"), "utf8");
 if (!usaGuide.includes("Who this USA band-plan guide is for") || !usaGuide.includes("Working US stations from another country") || usaGuide.includes("Why a New Zealand operator may need the US plan") || usaGuide.includes("Working US stations from New Zealand")) problems.push("The USA band-plan guide is not written for an international audience.");
