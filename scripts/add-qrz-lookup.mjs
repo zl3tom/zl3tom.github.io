@@ -33,4 +33,15 @@ const destination = path.join(publicRoot, "tools", "callsign-lookup");
 await mkdir(destination, { recursive: true });
 await writeFile(path.join(destination, "index.html"), page);
 
-console.log("Added dedicated QRZ Callsign Lookup + QSO Note Generator page and tools link card.");
+const sitemapPath = path.join(publicRoot, "sitemap.xml");
+let sitemap = await readFile(sitemapPath, "utf8");
+const sitemapUrl = "https://zl3tom.com/tools/callsign-lookup";
+if (!sitemap.includes(`<loc>${sitemapUrl}</loc>`)) {
+  const entry = `  <url><loc>${sitemapUrl}</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\n`;
+  const toolsEntry = /(^\s*<url><loc>https:\/\/zl3tom\.com\/tools<\/loc>[^\n]*<\/url>\s*$)/m;
+  if (toolsEntry.test(sitemap)) sitemap = sitemap.replace(toolsEntry, `$1\n${entry.trimEnd()}`);
+  else sitemap = sitemap.replace("</urlset>", `${entry}</urlset>`);
+  await writeFile(sitemapPath, sitemap);
+}
+
+console.log("Added dedicated QRZ Callsign Lookup + QSO Note Generator page, tools link card and sitemap URL.");
