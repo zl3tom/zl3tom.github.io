@@ -1,0 +1,7807 @@
+QRZLogbook download for zl3tom
+    Date: Sun Sep  6 02:41:19 2026
+    Bookid: 215328
+    Records: 162
+    <ADIF_VER:5>3.1.1
+    <PROGRAMID:10>QRZLogbook
+    <PROGRAMVERSION:3>2.0
+    <eoh>
+<ituz:2>60
+<lon:11>E169 47.400
+<distance:3>390
+<my_gridsquare:8>RE66HL63
+<freq_rx:7>439.925
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:30>Kaka Point Otago. South Island
+<dxcc:3>170
+<lotw_qsl_sent:1>N
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:7>ZL4NORM
+<mode:2>FM
+<name:14>Norman MacLeod
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<country:11>New Zealand
+<my_itu_zone:2>60
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20181025
+<app_qrzlog_status:1>S
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_logid:9>379767501
+<gridsquare:8>RE43VO44
+<qsl_rcvd:1>N
+<cqz:2>32
+<freq:7>439.925
+<station_callsign:6>ZL3TOM
+<comment:17>Very Good Contact
+<time_on:4>0121
+<qso_date_off:8>20181025
+<tx_pwr:1>8
+<email:17>norm@yrless.co.nz
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S046 23.800
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<time_off:4>0121
+<qso_date:8>20181025
+<my_lon:11>E172 38.391
+<eor>
+
+<time_off:4>0610
+<my_lon:11>E172 38.391
+<qso_date:8>20181023
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S043 31.849
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<comment:22>Thanks for the Contact
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20181023
+<time_on:4>0610
+<email:17>zl3cath@yahoo.com
+<tx_pwr:1>8
+<app_qrzlog_logid:9>379767694
+<qsl_rcvd:1>N
+<gridsquare:8>RE66HL72
+<freq:5>146.5
+<cqz:1>3
+<my_itu_zone:2>60
+<country:11>New Zealand
+<qrzcom_qso_upload_date:8>20181025
+<cont:2>OC
+<app_qrzlog_status:1>S
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<call:7>ZL3CATH
+<mode:2>FM
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:23>Catherine Jemma de Croy
+<band_rx:2>2m
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:2>2m
+<qth:28>Christchurch City Canterbury
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>170
+<ituz:1>3
+<qsl_via:44>new licencee havent gotten my QSL sorted yet
+<lon:11>E172 38.921
+<my_gridsquare:8>RE66HL63
+<distance:1>1
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>146.5
+<eor>
+
+<lon:11>E172 34.048
+<my_gridsquare:8>RE66HL63
+<distance:1>6
+<freq_rx:5>146.5
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<band:2>2m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:12>Christchurch
+<lotw_qsl_sent:1>N
+<dxcc:3>170
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<mode:2>FM
+<call:6>ZL3AJT
+<name:15>Andrew Townsend
+<my_lat:11>S043 31.539
+<band_rx:2>2m
+<country:11>New Zealand
+<my_itu_zone:2>60
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20181025
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_logid:9>379767773
+<gridsquare:6>RE66gl
+<qsl_rcvd:1>N
+<freq:5>146.5
+<station_callsign:6>ZL3TOM
+<comment:35>Great Contact Thanks for the QSO :)
+<qso_date_off:8>20181025
+<time_on:4>0130
+<tx_pwr:1>8
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S043 30.382
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<time_off:4>0130
+<qso_date:8>20181025
+<my_lon:11>E172 38.391
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>S000 00.000
+<qso_date:8>20190418
+<my_lon:11>E172 38.391
+<time_off:4>0910
+<rst_rcvd:2>59
+<app_qrzlog_logid:9>414726432
+<freq:6>147.25
+<gridsquare:6>JJ00xa
+<qsl_rcvd:1>N
+<qso_date_off:8>20190418
+<time_on:4>0910
+<station_callsign:6>ZL3TOM
+<comment:46>Was good to catch you on air    Thomas  ZL3TOM
+<tx_pwr:1>8
+<eqsl_qsl_sent:1>N
+<mode:2>FM
+<call:5>ZL3FS
+<qsl_sent:1>N
+<band_rx:2>2m
+<name:12>Graham SMALL
+<my_lat:11>S043 31.539
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20190420
+<country:11>New Zealand
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<lon:11>W000 00.000
+<freq_rx:6>147.25
+<lotw_qsl_rcvd:1>N
+<distance:5>15120
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<band:2>2m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<dxcc:3>170
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:12>Christchurch
+<eor>
+
+<qsl_via:4>LOTW
+<lon:11>W095 30.839
+<ituz:1>7
+<freq_rx:5>7.135
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<distance:5>12334
+<rst_sent:2>59
+<my_name:14>Thomas Bernard
+<band:3>40m
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<eqsl_qsl_rcvd:1>N
+<qth:8>Angleton
+<eqsl_qsl_sent:1>N
+<mode:3>LSB
+<call:5>W5FMH
+<qsl_sent:1>N
+<band_rx:3>40m
+<name:3>Pat
+<my_lat:11>S043 31.539
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20190518
+<country:13>United States
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>R
+<app_qrzlog_logid:9>419637666
+<freq:5>7.135
+<cqz:1>4
+<gridsquare:8>EL29FG85
+<qsl_rcvd:1>N
+<state:2>TX
+<time_on:4>0458
+<qso_date_off:8>20190518
+<station_callsign:6>ZL3TOM
+<comment:27>Great contact via remote HF
+<tx_pwr:1>8
+<cnty:11>TX,Brazoria
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N029 16.421
+<qso_date:8>20190518
+<my_lon:11>E172 38.391
+<time_off:4>0458
+<rst_rcvd:2>59
+<eor>
+
+<tx_pwr:1>8
+<email:16>f1jvy@icloud.com
+<qso_date_off:8>20190605
+<time_on:4>0815
+<station_callsign:6>ZL3TOM
+<comment:31>Great contact on peanut xrf299b
+<freq:1>7
+<gridsquare:6>JN39cc
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>422896513
+<qso_date:8>20190605
+<my_lon:11>E172 38.391
+<time_off:4>0815
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N049 06.200
+<qrzcom_qso_upload_status:1>Y
+<dxcc:3>227
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:4>METZ
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:1>7
+<lotw_qsl_rcvd:1>N
+<distance:5>18805
+<my_gridsquare:8>RE66HL63
+<qsl_via:8>VIA BURO
+<lon:11>E006 12.400
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20190605
+<country:6>France
+<my_itu_zone:2>60
+<band_rx:3>40m
+<name:17>MANENTI JEAN MARC
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:5>F1JVY
+<mode:12>DIGITALVOICE
+<qsl_sent:1>N
+<eor>
+
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N034 03.827
+<qrzcom_qso_upload_status:1>Y
+<my_lon:11>E172 38.391
+<qso_date:8>20200105
+<rst_rcvd:2>59
+<time_off:4>0844
+<freq:4>7.19
+<qsl_rcvd:1>N
+<gridsquare:6>DM14ab
+<app_qrzlog_logid:9>466459032
+<email:17>kj6ms@verizon.net
+<cnty:14>CA,Los Angeles
+<tx_pwr:1>8
+<qso_date_off:8>20200105
+<time_on:4>0844
+<state:2>CA
+<comment:46>Great contact hope to work you again on HHHNET
+<station_callsign:6>ZL3TOM
+<band_rx:3>40m
+<my_lat:11>S043 31.539
+<name:13>MARK A NODINE
+<mode:3>SSB
+<call:5>KJ6MS
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<qrzcom_qso_upload_date:8>20200105
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>7.19
+<my_gridsquare:8>RE66HL63
+<distance:5>11124
+<rst_sent:2>59
+<lon:11>W117 57.920
+<qsl_via:22>DIRECT - NO SASE  eQSL
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:11>WEST COVINA
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<eor>
+
+<rst_sent:2>59
+<distance:5>12767
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>7.19
+<ituz:1>7
+<lon:11>W090 52.510
+<qsl_via:45>ARRL BURO - 3905CC BURO - OMISS BURO - DIRECT
+<qth:14>DENHAM SPRINGS
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_lat:11>S043 31.539
+<name:15>WILLIAM J NASON
+<band_rx:3>40m
+<qsl_sent:1>N
+<call:5>W5WJN
+<mode:3>SSB
+<eqsl_qsl_sent:1>N
+<app_qrzlog_status:1>S
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200105
+<cont:2>NA
+<qsl_rcvd:1>N
+<gridsquare:8>EM40NK48
+<cqz:1>4
+<freq:4>7.19
+<app_qrzlog_logid:9>466459071
+<cnty:13>LA,Livingston
+<email:19>w5wjnbill@gmail.com
+<tx_pwr:1>8
+<comment:47>Great to work you on HHHNET  via remote station
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20200105
+<time_on:4>0857
+<state:2>LA
+<lat:11>N030 27.228
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<rst_rcvd:2>59
+<time_off:4>0857
+<my_lon:11>E172 38.391
+<qso_date:8>20200105
+<eor>
+
+<gridsquare:8>EM48SS17
+<qsl_rcvd:1>N
+<cqz:1>4
+<freq:4>7.19
+<app_qrzlog_logid:9>466459598
+<tx_pwr:1>8
+<cnty:16>MO,Saint Charles
+<station_callsign:6>ZL3TOM
+<comment:54>Thanks for the contact on HHHNET :) via remote station
+<state:2>MO
+<qso_date_off:8>20200105
+<time_on:4>0859
+<lat:11>N038 46.953
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20200123
+<time_off:4>0859
+<rst_rcvd:2>59
+<qso_date:8>20200105
+<my_lon:11>E172 38.391
+<distance:5>13336
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<freq_rx:4>7.19
+<lotw_qsl_rcvd:1>N
+<ituz:1>7
+<lon:11>W090 29.212
+<eqsl_qsl_rcvd:1>N
+<qth:13>Saint Charles
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<name:18>Henry J Wussler IV
+<my_lat:11>S043 31.539
+<band_rx:3>40m
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>KC0CC
+<mode:3>SSB
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200105
+<eor>
+
+<qsl_via:24>I PREFER EQSL ANDOR LOTW
+<lon:11>W105 13.810
+<rst_sent:2>59
+<distance:5>12288
+<my_gridsquare:8>RE66HL63
+<freq_rx:4>7.19
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:3>40m
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:10>Canon City
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>K0JSC
+<mode:3>SSB
+<name:17>Jeffrey S Carrier
+<my_lat:11>S043 31.539
+<band_rx:3>40m
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200105
+<app_qrzlog_status:1>2
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_logid:9>466459617
+<gridsquare:6>DM78jk
+<qsl_rcvd:1>N
+<freq:4>7.19
+<station_callsign:6>ZL3TOM
+<comment:54>Thanks for the contact on HHHNET :) via remote station
+<state:2>CO
+<time_on:4>0903
+<qso_date_off:8>20200105
+<tx_pwr:1>8
+<cnty:10>CO,Fremont
+<email:14>k0jsc@arrl.net
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N038 26.220
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<time_off:4>0903
+<rst_rcvd:2>59
+<qso_date:8>20200105
+<my_lon:11>E172 38.391
+<eor>
+
+<state:2>IN
+<time_on:4>0940
+<qso_date_off:8>20200105
+<station_callsign:6>ZL3TOM
+<comment:54>Thanks for the contact on HHHNET :) via remote station
+<tx_pwr:1>8
+<email:18>c_arvo@hotmail.com
+<cnty:10>IN,Johnson
+<app_qrzlog_logid:9>466459657
+<cqz:1>4
+<freq:4>7.19
+<gridsquare:8>EM69XP72
+<qsl_rcvd:1>N
+<qso_date:8>20200105
+<my_lon:11>E172 38.391
+<time_off:4>0940
+<rst_rcvd:2>59
+<app_qrzlog_qsldate:8>20200106
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N039 38.109
+<my_name:14>Thomas Bernard
+<band:3>40m
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:9>GREENWOOD
+<lon:11>W086 01.162
+<ituz:1>8
+<freq_rx:4>7.19
+<lotw_qsl_rcvd:1>N
+<rst_sent:2>59
+<distance:5>13711
+<my_gridsquare:8>RE66HL63
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200105
+<country:13>United States
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<eqsl_qsl_sent:1>N
+<call:4>K9RM
+<mode:3>SSB
+<qsl_sent:1>N
+<band_rx:3>40m
+<name:14>CHARLES J ARVO
+<my_lat:11>S043 31.539
+<eor>
+
+<rst_rcvd:2>59
+<time_off:4>0918
+<my_lon:11>E172 38.391
+<qso_date:8>20200105
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N039 26.200
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<comment:54>Thanks for the contact on HHHNET :) via remote station
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20200105
+<time_on:4>0918
+<state:2>NV
+<cnty:7>NV,Lyon
+<email:18>denteles@gmail.com
+<tx_pwr:1>8
+<app_qrzlog_logid:9>466459705
+<qsl_rcvd:1>N
+<gridsquare:6>DM09jk
+<freq:4>7.19
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200105
+<cont:2>NA
+<app_qrzlog_status:1>S
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<call:6>WA7OZT
+<mode:3>SSB
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:15>DAVID A ENTELES
+<band_rx:3>40m
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>40m
+<qth:14>SILVER SPRINGS
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<lon:11>W119 12.600
+<qsl_via:28>E-QSL  DIRECT WITH SASE ONLY
+<rst_sent:2>59
+<distance:5>11480
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>7.19
+<eor>
+
+<lat:11>N039 04.750
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20200105
+<time_off:4>0927
+<rst_rcvd:2>59
+<qso_date:8>20200105
+<my_lon:11>E172 38.391
+<gridsquare:6>EM49xc
+<qsl_rcvd:1>N
+<freq:4>7.19
+<cqz:1>4
+<app_qrzlog_logid:9>466459969
+<tx_pwr:1>8
+<email:16>kb9pns@yahoo.com
+<cnty:11>IL,Macoupin
+<station_callsign:6>ZL3TOM
+<comment:54>Thanks for the contact on HHHNET :) via remote station
+<state:2>IL
+<qso_date_off:8>20200105
+<time_on:4>0927
+<name:14>DIRK A MATUSKA
+<my_lat:11>S043 31.539
+<band_rx:3>40m
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>W9OSI
+<mode:3>SSB
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200105
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>57
+<distance:5>13387
+<freq_rx:4>7.19
+<lotw_qsl_rcvd:1>N
+<ituz:1>8
+<lon:11>W090 02.100
+<eqsl_qsl_rcvd:1>N
+<qth:7>SHIPMAN
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<my_cq_zone:2>32
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eor>
+
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N031 08.504
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20200105
+<my_lon:11>E172 38.391
+<qso_date:8>20200105
+<rst_rcvd:2>57
+<time_off:4>0930
+<freq:4>7.19
+<cqz:1>4
+<qsl_rcvd:1>N
+<gridsquare:6>EM11ad
+<app_qrzlog_logid:9>466460013
+<cnty:11>TX,Lampasas
+<email:26>kd5kkl@dididahdahdidit.com
+<tx_pwr:1>8
+<time_on:4>0930
+<qso_date_off:8>20200105
+<state:2>TX
+<comment:54>Thanks for the contact on HHHNET :) via remote station
+<station_callsign:6>ZL3TOM
+<band_rx:3>40m
+<my_lat:11>S043 31.539
+<name:16>William S Mather
+<call:6>KD5KKL
+<mode:3>SSB
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<qrzcom_qso_upload_date:8>20200105
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>7.19
+<my_gridsquare:8>RE66HL63
+<distance:5>12281
+<rst_sent:2>57
+<lon:11>W097 59.831
+<ituz:1>7
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:7>Kempner
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<eor>
+
+<qsl_sent:1>N
+<call:6>KM4MPF
+<mode:2>FM
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:15>James R Gifford
+<band_rx:2>2m
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<app_qrzlog_status:1>S
+<qrzcom_qso_download_status:1>Y
+<ituz:1>8
+<lon:11>W085 16.121
+<rst_sent:2>59
+<distance:5>13498
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:6>146.79
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:2>2m
+<qth:6>Hixson
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N035 10.708
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<rst_rcvd:2>59
+<time_off:4>0201
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<app_qrzlog_logid:9>466839118
+<qsl_rcvd:1>N
+<gridsquare:8>EM75IE72
+<cqz:1>4
+<freq:6>146.79
+<comment:60>Thank you so much for the contact on the Sunday Night Net :)
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20200106
+<time_on:4>0201
+<state:2>TN
+<cnty:11>TN,Hamilton
+<email:24>SUNDAYNIGHTNET@GMAIL.COM
+<tx_pwr:1>8
+<eor>
+
+<tx_pwr:1>8
+<cnty:8>NM,Otero
+<state:2>NM
+<qso_date_off:8>20200106
+<time_on:4>0221
+<station_callsign:6>ZL3TOM
+<comment:41>Good to work you Ed on the OMISS 40 M Net
+<freq:5>7.181
+<cqz:1>4
+<gridsquare:8>DM72AX03
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>466840520
+<app_qrzlog_qsldate:8>20200229
+<qso_date:8>20200106
+<my_lon:11>E172 38.391
+<time_off:4>0221
+<rst_rcvd:2>59
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N032 58.449
+<qrzcom_qso_upload_status:1>Y
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<eqsl_qsl_rcvd:1>N
+<qth:10>Alamogordo
+<my_name:14>Thomas Bernard
+<band:3>40m
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:5>7.181
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<distance:5>11839
+<rst_sent:2>59
+<lon:11>W105 59.851
+<ituz:1>7
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200106
+<country:13>United States
+<my_itu_zone:2>60
+<band_rx:3>40m
+<name:11>Ed J Denton
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:6>WA5CAT
+<mode:3>LSB
+<qsl_sent:1>N
+<eor>
+
+<freq:5>3.919
+<cqz:1>4
+<qsl_rcvd:1>N
+<gridsquare:8>EL89NK65
+<app_qrzlog_logid:9>466844270
+<email:22>Chuck555@bellsouth.net
+<cnty:7>FL,Levy
+<tx_pwr:1>8
+<time_on:4>0318
+<qso_date_off:8>20200106
+<state:2>FL
+<comment:38>good to work on the friendly bunch net
+<station_callsign:6>ZL3TOM
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N029 26.401
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20200106
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<rst_rcvd:2>59
+<time_off:4>0318
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>13318
+<lon:11>W082 51.531
+<ituz:1>2
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:9>Chiefland
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_cq_zone:2>32
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:17>Charles F Cole Jr
+<call:6>KM4UNL
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<eor>
+
+<my_cq_zone:2>32
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:7>Elloree
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<ituz:1>8
+<lon:11>W080 31.983
+<qsl_via:18>QSL TO EQSL PLEASE
+<distance:5>13762
+<my_gridsquare:8>RE66HL63
+<freq_rx:5>3.919
+<lotw_qsl_rcvd:1>N
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200106
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>W2CAW
+<mode:3>LSB
+<name:19>Albert E Withrow II
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<station_callsign:6>ZL3TOM
+<state:2>SC
+<qso_date_off:8>20200106
+<time_on:4>0324
+<tx_pwr:1>8
+<cnty:10>SC,Calhoun
+<email:23>albert02@windstream.net
+<app_qrzlog_logid:9>466844387
+<gridsquare:6>EM93rn
+<qsl_rcvd:1>N
+<cqz:1>5
+<freq:5>3.919
+<time_off:4>0324
+<qso_date:8>20200106
+<my_lon:11>E172 38.391
+<app_qrzlog_qsldate:8>20251127
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N033 34.621
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<eor>
+
+<cnty:13>OH,Montgomery
+<tx_pwr:1>8
+<time_on:4>0328
+<qso_date_off:8>20200106
+<state:2>OH
+<comment:28>great to work you on the net
+<station_callsign:6>ZL3TOM
+<freq:5>3.919
+<qsl_rcvd:1>N
+<gridsquare:6>EM79tp
+<app_qrzlog_logid:9>466845680
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<time_off:4>0328
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N039 38.758
+<qrzcom_qso_upload_status:1>Y
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:10>Germantown
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_cq_zone:2>32
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<my_gridsquare:8>RE66HL63
+<distance:5>13832
+<lon:11>W084 22.077
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:17>Jeffrey M Dondero
+<mode:3>LSB
+<call:5>W8JMD
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<eor>
+
+<lat:11>N040 00.307
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20200106
+<time_off:4>0329
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<qsl_rcvd:1>N
+<gridsquare:6>FN20da
+<freq:5>3.919
+<app_qrzlog_logid:9>466845713
+<cnty:10>PA,Chester
+<email:14>w3waw@arrl.net
+<tx_pwr:1>8
+<comment:43>great to work you on The Friendly Bunch net
+<station_callsign:6>ZL3TOM
+<time_on:4>0329
+<qso_date_off:8>20200106
+<state:2>PA
+<my_lat:11>S043 31.539
+<name:15>Joseph Reich Jr
+<band_rx:3>80m
+<qsl_sent:1>N
+<call:5>W3WAW
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<my_gridsquare:8>RE66HL63
+<distance:5>14495
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<lon:11>W075 43.490
+<qth:11>Downingtown
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<eor>
+
+<app_qrzlog_qsldate:8>20200106
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<time_off:4>0332
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N036 41.999
+<qrzcom_qso_upload_status:1>Y
+<email:16>connor@w4ipc.com
+<tx_pwr:1>8
+<time_on:4>0332
+<qso_date_off:8>20200106
+<state:2>VA
+<comment:43>great to work you on The Friendly Bunch net
+<station_callsign:6>ZL3TOM
+<freq:5>3.919
+<qsl_rcvd:1>N
+<gridsquare:6>FM16uq
+<app_qrzlog_logid:9>466845742
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:14>Connor J Black
+<call:5>W4IPC
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:10>Chesapeake
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<my_gridsquare:8>RE66HL63
+<distance:5>14274
+<lon:11>W076 16.030
+<eor>
+
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<time_off:4>0335
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N033 54.941
+<qrzcom_qso_upload_status:1>Y
+<cnty:9>AL,Blount
+<email:19>bemsmedic@gmail.com
+<tx_pwr:1>8
+<time_on:4>0335
+<qso_date_off:8>20200106
+<state:2>AL
+<comment:43>great to work you on The Friendly Bunch net
+<station_callsign:6>ZL3TOM
+<freq:5>3.919
+<qsl_rcvd:1>N
+<gridsquare:6>EM63tv
+<app_qrzlog_logid:9>466845850
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>S
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:12>GARY D BURNS
+<call:6>KD4NJA
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qth:7>Oneonta
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<distance:5>13338
+<my_gridsquare:8>RE66HL63
+<lon:11>W086 20.849
+<eor>
+
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<my_lat:11>S043 31.539
+<name:15>Robert L Willey
+<band_rx:3>80m
+<iota:6>NA-140
+<qsl_sent:1>N
+<mode:3>LSB
+<call:5>K3RLW
+<eqsl_qsl_sent:1>N
+<qth:6>Trappe
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<distance:5>14400
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<ituz:1>8
+<lon:11>W076 03.550
+<app_qrzlog_qsldate:8>20200106
+<time_off:4>0338
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<lat:11>N038 41.447
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<cnty:9>MD,Talbot
+<email:13>K3RLW@usa.com
+<tx_pwr:1>8
+<comment:43>great to work you on The Friendly Bunch net
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20200106
+<time_on:4>0338
+<state:2>MD
+<qsl_rcvd:1>N
+<gridsquare:8>FM18XQ25
+<cqz:1>5
+<freq:5>3.919
+<app_qrzlog_logid:9>466848090
+<eor>
+
+<lat:11>N042 34.374
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20200106
+<time_off:4>0341
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<qsl_rcvd:1>N
+<gridsquare:8>EN82LN27
+<cqz:1>4
+<freq:5>3.919
+<app_qrzlog_logid:9>466849178
+<email:19>beebee381@yahoo.com
+<cnty:9>MI,Macomb
+<tx_pwr:1>8
+<comment:43>great to work you on The Friendly Bunch net
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20200106
+<time_on:4>0341
+<state:2>MI
+<my_lat:11>S043 31.539
+<name:16>WILLIAM C BAXTER
+<band_rx:3>80m
+<qsl_sent:1>N
+<call:5>N8XRC
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<distance:5>14090
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<ituz:1>8
+<lon:11>W083 03.674
+<qth:16>STERLING HEIGHTS
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<eor>
+
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:5>Minot
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_cq_zone:2>32
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<my_gridsquare:8>RE66HL63
+<distance:5>15095
+<rst_sent:2>59
+<lon:11>W070 18.810
+<ituz:1>8
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:22>Joseph Ian Wallingford
+<call:5>W1JIW
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<email:25>jianwallingford@gmail.com
+<cnty:15>ME,Androscoggin
+<tx_pwr:1>8
+<qso_date_off:8>20200106
+<time_on:4>0346
+<state:2>ME
+<comment:43>great to work you on The Friendly Bunch net
+<station_callsign:6>ZL3TOM
+<freq:5>3.919
+<cqz:1>5
+<qsl_rcvd:1>N
+<gridsquare:8>FN44UD29
+<app_qrzlog_logid:9>466849649
+<app_qrzlog_qsldate:8>20200106
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<rst_rcvd:2>59
+<time_off:4>0346
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N044 09.772
+<qrzcom_qso_upload_status:1>Y
+<eor>
+
+<time_on:4>0345
+<qso_date_off:8>20200106
+<state:2>NY
+<comment:62>great to work you on The Friendly Bunch net via remote station
+<station_callsign:6>ZL3TOM
+<cnty:9>NY,Queens
+<tx_pwr:1>8
+<app_qrzlog_logid:9>466849850
+<freq:5>3.919
+<qsl_rcvd:1>N
+<gridsquare:6>FN30dr
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<rst_rcvd:2>57
+<time_off:4>0345
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N040 44.601
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:11>Floral Park
+<eqsl_qsl_rcvd:1>N
+<lon:11>W073 42.984
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>57
+<distance:5>14683
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<call:6>KC2AZM
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:18>Everton A Williams
+<eor>
+
+<qso_date:8>20200106
+<my_lon:11>E172 38.391
+<time_off:4>0314
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N039 17.667
+<qrzcom_qso_upload_status:1>Y
+<tx_pwr:1>8
+<email:18>k9vmrick@gmail.com
+<cnty:8>IN,Brown
+<state:2>IN
+<time_on:4>0314
+<qso_date_off:8>20200106
+<station_callsign:6>ZL3TOM
+<comment:66>Great to work you on the The Friendly Bunch net via remote station
+<freq:5>3.919
+<gridsquare:6>EM69vh
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>466863327
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200106
+<country:13>United States
+<my_itu_zone:2>60
+<band_rx:3>80m
+<name:19>Richard D Woehlecke
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:4>K9VM
+<mode:3>LSB
+<qsl_sent:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:9>Trafalgar
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:5>3.919
+<lotw_qsl_rcvd:1>N
+<distance:5>13680
+<my_gridsquare:8>RE66HL63
+<lon:11>W086 10.400
+<eor>
+
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:6>ALBION
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<lon:11>W088 03.375
+<my_gridsquare:8>RE66HL63
+<distance:5>13487
+<freq_rx:4>3.81
+<lotw_qsl_rcvd:1>N
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200106
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:4>W9XI
+<mode:3>LSB
+<name:14>GREG B SPILLER
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<station_callsign:6>ZL3TOM
+<comment:45>thanks for the contact :)  via remote station
+<state:2>IL
+<time_on:4>1020
+<qso_date_off:8>20200106
+<tx_pwr:1>8
+<email:21>spillergreg@gmail.com
+<cnty:10>IL,Edwards
+<app_qrzlog_logid:9>466897177
+<gridsquare:6>EM58xi
+<qsl_rcvd:1>N
+<freq:4>3.81
+<time_off:4>1020
+<qso_date:8>20200106
+<my_lon:11>E172 38.391
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N038 22.277
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<eor>
+
+<my_gridsquare:8>RE66HL63
+<distance:5>13874
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>3.81
+<lon:11>W082 15.436
+<qth:10>WILLIAMSON
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_lat:11>S043 31.539
+<name:13>CLYDE F CICSO
+<band_rx:3>80m
+<qsl_sent:1>N
+<mode:3>LSB
+<call:5>AB8KY
+<eqsl_qsl_sent:1>N
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<qsl_rcvd:1>N
+<gridsquare:6>EM87up
+<freq:4>3.81
+<app_qrzlog_logid:9>466897354
+<cnty:8>WV,Mingo
+<email:15>AB8KY@yahoo.com
+<tx_pwr:1>8
+<comment:58>Thanks for the contact on remote on 80m via remote station
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20200106
+<time_on:4>1023
+<state:2>WV
+<lat:11>N037 39.584
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1023
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<eor>
+
+<lat:11>N038 46.462
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1034
+<qso_date:8>20200106
+<my_lon:11>E172 38.391
+<gridsquare:6>EM48rs
+<qsl_rcvd:1>N
+<freq:4>3.81
+<app_qrzlog_logid:9>466897810
+<tx_pwr:1>8
+<cnty:14>MO,Saint Louis
+<email:20>miloandalice@att.net
+<station_callsign:6>ZL3TOM
+<comment:43>thanks for the contact  much appreciated :)
+<state:2>MO
+<qso_date_off:8>20200106
+<time_on:4>1034
+<name:14>MILO D LOMBARD
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<mode:3>LSB
+<call:6>KA8OID
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200106
+<my_gridsquare:8>RE66HL63
+<distance:5>13330
+<freq_rx:4>3.81
+<lotw_qsl_rcvd:1>N
+<qsl_via:44>22 PEAR BLOSSOM CT ST. CHARLES MO 63303-4300
+<lon:11>W090 33.697
+<eqsl_qsl_rcvd:1>N
+<qth:13>SAINT CHARLES
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_country:11>New Zealand
+<eor>
+
+<time_off:4>1048
+<qso_date:8>20200106
+<my_lon:11>E172 38.391
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N038 06.786
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<station_callsign:6>ZL3TOM
+<comment:53>Great to work on the air :) via remote station on BFN
+<state:2>KY
+<time_on:4>1048
+<qso_date_off:8>20200106
+<tx_pwr:1>8
+<cnty:11>KY,Lawrence
+<email:15>k4lid@panix.com
+<app_qrzlog_logid:9>466898725
+<gridsquare:6>EM88qc
+<qsl_rcvd:1>N
+<freq:5>3.875
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200106
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>K4LID
+<mode:3>LSB
+<name:15>THOMAS L LYKINS
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<my_cq_zone:2>32
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:6>LOUISA
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<lon:11>W082 36.368
+<distance:5>13874
+<my_gridsquare:8>RE66HL63
+<freq_rx:5>3.875
+<lotw_qsl_rcvd:1>N
+<eor>
+
+<my_lat:11>S043 31.539
+<name:13>BRUCE E BRAUN
+<band_rx:3>80m
+<qsl_sent:1>N
+<call:5>W6SFG
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<app_qrzlog_status:1>S
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<distance:5>14082
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.875
+<ituz:1>8
+<lon:11>W079 14.802
+<qth:9>LYNCHBURG
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<lat:11>N037 19.166
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1050
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<qsl_rcvd:1>N
+<gridsquare:8>FM07JH06
+<cqz:1>5
+<freq:5>3.875
+<app_qrzlog_logid:9>466899027
+<cnty:11>VA,Campbell
+<email:21>bruce.braun@gmail.com
+<tx_pwr:1>8
+<comment:47>Great to work you via remote station on BFN NET
+<station_callsign:6>ZL3TOM
+<time_on:4>1050
+<qso_date_off:8>20200106
+<state:2>VA
+<eor>
+
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200106
+<cont:2>NA
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<call:5>KD2IM
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:17>ROBERT M BRACKETT
+<band_rx:3>80m
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<qth:9>FREEVILLE
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<lon:11>W076 23.017
+<distance:5>14571
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.875
+<time_off:4>1053
+<my_lon:11>E172 38.391
+<qso_date:8>20200106
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N042 29.309
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<comment:47>Great to work you via remote station on BFN NET
+<station_callsign:6>ZL3TOM
+<time_on:4>1053
+<qso_date_off:8>20200106
+<state:2>NY
+<cnty:11>NY,Tompkins
+<tx_pwr:1>8
+<app_qrzlog_logid:9>466899078
+<qsl_rcvd:1>N
+<gridsquare:6>FN12tl
+<freq:5>3.875
+<eor>
+
+<lat:11>N040 14.720
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1102
+<qso_date:8>20200106
+<my_lon:11>E172 38.391
+<gridsquare:6>FN10sf
+<qsl_rcvd:1>N
+<freq:5>3.875
+<app_qrzlog_logid:9>466900389
+<tx_pwr:1>8
+<cnty:10>PA,Lebanon
+<station_callsign:6>ZL3TOM
+<comment:47>Great to work you via remote station on BFN NET
+<state:2>PA
+<qso_date_off:8>20200106
+<time_on:4>1102
+<name:16>JAMES E KRAYBILL
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:6>KC9VYG
+<mode:3>LSB
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200106
+<distance:5>14454
+<my_gridsquare:8>RE66HL63
+<freq_rx:5>3.875
+<lotw_qsl_rcvd:1>N
+<lon:11>W076 25.895
+<eqsl_qsl_rcvd:1>N
+<qth:7>Lebanon
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_country:11>New Zealand
+<eor>
+
+<distance:5>13855
+<my_gridsquare:8>RE66HL63
+<freq_rx:5>3.875
+<lotw_qsl_rcvd:1>N
+<lon:11>W080 52.225
+<eqsl_qsl_rcvd:1>N
+<qth:11>MOORESVILLE
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_country:11>New Zealand
+<name:18>RALPH L SPARROW JR
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>N4ACF
+<mode:3>LSB
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200106
+<gridsquare:6>EM95nn
+<qsl_rcvd:1>N
+<freq:5>3.875
+<app_qrzlog_logid:9>466900516
+<tx_pwr:1>8
+<cnty:10>NC,Iredell
+<station_callsign:6>ZL3TOM
+<comment:47>Great to work you via remote station on BFN NET
+<state:2>NC
+<qso_date_off:8>20200106
+<time_on:4>1107
+<lat:11>N035 32.645
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1107
+<qso_date:8>20200106
+<my_lon:11>E172 38.391
+<eor>
+
+<app_qrzlog_logid:9>467122563
+<freq:5>3.919
+<cqz:1>5
+<qsl_rcvd:1>N
+<gridsquare:8>FM06BO58
+<time_on:4>0145
+<qso_date_off:8>20200107
+<state:2>VA
+<comment:62>great to work you on the friendly bunch net via remote station
+<station_callsign:6>ZL3TOM
+<cnty:8>VA,Henry
+<tx_pwr:1>8
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N036 37.133
+<my_lon:11>E172 38.391
+<qso_date:8>20200107
+<time_off:4>0145
+<lon:11>W079 52.101
+<ituz:1>8
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<my_gridsquare:8>RE66HL63
+<distance:5>13994
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:8>RIDGEWAY
+<eqsl_qsl_rcvd:1>N
+<mode:3>LSB
+<call:6>KB4ABJ
+<eqsl_qsl_sent:1>N
+<iota:6>NA-083
+<qsl_sent:1>N
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:16>BOBBY R WASHBURN
+<qrzcom_qso_upload_date:8>20200107
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>2
+<eor>
+
+<freq_rx:5>3.919
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<distance:5>13681
+<lon:11>W082 35.704
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<eqsl_qsl_rcvd:1>N
+<qth:6>EASLEY
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<band_rx:3>80m
+<name:13>ALAN P GREENE
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:6>KF4DLT
+<mode:3>LSB
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200107
+<country:13>United States
+<my_itu_zone:2>60
+<freq:5>3.919
+<gridsquare:6>EM84qu
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>467122573
+<tx_pwr:1>8
+<cnty:10>SC,Pickens
+<email:17>kf4dlt@icloud.com
+<state:2>SC
+<qso_date_off:8>20200107
+<time_on:4>0146
+<station_callsign:6>ZL3TOM
+<comment:62>great to work you on the friendly bunch net via remote station
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N034 50.621
+<qrzcom_qso_upload_status:1>Y
+<qso_date:8>20200107
+<my_lon:11>E172 38.391
+<time_off:4>0151
+<eor>
+
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>S032 01.300
+<qrzcom_qso_upload_status:1>Y
+<qso_date:8>20200107
+<my_lon:11>E172 38.391
+<time_off:4>0447
+<cqz:2>29
+<freq:5>3.605
+<gridsquare:6>OF77xx
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>467135056
+<tx_pwr:1>8
+<qso_date_off:8>20200107
+<time_on:4>0447
+<station_callsign:6>ZL3TOM
+<comment:68>Thank you for the contact good to work you on 80m via remote station
+<band_rx:3>80m
+<name:14>Milton Sparnon
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:5>VK6YD
+<mode:3>LSB
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20200107
+<country:9>Australia
+<my_itu_zone:2>60
+<freq_rx:5>3.605
+<lotw_qsl_rcvd:1>N
+<distance:4>5042
+<my_gridsquare:8>RE66HL63
+<lon:11>E115 57.400
+<ituz:2>59
+<dxcc:3>150
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:15>Kenwick WA 6107
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<eor>
+
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<eqsl_qsl_rcvd:1>N
+<qth:10>MINNETONKA
+<my_name:14>Thomas Bernard
+<band:2>2m
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:6>145.45
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<distance:5>13498
+<lon:11>W093 29.160
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200108
+<country:13>United States
+<my_itu_zone:2>60
+<band_rx:2>2m
+<name:16>JAMES R NEDBALEK
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:4>AJ0O
+<mode:2>FM
+<qsl_sent:1>N
+<tx_pwr:1>8
+<cnty:11>MN,Hennepin
+<state:2>MN
+<time_on:4>0120
+<qso_date_off:8>20200108
+<station_callsign:6>ZL3TOM
+<comment:41>Great to work you on the net via echolink
+<freq:6>145.45
+<gridsquare:6>EN34gv
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>467267412
+<qso_date:8>20200108
+<my_lon:11>E172 38.391
+<time_off:4>0120
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N044 54.702
+<qrzcom_qso_upload_status:1>Y
+<eor>
+
+<lon:11>W081 57.720
+<distance:5>13208
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:6>146.52
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:2>2m
+<my_name:14>Thomas Bernard
+<qth:10>CAPE CORAL
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qsl_sent:1>N
+<call:5>N8EYF
+<mode:2>FM
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:14>JACK D HARNESS
+<band_rx:2>2m
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200108
+<cont:2>NA
+<app_qrzlog_status:1>2
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_logid:9>467268007
+<qsl_rcvd:1>N
+<gridsquare:6>EL96ao
+<freq:6>146.52
+<comment:46>Good to Work you in Phoenix via remote station
+<station_callsign:6>ZL3TOM
+<time_on:4>0136
+<qso_date_off:8>20200108
+<state:2>FL
+<cnty:6>FL,Lee
+<email:15>N8EYF73@Aol.com
+<tx_pwr:1>8
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N026 42.402
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<time_off:4>0136
+<my_lon:11>E172 38.391
+<qso_date:8>20200108
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N033 39.113
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<time_off:4>0140
+<qso_date:8>20200108
+<my_lon:11>E172 38.391
+<app_qrzlog_logid:9>467268189
+<gridsquare:6>DM33wp
+<qsl_rcvd:1>N
+<freq:6>146.52
+<station_callsign:6>ZL3TOM
+<comment:55>Thanks for the contact in phoenix :) via remote station
+<state:2>AZ
+<qso_date_off:8>20200108
+<time_on:4>0140
+<tx_pwr:1>8
+<email:16>fligma@gmail.com
+<cnty:11>AZ,Maricopa
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<mode:2>FM
+<call:5>K7CQX
+<name:14>WARREN G BOEHM
+<my_lat:11>S043 31.539
+<band_rx:2>2m
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200108
+<app_qrzlog_status:1>2
+<qrzcom_qso_download_status:1>Y
+<lon:11>W112 06.197
+<my_gridsquare:8>RE66HL63
+<distance:5>11473
+<freq_rx:6>146.52
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<band:2>2m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:7>PHOENIX
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<eor>
+
+<time_off:4>0144
+<my_lon:11>E172 38.391
+<qso_date:8>20200108
+<lat:11>N037 20.836
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<cnty:15>VA,Chesterfield
+<tx_pwr:1>8
+<comment:46>Good to work you on Phoenix simplex via remote
+<station_callsign:6>ZL3TOM
+<time_on:4>0144
+<qso_date_off:8>20200108
+<state:2>VA
+<qsl_rcvd:1>N
+<gridsquare:8>FM17FI43
+<freq:6>146.52
+<cqz:1>5
+<app_qrzlog_logid:9>467268255
+<app_qrzlog_status:1>R
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200108
+<cont:2>NA
+<my_lat:11>S043 31.539
+<name:17>THOMAS K WILLIAMS
+<band_rx:2>2m
+<qsl_sent:1>N
+<mode:2>FM
+<call:6>WB9DZS
+<eqsl_qsl_sent:1>N
+<qth:12>CHESTERFIELD
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:2>2m
+<my_name:14>Thomas Bernard
+<my_gridsquare:8>RE66HL63
+<distance:5>14213
+<lotw_qsl_rcvd:1>N
+<freq_rx:6>146.52
+<ituz:1>8
+<lon:11>W077 32.721
+<eor>
+
+<name:16>DENNIS L CORNELL
+<my_lat:11>S043 31.539
+<band_rx:2>2m
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:6>KL7HRO
+<mode:2>FM
+<app_qrzlog_status:1>S
+<qrzcom_qso_download_status:1>Y
+<country:6>Alaska
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200108
+<distance:5>12752
+<my_gridsquare:8>RE66HL63
+<freq_rx:6>146.52
+<lotw_qsl_rcvd:1>N
+<lon:11>W103 16.200
+<qsl_via:30>Direct with SASE or via Bureau
+<eqsl_qsl_rcvd:1>N
+<qth:10>Two Rivers
+<dxcc:1>6
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<band:2>2m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<lat:11>N043 15.600
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>0206
+<qso_date:8>20200108
+<my_lon:11>E172 38.391
+<gridsquare:6>DN83ig
+<qsl_rcvd:1>N
+<freq:6>146.52
+<app_qrzlog_logid:9>467271015
+<tx_pwr:1>8
+<email:15>KL7HRO@ARRL.NET
+<station_callsign:6>ZL3TOM
+<comment:47>Great to work you on simplex via phoenix remote
+<qso_date_off:8>20200108
+<time_on:4>0206
+<eor>
+
+<app_qrzlog_status:1>2
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:9>Australia
+<qrzcom_qso_upload_date:8>20200108
+<cont:2>OC
+<my_lat:11>S043 31.539
+<name:13>Adam McCarthy
+<band_rx:3>20m
+<iota:6>OC-001
+<qsl_sent:1>N
+<call:5>VK2PW
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qth:4>RYDE
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>150
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>20m
+<my_gridsquare:8>RE66HL63
+<distance:4>2148
+<lotw_qsl_rcvd:1>N
+<freq_rx:6>14.198
+<ituz:2>59
+<lon:11>E151 07.400
+<time_off:4>1038
+<my_lon:11>E172 38.391
+<qso_date:8>20200108
+<lat:11>S033 48.800
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<tx_pwr:1>8
+<comment:63>Good to make to contact with you with on 20m via remote station
+<station_callsign:6>ZL3TOM
+<time_on:4>1038
+<qso_date_off:8>20200108
+<qsl_rcvd:1>N
+<gridsquare:6>QF56ne
+<freq:6>14.198
+<cqz:2>30
+<app_qrzlog_logid:9>467323802
+<eor>
+
+<gridsquare:6>RE78kp
+<qsl_rcvd:1>N
+<freq:6>14.198
+<cqz:2>32
+<app_qrzlog_logid:9>467324765
+<tx_pwr:1>8
+<email:16>zl2sdx@gmail.com
+<station_callsign:6>ZL3TOM
+<comment:53>Good to work you from a  VK6 Remote station :) on 20m
+<qso_date_off:8>20200108
+<time_on:4>1049
+<lat:11>S041 20.630
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>1049
+<qso_date:8>20200108
+<my_lon:11>E172 38.391
+<my_gridsquare:8>RE66HL63
+<distance:3>303
+<freq_rx:6>14.198
+<lotw_qsl_rcvd:1>N
+<ituz:2>60
+<lon:11>E174 51.504
+<eqsl_qsl_rcvd:1>N
+<qth:10>Wellington
+<lotw_qsl_sent:1>N
+<dxcc:3>170
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:3>20m
+<my_country:11>New Zealand
+<name:8>Darren H
+<my_lat:11>S043 31.539
+<band_rx:3>20m
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:6>ZL2SDX
+<mode:3>LSB
+<app_qrzlog_status:1>R
+<qrzcom_qso_download_status:1>Y
+<country:11>New Zealand
+<my_itu_zone:2>60
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20200108
+<eor>
+
+<lat:11>S036 35.234
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>0549
+<my_lon:11>E172 38.391
+<qso_date:8>20200120
+<qsl_rcvd:1>N
+<gridsquare:6>QF43lj
+<freq:6>439.95
+<app_qrzlog_logid:9>469960763
+<email:22>stevenvk2stg@gmail.com
+<tx_pwr:1>8
+<comment:60>Thank you for the Contact Steve :) via Echolink via VK1RBM-R
+<station_callsign:6>ZL3TOM
+<time_on:4>0549
+<qso_date_off:8>20200120
+<my_lat:11>S043 31.539
+<name:12>Steven Gawen
+<band_rx:4>70cm
+<iota:6>OC-001
+<qsl_sent:1>N
+<call:6>VK2STG
+<mode:2>FM
+<eqsl_qsl_sent:1>N
+<app_qrzlog_status:1>2
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:9>Australia
+<qrzcom_qso_upload_date:8>20200120
+<cont:2>OC
+<distance:4>2149
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:6>439.95
+<lon:11>E148 57.083
+<qth:12>Bungarby NSW
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>150
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S000 00.000
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<time_off:4>2000
+<rst_rcvd:2>59
+<qso_date:8>20200201
+<my_lon:11>E172 38.391
+<app_qrzlog_logid:9>473392296
+<qsl_rcvd:1>N
+<freq:4>3.75
+<station_callsign:6>ZL3TOM
+<comment:79>Thank you so much for the contact via Remote Station ZL1AA was good to work you
+<qso_date_off:8>20200201
+<time_on:4>2000
+<email:20>raygo@rocketmail.com
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>ZL1AQ
+<mode:3>LSB
+<name:12>GORDON ROUSE
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<country:11>New Zealand
+<my_itu_zone:2>60
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20200201
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<lon:11>W000 00.000
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>15120
+<freq_rx:4>3.75
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:8>HAMILTON
+<lotw_qsl_sent:1>N
+<dxcc:3>170
+<eor>
+
+<call:5>ZL1AZ
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:15>Dennis Phillips
+<qrzcom_qso_upload_date:8>20200213
+<cont:2>OC
+<my_itu_zone:2>60
+<country:11>New Zealand
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>S
+<lon:11>E174 51.504
+<ituz:2>60
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>3.75
+<my_gridsquare:8>RE66HL63
+<distance:3>303
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>170
+<qth:11>Kaikohe RD1
+<eqsl_qsl_rcvd:1>N
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>S041 20.630
+<my_lon:11>E172 38.391
+<qso_date:8>20200213
+<time_off:4>0019
+<app_qrzlog_logid:9>476246936
+<freq:4>3.75
+<cqz:2>32
+<qsl_rcvd:1>N
+<gridsquare:8>RE78KP37
+<time_on:4>0005
+<qso_date_off:8>20200213
+<comment:105>Beautiful Contact on 80m via remote station in Auckland ZL1AA Thank you so much for the contact 73 Thomas
+<station_callsign:6>ZL3TOM
+<email:18>msurgery@gmail.com
+<tx_pwr:3>100
+<eor>
+
+<my_lat:11>S043 31.539
+<name:17>JAMES R Cahill Jr
+<band_rx:3>80m
+<qsl_sent:1>N
+<call:5>N1TZM
+<mode:12>DIGITALVOICE
+<eqsl_qsl_sent:1>N
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200217
+<cont:2>NA
+<distance:5>14925
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>3.75
+<lon:11>W071 08.318
+<qth:11>New Bedford
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<lat:11>N041 43.050
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>0641
+<my_lon:11>E172 38.391
+<qso_date:8>20200217
+<qsl_rcvd:1>N
+<gridsquare:6>FN41kr
+<freq:4>3.75
+<app_qrzlog_logid:9>477291967
+<cnty:10>MA,Bristol
+<email:24>cahilljames312@gmail.com
+<tx_pwr:3>100
+<comment:74>Great to work you on The Air via the Young Transmitters NZ Net on echolink
+<station_callsign:6>ZL3TOM
+<time_on:4>0641
+<qso_date_off:8>20200217
+<state:2>MA
+<eor>
+
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N036 27.751
+<qrzcom_qso_upload_status:1>Y
+<qso_date:8>20200217
+<my_lon:11>E172 38.391
+<time_off:4>1846
+<freq:4>3.75
+<gridsquare:6>EM36ll
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>477418720
+<email:16>dennyj@gmail.com
+<cnty:8>AR,Boone
+<state:2>AR
+<qso_date_off:8>20200217
+<time_on:4>1846
+<station_callsign:6>ZL3TOM
+<comment:112>What a beautiful QSO this morning from NZ.    A pleasure to work you again on air  this Time on DStar   (REF 1C)
+<band_rx:3>80m
+<name:15>DENNY L JOHNSON
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:5>K5DCC
+<mode:12>DIGITALVOICE
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>S
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200217
+<country:13>United States
+<my_itu_zone:2>60
+<freq_rx:4>3.75
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<distance:5>13002
+<lon:11>W093 04.633
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<eqsl_qsl_rcvd:1>N
+<qth:5>Omaha
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S000 00.000
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<rst_rcvd:2>59
+<time_off:4>0607
+<my_lon:11>E172 38.391
+<qso_date:8>20200303
+<app_qrzlog_logid:9>484523629
+<qsl_rcvd:1>N
+<freq:4>3.65
+<cqz:2>32
+<comment:83>Beautiful Contact on 80m via Christchurch Club Station ZL3AC hope to work you again
+<station_callsign:6>ZL3TOM
+<time_on:4>0607
+<qso_date_off:8>20200303
+<qsl_sent:1>N
+<call:6>ZL4SVW
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<my_itu_zone:2>60
+<country:11>New Zealand
+<qrzcom_qso_upload_date:8>20200315
+<cont:2>OC
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<ituz:2>60
+<lon:11>W000 00.000
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>15120
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>3.65
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>170
+<eor>
+
+<my_itu_zone:2>60
+<country:11>New Zealand
+<qrzcom_qso_upload_date:8>20200315
+<cont:2>OC
+<app_qrzlog_status:1>2
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<call:5>ZL1RQ
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:11>Alan P Meek
+<band_rx:3>40m
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:3>40m
+<my_name:14>Thomas Bernard
+<qth:8>Mangonui
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>170
+<lon:11>E173 31.760
+<qsl_via:63>US3 postage. Please email a request first. I prefer not to qsl.
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:3>951
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>7.152
+<rst_rcvd:2>59
+<time_off:4>0651
+<my_lon:11>E172 38.391
+<qso_date:8>20200303
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S035 00.064
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<comment:83>Beautiful Contact on 40m via Christchurch Club Station ZL3AC hope to work you again
+<station_callsign:6>ZL3TOM
+<time_on:4>0651
+<qso_date_off:8>20200303
+<email:21>farnorthham@gmail.com
+<app_qrzlog_logid:9>484523773
+<qsl_rcvd:1>N
+<gridsquare:6>RF64sx
+<freq:5>7.152
+<eor>
+
+<iota:6>OC-032
+<qsl_sent:1>N
+<mode:3>LSB
+<call:5>FK4RD
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:12>YVES NOVELLA
+<band_rx:3>20m
+<my_itu_zone:2>60
+<country:13>New Caledonia
+<qrzcom_qso_upload_date:8>20200315
+<cont:2>OC
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<ituz:2>56
+<qsl_via:56>DIRECT BP 12026 MAGENTA NOUMEA CEDEX 98802 NEW CALEDONIA
+<lon:11>E166 27.437
+<my_gridsquare:8>RE66HL63
+<distance:4>2432
+<lotw_qsl_rcvd:1>N
+<freq_rx:6>14.209
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:3>20m
+<my_name:14>Thomas Bernard
+<qth:12>NOUMEA CEDEX
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>162
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S022 15.759
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<time_off:4>0815
+<my_lon:11>E172 38.391
+<qso_date:8>20200303
+<app_qrzlog_qsldate:8>20200316
+<app_qrzlog_logid:9>484531244
+<qsl_rcvd:1>N
+<gridsquare:6>RG37fr
+<freq:6>14.209
+<cqz:2>32
+<comment:99>Beautiful contact on 20m via Christchurch , NZ radio club ZL3AC  , I hope to work you again  ZL3TOM
+<station_callsign:6>ZL3TOM
+<time_on:4>0815
+<qso_date_off:8>20200303
+<email:18>yvesnovella@mls.nc
+<eor>
+
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>3.75
+<my_gridsquare:8>RE66HL63
+<distance:5>14925
+<lon:11>W071 08.318
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:11>New Bedford
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:17>JAMES R Cahill Jr
+<call:5>N1TZM
+<mode:12>DIGITALVOICE
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<qrzcom_qso_upload_date:8>20200317
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<freq:4>3.75
+<qsl_rcvd:1>N
+<gridsquare:6>FN41kr
+<app_qrzlog_logid:9>485081251
+<cnty:10>MA,Bristol
+<email:24>cahilljames312@gmail.com
+<time_on:4>0258
+<qso_date_off:8>20200317
+<state:2>MA
+<comment:49>Great Contact via echolink hope to work you again
+<station_callsign:6>ZL3TOM
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N041 43.050
+<qrzcom_qso_upload_status:1>Y
+<my_lon:11>E172 38.391
+<qso_date:8>20200317
+<time_off:4>0258
+<eor>
+
+<lon:11>W002 15.111
+<my_gridsquare:8>RE66HL63
+<distance:5>18889
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>3.75
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<qth:14>stoke on trent
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>223
+<qsl_sent:1>N
+<mode:5>DSTAR
+<call:5>M7ATE
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:12>colin stubbs
+<band_rx:3>80m
+<my_itu_zone:2>60
+<country:7>England
+<qrzcom_qso_upload_date:8>20200325
+<cont:2>EU
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_logid:9>487494298
+<qsl_rcvd:1>N
+<gridsquare:6>IO83ub
+<freq:4>3.75
+<comment:32>Great to Work you on REF 1 C  :)
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20200325
+<time_on:4>0754
+<email:22>colinstubbs5@gmail.com
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N053 04.330
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<time_off:4>0754
+<my_lon:11>E172 38.391
+<qso_date:8>20200325
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N034 00.922
+<qso_date:8>20200325
+<my_lon:11>E172 38.391
+<time_off:4>0745
+<app_qrzlog_logid:9>487494311
+<freq:3>3.5
+<gridsquare:6>DM04wa
+<qsl_rcvd:1>N
+<state:2>CA
+<qso_date_off:8>20200325
+<time_on:4>0745
+<station_callsign:6>ZL3TOM
+<comment:40>Was good to work you on REF 1 C Today :)
+<email:17>ecvmark@gmail.com
+<cnty:14>CA,Los Angeles
+<eqsl_qsl_sent:1>N
+<call:4>NK7A
+<mode:5>DSTAR
+<qsl_sent:1>N
+<band_rx:3>80m
+<name:13>MARK A HASHAM
+<my_lat:11>S043 31.539
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200325
+<country:13>United States
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<lon:11>W118 06.704
+<qsl_via:17>DO NOT USE BUREAU
+<freq_rx:3>3.5
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<distance:5>11111
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<eqsl_qsl_rcvd:1>N
+<qth:10>Montebello
+<eor>
+
+<my_lon:11>E172 38.391
+<qso_date:8>20200325
+<time_off:4>0848
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N036 48.312
+<time_on:4>0848
+<qso_date_off:8>20200325
+<state:2>NV
+<comment:41>Great to work you on REF 1 C :) Great QSO
+<station_callsign:6>ZL3TOM
+<cnty:8>NV,Clark
+<email:21>richchansen@yahoo.com
+<app_qrzlog_logid:9>487499552
+<freq:3>3.5
+<cqz:1>7
+<qsl_rcvd:1>N
+<gridsquare:8>DM26WT93
+<qrzcom_qso_upload_date:8>20200325
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>S
+<call:5>N7HUV
+<mode:5>DSTAR
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:16>Richard C Hansen
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:8>Mesquite
+<eqsl_qsl_rcvd:1>N
+<lon:11>W114 05.368
+<ituz:1>7
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>3.5
+<my_gridsquare:8>RE66HL63
+<distance:5>11588
+<eor>
+
+<email:13>W1QP@arrl.net
+<cnty:11>ME,Kennebec
+<state:2>ME
+<qso_date_off:8>20200325
+<time_on:4>0913
+<station_callsign:6>ZL3TOM
+<comment:68>Great To work you on the Breakfast Club net today via remote station
+<freq:5>3.838
+<gridsquare:6>FN54cg
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>487503486
+<qso_date:8>20200325
+<my_lon:11>E172 38.391
+<time_off:4>0913
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N044 17.310
+<qrzcom_qso_upload_status:1>Y
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:7>Chelsea
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:5>3.838
+<lotw_qsl_rcvd:1>N
+<distance:5>15140
+<my_gridsquare:8>RE66HL63
+<qsl_via:14>LOTW or Direct
+<lon:11>W069 46.100
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>R
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200325
+<country:13>United States
+<my_itu_zone:2>60
+<band_rx:3>80m
+<name:18>Michael P Bielecki
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:4>W1QP
+<mode:3>LSB
+<qsl_sent:1>N
+<eor>
+
+<qsl_sent:1>N
+<call:6>KC3EMK
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:16>Jeffery R Dorsey
+<band_rx:3>80m
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200325
+<cont:2>NA
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<lon:11>W079 18.777
+<my_gridsquare:8>RE66HL63
+<distance:5>14268
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.838
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<qth:12>Rural Valley
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N040 47.104
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<time_off:4>0913
+<my_lon:11>E172 38.391
+<qso_date:8>20200325
+<app_qrzlog_logid:9>487503673
+<qsl_rcvd:1>N
+<gridsquare:6>FN00is
+<freq:5>3.838
+<comment:46>Thanks For the Contact via 3838 Breakfast Club
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20200325
+<time_on:4>0913
+<state:2>PA
+<email:18>jeffroflhr@aol.com
+<cnty:12>PA,Armstrong
+<eor>
+
+<time_off:4>0914
+<my_lon:11>E172 38.391
+<qso_date:8>20200325
+<lat:11>N038 47.950
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<cnty:15>MD,Anne Arundel
+<comment:36>Great Contact Via 3838 Breakfast Net
+<station_callsign:6>ZL3TOM
+<time_on:4>0914
+<qso_date_off:8>20200325
+<state:2>MD
+<qsl_rcvd:1>N
+<gridsquare:8>FM18RT51
+<freq:5>3.838
+<cqz:1>5
+<app_qrzlog_logid:9>487503762
+<app_qrzlog_status:1>R
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200325
+<cont:2>NA
+<my_lat:11>S043 31.539
+<name:20>Christopher L Robson
+<band_rx:3>80m
+<qsl_sent:1>N
+<call:6>KC3OOD
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qth:9>Churchton
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_gridsquare:8>RE66HL63
+<distance:5>14369
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.838
+<ituz:1>8
+<lon:11>W076 32.249
+<eor>
+
+<call:5>W6SFG
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:13>BRUCE E BRAUN
+<qrzcom_qso_upload_date:8>20200325
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>S
+<lon:11>W079 14.802
+<ituz:1>8
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.875
+<my_gridsquare:8>RE66HL63
+<distance:5>14082
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:9>LYNCHBURG
+<eqsl_qsl_rcvd:1>N
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N037 19.166
+<my_lon:11>E172 38.391
+<qso_date:8>20200325
+<time_off:4>0956
+<app_qrzlog_logid:9>487505225
+<freq:5>3.875
+<cqz:1>5
+<qsl_rcvd:1>N
+<gridsquare:8>FM07JH06
+<qso_date_off:8>20200325
+<time_on:4>0956
+<state:2>VA
+<comment:33>Great Contact again Bruce via BFN
+<station_callsign:6>ZL3TOM
+<email:21>bruce.braun@gmail.com
+<cnty:11>VA,Campbell
+<eor>
+
+<qrzcom_qso_upload_date:8>20200326
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>2
+<mode:3>LSB
+<call:6>KB4ABJ
+<eqsl_qsl_sent:1>N
+<iota:6>NA-083
+<qsl_sent:1>N
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:16>BOBBY R WASHBURN
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_cq_zone:2>32
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qth:8>RIDGEWAY
+<eqsl_qsl_rcvd:1>N
+<lon:11>W079 52.101
+<ituz:1>8
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<distance:5>13994
+<my_gridsquare:8>RE66HL63
+<my_lon:11>E172 38.391
+<qso_date:8>20200326
+<time_off:4>0125
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N036 37.133
+<time_on:4>0125
+<qso_date_off:8>20200326
+<state:2>VA
+<comment:62>great to work you on the friendly bunch net via remote station
+<station_callsign:6>ZL3TOM
+<cnty:8>VA,Henry
+<app_qrzlog_logid:9>487758257
+<cqz:1>5
+<freq:5>3.919
+<qsl_rcvd:1>N
+<gridsquare:8>FM06BO58
+<eor>
+
+<my_country:11>New Zealand
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>150
+<qth:37>Unit 7  19 Hotham Parade Artarmon NSW
+<eqsl_qsl_rcvd:1>N
+<lon:11>E151 09.562
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>7.11
+<my_gridsquare:8>RE66HL63
+<distance:4>2146
+<qrzcom_qso_upload_date:8>20200328
+<cont:2>OC
+<my_itu_zone:2>60
+<country:9>Australia
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<call:5>VK2QA
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<iota:6>OC-212
+<qsl_sent:1>N
+<band_rx:3>40m
+<my_lat:11>S043 31.539
+<name:15>James Jim Berry
+<qso_date_off:8>20200328
+<time_on:4>0934
+<comment:19>Great Contact on HF
+<station_callsign:6>ZL3TOM
+<email:20>jimbathome@gmail.com
+<app_qrzlog_logid:9>488446893
+<freq:4>7.11
+<cqz:2>30
+<qsl_rcvd:1>N
+<gridsquare:6>QF56ne
+<my_lon:11>E172 38.391
+<qso_date:8>20200328
+<time_off:4>0934
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>S033 48.178
+<eor>
+
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200330
+<app_qrzlog_status:1>S
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<mode:3>LSB
+<call:6>KE8JAR
+<name:15>THOMAS J ROGERS
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<my_cq_zone:2>32
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:10>CASSOPOLIS
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<lon:11>W085 53.893
+<my_gridsquare:8>RE66HL63
+<distance:5>13846
+<freq_rx:5>3.816
+<lotw_qsl_rcvd:1>N
+<time_off:4>0032
+<qso_date:8>20200330
+<my_lon:11>E172 38.391
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N041 50.411
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<station_callsign:6>ZL3TOM
+<comment:92>Great to work you via remote station on 80 Meter Classic Phone Net   logged you at 00.32 UTC
+<state:2>MI
+<qso_date_off:8>20200330
+<time_on:4>0032
+<cnty:7>MI,Cass
+<app_qrzlog_logid:9>489057388
+<gridsquare:6>EN71bu
+<qsl_rcvd:1>N
+<freq:5>3.816
+<eor>
+
+<qsl_sent:1>N
+<mode:3>LSB
+<call:4>ND3L
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:16>DESMOND E WARZEL
+<band_rx:3>40m
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20200330
+<cont:2>NA
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<lon:11>W078 51.757
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>14286
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>7.185
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>40m
+<qth:10>Twin Rocks
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N040 30.152
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<rst_rcvd:2>59
+<time_off:4>0117
+<my_lon:11>E172 38.391
+<qso_date:8>20200330
+<app_qrzlog_qsldate:8>20200722
+<app_qrzlog_logid:9>489085639
+<qsl_rcvd:1>N
+<gridsquare:6>FN00nm
+<freq:5>7.185
+<comment:41>Was good to work you on OMISS 40m SSB NET
+<station_callsign:6>ZL3TOM
+<time_on:4>0117
+<qso_date_off:8>20200330
+<state:2>PA
+<cnty:10>PA,Cambria
+<email:16>DUSTYDES@AOL.COM
+<eor>
+
+<app_qrzlog_qsldate:8>20230717
+<qso_date:8>20200330
+<my_lon:11>E172 38.391
+<time_off:4>0119
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N041 44.493
+<qrzcom_qso_upload_status:1>Y
+<email:19>N2KEDDave@gmail.com
+<cnty:11>NY,Dutchess
+<state:2>NY
+<qso_date_off:8>20200330
+<time_on:4>0119
+<station_callsign:6>ZL3TOM
+<comment:41>Was good to work you on OMISS 40m SSB NET
+<cqz:1>5
+<freq:5>7.185
+<gridsquare:6>FN31br
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>489087061
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200330
+<country:13>United States
+<my_itu_zone:2>60
+<band_rx:3>40m
+<name:14>DAVID J PELKEY
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<mode:3>LSB
+<call:5>N2KED
+<qsl_sent:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:12>POUGHKEEPSIE
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:5>7.185
+<lotw_qsl_rcvd:1>N
+<distance:5>14717
+<my_gridsquare:8>RE66HL63
+<lon:11>W073 54.967
+<qsl_via:20>LoTW QRZ eQSL DIRECT
+<ituz:1>8
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N053 32.312
+<qso_date:8>20200330
+<my_lon:11>E172 38.391
+<time_off:4>0938
+<app_qrzlog_logid:9>489549949
+<freq:3>3.5
+<cqz:2>14
+<gridsquare:6>IO83qm
+<qsl_rcvd:1>N
+<qso_date_off:8>20200330
+<time_on:4>0938
+<station_callsign:6>ZL3TOM
+<comment:38>Great to work you on air via Hubnet UK
+<email:21>kieronball@live.co.uk
+<eqsl_qsl_sent:1>N
+<call:5>M6AIF
+<mode:2>FM
+<qsl_sent:1>N
+<band_rx:3>80m
+<name:11>KIERON BALL
+<my_lat:11>S043 31.539
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20200330
+<country:7>England
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>S
+<qsl_via:21>QSL DIRECT OR EQSL.CC
+<lon:11>W002 39.548
+<ituz:2>27
+<freq_rx:3>3.5
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<distance:5>18850
+<rst_sent:2>59
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>223
+<eqsl_qsl_rcvd:1>N
+<qth:32>Wigan Lancashire England WN5 9PJ
+<eor>
+
+<email:22>davemorris79@gmail.com
+<station_callsign:6>ZL3TOM
+<comment:33>Great to work you On hubnet in UK
+<qso_date_off:8>20200330
+<time_on:4>0945
+<gridsquare:6>IO92kq
+<qsl_rcvd:1>N
+<freq:3>3.5
+<app_qrzlog_logid:9>489550135
+<time_off:4>0945
+<qso_date:8>20200330
+<my_lon:11>E172 38.391
+<lat:11>N052 40.741
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<eqsl_qsl_rcvd:1>N
+<qth:9>LEICESTER
+<lotw_qsl_sent:1>N
+<dxcc:3>223
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_country:11>New Zealand
+<my_gridsquare:8>RE66HL63
+<distance:5>18897
+<freq_rx:3>3.5
+<lotw_qsl_rcvd:1>N
+<lon:11>W001 05.946
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<country:7>England
+<my_itu_zone:2>60
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20200330
+<name:11>Dave Morris
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<mode:2>FM
+<call:5>G7DOA
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N053 10.572
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<time_off:4>0951
+<qso_date:8>20200330
+<my_lon:11>E172 38.391
+<app_qrzlog_logid:9>489554082
+<gridsquare:6>JO03ae
+<qsl_rcvd:1>N
+<freq:3>3.5
+<cqz:2>14
+<station_callsign:6>ZL3TOM
+<comment:33>Good to work you on the Hubnet UK
+<qso_date_off:8>20200330
+<time_on:4>0951
+<email:23>kennethbudd@yahoo.co.uk
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>M3ZKB
+<mode:2>FM
+<name:14>Kenneth a Budd
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<country:7>England
+<my_itu_zone:2>60
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20200330
+<app_qrzlog_status:1>S
+<qrzcom_qso_download_status:1>Y
+<ituz:2>27
+<lon:11>E000 04.738
+<my_gridsquare:8>RE66HL63
+<distance:5>18811
+<freq_rx:3>3.5
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:17>mablethorpe lincs
+<lotw_qsl_sent:1>N
+<dxcc:3>223
+<eor>
+
+<app_qrzlog_status:1>S
+<qrzcom_qso_download_status:1>Y
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200330
+<name:19>Michael P Samuelson
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<mode:2>FM
+<call:6>KN6CTJ
+<eqsl_qsl_rcvd:1>N
+<qth:9>San Diego
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<distance:5>11071
+<my_gridsquare:8>RE66HL63
+<freq_rx:3>3.5
+<lotw_qsl_rcvd:1>N
+<ituz:1>1
+<lon:11>W117 12.144
+<time_off:4>0956
+<qso_date:8>20200330
+<my_lon:11>E172 38.391
+<lat:11>N032 47.470
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<email:16>KN6CTJ@gmail.com
+<cnty:12>CA,San Diego
+<station_callsign:6>ZL3TOM
+<comment:30>Good to work you on UK Hub Net
+<state:2>CA
+<qso_date_off:8>20200330
+<time_on:4>0956
+<gridsquare:8>DM12JS59
+<qsl_rcvd:1>N
+<cqz:1>6
+<freq:3>3.5
+<app_qrzlog_logid:9>489556065
+<eor>
+
+<app_qrzlog_logid:9>489558462
+<freq:3>3.5
+<cqz:2>14
+<qsl_rcvd:1>N
+<gridsquare:6>JO02pp
+<time_on:4>1011
+<qso_date_off:8>20200330
+<comment:30>Good to work you on Hub net UK
+<station_callsign:6>ZL3TOM
+<email:19>g3pxt1948@gmail.com
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N052 41.200
+<my_lon:11>E172 38.391
+<qso_date:8>20200330
+<time_off:4>1011
+<lon:11>E001 17.400
+<qsl_via:14>QSL VIA BUREAU
+<ituz:2>27
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>3.5
+<my_gridsquare:8>RE66HL63
+<distance:5>18813
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>223
+<qth:7>Norwich
+<eqsl_qsl_rcvd:1>N
+<call:5>G3PXT
+<mode:2>FM
+<eqsl_qsl_sent:1>N
+<iota:6>EU-005
+<qsl_sent:1>N
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:14>Gordon Higgins
+<qrzcom_qso_upload_date:8>20200330
+<cont:2>EU
+<my_itu_zone:2>60
+<country:7>England
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>S
+<eor>
+
+<iota:6>NA-026
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:6>WA2WAP
+<mode:3>SSB
+<name:13>David W Smith
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20200402
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<ituz:1>8
+<qsl_via:62>EQSL-OR DIRECT-SEND ME 1 ILL SEND U BACK 1 NO POSTAGE REQUIRED
+<lon:11>W073 49.120
+<rst_sent:2>59
+<distance:5>14771
+<my_gridsquare:8>RE66HL63
+<freq_rx:5>3.838
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:6>Albany
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N042 42.175
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<time_off:4>0926
+<rst_rcvd:2>59
+<qso_date:8>20200325
+<my_lon:11>E172 38.391
+<app_qrzlog_qsldate:8>20200402
+<app_qrzlog_logid:9>490866338
+<gridsquare:6>FN32cq
+<qsl_rcvd:1>N
+<cqz:1>5
+<freq:5>3.838
+<station_callsign:6>ZL3TOM
+<comment:52>Great contact via remote HF on the breakfast club :)
+<state:2>NY
+<qso_date_off:8>20200325
+<time_on:4>0926
+<email:22>wa2wap-qsl@verizon.net
+<cnty:9>NY,Albany
+<eor>
+
+<qso_date_off:8>20200413
+<time_on:4>0801
+<station_callsign:6>ZL3TOM
+<comment:82>nice contact via echolink via young transmitters nz net   logged 3.838 FM  @ 08.01
+<email:16>SM6KUT@gmail.com
+<app_qrzlog_logid:9>496480398
+<cqz:2>14
+<freq:5>3.838
+<gridsquare:6>JO68ol
+<qsl_rcvd:1>N
+<qso_date:8>20200413
+<my_lon:11>E172 38.391
+<time_off:4>0801
+<app_qrzlog_qsldate:8>20200413
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N058 28.750
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<dxcc:3>284
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:15>Lidkoping 53138
+<lon:11>E013 12.500
+<ituz:2>14
+<freq_rx:5>3.838
+<lotw_qsl_rcvd:1>N
+<distance:5>17834
+<my_gridsquare:8>RE66HL63
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20200413
+<country:6>Sweden
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<eqsl_qsl_sent:1>N
+<mode:2>FM
+<call:6>SM6KUT
+<qsl_sent:1>N
+<band_rx:3>80m
+<name:16>Thomas Bengtsson
+<my_lat:11>S043 31.539
+<eor>
+
+<station_callsign:6>ZL3TOM
+<comment:46>Thanks for the contact :)   beautiful Audio :)
+<time_on:4>0807
+<qso_date_off:8>20200427
+<email:17>arissrd@yahoo.com
+<app_qrzlog_logid:9>504634103
+<gridsquare:6>NJ93in
+<qsl_rcvd:1>N
+<freq:6>147.67
+<cqz:2>28
+<time_off:4>0807
+<rst_rcvd:2>59
+<qso_date:8>20200427
+<my_lon:11>E172 38.391
+<app_qrzlog_qsldate:8>20210711
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N003 34.200
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:2>2m
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:22>MEDAN SUMATERA UTARA -
+<lotw_qsl_sent:1>N
+<dxcc:3>327
+<ituz:2>54
+<lon:11>E098 40.740
+<my_gridsquare:8>RE66HL63
+<distance:4>9003
+<rst_sent:2>59
+<freq_rx:6>147.67
+<lotw_qsl_rcvd:1>N
+<country:9>Indonesia
+<my_itu_zone:2>60
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20200427
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<iota:6>OC-245
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:6>YD6ROA
+<mode:2>FM
+<name:16>ARIS S RUSDHANTO
+<my_lat:11>S043 31.539
+<band_rx:2>2m
+<eor>
+
+<email:34>claytonwoodsmen_2007@hotmail.co.uk
+<station_callsign:6>ZL3TOM
+<time_on:4>2204
+<qso_date_off:8>20200503
+<qsl_rcvd:1>N
+<gridsquare:6>IO82wx
+<freq:6>147.67
+<app_qrzlog_logid:9>507406462
+<time_off:4>2204
+<my_lon:11>E172 38.391
+<qso_date:8>20200503
+<lat:11>S000 00.000
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<qth:22>Longton STOKE ON TRENT
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>223
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:2>2m
+<my_name:14>Thomas Bernard
+<distance:5>15120
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:6>147.67
+<lon:11>W000 00.000
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:7>England
+<qrzcom_qso_upload_date:8>20200504
+<cont:2>EU
+<my_lat:11>S043 31.539
+<name:18>Philip-John Rowley
+<band_rx:2>2m
+<qsl_sent:1>N
+<call:5>M1IRM
+<mode:2>FM
+<eqsl_qsl_sent:1>N
+<eor>
+
+<cqz:2>28
+<freq:3>420
+<gridsquare:6>OJ03vd
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>523344480
+<email:26>info.electorials@gmail.com
+<time_on:4>0807
+<qso_date_off:8>20200622
+<station_callsign:6>ZL3TOM
+<comment:16>Great Contact :)
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N003 08.700
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20200622
+<qso_date:8>20200622
+<my_lon:11>E172 38.391
+<time_off:4>0807
+<freq_rx:3>420
+<lotw_qsl_rcvd:1>N
+<distance:4>8727
+<my_gridsquare:8>RE66HL63
+<lon:11>E101 47.400
+<qsl_via:25>QSL preferred via Direct.
+<ituz:2>54
+<dxcc:3>299
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:51>Kampung Berembang Federal Territory of Kuala Lumpur
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<band_rx:4>70cm
+<name:14>Karl Ng Ji Hao
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<mode:12>DIGITALVOICE
+<call:6>9W2IXY
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<cont:2>AS
+<qrzcom_qso_upload_date:8>20200622
+<country:13>West Malaysia
+<my_itu_zone:2>60
+<eor>
+
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20201007
+<country:13>United States
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<eqsl_qsl_sent:1>N
+<mode:3>SSB
+<call:5>N5WRO
+<qsl_sent:1>N
+<band_rx:3>40m
+<name:11>Steve Green
+<my_lat:11>S043 31.539
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:7>Saucier
+<lon:11>W089 09.631
+<ituz:1>7
+<freq_rx:4>7.28
+<lotw_qsl_rcvd:1>N
+<distance:5>12902
+<my_gridsquare:8>RE66HL63
+<qso_date:8>20201007
+<my_lon:11>E172 38.391
+<time_off:4>1852
+<app_qrzlog_qsldate:8>20201007
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N030 31.071
+<state:2>MS
+<qso_date_off:8>20201007
+<time_on:4>1852
+<station_callsign:6>ZL3TOM
+<comment:54>Great To work you on air on ambassadors for Christ net
+<cnty:11>MS,Harrison
+<app_qrzlog_logid:9>552178643
+<cqz:1>4
+<freq:4>7.28
+<gridsquare:8>EM50KM04
+<qsl_rcvd:1>N
+<eor>
+
+<qso_date:8>20201012
+<my_lon:11>E172 38.391
+<time_off:4>0708
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>S036 05.111
+<state:2>OZ
+<time_on:4>0708
+<qso_date_off:8>20201012
+<station_callsign:6>ZL3TOM
+<comment:105>Good to work you on my net Young Transmitter NZ Net    70cm - 438.500  @ 07:08 utc 12/10/20  Digitalvoice
+<app_qrzlog_logid:9>553440468
+<freq:5>438.5
+<gridsquare:6>QF33lv
+<qsl_rcvd:1>N
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20201012
+<country:9>Australia
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>2
+<eqsl_qsl_sent:1>N
+<mode:12>DIGITALVOICE
+<call:6>VK2CPR
+<qsl_sent:1>N
+<band_rx:4>70cm
+<name:10>PJ SHIELDS
+<my_lat:11>S043 31.539
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>150
+<eqsl_qsl_rcvd:1>N
+<qth:15>ALBURY NSW 2640
+<lon:11>E146 55.931
+<freq_rx:5>438.5
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<distance:4>2335
+<eor>
+
+<country:7>Germany
+<my_itu_zone:2>60
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20201012
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<mode:12>DIGITALVOICE
+<call:6>DO3YAO
+<name:15>Michael Lohmann
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:16>37603 Holzminden
+<dxcc:3>230
+<lotw_qsl_sent:1>N
+<ituz:2>28
+<lon:11>E009 27.400
+<rst_sent:2>59
+<distance:5>18461
+<my_gridsquare:8>RE66HL63
+<freq_rx:5>438.5
+<lotw_qsl_rcvd:1>N
+<time_off:4>0717
+<rst_rcvd:2>59
+<qso_date:8>20201012
+<my_lon:11>E172 38.391
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N051 48.700
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<station_callsign:6>ZL3TOM
+<comment:105>Great to work you on the Young Transmitters NZ Net    12/10/20  07:17 UTC  70cm - 438.500mhz  digtalvoice
+<qso_date_off:8>20201012
+<time_on:4>0717
+<app_qrzlog_logid:9>553442138
+<gridsquare:6>JO41rt
+<qsl_rcvd:1>N
+<cqz:2>14
+<freq:5>438.5
+<eor>
+
+<qsl_sent:1>N
+<mode:12>DIGITALVOICE
+<call:5>K5KBM
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:14>Kyle B Maxwell
+<band_rx:4>70cm
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20201015
+<cont:2>NA
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<lon:11>W085 09.063
+<rst_sent:2>59
+<distance:5>13417
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>438.5
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<qth:6>Bremen
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N033 44.186
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<time_off:4>1855
+<my_lon:11>E172 38.391
+<qso_date:8>20201015
+<app_qrzlog_qsldate:8>20201015
+<app_qrzlog_logid:9>554378877
+<qsl_rcvd:1>N
+<gridsquare:6>EM73kr
+<freq:3>420
+<comment:68>Good to work you on DMR New Zealand & via ambassadors for Christ net
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20201015
+<time_on:4>1855
+<state:2>GA
+<email:17>k5kbm15@gmail.com
+<cnty:11>GA,Haralson
+<eor>
+
+<iota:6>OC-001
+<qsl_sent:1>N
+<call:6>VK2AOR
+<mode:12>DIGITALVOICE
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:19>Robert J Bob Hudson
+<band_rx:4>70cm
+<my_itu_zone:2>60
+<country:9>Australia
+<qrzcom_qso_upload_date:8>20201019
+<cont:2>OC
+<app_qrzlog_status:1>2
+<qrzcom_qso_download_status:1>Y
+<ituz:1>3
+<lon:11>E151 30.450
+<my_gridsquare:8>RE66HL63
+<distance:4>2157
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>438.5
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<qth:7>Gorokan
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>150
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S033 15.720
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<time_off:4>0612
+<my_lon:11>E172 38.391
+<qso_date:8>20201019
+<app_qrzlog_logid:9>555399527
+<qsl_rcvd:1>N
+<gridsquare:6>QF56sr
+<freq:5>438.5
+<comment:84>Fantastic Contact Good To work you via ANZEL Network On my Young Transmitters NZ Net
+<station_callsign:6>ZL3TOM
+<time_on:4>0612
+<qso_date_off:8>20201019
+<email:18>vk2aor@bigpond.com
+<eor>
+
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20201019
+<country:13>United States
+<my_itu_zone:2>60
+<band_rx:4>70cm
+<name:16>Scott was Hughes
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:5>N4UPC
+<mode:12>DIGITALVOICE
+<qsl_sent:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:13>Bowling Green
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:5>438.5
+<lotw_qsl_rcvd:1>N
+<distance:5>13519
+<my_gridsquare:8>RE66HL63
+<lon:11>W086 26.837
+<ituz:1>8
+<app_qrzlog_qsldate:8>20201019
+<qso_date:8>20201019
+<my_lon:11>E172 38.391
+<time_off:4>0627
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N036 57.062
+<qrzcom_qso_upload_status:1>Y
+<email:11>n4upc@pm.me
+<cnty:9>KY,Warren
+<state:2>KY
+<qso_date_off:8>20201019
+<time_on:4>0627
+<station_callsign:6>ZL3TOM
+<comment:45>Great to work you on Air :) via ANZEL Network
+<cqz:1>4
+<freq:5>438.5
+<gridsquare:8>EM66SW68
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>555408677
+<eor>
+
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20201019
+<country:7>England
+<my_itu_zone:2>60
+<band_rx:4>70cm
+<name:17>-Paul A -Perretta
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:5>G3SEA
+<mode:12>DIGITALVOICE
+<qsl_sent:1>N
+<dxcc:3>223
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:8>Honolulu
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:5>438.5
+<lotw_qsl_rcvd:1>N
+<distance:5>15120
+<my_gridsquare:8>RE66HL63
+<lon:11>W000 00.000
+<qso_date:8>20201019
+<my_lon:11>E172 38.391
+<time_off:4>0639
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>S000 00.000
+<qrzcom_qso_upload_status:1>Y
+<state:2>HI
+<qso_date_off:8>20201019
+<time_on:4>0639
+<station_callsign:6>ZL3TOM
+<comment:166>Great to work you on ANZEL Network via *Wales* conf on the Young Transmitters NZ Net  via G3SEA/kh6 Portable in Hawaii     Logged @ 06:39 UTC 438.500mhz digital voice
+<freq:5>438.5
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>555409336
+<eor>
+
+<freq:5>438.5
+<cqz:2>30
+<gridsquare:6>QF56lh
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>555431407
+<email:17>vk2dy@anzel.radio
+<time_on:4>0659
+<qso_date_off:8>20201019
+<station_callsign:6>ZL3TOM
+<comment:78>Good To Work you on the ANZEL Network / on the Young Transmitters NZ Net Again
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>S033 42.138
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20201019
+<qso_date:8>20201019
+<my_lon:11>E172 38.391
+<time_off:4>0659
+<rst_rcvd:2>59
+<freq_rx:5>438.5
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:4>2171
+<lon:11>E150 55.294
+<ituz:2>59
+<lotw_qsl_sent:1>N
+<dxcc:3>150
+<eqsl_qsl_rcvd:1>N
+<qth:25>Kellyville Ridge NSW 2155
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<band_rx:4>70cm
+<name:18>Robert Moldenhauer
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:5>VK2DY
+<mode:12>DIGITALVOICE
+<iota:6>OC-001
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20201019
+<country:9>Australia
+<my_itu_zone:2>60
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N036 24.289
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<time_off:4>1755
+<qso_date:8>20201019
+<my_lon:11>E172 38.391
+<app_qrzlog_logid:9>555593121
+<gridsquare:6>FM06hj
+<qsl_rcvd:1>N
+<freq:4>7.28
+<station_callsign:6>ZL3TOM
+<comment:70>Great to work you on air via the KJ4TN Remtoe  7.280mhz  17.55 utc lsb
+<state:2>NC
+<qso_date_off:8>20201019
+<time_on:4>1755
+<cnty:10>NC,Caswell
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<mode:3>LSB
+<call:6>KG4BKE
+<name:14>JAMES H GRAVES
+<my_lat:11>S043 31.539
+<band_rx:3>40m
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20201019
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<lon:11>W079 20.146
+<distance:5>14022
+<my_gridsquare:8>RE66HL63
+<freq_rx:4>7.28
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:3>40m
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:11>YANCEYVILLE
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<eor>
+
+<ituz:1>8
+<qsl_via:31>Direct no SASE LoTW eQSL or QRZ
+<lon:11>W081 40.017
+<distance:5>13814
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<qth:6>LENOIR
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qsl_sent:1>N
+<call:5>W4SCT
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:11>BRAD R COOK
+<band_rx:3>80m
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20201023
+<cont:2>NA
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_logid:9>556426247
+<qsl_rcvd:1>N
+<gridsquare:8>EM95DV91
+<cqz:1>4
+<freq:5>3.919
+<comment:42>Good to work you on the friendly Bunch Net
+<station_callsign:6>ZL3TOM
+<time_on:4>0038
+<qso_date_off:8>20201023
+<state:2>NC
+<cnty:11>NC,Caldwell
+<email:15>w4sct@yahoo.com
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N035 52.894
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<time_off:4>0038
+<my_lon:11>E172 38.391
+<qso_date:8>20201023
+<app_qrzlog_qsldate:8>20201023
+<eor>
+
+<mode:3>LSB
+<call:6>KC2AZM
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:18>Everton A Williams
+<qrzcom_qso_upload_date:8>20201023
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<lon:11>W073 42.984
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<distance:5>14683
+<my_gridsquare:8>RE66HL63
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qth:11>Floral Park
+<eqsl_qsl_rcvd:1>N
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N040 44.601
+<my_lon:11>E172 38.391
+<qso_date:8>20201023
+<time_off:4>0047
+<app_qrzlog_logid:9>556426832
+<freq:5>3.919
+<qsl_rcvd:1>N
+<gridsquare:6>FN30dr
+<time_on:4>0047
+<qso_date_off:8>20201023
+<state:2>NY
+<comment:42>Good to work you on the friendly Bunch Net
+<station_callsign:6>ZL3TOM
+<cnty:9>NY,Queens
+<eor>
+
+<my_cq_zone:2>32
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:12>Christchurch
+<dxcc:3>170
+<lotw_qsl_sent:1>N
+<lon:11>W000 00.000
+<qsl_via:60>QRZ , EQSL (Always Send Email to me of Log so I can confirm)
+<distance:5>15120
+<my_gridsquare:8>RE66HL63
+<freq_rx:5>3.919
+<lotw_qsl_rcvd:1>N
+<country:11>New Zealand
+<my_itu_zone:2>60
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20210315
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>ZL3KY
+<mode:3>LSB
+<name:14>Thomas Bernard
+<my_lat:11>S043 31.539
+<band_rx:3>80m
+<station_callsign:6>ZL3TOM
+<comment:18>Good communication
+<qso_date_off:8>20210315
+<time_on:4>1828
+<email:17>zl3ky@tdbnz.email
+<app_qrzlog_logid:9>610222087
+<gridsquare:6>RE78kp
+<qsl_rcvd:1>N
+<freq:5>3.919
+<time_off:4>1828
+<qso_date:8>20210315
+<my_lon:11>E172 38.391
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S000 00.000
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<eor>
+
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>2
+<qrzcom_qso_upload_date:8>20210405
+<cont:2>EU
+<my_itu_zone:2>60
+<country:7>England
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:24>Raymond Frederick Maltby
+<call:6>2E1DFI
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<dxcc:3>223
+<lotw_qsl_sent:1>N
+<qth:12>Lincolnshire
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_cq_zone:2>32
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>438.5
+<distance:5>18844
+<my_gridsquare:8>RE66HL63
+<lon:11>W000 24.513
+<qsl_via:47>VIA BUREAU OR DIRECT, PLEASE E-MAIL FOR ADDRESS
+<ituz:2>27
+<my_lon:11>E172 38.391
+<qso_date:8>20210405
+<time_off:4>2015
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N052 59.722
+<qrzcom_qso_upload_status:1>Y
+<email:19>rfmaltby@icloud.com
+<time_on:4>2015
+<qso_date_off:8>20210405
+<comment:13>Great Contact
+<station_callsign:6>ZL3TOM
+<cqz:2>14
+<freq:5>438.5
+<qsl_rcvd:1>N
+<gridsquare:6>IO92tx
+<app_qrzlog_logid:9>619608050
+<eor>
+
+<time_off:4>2030
+<my_lon:11>E172 38.391
+<qso_date:8>20210405
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S000 00.000
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<comment:46>great contact :) via Our Christchurch Repeater
+<station_callsign:6>ZL3TOM
+<time_on:4>2030
+<qso_date_off:8>20210405
+<email:16>ei9gmb@gmail.com
+<app_qrzlog_logid:9>619610511
+<qsl_rcvd:1>N
+<gridsquare:6>IO63dl
+<freq:5>438.5
+<my_itu_zone:2>60
+<country:7>Ireland
+<qrzcom_qso_upload_date:8>20210405
+<cont:2>EU
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<call:6>EI9GMB
+<mode:12>DIGITALVOICE
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:12>Anthony Bond
+<band_rx:4>70cm
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<qth:16>Dundalk Co.Louth
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>245
+<lotw_qsl_sent:1>N
+<lon:11>W000 00.000
+<distance:5>15120
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>438.5
+<eor>
+
+<band_rx:4>70cm
+<name:12>Graham Lomas
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:5>M7GPL
+<mode:12>DIGITALVOICE
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>2
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20210405
+<country:7>England
+<my_itu_zone:2>60
+<freq_rx:5>438.5
+<lotw_qsl_rcvd:1>N
+<distance:5>18899
+<my_gridsquare:8>RE66HL63
+<lon:11>W001 37.600
+<dxcc:3>223
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:17>Burton upon Trent
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N052 48.700
+<qrzcom_qso_upload_status:1>Y
+<qso_date:8>20210405
+<my_lon:11>E172 38.391
+<time_off:4>2041
+<freq:5>438.5
+<gridsquare:6>IO92et
+<qsl_rcvd:1>N
+<app_qrzlog_logid:9>619611740
+<email:21>grahamlomas@gmail.com
+<qso_date_off:8>20210405
+<time_on:4>2041
+<station_callsign:6>ZL3TOM
+<comment:13>Great Contact
+<eor>
+
+<qso_date:8>20210405
+<my_lon:11>E172 38.391
+<time_off:4>2052
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N026 12.095
+<state:2>FL
+<qso_date_off:8>20210405
+<time_on:4>2052
+<station_callsign:6>ZL3TOM
+<comment:28>Great to work you on the air
+<email:16>KN4ZXV@gmail.com
+<cnty:10>FL,Collier
+<app_qrzlog_logid:9>619614831
+<cqz:1>5
+<freq:5>438.5
+<gridsquare:8>EL96CE78
+<qsl_rcvd:1>N
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20210405
+<country:13>United States
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>2
+<eqsl_qsl_sent:1>N
+<call:6>KN4ZXV
+<mode:12>DIGITALVOICE
+<qsl_sent:1>N
+<band_rx:4>70cm
+<name:15>Matthew R Owens
+<my_lat:11>S043 31.539
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:6>Naples
+<lon:11>W081 46.049
+<ituz:1>8
+<freq_rx:5>438.5
+<lotw_qsl_rcvd:1>N
+<distance:5>13190
+<my_gridsquare:8>RE66HL63
+<eor>
+
+<iota:6>NA-026
+<qsl_sent:1>N
+<mode:3>LSB
+<call:5>N2UIF
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:20>WILLIAM K LAMBERTSEN
+<band_rx:3>80m
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20210831
+<cont:2>NA
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<ituz:1>8
+<lon:11>W073 40.320
+<distance:5>14785
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<qth:4>TROY
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N042 46.827
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<time_off:4>0220
+<my_lon:11>E172 38.391
+<qso_date:8>20210831
+<app_qrzlog_qsldate:8>20220208
+<app_qrzlog_logid:9>667955135
+<qsl_rcvd:1>N
+<gridsquare:6>FN32ds
+<cqz:1>5
+<freq:5>3.919
+<comment:16>Great Contact :)
+<station_callsign:6>ZL3TOM
+<time_on:4>0220
+<qso_date_off:8>20210831
+<state:2>NY
+<email:17>wwlambo@yahoo.com
+<eor>
+
+<cqz:1>5
+<freq:5>3.919
+<qsl_rcvd:1>N
+<gridsquare:8>FN20WH64
+<app_qrzlog_logid:9>668232285
+<cnty:11>NJ,Monmouth
+<email:17>ICOM757@GMAIL.COM
+<time_on:4>0052
+<qso_date_off:8>20210901
+<state:2>NJ
+<comment:39>Great to work you on the friendly bunch
+<station_callsign:6>ZL3TOM
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N040 18.668
+<qrzcom_qso_upload_status:1>Y
+<my_lon:11>E172 38.391
+<qso_date:8>20210901
+<time_off:4>0052
+<lotw_qsl_rcvd:1>N
+<freq_rx:5>3.919
+<distance:5>14632
+<my_gridsquare:8>RE66HL63
+<lon:11>W074 06.599
+<ituz:1>8
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qth:9>Eatontown
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:3>80m
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<band_rx:3>80m
+<my_lat:11>S043 31.539
+<name:19>Michael F Schiafone
+<mode:3>LSB
+<call:5>K2MFS
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>2
+<qrzcom_qso_upload_date:8>20210901
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<eor>
+
+<gridsquare:6>QG62mn
+<qsl_rcvd:1>N
+<freq:4>7.14
+<app_qrzlog_logid:9>681838348
+<email:25>stevedarveniza1@gmail.com
+<station_callsign:6>ZL3TOM
+<comment:20>Good to work you sir
+<state:2>QL
+<time_on:4>0718
+<qso_date_off:8>20211013
+<lat:11>S027 27.000
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<time_off:4>0718
+<qso_date:8>20211013
+<my_lon:11>E172 38.391
+<my_gridsquare:8>RE66HL63
+<distance:4>2506
+<freq_rx:4>7.14
+<lotw_qsl_rcvd:1>N
+<lon:11>E153 02.400
+<eqsl_qsl_rcvd:1>N
+<qth:8>as above
+<lotw_qsl_sent:1>N
+<dxcc:3>150
+<my_cq_zone:2>32
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<name:15>Steve Darveniza
+<my_lat:11>S043 31.539
+<band_rx:3>40m
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>VK4VN
+<mode:3>LSB
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<country:9>Australia
+<my_itu_zone:2>60
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20211013
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N036 59.918
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<time_off:4>0106
+<my_lon:11>E172 38.391
+<qso_date:8>20211229
+<app_qrzlog_logid:9>709577433
+<qsl_rcvd:1>N
+<gridsquare:6>PM36nx
+<cqz:2>25
+<freq:3>3.5
+<comment:58>Great Contact to Korea Good to work you on the Echolink :)
+<station_callsign:6>ZL3TOM
+<time_on:4>0106
+<qso_date_off:8>20211229
+<email:20>jchksujh@hanmail.net
+<qsl_sent:1>N
+<call:6>HL2BOP
+<mode:12>DIGITALVOICE
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:15>Cheol Heon,Jang
+<band_rx:3>80m
+<my_itu_zone:2>60
+<country:11>South Korea
+<qrzcom_qso_upload_date:8>20211229
+<cont:2>AS
+<app_qrzlog_status:1>R
+<qrzcom_qso_download_status:1>Y
+<ituz:2>44
+<lon:11>E127 07.092
+<qsl_via:12>Direct, eQSL
+<distance:5>10063
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>3.5
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<qth:28>Pyeong Tak-Si, Gyeong Gi-Do,
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>137
+<lotw_qsl_sent:1>N
+<eor>
+
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:9>Sri Lanka
+<qrzcom_qso_upload_date:8>20220613
+<cont:2>AS
+<my_lat:11>S043 31.539
+<name:20>Saman Fernando (SAM)
+<band_rx:3>80m
+<qsl_sent:1>N
+<call:5>4S5ST
+<mode:12>DIGITALVOICE
+<eqsl_qsl_sent:1>N
+<qth:7>Colombo
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>315
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>80m
+<my_gridsquare:8>RE66HL63
+<distance:5>10741
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>3.5
+<lon:11>E079 57.586
+<app_qrzlog_qsldate:8>20220613
+<time_off:4>0825
+<my_lon:11>E172 38.391
+<qso_date:8>20220613
+<lat:11>N006 46.397
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<email:19>samanfern@gmail.com
+<comment:71>Great To work you on the YOTA Oceania Net - ZL3TOM  / ZL6YOTA    Thomas
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20220613
+<time_on:4>0825
+<qsl_rcvd:1>N
+<gridsquare:6>MJ96xs
+<freq:3>3.5
+<app_qrzlog_logid:9>778691092
+<eor>
+
+<qsl_rcvd:1>N
+<gridsquare:6>IO94fu
+<cqz:2>14
+<freq:7>145.688
+<app_qrzlog_logid:10>1168989331
+<email:24>alan.pamler@talktalk.net
+<comment:29>Great to work you on Yota Net
+<station_callsign:6>ZL3TOM
+<time_on:4>0751
+<qso_date_off:8>20240902
+<lat:11>N054 50.082
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20241028
+<time_off:4>0751
+<my_lon:11>E172 38.391
+<qso_date:8>20240902
+<distance:5>18689
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:7>145.688
+<ituz:2>27
+<lon:11>W001 32.178
+<qth:12>Great Lumley
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>223
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:2>2m
+<my_lat:11>S043 31.539
+<name:11>Alan Pamler
+<band_rx:2>2m
+<iota:4>none
+<qsl_sent:1>N
+<call:5>M7GQH
+<mode:2>FM
+<eqsl_qsl_sent:1>N
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:7>England
+<qrzcom_qso_upload_date:8>20241028
+<cont:2>EU
+<eor>
+
+<my_lon:11>E172 38.391
+<qso_date:8>20260104
+<rst_rcvd:2>59
+<time_off:4>0223
+<app_qrzlog_qsldate:8>20260104
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>S041 21.250
+<time_on:4>0223
+<qso_date_off:8>20260104
+<comment:43>40 m via ZL1AA Remote Station using IC-7300
+<station_callsign:6>ZL3TOM
+<email:18>myzl1cjh@gmail.com
+<app_qrzlog_logid:10>1380284412
+<cqz:2>32
+<freq:4>7.09
+<qsl_rcvd:1>N
+<gridsquare:6>RE78kp
+<qrzcom_qso_upload_date:8>20260104
+<cont:2>OC
+<my_itu_zone:2>60
+<country:11>New Zealand
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<call:5>ZL2CJ
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:3>40m
+<my_lat:11>S043 31.539
+<name:14>Chris J Hattan
+<my_country:11>New Zealand
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<dxcc:3>170
+<lotw_qsl_sent:1>N
+<qth:8>Frankton
+<eqsl_qsl_rcvd:1>N
+<lon:11>E174 52.500
+<ituz:2>60
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>7.09
+<distance:3>303
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<eor>
+
+<qso_date:8>20260104
+<my_lon:11>E172 38.391
+<time_off:4>0250
+<rst_rcvd:2>59
+<app_qrzlog_qsldate:8>20260104
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N035 17.945
+<state:2>NC
+<qso_date_off:8>20260104
+<time_on:4>0250
+<station_callsign:6>ZL3TOM
+<comment:60>Great contact on OMISS 40m Net via IC-7300  Coconut Creek FL
+<email:21>mike.we4bad@gmail.com
+<cnty:14>NC,Mecklenburg
+<app_qrzlog_logid:10>1380291946
+<cqz:1>4
+<freq:5>7.204
+<gridsquare:6>EM95oh
+<qsl_rcvd:1>N
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20260104
+<country:13>United States
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<eqsl_qsl_sent:1>N
+<call:6>WE4BAD
+<mode:3>LSB
+<qsl_sent:1>N
+<band_rx:3>40m
+<name:17>Michael S Gerlack
+<my_lat:11>S043 31.539
+<my_name:14>Thomas Bernard
+<band:3>40m
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:9>Charlotte
+<lon:11>W080 47.480
+<ituz:1>8
+<freq_rx:5>7.204
+<lotw_qsl_rcvd:1>N
+<distance:5>13846
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<eor>
+
+<qso_date:8>20260104
+<my_lon:11>E172 38.391
+<time_off:4>0414
+<rst_rcvd:2>59
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>S041 20.630
+<qrzcom_qso_upload_status:1>Y
+<email:25>mjcjscott@slingshot.co.nz
+<qso_date_off:8>20260104
+<time_on:4>0414
+<station_callsign:6>ZL3TOM
+<comment:76>Great Contact on 40m - Via Remote Station ZL1AA  Auckland on a IC-7300 Radio
+<cqz:2>32
+<freq:4>7.09
+<gridsquare:6>RE78kp
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1380309192
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>2
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20260104
+<country:11>New Zealand
+<my_itu_zone:2>60
+<band_rx:3>40m
+<name:12>Martin SCOTT
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:6>ZL3CTN
+<mode:3>LSB
+<qsl_sent:1>N
+<dxcc:3>170
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:10>Lower Hutt
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:4>7.09
+<lotw_qsl_rcvd:1>N
+<distance:3>303
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<lon:11>E174 51.504
+<ituz:2>60
+<eor>
+
+<qso_date:8>20260104
+<my_lon:11>E172 38.391
+<time_off:4>0442
+<rst_rcvd:2>59
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>S036 53.871
+<qrzcom_qso_upload_status:1>Y
+<email:19>zl1skl@nzart.org.nz
+<time_on:4>0442
+<qso_date_off:8>20260104
+<station_callsign:6>ZL3TOM
+<comment:68>Great to work you on air Via ZL1AA - Remote Station on radio IC-7300
+<freq:3>7.1
+<gridsquare:6>RF73jc
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1380317051
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20260104
+<country:11>New Zealand
+<my_itu_zone:2>60
+<band_rx:3>40m
+<name:9>Soren Low
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:6>ZL1SKL
+<mode:3>LSB
+<qsl_sent:1>N
+<dxcc:3>170
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:8>Auckland
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:3>7.1
+<lotw_qsl_rcvd:1>N
+<rst_sent:2>59
+<distance:3>760
+<my_gridsquare:8>RE66HL63
+<lon:11>E174 48.527
+<eor>
+
+<band_rx:3>40m
+<name:13>Stuart McLeod
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<mode:3>LSB
+<call:5>ZL2XC
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20260104
+<country:11>New Zealand
+<my_itu_zone:2>60
+<freq_rx:5>7.123
+<lotw_qsl_rcvd:1>N
+<distance:3>564
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<lon:11>E176 50.177
+<ituz:2>60
+<dxcc:3>170
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:17>Taradale , Napier
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>S039 32.690
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260104
+<qso_date:8>20260104
+<my_lon:11>E172 38.391
+<time_off:4>0512
+<rst_rcvd:2>59
+<cqz:2>32
+<freq:5>7.123
+<gridsquare:6>RF80kk
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1380319486
+<email:21>zl2xc@slingshot.co.nz
+<qso_date_off:8>20260104
+<time_on:4>0512
+<station_callsign:6>ZL3TOM
+<comment:76>Great Contact on 40m - Via Remote Station ZL1AA  Auckland on a IC-7300 Radio
+<eor>
+
+<cqz:1>5
+<freq:4>7.19
+<qsl_rcvd:1>N
+<gridsquare:6>FN03pd
+<app_qrzlog_logid:10>1380349274
+<email:25>snaponcountry@hotmail.com
+<cnty:10>NY,Niagara
+<qso_date_off:8>20260104
+<time_on:4>0742
+<state:2>NY
+<comment:66>Great to Work you on 40m from Florida remote station using IC-7300
+<station_callsign:6>ZL3TOM
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N043 09.532
+<qrzcom_qso_upload_status:1>Y
+<my_lon:11>E172 38.391
+<qso_date:8>20260104
+<rst_rcvd:2>59
+<time_off:4>0742
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>7.19
+<distance:5>14437
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<lon:11>W078 40.225
+<ituz:1>8
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qth:8>LOCKPORT
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>40m
+<my_cq_zone:2>32
+<band_rx:3>40m
+<my_lat:11>S043 31.539
+<name:17>MICHAEL A MCLAREN
+<call:5>K2TRK
+<mode:3>LSB
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>2
+<qrzcom_qso_upload_date:8>20260104
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<eor>
+
+<my_lon:11>E172 38.391
+<qso_date:8>20260104
+<rst_rcvd:2>56
+<time_off:4>0810
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N036 23.415
+<qrzcom_qso_upload_status:1>Y
+<email:13>W5HEH@QSL.net
+<cnty:9>AR,Marion
+<qso_date_off:8>20260104
+<time_on:4>0810
+<state:2>AR
+<comment:66>Great to Work you on 40m from Florida remote station using IC-7300
+<station_callsign:6>ZL3TOM
+<freq:4>7.19
+<cqz:1>4
+<qsl_rcvd:1>N
+<gridsquare:6>EM36qj
+<app_qrzlog_logid:10>1380354258
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>2
+<qrzcom_qso_upload_date:8>20260104
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<band_rx:3>40m
+<my_lat:11>S043 31.539
+<name:13>Avrum Shapiro
+<mode:3>LSB
+<call:5>W5HEH
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:9>Yellville
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:3>40m
+<my_cq_zone:2>32
+<lotw_qsl_rcvd:1>N
+<freq_rx:4>7.19
+<my_gridsquare:8>RE66HL63
+<distance:5>13027
+<rst_sent:2>59
+<lon:11>W092 39.654
+<qsl_via:40>NEW OLD HAM , WILL send POST OR ONLINE .
+<ituz:1>7
+<eor>
+
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20260104
+<country:13>United States
+<my_itu_zone:2>60
+<band_rx:3>40m
+<name:15>MICHAEL P BIGGS
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:6>KB1GGS
+<mode:3>LSB
+<qsl_sent:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:6>LYNDON
+<band:3>40m
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:4>7.19
+<lotw_qsl_rcvd:1>N
+<distance:5>12961
+<my_gridsquare:8>RE66HL63
+<lon:11>W095 40.936
+<ituz:1>7
+<app_qrzlog_qsldate:8>20260122
+<qso_date:8>20260104
+<my_lon:11>E172 38.391
+<time_off:4>0850
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N038 41.585
+<qrzcom_qso_upload_status:1>Y
+<email:16>kb1ggs@yahoo.com
+<cnty:8>KS,Osage
+<state:2>KS
+<qso_date_off:8>20260104
+<time_on:4>0850
+<station_callsign:6>ZL3TOM
+<comment:49>Great to work you on HHHNET 40m Net via FL Remote
+<cqz:1>4
+<freq:4>7.19
+<gridsquare:6>EM28dq
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1380368427
+<eor>
+
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N034 12.185
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260901
+<qso_date:8>20260831
+<my_lon:11>E172 38.391
+<time_off:4>0133
+<rst_rcvd:2>59
+<freq:3>420
+<cqz:1>4
+<gridsquare:6>EM74xe
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1496704023
+<cnty:10>GA,Forsyth
+<email:24>pranavtech2024@gmail.com
+<state:2>GA
+<qso_date_off:8>20260831
+<time_on:4>0133
+<station_callsign:6>ZL3TOM
+<comment:33>Great to connect on DMR via TG 91
+<band_rx:4>70cm
+<name:13>Pranav Sharma
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<mode:3>DMR
+<call:6>KR4ODA
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20260831
+<country:13>United States
+<my_itu_zone:2>60
+<freq_rx:3>420
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<distance:5>13528
+<rst_sent:2>59
+<qsl_via:6>Direct
+<lon:11>W084 04.459
+<ituz:1>8
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<eqsl_qsl_rcvd:1>N
+<qth:7>Cumming
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<eor>
+
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<qth:19>Bayan Lepas, Penang
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>299
+<ituz:1>3
+<lon:11>E100 16.880
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:4>9019
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_itu_zone:2>60
+<country:13>West Malaysia
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>AS
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<iota:6>AS-015
+<call:6>9M2RTX
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:9>Ivan Looi
+<band_rx:4>70cm
+<comment:51>Excellent contact thanks for the great qso on TG 91
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20260830
+<time_on:4>0958
+<email:16>9m2rtx@gmail.com
+<app_qrzlog_logid:10>1496762788
+<qsl_rcvd:1>N
+<gridsquare:6>OJ05di
+<freq:3>430
+<cqz:2>28
+<rst_rcvd:2>59
+<time_off:4>0958
+<my_lon:11>E172 38.391
+<qso_date:8>20260830
+<app_qrzlog_qsldate:8>20260831
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N005 21.276
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N052 00.716
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<time_off:4>0837
+<rst_rcvd:2>59
+<qso_date:8>20260831
+<my_lon:11>E172 38.391
+<app_qrzlog_qsldate:8>20260831
+<app_qrzlog_logid:10>1496775894
+<gridsquare:6>JO22ga
+<qsl_rcvd:1>N
+<cqz:2>14
+<freq:3>430
+<station_callsign:6>ZL3TOM
+<comment:52>Super contact on DMR Thank you many thanks  - Thomas
+<qso_date_off:8>20260831
+<time_on:4>0837
+<email:15>pd1lam@ziggo.nl
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:6>PD1LAM
+<mode:3>DMR
+<name:7>John G.
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<country:11>Netherlands
+<my_itu_zone:2>60
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20260831
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<ituz:2>27
+<lon:11>E004 31.582
+<rst_sent:2>59
+<distance:5>18722
+<my_gridsquare:8>RE66HL63
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:9>Den Bosch
+<dxcc:3>263
+<lotw_qsl_sent:1>N
+<eor>
+
+<qso_date:8>20260831
+<my_lon:11>E172 38.391
+<time_off:4>0848
+<rst_rcvd:2>59
+<app_qrzlog_qsldate:8>20260831
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N059 56.250
+<time_on:4>0848
+<qso_date_off:8>20260831
+<station_callsign:6>ZL3TOM
+<comment:38>Great Contact on TG 91 today 59 signal
+<email:15>la3ria@yahoo.no
+<app_qrzlog_logid:10>1496784382
+<freq:3>430
+<cqz:2>20
+<gridsquare:6>JO59HW
+<qsl_rcvd:1>N
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20260831
+<country:6>Norway
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<eqsl_qsl_sent:1>N
+<call:6>LA3RIA
+<mode:3>DMR
+<qsl_sent:1>N
+<band_rx:4>70cm
+<name:13>MUSHTAQ AHMED
+<my_lat:11>S043 31.539
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>266
+<eqsl_qsl_rcvd:1>N
+<qth:9>0768 OSLO
+<qsl_via:22>Via Callbook or direct
+<lon:11>E010 37.500
+<ituz:2>20
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>17825
+<eor>
+
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:12>STEVE PORTER
+<call:5>G4NHP
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<iota:6>EU-005
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>EU
+<my_itu_zone:2>60
+<country:7>England
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>18965
+<lon:11>E000 17.500
+<ituz:2>27
+<lotw_qsl_sent:1>N
+<dxcc:3>223
+<qth:6>Sidcup
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N051 26.250
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260831
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<rst_rcvd:2>59
+<time_off:4>0854
+<freq:3>430
+<cqz:2>14
+<qsl_rcvd:1>N
+<gridsquare:8>JO01DK55
+<app_qrzlog_logid:10>1496784411
+<email:15>steve@g4nhp.com
+<qso_date_off:8>20260831
+<time_on:4>0854
+<comment:51>Great contact on the radio - 59 signal on TG 91 DMR
+<station_callsign:6>ZL3TOM
+<eor>
+
+<lat:11>N055 56.974
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260831
+<time_off:4>0901
+<rst_rcvd:2>59
+<qso_date:8>20260831
+<my_lon:11>E172 38.391
+<gridsquare:8>IO75NW87
+<qsl_rcvd:1>N
+<freq:3>430
+<cqz:2>14
+<app_qrzlog_logid:10>1496784847
+<email:16>mm1awv@gmail.com
+<station_callsign:6>ZL3TOM
+<comment:26>Great Contact on DMR TG 91
+<time_on:4>0901
+<qso_date_off:8>20260831
+<name:9>Bob Lynch
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:6>MM1AWV
+<mode:3>DMR
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<country:8>Scotland
+<my_itu_zone:2>60
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20260831
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>18622
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<ituz:2>27
+<lon:11>W004 50.640
+<qsl_via:10>LOTW, EQSL
+<eqsl_qsl_rcvd:1>N
+<qth:7>Gourock
+<lotw_qsl_sent:1>N
+<dxcc:3>279
+<my_cq_zone:2>32
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eor>
+
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<rst_rcvd:2>59
+<time_off:4>0904
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N052 06.200
+<qso_date_off:8>20260831
+<time_on:4>0904
+<comment:72>Lovely to work you on the radio on TG 91 via QSO One on my andorid phone
+<station_callsign:6>ZL3TOM
+<email:13>pa1v@veron.nl
+<app_qrzlog_logid:10>1496785239
+<freq:3>430
+<qsl_rcvd:1>N
+<gridsquare:6>JO22ec
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>EU
+<my_itu_zone:2>60
+<country:11>Netherlands
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<call:4>PA1V
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:14>Frank Van Pelt
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<dxcc:3>263
+<lotw_qsl_sent:1>N
+<qth:12>Leidschendam
+<eqsl_qsl_rcvd:1>N
+<qsl_via:28>via Dutch QSL Bureau (VERON)
+<lon:11>E004 22.400
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<rst_sent:2>59
+<distance:5>18723
+<my_gridsquare:8>RE66HL63
+<eor>
+
+<app_qrzlog_logid:10>1496785951
+<freq:3>430
+<cqz:1>5
+<qsl_rcvd:1>N
+<gridsquare:6>FM29iv
+<qso_date_off:8>20260831
+<time_on:4>0907
+<state:2>PA
+<comment:57>Beautiful Contact on Talk Group 91 thanks for the contact
+<station_callsign:6>ZL3TOM
+<cnty:11>PA,Delaware
+<email:27>chess_player_best@yahoo.com
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N039 53.456
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<rst_rcvd:2>59
+<time_off:4>0907
+<app_qrzlog_qsldate:8>20260831
+<lon:11>W075 19.828
+<ituz:1>8
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>14518
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:6>Folsom
+<eqsl_qsl_rcvd:1>N
+<call:6>KC3VTF
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:17>Michael Pentimall
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<eor>
+
+<qso_date:8>20260831
+<my_lon:11>E172 38.391
+<time_off:4>0914
+<rst_rcvd:2>59
+<app_qrzlog_qsldate:8>20260831
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N041 53.750
+<time_on:4>0914
+<qso_date_off:8>20260831
+<station_callsign:6>ZL3TOM
+<comment:96>Thank you for the contact on radio today on Talk Group 91 DMR via my android phone using QSO ONE
+<email:17>IU0VIZ@outlook.it
+<app_qrzlog_logid:10>1496786782
+<cqz:2>15
+<freq:3>430
+<gridsquare:6>JN61hv
+<qsl_rcvd:1>N
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20260831
+<country:5>Italy
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<eqsl_qsl_sent:1>N
+<call:6>IU0VIZ
+<mode:3>DMR
+<qsl_sent:1>N
+<iota:4>none
+<band_rx:4>70cm
+<name:19>Roberto Crucianelli
+<my_lat:11>S043 31.539
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<dxcc:3>248
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:39>Via Carlo Bernardo Mosca 57 (Fixed QTH)
+<lon:11>E012 37.500
+<ituz:2>28
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<distance:5>18376
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<eor>
+
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>AS
+<my_itu_zone:2>60
+<country:5>India
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:17>Satish Srinivas S
+<call:6>VU36DR
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<iota:4>none
+<qsl_sent:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>324
+<qth:7>Chennai
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_cq_zone:2>32
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>11199
+<lon:11>E080 10.193
+<ituz:2>49
+<app_qrzlog_qsldate:8>20260831
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<rst_rcvd:2>59
+<time_off:4>0919
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N013 02.927
+<qrzcom_qso_upload_status:1>Y
+<email:16>vu36dr@gmail.com
+<qso_date_off:8>20260831
+<time_on:4>0919
+<comment:96>Thank you for the contact on radio today on Talk Group 91 DMR via my android phone using QSO ONE
+<station_callsign:6>ZL3TOM
+<freq:3>430
+<cqz:2>22
+<qsl_rcvd:1>N
+<gridsquare:6>NK03cb
+<app_qrzlog_logid:10>1496787873
+<eor>
+
+<freq:3>430
+<qsl_rcvd:1>N
+<gridsquare:6>KN68dm
+<app_qrzlog_logid:10>1496788079
+<qso_date_off:8>20260831
+<time_on:4>0922
+<comment:96>Thank you for the contact on radio today on Talk Group 91 DMR via my android phone using QSO ONE
+<station_callsign:6>ZL3TOM
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N048 31.032
+<qrzcom_qso_upload_status:1>Y
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<rst_rcvd:2>59
+<time_off:4>0922
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<rst_sent:2>59
+<distance:5>16941
+<my_gridsquare:8>RE66HL63
+<lon:11>E032 16.260
+<dxcc:3>288
+<lotw_qsl_sent:1>N
+<qth:13>Kropyvnytskyi
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_cq_zone:2>32
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:16>Victor  Sotnikov
+<mode:3>DMR
+<call:5>UT2VS
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<iota:4>none
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>EU
+<my_itu_zone:2>60
+<country:7>Ukraine
+<eor>
+
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N010 08.722
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260902
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<rst_rcvd:2>59
+<time_off:4>0928
+<cqz:2>14
+<freq:3>430
+<qsl_rcvd:1>N
+<gridsquare:6>MK80cd
+<app_qrzlog_logid:10>1496789128
+<email:23>thomassaji960@gmail.com
+<qso_date_off:8>20260831
+<time_on:4>0928
+<comment:96>Thank you for the contact on radio today on Talk Group 91 DMR via my android phone using QSO ONE
+<station_callsign:6>ZL3TOM
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:11>SAJI THOMAS
+<call:6>VU3NZJ
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>AS
+<my_itu_zone:2>60
+<country:5>India
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<rst_sent:2>59
+<distance:5>11297
+<my_gridsquare:8>RE66HL63
+<lon:11>E076 13.755
+<ituz:2>22
+<dxcc:3>324
+<lotw_qsl_sent:1>N
+<qth:11>North parur
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<eor>
+
+<qso_date_off:8>20260831
+<time_on:4>0937
+<comment:96>Thank you for the contact on radio today on Talk Group 91 DMR via my android phone using QSO ONE
+<station_callsign:6>ZL3TOM
+<email:16>9m2rtx@gmail.com
+<app_qrzlog_logid:10>1496790058
+<freq:3>430
+<cqz:2>28
+<qsl_rcvd:1>N
+<gridsquare:6>OJ05di
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<rst_rcvd:2>59
+<time_off:4>0937
+<app_qrzlog_qsldate:8>20260831
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N005 21.276
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>299
+<qth:19>Bayan Lepas, Penang
+<eqsl_qsl_rcvd:1>N
+<lon:11>E100 16.880
+<ituz:1>3
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:4>9019
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>AS
+<my_itu_zone:2>60
+<country:13>West Malaysia
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<call:6>9M2RTX
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<iota:6>AS-015
+<qsl_sent:1>N
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:9>Ivan Looi
+<eor>
+
+<qso_date:8>20260831
+<my_lon:11>E172 38.391
+<time_off:4>0942
+<rst_rcvd:2>59
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N001 18.750
+<qrzcom_qso_upload_status:1>Y
+<email:18>9V1JC.SG@gmail.com
+<time_on:4>0942
+<qso_date_off:8>20260831
+<station_callsign:6>ZL3TOM
+<comment:96>Thank you for the contact on radio today on Talk Group 91 DMR via my android phone using QSO ONE
+<freq:3>430
+<gridsquare:6>OJ11wh
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1496790677
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<cont:2>AS
+<qrzcom_qso_upload_date:8>20260831
+<country:9>Singapore
+<my_itu_zone:2>60
+<band_rx:4>70cm
+<name:13>Wiyanto Jacob
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<mode:3>DMR
+<call:5>9V1JC
+<qsl_sent:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>381
+<eqsl_qsl_rcvd:1>N
+<qth:9>Singapore
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<distance:4>8419
+<rst_sent:2>59
+<lon:11>E103 52.500
+<eor>
+
+<lotw_qsl_sent:1>N
+<dxcc:3>324
+<qth:16>BANGALORE 560078
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>11396
+<lon:11>E077 34.793
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>AS
+<my_itu_zone:2>60
+<country:5>India
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:13>VARADARAJAN G
+<call:6>VU3ITI
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<email:16>vu3iti@gmail.com
+<qso_date_off:8>20260831
+<time_on:4>0950
+<state:2>KA
+<comment:96>Thank you for the contact on radio today on Talk Group 95 DMR via my android phone using QSO ONE
+<station_callsign:6>ZL3TOM
+<freq:3>430
+<qsl_rcvd:1>N
+<gridsquare:6>MK82sv
+<app_qrzlog_logid:10>1496791515
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<rst_rcvd:2>59
+<time_off:4>0950
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N012 54.943
+<qrzcom_qso_upload_status:1>Y
+<eor>
+
+<lon:11>W084 16.441
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>13719
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:9>LEXINGTON
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:6>KK4UDJ
+<mode:3>DMR
+<name:19>BILLY L ENGLAND, JR
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20260831
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_logid:10>1496800372
+<gridsquare:6>EM77un
+<qsl_rcvd:1>N
+<freq:3>430
+<station_callsign:6>ZL3TOM
+<comment:96>Thank you for the contact on radio today on Talk Group 91 DMR via my android phone using QSO ONE
+<state:2>KY
+<qso_date_off:8>20260831
+<time_on:4>1012
+<email:18>Kk4udj@outlook.com
+<cnty:10>KY,Fayette
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N037 34.975
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<time_off:4>1012
+<rst_rcvd:2>59
+<qso_date:8>20260831
+<my_lon:11>E172 38.391
+<eor>
+
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N041 38.567
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260901
+<qso_date:8>20260831
+<my_lon:11>E172 38.391
+<time_off:4>2113
+<rst_rcvd:2>59
+<cqz:1>4
+<freq:3>430
+<gridsquare:6>EN61np
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1496998522
+<email:24>sschliephake61@gmail.com
+<state:2>IN
+<qso_date_off:8>20260831
+<time_on:4>2113
+<station_callsign:6>ZL3TOM
+<comment:153>Thanks for the QSO! Great to make contact with you via DMR Talk Group 91 using QSO ONE from Christchurch, New Zealand.    73 & good DX!    Thomas  ZL3TOM
+<band_rx:4>70cm
+<name:19>Scott A Schliephake
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<mode:3>DMR
+<call:6>KD9OZM
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20260831
+<country:13>United States
+<my_itu_zone:2>60
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<rst_sent:2>59
+<distance:5>13767
+<my_gridsquare:8>RE66HL63
+<lon:11>W086 51.542
+<ituz:1>8
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:13>Michigan City
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<eor>
+
+<time_off:4>2100
+<rst_rcvd:2>59
+<qso_date:8>20260830
+<my_lon:11>E172 38.391
+<app_qrzlog_qsldate:8>20260831
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N029 19.483
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<station_callsign:6>ZL3TOM
+<comment:290>DMR QSO via Talk Group 91 (Worldwide), using QSO ONE on my Android phone from Christchurch, New Zealand. Thanks for the QSO! 73, Thomas – ZL3TOM  DMR QSO via Talk Group 91 (Worldwide), using QSO ONE on my Android phone from Christchurch, New Zealand. Thanks for the QSO! 73, Thomas – ZL3TOM
+<qso_date_off:8>20260830
+<time_on:4>2100
+<email:21>9k2ic@windowslive.com
+<app_qrzlog_logid:10>1497000959
+<gridsquare:6>LL49ah
+<qsl_rcvd:1>N
+<cqz:2>21
+<freq:3>430
+<country:6>Kuwait
+<my_itu_zone:2>60
+<cont:2>AS
+<qrzcom_qso_upload_date:8>20260831
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>9K2IC
+<mode:3>DMR
+<name:16>KHALID AL-JEHMAH
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<my_cq_zone:2>32
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:30>Al - Salam - 48153 P.O box 222
+<dxcc:3>348
+<lotw_qsl_sent:1>N
+<ituz:2>39
+<lon:11>E048 00.615
+<rst_sent:2>59
+<distance:5>14917
+<my_gridsquare:8>RE66HL63
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<eor>
+
+<my_lat:11>S043 31.539
+<name:16>KHALID AL-JEHMAH
+<band_rx:4>70cm
+<qsl_sent:1>N
+<call:5>9K2IC
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<app_qrzlog_status:1>S
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:6>Kuwait
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>AS
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>14917
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<ituz:2>39
+<lon:11>E048 00.615
+<qth:30>Al - Salam - 48153 P.O box 222
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>348
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<lat:11>N029 19.483
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<rst_rcvd:2>59
+<time_off:4>2122
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<qsl_rcvd:1>N
+<gridsquare:6>LL49ah
+<freq:3>430
+<cqz:2>21
+<app_qrzlog_logid:10>1497001101
+<email:21>9k2ic@windowslive.com
+<comment:146>DMR QSO via Talk Group 91 (Worldwide), using QSO ONE on my Android phone from Christchurch, New Zealand. Thanks for the QSO! 73, Thomas ... ZL3TOM
+<station_callsign:6>ZL3TOM
+<time_on:4>2122
+<qso_date_off:8>20260831
+<eor>
+
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>NA
+<my_lat:11>S043 31.539
+<name:19>Nathaniel S McMahon
+<band_rx:4>70cm
+<qsl_sent:1>N
+<call:6>KR4NVL
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<qth:10>Lake Worth
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<distance:5>13350
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<ituz:1>8
+<lon:11>W080 05.355
+<app_qrzlog_qsldate:8>20260901
+<rst_rcvd:2>59
+<time_off:4>2125
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<lat:11>N026 36.778
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<cnty:13>FL,Palm Beach
+<comment:165>Thanks for the QSO! Great to make contact with you via DMR Talk Group 91 using QSO ONE from Christchurch, New Zealand.    73 & good DX!    Thomas  ZL3TOM  ZL3TOM.COM
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20260831
+<time_on:4>2125
+<state:2>FL
+<qsl_rcvd:1>N
+<gridsquare:6>EL96wo
+<cqz:1>5
+<freq:3>430
+<app_qrzlog_logid:10>1497002194
+<eor>
+
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<country:6>Kuwait
+<my_itu_zone:2>60
+<cont:2>AS
+<qrzcom_qso_upload_date:8>20260831
+<name:16>KHALID AL-JEHMAH
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>9K2IC
+<mode:3>DMR
+<eqsl_qsl_rcvd:1>N
+<qth:30>Al - Salam - 48153 P.O box 222
+<dxcc:3>348
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<distance:5>14917
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<ituz:2>39
+<lon:11>E048 00.615
+<app_qrzlog_qsldate:8>20260831
+<time_off:4>2118
+<rst_rcvd:2>59
+<qso_date:8>20260831
+<my_lon:11>E172 38.391
+<lat:11>N029 19.483
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<email:21>9k2ic@windowslive.com
+<station_callsign:6>ZL3TOM
+<comment:144>DMR QSO via Talk Group 91 (Worldwide), using QSO ONE on my Android phone from Christchurch, New Zealand. Thanks for the QSO! 73, Thomas – ZL3TOM
+<qso_date_off:8>20260831
+<time_on:4>2118
+<gridsquare:6>LL49ah
+<qsl_rcvd:1>N
+<cqz:2>21
+<freq:3>430
+<app_qrzlog_logid:10>1497004849
+<eor>
+
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:10>GENE JAMES
+<call:5>W5GJT
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<rst_sent:2>59
+<distance:5>12491
+<my_gridsquare:8>RE66HL63
+<lon:11>W096 55.420
+<ituz:1>7
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qth:10>CARROLLTON
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_cq_zone:2>32
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N033 01.948
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260831
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<rst_rcvd:2>59
+<time_off:4>2138
+<cqz:1>4
+<freq:3>430
+<qsl_rcvd:1>N
+<gridsquare:8>EM13MA97
+<app_qrzlog_logid:10>1497005052
+<cnty:9>TX,Denton
+<email:17>jmsgene@yahoo.com
+<time_on:4>2138
+<qso_date_off:8>20260831
+<state:2>TX
+<comment:165>Thanks for the QSO! Great to make contact with you via DMR Talk Group 91 using QSO ONE from Christchurch, New Zealand.    73 & good DX!    Thomas  ZL3TOM  ZL3TOM.COM
+<station_callsign:6>ZL3TOM
+<eor>
+
+<app_qrzlog_qsldate:8>20260831
+<rst_rcvd:2>59
+<time_off:4>2142
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<lat:11>S010 18.750
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<email:26>luizcarlosmiguel@gmail.com
+<comment:165>Thanks for the QSO! Great to make contact with you via DMR Talk Group 91 using QSO ONE from Christchurch, New Zealand.    73 & good DX!    Thomas  ZL3TOM  ZL3TOM.COM
+<station_callsign:6>ZL3TOM
+<time_on:4>2142
+<qso_date_off:8>20260831
+<qsl_rcvd:1>N
+<gridsquare:6>GH49eq
+<freq:3>430
+<cqz:2>11
+<app_qrzlog_logid:10>1497005960
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:6>Brazil
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>SA
+<my_lat:11>S043 31.539
+<name:11>Luiz Miguel
+<band_rx:4>70cm
+<qsl_sent:1>N
+<call:6>PU2XUP
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<qth:6>Santos
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>108
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_gridsquare:8>RE66HL63
+<distance:5>12543
+<rst_sent:2>59
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<ituz:2>15
+<lon:11>W051 37.500
+<eor>
+
+<cqz:1>5
+<freq:3>430
+<qsl_rcvd:1>N
+<gridsquare:6>FM17ek
+<app_qrzlog_logid:10>1497006453
+<cnty:15>VA,Chesterfield
+<email:18>ka4jaz@hotmail.com
+<time_on:4>2145
+<qso_date_off:8>20260831
+<state:2>VA
+<comment:165>Thanks for the QSO! Great to make contact with you via DMR Talk Group 91 using QSO ONE from Christchurch, New Zealand.    73 & good DX!    Thomas  ZL3TOM  ZL3TOM.COM
+<station_callsign:6>ZL3TOM
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N037 27.219
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260831
+<my_lon:11>E172 38.391
+<qso_date:8>20260831
+<rst_rcvd:2>59
+<time_off:4>2145
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<distance:5>14211
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<lon:11>W077 38.760
+<ituz:1>8
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qth:10>Midlothian
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:20>ALTON J DRUMMOND, JR
+<call:6>KA4JAZ
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<qrzcom_qso_upload_date:8>20260831
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<eor>
+
+<time_off:4>2150
+<my_lon:11>E172 38.391
+<qso_date:8>20260830
+<app_qrzlog_qsldate:8>20260901
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N043 09.667
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<comment:38>Excellent QSO Great to work you on DMR
+<station_callsign:6>ZL3TOM
+<time_on:4>2150
+<qso_date_off:8>20260830
+<email:24>stara47planina@gmail.com
+<app_qrzlog_logid:10>1497060326
+<qsl_rcvd:1>N
+<gridsquare:6>KN13hd
+<freq:3>430
+<cqz:2>15
+<my_itu_zone:2>60
+<country:6>Serbia
+<qrzcom_qso_upload_date:8>20260901
+<cont:2>EU
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<call:5>YU4VD
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:18>Dragan Veselinovic
+<band_rx:4>70cm
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<qth:5>Pirot
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>296
+<ituz:2>28
+<qsl_via:7>QRZ.COM
+<lon:11>E022 35.723
+<my_gridsquare:8>RE66HL63
+<distance:5>17606
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<eor>
+
+<my_lon:11>E172 38.391
+<qso_date:8>20260901
+<rst_rcvd:2>59
+<time_off:4>0032
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N026 07.513
+<time_on:4>0032
+<qso_date_off:8>20260901
+<state:2>FL
+<comment:165>Thanks for the QSO! Great to make contact with you via DMR Talk Group 91 using QSO ONE from Christchurch, New Zealand.    73 & good DX!    Thomas  ZL3TOM  ZL3TOM.COM
+<station_callsign:6>ZL3TOM
+<email:21>fdyankeefan@gmail.com
+<cnty:10>FL,Collier
+<app_qrzlog_logid:10>1497071029
+<freq:3>430
+<qsl_rcvd:1>N
+<gridsquare:6>EL96dc
+<qrzcom_qso_upload_date:8>20260901
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<mode:3>DMR
+<call:6>KY2KKK
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:14>Frank Dimartin
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qth:6>Naples
+<eqsl_qsl_rcvd:1>N
+<lon:11>W081 45.607
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>13185
+<eor>
+
+<qrzcom_qso_upload_date:8>20260901
+<cont:2>NA
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<mode:3>DMR
+<call:6>KE2JCS
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:13>Jeremy McKane
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_cq_zone:2>32
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<qth:9>Blackwood
+<eqsl_qsl_rcvd:1>N
+<lon:11>W075 01.339
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<rst_sent:2>59
+<distance:5>14534
+<my_gridsquare:8>RE66HL63
+<my_lon:11>E172 38.391
+<qso_date:8>20260901
+<rst_rcvd:2>59
+<time_off:4>0102
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N039 44.849
+<time_on:4>0102
+<qso_date_off:8>20260901
+<state:2>NJ
+<comment:166>Thanks for the QSO! Great to make contact with you via DMR Talk Group 505 using QSO ONE from Christchurch, New Zealand.    73 & good DX!    Thomas  ZL3TOM  ZL3TOM.COM
+<station_callsign:6>ZL3TOM
+<cnty:9>NJ,Camden
+<app_qrzlog_logid:10>1497072115
+<freq:3>430
+<qsl_rcvd:1>N
+<gridsquare:6>FM29lr
+<eor>
+
+<rst_rcvd:2>59
+<time_off:4>0110
+<my_lon:11>E172 38.391
+<qso_date:8>20260901
+<lat:11>N034 58.227
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<cnty:7>SC,York
+<comment:37>Great contact on Australia TG 505 DMR
+<station_callsign:6>ZL3TOM
+<time_on:4>0110
+<qso_date_off:8>20260901
+<state:2>SC
+<qsl_rcvd:1>N
+<gridsquare:6>EM94lx
+<freq:3>430
+<app_qrzlog_logid:10>1497073283
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:13>United States
+<qrzcom_qso_upload_date:8>20260901
+<cont:2>NA
+<my_lat:11>S043 31.539
+<name:17>Joseph A Ferreira
+<band_rx:4>70cm
+<qsl_sent:1>N
+<mode:3>DMR
+<call:5>N4GMA
+<eqsl_qsl_sent:1>N
+<qth:9>Rock Hill
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<distance:5>13806
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<lon:11>W081 03.659
+<eor>
+
+<lon:11>E174 52.500
+<ituz:2>60
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<distance:3>303
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_cq_zone:2>32
+<dxcc:3>170
+<lotw_qsl_sent:1>N
+<qth:8>Frankton
+<eqsl_qsl_rcvd:1>N
+<call:5>ZL2CJ
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:14>Chris J Hattan
+<qrzcom_qso_upload_date:8>20260901
+<cont:2>OC
+<my_itu_zone:2>60
+<country:11>New Zealand
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<app_qrzlog_logid:10>1497530747
+<cqz:2>32
+<freq:3>430
+<qsl_rcvd:1>N
+<gridsquare:6>RE78kp
+<time_on:4>2032
+<qso_date_off:8>20260901
+<comment:24>Great Contact on TG 5303
+<station_callsign:6>ZL3TOM
+<email:17>zl2cj@outlook.com
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>S041 21.250
+<my_lon:11>E172 38.391
+<qso_date:8>20260901
+<rst_rcvd:2>59
+<time_off:4>2032
+<app_qrzlog_qsldate:8>20260901
+<eor>
+
+<time_off:4>2042
+<rst_rcvd:2>59
+<qso_date:8>20260901
+<my_lon:11>E172 38.391
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N036 51.252
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<station_callsign:6>ZL3TOM
+<comment:24>Great contact via HUBNET
+<state:2>KY
+<qso_date_off:8>20260901
+<time_on:4>2042
+<cnty:7>KY,Knox
+<email:25>joshuah.shields@yahoo.com
+<app_qrzlog_logid:10>1497532824
+<gridsquare:6>EM86bu
+<qsl_rcvd:1>N
+<cqz:1>4
+<freq:3>430
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20260901
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>KD4TS
+<mode:3>DMR
+<name:17>Joshuah T Shields
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<my_cq_zone:2>32
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:12>Barbourville
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<ituz:1>8
+<lon:11>W083 52.500
+<rst_sent:2>59
+<distance:5>13705
+<my_gridsquare:8>RE66HL63
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<eor>
+
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N042 06.278
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260901
+<qso_date:8>20260901
+<my_lon:11>E172 38.391
+<time_off:4>2052
+<rst_rcvd:2>59
+<freq:3>430
+<cqz:1>4
+<gridsquare:8>EN52XC65
+<qsl_rcvd:1>N
+<app_qrzlog_logid:10>1497534938
+<email:22>konrad.kubit@gmail.com
+<cnty:7>IL,Cook
+<state:2>IL
+<qso_date_off:8>20260901
+<time_on:4>2052
+<station_callsign:6>ZL3TOM
+<comment:32>Super contact on TG 91 worldwide
+<band_rx:4>70cm
+<name:14>KONRAD L KUBIT
+<my_lat:11>S043 31.539
+<eqsl_qsl_sent:1>N
+<call:6>KC9NUW
+<mode:3>DMR
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20260901
+<country:13>United States
+<my_itu_zone:2>60
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>13710
+<lon:11>W088 01.546
+<ituz:2>88
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<eqsl_qsl_rcvd:1>N
+<qth:8>PALATINE
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<eor>
+
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:37>Memories: https/www.qrz.com/db/YG3AUH
+<dxcc:3>327
+<lotw_qsl_sent:1>N
+<ituz:2>54
+<lon:11>E111 58.409
+<qsl_via:45>QRZ,ClubLog,LoTW,HRD.Log,AMSAT-ID Log,eqsl.cc
+<distance:4>7057
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<country:9>Indonesia
+<my_itu_zone:2>60
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20260902
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:6>YC3IRF
+<mode:3>DMR
+<name:12>IRFan FANANI
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<station_callsign:6>ZL3TOM
+<comment:51>Solid signal to Christchurch new Zealand  via TG 91
+<qso_date_off:8>20260902
+<time_on:4>0117
+<email:16>yc3irf@gmail.com
+<app_qrzlog_logid:10>1497712843
+<gridsquare:6>OI52xb
+<qsl_rcvd:1>N
+<cqz:2>28
+<freq:3>430
+<time_off:4>0117
+<rst_rcvd:2>59
+<qso_date:8>20260902
+<my_lon:11>E172 38.391
+<app_qrzlog_qsldate:8>20260903
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S007 55.680
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<eor>
+
+<freq:3>430
+<cqz:2>30
+<qsl_rcvd:1>N
+<gridsquare:6>QF56if
+<app_qrzlog_logid:10>1497737457
+<email:16>vk2gap@gmail.com
+<time_on:4>0318
+<qso_date_off:8>20260902
+<comment:36>Great contact on TG 91 worldwide DMR
+<station_callsign:6>ZL3TOM
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>S033 46.034
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260902
+<my_lon:11>E172 38.391
+<qso_date:8>20260902
+<rst_rcvd:2>59
+<time_off:4>0318
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:4>2185
+<lon:11>E150 40.186
+<ituz:2>59
+<lotw_qsl_sent:1>N
+<dxcc:3>150
+<qth:11>Jamisontown
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:12>Alf Portelli
+<mode:3>DMR
+<call:6>VK2GAP
+<eqsl_qsl_sent:1>N
+<iota:6>OC-001
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<qrzcom_qso_upload_date:8>20260902
+<cont:2>OC
+<my_itu_zone:2>60
+<country:9>Australia
+<eor>
+
+<my_itu_zone:2>60
+<country:9>Australia
+<qrzcom_qso_upload_date:8>20260902
+<cont:2>OC
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<iota:6>OC-001
+<qsl_sent:1>N
+<mode:12>DIGITALVOICE
+<call:5>VK1IO
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:14>Graeme L HOUSE
+<band_rx:4>70cm
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<qth:6>Gowrie
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>150
+<ituz:2>59
+<lon:11>E149 06.350
+<my_gridsquare:8>RE66HL63
+<distance:4>2203
+<rst_sent:2>59
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<rst_rcvd:2>59
+<time_off:4>1030
+<my_lon:11>E172 38.391
+<qso_date:8>20260902
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S035 24.650
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<comment:54>Lovely to work you on your net today thank you so much
+<station_callsign:6>ZL3TOM
+<time_on:4>1030
+<qso_date_off:8>20260902
+<email:17>Graeme@kirdam.com
+<app_qrzlog_logid:10>1497849687
+<qsl_rcvd:1>N
+<gridsquare:8>QF44NO21
+<freq:3>430
+<cqz:2>30
+<eor>
+
+<qso_date_off:8>20260905
+<time_on:4>0759
+<station_callsign:6>ZL3TOM
+<comment:26>Great contact on TG 91 DMR
+<email:25>mathewspendlove@gmail.com
+<app_qrzlog_logid:10>1498842589
+<cqz:2>29
+<freq:3>430
+<gridsquare:6>OF78ug
+<qsl_rcvd:1>N
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<time_off:4>0759
+<rst_rcvd:2>59
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>S031 43.752
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<dxcc:3>150
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:5>Perth
+<lon:11>E115 42.480
+<ituz:2>58
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<rst_sent:2>59
+<distance:4>5079
+<my_gridsquare:8>RE66HL63
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20260905
+<country:9>Australia
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<eqsl_qsl_sent:1>N
+<call:6>VK6MCS
+<mode:3>DMR
+<iota:4>none
+<qsl_sent:1>N
+<band_rx:4>70cm
+<name:16>Mathew Spendlove
+<my_lat:11>S043 31.539
+<eor>
+
+<cont:2>AS
+<qrzcom_qso_upload_date:8>20260905
+<country:5>India
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<eqsl_qsl_sent:1>N
+<call:6>VU3ITI
+<mode:12>DIGITALVOICE
+<qsl_sent:1>N
+<band_rx:4>70cm
+<name:13>VARADARAJAN G
+<my_lat:11>S043 31.539
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>324
+<eqsl_qsl_rcvd:1>N
+<qth:16>BANGALORE 560078
+<lon:11>E077 34.793
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>11396
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<time_off:4>0803
+<rst_rcvd:2>59
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N012 54.943
+<state:2>KA
+<qso_date_off:8>20260905
+<time_on:4>0803
+<station_callsign:6>ZL3TOM
+<comment:22>Great contact on TG 91
+<email:16>vu3iti@gmail.com
+<app_qrzlog_logid:10>1498842991
+<freq:3>430
+<gridsquare:6>MK82sv
+<qsl_rcvd:1>N
+<eor>
+
+<qsl_sent:1>N
+<call:6>EA1BDV
+<mode:12>DIGITALVOICE
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:13>Manuel CH. V.
+<band_rx:4>70cm
+<my_itu_zone:2>60
+<country:5>Spain
+<qrzcom_qso_upload_date:8>20260905
+<cont:2>EU
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<ituz:2>37
+<lon:11>W005 53.980
+<qsl_via:18>QSL BURO OR DIRECT
+<distance:5>19897
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<qth:23>33400 AVILES - ASTURIAS
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>281
+<lotw_qsl_sent:1>N
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N043 32.834
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<rst_rcvd:2>59
+<time_off:4>0807
+<my_lon:11>E172 38.391
+<qso_date:8>20260905
+<app_qrzlog_qsldate:8>20260905
+<app_qrzlog_logid:10>1498843483
+<qsl_rcvd:1>N
+<gridsquare:8>IN73BN21
+<cqz:2>14
+<freq:3>430
+<comment:23>Great contact via TG 91
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20260905
+<time_on:4>0807
+<email:18>ea1bdv@hotmail.com
+<eor>
+
+<qsl_rcvd:1>N
+<gridsquare:6>JN45js
+<freq:3>430
+<cqz:2>15
+<app_qrzlog_logid:10>1498844004
+<email:16>iu2wmc@gmail.com
+<comment:42>Great Contact on TG 91 DMR great singal 59
+<station_callsign:6>ZL3TOM
+<time_on:4>0812
+<qso_date_off:8>20260905
+<lat:11>N045 46.526
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260905
+<rst_rcvd:2>59
+<time_off:4>0812
+<my_lon:11>E172 38.391
+<qso_date:8>20260905
+<my_gridsquare:8>RE66HL63
+<distance:5>18717
+<rst_sent:2>59
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<ituz:2>28
+<qsl_via:19>LOTW, EQSL, QRZ.COM
+<lon:11>E008 46.514
+<qth:7>Daverio
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>248
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_lat:11>S043 31.539
+<name:12>Romeo Codari
+<band_rx:4>70cm
+<qsl_sent:1>N
+<call:6>IU2WMC
+<mode:12>DIGITALVOICE
+<eqsl_qsl_sent:1>N
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<my_itu_zone:2>60
+<country:5>Italy
+<qrzcom_qso_upload_date:8>20260905
+<cont:2>EU
+<eor>
+
+<eqsl_qsl_sent:1>N
+<mode:12>DIGITALVOICE
+<call:6>YD2AJU
+<iota:4>none
+<qsl_sent:1>N
+<band_rx:4>70cm
+<name:12>Diki Wahyudi
+<my_lat:11>S043 31.539
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20260905
+<country:9>Indonesia
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<lon:11>E108 53.081
+<ituz:1>7
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<distance:4>7376
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<dxcc:3>327
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:16>KABUPATEN BREBES
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>S006 55.655
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<time_off:4>0818
+<rst_rcvd:2>59
+<app_qrzlog_qsldate:8>20260905
+<app_qrzlog_logid:10>1498845202
+<cqz:2>28
+<freq:3>430
+<gridsquare:6>OI43kb
+<qsl_rcvd:1>N
+<time_on:4>0818
+<qso_date_off:8>20260905
+<station_callsign:6>ZL3TOM
+<comment:32>Great contact on TG 91 worldwide
+<email:19>wdiki8601@gmail.com
+<eor>
+
+<app_qrzlog_logid:10>1498845704
+<gridsquare:6>JO40gd
+<qsl_rcvd:1>N
+<freq:3>430
+<cqz:2>14
+<station_callsign:6>ZL3TOM
+<comment:52>Great to work you on the radio  via QSO one on TG 91
+<qso_date_off:8>20260905
+<time_on:4>0821
+<email:14>dk7lt@vfdb.org
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N050 08.735
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<time_off:4>0821
+<rst_rcvd:2>59
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<app_qrzlog_qsldate:8>20260905
+<ituz:2>28
+<lon:11>E008 31.963
+<my_gridsquare:8>RE66HL63
+<distance:5>18604
+<rst_sent:2>59
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:20>Schwalbach am Taunus
+<lotw_qsl_sent:1>N
+<dxcc:3>230
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:5>DK7LT
+<mode:12>DIGITALVOICE
+<name:13>Thomas Lutter
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<country:7>Germany
+<my_itu_zone:2>60
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20260905
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<eor>
+
+<app_qrzlog_logid:10>1498846092
+<gridsquare:6>JN62ks
+<qsl_rcvd:1>N
+<cqz:2>15
+<freq:3>430
+<station_callsign:6>ZL3TOM
+<comment:22>Great contact on TG 91
+<time_on:4>0826
+<qso_date_off:8>20260905
+<email:20>ivandamico@gmail.com
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N042 46.250
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<time_off:4>0826
+<rst_rcvd:2>59
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<app_qrzlog_qsldate:8>20260905
+<ituz:2>28
+<lon:11>E012 52.500
+<rst_sent:2>59
+<distance:5>18375
+<my_gridsquare:8>RE66HL63
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:7>NICOSIA
+<dxcc:3>248
+<lotw_qsl_sent:1>N
+<qsl_sent:1>N
+<iota:4>none
+<eqsl_qsl_sent:1>N
+<call:6>IT9LLP
+<mode:12>DIGITALVOICE
+<name:12>IVAN D'AMICO
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<country:5>Italy
+<my_itu_zone:2>60
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20260905
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<eor>
+
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<qth:20>BIRKIRKARA, BKR 1248
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>257
+<ituz:2>28
+<lon:11>E014 26.162
+<my_gridsquare:8>RE66HL63
+<distance:5>17975
+<rst_sent:2>59
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_itu_zone:2>60
+<country:5>Malta
+<qrzcom_qso_upload_date:8>20260905
+<cont:2>EU
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<call:5>9H1GY
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:12>JOE SCHEMBRI
+<band_rx:4>70cm
+<comment:22>Great Contact on TG 91
+<station_callsign:6>ZL3TOM
+<time_on:4>0841
+<qso_date_off:8>20260905
+<email:26>schembrijoseph75@gmail.com
+<app_qrzlog_logid:10>1498847773
+<qsl_rcvd:1>N
+<gridsquare:6>JM75fv
+<freq:3>430
+<cqz:2>15
+<rst_rcvd:2>59
+<time_off:4>0841
+<my_lon:11>E172 38.391
+<qso_date:8>20260905
+<app_qrzlog_qsldate:8>20260905
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N035 53.877
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<eor>
+
+<qsl_sent:1>N
+<iota:4>none
+<call:6>JF1EEZ
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:3>Jun
+<band_rx:4>70cm
+<my_itu_zone:2>60
+<country:5>Japan
+<qrzcom_qso_upload_date:8>20260905
+<cont:2>AS
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<ituz:2>25
+<lon:11>E139 48.764
+<my_gridsquare:8>RE66HL63
+<distance:4>9424
+<rst_sent:2>59
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<qth:12>TOKYO ADACHI
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>339
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N035 47.240
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<rst_rcvd:2>59
+<time_off:4>0846
+<my_lon:11>E172 38.391
+<qso_date:8>20260905
+<app_qrzlog_qsldate:8>20260905
+<app_qrzlog_logid:10>1498850890
+<qsl_rcvd:1>N
+<gridsquare:6>PM95vs
+<freq:3>430
+<cqz:2>25
+<comment:26>Great contact on DMR TG 91
+<station_callsign:6>ZL3TOM
+<qso_date_off:8>20260905
+<time_on:4>0846
+<email:18>jf1eez@yahoo.co.jp
+<eor>
+
+<my_lon:11>E172 38.391
+<qso_date:8>20260905
+<rst_rcvd:2>59
+<time_off:4>0854
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>S033 23.800
+<time_on:4>0854
+<qso_date_off:8>20260905
+<comment:26>Great contact on TG 91 DMR
+<station_callsign:6>ZL3TOM
+<email:18>japaal@outlook.com
+<app_qrzlog_logid:10>1498859614
+<freq:3>430
+<cqz:2>30
+<qsl_rcvd:1>N
+<gridsquare:6>QF56qo
+<qrzcom_qso_upload_date:8>20260905
+<cont:2>OC
+<my_itu_zone:2>60
+<country:9>Australia
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<call:6>VK2DXX
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:11>Julius Paal
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>150
+<qth:11>Lisarow NSW
+<eqsl_qsl_rcvd:1>N
+<lon:11>E151 22.400
+<ituz:2>59
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:4>2158
+<eor>
+
+<qso_date_off:8>20260905
+<time_on:4>0909
+<comment:26>Great contact on TG 91 DMR
+<station_callsign:6>ZL3TOM
+<cqz:2>14
+<freq:3>430
+<qsl_rcvd:1>N
+<gridsquare:6>JO53hv
+<app_qrzlog_logid:10>1498867083
+<my_lon:11>E172 38.391
+<qso_date:8>20260905
+<rst_rcvd:2>59
+<time_off:4>0909
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>N053 53.337
+<qrzcom_qso_upload_status:1>Y
+<dxcc:3>230
+<lotw_qsl_sent:1>N
+<qth:6>Lubeck
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_cq_zone:2>32
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<rst_sent:2>59
+<distance:5>18270
+<my_gridsquare:8>RE66HL63
+<lon:11>E010 39.846
+<qsl_via:20>VIA BUREAU OR DIRECT
+<ituz:2>28
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<qrzcom_qso_upload_date:8>20260905
+<cont:2>EU
+<my_itu_zone:2>60
+<country:7>Germany
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:11>Andreas Rix
+<mode:3>DMR
+<call:5>DL9LJ
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<eor>
+
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20260905
+<name:17>WILLIAM F SCHMIDT
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<mode:3>DMR
+<call:4>W2ZH
+<eqsl_qsl_rcvd:1>N
+<qth:10>CEDARHURST
+<dxcc:3>291
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<distance:5>14677
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<lon:11>W073 43.351
+<app_qrzlog_qsldate:8>20260905
+<time_off:4>0913
+<rst_rcvd:2>59
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<lat:11>N040 37.452
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<cnty:9>NY,Nassau
+<email:19>Unixnyc@hotmail.com
+<station_callsign:6>ZL3TOM
+<comment:26>Great contact on TG 91 DMR
+<state:2>NY
+<qso_date_off:8>20260905
+<time_on:4>0913
+<gridsquare:6>FN30do
+<qsl_rcvd:1>N
+<freq:3>430
+<app_qrzlog_logid:10>1498867350
+<eor>
+
+<time_off:4>0917
+<rst_rcvd:2>59
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N035 55.030
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<station_callsign:6>ZL3TOM
+<comment:29>Great contact TG 91 Today DMR
+<qso_date_off:8>20260905
+<time_on:4>0917
+<email:20>markvelsat@gmail.com
+<app_qrzlog_logid:10>1498868315
+<gridsquare:6>JM75FW
+<qsl_rcvd:1>N
+<freq:3>430
+<cqz:2>15
+<country:5>Malta
+<my_itu_zone:2>60
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20260905
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<iota:6>EU-023
+<eqsl_qsl_sent:1>N
+<mode:3>DMR
+<call:5>9H1GP
+<name:10>MARK VELLA
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:13>MOSTA MST2600
+<lotw_qsl_sent:1>N
+<dxcc:3>257
+<ituz:2>28
+<lon:11>E014 25.787
+<my_gridsquare:8>RE66HL63
+<distance:5>17976
+<rst_sent:2>59
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<eor>
+
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N005 30.534
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<rst_rcvd:2>59
+<time_off:4>0926
+<my_lon:11>E172 38.391
+<qso_date:8>20260905
+<app_qrzlog_qsldate:8>20260905
+<app_qrzlog_logid:10>1498871268
+<qsl_rcvd:1>N
+<gridsquare:6>NJ75pm
+<freq:3>430
+<cqz:2>28
+<comment:26>Great contact on TG 91 DMR
+<station_callsign:6>ZL3TOM
+<time_on:4>0926
+<qso_date_off:8>20260905
+<email:19>fittresdy@yahoo.com
+<qsl_sent:1>N
+<call:6>YC6BFI
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:15>FITTRESDY ISMAN
+<band_rx:4>70cm
+<my_itu_zone:2>60
+<country:9>Indonesia
+<qrzcom_qso_upload_date:8>20260905
+<cont:2>OC
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<ituz:2>54
+<lon:11>E095 18.273
+<my_gridsquare:8>RE66HL63
+<distance:4>9420
+<rst_sent:2>59
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<qth:50>Kec. Darul Imarah, Kab. Aceh Besar, Propinsi Aceh,
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>327
+<eor>
+
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<mode:3>DMR
+<call:6>KR4HQE
+<name:13>Gregory M Lee
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<country:13>United States
+<my_itu_zone:2>60
+<cont:2>NA
+<qrzcom_qso_upload_date:8>20260905
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<ituz:1>8
+<lon:11>W077 50.384
+<my_gridsquare:8>RE66HL63
+<distance:5>14055
+<rst_sent:2>59
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:9>Pink Hill
+<lotw_qsl_sent:1>N
+<dxcc:3>291
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N034 59.346
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<time_off:4>0930
+<rst_rcvd:2>59
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<app_qrzlog_logid:10>1498873330
+<gridsquare:6>FM14bx
+<qsl_rcvd:1>N
+<freq:3>430
+<cqz:1>5
+<station_callsign:6>ZL3TOM
+<comment:61>Great contact on TG 91 great to be your first contact from ZL
+<state:2>NC
+<qso_date_off:8>20260905
+<time_on:4>0930
+<cnty:9>NC,Lenoir
+<email:16>kr4hqe@gmail.com
+<eor>
+
+<qso_date_off:8>20260905
+<time_on:4>0935
+<station_callsign:6>ZL3TOM
+<comment:24>Great Signal 59 on TG 91
+<app_qrzlog_logid:10>1498873978
+<freq:3>430
+<cqz:2>14
+<gridsquare:6>IM76hd
+<qsl_rcvd:1>N
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<time_off:4>0935
+<rst_rcvd:2>59
+<app_qrzlog_qsldate:8>20260905
+<qrzcom_qso_upload_status:1>Y
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N036 08.448
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<lotw_qsl_sent:1>N
+<dxcc:3>233
+<eqsl_qsl_rcvd:1>N
+<qth:18>Waterport Terraces
+<lon:11>W005 21.215
+<ituz:2>37
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<my_gridsquare:8>RE66HL63
+<rst_sent:2>59
+<distance:5>19176
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20260905
+<country:9>Gibraltar
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>C
+<eqsl_qsl_sent:1>N
+<call:5>ZB0FC
+<mode:3>DMR
+<qsl_sent:1>N
+<iota:4>none
+<band_rx:4>70cm
+<name:17>Francis Cassaglia
+<my_lat:11>S043 31.539
+<eor>
+
+<name:14>John Mackenzie
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<iota:4>none
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<call:6>MM7MVG
+<mode:3>DMR
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<country:8>Scotland
+<my_itu_zone:2>60
+<cont:2>EU
+<qrzcom_qso_upload_date:8>20260905
+<rst_sent:2>59
+<distance:5>18629
+<my_gridsquare:8>RE66HL63
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<ituz:2>27
+<lon:11>W003 22.500
+<eqsl_qsl_rcvd:1>N
+<qth:9>Inverness
+<dxcc:3>279
+<lotw_qsl_sent:1>N
+<my_cq_zone:2>32
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<my_country:11>New Zealand
+<lat:11>N055 43.750
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<qrzcom_qso_upload_status:1>Y
+<app_qrzlog_qsldate:8>20260905
+<time_off:4>0943
+<rst_rcvd:2>59
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<gridsquare:6>IO85hr
+<qsl_rcvd:1>N
+<cqz:2>14
+<freq:3>430
+<app_qrzlog_logid:10>1498877018
+<email:16>mm7mvg@yahoo.com
+<station_callsign:6>ZL3TOM
+<comment:44>Beautiful Contact on TG 91 sounding great :)
+<time_on:4>0943
+<qso_date_off:8>20260905
+<eor>
+
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_gridsquare:8>RE66HL63
+<distance:4>9822
+<rst_sent:2>59
+<lon:11>E129 21.052
+<ituz:2>30
+<lotw_qsl_sent:1>N
+<dxcc:3>137
+<qth:42>12 Dotjil-ro, 401 Beon-gil, Nam-gu, Ulsan,
+<eqsl_qsl_rcvd:1>N
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_cq_zone:2>32
+<band_rx:4>70cm
+<my_lat:11>S043 31.539
+<name:12>Heedong Chae
+<call:6>6K5CRS
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<qsl_sent:1>N
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<qrzcom_qso_upload_date:8>20260905
+<cont:2>AS
+<my_itu_zone:2>60
+<country:11>South Korea
+<freq:3>430
+<cqz:1>4
+<qsl_rcvd:1>N
+<gridsquare:8>PM45QN20
+<app_qrzlog_logid:10>1498877371
+<email:23>chaeheedong@hanmail.net
+<time_on:4>0947
+<qso_date_off:8>20260905
+<comment:63>Contact on TG 91 Worldwide you are sounding very good 59 signal
+<station_callsign:6>ZL3TOM
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<lat:11>N035 32.708
+<qrzcom_qso_upload_status:1>Y
+<my_lon:11>E172 38.391
+<qso_date:8>20260905
+<rst_rcvd:2>59
+<time_off:4>0947
+<eor>
+
+<lon:11>E018 32.500
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<distance:5>11018
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<my_cq_zone:2>32
+<dxcc:3>462
+<lotw_qsl_sent:1>N
+<eqsl_qsl_rcvd:1>N
+<qth:18>Bothasig Cape Town
+<eqsl_qsl_sent:1>N
+<mode:3>DMR
+<call:6>ZS1AGV
+<qsl_sent:1>N
+<band_rx:4>70cm
+<name:19>Oscar Brian Kensley
+<my_lat:11>S043 31.539
+<cont:2>AF
+<qrzcom_qso_upload_date:8>20260905
+<country:12>South Africa
+<my_itu_zone:2>60
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_status:1>N
+<app_qrzlog_logid:10>1498882187
+<freq:3>430
+<gridsquare:6>JF96gd
+<qsl_rcvd:1>N
+<state:2>ZA
+<qso_date_off:8>20260905
+<time_on:4>0955
+<station_callsign:6>ZL3TOM
+<comment:49>Great contact on TG 91 you are sounding excellent
+<qrzcom_qso_upload_status:1>Y
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<lat:11>S033 51.250
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<time_off:4>0955
+<rst_rcvd:2>59
+<eor>
+
+<my_itu_zone:2>60
+<country:7>Germany
+<qrzcom_qso_upload_date:8>20260905
+<cont:2>EU
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<call:6>DL4FCT
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:20>Jens-JÃ¼rgen Pietsch
+<band_rx:4>70cm
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<qth:21>Rosbach vor der HÃ¶he
+<eqsl_qsl_rcvd:1>N
+<dxcc:3>230
+<lotw_qsl_sent:1>N
+<ituz:2>28
+<lon:11>E008 42.400
+<rst_sent:2>59
+<distance:5>18585
+<my_gridsquare:8>RE66HL63
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<rst_rcvd:2>59
+<time_off:4>0959
+<my_lon:11>E172 38.391
+<qso_date:8>20260905
+<app_qrzlog_qsldate:8>20260905
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N050 18.700
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<comment:51>Excellent Contact thank you so much for the contact
+<station_callsign:6>ZL3TOM
+<time_on:4>0959
+<qso_date_off:8>20260905
+<email:18>koala835@gmail.com
+<app_qrzlog_logid:10>1498882659
+<qsl_rcvd:1>N
+<gridsquare:8>JO40IH44
+<cqz:2>14
+<freq:3>430
+<eor>
+
+<ituz:2>44
+<lon:11>E103 33.915
+<my_gridsquare:8>RE66HL63
+<distance:5>10822
+<rst_sent:2>59
+<lotw_qsl_rcvd:1>N
+<freq_rx:3>430
+<my_cq_zone:2>32
+<my_country:11>New Zealand
+<band:4>70cm
+<my_name:14>Thomas Bernard
+<qth:20>æé½ åå· ä¸­å½
+<eqsl_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<dxcc:3>318
+<qsl_sent:1>N
+<iota:4>none
+<call:6>BA8AFU
+<mode:3>DMR
+<eqsl_qsl_sent:1>N
+<my_lat:11>S043 31.539
+<name:10>åè±ª æ¸¸
+<band_rx:4>70cm
+<my_itu_zone:2>60
+<country:5>China
+<qrzcom_qso_upload_date:8>20260905
+<cont:2>AS
+<app_qrzlog_status:1>C
+<qrzcom_qso_download_status:1>Y
+<app_qrzlog_logid:10>1498883802
+<qsl_rcvd:1>N
+<gridsquare:6>OM10so
+<freq:3>430
+<cqz:2>24
+<comment:20>Great Contact Cheers
+<station_callsign:6>ZL3TOM
+<time_on:4>1007
+<qso_date_off:8>20260905
+<email:14>BA8AFU@163.com
+<qrzcom_qso_upload_status:1>Y
+<lat:11>N030 35.073
+<qrzcom_qso_download_date:8>20260906
+<my_city:12>Christchurch
+<rst_rcvd:2>59
+<time_off:4>1007
+<my_lon:11>E172 38.391
+<qso_date:8>20260905
+<app_qrzlog_qsldate:8>20260905
+<eor>
+
+<station_callsign:6>ZL3TOM
+<comment:33>Great signal 59 audio great one !
+<qso_date_off:8>20260905
+<time_on:4>1011
+<app_qrzlog_logid:10>1498885238
+<gridsquare:6>PG66pa
+<qsl_rcvd:1>N
+<cqz:2>30
+<freq:3>430
+<time_off:4>1011
+<rst_rcvd:2>59
+<qso_date:8>20260905
+<my_lon:11>E172 38.391
+<qrzcom_qso_upload_status:1>Y
+<lat:11>S023 58.750
+<my_city:12>Christchurch
+<qrzcom_qso_download_date:8>20260906
+<my_cq_zone:2>32
+<my_name:14>Thomas Bernard
+<band:4>70cm
+<my_country:11>New Zealand
+<eqsl_qsl_rcvd:1>N
+<qth:9>Melbourne
+<dxcc:3>150
+<lotw_qsl_sent:1>N
+<ituz:2>59
+<lon:11>E133 17.500
+<distance:4>4182
+<rst_sent:2>59
+<my_gridsquare:8>RE66HL63
+<freq_rx:3>430
+<lotw_qsl_rcvd:1>N
+<country:9>Australia
+<my_itu_zone:2>60
+<cont:2>OC
+<qrzcom_qso_upload_date:8>20260905
+<app_qrzlog_status:1>N
+<qrzcom_qso_download_status:1>Y
+<qsl_sent:1>N
+<eqsl_qsl_sent:1>N
+<mode:3>DMR
+<call:6>VK3MXW
+<name:14>Max W Woollons
+<my_lat:11>S043 31.539
+<band_rx:4>70cm
+<eor>
+
