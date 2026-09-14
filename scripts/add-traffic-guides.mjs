@@ -81,7 +81,14 @@ for (const rel of ["guides.html", path.join("guides", "index.html")]) {
 const sitemapFile = path.join(pub, "sitemap.xml");
 let sitemap = await readFile(sitemapFile, "utf8");
 for (const stale of ["dmr-for-beginners", "echolink-for-beginners", "allstarlink-for-beginners-guide"]) {
-  sitemap = sitemap.replace(new RegExp(`\\s*<url>[\\s\\S]*?<loc>https://zl3tom\\.com/guides/${stale}<\\/loc>[\\s\\S]*?<\\/url>`, "g"), "");
+  // Only remove the single <url> element that contains this exact stale guide.
+  // The tempered pattern cannot cross a closing </url>, so unrelated sitemap
+  // entries (including the homepage image metadata) are never swallowed.
+  const staleUrlPattern = new RegExp(
+    `\\s*<url>(?:(?!<\\/url>)[\\s\\S])*?<loc>https://zl3tom\\.com/guides/${stale}<\\/loc>(?:(?!<\\/url>)[\\s\\S])*?<\\/url>`,
+    "g"
+  );
+  sitemap = sitemap.replace(staleUrlPattern, "");
 }
 for (const g of guides) {
   if (!sitemap.includes(`<loc>https://zl3tom.com/guides/${g.slug}</loc>`)) {
