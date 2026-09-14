@@ -4,106 +4,89 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const pub = path.join(root, "public");
-const updated = "2026-09-10";
+const updated = "2026-09-14";
+const icon = `<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg>`;
 
-const newGuides = [
+const guides = [
   {
     slug: "what-is-amateur-radio",
     title: "What Is Amateur Radio? A Beginner's Guide to Ham Radio",
     cardTitle: "What Is Amateur Radio?",
-    desc: "A beginner-friendly guide to amateur radio: licences, callsigns, repeaters, antennas, digital modes, making contacts and how to get started in ham radio.",
-    body: `<h2>What is amateur radio?</h2><p><strong>Amateur radio</strong>, often called <strong>ham radio</strong>, is a worldwide technical and communications hobby. Licensed operators use radio equipment to communicate locally and around the world, experiment with radio technology, build antennas, use satellites and digital modes, join nets and support community communications.</p><h2>What can you do with ham radio?</h2><p>You can make local contacts through repeaters, talk directly radio-to-radio, make long-distance HF contacts, experiment with digital voice and data, use APRS, operate portable, try satellite contacts and use internet-linked amateur systems such as EchoLink and AllStarLink.</p><h2>Do you need a licence?</h2><p>Transmitting on amateur-radio frequencies normally requires the appropriate amateur-radio licence or authorisation for your country. Rules, permitted frequencies and licence arrangements differ internationally, so always check the current regulator or recognised national amateur-radio organisation where you live.</p><h2>What is a callsign?</h2><p>A callsign identifies an amateur station or operator on air. Mine is <strong>ZL3TOM</strong> in New Zealand. See my <a href="/guides/amateur-radio-callsigns-explained">amateur radio callsigns guide</a> to learn about prefixes, numbers and suffixes.</p><h2>How do amateur operators communicate?</h2><p>Amateur radio includes voice, Morse code (CW), digital data and digital voice. Contacts may be direct between radios, through repeaters, via satellites, through digital networks or through internet-linked radio systems. Different bands and modes suit different distances and purposes.</p><h2>What equipment does a beginner need?</h2><p>Your first equipment depends on what you want to do. Many people begin with a VHF/UHF handheld or mobile radio for local repeaters, while HF equipment and a suitable antenna open up longer-distance communication. Learn what activity is available locally before buying equipment.</p><h2>How do I make my first contact?</h2><p>Listen first, learn to say your callsign clearly, understand basic radio etiquette and keep your first conversation simple. My <a href="/guides/first-amateur-radio-contact">first amateur radio contact guide</a> walks through calling CQ, replying, signal reports and ending a QSO.</p><h2>What should I learn next?</h2><p>Continue with <a href="/guides/operating-basics">operating basics</a>, <a href="/guides/repeaters-and-nets">repeaters and nets</a>, <a href="/guides/antenna-basics">antenna basics</a>, <a href="/guides/digital-voice-for-beginners">digital voice</a> and the site's <a href="/tools">amateur radio tools and calculators</a>.</p>`
-  },
-  {
-    slug: "dmr-for-beginners",
-    title: "DMR for Beginners: Talkgroups, Hotspots and DMR IDs Explained",
-    cardTitle: "DMR for Beginners",
-    desc: "Learn DMR amateur radio from the beginning: DMR IDs, talkgroups, colour codes, timeslots, repeaters, hotspots and how a typical networked DMR contact works.",
-    body: `<h2>What is DMR?</h2><p><strong>DMR (Digital Mobile Radio)</strong> is a digital radio technology widely used by amateur-radio operators. Instead of analogue FM audio, your voice is encoded digitally. Amateur DMR systems can use local repeaters and personal hotspots to connect operators through digital networks.</p><h2>What is a DMR ID?</h2><p>Amateur DMR networks commonly identify licensed operators with a numeric DMR ID associated with their callsign. If you are getting started, see my <a href="/guides/getting-a-dmr-id">guide to getting a DMR ID</a> before programming networked DMR operation.</p><h2>What is a talkgroup?</h2><p>A talkgroup is a logical conversation group on a DMR network. A networked DMR user may select a talkgroup for a country, region, interest group or worldwide activity. Availability and rules depend on the network and the repeater or hotspot configuration.</p><h2>What are colour codes and timeslots?</h2><p>A DMR colour code is an access setting used by the digital system. DMR Tier II systems can divide one 12.5 kHz channel into two time slots, allowing two logical channels under suitable configurations. Your radio programming must match the system you are trying to use.</p><h2>DMR repeater or hotspot?</h2><p>A DMR repeater provides RF coverage over an area and may connect to a network. A personal hotspot normally provides short-range RF access for your own radio and uses your internet connection. Read my <a href="/guides/digital-radio-hotspots-pistar-wpsd">digital hotspot guide</a> for Pi-Star, WPSD and hotspot basics.</p><h2>How does a networked DMR contact travel?</h2><div class="radio-example"><small>TYPICAL DMR PATH</small><pre>Your radio → DMR repeater or hotspot → DMR network/talkgroup → other repeaters/hotspots → other operators</pre></div><h2>Common DMR beginner problems</h2><ul><li>Wrong frequency, colour code or timeslot.</li><li>Wrong DMR ID or talkgroup.</li><li>Assuming every repeater carries every talkgroup.</li><li>Not leaving a short pause between transmissions on linked systems.</li><li>Using an unsuitable hotspot frequency for the local band plan.</li></ul><h2>Where should I go next?</h2><p>This is the broad DMR overview. For deeper topics continue with <a href="/guides/getting-a-dmr-id">Getting a DMR ID</a>, <a href="/guides/digital-radio-hotspots-pistar-wpsd">Hotspots Explained</a> and <a href="/guides/digital-voice-for-beginners">Digital Voice for Beginners</a>.</p>`
+    desc: "A worldwide beginner introduction to amateur radio: what it is, licensing, callsigns, bands, repeaters, antennas and making a first contact.",
+    sections: [
+      ["What amateur radio is", `<p><strong>Amateur radio</strong>, often called <strong>ham radio</strong>, is a technical and communications hobby where licensed operators communicate by radio, experiment with equipment and antennas, use analogue and digital modes, join nets and make contacts locally or around the world.</p>`],
+      ["How this differs from the New Zealand guide", `<p>This page is the general worldwide introduction. If you are in New Zealand and want country-specific information about the licence framework, callsigns and getting started locally, use <a href="/guides/amateur-radio-new-zealand">Amateur Radio in New Zealand</a>.</p>`],
+      ["Do you need a licence?", `<p>Transmitting on amateur-radio frequencies normally requires the appropriate licence or authorisation for your country. Rules and permitted frequencies vary internationally, so check your national regulator or recognised amateur-radio organisation.</p>`],
+      ["What can you do?", `<p>Amateur radio includes local VHF/UHF contacts, repeaters, HF long-distance communication, Morse code, digital data, digital voice, APRS, satellites, portable operation and internet-linked radio systems.</p>`],
+      ["What is a callsign?", `<p>A callsign identifies an amateur station or operator. Learn more in <a href="/guides/amateur-radio-callsigns-explained">Amateur Radio Callsigns Explained</a>.</p>`],
+      ["Your first contact", `<p>Listen first, learn basic operating etiquette and keep the first conversation simple. The dedicated <a href="/guides/first-amateur-radio-contact">first amateur radio contact guide</a> gives practical examples of what to say.</p>`]
+    ]
   },
   {
     slug: "dmr-vs-echolink-vs-allstarlink",
     title: "DMR vs EchoLink vs AllStarLink: What's the Difference?",
     cardTitle: "DMR vs EchoLink vs AllStarLink",
-    desc: "Compare DMR, EchoLink and AllStarLink for amateur radio. Learn how each works, what equipment you need and which option may suit a beginner.",
-    body: `<h2>DMR, EchoLink and AllStarLink are different systems</h2><p>All three can connect amateur-radio operators beyond a single local RF path, but they do it differently. <strong>DMR</strong> is a digital radio technology used over RF and digital networks. <strong>EchoLink</strong> is an internet-linked amateur-radio system with software clients and RF gateways. <strong>AllStarLink</strong> links radio nodes using VoIP technology.</p><h2>Quick comparison</h2><div class="guide-table-wrap"><table class="guide-table"><thead><tr><th>System</th><th>Typical beginner access</th><th>Main idea</th></tr></thead><tbody><tr><td>DMR</td><td>DMR radio + repeater or hotspot</td><td>Digital RF voice with talkgroups and network services</td></tr><tr><td>EchoLink</td><td>Validated callsign + app/software, or RF gateway</td><td>Internet audio linking between amateur stations and gateways</td></tr><tr><td>AllStarLink</td><td>Radio through an AllStar node or compatible client/node</td><td>VoIP linking of amateur radio nodes, repeaters and remote bases</td></tr></tbody></table></div><h2>Which one is easiest?</h2><p>That depends on what is active near you and what equipment you already own. If a local DMR repeater is active, DMR may be attractive. EchoLink can provide software-based access for a validated licensed operator. AllStarLink is useful where local nodes and linked networks are active.</p><h2>Which one uses radio?</h2><p>DMR normally includes a digital RF path between your radio and a repeater or hotspot. EchoLink and AllStarLink can involve RF gateways and repeaters as well as internet transport. The exact path depends on how each operator is connected.</p><h2>Can the systems connect together?</h2><p>Some operators and networks build bridges between systems, but interoperability is configuration-dependent and should never be assumed. Network rules and licensing requirements still apply.</p><h2>Which should a beginner choose?</h2><p>Start with the system that has useful activity near you or best matches your interests. Read <a href="/guides/dmr-for-beginners">DMR for Beginners</a>, <a href="/guides/echolink-getting-started">EchoLink Getting Started</a> and <a href="/guides/allstarlink-for-beginners">AllStarLink for Beginners</a> for the next step.</p>`
+    desc: "A simple comparison of DMR, EchoLink and AllStarLink so beginners can understand what each system is for and choose the right guide next.",
+    sections: [
+      ["Three different things", `<p><strong>DMR</strong> is a digital radio mode and network ecosystem. <strong>EchoLink</strong> is an internet-linked amateur-radio system with apps and RF gateways. <strong>AllStarLink</strong> links amateur-radio nodes and repeaters using VoIP technology.</p>`],
+      ["Quick comparison", `<div class="guide-table-wrap"><table class="guide-table"><thead><tr><th>System</th><th>Typical access</th><th>Best next guide</th></tr></thead><tbody><tr><td>DMR</td><td>DMR radio through a repeater or hotspot</td><td><a href="/guides/digital-voice-for-beginners">Digital Voice for Beginners</a></td></tr><tr><td>EchoLink</td><td>Validated app/software or an RF EchoLink gateway</td><td><a href="/guides/echolink-getting-started">EchoLink Getting Started</a></td></tr><tr><td>AllStarLink</td><td>Radio through an AllStar node or compatible node/client setup</td><td><a href="/guides/allstarlink-for-beginners">AllStarLink for Beginners</a></td></tr></tbody></table></div>`],
+      ["Where DMR details belong", `<p>Rather than duplicate the existing digital-voice, DMR-ID and hotspot guides, this comparison page points to them. For DMR terminology and other digital modes, use <a href="/guides/digital-voice-for-beginners">Digital Voice for Beginners</a>. For registration, use <a href="/guides/getting-a-dmr-id">Getting a DMR ID</a>. For personal gateways, use <a href="/guides/digital-radio-hotspots-pistar-wpsd">Digital Radio Hotspots Explained</a>.</p>`],
+      ["Which should a beginner choose?", `<p>Choose based on the equipment you already have and what is active around you. DMR is useful when you have DMR RF access; EchoLink can be convenient for validated software access and RF gateways; AllStarLink is especially useful around linked nodes and repeater networks.</p>`]
+    ]
   }
 ];
 
-function esc(s) {
-  return s.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-}
+function esc(s) { return s.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;"); }
 
 function page(g) {
   const url = `https://zl3tom.com/guides/${g.slug}`;
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {"@type":"TechArticle","@id":`${url}#article`,headline:g.title,description:g.desc,url,mainEntityOfPage:url,inLanguage:"en-NZ",datePublished:updated,dateModified:updated,author:{"@type":"Person",name:"Thomas Bernard",alternateName:"ZL3TOM",url:"https://zl3tom.com/about"}},
-      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem",position:1,name:"Home",item:"https://zl3tom.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://zl3tom.com/guides"},{"@type":"ListItem",position:3,name:g.title,item:url}]}
-    ]
-  };
-  return `<!doctype html><html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(g.title)} | ZL3TOM</title><meta name="description" content="${esc(g.desc)}"><meta name="author" content="Thomas Bernard — ZL3TOM"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="${url}"><link rel="stylesheet" href="/style.css?v=20260904-fullfix1"><link rel="stylesheet" href="/site-extras.css?v=20260904-fullfix1"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta property="og:type" content="article"><meta property="og:title" content="${esc(g.title)} | ZL3TOM"><meta property="og:description" content="${esc(g.desc)}"><meta property="og:url" content="${url}"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">${JSON.stringify(schema)}</script></head><body><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="site-container nav-wrap"><a class="brand" href="/"><span><strong>ZL3TOM</strong><small>Amateur Radio</small></span></a><nav id="main-navigation" class="main-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/about">About</a><a href="/radio-fun">Radio Fun</a><a href="/guides" aria-current="page">Guides</a><a href="/tools">Tools</a><a href="/qsl">QSL</a><a href="/contact">Contact</a></nav></div></header><main id="main"><section class="page-hero"><div class="site-container page-hero-inner"><div><p class="section-kicker">ZL3TOM amateur radio guide</p><h1>${g.title}</h1><p>${g.desc}</p></div></div></section><section class="inner-section light"><div class="site-container article-layout"><article class="article-content"><a class="back-link" href="/guides">← All guides</a>${g.body}<h2>Explore more amateur radio guides</h2><p>Browse the <a href="/guides">full ZL3TOM guide library</a> or use the <a href="/tools">radio tools and calculators</a>.</p><footer class="guide-byline"><p><strong>Written by Thomas Bernard — ZL3TOM</strong></p><p>Last updated: 10 September 2026</p></footer></article></div></section></main><footer class="site-footer"><div class="site-container footer-grid"><div><strong>ZL3TOM</strong><p>Thomas Bernard · ZL3TOM / ZL3KY<br>Christchurch, New Zealand</p></div><div><strong>Quick links</strong><a href="/guides">Guides</a><a href="/tools">Tools</a><a href="/qsl">QSL</a></div><div><strong>Contact</strong><a href="/contact">Contact</a><a href="https://www.qrz.com/db/ZL3TOM" target="_blank" rel="noopener noreferrer">QRZ ↗</a><a rel="me" href="https://www.facebook.com/zl3tom" target="_blank" rel="noopener noreferrer">ZL3TOM on Facebook ↗</a></div></div></footer><script src="/script.js?v=20260904-fullfix1" defer></script></body></html>\n`;
+  const sections = g.sections.map(([heading, body], i) => `<section class="guide-section"><span class="section-number">${String(i + 1).padStart(2, "0")}</span><div><h2>${heading}</h2>${body}</div></section>`).join("\n");
+  const schema = {"@context":"https://schema.org","@graph":[{"@type":"TechArticle",headline:g.title,description:g.desc,url,mainEntityOfPage:url,inLanguage:"en-NZ",author:{"@type":"Person",name:"Thomas Bernard",alternateName:"ZL3TOM",url:"https://zl3tom.com/about"},datePublished:updated,dateModified:updated},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem",position:1,name:"Home",item:"https://zl3tom.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://zl3tom.com/guides"},{"@type":"ListItem",position:3,name:g.title,item:url}]}]};
+  return `<!doctype html>\n<html lang="en-NZ">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>${esc(g.title)} | ZL3TOM</title>\n<meta name="description" content="${esc(g.desc)}">\n<meta name="author" content="Thomas Bernard — ZL3TOM">\n<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">\n<link rel="canonical" href="${url}">\n<link rel="stylesheet" href="/style.css?v=20260904-fullfix1">\n<link rel="stylesheet" href="/site-extras.css?v=20260904-fullfix1">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n<meta property="og:type" content="article"><meta property="og:title" content="${esc(g.title)} | ZL3TOM"><meta property="og:description" content="${esc(g.desc)}"><meta property="og:url" content="${url}">\n</head>\n<body>\n<a class="skip-link" href="#main">Skip to main content</a>\n<header class="site-header"><div class="site-container nav-wrap"><a class="brand" href="/" aria-label="ZL3TOM Amateur Radio home"><span class="brand-icon">${icon}</span><span><strong>ZL3TOM</strong><small>Amateur Radio</small></span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation"><span aria-hidden="true">☰</span></button><nav id="main-navigation" class="main-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/about">About</a><a href="/radio-fun">Radio Fun</a><a href="/guides" aria-current="page">Guides</a><a href="/tools">Tools</a><a href="/qsl">QSL</a><a href="/contact">Contact</a></nav></div></header>\n<main id="main"><section class="page-hero"><div class="signal-grid" aria-hidden="true"></div><div class="site-container page-hero-inner"><div class="page-icon">${icon}</div><div><p class="section-kicker">ZL3TOM beginner guide</p><h1>${g.title}</h1><p>${g.desc}</p></div></div></section><section class="inner-section light"><div class="site-container article-layout"><article class="article-content"><a class="back-link" href="/guides">← All guides</a>${sections}<section class="related-guides"><h2>Keep learning</h2><div><a href="/guides"><strong>All amateur radio guides</strong><span>Browse the complete ZL3TOM guide library.</span></a><a href="/tools"><strong>Radio tools &amp; calculators</strong><span>Useful calculators and operating tools.</span></a></div></section><footer class="guide-byline"><p><strong>Written by Thomas Bernard — ZL3TOM</strong></p><p>Last updated: <time datetime="${updated}">14 September 2026</time></p></footer></article></div></section><script type="application/ld+json">${JSON.stringify(schema)}</script></main><footer class="site-footer"><div class="site-container footer-grid"><div><strong>ZL3TOM</strong><p>Thomas Bernard · ZL3TOM / ZL3KY<br>Christchurch, New Zealand</p></div><div><strong>Quick links</strong><a href="/guides">Guides</a><a href="/tools">Tools</a><a href="/qsl">QSL</a></div><div><strong>Contact</strong><a href="/contact">Contact</a><a rel="me" href="https://www.facebook.com/zl3tom" target="_blank" rel="noopener noreferrer">ZL3TOM on Facebook ↗</a></div></div></footer><script src="/script.js?v=20260904-fullfix1" defer></script></body></html>\n`;
 }
 
-for (const g of newGuides) {
+// Remove earlier drafts that overlap with existing guides.
+for (const stale of ["dmr-for-beginners", "echolink-for-beginners", "allstarlink-for-beginners-guide"]) {
+  await rm(path.join(pub, "guides", stale), { recursive: true, force: true });
+  await rm(path.join(pub, `guides-${stale}.html`), { force: true });
+}
+
+for (const g of guides) {
   await mkdir(path.join(pub, "guides", g.slug), { recursive: true });
   const html = page(g);
   await writeFile(path.join(pub, "guides", g.slug, "index.html"), html);
   await writeFile(path.join(pub, `guides-${g.slug}.html`), html);
 }
 
-// Remove the two duplicate slugs produced by the earlier draft, if they ever existed.
-for (const stale of ["echolink-for-beginners", "allstarlink-for-beginners-guide"]) {
-  await rm(path.join(pub, "guides", stale), { recursive: true, force: true });
-  await rm(path.join(pub, `guides-${stale}.html`), { force: true });
+function cardMarkup(g) {
+  return `<a href="/guides/${g.slug}" class="guide-card"><div class="guide-card-top"><span>00</span>${icon}</div><h2>${g.cardTitle}</h2><p>${g.desc}</p><em>Read guide →</em></a>`;
 }
 
-async function upgradeExisting(rel, title, desc, extraHtml) {
-  const file = path.join(pub, rel);
-  let html = await readFile(file, "utf8");
-  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(title)} | ZL3TOM</title>`);
-  html = html.replace(/<meta name="description" content="[^"]*">/i, `<meta name="description" content="${esc(desc)}">`);
-  html = html.replace(/<h1[^>]*>[\s\S]*?<\/h1>/i, `<h1>${title}</h1>`);
-  if (!html.includes("data-seo-upgrade=\"2026-09-10\"")) {
-    const marker = /<footer class="guide-byline">/i;
-    html = html.replace(marker, `<section data-seo-upgrade="2026-09-10">${extraHtml}</section>$&`);
-  }
-  await writeFile(file, html);
-}
-
-const echoTitle = "EchoLink for Beginners: Setup, Validation, Nodes and First Contact";
-const echoDesc = "Learn how EchoLink works for licensed amateur radio operators, including setup, callsign validation, node numbers, connecting to stations and making your first EchoLink contact.";
-const echoExtra = `<h2>EchoLink beginner checklist</h2><ul><li>Use your valid amateur-radio callsign and complete EchoLink validation.</li><li>Check microphone, speaker and app permissions before your first contact.</li><li>Listen before transmitting and identify with your callsign.</li><li>Leave a short pause between overs on linked systems.</li></ul><h2>Try ZL3TOM-L</h2><p>My EchoLink link is <strong>ZL3TOM-L</strong>, node <strong>304602</strong>, in Christchurch, New Zealand. My nodes are commonly connected with the <a href="https://anzel.radio/" target="_blank" rel="noopener noreferrer">ANZEL Radio network ↗</a>.</p><h2>Related EchoLink help</h2><p>For a wider comparison see <a href="/guides/dmr-vs-echolink-vs-allstarlink">DMR vs EchoLink vs AllStarLink</a>, or read <a href="/guides/amateur-radio-from-your-phone">Amateur Radio From Your Phone</a>.</p>`;
-
-const allstarTitle = "AllStarLink for Beginners: Nodes, Hubs and How AllStar Works";
-const allstarDesc = "A beginner-friendly guide to AllStarLink amateur radio: nodes, hubs, VoIP linking, connecting and disconnecting, etiquette and how linked radio networks work.";
-const allstarExtra = `<h2>AllStarLink beginner checklist</h2><ul><li>Know the node number you want to connect to.</li><li>Listen before transmitting after a connection is made.</li><li>Leave a short pause between overs so linked nodes can pass audio cleanly.</li><li>Use your amateur-radio callsign and follow the rules of the network you join.</li></ul><h2>My AllStar node</h2><p>My AllStar node is <strong>40452</strong> for ZL3TOM. It is generally connected to the <a href="https://anzel.radio/" target="_blank" rel="noopener noreferrer">ANZEL Radio network ↗</a> for ongoing activity.</p><h2>Compare linked systems</h2><p>See <a href="/guides/dmr-vs-echolink-vs-allstarlink">DMR vs EchoLink vs AllStarLink</a> to understand where AllStarLink fits alongside other popular amateur-radio systems.</p>`;
-
-for (const rel of ["guides-echolink-getting-started.html", path.join("guides", "echolink-getting-started", "index.html")]) await upgradeExisting(rel, echoTitle, echoDesc, echoExtra);
-for (const rel of ["guides-allstarlink-for-beginners.html", path.join("guides", "allstarlink-for-beginners", "index.html")]) await upgradeExisting(rel, allstarTitle, allstarDesc, allstarExtra);
-
-const icon = `<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 0 1 0 8.4"/><path d="M7.8 16.2a6 6 0 0 1 0-8.4"/></svg>`;
 for (const rel of ["guides.html", path.join("guides", "index.html")]) {
   const file = path.join(pub, rel);
   let html = await readFile(file, "utf8");
-  for (const [i, g] of newGuides.entries()) {
-    if (html.includes(`/guides/${g.slug}`)) continue;
-    const card = `<a href="/guides/${g.slug}" class="guide-card"><span class="guide-icon">${icon}</span><div><span class="guide-label">Guide ${27 + i}</span><h2>${g.cardTitle}</h2><p>${g.desc}</p><span class="guide-read">Read guide →</span></div></a>`;
-    const pos = html.lastIndexOf("</div>", html.lastIndexOf("</section>"));
-    if (pos !== -1) html = html.slice(0, pos) + card + html.slice(pos);
+  for (const stale of ["dmr-for-beginners", "echolink-for-beginners", "allstarlink-for-beginners-guide"]) {
+    html = html.replace(new RegExp(`<a href="/guides/${stale}" class="guide-card">[\\s\\S]*?<\\/a>`, "g"), "");
   }
+  for (const g of guides) {
+    const pattern = new RegExp(`<a href="/guides/${g.slug}" class="guide-card">[\\s\\S]*?<\\/a>`, "g");
+    if (pattern.test(html)) html = html.replace(pattern, cardMarkup(g));
+    else html = html.replace(/(<div class="guide-card-grid">)([\s\S]*?)(<\/div>\s*<\/div>\s*<\/section>)/, `$1$2${cardMarkup(g)}$3`);
+  }
+  let number = 0;
+  html = html.replace(/(<a href="\/guides\/[^"]+" class="guide-card"><div class="guide-card-top"><span>)(\d+)(<\/span>)/g, (_, a, _n, b) => `${a}${String(++number).padStart(2, "0")}${b}`);
   await writeFile(file, html);
 }
 
 const sitemapFile = path.join(pub, "sitemap.xml");
 let sitemap = await readFile(sitemapFile, "utf8");
-// Remove stale duplicate URLs if an earlier build inserted them.
-sitemap = sitemap.replace(/\s*<url>\s*<loc>https:\/\/zl3tom\.com\/guides\/(?:echolink-for-beginners|allstarlink-for-beginners-guide)<\/loc>[\s\S]*?<\/url>/g, "");
-for (const g of newGuides) {
-  const loc = `https://zl3tom.com/guides/${g.slug}`;
-  if (!sitemap.includes(`<loc>${loc}</loc>`)) sitemap = sitemap.replace("</urlset>", `  <url><loc>${loc}</loc><lastmod>${updated}</lastmod></url>\n</urlset>`);
+for (const stale of ["dmr-for-beginners", "echolink-for-beginners", "allstarlink-for-beginners-guide"]) {
+  sitemap = sitemap.replace(new RegExp(`\\s*<url>[\\s\\S]*?<loc>https://zl3tom\\.com/guides/${stale}<\\/loc>[\\s\\S]*?<\\/url>`, "g"), "");
+}
+for (const g of guides) {
+  if (!sitemap.includes(`<loc>https://zl3tom.com/guides/${g.slug}</loc>`)) {
+    sitemap = sitemap.replace("</urlset>", `  <url><loc>https://zl3tom.com/guides/${g.slug}</loc><lastmod>${updated}</lastmod></url>\n</urlset>`);
+  }
 }
 await writeFile(sitemapFile, sitemap);
-
-console.log("Traffic SEO guides complete: 3 new guides added; existing EchoLink and AllStarLink guides upgraded without duplicate topics.");
+console.log("Consolidated overlapping guides: kept 2 distinct new guides and reused the existing DMR, EchoLink and AllStar guides.");
