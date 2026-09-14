@@ -5,6 +5,7 @@ import path from "node:path";
 import process, { loadEnvFile } from "node:process";
 import { fileURLToPath } from "node:url";
 import nodemailer from "nodemailer";
+import { createQrzService } from "./qrz-service.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -48,6 +49,7 @@ const contactConfigured = Boolean(
   smtpUser && smtpPass && turnstileSiteKey && turnstileSecret
 );
 const contactAttempts = new Map();
+const qrzService = createQrzService({ rootDir: __dirname, env: process.env });
 
 const mailTransport = smtpUser && smtpPass
   ? nodemailer.createTransport({
@@ -431,6 +433,16 @@ const server = createServer(async (request, response) => {
     return;
   }
 
+  if (requestUrl.pathname === "/api/qrz-config" && request.method === "GET") {
+    await qrzService.handleConfig(request, response);
+    return;
+  }
+
+  if (requestUrl.pathname === "/api/qrz-lookup" && request.method === "POST") {
+    await qrzService.handleLookup(request, response);
+    return;
+  }
+
   if (request.method !== "GET" && request.method !== "HEAD") {
     response.writeHead(405, {
       "Content-Type": "text/plain; charset=utf-8",
@@ -469,6 +481,9 @@ server.listen(port, host, () => {
   console.log(`ZL3TOM website listening on http://${host}:${port}`);
   if (!contactConfigured) {
     console.log("Contact form is visible but disabled until SMTP and Turnstile settings are added to .env.");
+  }
+  if (!qrzService.configured) {
+    console.log("QRZ XML lookup is disabled until QRZ and QRZ Turnstile settings are added to .env.");
   }
 });
 
