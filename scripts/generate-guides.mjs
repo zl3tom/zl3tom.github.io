@@ -234,42 +234,50 @@ const newGuides = [
     slug: "qso-one-guide",
     title: "QSO One Setup Guide: DMR, EchoLink and AllStar",
     cardTitle: "QSO One setup",
-    description: "A beginner QSO One setup guide for licensed amateur radio operators using EchoLink, AllStarLink, DMR, System Fusion and M17 on Windows or Android.",
-    keywords: "QSO One guide, QSO1 setup, QSO One EchoLink, QSO One AllStar, QSO One DMR, amateur radio app, ZL3TOM",
+    description: "A step-by-step QSO One guide for licensed amateur radio operators using EchoLink, AllStarLink, IAX Direct, DMR, System Fusion and M17 on Windows or Android.",
+    keywords: "QSO One guide, QSO1 setup, QSO One Android, QSO One Google Play, QSO One EchoLink, QSO One AllStar, QSO One DMR, amateur radio app, ZL3TOM",
     asideTitle: "Current platforms",
-    asideHtml: "<p>As checked on 3 September 2026, the official site lists Windows 10/11 64-bit and Android 8+. Check the site for newer platform support.</p><a href=\"https://qso1.net/\" target=\"_blank\" rel=\"noreferrer\">Official QSO One site ↗</a>",
+    asideHtml: "<p>As checked on 18 September 2026, QSO One is available for Windows and Android, including Google Play for Android 8+. iOS, macOS and Linux are listed as coming soon.</p><a href=\"https://play.google.com/store/apps/details?id=com.qsoone.qso_one\" target=\"_blank\" rel=\"noopener noreferrer\">Get QSO One on Google Play ↗</a><br><a href=\"https://qso1.net/\" target=\"_blank\" rel=\"noreferrer\">Official QSO One site ↗</a>",
     sections: [
       {
         title: "What QSO One is",
-        html: `<p>QSO One is an amateur radio app that brings several linked voice systems into one interface. Its official site lists AllStarLink, EchoLink, IAX Direct, DMR through BrandMeister and TGIF, System Fusion and M17.</p><p>It is an access tool, not a replacement for your amateur radio licence or the separate accounts required by each network.</p>`
+        html: `<p>QSO One is a free amateur radio app that brings several linked voice systems into one interface. Its official site lists AllStarLink, EchoLink, IAX Direct, DMR through BrandMeister and TGIF, System Fusion (YSF) and M17.</p><p>It is an access tool, not a replacement for your amateur radio licence or the separate accounts required by each network.</p>`
       },
       {
-        title: "Download it safely",
-        html: `<ol><li>Start at the <a href="https://qso1.net/" target="_blank" rel="noreferrer">official QSO One website ↗</a>.</li><li>Choose the official Windows or Android download offered for your device.</li><li>On Windows, the official Microsoft Store listing is another safe source.</li><li>Install updates only from the official site, store or app updater.</li></ol><p>At the time this guide was updated, the official site listed Windows 10/11 64-bit and Android 8 or later. It showed iOS, macOS and Linux as coming soon, so verify current availability before installing.</p>`
+        title: "Download QSO One — now on Google Play",
+        html: `<div class="guide-callout"><strong>New for Android:</strong> QSO One is now available from Google Play, making installation and updates much easier on Android devices.</div><ol><li>Start at the <a href="https://qso1.net/" target="_blank" rel="noreferrer">official QSO One website ↗</a>.</li><li><strong>Android:</strong> <a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">install QSO One from Google Play ↗</a>. Android 8.0 or later is supported.</li><li><strong>Windows:</strong> use the official Microsoft Store listing or the direct installer offered by QSO One.</li><li>Install updates only from the official site, official app store or app updater.</li></ol><p>QSO One is currently available for Windows and Android. The official site lists iOS, macOS and Linux as coming soon.</p>`
+      },
+      {
+        title: "How to use QSO One",
+        html: `<p>Once QSO One is installed, start with one network and learn the basic receive, connect and PTT controls before adding more.</p><ol><li><strong>Create or sign in to QSO One</strong> using your amateur radio callsign.</li><li><strong>Choose a network</strong> such as AllStarLink, EchoLink, IAX Direct, DMR, System Fusion (YSF) or M17.</li><li><strong>Add the details that network requires.</strong> EchoLink requires a validated EchoLink account. DMR requires your DMR details for BrandMeister or TGIF. IAX Direct requires credentials supplied by the node operator.</li><li><strong>Select your destination.</strong> Search for an AllStar node or EchoLink station, select a DMR talkgroup, or choose a YSF/M17 reflector.</li><li><strong>Listen first</strong> and make sure the destination is not already in use.</li><li><strong>Press and hold PTT to transmit.</strong> Pause briefly before speaking, identify with your callsign, and release PTT when finished.</li><li><strong>Disconnect when finished</strong> and log the QSO if you want to keep a record.</li></ol><div class="radio-example"><small>SIMPLE FIRST CALL</small><pre>ZL3TOM listening through QSO One.</pre></div><p>On Android, QSO One can keep a session active in the background. Bluetooth, BLE and PoC hardware PTT devices are also supported.</p>`
       },
       {
         title: "Prepare your accounts",
-        html: `<ul><li><strong>QSO One:</strong> create or sign in with your licensed callsign as directed by the app.</li><li><strong>EchoLink:</strong> install EchoLink and complete callsign validation first.</li><li><strong>DMR:</strong> obtain your own DMR ID from RadioID, then configure the network account you intend to use.</li><li><strong>AllStarLink:</strong> use your authorised node details. IAX Direct credentials must come from the node owner.</li></ul><div class="guide-callout"><strong>Keep secrets private:</strong> never publish an IAX password, hotspot security password or network account password. Your public node number and callsign are fine to share.</div>`
+        html: `<ul><li><strong>QSO One:</strong> create or sign in with your licensed callsign as directed by the app.</li><li><strong>EchoLink:</strong> complete callsign validation first.</li><li><strong>DMR:</strong> obtain your own DMR ID from RadioID and configure the network account you intend to use.</li><li><strong>AllStarLink:</strong> use your authorised node details. IAX Direct credentials must come from the node owner.</li></ul><div class="guide-callout"><strong>Keep secrets private:</strong> never publish an IAX password, hotspot security password or network account password.</div>`
       },
       {
         title: "First-run audio setup",
-        html: `<ol><li>Allow microphone permission.</li><li>Select the correct microphone and speaker or headset.</li><li>Lower the microphone level if reports say your audio is distorted.</li><li>Receive and listen before trying transmit.</li><li>Use headphones if you hear echo or feedback.</li></ol><p>Only one application should control the microphone at a time. Close meeting or recording apps if audio behaves unpredictably.</p>`
+        html: `<ol><li>Allow microphone permission.</li><li>Select the correct microphone and speaker or headset.</li><li>Lower the microphone level if reports say your audio is distorted.</li><li>Receive and listen before transmitting.</li><li>Use headphones if you hear echo or feedback.</li></ol><p>Only one application should control the microphone at a time.</p>`
       },
       {
         title: "Connect with EchoLink",
-        html: `<p>Sign in with your validated EchoLink callsign, search for the station or node, connect, and listen before transmitting. If a direct connection fails, follow the app's current proxy or fallback guidance.</p><div class="radio-example"><small>ZL3TOM EXAMPLE</small><pre>EchoLink node 304602 — ZL3TOM-L</pre></div>`
+        html: `<p>Sign in with your validated EchoLink callsign, search for the station or node, connect, and listen before transmitting.</p><div class="radio-example"><small>ZL3TOM EXAMPLE</small><pre>EchoLink node 304602 — ZL3TOM-L</pre></div>`
       },
       {
         title: "Connect with AllStar or IAX Direct",
-        html: `<p>For AllStarLink, select the connection method you are authorised to use and enter the public node number where requested. IAX Direct is different: it needs the server, port, username and password supplied by that node's owner.</p><div class="radio-example"><small>ZL3TOM EXAMPLE</small><pre>AllStar node 40452</pre></div><p>Do not guess credentials or use someone else's private node login.</p>`
+        html: `<p>For AllStarLink, select the connection method you are authorised to use and enter the public node number where requested. IAX Direct needs the server, port, username and password supplied by that node's owner.</p><div class="radio-example"><small>ZL3TOM EXAMPLE</small><pre>AllStar node 40452</pre></div><p>Do not guess credentials or use someone else's private node login.</p>`
       },
       {
-        title: "Connect with DMR or other digital modes",
-        html: `<p>For DMR, enter your own DMR ID and follow the current QSO One instructions for BrandMeister or TGIF. Select the intended talkgroup, listen first, and identify with your callsign.</p><p>System Fusion and M17 use different network concepts and credentials. Configure one system at a time so you can test it properly.</p>`
+        title: "Connect with DMR, System Fusion or M17",
+        html: `<p>For DMR, enter your own DMR ID and follow the current QSO One instructions for BrandMeister or TGIF. Select the intended talkgroup, listen first, and identify with your callsign.</p><p>QSO One also supports System Fusion (YSF) reflectors and M17 reflectors/modules. Configure one system at a time so you can test it properly.</p>`
+      },
+      {
+        title: "Useful current features",
+        html: `<ul><li><strong>Android background operation:</strong> keep a session active while switching apps or locking the screen.</li><li><strong>Hardware PTT:</strong> Bluetooth, BLE and PoC PTT devices are supported.</li><li><strong>QSO logging:</strong> log contacts and export ADIF.</li><li><strong>Callsign lookup:</strong> look up operator information from within the app.</li><li><strong>Net Finder and recording:</strong> tools for finding nets and recording received audio.</li></ul>`
       },
       {
         title: "Troubleshooting checklist",
-        html: `<ul><li>Confirm your callsign validation or DMR ID approval is complete.</li><li>Check microphone permission and the selected audio devices.</li><li>Verify the node number, talkgroup or destination.</li><li>Re-enter private credentials carefully without sharing a screenshot containing them.</li><li>Try receive-only first and then one short transmission.</li><li>Check the official site for release notes, updated instructions and support.</li></ul>`
+        html: `<ul><li>Confirm your callsign validation or DMR ID approval is complete.</li><li>Check microphone permission and selected audio devices.</li><li>Verify the node number, talkgroup or destination.</li><li>Re-enter private credentials carefully without sharing them.</li><li>Try receive-only first and then one short transmission.</li><li>Check the official QSO One site for current instructions and support.</li></ul>`
       },
       {
         title: "Good linked-network operating",
@@ -277,7 +285,9 @@ const newGuides = [
       }
     ],
     sources: [
-      ["QSO One official site and downloads", "https://qso1.net/"],
+      ["QSO One official website", "https://qso1.net/"],
+      ["QSO One on Google Play", "https://play.google.com/store/apps/details?id=com.qsoone.qso_one"],
+      ["QSO One current features", "https://qso1.net/features"],
       ["QSO One in the Microsoft Store", "https://apps.microsoft.com/detail/9nrwfpgk3l3w"],
       ["EchoLink official validation", "https://www.echolink.org/validation/"],
       ["RadioID official site", "https://radioid.net/"],
