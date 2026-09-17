@@ -237,7 +237,7 @@ const newGuides = [
     description: "A step-by-step QSO One guide for licensed amateur radio operators using EchoLink, AllStarLink, IAX Direct, DMR, System Fusion and M17 on Windows or Android.",
     keywords: "QSO One guide, QSO1 setup, QSO One Android, QSO One Google Play, QSO One EchoLink, QSO One AllStar, QSO One DMR, amateur radio app, ZL3TOM",
     asideTitle: "Current platforms",
-    asideHtml: "<p>As checked on 18 September 2026, QSO One is available for Windows and Android, including Google Play for Android 8+. iOS, macOS and Linux are listed as coming soon.</p><a href=\"https://play.google.com/store/apps/details?id=com.qsoone.qso_one\" target=\"_blank\" rel=\"noopener noreferrer\">Get QSO One on Google Play ↗</a><br><a href=\"https://qso1.net/\" target=\"_blank\" rel=\"noreferrer\">Official QSO One site ↗</a>",
+    asideHtml: "<p>As checked on 18 September 2026, QSO One is available for Windows and Android. Windows 10/11 64-bit is available from the Microsoft Store, and Android 8.0+ is available from Google Play. iOS, macOS and Linux are listed as coming soon.</p><a href=\"https://apps.microsoft.com/detail/9NRWFPGK3L3W\" target=\"_blank\" rel=\"noopener noreferrer\">Get QSO One from the Microsoft Store ↗</a><br><a href=\"https://play.google.com/store/apps/details?id=com.qsoone.qso_one\" target=\"_blank\" rel=\"noopener noreferrer\">Get QSO One on Google Play ↗</a><br><a href=\"https://qso1.net/\" target=\"_blank\" rel=\"noreferrer\">Official QSO One site ↗</a>",
     sections: [
       {
         title: "What QSO One is",
