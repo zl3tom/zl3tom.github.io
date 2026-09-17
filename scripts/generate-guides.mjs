@@ -288,7 +288,7 @@ const newGuides = [
       ["QSO One official website", "https://qso1.net/"],
       ["QSO One on Google Play", "https://play.google.com/store/apps/details?id=com.qsoone.qso_one"],
       ["QSO One current features", "https://qso1.net/features"],
-      ["QSO One in the Microsoft Store", "https://apps.microsoft.com/detail/9nrwfpgk3l3w"],
+      ["Download QSO One from the Microsoft Store", "https://apps.microsoft.com/detail/9NRWFPGK3L3W"],
       ["EchoLink official validation", "https://www.echolink.org/validation/"],
       ["RadioID official site", "https://radioid.net/"],
       ["BrandMeister official dashboard", "https://brandmeister.network/"]
