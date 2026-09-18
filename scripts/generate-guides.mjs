@@ -39,12 +39,7 @@ const existingGuides = [
     cardTitle: "Antenna basics",
     description: "Simple antenna fundamentals that help you get better results without overcomplicating your station."
   },
-  {
-    slug: "q-codes-and-jargon",
-    title: "Q Codes and Amateur Radio Jargon",
-    cardTitle: "Q codes and jargon",
-    description: "Common Q codes, amateur radio jargon, and when plain language is the better choice."
-  },
+
   {
     slug: "emergency-comms-basics",
     title: "Emergency Communications Basics",
@@ -52,6 +47,56 @@ const existingGuides = [
     description: "Clear, calm habits for message passing, priority traffic, and directed amateur radio nets."
   }
 ];
+
+const qCodesGuide = {
+  slug: "q-codes-and-jargon",
+  title: "Q Codes and Amateur Radio Jargon",
+  cardTitle: "Q codes and jargon",
+  description: "Common Q codes, amateur radio jargon, and when plain language is the better choice.",
+  keywords: "amateur radio Q codes, ham radio jargon, plain language radio, QTH QRM QRN QSB QSY QRZ QSL QRP QRO QRT, ZL3TOM",
+  asideTitle: "Good operating",
+  asideHtml: "<p>Listen first. Identify clearly. Leave a pause. Be patient and welcoming.</p><a href=\"/contact\">Suggest a guide →</a>",
+  sections: [
+    {
+      title: "Why Q codes exist",
+      html: `<p>Q codes are short signals that save time, especially on CW. They are also used on voice and digital, but you only need a handful for most contacts.</p>`
+    },
+    {
+      title: "Watch: Ham Radio Jargon and Plain Language",
+      html: `<p>This video is a useful introduction to common ham radio jargon and using plain language on the air.</p><div style="position:relative;width:100%;max-width:760px;aspect-ratio:16/9;margin:1rem 0;"><iframe src="https://www.youtube-nocookie.com/embed/83kToVbuPrY" title="Ham Radio Basics — Ham Radio Jargon and Plain Language by W6LG" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div><p><strong>Video credit:</strong> <a href="https://www.youtube.com/@ham-radio" target="_blank" rel="noopener noreferrer">W6LG on YouTube ↗</a></p>`
+    },
+    {
+      title: "The most useful Q codes",
+      html: `<div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>QTH  location
+QRM  interference from other stations
+QRN  noise
+QSB  fading
+QSY  change frequency
+QRZ  who is calling me?
+QSL  confirmation
+QRP  low power
+QRO  high power
+QRT  stop transmitting</pre></div>`
+    },
+    {
+      title: "How they sound on voice",
+      html: `<ul><li>‘QTH Christchurch’ means ‘my location is Christchurch.’</li><li>‘Lots of QRM’ means ‘I have interference from other stations.’</li><li>‘Let’s QSY’ means ‘let’s change frequency.’</li></ul>`
+    },
+    {
+      title: "When plain language is better",
+      html: `<ul><li>Plain language sounds natural on repeaters and local chats.</li><li>Explain terms to new operators rather than stacking jargon.</li><li>Simple words can be clearer when copy is weak.</li></ul>`
+    },
+    {
+      title: "Two rules that prevent mistakes",
+      html: `<ul><li>If you did not copy a callsign, ask again — do not guess.</li><li>If you are unsure what someone means, ask. Most operators are happy to explain.</li></ul>`
+    }
+  ],
+  sources: [
+    ["W6LG on YouTube", "https://www.youtube.com/@ham-radio"],
+    ["Ham Radio Basics — Ham Radio Jargon and Plain Language", "https://www.youtube.com/watch?v=83kToVbuPrY"]
+  ],
+  related: ["operating-basics", "repeaters-and-nets", "what-is-amateur-radio"]
+};
 
 const newGuides = [
   {
@@ -303,8 +348,8 @@ const newGuides = [
 
 const priorityGuides = additionalGuides.slice(0, 3);
 const extraGuides = additionalGuides.slice(3);
-const allGuides = [...priorityGuides, ...existingGuides, ...newGuides, ...extraGuides];
-const generatedGuides = [...newGuides, ...additionalGuides];
+const allGuides = [...priorityGuides, ...existingGuides, qCodesGuide, ...newGuides, ...extraGuides];
+const generatedGuides = [qCodesGuide, ...newGuides, ...additionalGuides];
 const bySlug = new Map(allGuides.map((guide) => [guide.slug, guide]));
 
 const radioIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg>`;
