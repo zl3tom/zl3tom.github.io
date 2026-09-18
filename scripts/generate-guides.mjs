@@ -115,7 +115,7 @@ QRT  stop transmitting</pre></div>`
     ["W6LG on YouTube", "https://www.youtube.com/@ham-radio"],
     ["Ham Radio Basics — Ham Radio Jargon and Plain Language", "https://www.youtube.com/watch?v=83kToVbuPrY"]
   ],
-  related: ["operating-basics", "repeaters-and-nets", "what-is-amateur-radio"]
+  related: ["operating-basics", "repeaters-and-nets", "hf-cq-and-contacts"]
 };
 
 const newGuides = [
