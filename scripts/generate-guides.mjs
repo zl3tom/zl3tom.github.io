@@ -48,12 +48,13 @@ const hfCqGuide = {
   title: "HF CQ and Contacts",
   cardTitle: "HF CQ and contacts",
   description: "Practical tips for HF calling, answering, handling busy conditions, and finishing a QSO cleanly.",
-  keywords: "how to call CQ, HF CQ, amateur radio contacts, ham radio CQ, SSB CQ, W6LG, ZL3TOM",
+  keywords: "how to call CQ, HF CQ, amateur radio contacts, ham radio CQ, SSB CQ, single sideband, tune SSB, USB, LSB, Jim W6LG, W6LG, ZL3TOM",
   asideTitle: "Calling CQ",
   asideHtml: "<p>Listen first, keep your call clear, and leave time for stations to answer.</p>",
   sections: [
     { title: "1. Find a clear frequency", html: `<ul><li>Listen for at least 10 to 20 seconds — longer if conditions are busy or weak.</li><li>Check whether the frequency is used for a net, DX activity, or a common calling spot.</li><li>If you are unsure, ask once, then listen again.</li></ul><div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>Is this frequency in use, is this frequency in use, ZL3TOM.</pre></div>` },
-    { title: "Watch: How I Call CQ", html: `<p>W6LG demonstrates how he calls CQ in this Ham Radio Basics video.</p><div style="position:relative;width:100%;max-width:760px;aspect-ratio:16/9;margin:1rem 0;"><iframe src="https://www.youtube-nocookie.com/embed/qoGVINMbScU" title="Ham Radio Basics — How I Call CQ by W6LG" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div><p><strong>Video credit:</strong> <a href="https://www.youtube.com/@ham-radio" target="_blank" rel="noopener noreferrer">W6LG on YouTube ↗</a></p>` },
+    { title: "Watch: How I Call CQ", html: `<p>Jim - W6LG demonstrates how he calls CQ in this Ham Radio Basics video.</p><div style="position:relative;width:100%;max-width:760px;aspect-ratio:16/9;margin:1rem 0;"><iframe src="https://www.youtube-nocookie.com/embed/qoGVINMbScU" title="Ham Radio Basics — How I Call CQ by Jim - W6LG" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div><p><strong>Video credit:</strong> <a href="https://www.youtube.com/@ham-radio" target="_blank" rel="noopener noreferrer">Jim - W6LG on YouTube ↗</a></p>` },
+    { title: "Watch: What is SSB and How to Tune in SSB", html: `<p>Jim - W6LG explains what single sideband (SSB) is and demonstrates how to tune an SSB signal so speech sounds natural.</p><div style="position:relative;width:100%;max-width:760px;aspect-ratio:16/9;margin:1rem 0;"><iframe src="https://www.youtube-nocookie.com/embed/QiQYS9gMDyc" title="Ham Radio Basics — What is SSB and How to Tune in SSB by Jim - W6LG" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div><p><strong>Video credit:</strong> <a href="https://www.youtube.com/@ham-radio" target="_blank" rel="noopener noreferrer">Jim - W6LG on YouTube ↗</a></p>` },
     { title: "2. Calling CQ on SSB", html: `<p>Short beats fancy. Repeat your callsign clearly, then listen rather than calling constantly.</p><div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>CQ CQ CQ, this is ZL3TOM, ZL3TOM calling CQ and standing by.</pre></div>` },
     { title: "3. Answering a CQ", html: `<p>Say their callsign once, then your callsign once. Slow is smooth; smooth is fast.</p><div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>ZL3ABC, this is ZL3TOM.</pre></div>` },
     { title: "4. Your first over", html: `<p>Make the contact easy to log: confirm callsigns, then give a report, your name, and your location.</p><div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>ZL3ABC, thanks for the call. You are 5 and 9 in Christchurch. Name Thomas, over.</pre></div>` },
@@ -62,8 +63,9 @@ const hfCqGuide = {
     { title: "7. End cleanly", html: `<p>Thank the operator, confirm final callsigns, and say whether you are staying on frequency.</p><div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>Thanks for the contact, 73. This is ZL3TOM clear and listening.</pre></div>` }
   ],
   sources: [
-    ["W6LG on YouTube", "https://www.youtube.com/@ham-radio"],
-    ["Ham Radio Basics — How I Call CQ", "https://www.youtube.com/watch?v=qoGVINMbScU"]
+    ["Jim - W6LG on YouTube", "https://www.youtube.com/@ham-radio"],
+    ["Ham Radio Basics — How I Call CQ", "https://www.youtube.com/watch?v=qoGVINMbScU"],
+    ["Ham Radio Basics — What is SSB and How to Tune in SSB", "https://www.youtube.com/watch?v=QiQYS9gMDyc"]
   ],
   related: ["operating-basics", "q-codes-and-jargon", "antenna-basics"]
 };
@@ -83,7 +85,7 @@ const qCodesGuide = {
     },
     {
       title: "Watch: Ham Radio Jargon and Plain Language",
-      html: `<p>This video is a useful introduction to common ham radio jargon and using plain language on the air.</p><div style="position:relative;width:100%;max-width:760px;aspect-ratio:16/9;margin:1rem 0;"><iframe src="https://www.youtube-nocookie.com/embed/83kToVbuPrY" title="Ham Radio Basics — Ham Radio Jargon and Plain Language by W6LG" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div><p><strong>Video credit:</strong> <a href="https://www.youtube.com/@ham-radio" target="_blank" rel="noopener noreferrer">W6LG on YouTube ↗</a></p>`
+      html: `<p>This video is a useful introduction to common ham radio jargon and using plain language on the air.</p><div style="position:relative;width:100%;max-width:760px;aspect-ratio:16/9;margin:1rem 0;"><iframe src="https://www.youtube-nocookie.com/embed/83kToVbuPrY" title="Ham Radio Basics — Ham Radio Jargon and Plain Language by Jim - W6LG" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div><p><strong>Video credit:</strong> <a href="https://www.youtube.com/@ham-radio" target="_blank" rel="noopener noreferrer">Jim - W6LG on YouTube ↗</a></p>`
     },
     {
       title: "The most useful Q codes",
@@ -112,7 +114,7 @@ QRT  stop transmitting</pre></div>`
     }
   ],
   sources: [
-    ["W6LG on YouTube", "https://www.youtube.com/@ham-radio"],
+    ["Jim - W6LG on YouTube", "https://www.youtube.com/@ham-radio"],
     ["Ham Radio Basics — Ham Radio Jargon and Plain Language", "https://www.youtube.com/watch?v=83kToVbuPrY"]
   ],
   related: ["operating-basics", "repeaters-and-nets", "hf-cq-and-contacts"]
