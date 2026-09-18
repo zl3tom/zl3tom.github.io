@@ -15,12 +15,7 @@ const existingGuides = [
     cardTitle: "Operating basics",
     description: "A practical guide to operating confidently across HF, VHF, UHF, repeaters, digital modes, and linked systems."
   },
-  {
-    slug: "hf-cq-and-contacts",
-    title: "HF CQ and Contacts",
-    cardTitle: "HF CQ and contacts",
-    description: "Practical tips for HF calling, answering, handling busy conditions, and finishing a QSO cleanly."
-  },
+
   {
     slug: "repeaters-and-nets",
     title: "Repeaters and Nets",
@@ -47,6 +42,31 @@ const existingGuides = [
     description: "Clear, calm habits for message passing, priority traffic, and directed amateur radio nets."
   }
 ];
+
+const hfCqGuide = {
+  slug: "hf-cq-and-contacts",
+  title: "HF CQ and Contacts",
+  cardTitle: "HF CQ and contacts",
+  description: "Practical tips for HF calling, answering, handling busy conditions, and finishing a QSO cleanly.",
+  keywords: "how to call CQ, HF CQ, amateur radio contacts, ham radio CQ, SSB CQ, W6LG, ZL3TOM",
+  asideTitle: "Calling CQ",
+  asideHtml: "<p>Listen first, keep your call clear, and leave time for stations to answer.</p>",
+  sections: [
+    { title: "1. Find a clear frequency", html: `<ul><li>Listen for at least 10 to 20 seconds — longer if conditions are busy or weak.</li><li>Check whether the frequency is used for a net, DX activity, or a common calling spot.</li><li>If you are unsure, ask once, then listen again.</li></ul><div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>Is this frequency in use, is this frequency in use, ZL3TOM.</pre></div>` },
+    { title: "Watch: How I Call CQ", html: `<p>W6LG demonstrates how he calls CQ in this Ham Radio Basics video.</p><div style="position:relative;width:100%;max-width:760px;aspect-ratio:16/9;margin:1rem 0;"><iframe src="https://www.youtube-nocookie.com/embed/qoGVINMbScU" title="Ham Radio Basics — How I Call CQ by W6LG" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div><p><strong>Video credit:</strong> <a href="https://www.youtube.com/@ham-radio" target="_blank" rel="noopener noreferrer">W6LG on YouTube ↗</a></p>` },
+    { title: "2. Calling CQ on SSB", html: `<p>Short beats fancy. Repeat your callsign clearly, then listen rather than calling constantly.</p><div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>CQ CQ CQ, this is ZL3TOM, ZL3TOM calling CQ and standing by.</pre></div>` },
+    { title: "3. Answering a CQ", html: `<p>Say their callsign once, then your callsign once. Slow is smooth; smooth is fast.</p><div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>ZL3ABC, this is ZL3TOM.</pre></div>` },
+    { title: "4. Your first over", html: `<p>Make the contact easy to log: confirm callsigns, then give a report, your name, and your location.</p><div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>ZL3ABC, thanks for the call. You are 5 and 9 in Christchurch. Name Thomas, over.</pre></div>` },
+    { title: "5. Signal reports", html: `<ul><li>Give a report that feels fair.</li><li>For a weak signal, explain kindly: ‘You are 4 and 7, readable with a bit of noise.’</li><li>Ask for repeats when needed — never guess a callsign.</li></ul>` },
+    { title: "6. Handling pileups", html: `<ul><li>Take one station at a time and confirm the callsign before logging.</li><li>Keep overs short so the frequency keeps flowing.</li><li>If you cannot copy, ask for the callsign again.</li></ul><div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>Only the station ending in ABC, again please.</pre></div>` },
+    { title: "7. End cleanly", html: `<p>Thank the operator, confirm final callsigns, and say whether you are staying on frequency.</p><div class="radio-example"><small>ON-AIR EXAMPLE</small><pre>Thanks for the contact, 73. This is ZL3TOM clear and listening.</pre></div>` }
+  ],
+  sources: [
+    ["W6LG on YouTube", "https://www.youtube.com/@ham-radio"],
+    ["Ham Radio Basics — How I Call CQ", "https://www.youtube.com/watch?v=qoGVINMbScU"]
+  ],
+  related: ["operating-basics", "q-codes-and-jargon", "antenna-basics"]
+};
 
 const qCodesGuide = {
   slug: "q-codes-and-jargon",
@@ -348,8 +368,8 @@ const newGuides = [
 
 const priorityGuides = additionalGuides.slice(0, 3);
 const extraGuides = additionalGuides.slice(3);
-const allGuides = [...priorityGuides, ...existingGuides, qCodesGuide, ...newGuides, ...extraGuides];
-const generatedGuides = [qCodesGuide, ...newGuides, ...additionalGuides];
+const allGuides = [...priorityGuides, ...existingGuides, hfCqGuide, qCodesGuide, ...newGuides, ...extraGuides];
+const generatedGuides = [hfCqGuide, qCodesGuide, ...newGuides, ...additionalGuides];
 const bySlug = new Map(allGuides.map((guide) => [guide.slug, guide]));
 
 const radioIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg>`;
