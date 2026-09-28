@@ -18,7 +18,8 @@
     "build:analytics": "node scripts/add-google-analytics.mjs",
     "build:social": "node scripts/apply-social-previews.mjs",
     "build:search": "node scripts/generate-search-index.mjs",
-    "build": "npm run build:guides && npm run build:radio && npm run build:networks && npm run build:about && npm run build:tools && npm run build:qsl && npm run build:newsletter && npm run build:footers && npm run build:analytics && npm run build:social && npm run build:search"
+    "build:community": "node scripts/add-community.mjs",
+    "build": "npm run build:guides && npm run build:radio && npm run build:networks && npm run build:about && npm run build:tools && npm run build:qsl && npm run build:newsletter && npm run build:footers && npm run build:analytics && npm run build:community && npm run build:social && npm run build:search"
   },
   "engines": {"node": ">=24"},
   "dependencies": {"nodemailer": "^9.1.1"}
