@@ -461,7 +461,7 @@ function guidePage(guide) {
         author: { "@type": "Person", name: "Thomas Bernard", alternateName: "ZL3TOM", url: "https://zl3tom.com/about" },
         publisher: { "@type": "Person", name: "Thomas Bernard", alternateName: "ZL3TOM" },
         datePublished: updateIso,
-        dateModified: updateIso,
+        dateModified: guide.updatedIso ?? updateIso,
         about: ["Amateur radio", guide.title]
       },
       {
@@ -494,7 +494,7 @@ ${header("guides")}
       ${sections}
       <section class="guide-sources" aria-labelledby="official-sources"><h2 id="official-sources">Official sources</h2><p>Software and network details change. Check these official pages before installing or entering account information.</p><ul>${sources}</ul></section>
       <section class="related-guides" aria-labelledby="related-guides"><h2 id="related-guides">Related guides</h2><div>${related}</div></section>
-      <footer class="guide-byline"><p><strong>Written by Thomas Bernard — ZL3TOM</strong></p><p>Last updated: <time datetime="${updateIso}">${updateDisplay}</time></p></footer>
+      <footer class="guide-byline"><p><strong>Written by Thomas Bernard — ZL3TOM</strong></p><p>Last updated: <time datetime="${guide.updatedIso ?? updateIso}">${guide.updatedDisplay ?? updateDisplay}</time></p></footer>
     </article>
     <aside class="article-aside"><strong>${guide.asideTitle}</strong>${guide.asideHtml}</aside>
   </div></section>

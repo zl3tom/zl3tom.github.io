@@ -1,9 +1,11 @@
 export const additionalGuides = [
   {
     slug: "amateur-radio-new-zealand",
+    updatedIso: "2026-09-30",
+    updatedDisplay: "30 September 2026",
     title: "Amateur Radio in New Zealand: Beginner Guide",
     cardTitle: "Amateur radio in New Zealand",
-    description: "How to get started with amateur radio in New Zealand, including the GAOC, callsigns, the shared GURL, NZART resources and your first station.",
+    description: "Get started with amateur radio in New Zealand: find a local club, explore Ham Cram training, and learn about the GAOC, callsigns and your first station.",
     keywords: "amateur radio New Zealand, ham radio NZ, GAOC exam, New Zealand callsign, RSM GURL, NZART beginner, ZL3TOM",
     asideTitle: "New Zealand starting point",
     asideHtml: "<p>To transmit, you need a current General Amateur Operator's Certificate and a callsign.</p><a href=\"https://www.rsm.govt.nz/licensing/frequencies-for-anyone/amateur-radio-operators\" target=\"_blank\" rel=\"noreferrer\">Read the official RSM guidance ↗</a>",
@@ -14,7 +16,7 @@ export const additionalGuides = [
       },
       {
         title: "Get your certificate and callsign",
-        html: `<ol><li>Learn the radio theory, regulations and safe operating practices covered by the amateur examination.</li><li>Contact an <a href="https://www.rsm.govt.nz/licensing/do-you-need-a-licence/amateur-radio-operator-licensing" target="_blank" rel="noreferrer">Approved Radio Examiner listed by RSM ↗</a>.</li><li>Sit the examination and follow the examiner's current process for obtaining a callsign.</li><li>Check that your certificate and callsign are recorded in the Register of Radio Frequencies.</li></ol><p>An examiner may charge for the examination or callsign process even though the shared GURL itself has no individual licence fee.</p>`
+        html: `<p><strong>Start by contacting your local amateur radio club.</strong> Use the <a href="https://nzart.org.nz/contacts/branches/" target="_blank" rel="noopener noreferrer">NZART branch and club directory ↗</a> to find a club near you. Ask about learning the theory, training options and arranging your examination and callsign.</p><ol><li>Contact your local club and ask which learning and examination options are available in your area.</li><li>Study the radio theory, regulations and safe operating practices covered by the amateur examination. Check the <a href="https://nzart.org.nz/events/category/ham-cram/" target="_blank" rel="noopener noreferrer">NZART Ham Cram calendar ↗</a> for intensive training events, and contact the organising club about bookings, preparation, fees and examination arrangements.</li><li>Ask your club to help you arrange an examination with an approved examiner. You can also check the <a href="https://www.rsm.govt.nz/licensing/do-you-need-a-licence/amateur-radio-operator-licensing" target="_blank" rel="noopener noreferrer">Approved Radio Examiner information from RSM ↗</a>.</li><li>Sit the examination and follow the examiner's current process for obtaining your certificate and callsign.</li><li>Check that your certificate and callsign are recorded in the Register of Radio Frequencies before transmitting.</li></ol><p>Training, examination or callsign-processing fees may apply. Ask the club or examiner about costs before booking; the shared GURL itself has no individual licence fee.</p>`
       },
       {
         title: "Choose a sensible first station",
@@ -37,7 +39,9 @@ export const additionalGuides = [
       ["RSM: Amateur radio operators and the GURL", "https://www.rsm.govt.nz/licensing/frequencies-for-anyone/amateur-radio-operators"],
       ["RSM: Amateur radio operator licensing", "https://www.rsm.govt.nz/licensing/do-you-need-a-licence/amateur-radio-operator-licensing"],
       ["RSM: Current General User Radio Licence notices", "https://www.rsm.govt.nz/about/publications/gazette-notices/general-user-radio-licence-gurl-notices"],
-      ["NZART official website", "https://nzart.org.nz/"]
+      ["NZART official website", "https://nzart.org.nz/"],
+      ["NZART branch and club directory", "https://nzart.org.nz/contacts/branches/"],
+      ["NZART Ham Cram calendar", "https://nzart.org.nz/events/category/ham-cram/"]
     ],
     related: ["new-zealand-band-plans", "operating-basics", "repeaters-and-nets"]
   },
