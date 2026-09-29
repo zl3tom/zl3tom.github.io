@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -34,22 +34,48 @@ function matchValue(html, expression, fallback = "") {
   return decodeEntities(html.match(expression)?.[1] ?? fallback).replace(/\s+/g, " ").trim();
 }
 
-const sitemap = await readFile(path.join(publicRoot, "sitemap.xml"), "utf8");
-const urls = [...sitemap.matchAll(/<loc>https:\/\/zl3tom\.com([^<]*)<\/loc>/g)]
-  .map((match) => match[1] || "/");
-
-const searchIndex = [];
-for (const url of urls) {
-  const relative = url === "/" ? "index.html" : path.join(url.slice(1), "index.html");
-  const html = await readFile(path.join(publicRoot, relative), "utf8");
+// Discover public pages directly so a missing sitemap entry cannot hide content.
+async function htmlFiles(directory) {
+  const files = [];
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const full = path.join(directory, entry.name);
+    if (entry.isDirectory()) files.push(...await htmlFiles(full));
+    else if (entry.name.endsWith(".html")) files.push(full);
+  }
+  return files;
+}
+const pages = new Map();
+for (const file of (await htmlFiles(publicRoot)).sort()) {
+  const html = await readFile(file, "utf8");
+  if (/name="robots"[^>]*content="[^"]*noindex/i.test(html) || path.basename(file) === "404.html") continue;
+  const canonical = matchValue(html, /<link\s+rel="canonical"\s+href="([^"]*)"/i);
+  if (!canonical.startsWith("https://zl3tom.com/")) continue;
+  const url = new URL(canonical).pathname.replace(/\/$/, "") || "/";
+  // Legacy .html copies and clean routes share one canonical result.
+  if (pages.has(url)) continue;
   const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] ?? html;
-  searchIndex.push({
+  const labels = [...main.matchAll(/(?:alt|aria-label|title)="([^"]*)"/g)].map(match => match[1]).join(" ");
+  pages.set(url, {
     title: matchValue(html, /<title>([\s\S]*?)<\/title>/i, "ZL3TOM"),
     url,
     description: matchValue(html, /<meta\s+name="description"\s+content="([^"]*)"/i),
-    content: plainText(main)
+    keywords: matchValue(html, /<meta\s+name="keywords"\s+content="([^"]*)"/i),
+    content: plainText(main + " " + labels)
   });
 }
+const searchIndex = [...pages.values()].sort((a,b) => a.url.localeCompare(b.url));
+// Preserve sitemap metadata for existing pages and include newly discovered pages.
+const sitemapPath = path.join(publicRoot, "sitemap.xml");
+let sitemap = await readFile(sitemapPath, "utf8");
+const existing = new Map([...sitemap.matchAll(/<url>[\s\S]*?<\/url>/g)].map(match => {
+  const loc = match[0].match(/<loc>([^<]+)<\/loc>/)?.[1];
+  return [loc, match[0]];
+}));
+const today = new Date().toISOString().slice(0,10);
+const entries = searchIndex.map(page => existing.get(`https://zl3tom.com${page.url}`)
+  ?? `<url><loc>https://zl3tom.com${page.url}</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`);
+sitemap = sitemap.slice(0, sitemap.indexOf(">", sitemap.indexOf("<urlset")) + 1) + "\n" + entries.join("\n") + "\n</urlset>\n";
+await writeFile(sitemapPath, sitemap);
 
 await writeFile(path.join(publicRoot, "search-index.json"), `${JSON.stringify(searchIndex)}\n`);
 console.log(`Generated full-content search index for ${searchIndex.length} pages.`);

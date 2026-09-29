@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url>
+<url>
     <loc>https://zl3tom.com/</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -11,48 +11,48 @@
       <image:caption>Thomas Bernard, ZL3TOM, amateur radio operator in Christchurch, New Zealand</image:caption>
     </image:image>
   </url>
-  <url><loc>https://zl3tom.com/about</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/radio-fun</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zl3tom.com/guides</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zl3tom.com/guides/amateur-radio-new-zealand</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/new-zealand-band-plans</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/usa-amateur-radio-band-plans</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/operating-basics</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/hf-cq-and-contacts</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/repeaters-and-nets</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/audio-and-levels</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/antenna-basics</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/q-codes-and-jargon</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/emergency-comms-basics</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/echolink-getting-started</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/getting-a-dmr-id</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/amateur-radio-apps</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/digital-voice-for-beginners</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/qso-one-guide</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/aprs-for-beginners</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/allstarlink-for-beginners</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/logging-contacts-on-qrz</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/internet-linked-radio-networks</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/first-amateur-radio-contact</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/network-radios-explained</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/amateur-radio-from-your-phone</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/peanut-amateur-radio-app</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/amateur-radio-slang-73-88-qth-qso-qsl</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/amateur-radio-callsigns-explained</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/digital-radio-hotspots-pistar-wpsd</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/tools</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://zl3tom.com/tools/callsign-lookup</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/tools/swr-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/tools/watts-to-dbm</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/tools/repeater-offset-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/tools/dipole-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/tools/coax-loss-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/tools/maidenhead-grid-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/tools/ohms-law-rf-power-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/qsl</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zl3tom.com/contact</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://zl3tom.com/community</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://zl3tom.com/guides/what-is-amateur-radio</loc><lastmod>2026-09-14</lastmod></url>
-  <url><loc>https://zl3tom.com/guides/dmr-vs-echolink-vs-allstarlink</loc><lastmod>2026-09-14</lastmod></url>
+<url><loc>https://zl3tom.com/about</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/community</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/contact</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://zl3tom.com/guides</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://zl3tom.com/guides/allstarlink-for-beginners</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/amateur-radio-apps</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/amateur-radio-callsigns-explained</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/amateur-radio-from-your-phone</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/amateur-radio-new-zealand</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/amateur-radio-slang-73-88-qth-qso-qsl</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/antenna-basics</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/aprs-for-beginners</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/audio-and-levels</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/digital-radio-hotspots-pistar-wpsd</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/digital-voice-for-beginners</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/dmr-vs-echolink-vs-allstarlink</loc><lastmod>2026-09-14</lastmod></url>
+<url><loc>https://zl3tom.com/guides/echolink-getting-started</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/emergency-comms-basics</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/first-amateur-radio-contact</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/getting-a-dmr-id</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/hf-cq-and-contacts</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/internet-linked-radio-networks</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/logging-contacts-on-qrz</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/network-radios-explained</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://zl3tom.com/guides/new-zealand-amateur-radio-exam-study</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/new-zealand-band-plans</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/operating-basics</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/peanut-amateur-radio-app</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/q-codes-and-jargon</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/qso-one-guide</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/repeaters-and-nets</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/usa-amateur-radio-band-plans</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/guides/what-is-amateur-radio</loc><lastmod>2026-09-14</lastmod></url>
+<url><loc>https://zl3tom.com/qsl</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://zl3tom.com/radio-fun</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://zl3tom.com/tools</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://zl3tom.com/tools/callsign-lookup</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/tools/coax-loss-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/tools/dipole-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/tools/maidenhead-grid-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/tools/ohms-law-rf-power-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/tools/repeater-offset-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/tools/swr-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/tools/watts-to-dbm</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

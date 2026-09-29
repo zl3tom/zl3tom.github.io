@@ -377,11 +377,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const title = normaliseSearchText(page.title);
         const description = normaliseSearchText(page.description);
         const content = normaliseSearchText(page.content);
-        const completeText = `${title} ${description} ${content}`;
+        const keywords = normaliseSearchText(page.keywords || "");
+        const completeText = `${title} ${description} ${keywords} ${content}`;
         if (!words.every((word) => completeText.includes(word))) return null;
         const score = words.reduce((total, word) => total
           + (title.includes(word) ? 12 : 0)
           + (description.includes(word) ? 5 : 0)
+          + (keywords.includes(word) ? 3 : 0)
           + (content.includes(word) ? 1 : 0), 0)
           + (title.includes(phrase) ? 20 : 0)
           + (content.includes(phrase) ? 4 : 0);
@@ -393,7 +395,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .filter(Boolean)
       .sort((left, right) => right.score - left.score)
-      .slice(0, 10)
       .map(({ page }) => page);
   }
 
@@ -469,7 +470,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchDialog = document.createElement("dialog");
     searchDialog.className = "site-search-dialog";
     searchDialog.setAttribute("aria-labelledby", "global-search-title");
-    searchDialog.innerHTML = `<div class="search-dialog-card"><div class="search-dialog-heading"><div><p>SEARCH ZL3TOM.COM</p><h2 id="global-search-title">Find a page or radio guide</h2></div><button class="search-dialog-close" type="button" aria-label="Close search">×</button></div><form class="global-search" role="search"><label class="sr-only" for="global-search-input">Search the ZL3TOM website</label><div><input id="global-search-input" type="search" inputmode="search" autocomplete="off" placeholder="Try EchoLink, DMR, antennas or QSL…"><button type="submit">Search</button></div></form><div class="site-search-results global-search-results" aria-live="polite"></div></div>`;
+    searchDialog.innerHTML = `<div class="search-dialog-card"><div class="search-dialog-heading"><div><p>SEARCH ZL3TOM.COM</p><h2 id="global-search-title">Search all pages, guides and tools</h2></div><button class="search-dialog-close" type="button" aria-label="Close search">×</button></div><form class="global-search" role="search"><label class="sr-only" for="global-search-input">Search the ZL3TOM website</label><div><input id="global-search-input" type="search" inputmode="search" autocomplete="off" placeholder="Try EchoLink, DMR, antennas or QSL…"><button type="submit">Search</button></div></form><div class="site-search-results global-search-results" aria-live="polite"></div></div>`;
     document.body.appendChild(searchDialog);
     const globalSearchForm = searchDialog.querySelector(".global-search");
     const globalSearchResults = searchDialog.querySelector(".global-search-results");
