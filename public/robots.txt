@@ -2,4 +2,3 @@ User-Agent: *
 Allow: /
 
 Sitemap: https://zl3tom.com/sitemap.xml
-Host: https://zl3tom.com
