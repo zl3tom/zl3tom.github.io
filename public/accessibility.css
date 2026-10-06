@@ -1,0 +1,50 @@
+/* Accessibility foundations shared by every page. */
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid #173eac!important;outline-offset:4px!important;box-shadow:0 0 0 6px #fff!important}
+.skip-link{z-index:1000!important}
+main:focus{outline:none}
+html{scroll-padding-top:7rem}
+[id]{scroll-margin-top:7rem}
+button,input,select,textarea{font:inherit}
+button,select,input:not([type=checkbox]):not([type=radio]):not([type=hidden]){min-height:44px}
+input[type=checkbox],input[type=radio]{min-width:24px;min-height:24px}
+button{cursor:pointer}
+button:disabled{cursor:default}
+main p a,main li a,.guide-sources a,.article-aside a,.contact-aside a,.accessibility-footer-link a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.guide-card,.button,.site-search-result{text-decoration:none}
+.guide-card h2,.guide-card h3{font-size:1.2rem;line-height:1.35;overflow-wrap:anywhere}
+.guide-card h3{margin:0 0 .7rem}
+.guide-category-section{margin-top:2.5rem}
+.guide-category-section>h2{font-size:1.65rem;margin-bottom:1rem}
+.guide-topic-links{display:flex;flex-wrap:wrap;gap:.65rem;margin:1rem 0}
+.guide-topic-links a{display:inline-flex;align-items:center;min-height:44px;padding:.65rem 1rem;border:1px solid #49616c;border-radius:8px;color:#123c32;background:#fff;text-decoration:underline;text-underline-offset:.2em}
+.guide-filter-controls{display:flex;align-items:end;flex-wrap:wrap;gap:1rem;padding:1.2rem;border:1px solid #526874;border-radius:12px;background:#fff;color:#07151e}
+.guide-filter-controls>div{flex:1;min-width:min(100%,220px)}
+.guide-filter-controls label{display:block;font-weight:700;margin-bottom:.4rem}
+.guide-filter-controls input,.guide-filter-controls select{width:100%;padding:.65rem;border:1px solid #526874;border-radius:6px;background:#fff;color:#07151e}
+.guide-filter-controls button{padding:.65rem 1rem;border:1px solid #24443a;border-radius:6px;background:#173f34;color:#fff;font-weight:700}
+.accessibility-footer-link{padding:1rem 20px;margin:0 auto;text-align:center;font-size:.95rem}
+.accessibility-footer-link a{display:inline-flex;align-items:center;min-height:44px}
+.light .section-kicker{color:#216044}
+.section-number{color:#315745}
+.light .button-secondary,.tool-card .button-secondary,.qrz-panel .button-secondary{color:#07151e;background:#edf2ed;border-color:#49616c}
+.console-label,.console-sub{color:#9fcbb5}
+.console-topline,.console-dials span{color:#b6c9cf}
+.site-search-dialog{overflow-y:auto}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:620px){.guide-filter-controls{align-items:stretch;flex-direction:column}.guide-filter-controls>div{width:100%;min-width:0}.guide-filter-controls button{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){:focus-visible{outline:3px solid Highlight!important;box-shadow:none!important}.guide-topic-links a,.guide-filter-controls,.guide-filter-controls input,.guide-filter-controls select{border:1px solid CanvasText}.button,button{border:1px solid ButtonText}}
+/* Contrast corrections verified against the rendered page backgrounds. */
+.guide-card-top span{color:#49655b}
+.article-aside a{color:#0f6545}
+.contact-aside .section-kicker{color:#91ffc7}
+.contact-field .optional,.contact-field .field-help{color:#4d6268}
+.id-card small,.id-card em{color:#4d6268}
+.light .text-link,.qrz-logbook-section .section-kicker{color:#216044}
+.guide-list span,.guide-list small{color:#49655b}
+.guide-preview span,.guide-preview small{color:#49655b}
+.qrz-logbook-section .section-kicker{color:#216044!important}
+@media(max-width:900px){html:not(.js-enabled) .nav-wrap{flex-wrap:wrap}html:not(.js-enabled) .main-nav{display:flex;position:static;width:100%;box-shadow:none}html:not(.js-enabled) .menu-button{display:none}}
+.guide-preview>a>span{color:#49655b}
+.contact-field label .optional{color:#4d6268!important}

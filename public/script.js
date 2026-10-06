@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
     menuButton.addEventListener("click", () => {
       setNavigationOpen(!navigation.classList.contains("open"));
     });
+    navigation.addEventListener("focusout", (event) => {
+      if (navigation.classList.contains("open") && event.relatedTarget
+        && !navigation.contains(event.relatedTarget) && event.relatedTarget !== menuButton) {
+        setNavigationOpen(false);
+      }
+    });
     navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
       setNavigationOpen(false);
     }));
@@ -106,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         items.length - 1,
         Math.max(0, currentItemIndex() + offset)
       );
-      gallery.scrollTo({ left: items[targetIndex].offsetLeft, behavior: "smooth" });
+      gallery.scrollTo({ left: items[targetIndex].offsetLeft, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     }
 
     previousButton.addEventListener("click", () => showPhoto(-1));
@@ -399,7 +405,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function renderSearchResults(query, resultsContainer) {
+    resultsContainer.removeAttribute("aria-live");
+    let searchStatus = resultsContainer.previousElementSibling;
+    if (!searchStatus?.classList.contains("search-result-status")) {
+      searchStatus = document.createElement("p");
+      searchStatus.className = "search-result-status";
+      searchStatus.setAttribute("role", "status");
+      searchStatus.setAttribute("aria-live", "polite");
+      searchStatus.setAttribute("aria-atomic", "true");
+      resultsContainer.before(searchStatus);
+    }
     resultsContainer.replaceChildren();
+    searchStatus.textContent = "";
     if (!query.trim()) return;
     const loading = document.createElement("p");
     loading.textContent = "Searching every page…";
@@ -409,6 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
       matches = await searchWebsite(query);
     } catch {
       loading.textContent = "Search could not load. Please refresh the page and try again.";
+      searchStatus.textContent = loading.textContent;
       return;
     }
     resultsContainer.replaceChildren();
@@ -416,12 +434,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const emptyMessage = document.createElement("p");
       emptyMessage.textContent = `No pages matched “${query.trim()}”. Try a shorter radio term.`;
       resultsContainer.appendChild(emptyMessage);
+      searchStatus.textContent = emptyMessage.textContent;
       return;
     }
 
     const summary = document.createElement("p");
     summary.textContent = `${matches.length} result${matches.length === 1 ? "" : "s"}`;
-    resultsContainer.appendChild(summary);
+    searchStatus.textContent = summary.textContent;
     matches.forEach((page) => {
       const link = document.createElement("a");
       link.className = "site-search-result";
@@ -512,7 +531,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchDialog.addEventListener("click", (event) => {
       if (event.target === searchDialog) closeSearchDialog();
     });
-    searchDialog.addEventListener("close", () => document.body.classList.remove("search-open"));
+    searchDialog.addEventListener("close", () => { document.body.classList.remove("search-open"); searchButton.focus(); });
   }
 
   const qrzViewer = document.querySelector("[data-qrz-viewer]");

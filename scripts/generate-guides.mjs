@@ -298,6 +298,31 @@ const newGuides = [
     related: ["getting-a-dmr-id", "qso-one-guide", "repeaters-and-nets"]
   },
   {
+    slug: "accessible-amateur-radio",
+    title: "Accessible Amateur Radio: Practical Ways to Get On Air",
+    cardTitle: "Accessible amateur radio",
+    description: "Practical amateur radio options for disabled operators: accessible controls, screen readers, communication choices, comfortable station layouts and support from clubs.",
+    keywords: "accessible amateur radio, disabled radio operators, screen readers, adaptive PTT, inclusive ham radio, ZL3TOM",
+    updatedIso: "2026-10-06",
+    updatedDisplay: "6 October 2026",
+    asideTitle: "Start with your needs",
+    asideHtml: `<p>Choose one activity you enjoy, identify the controls or communication barriers, and try a small adjustment first. Ask a club or trusted operator to help you test it.</p><a href="/contact?topic=website">Tell Thomas about an accessibility barrier</a>`,
+    sections: [
+      {title: "Radio should make room for different people", html: `<p>Disability does not describe a single set of needs. Mobility, dexterity, sight, hearing, speech, fatigue, sensory needs and learning preferences can all affect how someone operates. Start with what you want to do and the adjustments that work for you.</p><p>You do not need an expensive station to begin exploring. Listening, learning, digital contacts and internet-linked systems offer different routes into the hobby. Ask about licensing and operating requirements for the activity you choose.</p>`},
+      {title: "Make your station comfortable to operate", html: `<ul><li>Keep essential controls within a comfortable reach. A stable desk, supported microphone and clearly organised cables can reduce handling.</li><li>Try a larger PTT button or supported keyboard control if gripping a handheld is difficult. Check how transmit stops and choose a setup you can release reliably.</li><li>Use a headset, desk microphone or speaker arrangement that suits your hearing, posture and comfort.</li><li>Ask for help with mounting equipment or antenna work that is difficult to do safely.</li><li>Plan breaks and shorter sessions if concentration or fatigue makes long nets difficult.</li></ul><p>A switch, microphone or adapter must be compatible with the equipment or app. Try before buying where possible.</p>`},
+      {title: "Screen readers, low vision and software radio", html: `<p>Look for software with labelled controls, keyboard navigation, readable status messages and adjustable text. Try your own screen reader with the actual app before relying on it; features and accessibility can differ between versions.</p><p>Windows users may use Narrator or NVDA, Android users TalkBack, and Apple users VoiceOver. Browser zoom, magnification and operating-system contrast settings may also help.</p><p><a href="/guides/qso-one-guide">QSO One</a> can access several amateur voice networks using a computer or Android device without a separate radio or hotspot. That may reduce physical handling, but it is not a promise that every QSO One control works with every assistive technology. Test sign-in, destination selection, PTT and disconnect first.</p>`},
+      {title: "Choose a communication method that suits you", html: `<p>Voice is one option. If speech or hearing makes voice contacts difficult, explore text-based amateur modes and ask a club about compatible software and equipment. Different systems have different requirements, and a chat feature in a voice app is not necessarily carried to radio listeners.</p><p>For voice, prepare a short callsign and introduction, ask people to slow down or repeat details, and tell net control what accommodation would help. You decide how much personal information to share.</p><div class="radio-example"><small>OPTIONAL REQUEST</small><pre>This is ZL3TOM. Please allow me a little extra time to reply. Thank you.</pre></div><p>For hearing access, try clear audio at a comfortable level and compatible equipment. Captions or transcriptions may help where available, but check important callsigns and messages because automatic text can be wrong.</p>`},
+      {title: "Ask clubs and net organisers for practical adjustments", html: `<p>Ask about step-free access, accessible toilets, parking close to the venue, seating, quiet space, written instructions and remote participation before visiting. A support person can help with setup or access; the station operator remains responsible for the required operating authorisation.</p><p>Smaller conversations, written setup steps and a named person to contact can make a first session less overwhelming. A good starting point is the <a href="/community">clubs and community page</a>. Explain the adjustment you need rather than feeling obliged to disclose a diagnosis.</p>`},
+      {title: "Using this website", html: `<p id="using-this-website">This site includes a skip-to-content link, keyboard controls, visible focus, labelled fields, text alternatives and reduced-motion styles. On the <a href="/guides">Guides page</a>, browse topic sections or use the category and title filters. Calculator results are announced through status messages without moving your focus.</p><p>Use your browser’s zoom or device accessibility settings to adjust reading size. Press Tab to move between controls, Enter to follow links, and Escape to close the navigation or search dialog. Embedded videos and third-party services have their own accessibility behaviour.</p><p>If something blocks you, <a href="/contact?topic=website">send website feedback to Thomas</a>. Include the page, what you were trying to do, and your browser or assistive technology if you are comfortable sharing it. This site has not been independently certified for accessibility; practical feedback helps guide further improvements.</p>`}
+    ],
+    sources: [
+      ["W3C WAI: How people with disabilities use the web", "https://www.w3.org/WAI/people-use-web/"],
+      ["QSO One official features", "https://qso1.net/features"],
+      ["NZART branches and local clubs", "https://nzart.org.nz/contacts/branches/"]
+    ],
+    related: ["qso-one-guide", "amateur-radio-apps", "operating-basics"]
+  },
+  {
     slug: "qso-one-guide",
     title: "QSO One Setup Guide: DMR, EchoLink and AllStar",
     updatedIso: "2026-10-06",
