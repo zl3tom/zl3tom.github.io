@@ -4,19 +4,19 @@ document.addEventListener('DOMContentLoaded',()=>{
  const query=document.getElementById('guide-query');
  if(category&&query){
   document.getElementById('guide-filter-controls').hidden=false;
-  const sections=[...document.querySelectorAll('.guide-category-section')];
+  const cards=[...document.querySelectorAll('#guide-list .guide-card')];
   const status=document.getElementById('guide-filter-status');
-  function filter(){let visible=0;let total=0;
-   for(const section of sections){let sectionCount=0;
-    for(const card of section.querySelectorAll('.guide-card')){total++;
-     const text=card.querySelector('h3').textContent.toLowerCase();
-     const match=(category.value==='all'||category.value===section.dataset.category)&&text.includes(query.value.trim().toLowerCase());
-     card.hidden=!match;if(match){visible++;sectionCount++;}
-    }section.hidden=sectionCount===0;
+  function filter(){let visible=0;
+   for(const card of cards){
+    const text=card.querySelector('h3').textContent.toLowerCase();
+    const match=(category.value==='all'||category.value===card.dataset.category)&&text.includes(query.value.trim().toLowerCase());
+    card.hidden=!match;if(match)visible++;
    }
-   status.textContent=`Showing ${visible} of ${total} guides.`;
+   document.getElementById('guide-list-title').textContent=category.value==='all'?'All guides':category.selectedOptions[0].textContent;
+   status.textContent=`Showing ${visible} of ${cards.length} guides.`;
    document.getElementById('guide-no-results').hidden=visible!==0;
   }
+  document.querySelectorAll('[data-guide-category]').forEach(link=>link.addEventListener('click',()=>{category.value=link.dataset.guideCategory;filter();}));
   let timer;
   category.addEventListener('change',filter);
   query.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(filter,250);});

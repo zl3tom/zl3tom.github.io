@@ -23,6 +23,6 @@ async function walk(dir){for(const entry of await readdir(dir,{withFileTypes:tru
 }}
 await walk(pub);
 const guides=await readFile(path.join(pub,'guides.html'),'utf8');
-if((guides.match(/class="guide-category-section"/g)||[]).length!==6)problems.push('Expected six guide topic sections');
+if(!guides.includes('id="guide-list"'))problems.push('Expected one ordered guide list');
 if(!guides.includes('/guides/accessible-amateur-radio'))problems.push('Accessibility guide missing from index');
 if(problems.length){console.error(problems.join('\n'));process.exitCode=1;}else console.log(`Accessibility markup checks passed for ${checked} HTML files.`);

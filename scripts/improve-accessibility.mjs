@@ -12,23 +12,37 @@ const groups=[
 ];
 for(const relative of ['guides.html','guides/index.html']) {
  const file=path.join(pub,relative);let html=await readFile(file,'utf8');
+ if(html.includes('class="guide-category-section"')) {
+  const cards=[...html.matchAll(/<a href="\/guides\/([^\"]+)" class="guide-card">[\s\S]*?<\/a>/g)].map(m=>m[0]);
+  const start=html.indexOf('<section id="guide-categories"');
+  const last=html.lastIndexOf('<section class="guide-category-section"');
+  const end=html.indexOf('</section>',last)+10;
+  html=html.slice(0,start)+'<div class="guide-card-grid">'+cards.join('\n')+'</div>'+html.slice(end);
+ }
  if(!html.includes('id="guide-categories"')) {
   const cards=[...html.matchAll(/<a href="\/guides\/([^\"]+)" class="guide-card">[\s\S]*?<\/a>/g)];
   const bySlug=new Map(cards.map(m=>[m[1],m[0]]));
   const assigned=groups.flatMap(g=>g[2]);
   if(cards.some(m=>!assigned.includes(m[1])))throw new Error('Uncategorised guide');
   const options=groups.map(([id,title])=>`<option value="${id}">${title}</option>`).join('');
-  const jumpLinks=groups.map(([id,title])=>`<a href="#category-${id}">${title}</a>`).join('');
+  const jumpLinks=groups.map(([id,title])=>`<a href="#guide-list" data-guide-category="${id}">${title}</a>`).join('');
   const controls=`<section id="guide-categories" aria-labelledby="guide-categories-title"><h2 id="guide-categories-title">Browse guides by topic</h2><p>Choose a topic below, or narrow the guide list by category and title. Website search above searches the full content of all pages.</p><nav class="guide-topic-links" aria-label="Guide topics">${jumpLinks}</nav><div id="guide-filter-controls" class="guide-filter-controls" hidden><div><label for="guide-category">Category</label><select id="guide-category"><option value="all">All categories</option>${options}</select></div><div><label for="guide-query">Filter guide titles</label><input id="guide-query" type="search" placeholder="For example, EchoLink" autocomplete="off"></div><button id="guide-reset" type="button">Clear filters</button></div><p id="guide-filter-status" role="status" aria-live="polite" aria-atomic="true"></p><p id="guide-no-results" hidden>No guides match these filters. Try a different title or clear the filters.</p></section>`;
-  const sections=groups.map(([id,title,slugs])=>`<section class="guide-category-section" data-category="${id}" aria-labelledby="category-${id}"><h2 id="category-${id}">${title}</h2><div class="guide-card-grid">${slugs.filter(slug=>bySlug.has(slug)).map(slug=>bySlug.get(slug).replace(/<h2>([\s\S]*?)<\/h2>/,'<h3>$1</h3>')).join('\n')}</div></section>`).join('\n');
+  const ordered=[...cards].sort((a,b)=>{
+   const number=card=>Number(card[0].match(/class="guide-card-top"[^>]*><span>(\d+)<\/span>/)?.[1]??999);
+   return number(a)-number(b);
+  });
+  const sections=`<section id="guide-list" aria-labelledby="guide-list-title"><h2 id="guide-list-title">All guides</h2><div class="guide-card-grid">${ordered.map((card,i)=>{
+   const category=groups.find(g=>g[2].includes(card[1]))[0];
+   return card[0].replace('class="guide-card"',`class="guide-card" data-category="${category}"`).replace(/(<div class="guide-card-top"[^>]*><span>)[\s\S]*?(<\/span>)/,`$1${String(i+1).padStart(2,'0')}$2`).replace(/<h2>([\s\S]*?)<\/h2>/,'<h3>$1</h3>');
+  }).join('\n')}</div></section>`;
   const first=cards[0].index;const last=cards.at(-1);const end=last.index+last[0].length;
   const gridStart=html.lastIndexOf('<div class="guide-card-grid">',first);
   html=html.slice(0,gridStart)+controls+sections+html.slice(end).replace(/^\s*<\/div>/,'');
-  // Match structured ordering to the categorised visual and reading order.
+  // Match structured ordering to the numbered visual and reading order.
   html=html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,(whole,json)=>{
    const data=JSON.parse(json);if(data['@type']!=='ItemList')return whole;
    const entries=new Map(data.itemListElement.map(item=>[item.url,item]));
-   data.itemListElement=assigned.filter(slug=>entries.has('https://zl3tom.com/guides/'+slug)).map((slug,i)=>({...entries.get('https://zl3tom.com/guides/'+slug),position:i+1}));
+   data.itemListElement=ordered.map(card=>card[1]).filter(slug=>entries.has('https://zl3tom.com/guides/'+slug)).map((slug,i)=>({...entries.get('https://zl3tom.com/guides/'+slug),position:i+1}));
    data.numberOfItems=data.itemListElement.length;return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
   });
  }
@@ -44,6 +58,7 @@ async function walk(dir){for(const entry of await readdir(dir,{withFileTypes:tru
  html=html.replace(/src="\/script\.js\?v=[^"]*"/g,'src="/script.js?v=20261006-accessibility"');
  if(!html.includes('href="/accessibility.css'))html=html.replace('</head>','<link rel="stylesheet" href="/accessibility.css?v=20261006">\n</head>');
  if(!html.includes('src="/accessibility.js'))html=html.replace('</body>','<script src="/accessibility.js?v=20261006" defer></script>\n</body>');
+ if(html.includes('id="guide-list"'))html=html.replace(/src="\/accessibility\.js[^"]*"/g,'src="/accessibility.js?v=20261006-guide-order"');
  html=html.replace(/<main\b([^>]*)>/,(_,attrs)=>`<main${attrs.includes('id=')?'':' id="main"'}${attrs}${attrs.includes('tabindex=')?'':' tabindex="-1"'}>`);
  if(!html.includes('class="skip-link"'))html=html.replace(/<body[^>]*>/,'$&\n<a class="skip-link" href="#main">Skip to main content</a>');
  html=html.replace(/<section class="guide-section"><h2>Related ZL3TOM calculators<\/h2>([\s\S]*?)<\/section>/g,'<section class="inner-section light"><div class="site-container"><h2>Related ZL3TOM calculators</h2>$1</div></section>');
