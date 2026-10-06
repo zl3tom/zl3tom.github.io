@@ -38,6 +38,7 @@ let files=0;
 async function walk(dir){for(const entry of await readdir(dir,{withFileTypes:true})){
  const file=path.join(dir,entry.name);if(entry.isDirectory()){await walk(file);continue;}if(!entry.name.endsWith('.html'))continue;
  let html=await readFile(file,'utf8');
+ html=html.replace(/>View on QRZ(?=\s|<)/g,'>View ZL3TOM on QRZ').replace(/>Read the newsletter</g,'>Read the ZL3TOM newsletter<');
  // Use the visible brand text as its accessible name for voice control.
  html=html.replace(/<a\b([^>]*class="brand"[^>]*)>/g,(_,attrs)=>`<a${attrs.replace(/\saria-label="[^"]*"/g,'')}>`);
  html=html.replace(/src="\/script\.js\?v=[^"]*"/g,'src="/script.js?v=20261006-accessibility"');
