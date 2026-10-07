@@ -1,0 +1,43 @@
+{
+  "name": "ZL3TOM Radio Companion",
+  "short_name": "ZL3TOM",
+  "description": "Amateur radio guides, tools and station resources from ZL3TOM in New Zealand.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "lang": "en-NZ",
+  "categories": ["utilities", "education", "reference"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Guides",
+      "short_name": "Guides",
+      "url": "/guides"
+    },
+    {
+      "name": "Radio Tools",
+      "short_name": "Tools",
+      "url": "/tools"
+    },
+    {
+      "name": "My Station",
+      "short_name": "Station",
+      "url": "/radio-fun"
+    }
+  ]
+}
