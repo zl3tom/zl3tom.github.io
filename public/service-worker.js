@@ -1,4 +1,4 @@
-const CACHE_NAME = "zl3tom-radio-companion-v1";
+const CACHE_NAME = "zl3tom-radio-companion-v2";
 const OFFLINE_URL = "/offline.html";
 
 const PRECACHE_URLS = [
@@ -14,6 +14,16 @@ const PRECACHE_URLS = [
   "/script.js",
   "/pwa.js",
   "/favicon.svg",
+  "/icons/icon-192.png",
+  "/icons/icon-512.png",
+  "/guides/amateur-radio-new-zealand",
+  "/guides/nz-amateur-radio-band-plans",
+  "/guides/q-codes-and-jargon",
+  "/guides/operating-basics",
+  "/guides/aprs-for-beginners",
+  "/guides/repeaters-and-nets",
+  "/guides/antenna-basics",
+  "/guides/accessible-amateur-radio",
   OFFLINE_URL
 ];
 
