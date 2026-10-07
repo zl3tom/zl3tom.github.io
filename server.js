@@ -94,7 +94,7 @@ function setSecurityHeaders(response) {
   );
   response.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; frame-src https://nzart.netlify.app https://challenges.cloudflare.com https://logbook.qrz.com https://archive.org https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' https://i.postimg.cc https://s01.flagcounter.com data:; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.tile.openstreetmap.org"
+    "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; frame-src https://nzart.netlify.app https://challenges.cloudflare.com https://logbook.qrz.com https://archive.org https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' https://i.postimg.cc https://s01.flagcounter.com https://*.tile.openstreetmap.org https://unpkg.com data:; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.tile.openstreetmap.org"
   );
 }
 
