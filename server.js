@@ -421,6 +421,26 @@ const server = createServer(async (request, response) => {
     return;
   }
 
+  if (requestUrl.pathname === "/api/nz-repeaters" && request.method === "GET") {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 12000);
+      const upstream = await fetch("https://map.vhf.nz/repeaters.html", {
+        signal: controller.signal,
+        headers: { "User-Agent": "ZL3TOM-Radio-Companion/1.0" }
+      });
+      clearTimeout(timeout);
+      if (!upstream.ok) throw new Error("Repeater source unavailable");
+      const html = await upstream.text();
+      sendJson(response, 200, { source: "map.vhf.nz", fetchedAt: new Date().toISOString(), html }, {
+        "Cache-Control": "public, max-age=1800"
+      });
+    } catch {
+      sendJson(response, 502, { ok: false, message: "NZ repeater data is temporarily unavailable." });
+    }
+    return;
+  }
+
   if (requestUrl.pathname === "/api/contact-config" && request.method === "GET") {
     sendJson(response, 200, {
       enabled: contactConfigured,
