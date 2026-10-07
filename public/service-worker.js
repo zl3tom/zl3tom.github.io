@@ -1,4 +1,4 @@
-const CACHE_NAME = "zl3tom-radio-companion-v3";
+const CACHE_NAME = "zl3tom-radio-companion-v4";
 const OFFLINE_URL = "/offline.html";
 const SITEMAP_URL = "/sitemap.xml";
 
@@ -101,18 +101,17 @@ self.addEventListener("fetch", (event) => {
 
   if (request.mode === "navigate") {
     event.respondWith(
-      caches.match(request)
-        .then((cached) => {
-          const network = fetch(request)
-            .then((response) => {
-              if (response && response.ok) {
-                caches.open(CACHE_NAME).then((cache) => cache.put(request, response.clone()));
-              }
-              return response;
-            })
-            .catch(() => cached || caches.match(url.pathname) || caches.match(OFFLINE_URL));
-
-          return cached || network;
+      fetch(request)
+        .then((response) => {
+          if (response && response.ok) {
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, response.clone()));
+          }
+          return response;
+        })
+        .catch(async () => {
+          return (await caches.match(request))
+            || (await caches.match(url.pathname))
+            || caches.match(OFFLINE_URL);
         })
     );
     return;
