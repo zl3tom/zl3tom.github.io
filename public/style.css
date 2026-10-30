@@ -45,3 +45,14 @@ body.search-open{overflow:hidden}
 .site-search-panel .site-search-results .site-search-result span{color:#5b7075}
 @media (max-width:900px){.main-nav .nav-search{width:100%;text-align:left}.site-search-dialog{max-height:88svh}.search-dialog-card{padding:18px}}
 @media (max-width:560px){.global-search>div,.site-search>div{display:grid;grid-template-columns:1fr}.global-search button,.site-search button{width:100%}.site-search-dialog{width:calc(100% - 18px)}}
+
+
+/* Shared Radio Fun navigation dropdown (desktop and mobile) */
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.nav-dropdown>a{color:#c8d4d8;border-radius:7px;padding:9px 11px;font-size:.91rem;font-weight:650}
+.nav-dropdown>a:hover,.nav-dropdown>a[aria-current=page]{color:#fff;background:#ffffff12}
+.nav-submenu{display:none;position:absolute;z-index:100;top:100%;left:0;min-width:210px;padding:7px;background:#081820;border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 30px #0008}
+.nav-submenu a{display:block;padding:10px 12px;color:#c8d4d8;border-radius:5px;font-size:.85rem}
+.nav-submenu a:hover,.nav-submenu a[aria-current=page]{background:#ffffff12;color:#69f0ae}
+.nav-dropdown:hover .nav-submenu,.nav-dropdown:focus-within .nav-submenu{display:block}
+@media(max-width:900px){.nav-dropdown{display:block;width:100%}.nav-dropdown>a{display:block;padding:12px 13px}.nav-submenu{display:block;position:static;min-width:0;margin:0 0 4px 14px;padding:2px 7px;background:#06121a;border:0;border-left:2px solid #69f0ae55;border-radius:0;box-shadow:none}.nav-submenu a{padding:9px 12px}}
