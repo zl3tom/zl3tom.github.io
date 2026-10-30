@@ -47,7 +47,7 @@ body.search-open{overflow:hidden}
 @media (max-width:560px){.global-search>div,.site-search>div{display:grid;grid-template-columns:1fr}.global-search button,.site-search button{width:100%}.site-search-dialog{width:calc(100% - 18px)}}
 
 
-/* Shared Radio Fun navigation dropdown (desktop and mobile) */
+/* Shared Radio Fun navigation dropdown: hover on desktop, explicit toggle on mobile. */
 .nav-dropdown{position:relative;display:flex;align-items:center}
 .nav-dropdown>a{color:#c8d4d8;border-radius:7px;padding:9px 11px;font-size:.91rem;font-weight:650}
 .nav-dropdown>a:hover,.nav-dropdown>a[aria-current=page]{color:#fff;background:#ffffff12}
@@ -55,4 +55,12 @@ body.search-open{overflow:hidden}
 .nav-submenu a{display:block;padding:10px 12px;color:#c8d4d8;border-radius:5px;font-size:.85rem}
 .nav-submenu a:hover,.nav-submenu a[aria-current=page]{background:#ffffff12;color:#69f0ae}
 .nav-dropdown:hover .nav-submenu,.nav-dropdown:focus-within .nav-submenu{display:block}
-@media(max-width:900px){.nav-dropdown{display:block;width:100%}.nav-dropdown>a{display:block;padding:12px 13px}.nav-submenu{display:block;position:static;min-width:0;margin:0 0 4px 14px;padding:2px 7px;background:#06121a;border:0;border-left:2px solid #69f0ae55;border-radius:0;box-shadow:none}.nav-submenu a{padding:9px 12px}}
+.nav-submenu-toggle{display:none;border:1px solid #ffffff24;border-radius:6px;background:#ffffff0b;color:#c8d4d8;padding:8px 11px;font:inherit;cursor:pointer}
+@media(max-width:900px){
+.nav-dropdown{display:flex;align-items:center;flex-wrap:wrap;width:100%;gap:8px}
+.nav-dropdown>a{display:block;flex:1;padding:12px 13px}
+.nav-submenu-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:42px;min-height:42px}
+.nav-submenu{display:none;position:static;flex-basis:100%;width:100%;min-width:0;margin:0 0 4px 14px;padding:2px 7px;background:#06121a;border:0;border-left:2px solid #69f0ae55;border-radius:0;box-shadow:none}
+.nav-dropdown.is-open .nav-submenu{display:block}
+.nav-submenu a{padding:9px 12px}
+}
