@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07131d">
 <title>Live Radio Monitors | ZL3TOM</title>
-<meta name="description" content="Choose a live amateur radio monitor: explore BrandMeister DMR activity, listen to the ANZEL network, or monitor HUBNet audio with a live FFT spectrum.">
-<meta name="keywords" content="ZL3TOM, live amateur radio, BrandMeister DMR, ANZEL network, HUBNet, FFT audio spectrum, PCM audio, radio monitor, Broadcastify">
+<meta name="description" content="Choose a live amateur radio monitor: explore BrandMeister DMR activity or listen to the ANZEL network.">
+<meta name="keywords" content="ZL3TOM, live amateur radio, BrandMeister DMR, ANZEL network, radio monitor, Broadcastify">
 <meta name="author" content="Thomas Bernard — ZL3TOM">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://zl3tom.com/radio-activity/">
@@ -20,20 +20,19 @@
 .radio-kicker{color:#aaf2cb;font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
 .radio-hub h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.055em;margin:18px 0}
 .radio-hub .intro{max-width:690px;color:#d6e5e8;font-size:1.12rem;line-height:1.7;margin:0}
-.feed-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:44px}
+.feed-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:44px}
 .feed-card{display:flex;flex-direction:column;min-width:0;padding:28px;border:1px solid #42616b;border-radius:18px;background:linear-gradient(145deg,#102b37,#0b202b);box-shadow:0 18px 45px #0003}
 .feed-card-top{display:flex;align-items:center;gap:14px;margin-bottom:22px}
 .feed-icon{display:grid;place-items:center;width:54px;height:54px;flex:0 0 54px;border-radius:14px;background:#17483f;color:#aaf2cb;font-size:1.65rem}
-.feed-card:nth-child(2) .feed-icon{background:#153f50;color:#a9eaf3}.feed-card:nth-child(3) .feed-icon{background:#4a3b1b;color:#f4d58a}
+.feed-card:nth-child(2) .feed-icon{background:#153f50;color:#a9eaf3}
 .feed-label{color:#b2f5d2;font-size:.7rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
 .feed-card h2{color:#fff;font-size:1.75rem;margin:0 0 10px}
 .feed-card p{color:#d2e1e4;line-height:1.7;margin:0 0 18px}
 .feed-details{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:10px;color:#e2edef}
 .feed-details li{display:flex;gap:10px;line-height:1.5}
 .feed-details li:before{content:"✓";color:#9af0c2;font-weight:900}
-.feed-card:nth-child(2) .feed-details li:before{color:#9be8f4}.feed-card:nth-child(3) .feed-details li:before{color:#f4d58a}
-.feed-action{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:auto;min-height:50px;padding:12px 18px;border-radius:9px;background:#83edbb;color:#08251e!important;text-decoration:none;font-weight:850}
-.feed-card:nth-child(2) .feed-action{background:#8de4f0;color:#08232b!important}.feed-card:nth-child(3) .feed-action{background:#f2d17c;color:#30240b!important}
+.feed-card:nth-child(2) .feed-details li:before{color:#9be8f4}.feed-action{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:auto;min-height:50px;padding:12px 18px;border-radius:9px;background:#83edbb;color:#08251e!important;text-decoration:none;font-weight:850}
+.feed-card:nth-child(2) .feed-action{background:#8de4f0;color:#08232b!important}
 .feed-action:hover{filter:brightness(1.06);transform:translateY(-1px)}
 .radio-footnote{margin-top:26px;color:#b8cbd0;font-size:.9rem;line-height:1.65}
 .radio-footnote a{color:#a9eaf3}
@@ -42,7 +41,7 @@
 </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Live Radio Monitors | ZL3TOM">
-<meta property="og:description" content="Choose between the BrandMeister DMR live monitor, ANZEL network audio and HUBNet live audio spectrum.">
+<meta property="og:description" content="Choose between the BrandMeister DMR live monitor and ANZEL network audio.">
 <meta property="og:url" content="https://zl3tom.com/radio-activity/">
 <meta property="og:site_name" content="ZL3TOM Amateur Radio">
 <meta name="twitter:card" content="summary_large_image">
@@ -77,13 +76,7 @@
 <ul class="feed-details"><li>South Central Michigan Hub #48290</li><li>HOTMOVE EchoLink Conference Server</li><li>Interlinked with the ANZEL Network</li><li>Broadcastify listening page</li></ul>
 <a class="feed-action" href="/radio-activity/anzel/">Open ANZEL Audio <span aria-hidden="true">→</span></a>
 </article>
-<article class="feed-card">
-<div class="feed-card-top"><span class="feed-icon" aria-hidden="true">▥</span><span class="feed-label">Live audio spectrum</span></div>
-<h2>HUBNet</h2>
-<p>Listen to the HUBNet low-latency audio stream directly on ZL3TOM, with a live audio level meter and FFT frequency spectrum display.</p>
-<ul class="feed-details"><li>Low-latency 8 kHz PCM audio</li><li>Live audio level meter</li><li>Real-time FFT spectrum display</li><li>In-page audio playback</li></ul>
-<a class="feed-action" href="/radio-activity/hubnet/">Open HUBNet Monitor <span aria-hidden="true">→</span></a>
-</article>
+
 </div>
 <p class="radio-footnote">These are independent listening and monitoring tools provided by ZL3TOM. BrandMeister and Broadcastify are separate services and are not operated by ZL3TOM.</p>
 </div></section>
