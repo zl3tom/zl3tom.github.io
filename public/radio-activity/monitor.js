@@ -81,7 +81,7 @@ function connect(){
  socket.on("connect_error",()=>setConnection("error","Connection issue · retrying"));
  socket.on("mqtt",handleEvent);
 }
-function applyFilter(){const raw=$("talkgroup-filter").value.trim();state.filter=/^\d{1,6}$/.test(raw)?raw:"";const url=new URL(location.href);if(state.filter)url.searchParams.set("tg",state.filter);else url.searchParams.delete("tg");history.replaceState({}, "", url);updateAudioPrompt();render();}
+function applyFilter(){const previous=state.filter;const raw=$("talkgroup-filter").value.trim();state.filter=/^\d{1,6}$/.test(raw)?raw:"";const url=new URL(location.href);if(state.filter)url.searchParams.set("tg",state.filter);else url.searchParams.delete("tg");history.replaceState({}, "", url);updateAudioPrompt();if(state.audioActive&&previous!==state.filter){if(state.filter){state.audioTg=Number(state.filter);resetAudioBuffer();if(state.audioReconnectTimer){clearTimeout(state.audioReconnectTimer);state.audioReconnectTimer=null;}connectAudioSocket(state.audioTg);$("audio-player-title").textContent="Listening to TG "+state.filter;setAudioStatus("Switching to talkgroup "+state.filter+"…");}else{stopNativeAudio();setAudioStatus("Enter a talkgroup to start live audio.");}}render();}
 let audioPromptTimer=null;
 let audioPromptDismissed=false;
 function updateAudioPrompt(){
