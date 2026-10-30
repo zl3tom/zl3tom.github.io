@@ -40,7 +40,7 @@ function handleEvent(raw){
 }
 function addRecent(e){const key=stationKey(e)+"-"+e.destId;state.recent.unshift({...e,key,receivedAt:Date.now()});state.recent=state.recent.slice(0,30);}
 function updateRecent(key,e){const row=state.recent.find(x=>x.key===key);if(row){row.active=false;row.endedAt=Date.now();row.last=e;}else addRecent({...e,active:false});}
-function scheduleRender(){if(state.renderTimer)return;state.renderTimer=setTimeout(()=>{state.renderTimer=null;render();},650);}
+function scheduleRender(){if(state.renderTimer)return;state.renderTimer=setTimeout(()=>{state.renderTimer=null;render();},900);}
 function render(){
  const filtered=[...state.active.values()].filter(matches).sort((a,b)=>b.startedAt-a.startedAt);
  $("stat-active").textContent=filtered.length;
@@ -82,7 +82,7 @@ function connect(){
 }
 function applyFilter(){const raw=$("talkgroup-filter").value.trim();state.filter=/^\d{1,6}$/.test(raw)?raw:"";const url=new URL(location.href);if(state.filter)url.searchParams.set("tg",state.filter);else url.searchParams.delete("tg");history.replaceState({}, "", url);render();}
 $("apply-filter").addEventListener("click",applyFilter);
-$("share-talkgroup").addEventListener("click",async()=>{const raw=$("talkgroup-filter").value.trim();if(!/^\d{1,6}$/.test(raw)){$("filter-hint").textContent="Enter a talkgroup number before sharing.";return;}applyFilter();const shareUrl=new URL(location.href);shareUrl.searchParams.set("tg",raw);try{await navigator.clipboard.writeText(shareUrl.href);$("filter-hint").textContent="Share link copied for TG "+raw+".";}catch{$("filter-hint").textContent="Share this page URL: "+shareUrl.href;}});
+$("share-talkgroup").addEventListener("click",async()=>{const raw=$("talkgroup-filter").value.trim();if(!/^\d{1,6}$/.test(raw)){$("filter-hint").textContent="Enter a talkgroup number before sharing.";return;}applyFilter();const shareUrl=new URL(location.href);shareUrl.searchParams.set("tg",raw);try{if(navigator.share){await navigator.share({title:"BrandMeister TG "+raw+" · ZL3TOM Radio Activity",url:shareUrl.href});$("filter-hint").textContent="Share link ready for TG "+raw+".";}else{await navigator.clipboard.writeText(shareUrl.href);$("filter-hint").textContent="Share link copied for TG "+raw+".";}}catch(error){if(error.name!=="AbortError")$("filter-hint").textContent="Copy this link to share TG "+raw+": "+shareUrl.href;}});
 $("start-listening").addEventListener("click",()=>{applyFilter();const raw=$("talkgroup-filter").value.trim();if(!/^\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }window.open("https://hose.brandmeister.network/#/?subscribe="+encodeURIComponent(raw),"_blank","noopener,noreferrer");});
 $("talkgroup-filter").addEventListener("keydown",e=>{if(e.key==="Enter")applyFilter()});
 $("clear-filter").addEventListener("click",()=>{$("talkgroup-filter").value="";state.filter="";render();});
