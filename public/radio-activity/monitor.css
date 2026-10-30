@@ -15,3 +15,13 @@
 @media(max-width:850px){.bm-content{grid-template-columns:1fr}.bm-side-column{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.bm-help-panel{grid-column:1/-1}.bm-stats{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.bm-hero{padding-top:35px}.bm-title-row{display:block}.bm-connection{display:inline-flex;margin-top:20px}.bm-toolbar{align-items:stretch}.bm-filter-label{width:100%}.bm-filter-control{flex:1}.bm-filter-control input{width:100%;min-width:0}.bm-filter-hint{width:100%}.bm-stats{gap:8px}.bm-stat{padding:12px}.bm-stat strong{font-size:1.5rem}.bm-side-column{display:flex}.bm-footer{flex-direction:column}.bm-onair-card{grid-template-columns:auto minmax(0,1fr)}.bm-onair-meta{grid-column:2;text-align:left;display:flex;gap:12px;align-items:center}.bm-panel-head{padding:16px}}
 @media(prefers-reduced-motion:no-preference){.bm-live-indicator.is-live{animation:bm-pulse 2s infinite}@keyframes bm-pulse{50%{box-shadow:0 0 0 6px #68f0ad15,0 0 18px #68f0ad}}}
+/* Shared ZL3TOM navigation dropdown */
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.nav-dropdown>a{color:#c8d4d8;border-radius:7px;padding:9px 11px;font-size:.91rem;font-weight:650}
+.nav-dropdown>a:hover,.nav-dropdown>a[aria-current=page]{color:#fff;background:#ffffff12}
+.nav-submenu{display:none;position:absolute;z-index:100;top:100%;left:0;min-width:210px;padding:7px;background:#081820;border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 30px #0008}
+.nav-submenu a{display:block;padding:10px 12px;color:#c8d4d8;border-radius:5px;font-size:.85rem}
+.nav-submenu a:hover,.nav-submenu a[aria-current=page]{background:#ffffff12;color:#69f0ae}
+.nav-dropdown:hover .nav-submenu,.nav-dropdown:focus-within .nav-submenu{display:block}
+.bm-listen-button{background:#68d9ed;color:#061820}
+@media(max-width:900px){.nav-dropdown{display:block;width:100%}.nav-dropdown>a{display:block;padding:12px 13px}.nav-submenu{display:block;position:static;min-width:0;margin:0 0 4px 14px;padding:2px 7px;background:#06121a;border:0;border-left:2px solid #69f0ae55;border-radius:0;box-shadow:none}.nav-submenu a{padding:9px 12px}.bm-toolbar .bm-listen-button{width:100%}}
