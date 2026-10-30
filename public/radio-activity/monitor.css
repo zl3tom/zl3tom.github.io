@@ -29,3 +29,9 @@
 .bm-share-button{background:#173441;color:#c7edf4;border:1px solid #345b67}
 .bm-share-button:hover{background:#214b58}
 .bm-onair-card,.bm-station-detail{transition:opacity .18s ease}
+
+.bm-audio-prompt{flex-basis:100%;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:12px 14px;border:1px solid #a86b35;background:#382719;color:#ffe2bd;border-radius:7px;font-size:.88rem}
+.bm-audio-prompt[hidden]{display:none}
+.bm-audio-prompt strong{color:#ffd18c}
+.bm-audio-prompt button{border:0;border-radius:5px;background:var(--bm-green);color:#062017;padding:7px 12px;font-weight:900;cursor:pointer}
+.bm-audio-prompt button:focus-visible,.bm-button:focus-visible{outline:3px solid #fff;outline-offset:3px}
