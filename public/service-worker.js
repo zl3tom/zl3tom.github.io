@@ -1,4 +1,4 @@
-const CACHE_NAME = "zl3tom-radio-companion-v5";
+const CACHE_NAME = "zl3tom-radio-companion-v6";
 const OFFLINE_URL = "/offline.html";
 const SITEMAP_URL = "/sitemap.xml";
 
@@ -12,6 +12,9 @@ const CORE_URLS = [
   "/tools/nz-repeater-finder",
   "/repeater-finder.js",
   "/radio-fun",
+  "/radio-activity",
+  "/radio-activity/monitor.css?v=8",
+  "/radio-activity/monitor.js?v=11",
   "/community",
   "/qsl",
   "/contact",
