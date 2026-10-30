@@ -176,15 +176,19 @@ function connectAudioSocket(tg){
    try{socket.send(encodeMsgpack([1,[Number(tg)]]));setAudioStatus("Connected · waiting for a transmission on TG "+tg);}
    catch(error){console.error("BrandMeister audio join failed",error);setAudioStatus("Could not join this talkgroup.");}
   };
-  socket.onmessage=event=>{
+  socket.onmessage=async event=>{
    if(state.audioSocket!==socket||!state.audioActive)return;
    try{
-    const packet=decodeMsgpack(new Uint8Array(event.data));
+    // Normalise binary frames for iOS Safari (ArrayBuffer or Blob).
+    const frame=event.data instanceof ArrayBuffer?event.data:
+     (event.data instanceof Blob?await event.data.arrayBuffer():event.data);
+    if(state.audioSocket!==socket||!state.audioActive)return;
+    const packet=decodeMsgpack(new Uint8Array(frame));
     if(!Array.isArray(packet))return;
     if(packet[0]===20){pushAudio(packet[1]);setAudioStatus("Receiving live audio · TG "+tg);}
     else if(packet[0]===11)setAudioStatus("Receiving audio · TG "+tg);
     else if(packet[0]===13)setAudioStatus("Connected · waiting for a transmission on TG "+tg);
-   }catch(error){console.warn("BrandMeister audio packet error",error);}
+   }catch(error){console.warn("BrandMeister audio packet error",error);setAudioStatus("Audio packet could not be decoded.");}
   };
   socket.onerror=()=>{if(state.audioSocket===socket)setAudioStatus("Audio connection issue · attempting to reconnect…");};
   socket.onclose=()=>{
@@ -215,12 +219,12 @@ async function startNativeAudio(){
   // Use the device's native output rate. Some mobile Safari versions reject or
   // silently fail to play a forced 8 kHz AudioContext.
   state.audioContext=new AudioContextClass();
-  state.audioProcessor=state.audioContext.createScriptProcessor(2048,1,1);
+  state.audioProcessor=state.audioContext.createScriptProcessor(4096,1,1);
   // Mobile Safari can suspend ScriptProcessor callbacks when there is no input
   // node. Feed it a silent oscillator so the decoded radio audio is still rendered.
   state.audioKeepAliveOscillator=state.audioContext.createOscillator();
   state.audioSilenceGain=state.audioContext.createGain();
-  state.audioSilenceGain.gain.value=0;
+  state.audioSilenceGain.gain.value=0.00001; // Keep mobile audio graph active; decoded audio replaces this input.
   state.audioKeepAliveOscillator.connect(state.audioSilenceGain);
   state.audioSilenceGain.connect(state.audioProcessor);
   state.audioKeepAliveOscillator.start();
