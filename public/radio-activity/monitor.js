@@ -16,7 +16,15 @@ function parseEventTime(value){
  const parsed=Date.parse(text);return Number.isFinite(parsed)?parsed:Date.now();
 }
 const fmtTime = value => new Intl.DateTimeFormat("en-NZ",{timeZone:"Pacific/Auckland",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(new Date(parseEventTime(value)));
-const duration = ms => { const s=Math.max(0,Math.floor(ms/1000)); return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0"); };
+const duration = ms => {
+ const total=Math.max(0,Math.floor(ms/1000));
+ const hours=Math.floor(total/3600);
+ const minutes=Math.floor((total%3600)/60);
+ const seconds=total%60;
+ return hours>0
+  ? String(hours).padStart(2,"0")+":"+String(minutes).padStart(2,"0")+":"+String(seconds).padStart(2,"0")
+  : String(minutes).padStart(2,"0")+":"+String(seconds).padStart(2,"0");
+};
 function payloadOf(raw){ if(typeof raw==="string"){try{return JSON.parse(raw)}catch{return {}}} return raw && typeof raw==="object" ? raw : {}; }
 function normalise(raw){
  // BrandMeister wraps the Last Heard JSON inside the Socket.IO mqtt event.
@@ -43,7 +51,14 @@ function handleEvent(raw){
  state.latest=Date.now(); state.heard.add(e.sourceCall || e.sourceId); state.talkgroups.add(e.destId);
  const key=stationKey(e)+"-"+e.destId;
  const existing=state.active.get(key);
- if(isStart(e)){const startedAt=Date.now();const item={...e,startedAt,active:true};state.active.set(key,item);addRecent({...item});}
+ if(isStart(e)){
+   // Keep the original start time if BrandMeister repeats a start/update event.
+   const startedAt=existing?.startedAt ?? e.stamp ?? Date.now();
+   const item={...e,startedAt,active:true};
+   state.active.set(key,item);
+   if(!existing)addRecent({...item});
+   else updateRecent(key,e);
+  }
  else if(isStop(e)){if(existing){existing.active=false;existing.endedAt=Date.now();existing.last=e;state.active.delete(key);updateRecent(key,e);}else addRecent({...e,active:false});}
  else { if(existing){Object.assign(existing,e); } else addRecent({...e,active:false}); }
  scheduleRender(); if(e.sourceId) lookupRadioId(e.sourceId,e.sourceCall);
@@ -336,6 +351,12 @@ $("record-audio").addEventListener("click",()=>{if(state.recording)stopRecording
 $("talkgroup-filter").addEventListener("keydown",e=>{if(e.key==="Enter")applyFilter()});
 $("clear-filter").addEventListener("click",()=>{$("talkgroup-filter").value="";state.filter="";updateAudioPrompt();render();});
 const params=new URLSearchParams(location.search);const tg=params.get("tg");if(tg&&/^\d{1,6}$/.test(tg)){$("talkgroup-filter").value=tg;state.filter=tg;}updateAudioPrompt();
-setInterval(()=>{document.querySelectorAll(".duration").forEach(el=>{const start=Number(el.dataset.start);if(start)el.textContent=duration(Date.now()-start);});},1000);
+setInterval(()=>{
+  const now=Date.now();
+  document.querySelectorAll(".duration").forEach(el=>{
+   const start=Number(el.dataset.start);
+   if(Number.isFinite(start)&&start>0)el.textContent=duration(now-start);
+  });
+ },1000);
 render();connect();
 })();
