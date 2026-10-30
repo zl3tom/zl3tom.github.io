@@ -97,12 +97,13 @@ function playAudio(){
  audioPromptDismissed=true;
  $("audio-prompt").hidden=true;
  if(audioPromptTimer){clearTimeout(audioPromptTimer);audioPromptTimer=null;}
- window.open("https://hose.brandmeister.network/#/?subscribe="+encodeURIComponent(raw),"_blank","noopener,noreferrer");
+ const player=$("audio-player");const frame=$("audio-frame");$("audio-player-title").textContent="Talkgroup "+raw+" audio";player.hidden=false;frame.src="https://hose.brandmeister.network/?subscribe="+encodeURIComponent(raw);player.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"nearest"});
 }
 $("apply-filter").addEventListener("click",applyFilter);
 $("share-talkgroup").addEventListener("click",async()=>{const raw=$("talkgroup-filter").value.trim();if(!/^\d{1,6}$/.test(raw)){$("filter-hint").textContent="Enter a talkgroup number before sharing.";return;}applyFilter();const shareUrl=new URL(location.href);shareUrl.searchParams.set("tg",raw);try{if(navigator.share){await navigator.share({title:"BrandMeister TG "+raw+" · ZL3TOM Radio Activity",url:shareUrl.href});$("filter-hint").textContent="Share link ready for TG "+raw+".";}else{await navigator.clipboard.writeText(shareUrl.href);$("filter-hint").textContent="Share link copied for TG "+raw+".";}}catch(error){if(error.name!=="AbortError")$("filter-hint").textContent="Copy this link to share TG "+raw+": "+shareUrl.href;}});
 $("start-listening").addEventListener("click",()=>{applyFilter();playAudio();});
 $("audio-prompt-play").addEventListener("click",playAudio);
+$("close-audio-player").addEventListener("click",()=>{$("audio-frame").src="about:blank";$("audio-player").hidden=true;});
 $("talkgroup-filter").addEventListener("keydown",e=>{if(e.key==="Enter")applyFilter()});
 $("clear-filter").addEventListener("click",()=>{$("talkgroup-filter").value="";state.filter="";updateAudioPrompt();render();});
 const params=new URLSearchParams(location.search);const tg=params.get("tg");if(tg&&/^\d{1,6}$/.test(tg)){$("talkgroup-filter").value=tg;state.filter=tg;}updateAudioPrompt();
