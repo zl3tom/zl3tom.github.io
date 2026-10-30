@@ -5,7 +5,17 @@ const state = {socket:null, active:new Map(), recent:[], heard:new Set(), talkgr
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const clean = v => String(v ?? "").trim();
 const get = (o, ...keys) => { for (const k of keys) if (o && o[k] !== undefined && o[k] !== null && o[k] !== "") return o[k]; return ""; };
-const fmtTime = value => { const d = value ? new Date(value) : new Date(); return Number.isNaN(d.getTime()) ? new Date().toLocaleTimeString("en-NZ",{hour:"2-digit",minute:"2-digit",second:"2-digit"}) : d.toLocaleTimeString("en-NZ",{hour:"2-digit",minute:"2-digit",second:"2-digit"}); };
+function parseEventTime(value){
+ if(value===undefined||value===null||value==="")return Date.now();
+ if(typeof value==="number"||(typeof value==="string"&&/^\\d+(?:\\.\\d+)?$/.test(value.trim()))){
+  const numeric=Number(value);return numeric<1e12?numeric*1000:numeric;
+ }
+ let text=String(value).trim();
+ // BrandMeister timestamps without an explicit zone are UTC, not browser-local time.
+ if(/^\\d{4}-\\d{2}-\\d{2}[ T]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?$/.test(text))text=text.replace(" ","T")+"Z";
+ const parsed=Date.parse(text);return Number.isFinite(parsed)?parsed:Date.now();
+}
+const fmtTime = value => new Intl.DateTimeFormat("en-NZ",{timeZone:"Pacific/Auckland",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).format(new Date(parseEventTime(value)));
 const duration = ms => { const s=Math.max(0,Math.floor(ms/1000)); return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0"); };
 function payloadOf(raw){ if(typeof raw==="string"){try{return JSON.parse(raw)}catch{return {}}} return raw && typeof raw==="object" ? raw : {}; }
 function normalise(raw){
@@ -20,7 +30,7 @@ function normalise(raw){
  const slot=clean(get(p,"Slot","slot","Timeslot","timeslot"));
  const alias=clean(get(p,"TalkerAlias","talkerAlias","SourceName","sourceName","Name","name"));
  const ts=get(p,"Timestamp","timestamp","DateTime","datetime","Time","time","Stop","Start");
- const stamp=ts ? (typeof ts==="number" ? (ts<1e12?ts*1000:ts) : ts) : Date.now();
+ const stamp=parseEventTime(ts);
  return {sourceCall,sourceId,destId,event,repeater,slot,alias,stamp,p};
 }
 function isStart(e){return /start|begin|key.?on/i.test(e.event)}
