@@ -81,7 +81,7 @@ function connect(){
 }
 function applyFilter(){const raw=$("talkgroup-filter").value.trim();state.filter=/^\d{1,6}$/.test(raw)?raw:"";render();}
 $("apply-filter").addEventListener("click",applyFilter);
-$("start-listening").addEventListener("click",()=>{applyFilter();const raw=$("talkgroup-filter").value.trim();if(!/^\\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }window.open("https://hose.brandmeister.network/?subscribe="+encodeURIComponent(raw),"_blank","noopener,noreferrer");});
+$("start-listening").addEventListener("click",()=>{applyFilter();const raw=$("talkgroup-filter").value.trim();if(!/^\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }window.open("https://hose.brandmeister.network/?subscribe="+encodeURIComponent(raw),"_blank","noopener,noreferrer");});
 $("talkgroup-filter").addEventListener("keydown",e=>{if(e.key==="Enter")applyFilter()});
 $("clear-filter").addEventListener("click",()=>{$("talkgroup-filter").value="";state.filter="";render();});
 const params=new URLSearchParams(location.search);const tg=params.get("tg");if(tg&&/^\d{1,6}$/.test(tg)){$("talkgroup-filter").value=tg;state.filter=tg;}
