@@ -9,14 +9,17 @@ const fmtTime = value => { const d = value ? new Date(value) : new Date(); retur
 const duration = ms => { const s=Math.max(0,Math.floor(ms/1000)); return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0"); };
 function payloadOf(raw){ if(typeof raw==="string"){try{return JSON.parse(raw)}catch{return {}}} return raw && typeof raw==="object" ? raw : {}; }
 function normalise(raw){
- const p=payloadOf(raw); const sourceCall=clean(get(p,"SourceCall","sourceCall","callsign","Callsign")).toUpperCase();
+ // BrandMeister wraps the Last Heard JSON inside the Socket.IO mqtt event.
+ const envelope=payloadOf(raw);
+ const p=payloadOf(envelope.payload ?? envelope);
+ const sourceCall=clean(get(p,"SourceCall","sourceCall","callsign","Callsign")).toUpperCase();
  const sourceId=clean(get(p,"SourceID","sourceId","RadioID","radioId","id"));
  const destId=clean(get(p,"DestinationID","destinationId","Talkgroup","talkgroup","tg"));
  const event=clean(get(p,"Event","event","Type","type"));
- const repeater=clean(get(p,"RepeaterCall","repeaterCall","LinkName","linkName","Repeater"));
+ const repeater=clean(get(p,"LinkCall","linkCall","RepeaterCall","repeaterCall","LinkName","linkName","Repeater"));
  const slot=clean(get(p,"Slot","slot","Timeslot","timeslot"));
  const alias=clean(get(p,"TalkerAlias","talkerAlias","SourceName","sourceName","Name","name"));
- const ts=get(p,"Timestamp","timestamp","DateTime","datetime","Time","time");
+ const ts=get(p,"Timestamp","timestamp","DateTime","datetime","Time","time","Stop","Start");
  const stamp=ts ? (typeof ts==="number" ? (ts<1e12?ts*1000:ts) : ts) : Date.now();
  return {sourceCall,sourceId,destId,event,repeater,slot,alias,stamp,p};
 }
