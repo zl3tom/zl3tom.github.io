@@ -80,13 +80,32 @@ function connect(){
  socket.on("connect_error",()=>setConnection("error","Connection issue · retrying"));
  socket.on("mqtt",handleEvent);
 }
-function applyFilter(){const raw=$("talkgroup-filter").value.trim();state.filter=/^\d{1,6}$/.test(raw)?raw:"";const url=new URL(location.href);if(state.filter)url.searchParams.set("tg",state.filter);else url.searchParams.delete("tg");history.replaceState({}, "", url);render();}
+function applyFilter(){const raw=$("talkgroup-filter").value.trim();state.filter=/^\d{1,6}$/.test(raw)?raw:"";const url=new URL(location.href);if(state.filter)url.searchParams.set("tg",state.filter);else url.searchParams.delete("tg");history.replaceState({}, "", url);updateAudioPrompt();render();}
+let audioPromptTimer=null;
+let audioPromptDismissed=false;
+function updateAudioPrompt(){
+ if(audioPromptTimer){clearTimeout(audioPromptTimer);audioPromptTimer=null;}
+ const prompt=$("audio-prompt");
+ if(!state.filter){prompt.hidden=true;audioPromptDismissed=false;return;}
+ prompt.hidden=true;
+ audioPromptDismissed=false;
+ audioPromptTimer=setTimeout(()=>{if(state.filter&&!audioPromptDismissed)prompt.hidden=false;},10000);
+}
+function playAudio(){
+ const raw=$("talkgroup-filter").value.trim();
+ if(!/^\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }
+ audioPromptDismissed=true;
+ $("audio-prompt").hidden=true;
+ if(audioPromptTimer){clearTimeout(audioPromptTimer);audioPromptTimer=null;}
+ window.open("https://hose.brandmeister.network/#/?subscribe="+encodeURIComponent(raw),"_blank","noopener,noreferrer");
+}
 $("apply-filter").addEventListener("click",applyFilter);
 $("share-talkgroup").addEventListener("click",async()=>{const raw=$("talkgroup-filter").value.trim();if(!/^\d{1,6}$/.test(raw)){$("filter-hint").textContent="Enter a talkgroup number before sharing.";return;}applyFilter();const shareUrl=new URL(location.href);shareUrl.searchParams.set("tg",raw);try{if(navigator.share){await navigator.share({title:"BrandMeister TG "+raw+" · ZL3TOM Radio Activity",url:shareUrl.href});$("filter-hint").textContent="Share link ready for TG "+raw+".";}else{await navigator.clipboard.writeText(shareUrl.href);$("filter-hint").textContent="Share link copied for TG "+raw+".";}}catch(error){if(error.name!=="AbortError")$("filter-hint").textContent="Copy this link to share TG "+raw+": "+shareUrl.href;}});
-$("start-listening").addEventListener("click",()=>{applyFilter();const raw=$("talkgroup-filter").value.trim();if(!/^\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }window.open("https://hose.brandmeister.network/#/?subscribe="+encodeURIComponent(raw),"_blank","noopener,noreferrer");});
+$("start-listening").addEventListener("click",()=>{applyFilter();playAudio();});
+$("audio-prompt-play").addEventListener("click",playAudio);
 $("talkgroup-filter").addEventListener("keydown",e=>{if(e.key==="Enter")applyFilter()});
 $("clear-filter").addEventListener("click",()=>{$("talkgroup-filter").value="";state.filter="";render();});
-const params=new URLSearchParams(location.search);const tg=params.get("tg");if(tg&&/^\d{1,6}$/.test(tg)){$("talkgroup-filter").value=tg;state.filter=tg;}
+const params=new URLSearchParams(location.search);const tg=params.get("tg");if(tg&&/^\d{1,6}$/.test(tg)){$("talkgroup-filter").value=tg;state.filter=tg;}updateAudioPrompt();
 setInterval(()=>{document.querySelectorAll(".duration").forEach(el=>{const start=Number(el.dataset.start);if(start)el.textContent=duration(Date.now()-start);});},1000);
 render();connect();
 })();
