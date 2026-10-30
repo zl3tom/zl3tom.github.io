@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 const $ = (id) => document.getElementById(id);
-const state = {socket:null, active:new Map(), recent:[], heard:new Set(), talkgroups:new Set(), filter:"", latest:null, latestStation:null, radioCache:new Map(), renderTimer:null, audioSocket:null, audioContext:null, audioProcessor:null, audioBuffer:new Float32Array(32768), audioHead:0, audioTail:0, audioFlow:0, audioStopRequested:false};
+const state = {socket:null, active:new Map(), recent:[], heard:new Set(), talkgroups:new Set(), filter:"", latest:null, latestStation:null, radioCache:new Map(), renderTimer:null, audioSocket:null, audioContext:null, audioProcessor:null, audioBuffer:new Float32Array(32768), audioHead:0, audioTail:0, audioFlow:0, audioStopRequested:false, audioActive:false, audioTg:null, audioReconnectTimer:null, audioReadFrac:0, audioPrimed:false, recording:false, recordParts:[], recordCount:0, recordStartedAt:0, lamePromise:null};
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const clean = v => String(v ?? "").trim();
 const get = (o, ...keys) => { for (const k of keys) if (o && o[k] !== undefined && o[k] !== null && o[k] !== "") return o[k]; return ""; };
@@ -115,42 +115,200 @@ function decodeMsgpack(bytes){
 }
 const compandTable=[0,132,396,924,1980,4092,8316,16764];
 function decodeDmrSample(byte){const value=(~byte)&255,sign=value&128,exponent=(value>>4)&7,mantissa=value&15;const sample=compandTable[exponent]+(mantissa<<(exponent+3));return sign?-sample:sample;}
+const AUDIO_SAMPLE_RATE=8000;
+const AUDIO_PREBUFFER=640;
+const AUDIO_RECORD_LIMIT=AUDIO_SAMPLE_RATE*60*30;
+function recordSamples(samples){
+ if(!state.recording||!samples.length)return;
+ if(state.recordCount+samples.length>AUDIO_RECORD_LIMIT){stopRecording(true);return;}
+ const part=new Int16Array(samples.length);
+ for(let i=0;i<samples.length;i++){const n=Math.max(-1,Math.min(1,samples[i]));part[i]=(n<0?n*32768:n*32767)|0;}
+ state.recordParts.push(part);state.recordCount+=part.length;
+}
 function pushAudio(payload){
  const bytes=payload instanceof Uint8Array?payload:new Uint8Array(payload||[]);
- for(let i=0;i<bytes.length;i++){state.audioBuffer[state.audioHead]=decodeDmrSample(bytes[i])/32768;state.audioHead=(state.audioHead+1)%state.audioBuffer.length;if(state.audioFlow<state.audioBuffer.length)state.audioFlow++;else state.audioTail=(state.audioTail+1)%state.audioBuffer.length;}
+ const decoded=new Float32Array(bytes.length);
+ for(let i=0;i<bytes.length;i++){
+  const sample=decodeDmrSample(bytes[i])/32768;
+  decoded[i]=sample;
+  state.audioBuffer[state.audioHead]=sample;
+  state.audioHead=(state.audioHead+1)%state.audioBuffer.length;
+  if(state.audioFlow<state.audioBuffer.length)state.audioFlow++;
+  else state.audioTail=(state.audioTail+1)%state.audioBuffer.length;
+ }
+ recordSamples(decoded);
+}
+function resetAudioBuffer(){state.audioFlow=0;state.audioHead=0;state.audioTail=0;state.audioReadFrac=0;state.audioPrimed=false;}
+function setAudioStatus(message){const el=$("audio-player-status");if(el)el.textContent=message;}
+function connectAudioSocket(tg){
+ if(!state.audioActive||Number(state.audioTg)!==Number(tg))return;
+ if(state.audioSocket){try{state.audioSocket.close();}catch{}state.audioSocket=null;}
+ try{
+  const socket=new WebSocket("wss://hose.brandmeister.network/spotter/?token="+encodeURIComponent("test:test"),"spotter");
+  state.audioSocket=socket;socket.binaryType="arraybuffer";
+  socket.onopen=()=>{
+   if(state.audioSocket!==socket||!state.audioActive)return;
+   try{socket.send(encodeMsgpack([1,[Number(tg)]]));setAudioStatus("Connected · waiting for a transmission on TG "+tg);}
+   catch(error){console.error("BrandMeister audio join failed",error);setAudioStatus("Could not join this talkgroup.");}
+  };
+  socket.onmessage=event=>{
+   if(state.audioSocket!==socket||!state.audioActive)return;
+   try{
+    const packet=decodeMsgpack(new Uint8Array(event.data));
+    if(!Array.isArray(packet))return;
+    if(packet[0]===20){pushAudio(packet[1]);setAudioStatus("Receiving live audio · TG "+tg);}
+    else if(packet[0]===11)setAudioStatus("Receiving audio · TG "+tg);
+    else if(packet[0]===13)setAudioStatus("Connected · waiting for a transmission on TG "+tg);
+   }catch(error){console.warn("BrandMeister audio packet error",error);}
+  };
+  socket.onerror=()=>{if(state.audioSocket===socket)setAudioStatus("Audio connection issue · attempting to reconnect…");};
+  socket.onclose=()=>{
+   if(state.audioSocket!==socket)return;
+   state.audioSocket=null;
+   if(state.audioActive&&!state.audioStopRequested){
+    setAudioStatus("Audio connection lost · reconnecting…");
+    if(state.audioReconnectTimer)clearTimeout(state.audioReconnectTimer);
+    state.audioReconnectTimer=setTimeout(()=>{state.audioReconnectTimer=null;connectAudioSocket(tg);},2500);
+   }
+  };
+ }catch(error){
+  console.error("BrandMeister audio connection failed",error);
+  setAudioStatus("Could not connect to BrandMeister audio.");
+ }
 }
 async function startNativeAudio(){
  const tg=state.filter;
  if(!/^\d{1,6}$/.test(tg)){ $("filter-hint").textContent="Enter a valid talkgroup number first.";return; }
  stopNativeAudio();
- state.audioStopRequested=false;
+ state.audioStopRequested=false;state.audioActive=true;state.audioTg=Number(tg);resetAudioBuffer();
  $("audio-player").hidden=false;
  $("audio-player-title").textContent="Listening to TG "+tg;
- $("audio-player-status").textContent="Connecting to BrandMeister audio…";
+ setAudioStatus("Starting audio…");
  try{
   const AudioContextClass=window.AudioContext||window.webkitAudioContext;
   if(!AudioContextClass)throw new Error("Web Audio is not supported by this browser.");
-  state.audioContext=new AudioContextClass({sampleRate:8000});
-  state.audioProcessor=state.audioContext.createScriptProcessor(1024,0,1);
-  state.audioProcessor.onaudioprocess=event=>{const output=event.outputBuffer.getChannelData(0);for(let i=0;i<output.length;i++){if(state.audioFlow){output[i]=state.audioBuffer[state.audioTail];state.audioTail=(state.audioTail+1)%state.audioBuffer.length;state.audioFlow--;}else output[i]=0;}};
+  try{state.audioContext=new AudioContextClass({sampleRate:AUDIO_SAMPLE_RATE});}
+  catch{state.audioContext=new AudioContextClass();}
+  state.audioProcessor=state.audioContext.createScriptProcessor(2048,0,1);
+  state.audioProcessor.onaudioprocess=event=>{
+   const output=event.outputBuffer.getChannelData(0);
+   const step=AUDIO_SAMPLE_RATE/state.audioContext.sampleRate;
+   if(!state.audioPrimed){
+    if(state.audioFlow>=AUDIO_PREBUFFER)state.audioPrimed=true;
+    else{output.fill(0);return;}
+   }
+   for(let i=0;i<output.length;i++){
+    if(state.audioFlow<2){output[i]=0;if(state.audioFlow===0)state.audioPrimed=false;continue;}
+    const next=(state.audioTail+1)%state.audioBuffer.length;
+    const frac=state.audioReadFrac;
+    let sample=state.audioBuffer[state.audioTail]*(1-frac)+state.audioBuffer[next]*frac;
+    if(sample>0.95)sample=0.95+(sample-0.95)*0.15;
+    if(sample< -0.95)sample=-0.95+(sample+0.95)*0.15;
+    output[i]=sample;
+    state.audioReadFrac+=step;
+    while(state.audioReadFrac>=1&&state.audioFlow>0){
+     state.audioReadFrac-=1;state.audioTail=(state.audioTail+1)%state.audioBuffer.length;state.audioFlow--;
+    }
+   }
+  };
   state.audioProcessor.connect(state.audioContext.destination);
   await state.audioContext.resume();
-  const socket=new WebSocket("wss://hose.brandmeister.network/spotter/","spotter");state.audioSocket=socket;socket.binaryType="arraybuffer";
-  socket.onopen=()=>{if(state.audioSocket===socket){socket.send(encodeMsgpack([1,[Number(tg)]]));$("audio-player-title").textContent="TG "+tg+" · BrandMeister live audio";$("audio-player-status").textContent="Connected · waiting for a transmission";}};
-  socket.onmessage=event=>{if(state.audioSocket!==socket)return;try{const packet=decodeMsgpack(new Uint8Array(event.data));if(!Array.isArray(packet))return;switch(packet[0]){case 11:$("audio-player-status").textContent="Receiving audio · TG "+tg;break;case 13:$("audio-player-status").textContent="Connected · waiting for the next transmission";break;case 20:pushAudio(packet[1]);$("audio-player-status").textContent="Live audio · TG "+tg;break;}}catch(error){console.error("BrandMeister audio packet error",error);}};
-  socket.onerror=()=>{if(state.audioSocket===socket)$("audio-player-status").textContent="Audio connection issue · retry with Play audio";};
-  socket.onclose=()=>{if(state.audioSocket===socket){state.audioSocket=null;if(!state.audioStopRequested)$("audio-player-status").textContent="Connection ended · select Play audio to reconnect"; }};
-  $("audio-player").hidden=false;
- }catch(error){$("audio-player-status").textContent=error.message||"Could not start audio.";console.error(error);}
+  if(!state.audioActive)return;
+  connectAudioSocket(tg);
+  $("record-audio").disabled=false;
+ }catch(error){
+  state.audioActive=false;
+  setAudioStatus(error.message||"Could not start audio.");
+  console.error(error);
+ }
 }
 function stopNativeAudio(){
- state.audioStopRequested=true;
- if(state.audioSocket){try{if(state.audioSocket.readyState===WebSocket.OPEN)state.audioSocket.send(encodeMsgpack([12]));state.audioSocket.close();}catch{}state.audioSocket=null;}
- if(state.audioProcessor){state.audioProcessor.disconnect();state.audioProcessor=null;}
- if(state.audioContext){state.audioContext.close().catch(()=>{});state.audioContext=null;}
- state.audioFlow=0;state.audioHead=0;state.audioTail=0;
+ state.audioStopRequested=true;state.audioActive=false;
+ if(state.audioReconnectTimer){clearTimeout(state.audioReconnectTimer);state.audioReconnectTimer=null;}
+ if(state.audioSocket){
+  try{if(state.audioSocket.readyState===WebSocket.OPEN)state.audioSocket.send(encodeMsgpack([2,[Number(state.audioTg)]]));}catch{}
+  try{state.audioSocket.close();}catch{}
+  state.audioSocket=null;
+ }
+ if(state.audioProcessor){try{state.audioProcessor.disconnect();}catch{}state.audioProcessor=null;}
+ if(state.audioContext){const ctx=state.audioContext;state.audioContext=null;ctx.close().catch(()=>{});}
+ resetAudioBuffer();state.audioTg=null;
+ const recordButton=$("record-audio");if(recordButton)recordButton.disabled=true;
+ if(state.recording)stopRecording(true);
 }
-
+function updateRecordButton(){
+ const button=$("record-audio");if(!button)return;
+ button.disabled=!state.audioActive&&!state.recording;
+ button.classList.toggle("is-recording",state.recording);
+ if(state.recording){
+  const seconds=Math.floor((Date.now()-state.recordStartedAt)/1000);
+  button.textContent="■ Stop recording · "+Math.floor(seconds/60)+":"+String(seconds%60).padStart(2,"0");
+  button.setAttribute("aria-pressed","true");
+ }else{
+  button.textContent="● Record";button.setAttribute("aria-pressed","false");
+ }
+}
+function loadMp3Encoder(){
+ if(window.lamejs)return Promise.resolve(window.lamejs);
+ if(state.lamePromise)return state.lamePromise;
+ state.lamePromise=new Promise((resolve,reject)=>{
+  const script=document.createElement("script");
+  script.src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js";script.async=true;
+  script.onload=()=>window.lamejs?resolve(window.lamejs):reject(new Error("MP3 encoder did not load"));
+  script.onerror=()=>reject(new Error("MP3 encoder could not be loaded"));
+  document.head.appendChild(script);
+ });
+ return state.lamePromise;
+}
+function encodeWav(samples){
+ const dataSize=samples.length*2,buffer=new ArrayBuffer(44+dataSize),view=new DataView(buffer);
+ const write=(offset,value)=>{for(let i=0;i<value.length;i++)view.setUint8(offset+i,value.charCodeAt(i));};
+ write(0,"RIFF");view.setUint32(4,36+dataSize,true);write(8,"WAVE");write(12,"fmt ");
+ view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,1,true);
+ view.setUint32(24,AUDIO_SAMPLE_RATE,true);view.setUint32(28,AUDIO_SAMPLE_RATE*2,true);
+ view.setUint16(32,2,true);view.setUint16(34,16,true);write(36,"data");view.setUint32(40,dataSize,true);
+ new Uint8Array(buffer,44).set(new Uint8Array(samples.buffer,samples.byteOffset,samples.byteLength));
+ return new Blob([buffer],{type:"audio/wav"});
+}
+function downloadAudio(blob,filename){
+ const url=URL.createObjectURL(blob),link=document.createElement("a");
+ link.href=url;link.download=filename;link.style.display="none";document.body.appendChild(link);link.click();
+ setTimeout(()=>{URL.revokeObjectURL(url);link.remove();},2000);
+}
+function startRecording(){
+ if(!state.audioActive){setAudioStatus("Start live audio before recording.");return;}
+ state.recordParts=[];state.recordCount=0;state.recordStartedAt=Date.now();state.recording=true;
+ updateRecordButton();
+ loadMp3Encoder().catch(()=>{});
+ state.recordTimer=setInterval(updateRecordButton,1000);
+ setAudioStatus("Recording live audio · TG "+state.audioTg);
+}
+async function stopRecording(save=true){
+ if(!state.recording)return;
+ state.recording=false;
+ if(state.recordTimer){clearInterval(state.recordTimer);state.recordTimer=null;}
+ updateRecordButton();
+ if(!save){state.recordParts=[];state.recordCount=0;return;}
+ if(!state.recordCount){state.recordParts=[];setAudioStatus("No audio captured. Try recording during a transmission.");return;}
+ const samples=new Int16Array(state.recordCount);let offset=0;
+ for(const part of state.recordParts){samples.set(part,offset);offset+=part.length;}
+ state.recordParts=[];state.recordCount=0;
+ const tg=state.audioTg||state.filter||"tg";
+ const stamp=new Date().toISOString().replace(/[:.]/g,"-").slice(0,19);
+ const filename="zl3tom-tg"+tg+"-"+stamp;
+ setAudioStatus("Preparing your recording…");
+ try{
+  const lame=await loadMp3Encoder(),encoder=new lame.Mp3Encoder(1,AUDIO_SAMPLE_RATE,32),chunks=[];
+  for(let i=0;i<samples.length;i+=1152){const encoded=encoder.encodeBuffer(samples.subarray(i,Math.min(i+1152,samples.length)));if(encoded?.length)chunks.push(encoded);}
+  const final=encoder.flush();if(final?.length)chunks.push(final);
+  downloadAudio(new Blob(chunks,{type:"audio/mpeg"}),filename+".mp3");
+  setAudioStatus("MP3 recording downloaded.");
+ }catch(error){
+  console.warn("MP3 encoding unavailable; using WAV",error);
+  try{downloadAudio(encodeWav(samples),filename+".wav");setAudioStatus("MP3 unavailable · WAV recording downloaded.");}
+  catch(saveError){console.error("Recording save failed",saveError);setAudioStatus("Could not save the recording.");}
+ }
+}
 function playAudio(){
  const raw=$("talkgroup-filter").value.trim();
  if(!/^\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }
@@ -164,6 +322,7 @@ $("share-talkgroup").addEventListener("click",async()=>{const raw=$("talkgroup-f
 $("start-listening").addEventListener("click",()=>{applyFilter();playAudio();});
 $("audio-prompt-play").addEventListener("click",playAudio);
 $("close-audio-player").addEventListener("click",()=>{stopNativeAudio();$("audio-player").hidden=true;});
+$("record-audio").addEventListener("click",()=>{if(state.recording)stopRecording(true);else startRecording();});
 $("talkgroup-filter").addEventListener("keydown",e=>{if(e.key==="Enter")applyFilter()});
 $("clear-filter").addEventListener("click",()=>{$("talkgroup-filter").value="";state.filter="";updateAudioPrompt();render();});
 const params=new URLSearchParams(location.search);const tg=params.get("tg");if(tg&&/^\d{1,6}$/.test(tg)){$("talkgroup-filter").value=tg;state.filter=tg;}updateAudioPrompt();
