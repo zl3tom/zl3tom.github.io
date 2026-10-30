@@ -98,7 +98,7 @@ function encodeMsgpack(value){
  throw new Error("Unsupported BrandMeister audio command");
 }
 function decodeMsgpack(bytes){
- let p=0;const u8=()=>bytes[p++],u16=()=>((u8()<<8)|u8()),u32=>(()=>{const a=u8(),b=u8(),c=u8(),d=u8();return a*16777216+b*65536+c*256+d;})();
+ let p=0;const u8=()=>bytes[p++],u16=()=>((u8()<<8)|u8()),u32=()=>{const a=u8(),b=u8(),c=u8(),d=u8();return a*16777216+b*65536+c*256+d;};
  function read(){const h=u8();if(h<0x80)return h;if(h>=0xe0)return h-256;if((h&0xf0)===0x90){const n=h&15;return Array.from({length:n},read);}if((h&0xe0)===0xa0){const n=h&31;return new TextDecoder().decode(bytes.subarray(p,p+=n));}
   if(h===0xc0)return null;if(h===0xc2)return false;if(h===0xc3)return true;
   if(h===0xcc)return u8();if(h===0xcd)return u16();if(h===0xce)return u32();
@@ -120,7 +120,7 @@ function pushAudio(payload){
 }
 async function startNativeAudio(){
  const tg=state.filter;
- if(!/^\\d{1,6}$/.test(tg)){ $("filter-hint").textContent="Enter a valid talkgroup number first.";return; }
+ if(!/^\d{1,6}$/.test(tg)){ $("filter-hint").textContent="Enter a valid talkgroup number first.";return; }
  stopNativeAudio();
  try{
   const AudioContextClass=window.AudioContext||window.webkitAudioContext;
@@ -147,7 +147,7 @@ function stopNativeAudio(){
 
 function playAudio(){
  const raw=$("talkgroup-filter").value.trim();
- if(!/^\\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }
+ if(!/^\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }
  state.filter=raw;audioPromptDismissed=true;$("audio-prompt").hidden=true;
  if(audioPromptTimer){clearTimeout(audioPromptTimer);audioPromptTimer=null;}
  startNativeAudio();$("audio-player").scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"nearest"});
