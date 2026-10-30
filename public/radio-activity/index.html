@@ -10,13 +10,13 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css?v=20260904-fullfix1">
 <link rel="stylesheet" href="/accessibility.css?v=20261006">
-<link rel="stylesheet" href="/radio-activity/monitor.css?v=2">
+<link rel="stylesheet" href="/radio-activity/monitor.css?v=3">
 <meta property="og:title" content="Radio Activity Monitor | ZL3TOM">
 <meta property="og:description" content="Live amateur radio network activity, transmissions and talkgroups from ZL3TOM.">
 <meta property="og:url" content="https://zl3tom.com/radio-activity">
 <meta property="og:site_name" content="ZL3TOM Amateur Radio">
 <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" defer></script>
-<script src="/radio-activity/monitor.js?v=4" defer></script>
+<script src="/radio-activity/monitor.js?v=5" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -32,7 +32,7 @@
 <div class="bm-toolbar">
 <label class="bm-filter-label" for="talkgroup-filter">TALK GROUP FILTER</label>
 <div class="bm-filter-control"><span aria-hidden="true">TG</span><input id="talkgroup-filter" inputmode="numeric" type="number" min="1" max="999999" placeholder="All talkgroups" aria-label="Filter by talkgroup number"><button id="clear-filter" type="button" class="bm-clear" aria-label="Clear talkgroup filter">×</button></div>
-<button id="apply-filter" class="bm-button" type="button">Apply filter</button><button id="start-listening" class="bm-button bm-listen-button" type="button">▶ Start listening</button>
+<button id="apply-filter" class="bm-button" type="button">Apply filter</button><button id="share-talkgroup" class="bm-button bm-share-button" type="button">↗ Share TG link</button><button id="start-listening" class="bm-button bm-listen-button" type="button">▶ Start listening</button>
 <span class="bm-filter-hint" id="filter-hint">Showing all network activity</span>
 </div>
 <div class="bm-stats" aria-label="Live network statistics">
@@ -56,7 +56,7 @@
 <aside class="bm-side-column">
 <section class="bm-panel bm-feature-panel" aria-labelledby="station-heading">
 <span class="bm-eyebrow">LATEST STATION</span><h2 id="station-heading">Station details</h2>
-<div id="station-detail" class="bm-station-detail"><div class="bm-avatar bm-avatar-large">?</div><strong>Waiting for a station</strong><p>When a station transmits, its available details will appear here.</p></div>
+<div id="station-detail" class="bm-station-detail"><div class="bm-avatar bm-avatar-large">?</div><strong>No station heard yet</strong><p>Station details will appear here as soon as the first transmission starts.</p></div>
 </section>
 <section class="bm-panel bm-info-panel"><span class="bm-eyebrow">ABOUT THIS MONITOR</span><h2>BrandMeister, live.</h2><p>This is an independent ZL3TOM project using BrandMeister's public Last Heard event stream. It is not an official BrandMeister service.</p><div class="bm-source-row"><span>NETWORK</span><strong>BrandMeister DMR only</strong></div><div class="bm-source-row"><span>OPERATOR DATA</span><strong>RadioID.net, when available</strong></div><div class="bm-source-row"><span>PROFILE</span><strong>QRZ callsign links</strong></div></section>
 <section class="bm-panel bm-help-panel"><span class="bm-eyebrow">QUICK TIP</span><p>Enter a BrandMeister talkgroup number, then select Start listening to open the live audio player tuned to that group. Your browser may ask you to press Play or unmute the player.</p><a href="https://brandmeister.network/" target="_blank" rel="noopener noreferrer">Visit BrandMeister ↗</a></section>
