@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07131d">
+<title>HUBNet Live Audio Spectrum | ZL3TOM</title>
+<meta name="description" content="Listen to the HUBNet low-latency 8 kHz PCM audio stream on ZL3TOM, with a live audio level meter and FFT frequency spectrum display.">
+<meta name="keywords" content="HUBNet, HUBNet audio, HUBNet live stream, FFT audio spectrum, PCM audio, 8 kHz audio, amateur radio network audio, live radio monitor, ZL3TOM">
+<meta name="author" content="Thomas Bernard — ZL3TOM">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://zl3tom.com/radio-activity/hubnet/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css?v=20261030-nav4">
+<link rel="stylesheet" href="/site-extras.css?v=20261031-radiohub">
+<link rel="stylesheet" href="/accessibility.css?v=20261006">
+<style>
+.hubnet-page{min-height:70vh;padding:54px 0 76px;background:radial-gradient(ellipse at 15% 5%,rgba(35,184,132,.13),transparent 35%),linear-gradient(145deg,#07131d,#0d3037);color:#f4f8f8}
+.hubnet-wrap{width:min(100% - 32px,980px);margin:auto}
+.hubnet-kicker{color:#a9eaf3;font-size:.75rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+.hubnet-page h1{font-size:clamp(2.3rem,6vw,4rem);line-height:1.05;margin:14px 0}
+.hubnet-intro{max-width:760px;color:#d6e5e8;line-height:1.7;font-size:1.05rem}
+.hubnet-card{margin-top:28px;padding:clamp(18px,4vw,30px);border:1px solid #42616b;border-radius:18px;background:linear-gradient(145deg,#102b37,#0b202b);box-shadow:0 18px 45px #0003}
+.hubnet-card h2{margin:0 0 6px;color:#fff;font-size:1.4rem}
+.hubnet-subtitle{color:#b9cbd0;margin:0 0 22px;line-height:1.6}
+.hubnet-controls{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+#hubnet-toggle{min-height:48px;padding:11px 20px;border:0;border-radius:9px;background:#8de4f0;color:#08232b;font-size:1rem;font-weight:850;cursor:pointer}
+#hubnet-toggle:hover:not(:disabled){filter:brightness(1.08)}
+#hubnet-toggle:disabled{opacity:.6;cursor:wait}
+#hubnet-status{padding:10px 14px;border-radius:8px;font-weight:800;background:#f2dede;color:#8e3030}
+#hubnet-status[data-state="connected"]{background:#dff0d8;color:#286b35}
+#hubnet-status[data-state="connecting"]{background:#fcf8e3;color:#80621b}
+.hubnet-label{display:block;margin:24px 0 8px;color:#dbe9eb;font-weight:750}
+#hubnet-meter{display:flex;gap:2px;height:20px;padding:3px;border-radius:8px;background:#080f13;overflow:hidden}
+.hubnet-segment{flex:1;min-width:0;background:#202a2e;border-radius:2px}
+#hubnet-spectrum{position:relative;margin-top:22px;border-radius:10px;overflow:hidden;background:#30383d;box-shadow:0 4px 12px #0004}
+#hubnet-spectrum-canvas{display:block;width:100%;height:300px}
+.hubnet-spectrum-caption{display:flex;justify-content:space-between;gap:12px;color:#c5d5d9;font-size:.82rem;margin-top:9px}
+.hubnet-warning{margin:20px 0 0;padding:14px 16px;border-left:4px solid #e5ad42;border-radius:6px;background:#172c35;color:#e2edef;line-height:1.6}
+.hubnet-back{display:inline-block;margin-top:22px;color:#a9eaf3}
+@media(max-width:600px){.hubnet-page{padding:38px 0 54px}#hubnet-spectrum-canvas{height:240px}.hubnet-controls{align-items:stretch;flex-direction:column}.hubnet-controls>*{width:100%;text-align:center}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="HUBNet Live Audio Spectrum | ZL3TOM">
+<meta property="og:description" content="Listen to HUBNet live audio with a low-latency audio meter and FFT spectrum display.">
+<meta property="og:url" content="https://zl3tom.com/radio-activity/hubnet/">
+<meta property="og:site_name" content="ZL3TOM Amateur Radio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HUBNet Live Audio Spectrum | ZL3TOM">
+<meta name="twitter:description" content="HUBNet live audio and FFT spectrum monitor on ZL3TOM.">
+<script src="/script.js?v=20261030-nav6" defer></script>
+<script src="/radio-activity/hubnet.js?v=1" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="site-container nav-wrap"><a class="brand" href="/"><span class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radio" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"></path><path d="M19.075 4.933a10 10 0 0 1 0 14.134"></path><path d="M4.925 19.067a10 10 0 0 1 0-14.134"></path><path d="M7.753 16.239a6 6 0 0 1 0-8.478"></path><circle cx="12" cy="12" r="2"></circle></svg></span><span><strong>ZL3TOM</strong><small>Amateur Radio</small></span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button><nav id="main-navigation" class="main-nav" aria-label="Main navigation"><a href="/" aria-current="page">Home</a><a href="/about">About</a><a href="/radio-fun">Radio Fun</a><a href="/guides">Guides</a><a href="/tools">Tools</a><a href="/community">Community</a><a href="/qsl">QSL</a><a href="/contact">Contact</a><a class="nav-qrz" href="https://qrz.com/db/ZL3TOM" target="_blank" rel="noreferrer">View ZL3TOM on QRZ <span aria-hidden="true">↗</span></a></nav></div></header>
+<main id="main" tabindex="-1">
+<section class="hubnet-page"><div class="hubnet-wrap">
+<span class="hubnet-kicker">ZL3TOM LIVE RADIO MONITORS</span>
+<h1>HUBNet Audio Spectrum<span style="color:#8de4f0">.</span></h1>
+<p class="hubnet-intro">Listen to the HUBNet live audio stream directly on this page. The monitor displays the incoming audio level and a real-time FFT frequency spectrum.</p>
+<section class="hubnet-card" aria-labelledby="hubnet-player-title">
+<h2 id="hubnet-player-title">HUBNet live audio</h2>
+<p class="hubnet-subtitle">Low-latency 8 kHz PCM stream · Start streaming when you're ready.</p>
+<div class="hubnet-controls">
+<button id="hubnet-toggle" type="button">Start streaming</button>
+<div id="hubnet-status" role="status" aria-live="polite" data-state="disconnected">Disconnected</div>
+</div>
+<label class="hubnet-label" for="hubnet-meter">Audio level</label>
+<div id="hubnet-meter" role="meter" aria-label="Live audio level" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0"></div>
+<div id="hubnet-spectrum"><canvas id="hubnet-spectrum-canvas" aria-label="Live audio frequency spectrum from 0 to 4 kHz"></canvas></div>
+<div class="hubnet-spectrum-caption"><span>0 Hz</span><span>Frequency · up to 4 kHz</span><span>4 kHz</span></div>
+<p class="hubnet-warning">Please keep transmitted audio clean and undistorted. Aim for the mid-amber range on the audio meter and avoid hitting red.</p>
+</section>
+<a class="hubnet-back" href="/radio-activity/">← Back to all live radio monitors</a>
+</div></section>
+</main>
+<footer class="site-footer"><div class="site-container footer-grid"><div><strong>ZL3TOM</strong><p>Thomas Bernard · ZL3TOM / ZL3KY<br>Christchurch, New Zealand</p></div><div><strong>Quick links</strong><a href="/guides">Guides</a><a href="/tools">Tools</a><a href="/qsl">QSL</a></div><div><strong>Contact</strong><a href="/contact">Contact</a><a href="https://www.qrz.com/db/ZL3TOM" target="_blank" rel="noopener noreferrer">QRZ ↗</a><a href="https://www.facebook.com/zl3tom" target="_blank" rel="me noopener noreferrer">ZL3TOM on Facebook ↗</a></div></div><p class="accessibility-footer-link"><a href="/guides/accessible-amateur-radio#using-this-website">Accessibility and website feedback</a></p></footer>
+<script src="/accessibility.js?v=20261006" defer></script>
+</body>
+</html>
