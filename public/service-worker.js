@@ -109,6 +109,17 @@ self.addEventListener("fetch", (event) => {
   // API endpoints require a live connection and should never be frozen offline.
   if (url.pathname.startsWith("/api/")) return;
 
+  // Always refresh shared navigation assets so every page receives current menu fixes.
+  if (url.pathname === "/script.js" || url.pathname === "/style.css") {
+    event.respondWith(
+      fetch(request, { cache: "reload" }).then((response) => {
+        if (response && response.ok) caches.open(CACHE_NAME).then((cache) => cache.put(request, response.clone()));
+        return response;
+      }).catch(() => caches.match(request))
+    );
+    return;
+  }
+
   if (request.mode === "navigate") {
     event.respondWith(
       fetch(request)
