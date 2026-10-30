@@ -10,13 +10,13 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css?v=20260904-fullfix1">
 <link rel="stylesheet" href="/accessibility.css?v=20261006">
-<link rel="stylesheet" href="/radio-activity/monitor.css?v=6">
+<link rel="stylesheet" href="/radio-activity/monitor.css?v=7">
 <meta property="og:title" content="Radio Activity Monitor | ZL3TOM">
 <meta property="og:description" content="Live amateur radio network activity, transmissions and talkgroups from ZL3TOM.">
 <meta property="og:url" content="https://zl3tom.com/radio-activity">
 <meta property="og:site_name" content="ZL3TOM Amateur Radio">
 <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" defer></script>
-<script src="/radio-activity/monitor.js?v=9" defer></script>
+<script src="/radio-activity/monitor.js?v=10" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -37,7 +37,7 @@
 <div id="audio-prompt" class="bm-audio-prompt" role="status" aria-live="polite" hidden><strong>No Audio?</strong> Click <button id="audio-prompt-play" type="button">▶ Play</button> to hear audio on this talkgroup.</div>
 
 </div>
-<div id="audio-player" class="bm-audio-player" hidden><div class="bm-audio-player-heading"><div><span class="bm-eyebrow">NATIVE LIVE AUDIO</span><h2 id="audio-player-title">BrandMeister audio player</h2><p id="audio-player-status" role="status" aria-live="polite">Starting audio…</p></div><button id="close-audio-player" class="bm-audio-close" type="button">Stop audio</button></div><p class="bm-audio-note">Live audio plays directly in this page.</p></div>
+<div id="audio-player" class="bm-audio-player" hidden><div class="bm-audio-player-heading"><div><span class="bm-eyebrow">NATIVE LIVE AUDIO</span><h2 id="audio-player-title">BrandMeister audio player</h2><p id="audio-player-status" role="status" aria-live="polite">Starting audio…</p></div><div class="bm-audio-actions"><button id="record-audio" class="bm-record-button" type="button" disabled>● Record</button><button id="close-audio-player" class="bm-audio-close" type="button">Stop audio</button></div></div><p class="bm-audio-note">Live audio plays directly in this page. Recordings are processed in your browser and downloaded to your device as MP3, or WAV if MP3 encoding is unavailable. Only record transmissions where doing so is lawful and appropriate.</p></div>
 <div class="bm-stats" aria-label="Live network statistics">
 <div class="bm-stat"><span class="bm-stat-label">ON AIR NOW</span><strong id="stat-active">—</strong><small>Active transmissions</small></div>
 <div class="bm-stat"><span class="bm-stat-label">HEARD THIS SESSION</span><strong id="stat-heard">0</strong><small>Unique stations</small></div>
