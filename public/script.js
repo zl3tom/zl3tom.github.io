@@ -1,33 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Keep the Radio Fun navigation consistent and expose the live monitor as its submenu.
+  // Shared navigation enhancement: Radio Fun always owns the Live Monitor submenu.
   const monitorNavigation = document.getElementById("main-navigation");
   if (monitorNavigation) {
     const radioFunLink = monitorNavigation.querySelector('a[href="/radio-fun"], a[href="/radio-fun/"]');
-    if (radioFunLink && !monitorNavigation.querySelector(".nav-dropdown")) {
+    if (radioFunLink && !radioFunLink.parentElement.closest(".nav-dropdown")) {
       const dropdown = document.createElement("div");
       dropdown.className = "nav-dropdown";
-      const parent = radioFunLink.cloneNode(true);
       const submenu = document.createElement("div");
       submenu.className = "nav-submenu";
       submenu.setAttribute("aria-label", "Radio Fun pages");
       const monitorLink = document.createElement("a");
       monitorLink.href = "/radio-activity";
       monitorLink.textContent = "Live Monitor";
-      if (window.location.pathname.replace(/\/$/, "") === "/radio-activity") {
+      const currentPath = window.location.pathname.replace(/\\/$/, "");
+      if (currentPath === "/radio-activity") {
         monitorLink.setAttribute("aria-current", "page");
-        parent.removeAttribute("aria-current");
+        radioFunLink.removeAttribute("aria-current");
+      } else if (currentPath === "/radio-fun") {
+        radioFunLink.setAttribute("aria-current", "page");
       }
       submenu.appendChild(monitorLink);
-      dropdown.append(parent, submenu);
+      dropdown.append(radioFunLink.cloneNode(true), submenu);
       radioFunLink.replaceWith(dropdown);
-    } else if (!radioFunLink && !monitorNavigation.querySelector('a[href="/radio-activity"]')) {
-      const monitorLink = document.createElement("a");
-      monitorLink.href = "/radio-activity";
-      monitorLink.textContent = "Live Monitor";
-      if (window.location.pathname.replace(/\/$/, "") === "/radio-activity") monitorLink.setAttribute("aria-current", "page");
-      const qrzLink = monitorNavigation.querySelector(".nav-qrz");
-      monitorNavigation.insertBefore(monitorLink, qrzLink || null);
     }
   }
 
