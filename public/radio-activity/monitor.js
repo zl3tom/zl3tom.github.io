@@ -104,7 +104,7 @@ $("share-talkgroup").addEventListener("click",async()=>{const raw=$("talkgroup-f
 $("start-listening").addEventListener("click",()=>{applyFilter();playAudio();});
 $("audio-prompt-play").addEventListener("click",playAudio);
 $("talkgroup-filter").addEventListener("keydown",e=>{if(e.key==="Enter")applyFilter()});
-$("clear-filter").addEventListener("click",()=>{$("talkgroup-filter").value="";state.filter="";render();});
+$("clear-filter").addEventListener("click",()=>{$("talkgroup-filter").value="";state.filter="";updateAudioPrompt();render();});
 const params=new URLSearchParams(location.search);const tg=params.get("tg");if(tg&&/^\d{1,6}$/.test(tg)){$("talkgroup-filter").value=tg;state.filter=tg;}updateAudioPrompt();
 setInterval(()=>{document.querySelectorAll(".duration").forEach(el=>{const start=Number(el.dataset.start);if(start)el.textContent=duration(Date.now()-start);});},1000);
 render();connect();
