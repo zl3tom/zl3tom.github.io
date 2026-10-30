@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 const $ = (id) => document.getElementById(id);
-const state = {socket:null, active:new Map(), recent:[], heard:new Set(), talkgroups:new Set(), filter:"", latest:null, radioCache:new Map()};
+const state = {socket:null, active:new Map(), recent:[], heard:new Set(), talkgroups:new Set(), filter:"", latest:null, latestStation:null, radioCache:new Map(), renderTimer:null};
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const clean = v => String(v ?? "").trim();
 const get = (o, ...keys) => { for (const k of keys) if (o && o[k] !== undefined && o[k] !== null && o[k] !== "") return o[k]; return ""; };
@@ -33,13 +33,14 @@ function handleEvent(raw){
  state.latest=Date.now(); state.heard.add(e.sourceCall || e.sourceId); state.talkgroups.add(e.destId);
  const key=stationKey(e)+"-"+e.destId;
  const existing=state.active.get(key);
- if(isStart(e)){state.active.set(key,{...e,startedAt:Date.now(),active:true}); addRecent({...e,active:true,startedAt:Date.now()});}
+ if(isStart(e)){const startedAt=Date.now();const item={...e,startedAt,active:true};state.active.set(key,item);state.latestStation=item;addRecent({...item});}
  else if(isStop(e)){if(existing){existing.active=false;existing.endedAt=Date.now();existing.last=e;state.active.delete(key);updateRecent(key,e);}else addRecent({...e,active:false});}
  else { if(existing){Object.assign(existing,e); } else addRecent({...e,active:false}); }
- render(); if(e.sourceId) lookupRadioId(e.sourceId,e.sourceCall);
+ scheduleRender(); if(e.sourceId) lookupRadioId(e.sourceId,e.sourceCall);
 }
 function addRecent(e){const key=stationKey(e)+"-"+e.destId;state.recent.unshift({...e,key,receivedAt:Date.now()});state.recent=state.recent.slice(0,30);}
 function updateRecent(key,e){const row=state.recent.find(x=>x.key===key);if(row){row.active=false;row.endedAt=Date.now();row.last=e;}else addRecent({...e,active:false});}
+function scheduleRender(){if(state.renderTimer)return;state.renderTimer=setTimeout(()=>{state.renderTimer=null;render();},650);}
 function render(){
  const filtered=[...state.active.values()].filter(matches).sort((a,b)=>b.startedAt-a.startedAt);
  $("stat-active").textContent=filtered.length;
@@ -50,7 +51,7 @@ function render(){
  $("onair-list").innerHTML=filtered.length?filtered.map(e=>`<article class="bm-onair-card"><div class="bm-avatar">${esc((e.sourceCall||e.sourceId||"?").slice(0,2))}</div><div class="bm-caller"><a href="https://www.qrz.com/db/${encodeURIComponent(e.sourceCall||"")}" target="_blank" rel="noopener noreferrer">${esc(e.sourceCall||"DMR "+e.sourceId)}</a><p>${esc(e.alias||"Operator details loading")} · DMR ID ${esc(e.sourceId||"—")}</p><p>TG ${esc(e.destId)} ${e.repeater?"· via "+esc(e.repeater):""} ${e.slot?"· Slot "+esc(e.slot):""}</p></div><div class="bm-onair-meta"><strong class="duration" data-start="${e.startedAt}">${duration(Date.now()-e.startedAt)}</strong><small>ON AIR</small></div></article>`).join(""):'<div class="bm-empty"><span class="bm-empty-icon">⌁</span><strong>No active transmissions in this view</strong><p>We are still listening for the next station.</p></div>';
  const rows=state.recent.filter(matches).slice(0,30);
  $("activity-body").innerHTML=rows.length?rows.map(e=>`<tr><td><a class="bm-table-callsign" href="https://www.qrz.com/db/${encodeURIComponent(e.sourceCall||"")}" target="_blank" rel="noopener noreferrer">${esc(e.sourceCall||"DMR "+e.sourceId)}</a><br><small>DMR ID ${esc(e.sourceId||"—")}</small></td><td><span class="bm-tg">TG ${esc(e.destId)}</span></td><td>${esc(e.repeater||"Not supplied")}${e.slot?"<br><small>Slot "+esc(e.slot)+"</small>":""}</td><td>${esc(fmtTime(e.stamp))}</td><td><span class="bm-state ${e.active?"bm-state-active":"bm-state-ended"}">${e.active?"STARTED":"HEARD"}</span></td></tr>`).join(""):'<tr><td colspan="5" class="bm-table-empty">No activity matches this talkgroup yet.</td></tr>';
- const latest=rows[0]; if(latest) showStation(latest);
+ if(state.latestStation) showStation(state.latestStation);
  $("filter-hint").textContent=state.filter?"Filtering to talkgroup "+state.filter:"Showing all network activity";
 }
 function showStation(e){
@@ -65,8 +66,8 @@ async function lookupRadioId(id,callsign){
   const response=await fetch(url,{headers:{Accept:"application/json"}});
   if(!response.ok)return;
   const data=await response.json();const user=data.results?.[0];if(!user)return;
-  const match=state.recent.find(x=>x.sourceId===id);if(match&&!match.alias){match.alias=[user.fname,user.surname,user.city,user.country].filter(Boolean).join(" · ");render();}
-  const active=[...state.active.values()].find(x=>x.sourceId===id);if(active&&!active.alias){active.alias=[user.fname,user.surname,user.city,user.country].filter(Boolean).join(" · ");render();}
+  const match=state.recent.find(x=>x.sourceId===id);if(match&&!match.alias){match.alias=[user.fname,user.surname,user.city,user.country].filter(Boolean).join(" · ");scheduleRender();}
+  const active=[...state.active.values()].find(x=>x.sourceId===id);if(active&&!active.alias){active.alias=[user.fname,user.surname,user.city,user.country].filter(Boolean).join(" · ");if(state.latestStation===active)state.latestStation=active;scheduleRender();}
  }catch{/* RadioID lookup is optional; the live feed remains usable without it. */}
 }
 function setConnection(status,label){$("connection").dataset.state=status;$("connection-label").textContent=label;$("live-indicator").classList.toggle("is-live",status==="connected");}
@@ -79,9 +80,10 @@ function connect(){
  socket.on("connect_error",()=>setConnection("error","Connection issue · retrying"));
  socket.on("mqtt",handleEvent);
 }
-function applyFilter(){const raw=$("talkgroup-filter").value.trim();state.filter=/^\d{1,6}$/.test(raw)?raw:"";render();}
+function applyFilter(){const raw=$("talkgroup-filter").value.trim();state.filter=/^\d{1,6}$/.test(raw)?raw:"";const url=new URL(location.href);if(state.filter)url.searchParams.set("tg",state.filter);else url.searchParams.delete("tg");history.replaceState({}, "", url);render();}
 $("apply-filter").addEventListener("click",applyFilter);
-$("start-listening").addEventListener("click",()=>{applyFilter();const raw=$("talkgroup-filter").value.trim();if(!/^\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }window.open("https://hose.brandmeister.network/?subscribe="+encodeURIComponent(raw),"_blank","noopener,noreferrer");});
+$("share-talkgroup").addEventListener("click",async()=>{const raw=$("talkgroup-filter").value.trim();if(!/^\d{1,6}$/.test(raw)){$("filter-hint").textContent="Enter a talkgroup number before sharing.";return;}applyFilter();const shareUrl=new URL(location.href);shareUrl.searchParams.set("tg",raw);try{await navigator.clipboard.writeText(shareUrl.href);$("filter-hint").textContent="Share link copied for TG "+raw+".";}catch{$("filter-hint").textContent="Share this page URL: "+shareUrl.href;}});
+$("start-listening").addEventListener("click",()=>{applyFilter();const raw=$("talkgroup-filter").value.trim();if(!/^\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }window.open("https://hose.brandmeister.network/#/?subscribe="+encodeURIComponent(raw),"_blank","noopener,noreferrer");});
 $("talkgroup-filter").addEventListener("keydown",e=>{if(e.key==="Enter")applyFilter()});
 $("clear-filter").addEventListener("click",()=>{$("talkgroup-filter").value="";state.filter="";render();});
 const params=new URLSearchParams(location.search);const tg=params.get("tg");if(tg&&/^\d{1,6}$/.test(tg)){$("talkgroup-filter").value=tg;state.filter=tg;}
