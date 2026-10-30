@@ -77,3 +77,11 @@
 .bm-audio-note{margin:10px 0 0;color:#536970;font-size:.82rem}
 .bm-help-panel a{color:#176d4c}
 @media(max-width:600px){.bm-standard-hero{padding-top:35px}.bm-content-section{padding-block:28px}.bm-audio-player{padding:13px}.bm-audio-player iframe{height:520px}.bm-audio-player-heading{align-items:flex-start;flex-direction:column}}
+
+/* Native live audio recording controls */
+.bm-audio-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.bm-record-button{border:1px solid #d9a4a4;border-radius:5px;background:#fff4f4;color:#9b2929;padding:8px 13px;font-weight:850;cursor:pointer}
+.bm-record-button:disabled{opacity:.5;cursor:not-allowed}
+.bm-record-button.is-recording{background:#a62929;color:#fff;border-color:#a62929}
+.bm-record-button:focus-visible,.bm-audio-close:focus-visible{outline:3px solid #176d4c;outline-offset:3px}
+@media(max-width:600px){.bm-audio-actions{width:100%}.bm-audio-actions button{flex:1}}
