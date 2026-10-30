@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 const $ = (id) => document.getElementById(id);
-const state = {socket:null, active:new Map(), recent:[], heard:new Set(), talkgroups:new Set(), filter:"", latest:null, latestStation:null, radioCache:new Map(), renderTimer:null, audioSocket:null, audioContext:null, audioProcessor:null, audioBuffer:new Float32Array(32768), audioHead:0, audioTail:0, audioFlow:0};
+const state = {socket:null, active:new Map(), recent:[], heard:new Set(), talkgroups:new Set(), filter:"", latest:null, latestStation:null, radioCache:new Map(), renderTimer:null, audioSocket:null, audioContext:null, audioProcessor:null, audioBuffer:new Float32Array(32768), audioHead:0, audioTail:0, audioFlow:0, audioStopRequested:false};
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const clean = v => String(v ?? "").trim();
 const get = (o, ...keys) => { for (const k of keys) if (o && o[k] !== undefined && o[k] !== null && o[k] !== "") return o[k]; return ""; };
@@ -33,12 +33,12 @@ function handleEvent(raw){
  state.latest=Date.now(); state.heard.add(e.sourceCall || e.sourceId); state.talkgroups.add(e.destId);
  const key=stationKey(e)+"-"+e.destId;
  const existing=state.active.get(key);
- if(isStart(e)){const startedAt=Date.now();const item={...e,startedAt,active:true};state.active.set(key,item);state.latestStation=item;addRecent({...item});}
+ if(isStart(e)){const startedAt=Date.now();const item={...e,startedAt,active:true};state.active.set(key,item);addRecent({...item});}
  else if(isStop(e)){if(existing){existing.active=false;existing.endedAt=Date.now();existing.last=e;state.active.delete(key);updateRecent(key,e);}else addRecent({...e,active:false});}
  else { if(existing){Object.assign(existing,e); } else addRecent({...e,active:false}); }
  scheduleRender(); if(e.sourceId) lookupRadioId(e.sourceId,e.sourceCall);
 }
-function addRecent(e){const key=stationKey(e)+"-"+e.destId;const callsign=(e.sourceCall||"").toUpperCase();if(callsign)state.recent=state.recent.filter(row=>(row.sourceCall||"").toUpperCase()!==callsign);state.recent.unshift({...e,key,receivedAt:Date.now()});state.recent=state.recent.slice(0,30);}
+function addRecent(e){const key=stationKey(e)+"-"+e.destId+"-"+String(e.stamp)+"-"+Math.random().toString(36).slice(2,7);state.recent.unshift({...e,key,receivedAt:Date.now()});state.recent=state.recent.slice(0,500);}
 function updateRecent(key,e){const row=state.recent.find(x=>x.key===key);if(row){row.active=false;row.endedAt=Date.now();row.last=e;}else addRecent({...e,active:false});}
 function scheduleRender(){if(state.renderTimer)return;state.renderTimer=setTimeout(()=>{state.renderTimer=null;render();},900);}
 function render(){
@@ -49,14 +49,15 @@ function render(){
  $("stat-last").textContent=state.latest?fmtTime(state.latest):"—";
  $("onair-count").textContent=filtered.length+" ACTIVE";
  $("onair-list").innerHTML=filtered.length?filtered.map(e=>`<article class="bm-onair-card"><div class="bm-avatar">${esc((e.sourceCall||e.sourceId||"?").slice(0,2))}</div><div class="bm-caller"><a href="https://www.qrz.com/db/${encodeURIComponent(e.sourceCall||"")}" target="_blank" rel="noopener noreferrer">${esc(e.sourceCall||"DMR "+e.sourceId)}</a><p>${esc(e.alias||"Operator details loading")} · DMR ID ${esc(e.sourceId||"—")}</p><p>TG ${esc(e.destId)} ${e.repeater?"· via "+esc(e.repeater):""} ${e.slot?"· Slot "+esc(e.slot):""}</p></div><div class="bm-onair-meta"><strong class="duration" data-start="${e.startedAt}">${duration(Date.now()-e.startedAt)}</strong><small>ON AIR</small></div></article>`).join(""):'<div class="bm-empty"><span class="bm-empty-icon">⌁</span><strong>No active transmissions in this view</strong><p>We are still listening for the next station.</p></div>';
- const rows=state.recent.filter(matches).slice(0,30);
+ const rows=state.recent.filter(matches).slice(0,500);
  $("activity-body").innerHTML=rows.length?rows.map(e=>`<tr><td><a class="bm-table-callsign" href="https://www.qrz.com/db/${encodeURIComponent(e.sourceCall||"")}" target="_blank" rel="noopener noreferrer">${esc(e.sourceCall||"DMR "+e.sourceId)}</a><br><small>DMR ID ${esc(e.sourceId||"—")}</small></td><td><span class="bm-tg">TG ${esc(e.destId)}</span></td><td>${esc(e.repeater||"Not supplied")}${e.slot?"<br><small>Slot "+esc(e.slot)+"</small>":""}</td><td>${esc(fmtTime(e.stamp))}</td><td><span class="bm-state ${e.active?"bm-state-active":"bm-state-ended"}">${e.active?"STARTED":"HEARD"}</span></td></tr>`).join(""):'<tr><td colspan="5" class="bm-table-empty">No activity matches this talkgroup yet.</td></tr>';
- if(state.latestStation) showStation(state.latestStation);
+ if(filtered.length) showStation(filtered[0]); else showNoCurrentStation();
  $("filter-hint").textContent=state.filter?"Filtering to talkgroup "+state.filter:"Showing all network activity";
 }
+function showNoCurrentStation(){ $("station-detail").innerHTML=`<div class="bm-avatar bm-avatar-large">—</div><strong>No current transmission</strong><p>${state.filter?"No station is transmitting on talkgroup "+esc(state.filter)+" right now.":"No station is transmitting right now."}</p><div class="bm-station-id">This panel updates when a station keys up.</div>`; }
 function showStation(e){
  const name=e.alias||"Operator details not supplied by the live event";
- $("station-detail").innerHTML=`<div class="bm-avatar bm-avatar-large">${esc((e.sourceCall||e.sourceId||"?").slice(0,2))}</div><strong>${esc(e.sourceCall||"Unknown callsign")}</strong><p>${esc(name)}</p><div class="bm-station-id">DMR ID · ${esc(e.sourceId||"Not supplied")}</div><p>Talkgroup ${esc(e.destId)} ${e.repeater?"· "+esc(e.repeater):""}</p><a class="bm-profile-link" href="https://www.qrz.com/db/${encodeURIComponent(e.sourceCall||"")}" target="_blank" rel="noopener noreferrer">View callsign on QRZ ↗</a>`;
+ $("station-detail").innerHTML=`<div class="bm-avatar bm-avatar-large">${esc((e.sourceCall||e.sourceId||"?").slice(0,2))}</div><strong>${esc(e.sourceCall||"Unknown callsign")}</strong><p>${esc(name)}</p><div class="bm-station-id">DMR ID · ${esc(e.sourceId||"Not supplied")}</div><p>Currently transmitting on TG ${esc(e.destId)} ${e.repeater?"· "+esc(e.repeater):""}</p><a class="bm-profile-link" href="https://www.qrz.com/db/${encodeURIComponent(e.sourceCall||"")}" target="_blank" rel="noopener noreferrer">View callsign on QRZ ↗</a>`;
 }
 async function lookupRadioId(id,callsign){
  if(state.radioCache.has(id))return;
@@ -122,6 +123,10 @@ async function startNativeAudio(){
  const tg=state.filter;
  if(!/^\d{1,6}$/.test(tg)){ $("filter-hint").textContent="Enter a valid talkgroup number first.";return; }
  stopNativeAudio();
+ state.audioStopRequested=false;
+ $("audio-player").hidden=false;
+ $("audio-player-title").textContent="Listening to TG "+tg;
+ $("audio-player-status").textContent="Connecting to BrandMeister audio…";
  try{
   const AudioContextClass=window.AudioContext||window.webkitAudioContext;
   if(!AudioContextClass)throw new Error("Web Audio is not supported by this browser.");
@@ -131,14 +136,15 @@ async function startNativeAudio(){
   state.audioProcessor.connect(state.audioContext.destination);
   await state.audioContext.resume();
   const socket=new WebSocket("wss://hose.brandmeister.network/spotter/","spotter");state.audioSocket=socket;socket.binaryType="arraybuffer";
-  socket.onopen=()=>{if(state.audioSocket===socket){socket.send(encodeMsgpack([1,[Number(tg)]]));$("audio-player-title").textContent="Playing TG "+tg+" · BrandMeister live audio";$("audio-player-status").textContent="Connected · waiting for a transmission";}};
+  socket.onopen=()=>{if(state.audioSocket===socket){socket.send(encodeMsgpack([1,[Number(tg)]]));$("audio-player-title").textContent="TG "+tg+" · BrandMeister live audio";$("audio-player-status").textContent="Connected · waiting for a transmission";}};
   socket.onmessage=event=>{if(state.audioSocket!==socket)return;try{const packet=decodeMsgpack(new Uint8Array(event.data));if(!Array.isArray(packet))return;switch(packet[0]){case 11:$("audio-player-status").textContent="Receiving audio · TG "+tg;break;case 13:$("audio-player-status").textContent="Connected · waiting for the next transmission";break;case 20:pushAudio(packet[1]);$("audio-player-status").textContent="Live audio · TG "+tg;break;}}catch(error){console.error("BrandMeister audio packet error",error);}};
-  socket.onerror=()=>{$("audio-player-status").textContent="Audio connection error. Please try again.";};
-  socket.onclose=()=>{if(state.audioSocket===socket){state.audioSocket=null;$("audio-player-status").textContent="Audio disconnected."; }};
+  socket.onerror=()=>{if(state.audioSocket===socket)$("audio-player-status").textContent="Audio connection issue · retry with Play audio";};
+  socket.onclose=()=>{if(state.audioSocket===socket){state.audioSocket=null;if(!state.audioStopRequested)$("audio-player-status").textContent="Connection ended · select Play audio to reconnect"; }};
   $("audio-player").hidden=false;
  }catch(error){$("audio-player-status").textContent=error.message||"Could not start audio.";console.error(error);}
 }
 function stopNativeAudio(){
+ state.audioStopRequested=true;
  if(state.audioSocket){try{if(state.audioSocket.readyState===WebSocket.OPEN)state.audioSocket.send(encodeMsgpack([12]));state.audioSocket.close();}catch{}state.audioSocket=null;}
  if(state.audioProcessor){state.audioProcessor.disconnect();state.audioProcessor=null;}
  if(state.audioContext){state.audioContext.close().catch(()=>{});state.audioContext=null;}
