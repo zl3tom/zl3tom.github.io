@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 const $ = (id) => document.getElementById(id);
-const state = {socket:null, active:new Map(), recent:[], heard:new Set(), talkgroups:new Set(), filter:"", latest:null, latestStation:null, radioCache:new Map(), renderTimer:null, audioSocket:null, audioContext:null, audioProcessor:null, audioBuffer:new Float32Array(32768), audioHead:0, audioTail:0, audioFlow:0, audioStopRequested:false, audioActive:false, audioTg:null, audioReconnectTimer:null, audioReadFrac:0, audioPrimed:false, recording:false, recordParts:[], recordCount:0, recordStartedAt:0, lamePromise:null};
+const state = {socket:null, active:new Map(), recent:[], heard:new Set(), talkgroups:new Set(), filter:"", latest:null, latestStation:null, radioCache:new Map(), renderTimer:null, audioSocket:null, audioContext:null, audioProcessor:null, audioKeepAliveOscillator:null, audioSilenceGain:null, audioBuffer:new Float32Array(32768), audioHead:0, audioTail:0, audioFlow:0, audioStopRequested:false, audioActive:false, audioTg:null, audioReconnectTimer:null, audioReadFrac:0, audioPrimed:false, recording:false, recordParts:[], recordCount:0, recordStartedAt:0, lamePromise:null};
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const clean = v => String(v ?? "").trim();
 const get = (o, ...keys) => { for (const k of keys) if (o && o[k] !== undefined && o[k] !== null && o[k] !== "") return o[k]; return ""; };
@@ -212,9 +212,18 @@ async function startNativeAudio(){
  try{
   const AudioContextClass=window.AudioContext||window.webkitAudioContext;
   if(!AudioContextClass)throw new Error("Web Audio is not supported by this browser.");
-  try{state.audioContext=new AudioContextClass({sampleRate:AUDIO_SAMPLE_RATE});}
-  catch{state.audioContext=new AudioContextClass();}
-  state.audioProcessor=state.audioContext.createScriptProcessor(2048,0,1);
+  // Use the device's native output rate. Some mobile Safari versions reject or
+  // silently fail to play a forced 8 kHz AudioContext.
+  state.audioContext=new AudioContextClass();
+  state.audioProcessor=state.audioContext.createScriptProcessor(2048,1,1);
+  // Mobile Safari can suspend ScriptProcessor callbacks when there is no input
+  // node. Feed it a silent oscillator so the decoded radio audio is still rendered.
+  state.audioKeepAliveOscillator=state.audioContext.createOscillator();
+  state.audioSilenceGain=state.audioContext.createGain();
+  state.audioSilenceGain.gain.value=0;
+  state.audioKeepAliveOscillator.connect(state.audioSilenceGain);
+  state.audioSilenceGain.connect(state.audioProcessor);
+  state.audioKeepAliveOscillator.start();
   state.audioProcessor.onaudioprocess=event=>{
    const output=event.outputBuffer.getChannelData(0);
    const step=AUDIO_SAMPLE_RATE/state.audioContext.sampleRate;
@@ -239,6 +248,10 @@ async function startNativeAudio(){
   state.audioProcessor.connect(state.audioContext.destination);
   await state.audioContext.resume();
   if(!state.audioActive)return;
+  if(state.audioContext.state!=="running"){
+   setAudioStatus("Your browser has paused audio. Tap Play audio again to enable sound.");
+   throw new Error("Mobile browser has not enabled audio playback yet.");
+  }
   connectAudioSocket(tg);
   $("record-audio").disabled=false;
  }catch(error){
@@ -255,6 +268,8 @@ function stopNativeAudio(){
   try{state.audioSocket.close();}catch{}
   state.audioSocket=null;
  }
+ if(state.audioKeepAliveOscillator){try{state.audioKeepAliveOscillator.stop();state.audioKeepAliveOscillator.disconnect();}catch{}state.audioKeepAliveOscillator=null;}
+ if(state.audioSilenceGain){try{state.audioSilenceGain.disconnect();}catch{}state.audioSilenceGain=null;}
  if(state.audioProcessor){try{state.audioProcessor.disconnect();}catch{}state.audioProcessor=null;}
  if(state.audioContext){const ctx=state.audioContext;state.audioContext=null;ctx.close().catch(()=>{});}
  resetAudioBuffer();state.audioTg=null;
