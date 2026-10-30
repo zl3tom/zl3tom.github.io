@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!document.getElementById("radio-fun-nav-styles")) {
     const navStyles = document.createElement("style");
     navStyles.id = "radio-fun-nav-styles";
-    navStyles.textContent = ".nav-dropdown{position:relative;display:flex;align-items:center}.nav-dropdown>a{color:#c8d4d8;border-radius:7px;padding:9px 11px;font-size:.91rem;font-weight:650}.nav-dropdown>a:hover,.nav-dropdown>a[aria-current=page]{color:#fff;background:#ffffff12}.nav-submenu{display:none;position:absolute;z-index:100;top:100%;left:0;min-width:210px;padding:7px;background:#081820;border:1px solid #ffffff1f;border-radius:8px;box-shadow:0 14px 30px #0008}.nav-submenu a{display:block;padding:10px 12px;color:#c8d4d8;border-radius:5px;font-size:.85rem}.nav-submenu a:hover,.nav-submenu a[aria-current=page]{background:#ffffff12;color:#69f0ae}.nav-dropdown:hover .nav-submenu,.nav-dropdown:focus-within .nav-submenu{display:block}@media(max-width:900px){.nav-dropdown{display:block;width:100%}.nav-dropdown>a{display:block;padding:12px 13px}.nav-submenu{display:block;position:static;min-width:0;margin:0 0 4px 14px;padding:2px 7px;background:#06121a;border:0;border-left:2px solid #69f0ae55;border-radius:0;box-shadow:none}.nav-submenu a{padding:9px 12px}}";
+    navStyles.textContent = ".nav-dropdown{position:relative;display:flex;align-items:center}.nav-dropdown>a{color:#c8d4d8;border-radius:7px;padding:9px 11px;font-size:.91rem;font-weight:650}.nav-dropdown>a:hover,.nav-dropdown>a[aria-current=page]{color:#fff;background:#ffffff12}.nav-submenu{display:none;position:absolute;z-index:100;top:100%;left:0;min-width:210px;padding:7px;background:#081820;border:1px solid #ffffff1f;border-radius:8px;box-shadow:0 14px 30px #0008}.nav-submenu a{display:block;padding:10px 12px;color:#c8d4d8;border-radius:5px;font-size:.85rem}.nav-submenu a:hover,.nav-submenu a[aria-current=page]{background:#ffffff12;color:#69f0ae}.nav-dropdown:hover .nav-submenu,.nav-dropdown:focus-within .nav-submenu{display:block}.nav-submenu-toggle{display:none;border:1px solid #ffffff24;border-radius:6px;background:#ffffff0b;color:#c8d4d8;padding:8px 11px;font:inherit;cursor:pointer}.nav-submenu-toggle:hover,.nav-submenu-toggle:focus-visible{color:#69f0ae;border-color:#69f0ae}@media(max-width:900px){.nav-dropdown{display:flex;align-items:center;width:100%;gap:8px}.nav-dropdown>a{display:block;flex:1;padding:12px 13px}.nav-submenu-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:42px;min-height:42px}.nav-submenu{display:none;position:static;flex-basis:100%;min-width:0;margin:0 0 4px 14px;padding:2px 7px;background:#06121a;border:0;border-left:2px solid #69f0ae55;border-radius:0;box-shadow:none}.nav-dropdown.is-open .nav-submenu{display:block}.nav-dropdown{flex-wrap:wrap}.nav-dropdown>a,.nav-submenu-toggle{align-self:flex-start}.nav-submenu{width:100%}};
     document.head.appendChild(navStyles);
   }
 
@@ -29,7 +29,22 @@ document.addEventListener("DOMContentLoaded", () => {
         radioFunLink.setAttribute("aria-current", "page");
       }
       submenu.appendChild(monitorLink);
-      dropdown.append(radioFunLink.cloneNode(true), submenu);
+      const parentLink = radioFunLink.cloneNode(true);
+      const toggle = document.createElement("button");
+      const submenuId = "radio-fun-submenu";
+      submenu.id = submenuId;
+      toggle.type = "button";
+      toggle.className = "nav-submenu-toggle";
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-controls", submenuId);
+      toggle.setAttribute("aria-label", "Toggle Radio Fun submenu");
+      toggle.innerHTML = '<span aria-hidden="true">⌄</span>';
+      toggle.addEventListener("click", () => {
+        const isOpen = dropdown.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+        toggle.innerHTML = isOpen ? '<span aria-hidden="true">⌃</span>' : '<span aria-hidden="true">⌄</span>';
+      });
+      dropdown.append(parentLink, toggle, submenu);
       radioFunLink.replaceWith(dropdown);
     }
   }
