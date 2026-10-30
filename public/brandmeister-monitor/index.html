@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07131d">
+<title>BrandMeister Live Monitor | ZL3TOM</title>
+<meta name="description" content="Explore live BrandMeister DMR activity with the original ZL3TOM Live Monitor. Follow transmissions, talkgroups and station details in real time.">
+<link rel="canonical" href="https://zl3tom.com/brandmeister-monitor">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css?v=20260904-fullfix1">
+<link rel="stylesheet" href="/accessibility.css?v=20261006">
+<link rel="stylesheet" href="/brandmeister-monitor/monitor.css?v=1">
+<meta property="og:title" content="BrandMeister Live Monitor | ZL3TOM">
+<meta property="og:description" content="Live BrandMeister DMR activity, transmissions and talkgroups from ZL3TOM.">
+<meta property="og:url" content="https://zl3tom.com/brandmeister-monitor">
+<meta property="og:site_name" content="ZL3TOM Amateur Radio">
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js" defer></script>
+<script src="/brandmeister-monitor/monitor.js?v=1" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"><div class="site-container nav-wrap">
+<a class="brand" href="/"><span class="brand-icon" aria-hidden="true">⌁</span><span><strong>ZL3TOM</strong><small>Amateur Radio</small></span></a>
+<nav class="main-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/about">About</a><a href="/guides">Guides</a><a href="/tools">Tools</a><a href="/community">Community</a></nav>
+</div></header>
+<main id="main" class="bm-page" tabindex="-1">
+<section class="bm-hero"><div class="site-container">
+<div class="bm-kicker"><span class="bm-live-indicator" id="live-indicator"></span> ZL3TOM NETWORK TOOL <span class="bm-divider">/</span> BRANDMEISTER DMR</div>
+<div class="bm-title-row"><div><h1>Live Monitor<span class="bm-title-dot">.</span></h1><p class="bm-lede">A live window into activity across the BrandMeister DMR network.</p></div><div class="bm-connection" id="connection" data-state="connecting"><span class="bm-connection-dot"></span><span id="connection-label">Connecting to BrandMeister…</span></div></div>
+<div class="bm-toolbar">
+<label class="bm-filter-label" for="talkgroup-filter">TALK GROUP FILTER</label>
+<div class="bm-filter-control"><span aria-hidden="true">TG</span><input id="talkgroup-filter" inputmode="numeric" type="number" min="1" max="999999" placeholder="All talkgroups" aria-label="Filter by talkgroup number"><button id="clear-filter" type="button" class="bm-clear" aria-label="Clear talkgroup filter">×</button></div>
+<button id="apply-filter" class="bm-button" type="button">Apply filter</button>
+<span class="bm-filter-hint" id="filter-hint">Showing all network activity</span>
+</div>
+<div class="bm-stats" aria-label="Live network statistics">
+<div class="bm-stat"><span class="bm-stat-label">ON AIR NOW</span><strong id="stat-active">—</strong><small>Active transmissions</small></div>
+<div class="bm-stat"><span class="bm-stat-label">HEARD THIS SESSION</span><strong id="stat-heard">0</strong><small>Unique stations</small></div>
+<div class="bm-stat"><span class="bm-stat-label">TALK GROUPS</span><strong id="stat-tgs">0</strong><small>Seen in this session</small></div>
+<div class="bm-stat"><span class="bm-stat-label">LAST EVENT</span><strong id="stat-last">—</strong><small>Most recent update</small></div>
+</div>
+</div></section>
+<section class="bm-content site-container">
+<div class="bm-main-column">
+<section class="bm-panel bm-onair-panel" aria-labelledby="onair-heading">
+<div class="bm-panel-head"><div><span class="bm-eyebrow">TRANSMITTING RIGHT NOW</span><h2 id="onair-heading">On air</h2></div><span class="bm-count" id="onair-count">0 ACTIVE</span></div>
+<div id="onair-list" class="bm-onair-list"><div class="bm-empty"><span class="bm-empty-icon">⌁</span><strong>Listening for activity</strong><p>Live transmissions will appear here as stations key up.</p></div></div>
+</section>
+<section class="bm-panel" aria-labelledby="activity-heading">
+<div class="bm-panel-head"><div><span class="bm-eyebrow">NETWORK TIMELINE</span><h2 id="activity-heading">Recent activity</h2></div><span class="bm-count">LATEST 30</span></div>
+<div class="bm-table-wrap"><table class="bm-table"><thead><tr><th>STATION</th><th>TALK GROUP</th><th>REPEATER / NODE</th><th>TIME</th><th>STATUS</th></tr></thead><tbody id="activity-body"><tr><td colspan="5" class="bm-table-empty">Waiting for the first BrandMeister event…</td></tr></tbody></table></div>
+</section>
+</div>
+<aside class="bm-side-column">
+<section class="bm-panel bm-feature-panel" aria-labelledby="station-heading">
+<span class="bm-eyebrow">LATEST STATION</span><h2 id="station-heading">Station details</h2>
+<div id="station-detail" class="bm-station-detail"><div class="bm-avatar bm-avatar-large">?</div><strong>Waiting for a station</strong><p>When a station transmits, its available details will appear here.</p></div>
+</section>
+<section class="bm-panel bm-info-panel"><span class="bm-eyebrow">ABOUT THIS MONITOR</span><h2>BrandMeister, live.</h2><p>This is an independent ZL3TOM project using BrandMeister's public Last Heard event stream. It is not an official BrandMeister service.</p><div class="bm-source-row"><span>NETWORK</span><strong>BrandMeister DMR only</strong></div><div class="bm-source-row"><span>OPERATOR DATA</span><strong>RadioID.net, when available</strong></div><div class="bm-source-row"><span>PROFILE</span><strong>QRZ callsign links</strong></div></section>
+<section class="bm-panel bm-help-panel"><span class="bm-eyebrow">QUICK TIP</span><p>Enter a talkgroup number to focus the monitor on that talkgroup. Clear the field to return to all network activity.</p><a href="https://brandmeister.network/" target="_blank" rel="noopener noreferrer">Visit BrandMeister ↗</a></section>
+</aside>
+</section>
+<footer class="bm-footer site-container"><span>Designed and built by <strong>ZL3TOM</strong> · Christchurch, New Zealand</span><span>Live network data may be delayed or unavailable.</span></footer>
+</main>
+</body></html>
