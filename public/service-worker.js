@@ -1,4 +1,4 @@
-const CACHE_NAME = "zl3tom-radio-companion-v9";
+const CACHE_NAME = "zl3tom-radio-companion-v10";
 const OFFLINE_URL = "/offline.html";
 const SITEMAP_URL = "/sitemap.xml";
 
@@ -24,7 +24,8 @@ const CORE_URLS = [
   "/contact-form.css",
   "/gallery.css",
   "/script.js",
-  "/script.js?v=20261030-nav2",
+  "/script.js?v=20261030-nav3",
+  "/style.css?v=20261030-nav3",
   "/style.css?v=20261030-nav2",
   "/accessibility.js",
   "/pwa.js",
