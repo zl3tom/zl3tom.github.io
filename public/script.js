@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.setAttribute("aria-controls", submenuId);
       toggle.setAttribute("aria-label", "Toggle Radio Fun submenu");
       toggle.innerHTML = '<span aria-hidden="true">⌄</span>';
-      toggle.addEventListener("click", () => {
+      toggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         const isOpen = dropdown.classList.toggle("is-open");
         toggle.setAttribute("aria-expanded", String(isOpen));
         toggle.innerHTML = isOpen ? '<span aria-hidden="true">⌃</span>' : '<span aria-hidden="true">⌄</span>';
