@@ -102,3 +102,53 @@
 @media(max-width:850px){.world-clock-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:560px){.world-clock-header{display:block}.world-clock-header span{display:block;margin-top:.25rem}.world-clock-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:390px){.world-clock-grid{grid-template-columns:1fr}}
+
+/* Mobile navigation: keep the submenu toggle inside the open menu. */
+@media(max-width:900px){
+ .main-nav .nav-dropdown{display:grid!important;grid-template-columns:minmax(0,1fr) 44px;align-items:center;gap:8px;width:100%;}
+ .main-nav .nav-dropdown>a{min-width:0;width:100%;}
+ .main-nav .nav-dropdown .nav-submenu-toggle{grid-column:2;grid-row:1;align-self:center;justify-self:stretch;min-width:44px;min-height:44px;}
+ .main-nav .nav-dropdown .nav-submenu{grid-column:1/-1;grid-row:2;width:100%;min-width:0;margin:0;padding:4px 8px 8px 14px;}
+ .main-nav .nav-dropdown.is-open .nav-submenu{display:block!important;}
+ .main-nav .nav-dropdown:not(.is-open) .nav-submenu{display:none!important;}
+}
+
+/* Live Monitor: compact, touch-friendly layout on phones. */
+@media(max-width:600px){
+ .bm-standard-hero{padding:30px 0 24px}
+ .bm-title-row{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin:16px 0 20px}
+ .bm-title-row h1{font-size:clamp(2.35rem,12vw,3.4rem);overflow-wrap:anywhere}
+ .bm-lede{font-size:.96rem;line-height:1.55}
+ .bm-connection{max-width:100%;font-size:.76rem;overflow-wrap:anywhere}
+ .bm-toolbar{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;padding:13px}
+ .bm-filter-label,.bm-filter-control,.bm-filter-hint,.bm-audio-prompt{grid-column:1/-1;width:100%}
+ .bm-filter-control{min-height:44px}
+ .bm-filter-control input{width:100%;font-size:16px}
+ .bm-toolbar>.bm-button{width:100%;min-height:44px;padding:10px 8px;font-size:.82rem}
+ .bm-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .bm-stat{min-width:0;padding:11px}
+ .bm-stat strong{font-size:clamp(1.2rem,6vw,1.55rem);overflow-wrap:anywhere}
+ .bm-panel-head{align-items:flex-start;flex-wrap:wrap;gap:8px;padding:14px}
+ .bm-panel-head h2{font-size:1.15rem}
+ .bm-count{white-space:normal;text-align:center;font-size:.56rem}
+ .bm-onair-list{padding:8px}
+ .bm-onair-card{grid-template-columns:38px minmax(0,1fr);gap:10px;padding:11px}
+ .bm-avatar{width:38px;height:38px}
+ .bm-caller a{font-size:1rem;overflow-wrap:anywhere}
+ .bm-onair-meta{grid-column:2;flex-wrap:wrap;gap:4px 10px}
+ .bm-table-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .bm-table{min-width:590px}
+ .bm-side-column{display:flex;flex-direction:column;gap:12px}
+ .bm-feature-panel,.bm-info-panel,.bm-help-panel{padding:16px}
+ .bm-audio-player{padding:12px}
+ .bm-audio-player-heading{gap:10px}
+ .bm-audio-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
+ .bm-audio-actions button{min-height:44px;width:100%}
+ .bm-footer{gap:8px}
+}
+@media(max-width:380px){
+ .bm-toolbar{grid-template-columns:1fr}
+ .bm-toolbar>.bm-button{grid-column:1}
+ .bm-stats{grid-template-columns:1fr 1fr}
+ .bm-stat-label{font-size:.54rem;letter-spacing:.1em}
+}
