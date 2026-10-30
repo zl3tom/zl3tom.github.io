@@ -10,13 +10,13 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css?v=20260904-fullfix1">
 <link rel="stylesheet" href="/accessibility.css?v=20261006">
-<link rel="stylesheet" href="/radio-activity/monitor.css?v=5">
+<link rel="stylesheet" href="/radio-activity/monitor.css?v=6">
 <meta property="og:title" content="Radio Activity Monitor | ZL3TOM">
 <meta property="og:description" content="Live amateur radio network activity, transmissions and talkgroups from ZL3TOM.">
 <meta property="og:url" content="https://zl3tom.com/radio-activity">
 <meta property="og:site_name" content="ZL3TOM Amateur Radio">
 <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" defer></script>
-<script src="/radio-activity/monitor.js?v=8" defer></script>
+<script src="/radio-activity/monitor.js?v=9" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -37,7 +37,7 @@
 <div id="audio-prompt" class="bm-audio-prompt" role="status" aria-live="polite" hidden><strong>No Audio?</strong> Click <button id="audio-prompt-play" type="button">▶ Play</button> to hear audio on this talkgroup.</div>
 
 </div>
-<div id="audio-player" class="bm-audio-player" hidden><div class="bm-audio-player-heading"><div><span class="bm-eyebrow">NATIVE LIVE AUDIO</span><h2 id="audio-player-title">BrandMeister audio player</h2><p id="audio-player-status" role="status" aria-live="polite">Starting audio…</p></div><button id="close-audio-player" class="bm-audio-close" type="button">Stop audio</button></div><p class="bm-audio-note">Live audio is decoded and played directly by your browser. No embedded Hoseline page.</p></div>
+<div id="audio-player" class="bm-audio-player" hidden><div class="bm-audio-player-heading"><div><span class="bm-eyebrow">NATIVE LIVE AUDIO</span><h2 id="audio-player-title">BrandMeister audio player</h2><p id="audio-player-status" role="status" aria-live="polite">Starting audio…</p></div><button id="close-audio-player" class="bm-audio-close" type="button">Stop audio</button></div><p class="bm-audio-note">Live audio plays directly in this page.</p></div>
 <div class="bm-stats" aria-label="Live network statistics">
 <div class="bm-stat"><span class="bm-stat-label">ON AIR NOW</span><strong id="stat-active">—</strong><small>Active transmissions</small></div>
 <div class="bm-stat"><span class="bm-stat-label">HEARD THIS SESSION</span><strong id="stat-heard">0</strong><small>Unique stations</small></div>
@@ -58,7 +58,7 @@
 </div>
 <aside class="bm-side-column">
 <section class="bm-panel bm-feature-panel" aria-labelledby="station-heading">
-<span class="bm-eyebrow">LATEST STATION</span><h2 id="station-heading">Station details</h2>
+<span class="bm-eyebrow">CURRENT TRANSMITTER</span><h2 id="station-heading">On this talkgroup</h2>
 <div id="station-detail" class="bm-station-detail"><div class="bm-avatar bm-avatar-large">?</div><strong>No station heard yet</strong><p>Station details will appear here as soon as the first transmission starts.</p></div>
 </section>
 <section class="bm-panel bm-info-panel"><span class="bm-eyebrow">ABOUT THIS MONITOR</span><h2>BrandMeister, live.</h2><p>This is an independent ZL3TOM project using BrandMeister's public Last Heard event stream. It is not an official BrandMeister service.</p><div class="bm-source-row"><span>NETWORK</span><strong>BrandMeister DMR only</strong></div><div class="bm-source-row"><span>OPERATOR DATA</span><strong>RadioID.net, when available</strong></div><div class="bm-source-row"><span>PROFILE</span><strong>QRZ callsign links</strong></div></section>
