@@ -57,7 +57,7 @@ function handleEvent(raw){
    const item={...e,startedAt,active:true};
    state.active.set(key,item);
    if(!existing)addRecent({...item});
-   else updateRecent(key,e);
+   
   }
  else if(isStop(e)){if(existing){existing.active=false;existing.endedAt=Date.now();existing.last=e;state.active.delete(key);updateRecent(key,e);}else addRecent({...e,active:false});}
  else { if(existing){Object.assign(existing,e); } else addRecent({...e,active:false}); }
