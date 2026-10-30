@@ -10,23 +10,23 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style.css?v=20260904-fullfix1">
 <link rel="stylesheet" href="/accessibility.css?v=20261006">
-<link rel="stylesheet" href="/radio-activity/monitor.css?v=3">
+<link rel="stylesheet" href="/radio-activity/monitor.css?v=4">
 <meta property="og:title" content="Radio Activity Monitor | ZL3TOM">
 <meta property="og:description" content="Live amateur radio network activity, transmissions and talkgroups from ZL3TOM.">
 <meta property="og:url" content="https://zl3tom.com/radio-activity">
 <meta property="og:site_name" content="ZL3TOM Amateur Radio">
 <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" defer></script>
-<script src="/radio-activity/monitor.js?v=6" defer></script>
+<script src="/radio-activity/monitor.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header"><div class="site-container nav-wrap">
-<a class="brand" href="/"><span class="brand-icon" aria-hidden="true">⌁</span><span><strong>ZL3TOM</strong><small>Amateur Radio</small></span></a>
-<button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
-<nav id="main-navigation" class="main-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/about">About</a><div class="nav-dropdown"><a href="/radio-fun" aria-current="page">Radio Fun</a><div class="nav-submenu"><a href="/radio-activity" aria-current="page">Radio Activity Monitor</a></div></div><a href="/guides">Guides</a><a href="/tools">Tools</a><a href="/community">Community</a><a href="/qsl">QSL</a><a href="/contact">Contact</a><a class="nav-qrz" href="https://qrz.com/db/ZL3TOM" target="_blank" rel="noreferrer">View ZL3TOM on QRZ <span aria-hidden="true">↗</span></a></nav>
+  <a class="brand" href="/"><span class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg></span><span><strong>ZL3TOM</strong><small>Amateur Radio</small></span></a>
+  <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
+  <nav id="main-navigation" class="main-nav" aria-label="Main navigation"><a href="/">Home</a><a href="/about">About</a><a href="/radio-fun" aria-current="page">Radio Fun</a><a href="/guides">Guides</a><a href="/tools">Tools</a><a href="/community">Community</a><a href="/qsl">QSL</a><a href="/contact">Contact</a><a class="nav-qrz" href="https://qrz.com/db/ZL3TOM" target="_blank" rel="noreferrer">View ZL3TOM on QRZ <span aria-hidden="true">↗</span></a></nav>
 </div></header>
 <main id="main" class="bm-page" tabindex="-1">
-<section class="bm-hero"><div class="site-container">
+<section class="page-hero bm-standard-hero"><div class="signal-grid" aria-hidden="true"></div><div class="site-container page-hero-inner bm-standard-hero-inner">
 <div class="bm-kicker"><span class="bm-live-indicator" id="live-indicator"></span> ZL3TOM NETWORK TOOL <span class="bm-divider">/</span> BRANDMEISTER DMR</div>
 <div class="bm-title-row"><div><h1>Live Monitor<span class="bm-title-dot">.</span></h1><p class="bm-lede">A live window into activity across the BrandMeister DMR network.</p></div><div class="bm-connection" id="connection" data-state="connecting"><span class="bm-connection-dot"></span><span id="connection-label">Connecting to BrandMeister…</span></div></div>
 <div class="bm-toolbar">
@@ -35,7 +35,9 @@
 <button id="apply-filter" class="bm-button" type="button">Apply filter</button><button id="share-talkgroup" class="bm-button bm-share-button" type="button">↗ Share TG link</button><button id="start-listening" class="bm-button bm-listen-button" type="button">▶ Play audio</button>
 <span class="bm-filter-hint" id="filter-hint">Showing all network activity</span>
 <div id="audio-prompt" class="bm-audio-prompt" role="status" aria-live="polite" hidden><strong>No Audio?</strong> Click <button id="audio-prompt-play" type="button">▶ Play</button> to hear audio on this talkgroup.</div>
+<div id="audio-prompt" class="bm-audio-prompt" role="status" aria-live="polite" hidden><strong>No Audio?</strong> Click <button id="audio-prompt-play" type="button">▶ Play</button> to hear audio on this talkgroup.</div>
 </div>
+<div id="audio-player" class="bm-audio-player" hidden><div class="bm-audio-player-heading"><div><span class="bm-eyebrow">LIVE TALK GROUP AUDIO</span><h2 id="audio-player-title">BrandMeister audio player</h2></div><button id="close-audio-player" class="bm-audio-close" type="button">Close player</button></div><iframe id="audio-frame" title="BrandMeister talkgroup audio player" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="bm-audio-note">Audio is playing within this page. If you do not hear sound, use the Play or unmute control inside the player.</p></div>
 <div class="bm-stats" aria-label="Live network statistics">
 <div class="bm-stat"><span class="bm-stat-label">ON AIR NOW</span><strong id="stat-active">—</strong><small>Active transmissions</small></div>
 <div class="bm-stat"><span class="bm-stat-label">HEARD THIS SESSION</span><strong id="stat-heard">0</strong><small>Unique stations</small></div>
@@ -43,7 +45,7 @@
 <div class="bm-stat"><span class="bm-stat-label">LAST EVENT</span><strong id="stat-last">—</strong><small>Most recent update</small></div>
 </div>
 </div></section>
-<section class="bm-content site-container">
+<section class="inner-section light bm-content-section"><div class="site-container bm-content">
 <div class="bm-main-column">
 <section class="bm-panel bm-onair-panel" aria-labelledby="onair-heading">
 <div class="bm-panel-head"><div><span class="bm-eyebrow">TRANSMITTING RIGHT NOW</span><h2 id="onair-heading">On air</h2></div><span class="bm-count" id="onair-count">0 ACTIVE</span></div>
@@ -60,9 +62,9 @@
 <div id="station-detail" class="bm-station-detail"><div class="bm-avatar bm-avatar-large">?</div><strong>No station heard yet</strong><p>Station details will appear here as soon as the first transmission starts.</p></div>
 </section>
 <section class="bm-panel bm-info-panel"><span class="bm-eyebrow">ABOUT THIS MONITOR</span><h2>BrandMeister, live.</h2><p>This is an independent ZL3TOM project using BrandMeister's public Last Heard event stream. It is not an official BrandMeister service.</p><div class="bm-source-row"><span>NETWORK</span><strong>BrandMeister DMR only</strong></div><div class="bm-source-row"><span>OPERATOR DATA</span><strong>RadioID.net, when available</strong></div><div class="bm-source-row"><span>PROFILE</span><strong>QRZ callsign links</strong></div></section>
-<section class="bm-panel bm-help-panel"><span class="bm-eyebrow">QUICK TIP</span><p>Enter a BrandMeister talkgroup number, then select Play audio to open BrandMeister Hoseline tuned to that group. If audio does not start automatically, press Play or unmute the player.</p><a href="https://brandmeister.network/" target="_blank" rel="noopener noreferrer">Visit BrandMeister ↗</a></section>
+<section class="bm-panel bm-help-panel"><span class="bm-eyebrow">QUICK TIP</span><p>Enter a BrandMeister talkgroup number, then select Play audio to load the talkgroup audio player here on this page. Your browser may require one more click on the player to start sound.</p><a href="https://brandmeister.network/" target="_blank" rel="noopener noreferrer">Visit BrandMeister ↗</a></section>
 </aside>
-</section>
+</div></section>
 
 </main>
 <footer class="site-footer"><div class="site-container footer-grid"><div><strong>ZL3TOM</strong><p>Thomas Bernard · ZL3TOM / ZL3KY<br>Christchurch, New Zealand</p></div><div><strong>Quick links</strong><a href="/guides">Guides</a><a href="/tools">Tools</a><a href="/qsl">QSL</a></div><div><strong>Contact</strong><a href="/contact">Contact</a><a href="https://www.qrz.com/db/ZL3TOM" target="_blank" rel="noopener noreferrer">QRZ ↗</a><a href="https://www.facebook.com/zl3tom" target="_blank" rel="me noopener noreferrer">ZL3TOM on Facebook ↗</a></div></div><p class="accessibility-footer-link"><a href="/guides/accessible-amateur-radio#using-this-website">Accessibility and website feedback</a></p></footer>
