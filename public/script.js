@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Add the live monitor to the shared navigation on every page.
+  const mainNavigation = document.getElementById("main-navigation");
+  if (mainNavigation && !mainNavigation.querySelector('a[href="/radio-activity"]')) {
+    const monitorLink = document.createElement("a");
+    monitorLink.href = "/radio-activity";
+    monitorLink.textContent = "Radio Activity";
+    if (window.location.pathname.replace(/\/$/, "") === "/radio-activity") monitorLink.setAttribute("aria-current", "page");
+    const qrzLink = mainNavigation.querySelector(".nav-qrz");
+    mainNavigation.insertBefore(monitorLink, qrzLink || null);
+  }
+
   const menuButton = document.querySelector(".menu-button");
   const navigation = document.getElementById("main-navigation");
   if (menuButton && navigation) {
