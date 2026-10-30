@@ -39,7 +39,7 @@ function handleEvent(raw){
  scheduleRender(); if(e.sourceId) lookupRadioId(e.sourceId,e.sourceCall);
 }
 function addRecent(e){const key=stationKey(e)+"-"+e.destId+"-"+String(e.stamp)+"-"+Math.random().toString(36).slice(2,7);state.recent.unshift({...e,key,receivedAt:Date.now()});state.recent=state.recent.slice(0,500);}
-function updateRecent(key,e){const row=state.recent.find(x=>x.key===key);if(row){row.active=false;row.endedAt=Date.now();row.last=e;}else addRecent({...e,active:false});}
+function updateRecent(key,e){const row=state.recent.find(x=>stationKey(x)===stationKey(e)&&x.destId===e.destId);if(row){row.active=false;row.endedAt=Date.now();row.last=e;}else addRecent({...e,active:false});}
 function scheduleRender(){if(state.renderTimer)return;state.renderTimer=setTimeout(()=>{state.renderTimer=null;render();},900);}
 function render(){
  const filtered=[...state.active.values()].filter(matches).sort((a,b)=>b.startedAt-a.startedAt);
