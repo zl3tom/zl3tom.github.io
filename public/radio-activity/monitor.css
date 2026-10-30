@@ -35,3 +35,45 @@
 .bm-audio-prompt strong{color:#ffd18c}
 .bm-audio-prompt button{border:0;border-radius:5px;background:var(--bm-green);color:#062017;padding:7px 12px;font-weight:900;cursor:pointer}
 .bm-audio-prompt button:focus-visible,.bm-button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+/* Standard ZL3TOM page layout and light content panels. */
+.bm-page{min-height:0;background:transparent;color:#fff;padding-bottom:0}
+.bm-standard-hero{padding:54px 0 38px}
+.bm-standard-hero-inner{display:block;position:relative;z-index:1}
+.bm-title-row{margin:18px 0 24px}
+.bm-title-row h1{font-size:clamp(2.5rem,6vw,4.4rem);line-height:1.02}
+.bm-content-section{padding-block:42px}
+.bm-content{padding-top:0}
+.bm-panel{background:#fff;color:#172b33;border:1px solid #dce5e1;box-shadow:0 10px 30px #07151e0d}
+.bm-panel-head{border-color:#e3eae6}
+.bm-panel-head h2,.bm-feature-panel h2,.bm-info-panel h2{color:#10232b}
+.bm-count{background:#e8f5ef;color:#176443}
+.bm-eyebrow{color:#176d4c}
+.bm-onair-list{background:#f8faf8}
+.bm-empty{color:#61757b}
+.bm-empty strong{color:#172b33}
+.bm-onair-card{background:#f0f8f3;border-color:#cce4d5}
+.bm-avatar{background:#e1f2e8;color:#176d4c;border-color:#b9ddc6}
+.bm-caller a,.bm-table-callsign,.bm-profile-link{color:#176d4c!important}
+.bm-caller p,.bm-station-detail p,.bm-info-panel>p,.bm-help-panel p{color:#536970}
+.bm-station-detail{border-color:#e3eae6}
+.bm-station-detail .bm-station-id{color:#236b84}
+.bm-table th{background:#f2f6f3;color:#536970}
+.bm-table td{color:#31474e;border-color:#e7eeea}
+.bm-table tr:hover td{background:#f7faf8}
+.bm-state-active{color:#176d4c;background:#e0f4e8}
+.bm-state-ended{color:#536970;background:#edf1ef}
+.bm-source-row{border-color:#e3eae6}
+.bm-source-row span{color:#60767c}
+.bm-source-row strong{color:#253d45}
+.bm-audio-prompt{flex-basis:100%;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:12px 14px;border:1px solid #d5a15e;background:#fff7e9;color:#63411d;border-radius:7px;font-size:.88rem}
+.bm-audio-prompt[hidden],.bm-audio-player[hidden]{display:none}
+.bm-audio-prompt strong{color:#7b4c13}
+.bm-audio-prompt button,.bm-audio-close{border:0;border-radius:5px;background:#176d4c;color:#fff;padding:8px 13px;font-weight:850;cursor:pointer}
+.bm-audio-player{margin-top:18px;padding:20px;background:#fff;border:1px solid #dce5e1;border-radius:9px;box-shadow:0 10px 30px #07151e0d}
+.bm-audio-player-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.bm-audio-player-heading h2{margin:4px 0 0;color:#10232b;font-size:1.3rem}
+.bm-audio-player iframe{display:block;width:100%;height:440px;border:1px solid #dce5e1;border-radius:7px;background:#07131d}
+.bm-audio-note{margin:10px 0 0;color:#536970;font-size:.82rem}
+.bm-help-panel a{color:#176d4c}
+@media(max-width:600px){.bm-standard-hero{padding-top:35px}.bm-content-section{padding-block:28px}.bm-audio-player{padding:13px}.bm-audio-player iframe{height:520px}.bm-audio-player-heading{align-items:flex-start;flex-direction:column}}
