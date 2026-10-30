@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const monitorLink = document.createElement("a");
       monitorLink.href = "/radio-activity";
       monitorLink.textContent = "Live Monitor";
-      if (window.location.pathname.replace(/\\/$/, "") === "/radio-activity") {
+      if (window.location.pathname.replace(/\/$/, "") === "/radio-activity") {
         monitorLink.setAttribute("aria-current", "page");
         parent.removeAttribute("aria-current");
       }
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const monitorLink = document.createElement("a");
       monitorLink.href = "/radio-activity";
       monitorLink.textContent = "Live Monitor";
-      if (window.location.pathname.replace(/\\/$/, "") === "/radio-activity") monitorLink.setAttribute("aria-current", "page");
+      if (window.location.pathname.replace(/\/$/, "") === "/radio-activity") monitorLink.setAttribute("aria-current", "page");
       const qrzLink = monitorNavigation.querySelector(".nav-qrz");
       monitorNavigation.insertBefore(monitorLink, qrzLink || null);
     }
