@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 const $ = (id) => document.getElementById(id);
-const state = {socket:null, active:new Map(), recent:[], heard:new Set(), talkgroups:new Set(), filter:"", latest:null, latestStation:null, radioCache:new Map(), renderTimer:null};
+const state = {socket:null, active:new Map(), recent:[], heard:new Set(), talkgroups:new Set(), filter:"", latest:null, latestStation:null, radioCache:new Map(), renderTimer:null, audioSocket:null, audioContext:null, audioProcessor:null, audioBuffer:new Float32Array(32768), audioHead:0, audioTail:0, audioFlow:0};
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const clean = v => String(v ?? "").trim();
 const get = (o, ...keys) => { for (const k of keys) if (o && o[k] !== undefined && o[k] !== null && o[k] !== "") return o[k]; return ""; };
@@ -38,7 +38,7 @@ function handleEvent(raw){
  else { if(existing){Object.assign(existing,e); } else addRecent({...e,active:false}); }
  scheduleRender(); if(e.sourceId) lookupRadioId(e.sourceId,e.sourceCall);
 }
-function addRecent(e){const key=stationKey(e)+"-"+e.destId;state.recent.unshift({...e,key,receivedAt:Date.now()});state.recent=state.recent.slice(0,30);}
+function addRecent(e){const key=stationKey(e)+"-"+e.destId;const callsign=(e.sourceCall||"").toUpperCase();if(callsign)state.recent=state.recent.filter(row=>(row.sourceCall||"").toUpperCase()!==callsign);state.recent.unshift({...e,key,receivedAt:Date.now()});state.recent=state.recent.slice(0,30);}
 function updateRecent(key,e){const row=state.recent.find(x=>x.key===key);if(row){row.active=false;row.endedAt=Date.now();row.last=e;}else addRecent({...e,active:false});}
 function scheduleRender(){if(state.renderTimer)return;state.renderTimer=setTimeout(()=>{state.renderTimer=null;render();},900);}
 function render(){
@@ -91,19 +91,73 @@ function updateAudioPrompt(){
  audioPromptDismissed=false;
  audioPromptTimer=setTimeout(()=>{if(state.filter&&!audioPromptDismissed)prompt.hidden=false;},10000);
 }
+
+function encodeMsgpack(value){
+ if(Array.isArray(value)){const n=value.length;const head=n<16?[0x90|n]:n<65536?[0xdc,n>>8,n&255]:[0xdd,(n>>>24)&255,(n>>>16)&255,(n>>>8)&255,n&255];return new Uint8Array([...head,...value.flatMap(v=>Array.from(encodeMsgpack(v)))]);}
+ if(Number.isInteger(value)){if(value>=0&&value<128)return new Uint8Array([value]);if(value>=0&&value<=255)return new Uint8Array([0xcc,value]);if(value>=0&&value<=65535)return new Uint8Array([0xcd,value>>8,value&255]);if(value>=0)return new Uint8Array([0xce,(value>>>24)&255,(value>>>16)&255,(value>>>8)&255,value&255]);if(value>=-32)return new Uint8Array([value&255]);if(value>=-128)return new Uint8Array([0xd0,value&255]);if(value>=-32768)return new Uint8Array([0xd1,(value>>8)&255,value&255]);}
+ throw new Error("Unsupported BrandMeister audio command");
+}
+function decodeMsgpack(bytes){
+ let p=0;const u8=()=>bytes[p++],u16=()=>((u8()<<8)|u8()),u32=>(()=>{const a=u8(),b=u8(),c=u8(),d=u8();return a*16777216+b*65536+c*256+d;})();
+ function read(){const h=u8();if(h<0x80)return h;if(h>=0xe0)return h-256;if((h&0xf0)===0x90){const n=h&15;return Array.from({length:n},read);}if((h&0xe0)===0xa0){const n=h&31;return new TextDecoder().decode(bytes.subarray(p,p+=n));}
+  if(h===0xc0)return null;if(h===0xc2)return false;if(h===0xc3)return true;
+  if(h===0xcc)return u8();if(h===0xcd)return u16();if(h===0xce)return u32();
+  if(h===0xd0){const n=u8();return n>127?n-256:n;}if(h===0xd1){const n=u16();return n>32767?n-65536:n;}
+  if(h===0xca){const v=new DataView(bytes.buffer,bytes.byteOffset+p,4).getFloat32(0);p+=4;return v;}
+  if(h===0xc4||h===0xc5||h===0xc6){const n=h===0xc4?u8():h===0xc5?u16():u32();const v=bytes.slice(p,p+n);p+=n;return v;}
+  if(h===0xd9||h===0xda||h===0xdb){const n=h===0xd9?u8():h===0xda?u16():u32();const v=new TextDecoder().decode(bytes.subarray(p,p+n));p+=n;return v;}
+  if(h===0xdc||h===0xdd){const n=h===0xdc?u16():u32();return Array.from({length:n},read);}
+  if(h===0xde||h===0xdf){const n=h===0xde?u16():u32(),o={};for(let i=0;i<n;i++)o[read()]=read();return o;}
+  throw new Error("Unsupported BrandMeister audio packet type 0x"+h.toString(16));
+ }
+ return read();
+}
+const compandTable=[0,132,396,924,1980,4092,8316,16764];
+function decodeDmrSample(byte){const value=(~byte)&255,sign=value&128,exponent=(value>>4)&7,mantissa=value&15;const sample=compandTable[exponent]+(mantissa<<(exponent+3));return sign?-sample:sample;}
+function pushAudio(payload){
+ const bytes=payload instanceof Uint8Array?payload:new Uint8Array(payload||[]);
+ for(let i=0;i<bytes.length;i++){state.audioBuffer[state.audioHead]=decodeDmrSample(bytes[i])/32768;state.audioHead=(state.audioHead+1)%state.audioBuffer.length;if(state.audioFlow<state.audioBuffer.length)state.audioFlow++;else state.audioTail=(state.audioTail+1)%state.audioBuffer.length;}
+}
+async function startNativeAudio(){
+ const tg=state.filter;
+ if(!/^\\d{1,6}$/.test(tg)){ $("filter-hint").textContent="Enter a valid talkgroup number first.";return; }
+ stopNativeAudio();
+ try{
+  const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+  if(!AudioContextClass)throw new Error("Web Audio is not supported by this browser.");
+  state.audioContext=new AudioContextClass({sampleRate:8000});
+  state.audioProcessor=state.audioContext.createScriptProcessor(1024,0,1);
+  state.audioProcessor.onaudioprocess=event=>{const output=event.outputBuffer.getChannelData(0);for(let i=0;i<output.length;i++){if(state.audioFlow){output[i]=state.audioBuffer[state.audioTail];state.audioTail=(state.audioTail+1)%state.audioBuffer.length;state.audioFlow--;}else output[i]=0;}};
+  state.audioProcessor.connect(state.audioContext.destination);
+  await state.audioContext.resume();
+  const socket=new WebSocket("wss://hose.brandmeister.network/spotter/","spotter");state.audioSocket=socket;socket.binaryType="arraybuffer";
+  socket.onopen=()=>{if(state.audioSocket===socket){socket.send(encodeMsgpack([1,[Number(tg)]]));$("audio-player-title").textContent="Playing TG "+tg+" · BrandMeister live audio";$("audio-player-status").textContent="Connected · waiting for a transmission";}};
+  socket.onmessage=event=>{if(state.audioSocket!==socket)return;try{const packet=decodeMsgpack(new Uint8Array(event.data));if(!Array.isArray(packet))return;switch(packet[0]){case 11:$("audio-player-status").textContent="Receiving audio · TG "+tg;break;case 13:$("audio-player-status").textContent="Connected · waiting for the next transmission";break;case 20:pushAudio(packet[1]);$("audio-player-status").textContent="Live audio · TG "+tg;break;}}catch(error){console.error("BrandMeister audio packet error",error);}};
+  socket.onerror=()=>{$("audio-player-status").textContent="Audio connection error. Please try again.";};
+  socket.onclose=()=>{if(state.audioSocket===socket){state.audioSocket=null;$("audio-player-status").textContent="Audio disconnected."; }};
+  $("audio-player").hidden=false;
+ }catch(error){$("audio-player-status").textContent=error.message||"Could not start audio.";console.error(error);}
+}
+function stopNativeAudio(){
+ if(state.audioSocket){try{if(state.audioSocket.readyState===WebSocket.OPEN)state.audioSocket.send(encodeMsgpack([12]));state.audioSocket.close();}catch{}state.audioSocket=null;}
+ if(state.audioProcessor){state.audioProcessor.disconnect();state.audioProcessor=null;}
+ if(state.audioContext){state.audioContext.close().catch(()=>{});state.audioContext=null;}
+ state.audioFlow=0;state.audioHead=0;state.audioTail=0;
+}
+
 function playAudio(){
  const raw=$("talkgroup-filter").value.trim();
- if(!/^\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }
- audioPromptDismissed=true;
- $("audio-prompt").hidden=true;
+ if(!/^\\d{1,6}$/.test(raw)){ $("filter-hint").textContent="Enter a valid talkgroup number first."; $("talkgroup-filter").focus(); return; }
+ state.filter=raw;audioPromptDismissed=true;$("audio-prompt").hidden=true;
  if(audioPromptTimer){clearTimeout(audioPromptTimer);audioPromptTimer=null;}
- const player=$("audio-player");const frame=$("audio-frame");$("audio-player-title").textContent="Talkgroup "+raw+" audio";player.hidden=false;frame.src="https://hose.brandmeister.network/?subscribe="+encodeURIComponent(raw);player.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"nearest"});
+ startNativeAudio();$("audio-player").scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"nearest"});
 }
+
 $("apply-filter").addEventListener("click",applyFilter);
 $("share-talkgroup").addEventListener("click",async()=>{const raw=$("talkgroup-filter").value.trim();if(!/^\d{1,6}$/.test(raw)){$("filter-hint").textContent="Enter a talkgroup number before sharing.";return;}applyFilter();const shareUrl=new URL(location.href);shareUrl.searchParams.set("tg",raw);try{if(navigator.share){await navigator.share({title:"BrandMeister TG "+raw+" · ZL3TOM Radio Activity",url:shareUrl.href});$("filter-hint").textContent="Share link ready for TG "+raw+".";}else{await navigator.clipboard.writeText(shareUrl.href);$("filter-hint").textContent="Share link copied for TG "+raw+".";}}catch(error){if(error.name!=="AbortError")$("filter-hint").textContent="Copy this link to share TG "+raw+": "+shareUrl.href;}});
 $("start-listening").addEventListener("click",()=>{applyFilter();playAudio();});
 $("audio-prompt-play").addEventListener("click",playAudio);
-$("close-audio-player").addEventListener("click",()=>{$("audio-frame").src="about:blank";$("audio-player").hidden=true;});
+$("close-audio-player").addEventListener("click",()=>{stopNativeAudio();$("audio-player").hidden=true;});
 $("talkgroup-filter").addEventListener("keydown",e=>{if(e.key==="Enter")applyFilter()});
 $("clear-filter").addEventListener("click",()=>{$("talkgroup-filter").value="";state.filter="";updateAudioPrompt();render();});
 const params=new URLSearchParams(location.search);const tg=params.get("tg");if(tg&&/^\d{1,6}$/.test(tg)){$("talkgroup-filter").value=tg;state.filter=tg;}updateAudioPrompt();
