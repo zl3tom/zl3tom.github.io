@@ -255,8 +255,9 @@ async function startNativeAudio(){
   connectAudioSocket(tg);
   $("record-audio").disabled=false;
  }catch(error){
-  state.audioActive=false;
-  setAudioStatus(error.message||"Could not start audio.");
+  const message=error.message||"Could not start audio.";
+  stopNativeAudio();
+  setAudioStatus(message);
   console.error(error);
  }
 }
