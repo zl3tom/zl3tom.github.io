@@ -362,5 +362,12 @@
     "description": "Listen to the ANZEL Network audio feed: South Central Michigan Hub #48290, connected through the HOTMOVE EchoLink Conference Server on Broadcastify.",
     "keywords": "ANZEL, ANZEL Network, Broadcastify, South Central Michigan Hub, feed 32361, HOTMOVE, EchoLink, EchoLink Conference Server, amateur radio audio, live radio feed, network audio, ZL3TOM",
     "content": "ANZEL Network Live Audio. Listen to South Central Michigan Hub #48290 on Broadcastify. Feed ID 32361. Amateur Radio feed connected through the HOTMOVE EchoLink Conference Server and interlinked with the ANZEL Network. Broadcastify pop-out player. Live amateur radio network audio listening. ZL3TOM."
+  },
+  {
+    "title": "HUBNet Live Audio Spectrum Monitor | ZL3TOM",
+    "url": "/radio-activity/hubnet/",
+    "description": "Listen to HUBNet low-latency 8 kHz PCM audio on ZL3TOM with an in-page audio level meter and real-time FFT frequency spectrum display.",
+    "keywords": "HUBNet, HUBNet audio, HUBNet live stream, FFT audio spectrum, PCM audio, 8 kHz audio, amateur radio network audio, live radio monitor, ZL3TOM",
+    "content": "HUBNet Audio Spectrum. Listen to the HUBNet live audio stream directly on this page. Low-latency 8 kHz PCM stream. Live audio level meter with green, amber and red segments. Real-time FFT frequency spectrum display from 0 to 4 kHz. Start streaming and listen in your browser. Keep transmitted audio clean and undistorted. HUBNet live radio monitor by ZL3TOM."
   }
 ]
