@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const monitorLink = document.createElement("a");
       monitorLink.href = "/radio-activity";
       monitorLink.textContent = "Live Monitor";
-      const currentPath = window.location.pathname.replace(/\\/$/, "");
+      const currentPath = window.location.pathname.replace(/\/$/, "");
       if (currentPath === "/radio-activity") {
         monitorLink.setAttribute("aria-current", "page");
         radioFunLink.removeAttribute("aria-current");
