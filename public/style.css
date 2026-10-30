@@ -65,3 +65,12 @@ body.search-open{overflow:hidden}
 .nav-dropdown.is-open .nav-submenu{display:block}
 .nav-submenu a{padding:9px 12px}
 }
+/* Mobile navigation: keep the submenu toggle inside the open menu. */
+@media(max-width:900px){
+ .main-nav .nav-dropdown{display:grid!important;grid-template-columns:minmax(0,1fr) 44px;align-items:center;gap:8px;width:100%;}
+ .main-nav .nav-dropdown>a{min-width:0;width:100%;}
+ .main-nav .nav-dropdown .nav-submenu-toggle{grid-column:2;grid-row:1;align-self:center;justify-self:stretch;min-width:44px;min-height:44px;}
+ .main-nav .nav-dropdown .nav-submenu{grid-column:1/-1;grid-row:2;width:100%;min-width:0;margin:0;padding:4px 8px 8px 14px;}
+ .main-nav .nav-dropdown.is-open .nav-submenu{display:block!important;}
+ .main-nav .nav-dropdown:not(.is-open) .nav-submenu{display:none!important;}
+}
