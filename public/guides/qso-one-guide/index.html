@@ -58,29 +58,109 @@
       <nav aria-label="QSO One guide contents"><h2>Jump to help</h2><ul><li><a href="#network-setup">DMR, System Fusion and M17</a></li><li><a href="#iax-settings">IAX Direct settings</a></li><li><a href="#audio-help">Audio troubleshooting</a></li><li><a href="#ptt-help">PTT and background sessions</a></li><li><a href="#privacy-settings">Permissions and privacy</a></li><li><a href="#accessible-use">Accessible operation</a></li><li><a href="#support-report">Updates and support</a></li></ul></nav>
       <section class="guide-section"><span class="section-number" aria-hidden="true">01</span><div><h2>What QSO One is</h2><p>QSO One, developed by Frank KD8JKK, is a free internet voice client for licensed amateur radio operators. It brings several voice networks into one app, including AllStarLink, EchoLink, IAX Direct, DMR, Yaesu System Fusion (YSF) and M17. Experimental features have also added D-STAR reflector support and P25 talkgroups; availability and behaviour can vary by app version.</p><p>Use your device’s microphone, speaker and internet connection to receive and transmit without a separate radio, hotspot or Raspberry Pi. Depending on the destination, your voice may reach other app users, linked nodes or RF repeaters. It is useful at home, when travelling, or when a traditional radio setup is difficult to access.</p><p>Tools include searchable directories, favourites, callsign lookup, QSO logging with ADIF export, Net Finder, received-audio recording and Net Runner tools for net control and transcription. Recent releases have added a unified On the Net area for finding live nets, sharing net links and helping net control publish scheduled nets. Audio options include automatic received-audio levelling and selectable voice-codec options, including the built-in codec and supported AMBE hardware/server options.</p><p>QSO One is free to use, with optional contributions supporting development. You still need an amateur radio licence and any accounts or IDs required by your chosen network. Experimental modes may have limitations, so check the installed version’s release notes before relying on them.</p></div></section>
 <section class="guide-section"><span class="section-number" aria-hidden="true">02</span><div><h2>QSO One iOS TestFlight Invite Link — Install on iPhone or iPad</h2><div class="guide-callout"><strong>Now available for iOS testing:</strong> QSO One has an iOS beta available through Apple TestFlight. Join using the invite link below. TestFlight access is a beta build, not the same as a public App Store release.</div><ol><li>Start at the <a href="https://qso1.net/" target="_blank" rel="noreferrer">official QSO One website ↗</a>.</li><li><strong>iPhone and iPad:</strong> open <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">QSO One on Apple TestFlight ↗</a> on your iOS device and follow Apple’s instructions to install the beta. You may need the TestFlight app first.</li><li><strong>Android:</strong> <a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">install QSO One from Google Play ↗</a>. Android 8.0 or later is supported.</li><li><strong>Windows:</strong> <a href="https://apps.microsoft.com/detail/9NRWFPGK3L3W" target="_blank" rel="noopener noreferrer">get QSO One from the Microsoft Store ↗</a>, or use the direct installer offered by QSO One.</li><li>Install updates only from the official website, official app store or app updater. TestFlight builds may change and can contain beta bugs.</li></ol><p>QSO One is now available to iPhone and iPad users through TestFlight. Tap the invite link on your iOS device, accept the invitation, and install or open QSO One in TestFlight. TestFlight is Apple’s beta distribution channel, so updates may arrive there before any public App Store listing.</p></div></section>
-<section class="guide-section"><span class="section-number" aria-hidden="true">02A</span><div>
-<h2>Recent updates and new features</h2>
-<p>QSO One is updated regularly. The following summary is based on the developer’s published QSO One 4.2.0 release notes from 23 October 2026. Later 4.2.x point releases may include additional changes, so check the app’s <strong>What’s New</strong> screen for the exact features in your installed build.</p>
-<h3>QSO One 4.2 series — features documented in 4.2.0</h3>
+<section class="guide-section" id="qso-one-recent-updates">
+<span class="section-number" aria-hidden="true">02A</span>
+<div>
+<h2>QSO One recent updates and features</h2>
+<p><strong>Latest version: 4.2.2</strong> — QSO One is now available across iPhone, iPad, Mac (TestFlight beta), Android and Windows. The latest releases continue to improve the iOS and Mac audio and transmit experience, while the QSO One website has grown into a wider ham-radio tool hub.</p>
 <ul>
-<li><strong>Weather tools:</strong> view current conditions, a 48-hour hourly forecast, a seven-day forecast, live radar and weather alerts. The published weather coverage is US-focused. Weather Radio is included within the Weather area.</li>
-<li><strong>All Favorites:</strong> access favourites across supported networks from one list, connect from the list and reorder entries. Live activity is shown where the network provides it.</li>
-<li><strong>On the Net:</strong> special guest check-ins, replies in chat and emoji support on Windows. Net Finder was moved into the On the Net area.</li>
-<li><strong>Experimental BC-TRBO NextGen DMR:</strong> an additional DMR network option. Setup requires the hotspot password provided by the network operator; follow the network’s current instructions and keep credentials private.</li>
-<li><strong>DMR fixes:</strong> improvements to AMBE codec selection, TGIF connections after Wi-Fi changes and favourite/private-setting behaviour.</li>
-<li><strong>EchoLink and IAX:</strong> clearer messages when an EchoLink connection is in use by another app and when an AllStar/IAX connection loses internet connectivity.</li>
-<li><strong>Windows and audio:</strong> a startup crash involving screen readers/accessibility tools was fixed, and USB microphones can be reacquired after unplugging and reconnecting.</li>
-<li><strong>General reliability:</strong> fixes for Android notifications and net reminders, menus on smaller screens, translated tool names and a System Fusion crash.</li>
+<li><strong>On the Net:</strong> discover live nets, find scheduled nets and share direct links to planned nets.</li>
+<li><strong>Net Finder:</strong> search nets and connect to supported destinations, with schedules shown in your local time.</li>
+<li><strong>Live activity:</strong> see current activity and discover where operators are active on supported networks.</li>
+<li><strong>More ways to operate:</strong> ongoing audio, push-to-talk and platform improvements across the supported apps.</li>
 </ul>
-<h3>Earlier 4.1.x network and operating features</h3>
+<div class="guide-callout">
+<strong>Want to see what changed in earlier releases?</strong>
+<p style="margin:.45rem 0 0">Open the version history for a summary of previous QSO One updates, new features and fixes.</p>
+<button type="button" id="qso-one-changelog-open" class="button button-primary" aria-haspopup="dialog" aria-controls="qso-one-changelog">View version changelog</button>
+</div>
+<p>Features can vary by platform and app build. Check the in-app <strong>What’s New</strong> screen and the developer’s release notes for the exact changes in your installed version.</p>
+<p><a href="https://qso1.net/" target="_blank" rel="noopener noreferrer">Visit the official QSO One website ↗</a> for downloads, live net tools and current information.</p>
+</div>
+</section>
+
+<dialog id="qso-one-changelog" aria-labelledby="qso-one-changelog-title" style="width:min( min(92vw, 760px), 760px);max-width:760px;max-height:85vh;padding:0;border:1px solid #cbd5e1;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.3);color:#172033;">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;background:#f1f5f9;border-bottom:1px solid #cbd5e1;position:sticky;top:0;">
+<h2 id="qso-one-changelog-title" style="margin:0;font-size:1.35rem;">QSO One version changelog</h2>
+<button type="button" id="qso-one-changelog-close" aria-label="Close changelog" style="font-size:1.4rem;line-height:1;padding:.35rem .65rem;border:1px solid #94a3b8;border-radius:8px;background:white;cursor:pointer;">×</button>
+</div>
+<div style="padding:1.1rem 1.35rem;overflow-y:auto;">
+<p style="margin-top:0;">A version-by-version summary of notable QSO One features and fixes. Release availability can differ between platforms and app stores.</p>
+<h3>Version 4.2.2 — latest</h3>
 <ul>
-<li><strong>DMR network choices:</strong> support added in earlier releases for BrandMeister, TGIF, FreeDMR, System X (FreeSTAR), AmComm, VKDMR, DMR+ and ADN Systems. Availability can vary by build and network.</li>
-<li><strong>Experimental digital voice:</strong> earlier releases introduced D-STAR reflector support (including REF, XRF, DCS and XLX), P25 talkgroups and experimental FCS rooms for System Fusion.</li>
-<li><strong>Push-to-talk and audio:</strong> improvements across Windows and Android for microphone selection, supported external PTT controls, codec handling and audio recovery.</li>
-<li><strong>Logging and net tools:</strong> QSO logging with ADIF export, Net Finder and Net Runner tools, favourites and other network-specific features.</li>
+<li>Expanded platform availability: iPhone and iPad through TestFlight, Mac through the open TestFlight beta, alongside Android and Windows.</li>
+<li>Continued iPhone and Mac improvements to audio handling and transmitting.</li>
+<li>Further development of QSO One’s online tools, including On the Net, Net Finder, live activity and shareable planned-net links.</li>
 </ul>
-<p>Features can differ between Windows, Android and the iOS TestFlight build. Experimental features may change or have limitations. For the original details, read the <a href="https://www.reddit.com/r/QSOone/comments/1xdpt1g/qso_one_420_weather_and_on_the_net_updates/" target="_blank" rel="noopener noreferrer">developer’s QSO One 4.2.0 release notes ↗</a>, then check the release notes for your installed version.</p>
-</div></section>
+<h3>Version 4.2.0 — Weather, All Favorites and On the Net</h3>
+<ul>
+<li>Added Weather with current conditions, hourly and seven-day forecasts, radar, alerts and Weather Radio (US-focused).</li>
+<li>Added All Favorites, bringing saved destinations from different networks into one list with reordering and supported live activity.</li>
+<li>Expanded On the Net with special guest check-ins, chat replies and improved emoji support.</li>
+<li>Moved Net Finder into On the Net and added experimental BC-TRBO NextGen DMR support.</li>
+<li>Fixed issues involving DMR audio, Wi-Fi changes, EchoLink, AllStar/IAX, Windows accessibility tools, USB microphones and notifications.</li>
+</ul>
+<p><a href="https://www.reddit.com/r/QSOone/comments/1xdpt1g/qso_one_420_weather_and_on_the_net_updates/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.2.0 release notes ↗</a></p>
+<h3>Version 4.1.9 — Weather Radio and refinements</h3>
+<ul>
+<li>Introduced Weather Radio and moved Net Finder into the On the Net area.</li>
+<li>Added experimental BC-TRBO NextGen DMR support.</li>
+<li>Improved DMR codec selection, TGIF connection recovery, notifications, small-screen menus and app reliability.</li>
+</ul>
+<a href="https://www.reddit.com/r/QSOone/comments/1xdexr0/qso_one_419_weather_radio_us_and_more/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.9 release notes ↗</a>
+<h3>Version 4.1.5 — reliability and usability</h3>
+<ul>
+<li>Improved D-STAR and P25 directory refresh, favourites and audio behaviour.</li>
+<li>Added DMR scanning and clearer connection warnings.</li>
+<li>Improved Windows and Android PTT, Bluetooth, microphone selection and USB AMBE support.</li>
+<li>Fixed connection, audio, crash, notification and small-screen issues.</li>
+</ul>
+<a href="https://www.reddit.com/r/QSOone/comments/1x4xh63/qso_one_415_big_bugs_hopefully_squashed/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.5 release notes ↗</a>
+<h3>Version 4.1.4 — D-STAR and P25</h3>
+<ul>
+<li>Introduced experimental D-STAR reflector support, including REF, XRF, DCS and XLX.</li>
+<li>Introduced experimental P25 talkgroups and FCS rooms for System Fusion.</li>
+<li>Improved M17 reflector support and made fixes across Windows audio, Bluetooth, logging and Net Finder.</li>
+</ul>
+<a href="https://www.reddit.com/r/QSOone/comments/1wzvypy/qso_one_414_dstar_and_p25_report_for_duty/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.4 release notes ↗</a>
+<h3>Version 4.1.3 — DMR and connection fixes</h3>
+<ul>
+<li>Fixed BrandMeister audio stuttering after switching between Wi-Fi and mobile data.</li>
+<li>Improved DMR+ static talkgroups and corrected connection, registration and directory issues across networks.</li>
+<li>Improved Android Bluetooth audio routing and Windows microphone permission handling.</li>
+</ul>
+<a href="https://www.reddit.com/r/QSOone/comments/1wvi04o/qso_one_413_more_bugs_squashed/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.3 release notes ↗</a>
+<h3>Version 4.1.1 — DMR networks and Net Finder</h3>
+<ul>
+<li>Added experimental DMR+ and ADN Systems, including live Last Heard for ADN Systems.</li>
+<li>Added separate login cards and account backup for DMR network credentials.</li>
+<li>Added more language options and improvements to audio, PTT, small-screen layouts and connection handling.</li>
+<li>Expanded Net Finder to include DMR+ and System X nets.</li>
+</ul>
+<a href="https://www.reddit.com/r/QSOone/comments/1wshf98/qso_one_411_is_here_changelog/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.1 release notes ↗</a>
+<hr>
+<p><strong>Note:</strong> This is an edited summary, not a verbatim copy of every developer release note. For the most accurate platform-specific information, check the app’s <strong>What’s New</strong> screen and the official QSO One community.</p>
+<p><a href="https://www.reddit.com/r/QSOone/" target="_blank" rel="noopener noreferrer">Browse QSO One release announcements on Reddit ↗</a> · <a href="https://qso1.net/" target="_blank" rel="noopener noreferrer">Official QSO One website ↗</a></p>
+</div>
+</dialog>
+<script>
+(function () {
+  const dialog = document.getElementById('qso-one-changelog');
+  const openButton = document.getElementById('qso-one-changelog-open');
+  const closeButton = document.getElementById('qso-one-changelog-close');
+  if (!dialog || !openButton || !closeButton) return;
+  openButton.addEventListener('click', function () {
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open', '');
+    closeButton.focus();
+  });
+  closeButton.addEventListener('click', function () { dialog.close(); });
+  dialog.addEventListener('click', function (event) {
+    if (event.target === dialog) dialog.close();
+  });
+})();
+</script>
+
 <section class="guide-section"><span class="section-number" aria-hidden="true">03</span><div><h2>QSO One video</h2><p>Watch this archived QSO One video for a visual introduction to the app and its amateur-radio network features.</p><div style="position:relative;width:100%;max-width:760px;aspect-ratio:560/384;margin:1rem 0;"><iframe src="https://archive.org/embed/qso-one-every-ham-network-one-app" title="QSO One — Every Ham Network, One App" loading="lazy" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe></div><p><a href="https://archive.org/details/qso-one-every-ham-network-one-app" target="_blank" rel="noopener noreferrer">Watch QSO One on Internet Archive ↗</a></p></div></section>
 <section class="guide-section"><span class="section-number" aria-hidden="true">04</span><div><h2>How to use QSO One</h2><p>Once QSO One is installed, start with one network and learn the basic receive, connect and PTT controls before adding more.</p><ol><li><strong>Create or sign in to QSO One</strong> using your amateur radio callsign.</li><li><strong>Choose a network</strong> such as AllStarLink, EchoLink, IAX Direct, DMR, System Fusion (YSF) or M17.</li><li><strong>Add the details that network requires.</strong> EchoLink requires a validated EchoLink account. DMR requires your own DMR ID and the credentials requested by your chosen network’s login card; see section 9 for the supported networks. IAX Direct requires credentials supplied by the node operator.</li><li><strong>Select your destination.</strong> Search for an AllStar node or EchoLink station, select a DMR talkgroup, or choose a YSF/M17 reflector.</li><li><strong>Listen first</strong> and make sure the destination is not already in use.</li><li><strong>Press and hold PTT to transmit.</strong> Pause briefly before speaking, identify with your callsign, and release PTT when finished.</li><li><strong>Disconnect when finished</strong> and log the QSO if you want to keep a record.</li></ol><div class="radio-example"><small>SIMPLE FIRST CALL</small><pre>ZL3TOM listening through QSO One.</pre></div><p>On Android, QSO One can keep a session active in the background. Bluetooth, BLE and PoC hardware PTT devices are also supported.</p></div></section>
 <section class="guide-section"><span class="section-number" aria-hidden="true">05</span><div><h2>Prepare your accounts</h2><ul><li><strong>QSO One:</strong> create or sign in with your licensed callsign as directed by the app.</li><li><strong>EchoLink:</strong> complete callsign validation first.</li><li><strong>DMR:</strong> obtain your own DMR ID from RadioID and configure the network account you intend to use.</li><li><strong>AllStarLink:</strong> use your authorised node details. IAX Direct credentials must come from the node owner.</li></ul><div class="guide-callout"><strong>Keep secrets private:</strong> never publish an IAX password, hotspot security password or network account password.</div></div></section>
