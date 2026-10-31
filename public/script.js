@@ -8,41 +8,24 @@ document.addEventListener("DOMContentLoaded", () => {
     document.head.appendChild(navStyles);
   }
 
-  // Shared navigation enhancement: Radio Fun always owns the Live Monitor submenu.
+  // Shared navigation: ensure Radio Fun always contains Live Monitor and Radio Audio.
   const monitorNavigation = document.getElementById("main-navigation");
   if (monitorNavigation) {
-    const radioFunLink = monitorNavigation.querySelector('a[href="/radio-fun"], a[href="/radio-fun/"]');
-    if (radioFunLink && !radioFunLink.parentElement.closest(".nav-dropdown")) {
-      const dropdown = document.createElement("div");
+    const currentPath = window.location.pathname.replace(/\\/$/, "");
+    let radioFunLink = monitorNavigation.querySelector('a[href="/radio-fun"], a[href="/radio-fun/"]');
+    let dropdown = radioFunLink?.parentElement?.closest(".nav-dropdown");
+
+    if (radioFunLink && !dropdown) {
+      dropdown = document.createElement("div");
       dropdown.className = "nav-dropdown";
       const submenu = document.createElement("div");
       submenu.className = "nav-submenu";
       submenu.setAttribute("aria-label", "Radio Fun pages");
-      const monitorLink = document.createElement("a");
-      monitorLink.href = "/radio-activity";
-      monitorLink.textContent = "Live Monitor";
-      const audioLink = document.createElement("a");
-      audioLink.href = "/radio-audio";
-      audioLink.textContent = "Radio Audio";
-      const currentPath = window.location.pathname.replace(/\/$/, "");
-      if (currentPath === "/radio-activity") {
-        monitorLink.setAttribute("aria-current", "page");
-        radioFunLink.removeAttribute("aria-current");
-      } else if (currentPath === "/radio-audio") {
-        audioLink.setAttribute("aria-current", "page");
-        radioFunLink.removeAttribute("aria-current");
-      } else if (currentPath === "/radio-fun") {
-        radioFunLink.setAttribute("aria-current", "page");
-      }
-      submenu.append(monitorLink, audioLink);
       const parentLink = radioFunLink.cloneNode(true);
       const toggle = document.createElement("button");
-      const submenuId = "radio-fun-submenu";
-      submenu.id = submenuId;
       toggle.type = "button";
       toggle.className = "nav-submenu-toggle";
       toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-controls", submenuId);
       toggle.setAttribute("aria-label", "Toggle Radio Fun submenu");
       toggle.innerHTML = '<span aria-hidden="true">⌄</span>';
       toggle.addEventListener("click", (event) => {
@@ -54,6 +37,39 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       dropdown.append(parentLink, toggle, submenu);
       radioFunLink.replaceWith(dropdown);
+      radioFunLink = parentLink;
+    }
+
+    if (dropdown) {
+      let submenu = dropdown.querySelector(".nav-submenu");
+      if (!submenu) {
+        submenu = document.createElement("div");
+        submenu.className = "nav-submenu";
+        submenu.setAttribute("aria-label", "Radio Fun pages");
+        dropdown.appendChild(submenu);
+      }
+      submenu.id = submenu.id || "radio-fun-submenu";
+
+      const requiredLinks = [
+        { href: "/radio-activity", label: "Live Monitor" },
+        { href: "/radio-audio", label: "Radio Audio" }
+      ];
+      requiredLinks.forEach(({ href, label }) => {
+        let link = submenu.querySelector('a[href="' + href + '"], a[href="' + href + '/"]');
+        if (!link) {
+          link = document.createElement("a");
+          link.href = href;
+          link.textContent = label;
+          submenu.appendChild(link);
+        }
+        if (currentPath === href) {
+          link.setAttribute("aria-current", "page");
+          radioFunLink?.removeAttribute("aria-current");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+      if (currentPath === "/radio-fun") radioFunLink?.setAttribute("aria-current", "page");
     }
   }
 
