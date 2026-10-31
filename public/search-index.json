@@ -259,6 +259,27 @@
     "content": "ZL3TOM Live Monitor BrandMeister DMR live amateur radio activity monitor. Follow transmissions, talkgroups, station callsigns, repeater and node details, on-air activity, recent transmissions and live network events. Filter activity by talkgroup number, share a talkgroup link, play live audio and record audio where lawful and appropriate. Independent project using BrandMeister public Last Heard event stream."
   },
   {
+    "title": "ANZEL Network Live Audio | Broadcastify | ZL3TOM",
+    "url": "/radio-activity/anzel/",
+    "description": "Listen to the ANZEL Network audio feed: South Central Michigan Hub #48290, connected through the HOTMOVE EchoLink Conference Server on Broadcastify.",
+    "keywords": "ANZEL, ANZEL Network, Broadcastify, South Central Michigan Hub, feed 32361, HOTMOVE, EchoLink, EchoLink Conference Server, amateur radio audio, live radio feed, network audio, ZL3TOM",
+    "content": "ANZEL Network Live Audio. Listen to South Central Michigan Hub #48290 on Broadcastify. Feed ID 32361. Amateur Radio feed connected through the HOTMOVE EchoLink Conference Server and interlinked with the ANZEL Network. Broadcastify pop-out player. Live amateur radio network audio listening. ZL3TOM."
+  },
+  {
+    "title": "BrandMeister DMR Live Monitor | ZL3TOM",
+    "url": "/radio-activity/brandmeister/",
+    "description": "Watch live BrandMeister DMR activity, Last Heard transmissions, on-air stations and talkgroups. Filter by talkgroup and listen to live DMR audio.",
+    "keywords": "BrandMeister, DMR, live monitor, live DMR activity, Last Heard, talkgroups, talk group filter, DMR audio, amateur radio, radio transmissions, ZL3TOM",
+    "content": "BrandMeister DMR Live Monitor. Live amateur radio activity across the BrandMeister DMR network. Follow Last Heard activity, live transmissions, callsigns, on-air stations, talkgroups, repeater and node information. Filter by talkgroup number, share a talkgroup link, and play live DMR audio in your browser. BrandMeister public Last Heard event stream. Independent ZL3TOM amateur radio monitor. Christchurch New Zealand. Digital voice DMR."
+  },
+  {
+    "title": "Amateur Radio Audio Archive | Nets, DMR & Broadcasts | ZL3TOM",
+    "url": "/radio-audio",
+    "description": "Listen to amateur radio recordings from ZL3TOM: amateur radio nets, DMR and digital radio, special broadcasts, interviews and radio events from New Zealand and beyond.",
+    "keywords": "amateur radio audio archive, ham radio recordings, amateur radio nets, DMR audio, digital radio recordings, New Zealand amateur radio, ZL3TOM",
+    "content": "Radio Audio. The ZL3TOM listening library. Listen back. Discover radio. Stay connected. A growing collection of amateur radio nets, digital radio activity, special broadcasts, interviews and radio events. Explore recordings. Search recordings by titles, topics or descriptions. Amateur Radio Nets. DMR and Digital Radio. Special Broadcasts. Interviews and Discussions. Radio Events. First recordings coming soon. The ZL3TOM Radio Audio library. Recordings of amateur radio nets, DMR activity, special broadcasts and events will appear here. Radio has a story worth hearing. Radio Audio is a place to revisit interesting moments from amateur radio. Recordings are shared for listening and learning."
+  },
+  {
     "title": "ZL3TOM Station, EchoLink, AllStar, DMR and APRS",
     "url": "/radio-fun",
     "description": "Find ZL3TOM on EchoLink 304602, AllStar 40452, APRS, DMR and linked networks, plus DigiQSL digital QSL cards and amateur radio contact confirmations.",
@@ -348,19 +369,5 @@
     "description": "Convert RF power between watts, milliwatts and dBm with this free amateur radio watts-to-dBm calculator.",
     "keywords": "watts to dBm calculator, dBm to watts, RF power converter, ham radio power calculator, milliwatts dBm",
     "content": "Free amateur radio calculator Watts ↔ dBm Converter Quickly convert RF power between watts, milliwatts and dBm for radio, antenna and test-equipment work. Home → Radio Tools → Watts ↔ dBm Converter Calculator Power value Input unit Watts (W) Milliwatts (mW) dBm Convert power Enter a power value. For learning and station planning. Always follow the regulations, equipment limits and operating practices that apply where you are located. Watts and dBm Watts are an absolute measure of power. dBm expresses absolute power on a logarithmic scale referenced to one milliwatt, which makes large power ratios easier to compare. Why radio operators use dBm Receiver sensitivity, signal generators, attenuators and RF system calculations often use dBm, while transmitter output is commonly quoted in watts. Frequently asked questions What is 1 watt in dBm? 1 watt equals 30 dBm. What is 0 dBm? 0 dBm equals 1 milliwatt. Related amateur radio tools & guides Ohm's Law & RF power → Coax loss calculator → All radio tools → Back to Radio Tools →"
-  },
-  {
-    "title": "BrandMeister DMR Live Monitor | ZL3TOM",
-    "url": "/radio-activity/brandmeister/",
-    "description": "Watch live BrandMeister DMR activity, Last Heard transmissions, on-air stations and talkgroups. Filter by talkgroup and listen to live DMR audio.",
-    "keywords": "BrandMeister, DMR, live monitor, live DMR activity, Last Heard, talkgroups, talk group filter, DMR audio, amateur radio, radio transmissions, ZL3TOM",
-    "content": "BrandMeister DMR Live Monitor. Live amateur radio activity across the BrandMeister DMR network. Follow Last Heard activity, live transmissions, callsigns, on-air stations, talkgroups, repeater and node information. Filter by talkgroup number, share a talkgroup link, and play live DMR audio in your browser. BrandMeister public Last Heard event stream. Independent ZL3TOM amateur radio monitor. Christchurch New Zealand. Digital voice DMR."
-  },
-  {
-    "title": "ANZEL Network Live Audio | Broadcastify | ZL3TOM",
-    "url": "/radio-activity/anzel/",
-    "description": "Listen to the ANZEL Network audio feed: South Central Michigan Hub #48290, connected through the HOTMOVE EchoLink Conference Server on Broadcastify.",
-    "keywords": "ANZEL, ANZEL Network, Broadcastify, South Central Michigan Hub, feed 32361, HOTMOVE, EchoLink, EchoLink Conference Server, amateur radio audio, live radio feed, network audio, ZL3TOM",
-    "content": "ANZEL Network Live Audio. Listen to South Central Michigan Hub #48290 on Broadcastify. Feed ID 32361. Amateur Radio feed connected through the HOTMOVE EchoLink Conference Server and interlinked with the ANZEL Network. Broadcastify pop-out player. Live amateur radio network audio listening. ZL3TOM."
   }
 ]
