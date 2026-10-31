@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Shared navigation: ensure Radio Fun always contains Live Monitor and Radio Audio.
   const monitorNavigation = document.getElementById("main-navigation");
   if (monitorNavigation) {
-    const currentPath = window.location.pathname.replace(/\\/$/, "");
+    const pathname = window.location.pathname;
+    const currentPath = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
     let radioFunLink = monitorNavigation.querySelector('a[href="/radio-fun"], a[href="/radio-fun/"]');
     let dropdown = radioFunLink?.parentElement?.closest(".nav-dropdown");
 
