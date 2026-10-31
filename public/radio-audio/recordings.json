@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "published": true,
+    "title": "NZART Official Broadcast October 2026",
+    "description": "The official NZART monthly broadcast for October 2026. Listen to the latest news and updates from the New Zealand Association of Radio Transmitters.",
+    "date": "October 2026",
+    "category": "special",
+    "categoryLabel": "NZART Official Broadcast",
+    "audioUrl": "https://nzart.org.nz/podlove/file/80/s/webplayer/wp-content/uploads/2026/10/NZART_Official_Broadcast-2026-10.mp3",
+    "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png",
+    "articleUrl": "https://nzart.org.nz/nzart-official-broadcast-october-2026/"
+  }
+]
