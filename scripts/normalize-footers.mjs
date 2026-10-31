@@ -27,7 +27,7 @@ for (const file of htmlFiles) {
     if (/class=["'][^"']*nav-dropdown/.test(nav)) return match;
     const radioFun = /<a\b(?=[^>]*href=["']\/radio-fun\/?["'])[^>]*>[\s\S]*?<\/a>/i;
     if (!radioFun.test(nav)) return match;
-    const dropdown = nav.replace(radioFun, (link) => \`<div class="nav-dropdown">\${link}<button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-controls="radio-fun-submenu" aria-label="Toggle Radio Fun submenu"><span aria-hidden="true">⌄</span></button><div class="nav-submenu" id="radio-fun-submenu" aria-label="Radio Fun pages"><a href="/radio-activity">Live Monitor</a><a href="/radio-audio">Radio Audio</a></div></div>\`);
+    const dropdown = nav.replace(radioFun, (link) => `<div class="nav-dropdown">${link}<button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-controls="radio-fun-submenu" aria-label="Toggle Radio Fun submenu"><span aria-hidden="true">⌄</span></button><div class="nav-submenu" id="radio-fun-submenu" aria-label="Radio Fun pages"><a href="/radio-activity">Live Monitor</a><a href="/radio-audio">Radio Audio</a></div></div>`);
     return open + dropdown + close;
   });
 
