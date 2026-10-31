@@ -27,10 +27,20 @@ for (const file of htmlFiles) {
   const siteFooterPattern = /<footer\s+class=["']site-footer["'][^>]*>[\s\S]*?<\/footer>/i;
   if (!siteFooterPattern.test(html)) continue;
 
-  const next = html.replace(siteFooterPattern, footer);
+  // Keep the shared site script on every page so navigation, mobile menu,
+  // Radio Fun submenu links, and site-wide interactions are genuinely global.
+  let next = html.replace(siteFooterPattern, footer);
+  if (!/<script\\b[^>]*\\bsrc=["'][^"']*\\/script\\.js(?:[?#][^"']*)?["']/i.test(next)) {
+    const sharedScript = '<script src="/script.js" defer></script>';
+    if (/<\\/body>/i.test(next)) {
+      next = next.replace(/<\\/body>/i, `${sharedScript}\\n</body>`);
+    } else {
+      next += `\\n${sharedScript}\\n`;
+    }
+  }
   if (next !== html) {
     await writeFile(file, next);
     updated += 1;
   }
 }
-console.log(`Standardized ${updated} site footers with the same essential information.`);
+console.log(`Standardized ${updated} site pages with the shared footer and global navigation script.`);
