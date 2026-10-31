@@ -30,12 +30,12 @@ for (const file of htmlFiles) {
   // Keep the shared site script on every page so navigation, mobile menu,
   // Radio Fun submenu links, and site-wide interactions are genuinely global.
   let next = html.replace(siteFooterPattern, footer);
-  if (!/<script\\b[^>]*\\bsrc=["'][^"']*\\/script\\.js(?:[?#][^"']*)?["']/i.test(next)) {
+  if (!/<script\b[^>]*\bsrc=["'][^"']*\/script\.js(?:[?#][^"']*)?["']/i.test(next)) {
     const sharedScript = '<script src="/script.js" defer></script>';
     if (/<\/body>/i.test(next)) {
-      next = next.replace(/<\\/body>/i, `${sharedScript}\\n</body>`);
+      next = next.replace(/<\/body>/i, `${sharedScript}\n</body>`);
     } else {
-      next += `\\n${sharedScript}\\n`;
+      next += `\n${sharedScript}\n`;
     }
   }
   if (next !== html) {
