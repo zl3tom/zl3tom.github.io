@@ -41,3 +41,11 @@
     grid-column: 1 / -1;
   }
 }
+
+/* Podcast-style episode artwork and player layout. */
+.ra-podcast-card { display: flex; flex-direction: column; }
+.ra-podcast-art { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #0b2830; }
+.ra-podcast-card .ra-card-body { display: flex; flex: 1; flex-direction: column; align-items: flex-start; }
+.ra-podcast-card h3 a { color: inherit; text-decoration: none; }
+.ra-podcast-card h3 a:hover { color: #0b7651; text-decoration: underline; text-underline-offset: 3px; }
+.ra-podcast-card audio { width: 100%; margin-top: auto; padding-top: 16px; }
