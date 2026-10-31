@@ -32,7 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const date = escapeHtml(recording.date || "");
       const category = escapeHtml(recording.categoryLabel || "Radio Audio");
       const source = safeAudioUrl(recording.audioUrl);
-      return '<article class="ra-card"><div class="ra-card-art" aria-hidden="true">♫</div><div class="ra-card-body"><div class="ra-card-meta"><span>' + date + '</span><span> AUDIO</span></div><h3>' + title + '</h3><p>' + description + '</p><span class="ra-card-category">' + category + '</span>' + (source ? '<audio controls preload="none" src="' + source + '">Your browser does not support audio playback.</audio>' : '') + '</div></article>';
+      const image = safeImageUrl(recording.imageUrl);
+      const article = safeArticleUrl(recording.articleUrl);
+      const artwork = image ? '<img class="ra-podcast-art" src="' + image + '" alt="' + title + ' cover artwork" loading="lazy">' : '<div class="ra-card-art" aria-hidden="true">♫</div>';
+      const linkedTitle = article ? '<a href="' + article + '" target="_blank" rel="noopener noreferrer">' + title + ' <span aria-hidden="true">↗</span></a>' : title;
+      return '<article class="ra-card ra-podcast-card">' + artwork + '<div class="ra-card-body"><div class="ra-card-meta"><span>' + date + '</span><span> PODCAST</span></div><h3>' + linkedTitle + '</h3><p>' + description + '</p><span class="ra-card-category">' + category + '</span>' + (source ? '<audio controls preload="none" src="' + source + '">Your browser does not support audio playback.</audio>' : '') + '</div></article>';
     }).join("");
   }
 
@@ -45,7 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
   function safeAudioUrl(value) {
     try {
       const url = new URL(value);
-      return url.protocol === "https:" && (url.hostname === "archive.org" || url.hostname.endsWith(".archive.org")) ? escapeHtml(url.href) : "";
+      return url.protocol === "https:" && (url.hostname === "archive.org" || url.hostname.endsWith(".archive.org") || url.hostname === "nzart.org.nz") ? escapeHtml(url.href) : "";
+    } catch { return ""; }
+  }
+
+  function safeImageUrl(value) {
+    try {
+      const url = new URL(value);
+      return url.protocol === "https:" && url.hostname === "i.postimg.cc" ? escapeHtml(url.href) : "";
+    } catch { return ""; }
+  }
+
+  function safeArticleUrl(value) {
+    try {
+      const url = new URL(value);
+      return url.protocol === "https:" && url.hostname === "nzart.org.nz" ? escapeHtml(url.href) : "";
     } catch { return ""; }
   }
 
