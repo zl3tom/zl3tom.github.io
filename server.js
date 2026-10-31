@@ -451,7 +451,7 @@ function nzartEpisodeDate(title, publishedAt) {
     }
   }
 
-  const titleMatch = String(title || "").match(/\\b(\\d{1,2}\\s+)?(January|February|March|April|May|June|July|August|September|October|November|December)\\s+(20\\d{2})\\b/i);
+  const titleMatch = String(title || "").match(/\b(\d{1,2}\s+)?(January|February|March|April|May|June|July|August|September|October|November|December)\s+(20\d{2})\b/i);
   if (titleMatch) {
     const month = titleMatch[2][0].toUpperCase() + titleMatch[2].slice(1).toLowerCase();
     const day = titleMatch[1] ? Number.parseInt(titleMatch[1], 10) : 1;
