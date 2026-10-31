@@ -76,7 +76,7 @@ for (const filePath of htmlFiles) {
 
 const sitemap = await readFile(path.join(publicRoot, "sitemap.xml"), "utf8");
 const sitemapUrlCount = [...sitemap.matchAll(/<loc>https:\/\/zl3tom\.com[^<]*<\/loc>/g)].length;
-if (sitemapUrlCount !== 40) problems.push(`sitemap.xml has ${sitemapUrlCount} site URLs; expected 40.`);
+if (sitemapUrlCount !== 52) problems.push(`sitemap.xml has ${sitemapUrlCount} site URLs; expected 52.`);
 if (!sitemap.includes("<image:loc>https://zl3tom.com/social-preview.png</image:loc>")) problems.push("sitemap.xml is missing the social preview image.");
 if (!sitemap.includes("<loc>https://zl3tom.com/tools</loc>")) problems.push("sitemap.xml is missing the Radio Tools page.");
 
@@ -90,7 +90,7 @@ try {
 
 const guidesIndex = await readFile(path.join(publicRoot, "guides.html"), "utf8");
 const guideCardCount = (guidesIndex.match(/class="guide-card"/g) || []).length;
-if (guideCardCount !== 26) problems.push(`The guide index has ${guideCardCount} cards; expected 26.`);
+if (guideCardCount !== 30) problems.push(`The guide index has ${guideCardCount} cards; expected 30.`);
 
 for (const [slug, titleNeedle] of [
   ["amateur-radio-slang-73-88-qth-qso-qsl", "What Does 73 Mean? Amateur Radio Slang Explained"],
