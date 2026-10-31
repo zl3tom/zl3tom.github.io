@@ -21,25 +21,23 @@ await walk(publicRoot);
 let updated = 0;
 for (const file of htmlFiles) {
   let html = await readFile(file, "utf8");
-  if (!/<footer\b/i.test(html)) continue;
 
-  // Replace only the site footer. Guide/article bylines are separate footers and must remain intact.
+  // Standardise the shared site footer wherever this page has one.
   const siteFooterPattern = /<footer\s+class=["']site-footer["'][^>]*>[\s\S]*?<\/footer>/i;
-  if (!siteFooterPattern.test(html)) continue;
+  if (siteFooterPattern.test(html)) html = html.replace(siteFooterPattern, footer);
 
-  // Keep the shared site script on every page so navigation, mobile menu,
-  // Radio Fun submenu links, and site-wide interactions are genuinely global.
-  let next = html.replace(siteFooterPattern, footer);
-  if (!/<script\b[^>]*\bsrc=["'][^"']*\/script\.js(?:[?#][^"']*)?["']/i.test(next)) {
-    const sharedScript = '<script src="/script.js" defer></script>';
-    if (/<\/body>/i.test(next)) {
-      next = next.replace(/<\/body>/i, `${sharedScript}\n</body>`);
-    } else {
-      next += `\n${sharedScript}\n`;
-    }
+  // Every HTML page must load the same navigation script. Do not require a
+  // footer: some landing pages and generated pages use a different layout.
+  const hasSharedScript = /<script\b[^>]*\bsrc=["'][^"']*\/script\.js(?:[?#][^"']*)?["']/i.test(html);
+  if (!hasSharedScript) {
+    const sharedScript = '<script src="/script.js?v=20261031-global-nav" defer></script>';
+    if (/<\/body>/i.test(html)) html = html.replace(/<\/body>/i, `${sharedScript}\n</body>`);
+    else html += `\n${sharedScript}\n`;
   }
-  if (next !== html) {
-    await writeFile(file, next);
+
+  const original = await readFile(file, "utf8");
+  if (html !== original) {
+    await writeFile(file, html);
     updated += 1;
   }
 }
