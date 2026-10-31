@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const url = new URL(value);
       return url.protocol === "https:" &&
         (url.hostname === "nzart.org.nz" || url.hostname.endsWith(".nzart.org.nz")) &&
-        /\\.mp3$/i.test(url.pathname) ? url.href : "";
+        /\.mp3$/i.test(url.pathname) ? url.href : "";
     } catch { return ""; }
   };
   const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({
