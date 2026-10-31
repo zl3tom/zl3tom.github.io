@@ -436,20 +436,37 @@ function xmlMediaUrl(block) {
 }
 
 function nzartEpisodeDate(title, publishedAt) {
-  const titleMatch = String(title).match(/\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(20\d{2})\b/i);
+  const rawDate = String(publishedAt || "").trim();
+  if (rawDate) {
+    const date = new Date(rawDate);
+    if (!Number.isNaN(date.getTime())) {
+      return {
+        date: new Intl.DateTimeFormat("en-NZ", {
+          day: "numeric", month: "long", year: "numeric",
+          timeZone: "Pacific/Auckland"
+        }).format(date),
+        sortDate: date.toISOString(),
+        publishedAt: date.toISOString()
+      };
+    }
+  }
+
+  const titleMatch = String(title || "").match(/\\b(\\d{1,2}\\s+)?(January|February|March|April|May|June|July|August|September|October|November|December)\\s+(20\\d{2})\\b/i);
   if (titleMatch) {
-    const month = titleMatch[1][0].toUpperCase() + titleMatch[1].slice(1).toLowerCase();
-    const monthNumber = String(new Date(Date.parse(month + " 1, " + titleMatch[2])).getMonth() + 1).padStart(2, "0");
-    return { date: month + " " + titleMatch[2], sortDate: titleMatch[2] + "-" + monthNumber };
+    const month = titleMatch[2][0].toUpperCase() + titleMatch[2].slice(1).toLowerCase();
+    const day = titleMatch[1] ? Number.parseInt(titleMatch[1], 10) : 1;
+    const date = new Date(Date.parse(month + " " + day + ", " + titleMatch[3]));
+    if (!Number.isNaN(date.getTime())) {
+      return {
+        date: titleMatch[1]
+          ? new Intl.DateTimeFormat("en-NZ", { day: "numeric", month: "long", year: "numeric", timeZone: "Pacific/Auckland" }).format(date)
+          : month + " " + titleMatch[3],
+        sortDate: date.toISOString(),
+        publishedAt: ""
+      };
+    }
   }
-  const date = new Date(publishedAt);
-  if (!Number.isNaN(date.getTime())) {
-    return {
-      date: new Intl.DateTimeFormat("en-NZ", { month: "long", year: "numeric", timeZone: "Pacific/Auckland" }).format(date),
-      sortDate: new Intl.DateTimeFormat("en-CA", { year: "numeric", month: "2-digit", timeZone: "Pacific/Auckland" }).format(date)
-    };
-  }
-  return { date: "", sortDate: "" };
+  return { date: "", sortDate: "", publishedAt: "" };
 }
 
 async function getNzartEpisodes() {
@@ -469,27 +486,32 @@ async function getNzartEpisodes() {
     });
     if (!upstream.ok) throw new Error("NZART podcast feed returned HTTP " + upstream.status);
     const xml = await upstream.text();
-    const episodes = [...xml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)]
+    const episodes = [...xml.matchAll(/<item\\b[^>]*>([\\s\\S]*?)<\\/item>/gi)]
       .map((match) => {
         const item = match[1];
-        const title = xmlTag(item, "title").replace(/\s+/g, " ").trim();
+        const title = xmlTag(item, "title").replace(/\\s+/g, " ").trim();
         const audioUrl = xmlMediaUrl(item);
-        const publishedAt = xmlTag(item, "pubDate");
+        const publishedAt = xmlTag(item, "pubDate") || xmlTag(item, "dc:date");
         const safeUrl = (() => {
           try {
             const parsed = new URL(audioUrl);
             return parsed.protocol === "https:" &&
               (parsed.hostname === "nzart.org.nz" || parsed.hostname.endsWith(".nzart.org.nz")) &&
-              /\.mp3$/i.test(parsed.pathname) ? parsed.href : "";
+              /\\.mp3$/i.test(parsed.pathname) ? parsed.href : "";
           } catch { return ""; }
         })();
+        const descriptionSource = xmlTag(item, "description") || xmlTag(item, "content:encoded") || "";
+        const description = decodeXmlText(descriptionSource.replace(/<[^>]*>/g, " "))
+          .replace(/\\s+/g, " ")
+          .trim();
         const dates = nzartEpisodeDate(title, publishedAt);
-        if (!safeUrl || !/NZART Official Broadcast/i.test(title)) return null;
+        if (!safeUrl || !title) return null;
         return {
           published: true,
           title,
-          description: xmlTag(item, "description").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim(),
+          description,
           date: dates.date,
+          publishedAt: dates.publishedAt,
           sortDate: dates.sortDate,
           category: "special",
           categoryLabel: "NZART Official Broadcast",
@@ -498,9 +520,9 @@ async function getNzartEpisodes() {
         };
       })
       .filter(Boolean)
-      .sort((a, b) => b.sortDate.localeCompare(a.sortDate));
+      .sort((a, b) => (b.sortDate || "").localeCompare(a.sortDate || ""));
 
-    if (!episodes.length) throw new Error("No playable NZART Official Broadcast episodes were found in the podcast feed.");
+    if (!episodes.length) throw new Error("No playable episodes were found in the NZART podcast feed.");
     nzartFeedCache = { fetchedAt: Date.now(), episodes };
     return episodes;
   } finally {
