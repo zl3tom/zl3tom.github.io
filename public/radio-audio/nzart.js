@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const safeAudioUrl=value=>{try{const u=new URL(value);return u.protocol==="https:"&&(u.hostname==="nzart.org.nz"||u.hostname.endsWith(".nzart.org.nz"))&&/\.mp3$/i.test(u.pathname)?u.href:"";}catch{return"";}};
   const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
   const formatTime=value=>{if(!Number.isFinite(value)||value<0)return"--:--";const n=Math.floor(value),h=Math.floor(n/3600),m=Math.floor(n%3600/60),s=n%60;return h?h+":"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0"):m+":"+String(s).padStart(2,"0");};
-  const episodeDate=e=>e.date||String(e.title||"").replace(/^NZART Offi(?:cial|cal) Broadcast\s*/i,"");
+  const episodeDate=e=>e.date||"";
   function setStatus(message,state="READY WHEN YOU ARE"){status.textContent=message;playerState.textContent=state;}
   function updatePlayButton(playing){playIcon.textContent=playing?"Ⅱ":"▶";playButton.setAttribute("aria-label",playing?"Pause broadcast":"Play broadcast");}
   function visibleEpisodes(){const q=search.value.trim().toLowerCase();return episodes.map((episode,index)=>({episode,index})).filter(({episode})=>!q||(String(episode.title||"")+" "+String(episode.description||"")+" "+episodeDate(episode)+" "+String(episode.sortDate||"")).toLowerCase().includes(q)).sort((a,b)=>oldestFirst?String(a.episode.sortDate||"").localeCompare(String(b.episode.sortDate||"")):String(b.episode.sortDate||"").localeCompare(String(a.episode.sortDate||"")));}
