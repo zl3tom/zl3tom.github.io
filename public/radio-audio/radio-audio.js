@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.addEventListener("pause", updatePlayButton);
   audio.addEventListener("ended", () => {
     updatePlayButton();
-    if (activeIndex > 0) selectEpisode(activeIndex - 1, true);
+    if (activeIndex >= 0 && activeIndex < recordings.length - 1) selectEpisode(activeIndex + 1, true);
   });
   audio.addEventListener("error", () => {
     const status = document.getElementById("ra-player-status");
