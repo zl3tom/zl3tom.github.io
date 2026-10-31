@@ -21,14 +21,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const monitorLink = document.createElement("a");
       monitorLink.href = "/radio-activity";
       monitorLink.textContent = "Live Monitor";
+      const audioLink = document.createElement("a");
+      audioLink.href = "/radio-audio";
+      audioLink.textContent = "Radio Audio";
       const currentPath = window.location.pathname.replace(/\/$/, "");
       if (currentPath === "/radio-activity") {
         monitorLink.setAttribute("aria-current", "page");
         radioFunLink.removeAttribute("aria-current");
+      } else if (currentPath === "/radio-audio") {
+        audioLink.setAttribute("aria-current", "page");
+        radioFunLink.removeAttribute("aria-current");
       } else if (currentPath === "/radio-fun") {
         radioFunLink.setAttribute("aria-current", "page");
       }
-      submenu.appendChild(monitorLink);
+      submenu.append(monitorLink, audioLink);
       const parentLink = radioFunLink.cloneNode(true);
       const toggle = document.createElement("button");
       const submenuId = "radio-fun-submenu";
