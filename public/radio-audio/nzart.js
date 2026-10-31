@@ -1,95 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const list = document.getElementById("nzart-list");
-  const count = document.getElementById("nzart-count");
-  const audio = document.getElementById("nzart-audio");
-  const title = document.getElementById("nzart-title");
-  const status = document.getElementById("nzart-status");
-  const download = document.getElementById("nzart-download");
-  let episodes = [];
-  let active = -1;
-
-  const safeAudioUrl = value => {
-    try {
-      const url = new URL(value);
-      return url.protocol === "https:" &&
-        (url.hostname === "nzart.org.nz" || url.hostname.endsWith(".nzart.org.nz")) &&
-        /\.mp3$/i.test(url.pathname) ? url.href : "";
-    } catch { return ""; }
-  };
-  const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({
-    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
-  })[char]);
-
-  function chooseEpisode(index, play) {
-    const episode = episodes[index];
-    if (!episode) return;
-    const url = safeAudioUrl(episode.audioUrl);
-    if (!url) {
-      status.textContent = "This episode does not have a valid audio link.";
-      return;
-    }
-    active = index;
-    audio.pause();
-    audio.src = url;
-    audio.load();
-    title.textContent = episode.title;
-    status.textContent = "Selected: " + episode.date + ". Press play to listen.";
-    download.href = url;
-    download.hidden = false;
-    list.querySelectorAll(".ra-episode").forEach(row => {
-      const selected = Number(row.dataset.index) === index;
-      row.classList.toggle("is-current", selected);
-      row.setAttribute("aria-pressed", String(selected));
-    });
-    if (play) {
-      const attempt = audio.play();
-      if (attempt && typeof attempt.then === "function") {
-        attempt.then(() => { status.textContent = "Playing " + episode.date; })
-          .catch(() => { status.textContent = "Playback was blocked or the audio source could not be loaded. Use the play button on the audio player to try again."; });
-      }
-    }
-  }
-
-  audio.addEventListener("playing", () => { status.textContent = "Now playing."; });
-  audio.addEventListener("pause", () => {
-    if (active >= 0 && audio.currentTime > 0 && !audio.ended) status.textContent = "Playback paused.";
-  });
-  audio.addEventListener("ended", () => {
-    if (active >= 0 && active < episodes.length - 1) chooseEpisode(active + 1, true);
-    else status.textContent = "You have reached the oldest broadcast in this archive.";
-  });
-  audio.addEventListener("error", () => {
-    status.textContent = "This audio file could not be played. Try another episode; the NZART source may be temporarily unavailable.";
-  });
-
-  fetch("/radio-audio/recordings.json?v=20261031-4", { cache: "no-store" })
-    .then(response => { if (!response.ok) throw new Error("Archive request failed"); return response.json(); })
-    .then(data => {
-      episodes = Array.isArray(data) ? data
-        .filter(episode => episode && episode.published && safeAudioUrl(episode.audioUrl) &&
-          /NZART Official Broadcast/i.test(episode.title))
-        .sort((a, b) => String(b.sortDate || "").localeCompare(String(a.sortDate || ""))) : [];
-      count.textContent = episodes.length + " monthly episodes";
-      if (!episodes.length) {
-        list.innerHTML = "<p>No playable episodes are currently listed.</p>";
-        status.textContent = "No episodes are available.";
-        return;
-      }
-      list.innerHTML = episodes.map((episode, index) =>
-        '<button class="ra-episode" type="button" data-index="' + index + '" aria-pressed="false">' +
-          '<span class="ra-episode-play" aria-hidden="true">▶</span>' +
-          '<span class="ra-episode-copy"><strong>' + escapeHtml(episode.title) + '</strong>' +
-          '<small>' + escapeHtml(episode.date) + '</small></span>' +
-          '<span class="ra-episode-action">Play</span></button>'
-      ).join("");
-      list.querySelectorAll(".ra-episode").forEach(row =>
-        row.addEventListener("click", () => chooseEpisode(Number(row.dataset.index), true))
-      );
-      // Load the newest episode into the player without autoplaying.
-      chooseEpisode(0, false);
-    })
-    .catch(() => {
-      list.innerHTML = "<p>The NZART archive could not be loaded. Please refresh the page.</p>";
-      status.textContent = "Unable to load the episode list.";
-    });
+  const $ = id => document.getElementById(id);
+  const audio=$("nzart-audio"), list=$("nzart-list"), title=$("nzart-title"), dateLabel=$("nzart-track-date"), status=$("nzart-status"), playerState=$("nzart-player-state"), playButton=$("nzart-play"), playIcon=$("nzart-play-icon"), seek=$("nzart-seek"), currentTime=$("nzart-current-time"), duration=$("nzart-duration"), volume=$("nzart-volume"), download=$("nzart-download"), search=$("nzart-search"), clearSearch=$("nzart-clear"), sortButton=$("nzart-sort"), count=$("nzart-count"), total=$("nzart-total"), resultsLabel=$("nzart-results-label");
+  let episodes=[], activeIndex=-1, oldestFirst=false, seeking=false, speedIndex=0;
+  const speeds=[1,1.25,1.5,1.75,2,.75];
+  const safeAudioUrl=value=>{try{const u=new URL(value);return u.protocol==="https:"&&(u.hostname==="nzart.org.nz"||u.hostname.endsWith(".nzart.org.nz"))&&/\.mp3$/i.test(u.pathname)?u.href:"";}catch{return"";}};
+  const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+  const formatTime=value=>{if(!Number.isFinite(value)||value<0)return"--:--";const n=Math.floor(value),h=Math.floor(n/3600),m=Math.floor(n%3600/60),s=n%60;return h?h+":"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0"):m+":"+String(s).padStart(2,"0");};
+  const episodeDate=e=>e.date||String(e.title||"").replace(/^NZART Offi(?:cial|cal) Broadcast\s*/i,"");
+  function setStatus(message,state="READY WHEN YOU ARE"){status.textContent=message;playerState.textContent=state;}
+  function updatePlayButton(playing){playIcon.textContent=playing?"Ⅱ":"▶";playButton.setAttribute("aria-label",playing?"Pause broadcast":"Play broadcast");}
+  function visibleEpisodes(){const q=search.value.trim().toLowerCase();return episodes.map((episode,index)=>({episode,index})).filter(({episode})=>!q||(String(episode.title||"")+" "+episodeDate(episode)+" "+String(episode.sortDate||"")).toLowerCase().includes(q)).sort((a,b)=>oldestFirst?String(a.episode.sortDate||"").localeCompare(String(b.episode.sortDate||"")):String(b.episode.sortDate||"").localeCompare(String(a.episode.sortDate||"")));}
+  function renderList(){const rows=visibleEpisodes();resultsLabel.textContent=oldestFirst?"OLDEST FIRST":"LATEST FIRST";clearSearch.hidden=!search.value;if(!rows.length){list.innerHTML='<div class="nzart-empty"><strong>No broadcasts found</strong><span>Try another month or year.</span></div>';return;}list.innerHTML=rows.map(({episode,index})=>{const selected=index===activeIndex;return'<button class="nzart-episode'+(selected?' is-active':'')+'" type="button" data-index="'+index+'" aria-current="'+(selected?'true':'false')+'"><span class="nzart-episode-number">'+String(index+1).padStart(2,"0")+'</span><span class="nzart-episode-copy"><strong>'+escapeHtml(episodeDate(episode)||episode.title)+'</strong><small>NZART Official Broadcast</small></span><span class="nzart-episode-play" aria-hidden="true">'+(selected&&!audio.paused?'Ⅱ':'▶')+'</span></button>';}).join("");list.querySelectorAll(".nzart-episode").forEach(button=>button.addEventListener("click",()=>selectEpisode(Number(button.dataset.index),true)));}
+  function selectEpisode(index,shouldPlay){const episode=episodes[index];if(!episode)return;const url=safeAudioUrl(episode.audioUrl);if(!url){setStatus("A playable audio link is not available for this broadcast.","AUDIO LINK UNAVAILABLE");return;}const same=activeIndex===index&&audio.src===url;activeIndex=index;if(!same){audio.pause();audio.src=url;audio.load();seek.value="0";currentTime.textContent="0:00";duration.textContent="--:--";seek.disabled=true;download.href=url;download.hidden=false;dateLabel.textContent="SELECTED BROADCAST";title.textContent=episode.title||("NZART Official Broadcast — "+episodeDate(episode));setStatus("Ready to play "+episodeDate(episode)+". Press Play when you're ready.");}renderList();if(shouldPlay)playAudio();else{playButton.disabled=false;playerState.textContent="READY TO PLAY";}}
+  async function playAudio(){if(activeIndex<0&&episodes.length)selectEpisode(0,false);if(!audio.src)return;try{await audio.play();}catch(error){if(error?.name==="NotAllowedError")setStatus("Your browser paused playback. Press Play again to start the broadcast.","PLAYBACK NEEDS A TAP");else setStatus("The browser could not start this audio. Open the original NZART file below if needed.","PLAYBACK ERROR");}}
+  function renderError(){const code=audio.error?.code||0;const messages={1:"Audio loading was cancelled. Press Play to try again.",2:"The connection to the NZART audio file was interrupted. Please try again.",3:"The audio file could not be decoded by this browser.",4:"This browser could not play the supplied audio format."};setStatus(messages[code]||"The broadcast could not be played. Open the original NZART file below if needed.","AUDIO UNAVAILABLE");playButton.disabled=false;}
+  async function loadEpisodes(){let data;try{const r=await fetch("/api/nzart-feed",{cache:"no-store"});if(!r.ok)throw Error("Live feed unavailable");const payload=await r.json();data=Array.isArray(payload.episodes)?payload.episodes:[];}catch{const r=await fetch("/radio-audio/recordings.json?v=20261031-4",{cache:"no-store"});if(!r.ok)throw Error("Archive unavailable");const fallback=await r.json();data=Array.isArray(fallback)?fallback:[];}episodes=data.filter(e=>e&&e.published!==false&&safeAudioUrl(e.audioUrl)&&/NZART Offi(?:cial|cal) Broadcast/i.test(String(e.title||""))).sort((a,b)=>String(b.sortDate||"").localeCompare(String(a.sortDate||"")));count.textContent=episodes.length+(episodes.length===1?" broadcast":" broadcasts");total.textContent=String(episodes.length).padStart(2,"0");if(!episodes.length){list.innerHTML='<div class="nzart-empty"><strong>No episodes are available right now</strong><span>Please try again later.</span></div>';setStatus("The NZART feed did not return any playable broadcasts.","ARCHIVE EMPTY");return;}renderList();selectEpisode(0,false);playerState.textContent="LATEST EPISODE READY";}
+  playButton.addEventListener("click",()=>audio.paused?playAudio():audio.pause());
+  $("nzart-back").addEventListener("click",()=>audio.currentTime=Math.max(0,audio.currentTime-15));
+  $("nzart-forward").addEventListener("click",()=>{if(Number.isFinite(audio.duration))audio.currentTime=Math.min(audio.duration,audio.currentTime+30);});
+  $("nzart-speed").addEventListener("click",event=>{speedIndex=(speedIndex+1)%speeds.length;audio.playbackRate=speeds[speedIndex];event.currentTarget.textContent=speeds[speedIndex]+"×";});
+  volume.addEventListener("input",()=>audio.volume=Number(volume.value));
+  seek.addEventListener("input",()=>{seeking=true;if(Number.isFinite(audio.duration))currentTime.textContent=formatTime(audio.duration*Number(seek.value)/1000);});
+  seek.addEventListener("change",()=>{if(Number.isFinite(audio.duration))audio.currentTime=audio.duration*Number(seek.value)/1000;seeking=false;});
+  search.addEventListener("input",renderList);clearSearch.addEventListener("click",()=>{search.value="";renderList();search.focus();});
+  sortButton.addEventListener("click",()=>{oldestFirst=!oldestFirst;sortButton.textContent=oldestFirst?"Newest first ↓":"Oldest first ↑";renderList();});
+  audio.addEventListener("loadedmetadata",()=>{duration.textContent=formatTime(audio.duration);seek.disabled=!Number.isFinite(audio.duration);playButton.disabled=false;$("nzart-back").disabled=false;$("nzart-forward").disabled=false;playerState.textContent="AUDIO READY";});
+  audio.addEventListener("timeupdate",()=>{currentTime.textContent=formatTime(audio.currentTime);if(!seeking&&Number.isFinite(audio.duration)&&audio.duration>0)seek.value=String(Math.round(audio.currentTime/audio.duration*1000));});
+  audio.addEventListener("play",()=>{updatePlayButton(true);renderList();});audio.addEventListener("pause",()=>{updatePlayButton(false);renderList();});
+  audio.addEventListener("playing",()=>setStatus("You're listening to "+episodeDate(episodes[activeIndex])+".","PLAYING"));
+  audio.addEventListener("waiting",()=>playerState.textContent="BUFFERING AUDIO…");
+  audio.addEventListener("ended",()=>{updatePlayButton(false);setStatus("You've reached the end of this broadcast. Choose another month to continue listening.","BROADCAST COMPLETE");});
+  audio.addEventListener("error",renderError);audio.volume=Number(volume.value);updatePlayButton(false);
+  loadEpisodes().catch(error=>{console.error("NZART archive error:",error);list.innerHTML='<div class="nzart-empty"><strong>The archive could not be loaded</strong><span>Please refresh the page in a moment.</span></div>';setStatus("The episode list could not be loaded. Please refresh to try again.","ARCHIVE CONNECTION ERROR");});
 });
