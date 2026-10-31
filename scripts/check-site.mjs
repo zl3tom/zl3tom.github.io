@@ -76,7 +76,7 @@ for (const filePath of htmlFiles) {
 
 const sitemap = await readFile(path.join(publicRoot, "sitemap.xml"), "utf8");
 const sitemapUrlCount = [...sitemap.matchAll(/<loc>https:\/\/zl3tom\.com[^<]*<\/loc>/g)].length;
-if (sitemapUrlCount !== 52) problems.push(`sitemap.xml has ${sitemapUrlCount} site URLs; expected 52.`);
+if (sitemapUrlCount !== 53) problems.push(`sitemap.xml has ${sitemapUrlCount} site URLs; expected 53.`);
 if (!sitemap.includes("<image:loc>https://zl3tom.com/social-preview.png</image:loc>")) problems.push("sitemap.xml is missing the social preview image.");
 if (!sitemap.includes("<loc>https://zl3tom.com/tools</loc>")) problems.push("sitemap.xml is missing the Radio Tools page.");
 
