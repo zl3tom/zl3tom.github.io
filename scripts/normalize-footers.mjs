@@ -32,7 +32,7 @@ for (const file of htmlFiles) {
   let next = html.replace(siteFooterPattern, footer);
   if (!/<script\\b[^>]*\\bsrc=["'][^"']*\\/script\\.js(?:[?#][^"']*)?["']/i.test(next)) {
     const sharedScript = '<script src="/script.js" defer></script>';
-    if (/<\\/body>/i.test(next)) {
+    if (/<\/body>/i.test(next)) {
       next = next.replace(/<\\/body>/i, `${sharedScript}\\n</body>`);
     } else {
       next += `\\n${sharedScript}\\n`;
