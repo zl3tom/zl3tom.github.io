@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.type = "button";
       toggle.className = "nav-submenu-toggle";
       toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-controls", "radio-fun-submenu");
       toggle.setAttribute("aria-label", "Toggle Radio Fun submenu");
       toggle.innerHTML = '<span aria-hidden="true">⌄</span>';
       toggle.addEventListener("click", (event) => {
