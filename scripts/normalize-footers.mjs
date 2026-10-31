@@ -22,6 +22,15 @@ let updated = 0;
 for (const file of htmlFiles) {
   let html = await readFile(file, "utf8");
 
+  // Put Radio Fun's child pages directly in the shared HTML navigation on every page.
+  html = html.replace(/(<nav\\b[^>]*id=["']main-navigation["'][^>]*>)([\\s\\S]*?)(<\\/nav>)/i, (match, open, nav, close) => {
+    if (/class=["'][^"']*nav-dropdown/.test(nav)) return match;
+    const radioFun = /<a\\b(?=[^>]*href=["']\\/radio-fun\\/?["'])[^>]*>[\\s\\S]*?<\\/a>/i;
+    if (!radioFun.test(nav)) return match;
+    const dropdown = nav.replace(radioFun, (link) => `<div class="nav-dropdown">${link}<button class="nav-submenu-toggle" type="button" aria-expanded="false" aria-controls="radio-fun-submenu" aria-label="Toggle Radio Fun submenu"><span aria-hidden="true">⌄</span></button><div class="nav-submenu" id="radio-fun-submenu" aria-label="Radio Fun pages"><a href="/radio-activity">Live Monitor</a><a href="/radio-audio">Radio Audio</a></div></div>`);
+    return open + dropdown + close;
+  });
+
   // Standardise the shared site footer wherever this page has one.
   const siteFooterPattern = /<footer\s+class=["']site-footer["'][^>]*>[\s\S]*?<\/footer>/i;
   if (siteFooterPattern.test(html)) html = html.replace(siteFooterPattern, footer);
