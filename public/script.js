@@ -43,6 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (dropdown) {
+      const submenuToggle = dropdown.querySelector(".nav-submenu-toggle");
+      if (submenuToggle && !submenuToggle.dataset.radioFunBound) {
+        submenuToggle.dataset.radioFunBound = "true";
+        submenuToggle.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          const isOpen = dropdown.classList.toggle("is-open");
+          submenuToggle.setAttribute("aria-expanded", String(isOpen));
+          submenuToggle.innerHTML = isOpen ? '<span aria-hidden="true">⌃</span>' : '<span aria-hidden="true">⌄</span>';
+        });
+      }
       let submenu = dropdown.querySelector(".nav-submenu");
       if (!submenu) {
         submenu = document.createElement("div");
