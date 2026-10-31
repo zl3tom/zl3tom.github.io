@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }));
   searchInput?.addEventListener("input", render);
 
-  fetch("/radio-audio/recordings.json", { cache: "no-store" })
+  fetch("/radio-audio/recordings.json?v=20261031-1", { cache: "no-store" })
     .then((response) => response.ok ? response.json() : [])
     .then((data) => {
       recordings = Array.isArray(data) ? data.filter((item) => item && item.published === true) : [];
