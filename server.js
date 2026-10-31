@@ -486,10 +486,10 @@ async function getNzartEpisodes() {
     });
     if (!upstream.ok) throw new Error("NZART podcast feed returned HTTP " + upstream.status);
     const xml = await upstream.text();
-    const episodes = [...xml.matchAll(/<item\\b[^>]*>([\\s\\S]*?)<\\/item>/gi)]
+    const episodes = [...xml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)]
       .map((match) => {
         const item = match[1];
-        const title = xmlTag(item, "title").replace(/\\s+/g, " ").trim();
+        const title = xmlTag(item, "title").replace(/\s+/g, " ").trim();
         const audioUrl = xmlMediaUrl(item);
         const publishedAt = xmlTag(item, "pubDate") || xmlTag(item, "dc:date");
         const safeUrl = (() => {
@@ -497,12 +497,12 @@ async function getNzartEpisodes() {
             const parsed = new URL(audioUrl);
             return parsed.protocol === "https:" &&
               (parsed.hostname === "nzart.org.nz" || parsed.hostname.endsWith(".nzart.org.nz")) &&
-              /\\.mp3$/i.test(parsed.pathname) ? parsed.href : "";
+              /\.mp3$/i.test(parsed.pathname) ? parsed.href : "";
           } catch { return ""; }
         })();
         const descriptionSource = xmlTag(item, "description") || xmlTag(item, "content:encoded") || "";
         const description = decodeXmlText(descriptionSource.replace(/<[^>]*>/g, " "))
-          .replace(/\\s+/g, " ")
+          .replace(/\s+/g, " ")
           .trim();
         const dates = nzartEpisodeDate(title, publishedAt);
         if (!safeUrl || !title) return null;
