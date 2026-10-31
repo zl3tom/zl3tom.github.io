@@ -7,10 +7,10 @@ const source = path.join(root, "scripts", "check-site.mjs");
 const runtime = path.join(root, "scripts", ".check-site-runtime.mjs");
 let code = await readFile(source, "utf8");
 code = code
-  .replace("sitemapUrlCount !== 40", "sitemapUrlCount !== 46")
-  .replace("expected 40.`", "expected 46.`")
-  .replace("guideCardCount !== 26", "guideCardCount !== 30")
-  .replace("expected 26.`", "expected 30.`");
+  .replace("sitemapUrlCount !== 52", "sitemapUrlCount !== 52")
+  .replace("expected 52.`", "expected 52.`")
+  .replace("guideCardCount !== 30", "guideCardCount !== 30")
+  .replace("expected 30.`", "expected 30.`");
 await writeFile(runtime, code);
 try { await import(`${pathToFileURL(runtime).href}?v=${Date.now()}`); }
 finally { await rm(runtime, { force: true }); }
