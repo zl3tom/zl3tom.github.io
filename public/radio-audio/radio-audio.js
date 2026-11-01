@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nzart = matching.some(r => r.category === "special" && /NZART Official Broadcast/i.test(r.title));
     const worldDay = matching.some(r => r.collectionSlug === "world-amateur-radio-day");
     const ariss = matching.some(r => r.collectionSlug === "ariss");
-    const other = matching.filter(r => !(r.category === "special" && /NZART Official Broadcast/i.test(r.title)) && r.collectionSlug !== "world-amateur-radio-day");
+    const other = matching.filter(r => !(r.category === "special" && /NZART Official Broadcast/i.test(r.title)) && r.collectionSlug !== "world-amateur-radio-day" && r.collectionSlug !== "ariss");
     const visibleCount = (nzart ? 1 : 0) + (worldDay ? 1 : 0) + (ariss ? 1 : 0) + other.length;
     if (count) count.textContent = visibleCount + (visibleCount === 1 ? " item shown" : " items shown");
     if (!list) return;
