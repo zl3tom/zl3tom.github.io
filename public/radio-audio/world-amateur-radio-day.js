@@ -1,0 +1,31 @@
+document.addEventListener("DOMContentLoaded",()=>{
+ const $=id=>document.getElementById(id),audio=$("ward-audio"),list=$("ward-list"),title=$("ward-title"),dateLabel=$("ward-track-date"),status=$("ward-status"),state=$("ward-player-state"),play=$("ward-play"),icon=$("ward-play-icon"),seek=$("ward-seek"),current=$("ward-current"),duration=$("ward-duration"),volume=$("ward-volume"),download=$("ward-download");
+ let recordings=[],active=-1,sourceIndex=0,seeking=false,speedIndex=0;const speeds=[1,1.25,1.5,1.75,2,.75];
+ const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+ const fmt=v=>{if(!Number.isFinite(v)||v<0)return"--:--";const n=Math.floor(v),h=Math.floor(n/3600),m=Math.floor(n%3600/60),s=n%60;return h?h+":"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0"):m+":"+String(s).padStart(2,"0")};
+ const sources=r=>[r.audioUrl,r.backupAudioUrl].filter(Boolean);
+ function message(text,label){status.textContent=text;if(label)state.textContent=label}
+ function render(){list.innerHTML=recordings.length?recordings.map((r,i)=>'<button class="nzart-episode'+(i===active?' is-active':'')+'" type="button" data-index="'+i+'" aria-current="'+(i===active?'true':'false')+'"><span class="nzart-episode-number">'+String(r.year||r.sortDate||"").slice(0,4)+'</span><span class="nzart-episode-copy"><strong>'+esc(r.title||("World Amateur Radio Day "+r.year))+'</strong><small class="nzart-episode-date">'+esc(r.date||r.year||"")+'</small>'+(r.description?'<span class="nzart-episode-description">'+esc(r.description)+'</span>':'')+'</span><span class="nzart-episode-play" aria-hidden="true">▶</span></button>').join(""):'<div class="nzart-empty"><strong>No recordings available yet</strong><span>New years will appear here when recordings are added.</span></div>';
+ list.querySelectorAll("button[data-index]").forEach(b=>b.addEventListener("click",()=>select(Number(b.dataset.index),false)));
+ }
+ function loadSource(r,index){sourceIndex=index;audio.src=sources(r)[index];audio.load();download.href=sources(r)[index]+"?download=1";download.hidden=false;download.textContent="Download "+(index===0?"primary audio":"backup audio")+" ↗";message(index===0?"Loading the recording…":"The primary audio did not load. Trying the backup file…",index===0?"LOADING AUDIO":"TRYING BACKUP");}
+ function select(i,autoPlay=false){const r=recordings[i];if(!r)return;active=i;audio.pause();audio.removeAttribute("src");seek.value="0";seek.disabled=true;current.textContent="0:00";duration.textContent="--:--";title.textContent=r.title||("World Amateur Radio Day "+r.year);dateLabel.textContent=String(r.date||r.year||"WORLD AMATEUR RADIO DAY").toUpperCase();loadSource(r,0);render();play.disabled=false;if(autoPlay)playAudio();}
+ async function playAudio(){if(active<0&&recordings.length)select(0,false);try{await audio.play()}catch(e){message(e?.name==="NotAllowedError"?"Press Play to start listening.":"The audio could not start. Try the backup or download link.","PLAYBACK NEEDS A TAP")}}
+ play.addEventListener("click",()=>audio.paused?playAudio():audio.pause());
+ $("ward-back").addEventListener("click",()=>audio.currentTime=Math.max(0,audio.currentTime-15));
+ $("ward-forward").addEventListener("click",()=>{if(Number.isFinite(audio.duration))audio.currentTime=Math.min(audio.duration,audio.currentTime+30)});
+ $("ward-speed").addEventListener("click",e=>{speedIndex=(speedIndex+1)%speeds.length;audio.playbackRate=speeds[speedIndex];e.currentTarget.textContent=speeds[speedIndex]+"×"});
+ volume.addEventListener("input",()=>audio.volume=Number(volume.value));
+ seek.addEventListener("input",()=>{seeking=true;if(Number.isFinite(audio.duration))current.textContent=fmt(audio.duration*Number(seek.value)/1000)});
+ seek.addEventListener("change",()=>{if(Number.isFinite(audio.duration))audio.currentTime=audio.duration*Number(seek.value)/1000;seeking=false});
+ audio.addEventListener("loadedmetadata",()=>{duration.textContent=fmt(audio.duration);seek.disabled=false;play.disabled=false;$("ward-back").disabled=false;$("ward-forward").disabled=false;message("Audio is ready. Press Play to listen.","AUDIO READY")});
+ audio.addEventListener("timeupdate",()=>{current.textContent=fmt(audio.currentTime);if(!seeking&&Number.isFinite(audio.duration)&&audio.duration>0)seek.value=String(Math.round(audio.currentTime/audio.duration*1000))});
+ audio.addEventListener("play",()=>{icon.textContent="Ⅱ";play.setAttribute("aria-label","Pause recording")});
+ audio.addEventListener("pause",()=>{icon.textContent="▶";play.setAttribute("aria-label","Play recording")});
+ audio.addEventListener("playing",()=>message("You're listening to "+(recordings[active]?.title||"World Amateur Radio Day")+".","PLAYING"));
+ audio.addEventListener("waiting",()=>state.textContent="BUFFERING AUDIO…");
+ audio.addEventListener("ended",()=>message("You've reached the end of this recording.","RECORDING COMPLETE"));
+ audio.addEventListener("error",()=>{const r=recordings[active];if(r&&sourceIndex===0&&sources(r).length>1){loadSource(r,1);return}message("This audio file could not be played in your browser. Try downloading it or check back later.","AUDIO UNAVAILABLE");play.disabled=false});
+ audio.volume=Number(volume.value);
+ fetch("/radio-audio/recordings.json?v=world-day-collection-1",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Archive unavailable");return r.json()}).then(data=>{recordings=(Array.isArray(data)?data:[]).filter(r=>r&&r.published===true&&r.collectionSlug==="world-amateur-radio-day").sort((a,b)=>Number(b.year||0)-Number(a.year||0));$("ward-total").textContent=String(recordings.length).padStart(2,"0");$("ward-count").textContent=recordings.length+(recordings.length===1?" recording":" recordings");render();if(recordings.length)select(0,false);else message("There are no published recordings in this collection yet.","ARCHIVE EMPTY")}).catch(e=>{console.error(e);list.innerHTML='<div class="nzart-empty"><strong>The collection could not be loaded</strong><span>Please refresh the page in a moment.</span></div>';message("The recording list could not be loaded.","ARCHIVE CONNECTION ERROR")});
+});
