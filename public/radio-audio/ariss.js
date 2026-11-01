@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const details=document.querySelector(".ariss-details");if(details){details.addEventListener("toggle",()=>{if(details.open)details.scrollIntoView({block:"nearest",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});});}});
