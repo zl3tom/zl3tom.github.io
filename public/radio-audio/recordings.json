@@ -826,5 +826,17 @@
     "imageUrl": "https://i.postimg.cc/gk4LtXHT/image.png",
     "collectionSlug": "world-amateur-radio-day",
     "year": 2019
+  },
+  {
+    "published": true,
+    "title": "ARISS Contact with Australian Students — 24 August 2020",
+    "description": "Australian students speak with NASA astronaut Chris Cassidy aboard the International Space Station, asking about science, astronaut training and daily life in orbit. The recording also includes an international amateur radio callback, with ZL3TOM among the stations heard.",
+    "date": "24 August 2020",
+    "sortDate": "2020-08-24",
+    "category": "events",
+    "categoryLabel": "ARISS · Radio Events",
+    "imageUrl": "https://i.postimg.cc/QMZ9YRyg/image.png",
+    "collectionSlug": "ariss",
+    "youtubeUrl": "https://www.youtube.com/watch?v=9IUDlHl4-yk"
   }
 ]
