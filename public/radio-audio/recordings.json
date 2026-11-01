@@ -816,14 +816,15 @@
   {
     "published": true,
     "title": "World Amateur Radio Day 2019",
-    "description": "A recording celebrating World Amateur Radio Day 2019, observed annually on 18 April.",
+    "description": "World Amateur Radio Day recording from 18 April 2019.",
     "date": "18 April 2019",
     "sortDate": "2019-04-18",
     "category": "events",
     "categoryLabel": "Radio Events",
-    "slug": "world-amateur-radio-day-2019",
     "audioUrl": "https://archive.org/download/w-2-w-world-amateur-radio-day-2019/tdbnz%20-%20W2W%20World%20Amateur%20Radio%20Day%202019.m4a",
     "backupAudioUrl": "https://archive.org/download/w-2-w-world-amateur-radio-day-2019/tdbnz%20-%20W2W%20World%20Amateur%20Radio%20Day%202019.mp3",
-    "imageUrl": "https://go.redpitaya.com/hubfs/world-amateur-radio-day-vector-10725703-1.jpg"
+    "imageUrl": "https://i.postimg.cc/gk4LtXHT/image.png",
+    "collectionSlug": "world-amateur-radio-day",
+    "year": 2019
   }
 ]
