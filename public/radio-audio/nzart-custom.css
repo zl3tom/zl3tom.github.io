@@ -7,3 +7,5 @@
 
 /* World Amateur Radio Day: visible per-recording download choices */
 .ward-recording-row{margin:0 0 12px;padding:0 0 12px;border-bottom:1px solid #e8eee9}.ward-recording-row:last-child{border-bottom:0}.ward-recording-row .nzart-episode{width:100%}.ward-recording-downloads,.ward-player-downloads{display:flex;flex-wrap:wrap;gap:8px;padding:8px 12px 0 54px}.ward-recording-downloads a,.ward-player-downloads a{display:inline-flex;align-items:center;gap:5px;padding:7px 11px;border:1px solid #b9d9c7;border-radius:8px;background:#effaf3;color:#0b7651;font-size:.76rem;font-weight:800;text-decoration:none}.ward-recording-downloads a:hover,.ward-player-downloads a:hover{background:#dff5e8;border-color:#0b9662}.ward-player-downloads{padding:0;justify-content:flex-end}.ra-collection-formats{margin-top:3px;color:#52675e;font-size:.76rem;font-weight:750}@media(max-width:620px){.ward-recording-downloads{padding-left:10px}.ward-player-downloads{justify-content:flex-start}}
+
+.nzart-episode-row{padding:0 0 10px;margin:0 0 10px;border-bottom:1px solid #e8eee9}.nzart-episode-row:last-child{border-bottom:0}.nzart-episode-row .nzart-episode{width:100%}
