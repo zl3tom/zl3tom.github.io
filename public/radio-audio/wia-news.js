@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const audio=$("wia-news-audio"), list=$("wia-news-list"), title=$("wia-news-title"), dateLabel=$("wia-news-track-date"), status=$("wia-news-status"), playerState=$("wia-news-player-state"), playButton=$("wia-news-play"), playIcon=$("wia-news-play-icon"), seek=$("wia-news-seek"), currentTime=$("wia-news-current-time"), duration=$("wia-news-duration"), volume=$("wia-news-volume"), download=$("wia-news-download"), search=$("wia-news-search"), clearSearch=$("wia-news-clear"), sortButton=$("wia-news-sort"), count=$("wia-news-count"), total=$("wia-news-total"), resultsLabel=$("wia-news-results-label");
   let episodes=[], activeIndex=-1, oldestFirst=false, seeking=false, speedIndex=0;
   const speeds=[1,1.25,1.5,1.75,2,.75];
-  const safeAudioUrl=value=>{try{const u=new URL(value);return u.protocol==="https:"&&(u.hostname==="wia-news.org.nz"||u.hostname.endsWith(".wia-news.org.nz"))&&/\.mp3$/i.test(u.pathname)?u.href:"";}catch{return"";}};
+  const safeAudioUrl=value=>{try{const u=new URL(value);return u.protocol==="https:"&&/\.mp3$/i.test(u.pathname)?u.href:"";}catch{return"";}};
   const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
   const formatTime=value=>{if(!Number.isFinite(value)||value<0)return"--:--";const n=Math.floor(value),h=Math.floor(n/3600),m=Math.floor(n%3600/60),s=n%60;return h?h+":"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0"):m+":"+String(s).padStart(2,"0");};
   const episodeDate=e=>e.date||"";
