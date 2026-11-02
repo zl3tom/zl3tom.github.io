@@ -514,7 +514,7 @@ async function getNzartEpisodes() {
           date: dates.date,
           publishedAt: dates.publishedAt,
           sortDate: dates.sortDate,
-          category: "special",
+          category: "news",
           categoryLabel: "NZART Official Broadcast",
           audioUrl: safeUrl,
           imageUrl: "https://i.postimg.cc/Hx5kLXwT/image.png"
