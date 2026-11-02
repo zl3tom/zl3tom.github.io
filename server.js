@@ -95,7 +95,7 @@ function setSecurityHeaders(response) {
   );
   response.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; media-src 'self' https://nzart.org.nz https://www.wia-files.com http://www.wia-files.com https://wia-files.com http://wia-files.com https://archive.org https://*.us.archive.org; frame-src https://nzart.netlify.app https://challenges.cloudflare.com https://logbook.qrz.com https://archive.org https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' https://i.postimg.cc https://s01.flagcounter.com https://*.tile.openstreetmap.org https://unpkg.com data:; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://unpkg.com https://cdn.socket.io; style-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.tile.openstreetmap.org https://api.brandmeister.network wss://api.brandmeister.network wss://hose.brandmeister.network https://radioid.net"
+    "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; media-src 'self' https://nzart.org.nz https://www.wia-files.com http://www.wia-files.com https://wia-files.com http://wia-files.com https://media.blubrry.com https://archive.org https://*.us.archive.org; frame-src https://nzart.netlify.app https://challenges.cloudflare.com https://logbook.qrz.com https://archive.org https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' https://i.postimg.cc https://s01.flagcounter.com https://*.tile.openstreetmap.org https://unpkg.com data:; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://unpkg.com https://cdn.socket.io; style-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.tile.openstreetmap.org https://api.brandmeister.network wss://api.brandmeister.network wss://hose.brandmeister.network https://radioid.net"
   );
 }
 
@@ -627,6 +627,35 @@ const server = createServer(async (request, response) => {
     } catch (error) {
       console.error("WIA News download failed:", error?.message || "Unknown error");
       sendJson(response, 502, { ok: false, message: "The WIA News download is temporarily unavailable." });
+    }
+    return;
+  }
+
+
+  if (requestUrl.pathname === "/api/arrl-on-air-feed" && (request.method === "GET" || request.method === "HEAD")) {
+    try {
+      const episodes = await getArrlOnAirEpisodes();
+      sendJson(response, 200, { ok: true, source: arrlOnAirFeedUrl, fetchedAt: new Date(arrlOnAirCache.fetchedAt).toISOString(), episodes },
+        { "Cache-Control": "public, max-age=300, stale-while-revalidate=900" });
+    } catch (error) {
+      console.error("ARRL On The Air feed unavailable:", error?.message || "Unknown feed error");
+      sendJson(response, 502, { ok: false, message: "The ARRL On The Air podcast feed is temporarily unavailable." });
+    }
+    return;
+  }
+
+  if (requestUrl.pathname === "/api/arrl-on-air-download" && (request.method === "GET" || request.method === "HEAD")) {
+    const audioUrl = arrlSafeAudioUrl(requestUrl.searchParams.get("url") || "");
+    if (!audioUrl) { sendJson(response, 400, { ok: false, message: "Invalid ARRL podcast download URL." }); return; }
+    try {
+      const upstream = await fetch(audioUrl, { headers: { "User-Agent": "ZL3TOM-Radio-Archive/1.0 (+https://zl3tom.com)" } });
+      if (!upstream.ok || !upstream.body) throw new Error("ARRL audio file unavailable");
+      response.writeHead(200, { "Content-Type": "audio/mpeg", "Content-Disposition": 'attachment; filename="ARRL-On-The-Air.mp3"', "Cache-Control": "private, max-age=3600" });
+      if (request.method === "HEAD") { response.end(); return; }
+      Readable.fromWeb(upstream.body).pipe(response);
+    } catch (error) {
+      console.error("ARRL download failed:", error?.message || "Unknown error");
+      sendJson(response, 502, { ok: false, message: "The ARRL audio download is temporarily unavailable." });
     }
     return;
   }
