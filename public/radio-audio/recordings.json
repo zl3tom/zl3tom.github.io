@@ -1,6 +1,17 @@
 [
   {
     "published": true,
+    "title": "WIA News — Audio & Video Archive",
+    "description": "Automatically updated WIA News podcast archive with audio streaming, MP3 downloads and matching YouTube video editions.",
+    "date": "Live podcast collection",
+    "sortDate": "2026-11",
+    "category": "special",
+    "categoryLabel": "WIA News Podcast",
+    "collectionSlug": "wia-news",
+    "imageUrl": "https://i.postimg.cc/G2VKvJky/image.png"
+  },
+  {
+    "published": true,
     "title": "NZART Official Broadcast October 2026",
     "description": "The official NZART monthly amateur radio broadcast for October 2026.",
     "date": "October 2026",
