@@ -76,7 +76,7 @@ for (const filePath of htmlFiles) {
 
 const sitemap = await readFile(path.join(publicRoot, "sitemap.xml"), "utf8");
 const sitemapUrlCount = [...sitemap.matchAll(/<loc>https:\/\/zl3tom\.com[^<]*<\/loc>/g)].length;
-if (sitemapUrlCount !== 58) problems.push(`sitemap.xml has ${sitemapUrlCount} site URLs; expected 58.`);
+if (sitemapUrlCount === 0) problems.push("sitemap.xml contains no site URLs.");
 if (!sitemap.includes("<image:loc>https://zl3tom.com/social-preview.png</image:loc>")) problems.push("sitemap.xml is missing the social preview image.");
 if (!sitemap.includes("<loc>https://zl3tom.com/tools</loc>")) problems.push("sitemap.xml is missing the Radio Tools page.");
 
@@ -106,8 +106,8 @@ for (const [slug, titleNeedle] of [
 
 try {
   const searchIndex = JSON.parse(await readFile(path.join(publicRoot, "search-index.json"), "utf8"));
-  if (searchIndex.length !== sitemapUrlCount) problems.push(`The full-content search index has ${searchIndex.length} pages; expected ${sitemapUrlCount}.`);
-  for (const page of searchIndex) if (!page.title || !page.url || !page.content || page.content.length < 40) problems.push(`The search entry for ${page.url || "an unknown page"} is incomplete.`);
+  if (searchIndex.length !== sitemapUrlCount) problems.push(`The full-content search index has ${searchIndex.length} pages; sitemap.xml has ${sitemapUrlCount} URLs.`);
+  for (const page of searchIndex) { if (!page.title || !page.url || !page.content || page.content.length < 40) problems.push(`The search entry for ${page.url || "an unknown page"} is incomplete.`); if (!sitemap.includes(`<loc>https://zl3tom.com${page.url}</loc>`)) problems.push(`sitemap.xml is missing the searchable page ${page.url}.`); }
 } catch { problems.push("search-index.json is missing or invalid."); }
 
 const radioPage = await readFile(path.join(publicRoot, "radio-fun.html"), "utf8");
