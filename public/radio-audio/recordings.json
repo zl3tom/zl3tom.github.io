@@ -5,7 +5,7 @@
     "description": "Weekly amateur radio news and events from ARRL, the National Association for Amateur Radio.",
     "date": "Weekly podcast collection",
     "sortDate": "2026-11",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "ARRL Audio News",
     "collectionSlug": "arrl-audio-news",
     "imageUrl": "https://assets.blubrry.com/coverart/orig/28672-252658.jpg"
@@ -16,7 +16,7 @@
     "description": "The monthly On the Air podcast is a companion to ARRL’s magazine for beginner-to-intermediate amateur radio operators.",
     "date": "Weekly podcast collection",
     "sortDate": "2026-11",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "ARRL - On The Air",
     "collectionSlug": "arrl-on-the-air",
     "imageUrl": "https://i.postimg.cc/2j16Sp2q/a-HR0c-HM6Ly9hc3Nld-HMu-Ymx1Yn-Jye-S5jb20v-Y292ZXJhcn-Qvb3Jp-Zy85Mz-A0NDkt-Nz-Ix-Nj-Mx-Lmpw-Zw.webp"
@@ -27,7 +27,7 @@
     "description": "WIA News from Australia",
     "date": "Live podcast collection",
     "sortDate": "2026-11",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "WIA News",
     "collectionSlug": "wia-news",
     "imageUrl": "https://i.postimg.cc/G2VKvJky/image.png"
@@ -38,7 +38,7 @@
     "description": "The official NZART monthly amateur radio broadcast for October 2026.",
     "date": "October 2026",
     "sortDate": "2026-10",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/2026/10/NZART_Official_Broadcast-2026-10.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -49,7 +49,7 @@
     "description": "The official NZART monthly amateur radio broadcast for September 2026.",
     "date": "September 2026",
     "sortDate": "2026-09",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/2026/09/NZART_Official_Broadcast-2026-09.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -60,7 +60,7 @@
     "description": "The official NZART monthly amateur radio broadcast for August 2026.",
     "date": "August 2026",
     "sortDate": "2026-08",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/2026/09/NZART_Official_Broadcast-2026-08.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -71,7 +71,7 @@
     "description": "The official NZART monthly amateur radio broadcast for July 2026.",
     "date": "July 2026",
     "sortDate": "2026-07",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/2026/07/NZART_Official_Broadcast-2026-07.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -82,7 +82,7 @@
     "description": "The official NZART monthly amateur radio broadcast for June 2026.",
     "date": "June 2026",
     "sortDate": "2026-06",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/2026/06/NZART_Official_Broadcast-2026-06.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -93,7 +93,7 @@
     "description": "The official NZART monthly amateur radio broadcast for May 2026.",
     "date": "May 2026",
     "sortDate": "2026-05",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/2026/05/NZART_Official_Broadcast-2026-05.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -104,7 +104,7 @@
     "description": "The official NZART monthly amateur radio broadcast for April 2026.",
     "date": "April 2026",
     "sortDate": "2026-04",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/2026/04/NZART_Official_Broadcast-2026-04.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -115,7 +115,7 @@
     "description": "The official NZART monthly amateur radio broadcast for March 2026.",
     "date": "March 2026",
     "sortDate": "2026-03",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/2026/03/NZART_Official_Broadcast-2026-03.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -126,7 +126,7 @@
     "description": "The official NZART monthly amateur radio broadcast for December 2025.",
     "date": "December 2025",
     "sortDate": "2025-12",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/2025/12/NZART_Official_Broadcast-2025-12.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -137,7 +137,7 @@
     "description": "The official NZART monthly amateur radio broadcast for November 2025.",
     "date": "November 2025",
     "sortDate": "2025-11",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/2025/12/NZART_Official_Broadcast-2025-11.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -148,7 +148,7 @@
     "description": "The official NZART monthly amateur radio broadcast for October 2025.",
     "date": "October 2025",
     "sortDate": "2025-10",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/2025/10/NZART_Official_Broadcast-2025-10.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -159,7 +159,7 @@
     "description": "The official NZART monthly amateur radio broadcast for September 2025.",
     "date": "September 2025",
     "sortDate": "2025-09",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2025-09.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -170,7 +170,7 @@
     "description": "The official NZART monthly amateur radio broadcast for August 2025.",
     "date": "August 2025",
     "sortDate": "2025-08",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2025-08.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -181,7 +181,7 @@
     "description": "The official NZART monthly amateur radio broadcast for July 2025.",
     "date": "July 2025",
     "sortDate": "2025-07",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART-Official-Broadcast-July-2025.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -192,7 +192,7 @@
     "description": "The official NZART monthly amateur radio broadcast for June 2025.",
     "date": "June 2025",
     "sortDate": "2025-06",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2025-06.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -203,7 +203,7 @@
     "description": "The official NZART monthly amateur radio broadcast for May 2025.",
     "date": "May 2025",
     "sortDate": "2025-05",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2025-05.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -214,7 +214,7 @@
     "description": "The official NZART monthly amateur radio broadcast for April 2025.",
     "date": "April 2025",
     "sortDate": "2025-04",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2025-04.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -225,7 +225,7 @@
     "description": "The official NZART monthly amateur radio broadcast for March 2025.",
     "date": "March 2025",
     "sortDate": "2025-03",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2025-03.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -236,7 +236,7 @@
     "description": "The official NZART monthly amateur radio broadcast for February 2025.",
     "date": "February 2025",
     "sortDate": "2025-02",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART-Official-Broadcast-2025-02.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -247,7 +247,7 @@
     "description": "The official NZART monthly amateur radio broadcast for December 2024.",
     "date": "December 2024",
     "sortDate": "2024-12",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2024-12.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -258,7 +258,7 @@
     "description": "The official NZART monthly amateur radio broadcast for November 2024.",
     "date": "November 2024",
     "sortDate": "2024-11",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2024-11.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -269,7 +269,7 @@
     "description": "The official NZART monthly amateur radio broadcast for October 2024.",
     "date": "October 2024",
     "sortDate": "2024-10",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2024-10.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -280,7 +280,7 @@
     "description": "The official NZART monthly amateur radio broadcast for September 2024.",
     "date": "September 2024",
     "sortDate": "2024-09",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2024-09.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -291,7 +291,7 @@
     "description": "The official NZART monthly amateur radio broadcast for August 2024.",
     "date": "August 2024",
     "sortDate": "2024-08",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2024-08.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -302,7 +302,7 @@
     "description": "The official NZART monthly amateur radio broadcast for July 2024.",
     "date": "July 2024",
     "sortDate": "2024-07",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2024-07.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -313,7 +313,7 @@
     "description": "The official NZART monthly amateur radio broadcast for June 2024.",
     "date": "June 2024",
     "sortDate": "2024-06",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2024-06.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -324,7 +324,7 @@
     "description": "The official NZART monthly amateur radio broadcast for May 2024.",
     "date": "May 2024",
     "sortDate": "2024-05",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2024-05.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -335,7 +335,7 @@
     "description": "The official NZART monthly amateur radio broadcast for April 2024.",
     "date": "April 2024",
     "sortDate": "2024-04",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2024-04.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -346,7 +346,7 @@
     "description": "The official NZART monthly amateur radio broadcast for March 2024.",
     "date": "March 2024",
     "sortDate": "2024-03",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2024-03.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -357,7 +357,7 @@
     "description": "The official NZART monthly amateur radio broadcast for February 2024.",
     "date": "February 2024",
     "sortDate": "2024-02",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2024-02.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -368,7 +368,7 @@
     "description": "The official NZART monthly amateur radio broadcast for December 2023.",
     "date": "December 2023",
     "sortDate": "2023-12",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2023-12.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -379,7 +379,7 @@
     "description": "The official NZART monthly amateur radio broadcast for November 2023.",
     "date": "November 2023",
     "sortDate": "2023-11",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2023-11.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -390,7 +390,7 @@
     "description": "The official NZART monthly amateur radio broadcast for October 2023.",
     "date": "October 2023",
     "sortDate": "2023-10",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2023-10.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -401,7 +401,7 @@
     "description": "The official NZART monthly amateur radio broadcast for September 2023.",
     "date": "September 2023",
     "sortDate": "2023-09",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2023-09.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -412,7 +412,7 @@
     "description": "The official NZART monthly amateur radio broadcast for August 2023.",
     "date": "August 2023",
     "sortDate": "2023-08",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2023-08.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -423,7 +423,7 @@
     "description": "The official NZART monthly amateur radio broadcast for July 2023.",
     "date": "July 2023",
     "sortDate": "2023-07",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2023-07.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -434,7 +434,7 @@
     "description": "The official NZART monthly amateur radio broadcast for June 2023.",
     "date": "June 2023",
     "sortDate": "2023-06",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2023-06.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -445,7 +445,7 @@
     "description": "The official NZART monthly amateur radio broadcast for May 2023.",
     "date": "May 2023",
     "sortDate": "2023-05",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2023-05.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -456,7 +456,7 @@
     "description": "The official NZART monthly amateur radio broadcast for April 2023.",
     "date": "April 2023",
     "sortDate": "2023-04",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2023-04.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -467,7 +467,7 @@
     "description": "The official NZART monthly amateur radio broadcast for March 2023.",
     "date": "March 2023",
     "sortDate": "2023-03",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2023-03.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -478,7 +478,7 @@
     "description": "The official NZART monthly amateur radio broadcast for February 2023.",
     "date": "February 2023",
     "sortDate": "2023-02",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2023-02.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -489,7 +489,7 @@
     "description": "The official NZART monthly amateur radio broadcast for December 2022.",
     "date": "December 2022",
     "sortDate": "2022-12",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2022-12.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -500,7 +500,7 @@
     "description": "The official NZART monthly amateur radio broadcast for November 2022.",
     "date": "November 2022",
     "sortDate": "2022-11",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2022-11.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -511,7 +511,7 @@
     "description": "The official NZART monthly amateur radio broadcast for October 2022.",
     "date": "October 2022",
     "sortDate": "2022-10",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2022-10.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -522,7 +522,7 @@
     "description": "The official NZART monthly amateur radio broadcast for September 2022.",
     "date": "September 2022",
     "sortDate": "2022-09",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2022-09.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -533,7 +533,7 @@
     "description": "The official NZART monthly amateur radio broadcast for August 2022.",
     "date": "August 2022",
     "sortDate": "2022-08",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2022-08.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -544,7 +544,7 @@
     "description": "The official NZART monthly amateur radio broadcast for July 2022.",
     "date": "July 2022",
     "sortDate": "2022-07",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2022-07.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -555,7 +555,7 @@
     "description": "The official NZART monthly amateur radio broadcast for June 2022.",
     "date": "June 2022",
     "sortDate": "2022-06",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2022-06.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -566,7 +566,7 @@
     "description": "The official NZART monthly amateur radio broadcast for May 2022.",
     "date": "May 2022",
     "sortDate": "2022-05",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2022-05.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -577,7 +577,7 @@
     "description": "The official NZART monthly amateur radio broadcast for April 2022.",
     "date": "April 2022",
     "sortDate": "2022-04",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2022-04.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -588,7 +588,7 @@
     "description": "The official NZART monthly amateur radio broadcast for March 2022.",
     "date": "March 2022",
     "sortDate": "2022-03",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2022-03.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -599,7 +599,7 @@
     "description": "The official NZART monthly amateur radio broadcast for February 2022.",
     "date": "February 2022",
     "sortDate": "2022-02",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2022-02.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -610,7 +610,7 @@
     "description": "The official NZART monthly amateur radio broadcast for December 2021.",
     "date": "December 2021",
     "sortDate": "2021-12",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2021-12.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -621,7 +621,7 @@
     "description": "The official NZART monthly amateur radio broadcast for November 2021.",
     "date": "November 2021",
     "sortDate": "2021-11",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2021-11.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -632,7 +632,7 @@
     "description": "The official NZART monthly amateur radio broadcast for October 2021.",
     "date": "October 2021",
     "sortDate": "2021-10",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2021-10.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -643,7 +643,7 @@
     "description": "The official NZART monthly amateur radio broadcast for September 2021.",
     "date": "September 2021",
     "sortDate": "2021-09",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2021-09.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -654,7 +654,7 @@
     "description": "The official NZART monthly amateur radio broadcast for August 2021.",
     "date": "August 2021",
     "sortDate": "2021-08",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2021-08.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -665,7 +665,7 @@
     "description": "The official NZART monthly amateur radio broadcast for July 2021.",
     "date": "July 2021",
     "sortDate": "2021-07",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2021-07.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -676,7 +676,7 @@
     "description": "The official NZART monthly amateur radio broadcast for June 2021.",
     "date": "June 2021",
     "sortDate": "2021-06",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2021-06.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -687,7 +687,7 @@
     "description": "The official NZART monthly amateur radio broadcast for May 2021.",
     "date": "May 2021",
     "sortDate": "2021-05",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2021-05.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -698,7 +698,7 @@
     "description": "The official NZART monthly amateur radio broadcast for April 2021.",
     "date": "April 2021",
     "sortDate": "2021-04",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2021-04.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -709,7 +709,7 @@
     "description": "The official NZART monthly amateur radio broadcast for March 2021.",
     "date": "March 2021",
     "sortDate": "2021-03",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2021-03.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -720,7 +720,7 @@
     "description": "The official NZART monthly amateur radio broadcast for February 2021.",
     "date": "February 2021",
     "sortDate": "2021-02",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2021-02.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -731,7 +731,7 @@
     "description": "The official NZART monthly amateur radio broadcast for December 2020.",
     "date": "December 2020",
     "sortDate": "2020-12",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2020-12.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -742,7 +742,7 @@
     "description": "The official NZART monthly amateur radio broadcast for November 2020.",
     "date": "November 2020",
     "sortDate": "2020-11",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2020-11.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -753,7 +753,7 @@
     "description": "The official NZART monthly amateur radio broadcast for October 2020.",
     "date": "October 2020",
     "sortDate": "2020-10",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2020-10.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -764,7 +764,7 @@
     "description": "The official NZART monthly amateur radio broadcast for September 2020.",
     "date": "September 2020",
     "sortDate": "2020-09",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2020-09.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -775,7 +775,7 @@
     "description": "The official NZART monthly amateur radio broadcast for August 2020.",
     "date": "August 2020",
     "sortDate": "2020-08",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2020-08.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -786,7 +786,7 @@
     "description": "The official NZART monthly amateur radio broadcast for July 2020.",
     "date": "July 2020",
     "sortDate": "2020-07",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2020-07.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -797,7 +797,7 @@
     "description": "The official NZART monthly amateur radio broadcast for June 2020.",
     "date": "June 2020",
     "sortDate": "2020-06",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2020-06.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -808,7 +808,7 @@
     "description": "The official NZART monthly amateur radio broadcast for May 2020.",
     "date": "May 2020",
     "sortDate": "2020-05",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2020-05.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -819,7 +819,7 @@
     "description": "The official NZART monthly amateur radio broadcast for April 2020.",
     "date": "April 2020",
     "sortDate": "2020-04",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2020-04.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -830,7 +830,7 @@
     "description": "The official NZART monthly amateur radio broadcast for March 2020.",
     "date": "March 2020",
     "sortDate": "2020-03",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2020-03.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
@@ -841,7 +841,7 @@
     "description": "The official NZART monthly amateur radio broadcast for February 2020.",
     "date": "February 2020",
     "sortDate": "2020-02",
-    "category": "special",
+    "category": "news",
     "categoryLabel": "NZART Official Broadcast",
     "audioUrl": "https://nzart.org.nz/wp-content/uploads/ob-media/NZART_Official_Broadcast-2020-02.mp3?ptm_source=feed&ptm_context=ob",
     "imageUrl": "https://i.postimg.cc/Hx5kLXwT/image.png"
