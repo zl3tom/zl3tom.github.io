@@ -1,12 +1,12 @@
 [
   {
     "published": true,
-    "title": "WIA News — Audio & Video Archive",
-    "description": "Automatically updated WIA News podcast archive with audio streaming, MP3 downloads and matching YouTube video editions.",
+    "title": "WIA News",
+    "description": "WIA News from Australia",
     "date": "Live podcast collection",
     "sortDate": "2026-11",
     "category": "special",
-    "categoryLabel": "WIA News Podcast",
+    "categoryLabel": "WIA News",
     "collectionSlug": "wia-news",
     "imageUrl": "https://i.postimg.cc/G2VKvJky/image.png"
   },
