@@ -564,6 +564,46 @@ async function getWiaNewsEpisodes() {
   } finally {clearTimeout(timeout);}
 }
 
+
+const arrlOnAirFeedUrl = "https://feeds.blubrry.com/feeds/arrlontheair.xml";
+let arrlOnAirCache = { fetchedAt: 0, episodes: [] };
+function arrlSafeAudioUrl(value) {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:" || url.hostname.toLowerCase() !== "media.blubrry.com" || !/\.mp3$/i.test(url.pathname)) return "";
+    return url.href;
+  } catch { return ""; }
+}
+async function getArrlOnAirEpisodes() {
+  if (Date.now() - arrlOnAirCache.fetchedAt < 10 * 60 * 1000 && arrlOnAirCache.episodes.length) return arrlOnAirCache.episodes;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+  try {
+    const upstream = await fetch(arrlOnAirFeedUrl, { signal: controller.signal, headers: {
+      "User-Agent": "ZL3TOM-Radio-Archive/1.0 (+https://zl3tom.com)",
+      "Accept": "application/rss+xml, application/xml, text/xml"
+    }});
+    if (!upstream.ok) throw new Error("ARRL RSS returned HTTP " + upstream.status);
+    const xml = await upstream.text();
+    const episodes = [...xml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)].map(match => {
+      const item = match[1];
+      const title = xmlTag(item, "title").replace(/\s+/g, " ").trim();
+      const audioUrl = arrlSafeAudioUrl(xmlMediaUrl(item));
+      const publishedAt = xmlTag(item, "pubDate") || xmlTag(item, "dc:date");
+      const descriptionSource = xmlTag(item, "description") || xmlTag(item, "content:encoded") || "";
+      const description = decodeXmlText(descriptionSource.replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+      if (!title || !audioUrl) return null;
+      const dates = wiaEpisodeDate(title, publishedAt);
+      return { published: true, title, description, date: dates.date, publishedAt: dates.publishedAt, sortDate: dates.sortDate,
+        category: "special", categoryLabel: "ARRL - On The Air", audioUrl,
+        imageUrl: "https://i.postimg.cc/2j16Sp2q/a-HR0c-HM6Ly9hc3Nld-HMu-Ymx1Yn-Jye-S5jb20v-Y292ZXJhcn-Qvb3Jp-Zy85Mz-A0NDkt-Nz-Ix-Nj-Mx-Lmpw-Zw.webp" };
+    }).filter(Boolean).sort((a,b) => String(b.sortDate || "").localeCompare(String(a.sortDate || "")));
+    if (!episodes.length) throw new Error("ARRL RSS contained no playable MP3 episodes");
+    arrlOnAirCache = { fetchedAt: Date.now(), episodes };
+    return episodes;
+  } finally { clearTimeout(timeout); }
+}
+
 const server = createServer(async (request, response) => {
   setSecurityHeaders(response);
   const requestUrl = new URL(request.url || "/", `http://${request.headers.host || "localhost"}`);
