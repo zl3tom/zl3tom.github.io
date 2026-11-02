@@ -95,7 +95,7 @@ function setSecurityHeaders(response) {
   );
   response.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; media-src 'self' https://nzart.org.nz https://www.wia-files.com http://www.wia-files.com https://wia-files.com http://wia-files.com https://media.blubrry.com https://content.blubrry.com https://archive.org https://*.us.archive.org; frame-src https://nzart.netlify.app https://challenges.cloudflare.com https://logbook.qrz.com https://archive.org https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' https://i.postimg.cc https://s01.flagcounter.com https://*.tile.openstreetmap.org https://unpkg.com data:; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://unpkg.com https://cdn.socket.io; style-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.tile.openstreetmap.org https://api.brandmeister.network wss://api.brandmeister.network wss://hose.brandmeister.network https://radioid.net"
+    "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; media-src 'self' https://nzart.org.nz https://www.wia-files.com http://www.wia-files.com https://wia-files.com http://wia-files.com https://media.blubrry.com https://content.blubrry.com https://assets.blubrry.com https://archive.org https://*.us.archive.org; frame-src https://nzart.netlify.app https://challenges.cloudflare.com https://logbook.qrz.com https://archive.org https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' https://i.postimg.cc https://s01.flagcounter.com https://*.tile.openstreetmap.org https://unpkg.com data:; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://unpkg.com https://cdn.socket.io; style-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.tile.openstreetmap.org https://api.brandmeister.network wss://api.brandmeister.network wss://hose.brandmeister.network https://radioid.net"
   );
 }
 
@@ -604,6 +604,47 @@ async function getArrlOnAirEpisodes() {
   } finally { clearTimeout(timeout); }
 }
 
+
+const arrlAudioNewsFeedUrl = "https://feeds.blubrry.com/feeds/arrlaudionews.xml";
+let arrlAudioNewsCache = { fetchedAt: 0, episodes: [] };
+function arrlAudioNewsSafeUrl(value) {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:" || url.hostname.toLowerCase() !== "media.blubrry.com" ||
+        !/^\/arrlaudionews\/content\.blubrry\.com\/arrlaudionews\/[^/]+\.mp3$/i.test(url.pathname)) return "";
+    return url.href;
+  } catch { return ""; }
+}
+async function getArrlAudioNewsEpisodes() {
+  if (Date.now() - arrlAudioNewsCache.fetchedAt < 10 * 60 * 1000 && arrlAudioNewsCache.episodes.length) return arrlAudioNewsCache.episodes;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+  try {
+    const upstream = await fetch(arrlAudioNewsFeedUrl, { signal: controller.signal, headers: {
+      "User-Agent": "ZL3TOM-Radio-Archive/1.0 (+https://zl3tom.com)",
+      "Accept": "application/rss+xml, application/xml, text/xml"
+    }});
+    if (!upstream.ok) throw new Error("ARRL Audio News RSS returned HTTP " + upstream.status);
+    const xml = await upstream.text();
+    const episodes = [...xml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)].map(match => {
+      const item = match[1];
+      const title = xmlTag(item, "title").replace(/\s+/g, " ").trim();
+      const audioUrl = arrlAudioNewsSafeUrl(xmlMediaUrl(item));
+      const publishedAt = xmlTag(item, "pubDate") || xmlTag(item, "dc:date");
+      const descriptionSource = xmlTag(item, "description") || xmlTag(item, "content:encoded") || "";
+      const description = decodeXmlText(descriptionSource.replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+      if (!title || !audioUrl) return null;
+      const dates = wiaEpisodeDate(title, publishedAt);
+      return { published: true, title, description, date: dates.date, publishedAt: dates.publishedAt, sortDate: dates.sortDate,
+        category: "special", categoryLabel: "ARRL Audio News", audioUrl,
+        imageUrl: "https://assets.blubrry.com/coverart/orig/28672-252658.jpg" };
+    }).filter(Boolean).sort((a,b) => String(b.sortDate || "").localeCompare(String(a.sortDate || "")));
+    if (!episodes.length) throw new Error("ARRL Audio News RSS contained no playable MP3 episodes");
+    arrlAudioNewsCache = { fetchedAt: Date.now(), episodes };
+    return episodes;
+  } finally { clearTimeout(timeout); }
+}
+
 const server = createServer(async (request, response) => {
   setSecurityHeaders(response);
   const requestUrl = new URL(request.url || "/", `http://${request.headers.host || "localhost"}`);
@@ -696,6 +737,35 @@ const server = createServer(async (request, response) => {
     } catch (error) {
       console.error("ARRL download failed:", error?.message || "Unknown error");
       sendJson(response, 502, { ok: false, message: "The ARRL audio download is temporarily unavailable." });
+    }
+    return;
+  }
+
+
+  if (requestUrl.pathname === "/api/arrl-audio-news-feed" && (request.method === "GET" || request.method === "HEAD")) {
+    try {
+      const episodes = await getArrlAudioNewsEpisodes();
+      sendJson(response, 200, { ok: true, source: arrlAudioNewsFeedUrl, fetchedAt: new Date(arrlAudioNewsCache.fetchedAt).toISOString(), episodes },
+        { "Cache-Control": "public, max-age=300, stale-while-revalidate=900" });
+    } catch (error) {
+      console.error("ARRL Audio News feed unavailable:", error?.message || "Unknown feed error");
+      sendJson(response, 502, { ok: false, message: "The ARRL Audio News podcast feed is temporarily unavailable." });
+    }
+    return;
+  }
+
+  if (requestUrl.pathname === "/api/arrl-audio-news-download" && (request.method === "GET" || request.method === "HEAD")) {
+    const audioUrl = arrlAudioNewsSafeUrl(requestUrl.searchParams.get("url") || "");
+    if (!audioUrl) { sendJson(response, 400, { ok: false, message: "Invalid ARRL Audio News download URL." }); return; }
+    try {
+      const upstream = await fetch(audioUrl, { headers: { "User-Agent": "ZL3TOM-Radio-Archive/1.0 (+https://zl3tom.com)" } });
+      if (!upstream.ok || !upstream.body) throw new Error("ARRL Audio News file unavailable");
+      response.writeHead(200, { "Content-Type": "audio/mpeg", "Content-Disposition": 'attachment; filename="ARRL-Audio-News.mp3"', "Cache-Control": "private, max-age=3600" });
+      if (request.method === "HEAD") { response.end(); return; }
+      Readable.fromWeb(upstream.body).pipe(response);
+    } catch (error) {
+      console.error("ARRL Audio News download failed:", error?.message || "Unknown error");
+      sendJson(response, 502, { ok: false, message: "The ARRL Audio News download is temporarily unavailable." });
     }
     return;
   }
