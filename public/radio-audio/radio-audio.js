@@ -10,13 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const q = (search?.value || "").trim().toLowerCase();
     const matching = records.filter(r => (category === "all" || r.category === category) &&
       [r.title,r.description,r.categoryLabel,r.date].join(" ").toLowerCase().includes(q));
-    const nzart = matching.some(r => r.category === "special" && /NZART Official Broadcast/i.test(r.title));
+    const nzart = matching.some(r => r.category === "news" && /NZART Official Broadcast/i.test(r.title));
     const worldDay = matching.some(r => r.collectionSlug === "world-amateur-radio-day");
     const ariss = matching.some(r => r.collectionSlug === "ariss");
     const wia = matching.some(r => r.collectionSlug === "wia-news");
     const arrl = matching.some(r => r.collectionSlug === "arrl-on-the-air");
     const arrlNews = matching.some(r => r.collectionSlug === "arrl-audio-news");
-    const other = matching.filter(r => !(r.category === "special" && /NZART Official Broadcast/i.test(r.title)) && !["world-amateur-radio-day","ariss","wia-news","arrl-on-the-air","arrl-audio-news"].includes(r.collectionSlug));
+    const other = matching.filter(r => !(r.category === "news" && /NZART Official Broadcast/i.test(r.title)) && !["world-amateur-radio-day","ariss","wia-news","arrl-on-the-air","arrl-audio-news"].includes(r.collectionSlug));
     const visibleCount = (nzart ? 1 : 0) + (worldDay ? 1 : 0) + (ariss ? 1 : 0) + (wia ? 1 : 0) + (arrl ? 1 : 0) + (arrlNews ? 1 : 0) + other.length;
     if (count) count.textContent = visibleCount + (visibleCount === 1 ? " item shown" : " items shown");
     if (!list) return;
