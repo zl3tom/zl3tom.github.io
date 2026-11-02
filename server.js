@@ -574,20 +574,33 @@ async function fetchWiaXml(url) {
 
 async function getWiaNewsEpisodes() {
   if (Date.now() - wiaNewsCache.fetchedAt < 10 * 60 * 1000 && wiaNewsCache.episodes.length) return wiaNewsCache.episodes;
-  const [audioXml, videoXml] = await Promise.all([
-    fetchWiaXml(wiaNewsFeedUrl),
-    fetchWiaXml("https://www.youtube.com/feeds/videos.xml?playlist_id=" + wiaNewsPlaylistId)
-  ]);
-  const videos = [...videoXml.matchAll(/<entry\b[^>]*>([\s\S]*?)<\/entry>/gi)].map(match => {
-    const entry = match[1], id = xmlTag(entry, "yt:videoId"), title = xmlTag(entry, "title");
-    const published = xmlTag(entry, "published");
-    return id ? { id, title, dateKey: wiaDateKey(title) || wiaDateKey(published) } : null;
-  }).filter(Boolean);
-  const episodes = [...audioXml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)].map(match => {
-    const item = match[1], title = xmlTag(item, "title").replace(/\s+/g, " ").trim();
-    const audioUrl = wiaSafeAudioUrl(xmlMediaUrl(item));
-    const publishedAt = xmlTag(item, "pubDate") || xmlTag(item, "dc:date");
-    const description = decodeXmlText((xmlTag(item, "description") || xmlTag(item, "content:encoded")).replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+
+  // The WIA RSS feed is the primary source. A YouTube outage must not
+  // prevent the audio archive from loading.
+  const audioXml = await fetchWiaXml(wiaNewsFeedUrl);
+  let videos = [];
+  try {
+    const videoXml = await fetchWiaXml("https://www.youtube.com/feeds/videos.xml?playlist_id=" + wiaNewsPlaylistId);
+    videos = [...videoXml.matchAll(/<entry\\b[^>]*>([\\s\\S]*?)<\\/entry>/gi)].map(match => {
+      const entry = match[1];
+      const id = xmlTag(entry, "yt:videoId");
+      const title = xmlTag(entry, "title").replace(/\\s+/g, " ").trim();
+      const published = xmlTag(entry, "published");
+      return id ? { id, title, dateKey: wiaDateKey(title) || wiaDateKey(published) } : null;
+    }).filter(Boolean);
+  } catch (error) {
+    console.warn("WIA YouTube playlist temporarily unavailable; continuing with audio:", error?.message || "Unknown feed error");
+  }
+
+  const itemBlocks = [...audioXml.matchAll(/<(?:item|entry)\\b[^>]*>([\\s\\S]*?)<\\/(?:item|entry)>/gi)];
+  const episodes = itemBlocks.map(match => {
+    const item = match[1];
+    const title = xmlTag(item, "title").replace(/\\s+/g, " ").trim();
+    const enclosure = item.match(/<(?:enclosure|media:content|link)\\b[^>]*(?:url|href)=["']([^"']+\\.mp3(?:\\?[^"']*)?)["'][^>]*\\/?\\s*>/i);
+    const audioUrl = wiaSafeAudioUrl(xmlMediaUrl(item) || (enclosure ? decodeXmlText(enclosure[1]) : ""));
+    const publishedAt = xmlTag(item, "pubDate") || xmlTag(item, "dc:date") || xmlTag(item, "published") || xmlTag(item, "updated");
+    const descriptionSource = xmlTag(item, "description") || xmlTag(item, "content:encoded") || xmlTag(item, "summary") || "";
+    const description = decodeXmlText(descriptionSource.replace(/<[^>]*>/g, " ")).replace(/\\s+/g, " ").trim();
     if (!title || !audioUrl) return null;
     const date = new Date(publishedAt);
     const dateKey = wiaDateKey(title) || (!Number.isNaN(date.getTime()) ? date.toISOString().slice(0, 10) : "");
@@ -602,7 +615,8 @@ async function getWiaNewsEpisodes() {
       imageUrl: "https://i.postimg.cc/G2VKvJky/image.png"
     };
   }).filter(Boolean).sort((a, b) => String(b.sortDate).localeCompare(String(a.sortDate)));
-  if (!episodes.length) throw new Error("No playable WIA News episodes found");
+
+  if (!episodes.length) throw new Error("The WIA RSS feed loaded, but no playable MP3 enclosures were found.");
   wiaNewsCache = { fetchedAt: Date.now(), episodes };
   return episodes;
 }
