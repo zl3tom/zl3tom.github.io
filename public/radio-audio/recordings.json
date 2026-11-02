@@ -2,11 +2,11 @@
   {
     "published": true,
     "title": "ARRL - On The Air",
-    "description": "The On the Air podcast is a monthly companion to On the Air magazine, ARRL’s magazine for beginner-to-intermediate ham radio operators.",
-    "date": "Monthly podcast collection",
+    "description": "ARRL Audio News is a weekly podcast covering current amateur radio news and events.",
+    "date": "Weekly podcast collection",
     "sortDate": "2026-11",
     "category": "special",
-    "categoryLabel": "ARRL · On The Air",
+    "categoryLabel": "ARRL Audio News",
     "collectionSlug": "arrl-on-the-air",
     "imageUrl": "https://i.postimg.cc/2j16Sp2q/a-HR0c-HM6Ly9hc3Nld-HMu-Ymx1Yn-Jye-S5jb20v-Y292ZXJhcn-Qvb3Jp-Zy85Mz-A0NDkt-Nz-Ix-Nj-Mx-Lmpw-Zw.webp"
   },
