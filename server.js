@@ -501,7 +501,7 @@ async function getNzartEpisodes() {
               /\.mp3$/i.test(parsed.pathname) ? parsed.href : "";
           } catch { return ""; }
         })();
-        const descriptionSource = xmlTag(item, "description") || xmlTag(item, "content:encoded") || "";
+        const descriptionSource = xmlTag(item, "description") || xmlTag(item, "content:encoded") || "${summary}";
         const description = decodeXmlText(descriptionSource.replace(/<[^>]*>/g, " "))
           .replace(/\s+/g, " ")
           .trim();
@@ -565,7 +565,7 @@ async function getWiaNewsEpisodes() {
 }
 
 
-const arrlOnAirFeedUrl = "https://feeds.blubrry.com/feeds/arrlontheair.xml";
+const arrlOnAirFeedUrl = "https://feeds.blubrry.com/feeds/arrlaudionews.xml";
 let arrlOnAirCache = { fetchedAt: 0, episodes: [] };
 function arrlSafeAudioUrl(value) {
   try {
@@ -595,7 +595,7 @@ async function getArrlOnAirEpisodes() {
       if (!title || !audioUrl) return null;
       const dates = wiaEpisodeDate(title, publishedAt);
       return { published: true, title, description, date: dates.date, publishedAt: dates.publishedAt, sortDate: dates.sortDate,
-        category: "special", categoryLabel: "ARRL - On The Air", audioUrl,
+        category: "special", categoryLabel: "ARRL Audio News", audioUrl,
         imageUrl: "https://i.postimg.cc/2j16Sp2q/a-HR0c-HM6Ly9hc3Nld-HMu-Ymx1Yn-Jye-S5jb20v-Y292ZXJhcn-Qvb3Jp-Zy85Mz-A0NDkt-Nz-Ix-Nj-Mx-Lmpw-Zw.webp" };
     }).filter(Boolean).sort((a,b) => String(b.sortDate || "").localeCompare(String(a.sortDate || "")));
     if (!episodes.length) throw new Error("ARRL RSS contained no playable MP3 episodes");
