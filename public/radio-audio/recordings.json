@@ -1,6 +1,17 @@
 [
   {
     "published": true,
+    "title": "ARRL Audio News",
+    "description": "Weekly amateur radio news and events from ARRL, the National Association for Amateur Radio.",
+    "date": "Weekly podcast collection",
+    "sortDate": "2026-11",
+    "category": "special",
+    "categoryLabel": "ARRL Audio News",
+    "collectionSlug": "arrl-audio-news",
+    "imageUrl": "https://assets.blubrry.com/coverart/orig/28672-252658.jpg"
+  },
+  {
+    "published": true,
     "title": "ARRL - On The Air",
     "description": "The monthly On the Air podcast is a companion to ARRL’s magazine for beginner-to-intermediate amateur radio operators.",
     "date": "Weekly podcast collection",
