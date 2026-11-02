@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const audio=$("arrl-on-air-audio"), list=$("arrl-on-air-list"), title=$("arrl-on-air-title"), dateLabel=$("arrl-on-air-track-date"), status=$("arrl-on-air-status"), playerState=$("arrl-on-air-player-state"), playButton=$("arrl-on-air-play"), playIcon=$("arrl-on-air-play-icon"), seek=$("arrl-on-air-seek"), currentTime=$("arrl-on-air-current-time"), duration=$("arrl-on-air-duration"), volume=$("arrl-on-air-volume"), download=$("arrl-on-air-download"), search=$("arrl-on-air-search"), clearSearch=$("arrl-on-air-clear"), sortButton=$("arrl-on-air-sort"), count=$("arrl-on-air-count"), total=$("arrl-on-air-total"), resultsLabel=$("arrl-on-air-results-label");
   let episodes=[], activeIndex=-1, oldestFirst=false, seeking=false, speedIndex=0;
   const speeds=[1,1.25,1.5,1.75,2,.75];
-  const safeAudioUrl=value=>{try{const u=new URL(value);return u.protocol==="https:"&&(u.hostname==="media.blubrry.com"||u.hostname==="media.blubrry.com")&&/\.mp3$/i.test(u.pathname)?u.href:"";}catch{return"";}};
+  const safeAudioUrl=value=>{try{const u=new URL(value);return u.protocol==="https:"&&u.hostname==="media.blubrry.com"&&/\.mp3$/i.test(u.pathname)?u.href:"";}catch{return"";}};
   const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
   const formatTime=value=>{if(!Number.isFinite(value)||value<0)return"--:--";const n=Math.floor(value),h=Math.floor(n/3600),m=Math.floor(n%3600/60),s=n%60;return h?h+":"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0"):m+":"+String(s).padStart(2,"0");};
   const episodeDate=e=>e.date||"";
