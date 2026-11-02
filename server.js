@@ -1,6 +1,7 @@
 import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
 import { createServer } from "node:http";
+import { Readable } from "node:stream";
 import path from "node:path";
 import process, { loadEnvFile } from "node:process";
 import { fileURLToPath } from "node:url";
@@ -530,6 +531,82 @@ async function getNzartEpisodes() {
   }
 }
 
+
+const wiaNewsFeedUrl = "https://www.wia-files.com/podcast/wianews.xml";
+const wiaNewsPlaylistId = "PLVYaqjM0J64B7W_FUGfpkzNF0O_21cu__";
+let wiaNewsCache = { fetchedAt: 0, episodes: [] };
+
+function wiaSafeAudioUrl(value) {
+  try {
+    const url = new URL(value);
+    if (!["http:", "https:"].includes(url.protocol)) return "";
+    if (!["www.wia-files.com", "wia-files.com"].includes(url.hostname.toLowerCase())) return "";
+    if (!/^\/podcast\/[^/]+\.mp3$/i.test(url.pathname)) return "";
+    url.protocol = "https:";
+    return url.href;
+  } catch { return ""; }
+}
+
+function wiaDateKey(value) {
+  const text = String(value || "");
+  const iso = text.match(/(20\d{2})[-/.](\d{1,2})[-/.](\d{1,2})/);
+  if (iso) return iso[1] + "-" + String(iso[2]).padStart(2, "0") + "-" + String(iso[3]).padStart(2, "0");
+  const month = text.match(/(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s+(20\d{2})/i);
+  if (month) {
+    const date = new Date(Date.parse(month[1] + " " + month[2] + ", " + month[3]));
+    return Number.isNaN(date.getTime()) ? "" : date.toISOString().slice(0, 10);
+  }
+  return "";
+}
+
+async function fetchWiaXml(url) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+  try {
+    const upstream = await fetch(url, { signal: controller.signal, headers: {
+      "User-Agent": "ZL3TOM-Radio-Archive/1.0 (+https://zl3tom.com)",
+      "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml"
+    }});
+    if (!upstream.ok) throw new Error("WIA source returned HTTP " + upstream.status);
+    return await upstream.text();
+  } finally { clearTimeout(timeout); }
+}
+
+async function getWiaNewsEpisodes() {
+  if (Date.now() - wiaNewsCache.fetchedAt < 10 * 60 * 1000 && wiaNewsCache.episodes.length) return wiaNewsCache.episodes;
+  const [audioXml, videoXml] = await Promise.all([
+    fetchWiaXml(wiaNewsFeedUrl),
+    fetchWiaXml("https://www.youtube.com/feeds/videos.xml?playlist_id=" + wiaNewsPlaylistId)
+  ]);
+  const videos = [...videoXml.matchAll(/<entry\b[^>]*>([\s\S]*?)<\/entry>/gi)].map(match => {
+    const entry = match[1], id = xmlTag(entry, "yt:videoId"), title = xmlTag(entry, "title");
+    const published = xmlTag(entry, "published");
+    return id ? { id, title, dateKey: wiaDateKey(title) || wiaDateKey(published) } : null;
+  }).filter(Boolean);
+  const episodes = [...audioXml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)].map(match => {
+    const item = match[1], title = xmlTag(item, "title").replace(/\s+/g, " ").trim();
+    const audioUrl = wiaSafeAudioUrl(xmlMediaUrl(item));
+    const publishedAt = xmlTag(item, "pubDate") || xmlTag(item, "dc:date");
+    const description = decodeXmlText((xmlTag(item, "description") || xmlTag(item, "content:encoded")).replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+    if (!title || !audioUrl) return null;
+    const date = new Date(publishedAt);
+    const dateKey = wiaDateKey(title) || (!Number.isNaN(date.getTime()) ? date.toISOString().slice(0, 10) : "");
+    const video = videos.find(v => dateKey && v.dateKey === dateKey) ||
+      videos.find(v => v.title.toLowerCase() === title.toLowerCase());
+    return {
+      published: true, title, description,
+      date: Number.isNaN(date.getTime()) ? "" : new Intl.DateTimeFormat("en-NZ", { day: "numeric", month: "long", year: "numeric", timeZone: "Pacific/Auckland" }).format(date),
+      publishedAt: Number.isNaN(date.getTime()) ? "" : date.toISOString(),
+      sortDate: Number.isNaN(date.getTime()) ? dateKey : date.toISOString(),
+      audioUrl, videoId: video?.id || "", videoUrl: video ? "https://www.youtube.com/watch?v=" + video.id : "",
+      imageUrl: "https://i.postimg.cc/G2VKvJky/image.png"
+    };
+  }).filter(Boolean).sort((a, b) => String(b.sortDate).localeCompare(String(a.sortDate)));
+  if (!episodes.length) throw new Error("No playable WIA News episodes found");
+  wiaNewsCache = { fetchedAt: Date.now(), episodes };
+  return episodes;
+}
+
 const server = createServer(async (request, response) => {
   setSecurityHeaders(response);
   const requestUrl = new URL(request.url || "/", `http://${request.headers.host || "localhost"}`);
@@ -560,6 +637,39 @@ const server = createServer(async (request, response) => {
         ok: false,
         message: "The NZART podcast feed is temporarily unavailable."
       });
+    }
+    return;
+  }
+
+
+  if (requestUrl.pathname === "/api/wia-news-feed" && (request.method === "GET" || request.method === "HEAD")) {
+    try {
+      const episodes = await getWiaNewsEpisodes();
+      sendJson(response, 200, { ok: true, source: wiaNewsFeedUrl, fetchedAt: new Date(wiaNewsCache.fetchedAt).toISOString(), episodes },
+        { "Cache-Control": "public, max-age=300, stale-while-revalidate=900" });
+    } catch (error) {
+      console.error("WIA News feed unavailable:", error?.message || "Unknown feed error");
+      sendJson(response, 502, { ok: false, message: "The WIA News podcast feed is temporarily unavailable." });
+    }
+    return;
+  }
+
+  if (requestUrl.pathname === "/api/wia-news-download" && (request.method === "GET" || request.method === "HEAD")) {
+    const audioUrl = wiaSafeAudioUrl(requestUrl.searchParams.get("url") || "");
+    if (!audioUrl) { sendJson(response, 400, { ok: false, message: "Invalid WIA podcast download URL." }); return; }
+    try {
+      const upstream = await fetch(audioUrl, { headers: { "User-Agent": "ZL3TOM-Radio-Archive/1.0 (+https://zl3tom.com)" } });
+      if (!upstream.ok || !upstream.body) throw new Error("WIA audio file unavailable");
+      response.writeHead(200, {
+        "Content-Type": "audio/mpeg",
+        "Content-Disposition": 'attachment; filename="WIA-News.mp3"',
+        "Cache-Control": "private, max-age=3600"
+      });
+      if (request.method === "HEAD") { response.end(); return; }
+      Readable.fromWeb(upstream.body).pipe(response);
+    } catch (error) {
+      console.error("WIA News download failed:", error?.message || "Unknown error");
+      sendJson(response, 502, { ok: false, message: "The WIA News download is temporarily unavailable." });
     }
     return;
   }
