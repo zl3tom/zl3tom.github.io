@@ -74,3 +74,36 @@ body.search-open{overflow:hidden}
  .main-nav .nav-dropdown.is-open .nav-submenu{display:block!important;}
  .main-nav .nav-dropdown:not(.is-open) .nav-submenu{display:none!important;}
 }
+
+
+/* Desktop navigation: larger labels and a single unbroken row on wide screens. */
+@media (min-width: 1200px) {
+  .nav-wrap.site-container {
+    width: min(calc(100% - 48px), 1500px);
+    max-width: 1500px;
+    gap: 24px;
+  }
+  .main-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 4px;
+    min-width: 0;
+  }
+  .main-nav > a,
+  .main-nav > .nav-dropdown > a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: .95rem;
+  }
+  .main-nav > .nav-dropdown {
+    flex: 0 0 auto;
+    flex-wrap: nowrap;
+    width: auto;
+  }
+  .main-nav .nav-qrz {
+    margin-left: 8px;
+    padding-inline: 16px;
+  }
+}
