@@ -81,21 +81,21 @@ body.search-open{overflow:hidden}
   .nav-wrap.site-container {
     width: min(calc(100% - 48px), 1500px);
     max-width: 1500px;
-    gap: 24px;
+    gap: 18px;
   }
   .main-nav {
     display: flex;
     flex-wrap: nowrap;
     white-space: nowrap;
-    gap: 4px;
+    gap: 3px;
     min-width: 0;
   }
   .main-nav > a,
   .main-nav > .nav-dropdown > a {
     flex: 0 0 auto;
     white-space: nowrap;
-    padding: 10px 12px;
-    font-size: .95rem;
+    padding: 12px 13px;
+    font-size: 1rem;
   }
   .main-nav > .nav-dropdown {
     flex: 0 0 auto;
@@ -104,6 +104,6 @@ body.search-open{overflow:hidden}
   }
   .main-nav .nav-qrz {
     margin-left: 8px;
-    padding-inline: 16px;
+    padding-inline: 17px;
   }
 }
