@@ -74,39 +74,3 @@ body.search-open{overflow:hidden}
  .main-nav .nav-dropdown.is-open .nav-submenu{display:block!important;}
  .main-nav .nav-dropdown:not(.is-open) .nav-submenu{display:none!important;}
 }
-
-
-/* 6 Nov 2026: prevent desktop navigation labels from collapsing letter-by-letter. */
-@media (min-width: 901px) {
-  .nav-wrap {
-    width: min(calc(100% - 40px), 1440px);
-    gap: 16px;
-  }
-  .main-nav {
-    flex: 1 1 auto;
-    min-width: 0;
-    justify-content: flex-end;
-    gap: 2px;
-  }
-  .main-nav > a,
-  .main-nav > .nav-dropdown > a {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding-inline: 7px;
-    font-size: .82rem;
-  }
-  .main-nav > .nav-dropdown {
-    flex: 0 0 auto;
-    flex-wrap: nowrap;
-    width: auto;
-    gap: 0;
-  }
-  .main-nav .nav-qrz {
-    margin-left: 4px;
-    padding-inline: 10px;
-  }
-  .main-nav .nav-search {
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
-}
