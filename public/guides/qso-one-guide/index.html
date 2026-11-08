@@ -42,6 +42,17 @@
   <link rel="me" href="https://www.facebook.com/zl3tom">
   <!-- End ZL3TOM social sharing preview -->
 <link rel="stylesheet" href="/accessibility.css?v=20261006">
+<style>
+.qso-faq-list{display:grid;gap:.75rem;margin-top:1rem}
+.qso-faq-item{border:1px solid #cbd5e1;border-radius:12px;background:#fff;overflow:hidden}
+.qso-faq-item summary{cursor:pointer;list-style:none;padding:1rem 1.15rem;font-weight:700;color:#172033;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.qso-faq-item summary::-webkit-details-marker{display:none}
+.qso-faq-item summary::after{content:"+";font-size:1.4rem;line-height:1;color:#2563eb;flex:none}
+.qso-faq-item[open] summary::after{content:"−"}
+.qso-faq-item summary:focus-visible{outline:3px solid #2563eb;outline-offset:-3px}
+.qso-faq-answer{padding:0 1.15rem 1rem}
+.qso-faq-answer p{margin:0}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -55,7 +66,7 @@
   <section class="inner-section light"><div class="site-container article-layout">
     <article class="article-content">
       <a class="back-link" href="/guides">← All guides</a>
-      <nav aria-label="QSO One guide contents"><h2>Jump to help</h2><ul><li><a href="#mac-install">Install QSO One on Mac</a></li><li><a href="#network-setup">DMR, System Fusion and M17</a></li><li><a href="#iax-settings">IAX Direct settings</a></li><li><a href="#audio-help">Audio troubleshooting</a></li><li><a href="#ptt-help">PTT and background sessions</a></li><li><a href="#privacy-settings">Permissions and privacy</a></li><li><a href="#accessible-use">Accessible operation</a></li><li><a href="#support-report">Updates and support</a></li></ul></nav>
+      <nav aria-label="QSO One guide contents"><h2>Jump to help</h2><ul><li><a href="#mac-install">Install QSO One on Mac</a></li><li><a href="#network-setup">DMR, System Fusion and M17</a></li><li><a href="#iax-settings">IAX Direct settings</a></li><li><a href="#audio-help">Audio troubleshooting</a></li><li><a href="#ptt-help">PTT and background sessions</a></li><li><a href="#privacy-settings">Permissions and privacy</a></li><li><a href="#accessible-use">Accessible operation</a></li><li><a href="#support-report">Updates and support</a></li><li><a href="#qso-one-testflight-faq">QSO One FAQs</a></li></ul></nav>
       <section class="guide-section"><span class="section-number" aria-hidden="true">01</span><div><h2>What QSO One is</h2><p>QSO One, developed by Frank KD8JKK, is a free internet voice client for licensed amateur radio operators. It brings several voice networks into one app, including AllStarLink, EchoLink, IAX Direct, DMR, Yaesu System Fusion (YSF) and M17. Experimental features have also added D-STAR reflector support and P25 talkgroups; availability and behaviour can vary by app version.</p><p>Use your device’s microphone, speaker and internet connection to receive and transmit without a separate radio, hotspot or Raspberry Pi. Depending on the destination, your voice may reach other app users, linked nodes or RF repeaters. It is useful at home, when travelling, or when a traditional radio setup is difficult to access.</p><p>Tools include searchable directories, favourites, callsign lookup, QSO logging with ADIF export, Net Finder, received-audio recording and Net Runner tools for net control and transcription. Recent releases have added a unified On the Net area for finding live nets, sharing net links and helping net control publish scheduled nets. Audio options include automatic received-audio levelling and selectable voice-codec options, including the built-in codec and supported AMBE hardware/server options.</p><p>QSO One is free to use, with optional contributions supporting development. You still need an amateur radio licence and any accounts or IDs required by your chosen network. Experimental modes may have limitations, so check the installed version’s release notes before relying on them.</p></div></section>
 <section class="guide-section"><span class="section-number" aria-hidden="true">02</span><div><h2>Install QSO One on iPhone, iPad or Mac with Apple TestFlight</h2><div class="guide-callout"><strong>Apple beta testing:</strong> QSO One is available for iPhone, iPad and Mac through Apple TestFlight. The TestFlight versions are beta builds, not the same as a public App Store release.</div><ol><li>Install Apple's free <a href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener noreferrer">TestFlight app</a> on the Apple device you want to use.</li><li>Open the <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">QSO One TestFlight invitation</a> on that device. On a Mac, open the invitation in a Mac browser while signed in with the Apple Account you use for TestFlight.</li><li>Accept the invitation. When QSO One appears in TestFlight, select <strong>Install</strong>.</li><li>When installation finishes, open QSO One from TestFlight, Launchpad or your Applications folder on Mac.</li><li>Keep TestFlight installed to receive beta updates and review any release notes before updating.</li></ol><h3 id="mac-install">Install and use QSO One on Mac</h3><p>QSO One's Mac beta is distributed through TestFlight. A compatible Mac running <strong>macOS 13 or later</strong> is required. Use the same TestFlight invitation above, but open it on your Mac rather than your iPhone or iPad.</p><ol><li>Open the Mac App Store and install <a href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener noreferrer">Apple TestFlight</a>.</li><li>On your Mac, visit the <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">QSO One TestFlight invitation</a> and accept the Mac beta.</li><li>Open TestFlight, find QSO One and click <strong>Install</strong>.</li><li>Launch QSO One and sign in or set up the app using your amateur radio callsign as prompted.</li><li>Allow microphone access when macOS asks. Choose your preferred microphone and audio output in the app or macOS sound settings. A USB headset or microphone can also be used.</li><li>Use the app's on-screen controls or supported keyboard push-to-talk controls to operate. The Mac beta invitation notes keyboard push-to-talk support.</li></ol><p>QSO One on Mac lets you use your computer as an internet-connected amateur radio voice client. Connect to the networks and destinations supported by the Mac beta, listen before transmitting, identify with your callsign and release PTT when you finish speaking. Available features can differ from the iPhone, iPad, Android and Windows versions.</p><div class="guide-callout"><strong>Mac installation tip:</strong> If the invitation opens the iPhone or iPad listing, try opening the link directly on your Mac with the TestFlight app installed. If the Mac beta is not offered, check the invitation and current beta availability with the developer.</div><h3>Install on Android and Windows</h3><ul><li><strong>Android:</strong> <a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">install QSO One from Google Play</a>. Android 8.0 or later is supported.</li><li><strong>Windows:</strong> <a href="https://apps.microsoft.com/detail/9NRWFPGK3L3W" target="_blank" rel="noopener noreferrer">get QSO One from the Microsoft Store</a>, or use the direct installer offered by QSO One.</li></ul><p>Install updates only from TestFlight, the official website, the official app store or the app updater. Beta builds can change, expire or contain bugs, so check the current release notes and platform requirements before relying on a feature.</p></div></section>
 <section class="guide-section" id="qso-one-recent-updates">
@@ -218,17 +229,30 @@
 <section class="guide-section" id="qso-one-testflight-faq">
   <span class="section-number" aria-hidden="true">21</span>
   <div>
-    <h2>QSO One TestFlight, audio and download FAQs</h2>
-    <h3>How does AllStar full duplex work on mobile?</h3>
-    <p>On iPhone and Android, you can retain full-duplex operation by using Bluetooth or wired earbuds, or an external push-to-talk (PTT) device, including Bluetooth or wired PTT. Bluetooth and wired speaker microphones also support full duplex in QSO One 4.2.5. Desktop users were not affected by the mobile restriction. The restriction was introduced to prevent accidental transmissions when a device was keyed while sitting in a pocket; that accidental-keying issue has since been addressed. For unrestricted full duplex on mobile, use earbuds or an external PTT button.</p>
-    <h3>Can I install QSO One on a Mac?</h3>
-    <p>Yes. QSO One has a Mac beta through Apple TestFlight. You need a compatible Mac running macOS 13 or later, Apple's free <a href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener noreferrer">TestFlight app</a>, and the <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">QSO One TestFlight invitation</a>. Open the invitation on your Mac, accept the beta, then install QSO One from TestFlight. The Mac beta supports keyboard push-to-talk; allow microphone access and select your preferred audio devices.</p>
-    <h3>How do I install QSO One on an iPhone or iPad?</h3>
-    <p>Install Apple's TestFlight app, open the <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">QSO One invitation</a> on your iPhone or iPad, accept the invitation and install QSO One from TestFlight.</p>
-    <h3>Is QSO One available for Android and Windows?</h3>
-    <p>Yes. This guide also links to QSO One on <a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">Google Play for Android</a> and the <a href="https://apps.microsoft.com/detail/9NRWFPGK3L3W" target="_blank" rel="noopener noreferrer">Microsoft Store for Windows</a>.</p>
-    <h3>Where can I get help from other QSO One users?</h3>
-    <p>Join the QSO One community on <a href="https://discord.gg/4N6Wc3fsEv" target="_blank" rel="noopener noreferrer">Discord</a>, in the <a href="https://www.facebook.com/groups/1483876283506992" target="_blank" rel="noopener noreferrer">Facebook group</a>, or on <a href="https://www.reddit.com/r/QSOone/" target="_blank" rel="noopener noreferrer">Reddit</a>.</p>
+    <h2>QSO One FAQs</h2>
+    <p>Quick answers to common questions about QSO One, including full-duplex audio, installation, supported platforms and community support. Select a question to expand its answer.</p>
+    <div class="qso-faq-list">
+      <details class="qso-faq-item" open>
+        <summary>How does AllStar full duplex work on mobile?</summary>
+        <div class="qso-faq-answer"><p>On iPhone and Android, you can retain full-duplex operation by using Bluetooth or wired earbuds, or an external push-to-talk (PTT) device, including Bluetooth or wired PTT. Bluetooth and wired speaker microphones also support full duplex in QSO One 4.2.5. Desktop users were not affected by the mobile restriction. The restriction was introduced to prevent accidental transmissions when a device was keyed while sitting in a pocket; that accidental-keying issue has since been addressed. For unrestricted full duplex on mobile, use earbuds or an external PTT button.</p></div>
+      </details>
+      <details class="qso-faq-item">
+        <summary>Can I install QSO One on a Mac?</summary>
+        <div class="qso-faq-answer"><p>Yes. QSO One has a Mac beta through Apple TestFlight. You need a compatible Mac running macOS 13 or later, Apple's free <a href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener noreferrer">TestFlight app</a>, and the <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">QSO One TestFlight invitation</a>. Open the invitation on your Mac, accept the beta, then install QSO One from TestFlight. The Mac beta supports keyboard push-to-talk; allow microphone access and select your preferred audio devices.</p></div>
+      </details>
+      <details class="qso-faq-item">
+        <summary>How do I install QSO One on an iPhone or iPad?</summary>
+        <div class="qso-faq-answer"><p>Install Apple's TestFlight app, open the <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">QSO One invitation</a> on your iPhone or iPad, accept the invitation and install QSO One from TestFlight.</p></div>
+      </details>
+      <details class="qso-faq-item">
+        <summary>Is QSO One available for Android and Windows?</summary>
+        <div class="qso-faq-answer"><p>Yes. This guide also links to QSO One on <a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">Google Play for Android</a> and the <a href="https://apps.microsoft.com/detail/9NRWFPGK3L3W" target="_blank" rel="noopener noreferrer">Microsoft Store for Windows</a>.</p></div>
+      </details>
+      <details class="qso-faq-item">
+        <summary>Where can I get help from other QSO One users?</summary>
+        <div class="qso-faq-answer"><p>Join the QSO One community on <a href="https://discord.gg/4N6Wc3fsEv" target="_blank" rel="noopener noreferrer">Discord</a>, in the <a href="https://www.facebook.com/groups/1483876283506992" target="_blank" rel="noopener noreferrer">Facebook group</a>, or on <a href="https://www.reddit.com/r/QSOone/" target="_blank" rel="noopener noreferrer">Reddit</a>.</p></div>
+      </details>
+    </div>
   </div>
 </section>
 
