@@ -4,36 +4,156 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0d1413">
-  <title>NZ Election 2026 | ZL3TOM</title>
-  <meta name="description" content="New Zealand 2026 general election results, electorate information, polling and election coverage.">
+  <meta name="theme-color" content="#101b2b">
+  <title>NZ Election 2026 | ZL3TOM Election Desk</title>
+  <meta name="description" content="An independent ZL3TOM election desk with a snapshot of New Zealand's 2026 preliminary election results, special votes and what happens next.">
   <style>
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; background: #f3f5f1; }
-    body { min-height: 100vh; }
-    main { width: 100%; min-height: 100vh; }
-    iframe {
-      display: block;
-      width: 100%;
-      height: 100vh;
-      min-height: 720px;
-      border: 0;
-      background: #f3f5f1;
-    }
-    @media (max-width: 600px) {
-      iframe { min-height: 100dvh; height: 100dvh; }
-    }
+    :root{color-scheme:dark;--bg:#0b1220;--panel:#121e30;--panel2:#17263b;--line:#293b54;--text:#f3f6fb;--muted:#aab8ca;--teal:#50dbc1;--gold:#f5c66a;--red:#ff8585;--blue:#8db8ff;--max:1180px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:radial-gradient(ellipse at 80% -10%,#1b3850 0,transparent 42%),var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:var(--teal);text-underline-offset:3px}
+    a:hover{color:#a2ffed}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .topbar{border-bottom:1px solid var(--line);background:#0b1220eF;position:sticky;top:0;z-index:10;backdrop-filter:blur(14px)}
+    .topinner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none;font-weight:800;letter-spacing:.02em}
+    .brandmark{width:38px;height:38px;border:1px solid #3b6d78;border-radius:12px;display:grid;place-items:center;color:var(--teal);font-size:20px;background:#142b3a}
+    .brand small{display:block;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+    nav{display:flex;gap:18px;flex-wrap:wrap}
+    nav a{font-size:13px;font-weight:700;text-decoration:none;color:#d4deeb}
+    .hero{padding:68px 0 42px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #315d62;background:#102b31;color:#a8f4e4;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px #f5c66a20}
+    h1{font-size:clamp(38px,7vw,76px);line-height:.98;letter-spacing:-.055em;max-width:850px;margin:22px 0 18px}
+    .hero p{color:var(--muted);font-size:18px;max-width:720px;margin:0}
+    .hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .pill{border:1px solid var(--line);border-radius:9px;padding:8px 12px;color:#d7e2ef;font-size:13px;background:#111d2d}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{background:linear-gradient(145deg,#17263a,#111c2d);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0;box-shadow:0 16px 44px #00000018}
+    .stat{grid-column:span 3}
+    .stat .label,.section-kicker{color:var(--muted);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .stat strong{display:block;font-size:clamp(28px,4vw,43px);letter-spacing:-.04em;line-height:1.15;margin:9px 0 5px}
+    .stat p{margin:0;color:var(--muted);font-size:13px}
+    .teal{color:var(--teal)}.gold{color:var(--gold)}.blue{color:var(--blue)}
+    section.content{padding:34px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}
+    h2{font-size:clamp(25px,4vw,36px);letter-spacing:-.035em;line-height:1.1;margin:5px 0}
+    .section-head p{margin:0;color:var(--muted);max-width:520px;font-size:14px}
+    .wide{grid-column:span 8}.side{grid-column:span 4}
+    .bar-wrap{height:15px;border-radius:999px;background:#26364c;overflow:hidden;margin:20px 0 12px}
+    .bar-fill{height:100%;width:79.1%;background:linear-gradient(90deg,var(--teal),#83e4a9);border-radius:999px}
+    .bar-legend{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:12px}
+    .big-number{font-size:clamp(42px,7vw,68px);line-height:1;font-weight:850;letter-spacing:-.06em;margin:12px 0}
+    .callout{border-left:3px solid var(--gold);padding:4px 0 4px 15px;color:#dbe5f1;margin:20px 0 0}
+    .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+    .fact{background:#0d1726;border:1px solid #26374d;border-radius:12px;padding:15px}
+    .fact b{display:block;font-size:21px;color:var(--teal);margin-bottom:3px}
+    .fact span{color:var(--muted);font-size:13px}
+    .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+    .step{border-top:2px solid #35516b;padding:14px 12px 0}
+    .step time{font-size:12px;color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .step h3{margin:7px 0;font-size:17px}.step p{margin:0;color:var(--muted);font-size:13px}
+    .records{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:18px 0 0}
+    .records li{background:#0d1726;border:1px solid #26374d;border-radius:12px;padding:15px;color:#d9e4f1;font-size:14px}
+    .records b{color:var(--gold)}
+    .source-note{color:var(--muted);font-size:12px;margin-top:18px}
+    .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 15px;border-radius:10px;background:var(--teal);color:#071b1c;text-decoration:none;font-weight:800;font-size:13px}
+    .button.secondary{background:#1b2b40;color:#e7f0fa;border:1px solid #3a4c64}
+    footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 38px;color:var(--muted);font-size:12px}
+    footer strong{color:var(--text)}
+    @media(max-width:850px){.stat{grid-column:span 6}.wide,.side{grid-column:span 12}}
+    @media(max-width:600px){.wrap{width:min(100% - 28px,var(--max))}.topinner{min-height:62px}nav{gap:10px}nav a{font-size:11px}.hero{padding:48px 0 30px}.hero p{font-size:16px}.stat{grid-column:span 6;padding:16px}.card{padding:18px}.facts,.records{grid-template-columns:1fr}.timeline{grid-template-columns:1fr;gap:18px}.section-head{display:block}.section-head p{margin-top:9px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
   </style>
 </head>
 <body>
-  <main>
-    <iframe
-      src="https://www.nzelection.co.nz/"
-      title="NZ Election 2026 live results, polls, electorates and election coverage"
-      loading="eager"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="clipboard-write; fullscreen">
-    </iframe>
+  <header class="topbar">
+    <div class="wrap topinner">
+      <a class="brand" href="#top"><span class="brandmark" aria-hidden="true">NZ</span><span>ZL3TOM <small>Election desk · 2026</small></span></a>
+      <nav aria-label="Page sections"><a href="#snapshot">Snapshot</a><a href="#special-votes">Special votes</a><a href="#what-next">What happens next</a></nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <span class="eyebrow"><span class="dot"></span> Preliminary election snapshot</span>
+      <h1>New Zealand<br><span class="teal">Election 2026.</span></h1>
+      <p>A locally built election desk bringing together the key numbers, notable outcomes and the next steps after election night. Independent coverage — not affiliated with the Electoral Commission or any political party.</p>
+      <div class="hero-meta"><span class="pill">Election day · Saturday 7 November 2026</span><span class="pill">Preliminary count · 8 November 2026</span><span class="pill">Official result due · 27 November</span></div>
+    </div>
+
+    <section class="wrap content" id="snapshot" aria-labelledby="snapshot-title">
+      <div class="section-head"><div><span class="section-kicker">The numbers so far</span><h2 id="snapshot-title">Election night at a glance</h2></div><p>These figures describe the preliminary count, not the final certified result. Special votes may still change electorate outcomes and the final seat allocation.</p></div>
+      <div class="grid">
+        <article class="card stat"><span class="label">Special votes outstanding</span><strong class="gold">399,365</strong><p>Estimated votes still to be counted.</p></article>
+        <article class="card stat"><span class="label">Electorates</span><strong>71</strong><p>General and Māori electorates in the preliminary count.</p></article>
+        <article class="card stat"><span class="label">Parliament projection</span><strong class="blue">131</strong><p>Potential seats including 11 overhang seats.</p></article>
+        <article class="card stat"><span class="label">Major-party share</span><strong class="teal">&lt;60%</strong><p>National and Labour combined, a first in the MMP era.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap content" id="special-votes" aria-labelledby="special-title">
+      <div class="section-head"><div><span class="section-kicker">The count continues</span><h2 id="special-title">The special-vote picture</h2></div><p>Special votes include overseas votes and votes cast by people who needed a special voting process. They are counted after election night.</p></div>
+      <div class="grid">
+        <article class="card wide">
+          <span class="section-kicker">Estimated count progress</span>
+          <div class="big-number">~79.1%</div>
+          <p style="color:var(--muted);margin:0">Illustrative share counted on election night, based on 20.9% outstanding special votes — the same share special votes represented in 2023. The 2026 final share may differ.</p>
+          <div class="bar-wrap" role="img" aria-label="Illustrative estimate: 79.1 percent counted and 20.9 percent special votes outstanding"><div class="bar-fill"></div></div>
+          <div class="bar-legend"><span>Counted on election night · illustrative</span><span>Special votes · 20.9% reference</span></div>
+          <p class="callout">The Electoral Commission estimated 399,365 special votes remained. Close electorate races can change when those votes are added.</p>
+        </article>
+        <aside class="card side">
+          <span class="section-kicker">Official result</span>
+          <div class="big-number gold" id="days-left">18</div>
+          <h3 style="margin:0">days to go</h3>
+          <p style="color:var(--muted);font-size:14px">The official result is scheduled for Friday 27 November 2026.</p>
+          <div class="links"><a class="button secondary" href="https://elections.nz/" target="_blank" rel="noopener noreferrer">Electoral Commission ↗</a></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="wrap content" aria-labelledby="records-title">
+      <div class="section-head"><div><span class="section-kicker">Notable outcomes</span><h2 id="records-title">What made this election unusual?</h2></div><p>A few of the stand-out details from the preliminary figures and election-night reporting.</p></div>
+      <ul class="records">
+        <li><b>131 seats projected.</b> Eleven overhang seats would make this the largest Parliament yet, above the previous record of 123.</li>
+        <li><b>0.2 percentage points apart.</b> National and Labour were separated by just 0.2 points on election night, with 99.9% of votes counted.</li>
+        <li><b>More than 40% for minor parties.</b> National and Labour together fell below 60% for the first time in the MMP era.</li>
+        <li><b>A first for a major party.</b> National's electorate wins were projected to exceed its party-vote entitlement, leaving it without list seats.</li>
+        <li><b>Opportunity enters Parliament.</b> The party was projected at 6%, with Qiulae Wong set to become the first Asian leader of a party in Parliament.</li>
+        <li><b>Strong Green result.</b> The Greens' 13.3% was just below the 1996 NZ First record for a third party, 13.35%.</li>
+      </ul>
+      <p class="source-note">Source basis: preliminary election-night figures and reporting dated 8 November 2026. These are not final certified results; projections may change after special votes.</p>
+    </section>
+
+    <section class="wrap content" id="what-next" aria-labelledby="next-title">
+      <div class="section-head"><div><span class="section-kicker">After election night</span><h2 id="next-title">What happens next?</h2></div><p>The count and the formation of a government continue beyond election night.</p></div>
+      <div class="card">
+        <div class="timeline">
+          <div class="step"><time>7 November</time><h3>Election day</h3><p>Voting closed at 7pm and preliminary results began to arrive.</p></div>
+          <div class="step"><time>November</time><h3>Special votes counted</h3><p>Overseas and other special votes are added. Close electorate races and seat totals may move.</p></div>
+          <div class="step"><time>27 November</time><h3>Official results</h3><p>The Electoral Commission is scheduled to declare the official results.</p></div>
+        </div>
+      </div>
+      <div class="links">
+        <a class="button" href="https://elections.nz/" target="_blank" rel="noopener noreferrer">Official election information ↗</a>
+        <a class="button secondary" href="https://www.rnz.co.nz/" target="_blank" rel="noopener noreferrer">RNZ election coverage ↗</a>
+        <a class="button secondary" href="https://zl3tom.com/">Back to ZL3TOM ↗</a>
+      </div>
+    </section>
   </main>
+
+  <footer><div class="wrap"><p><strong>ZL3TOM Election Desk</strong> · An independent New Zealand election information page.</p><p>Figures shown are preliminary and sourced from election-night reporting and Electoral Commission estimates available on 8 November 2026. This page is an independent summary, not an official election results service. Check the Electoral Commission for certified results.</p></div></footer>
+  <script>
+    (() => {
+      const target = new Date('2026-11-27T00:00:00+13:00');
+      const now = new Date();
+      const days = Math.max(0, Math.ceil((target - now) / 86400000));
+      const el = document.getElementById('days-left');
+      if (el) el.textContent = String(days);
+    })();
+  </script>
 </body>
 </html>
