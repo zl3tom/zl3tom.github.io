@@ -185,7 +185,7 @@
         <div class="table-scroll" style="margin-top:14px"><table class="data-table"><thead><tr><th>Electorate</th><th>Downloads</th></tr></thead><tbody id="statistics-table"></tbody></table></div>
         <p id="electorate-count" class="source-note" aria-live="polite"></p>
       </div>
-      <p class="source-note" id="detail-source-status" role="status" aria-live="polite">Loading official source tables…</p><p class="source-note">Source: <a href="https://electionresults.govt.nz/ge2026/" target="_blank" rel="noopener noreferrer">New Zealand Electoral Commission – 2026 General Election preliminary results</a>. The Commission states that these are not the formal declaration of results. The official results are expected on Friday 27 November, with detailed E9 information expected by Monday 14 December.</p>
+      <p class="source-note" id="detail-source-status" role="status" aria-live="polite">Loading official source tables…</p><p class="source-note">Source: <a href="https://electionresults.govt.nz/electionresults_2026_preliminary/" target="_blank" rel="noopener noreferrer">New Zealand Electoral Commission – 2026 General Election preliminary results</a>. The Commission states that these are not the formal declaration of results. The official results are expected on Friday 27 November, with detailed E9 information expected by Monday 14 December.</p>
     </section>
 
     <section class="wrap content" id="what-next" aria-labelledby="next-title">
@@ -255,7 +255,7 @@
         const matches = electorateNames.filter(name => name.toLocaleLowerCase('en-NZ').includes(query));
         statsBody.innerHTML = matches.map(name => {
           const i=electorateNames.indexOf(name)+1, n=String(i).padStart(2,'0'), slug=encPath(name);
-          const base='https://electionresults.govt.nz/ge2026/statistics/';
+          const base='https://electionresults.govt.nz/electionresults_2026_preliminary/statistics/';
           return '<tr><td>'+esc(name)+'</td><td><a href="'+base+'spreadsheet/'+n+'_'+slug+'.xlsx" target="_blank" rel="noopener noreferrer">Excel</a> · <a href="'+base+'pdf/'+n+'_'+slug+'.pdf" target="_blank" rel="noopener noreferrer">PDF</a></td></tr>';
         }).join('');
         statsCount.textContent=matches.length+' of 71 electorates shown.';
