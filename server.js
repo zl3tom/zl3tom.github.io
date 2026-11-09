@@ -811,6 +811,45 @@ async function getElectionResults() {
   return electionResultsRequest;
 }
 
+
+const electionDetailPagesCache = { fetchedAt: 0, payload: null };
+let electionDetailPagesRequest = null;
+async function getElectionDetailPages() {
+  if (electionDetailPagesCache.payload && Date.now() - electionDetailPagesCache.fetchedAt < 300_000) return electionDetailPagesCache.payload;
+  if (electionDetailPagesRequest) return electionDetailPagesRequest;
+  electionDetailPagesRequest = (async () => {
+    const base = "https://electionresults.govt.nz/ge2026/";
+    const pages = [
+      ["status", "electorate-status.html"],
+      ["advance", "advance-votes.html"],
+      ["candidates", "successful-candidates.html"]
+    ];
+    const entries = await Promise.all(pages.map(async ([key, file]) => {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 18_000);
+      try {
+        const upstream = await fetch(base + file, {
+          signal: controller.signal,
+          headers: { "User-Agent": "ZL3TOM-Election-Desk/1.0 (+https://zl3tom.com/election)", "Accept": "text/html,application/xhtml+xml" }
+        });
+        if (!upstream.ok) throw new Error("Electoral Commission " + file + " returned HTTP " + upstream.status);
+        const html = await upstream.text();
+        if (html.length > 5_000_000) throw new Error("Unexpectedly large Electoral Commission page.");
+        return [key, html];
+      } catch (error) {
+        console.warn("Could not load election detail page " + file + ":", error?.message || "Unknown error");
+        return [key, ""];
+      } finally { clearTimeout(timeout); }
+    }));
+    const payload = { ok: true, pages: Object.fromEntries(entries), fetchedAt: new Date().toISOString(), source: base };
+    electionDetailPagesCache.fetchedAt = Date.now();
+    electionDetailPagesCache.payload = payload;
+    return payload;
+  })();
+  try { return await electionDetailPagesRequest; }
+  finally { electionDetailPagesRequest = null; }
+}
+
 const server = createServer(async (request, response) => {
   setSecurityHeaders(response);
   const requestUrl = new URL(request.url || "/", `http://${request.headers.host || "localhost"}`);
@@ -826,6 +865,18 @@ const server = createServer(async (request, response) => {
     return;
   }
 
+
+
+  if (requestUrl.pathname === "/api/election-detail-pages" && (request.method === "GET" || request.method === "HEAD")) {
+    try {
+      const results = await getElectionDetailPages();
+      sendJson(response, 200, results, { "Cache-Control": "public, max-age=120, stale-while-revalidate=300" });
+    } catch (error) {
+      console.error("Election detail pages unavailable:", error?.message || "Unknown error");
+      sendJson(response, 502, { ok: false, message: "The Electoral Commission detailed results are temporarily unavailable." });
+    }
+    return;
+  }
 
   if (requestUrl.pathname === "/api/election-results" && (request.method === "GET" || request.method === "HEAD")) {
     try {
