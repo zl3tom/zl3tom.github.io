@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#101b2b">
   <title>NZ Election 2026 | ZL3TOM Election Desk</title>
   <meta name="description" content="An independent ZL3TOM election desk tracking New Zealand's 2026 preliminary election results, special votes and the official count.">
+    <link rel="stylesheet" href="/accessibility.css">
   <style>
     :root{color-scheme:dark;--bg:#0b1220;--panel:#121e30;--panel2:#17263b;--line:#293b54;--text:#f3f6fb;--muted:#aab8ca;--teal:#50dbc1;--gold:#f5c66a;--red:#ff8585;--blue:#8db8ff;--max:1180px}
     *{box-sizing:border-box}
@@ -92,14 +93,15 @@
   </style>
 </head>
 <body>
-  <header class="topbar">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header id="top" class="topbar">
     <div class="wrap topinner">
       <a class="brand" href="#top"><span class="brandmark" aria-hidden="true">NZ</span><span>ZL3TOM <small>Election desk · 2026</small></span></a>
       <nav aria-label="Page sections"><a href="#snapshot">Snapshot</a><a href="#electorate-status">Electorates</a><a href="#advance-votes">Advance votes</a><a href="#successful-candidates">Candidates</a><a href="#what-next">Next steps</a></nav>
     </div>
   </header>
 
-  <main id="top">
+  <main id="main" tabindex="-1">
     <div class="wrap hero">
       <span class="eyebrow"><span class="dot"></span> Preliminary election snapshot</span>
       <h1>New Zealand<br><span class="teal">Election 2026.</span></h1>
@@ -118,9 +120,9 @@
     </section>
 
     <section class="wrap content" id="live-results" aria-labelledby="live-results-title">
-      <div class="card"><div class="section-head" style="margin-bottom:10px"><div><span class="section-kicker">Automatic results feed</span><h2 id="live-results-title" style="font-size:24px">Party vote and seats</h2></div><p id="feed-status" role="status" aria-live="polite">Connecting to the Electoral Commission…</p></div>
-        <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;min-width:620px;font-size:14px"><thead><tr style="color:var(--muted);text-align:left;border-bottom:1px solid var(--line)"><th style="padding:11px 8px">Party</th><th style="padding:11px 8px;text-align:right">Votes</th><th style="padding:11px 8px;text-align:right">Vote %</th><th style="padding:11px 8px;text-align:right">Electorate</th><th style="padding:11px 8px;text-align:right">List</th><th style="padding:11px 8px;text-align:right">Seats</th></tr></thead><tbody id="party-results"><tr><td colspan="6" style="padding:16px 8px;color:var(--muted)">Loading the latest official figures…</td></tr></tbody></table></div>
-        <p class="source-note" style="margin-bottom:0">Source: Electoral Commission official results. Automatically checked every 60 seconds while this page is open. <span id="feed-updated">Waiting for first update.</span></p>
+      <div class="card"><div class="section-head" style="margin-bottom:10px"><div><span class="section-kicker">Automatic results feed</span><h2 id="live-results-title" style="font-size:24px">Party vote and seats</h2></div><p id="feed-status" role="status" aria-live="polite">Connecting to the election data source…</p></div>
+        <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;min-width:620px;font-size:14px"><thead><tr style="color:var(--muted);text-align:left;border-bottom:1px solid var(--line)"><th style="padding:11px 8px">Party</th><th style="padding:11px 8px;text-align:right">Votes</th><th style="padding:11px 8px;text-align:right">Vote %</th><th style="padding:11px 8px;text-align:right">Electorate</th><th style="padding:11px 8px;text-align:right">List</th><th style="padding:11px 8px;text-align:right">Seats</th></tr></thead><tbody id="party-results"><tr><td colspan="6" style="padding:16px 8px;color:var(--muted)">Loading preliminary election figures…</td></tr></tbody></table></div>
+        <p class="source-note" style="margin-bottom:0">Data source: <a href="https://election2026.nz/live/" target="_blank" rel="noopener noreferrer">Election2026.nz</a> (third-party processed preliminary results). Automatically checked every 60 seconds while this page is open. <span id="feed-updated">Waiting for first update.</span></p>
       </div>
     </section>
 
@@ -205,7 +207,7 @@
     </section>
   </main>
 
-  <footer><div class="wrap"><p><strong>ZL3TOM Election Desk</strong> · An independent New Zealand election information page.</p><p>Figures shown are preliminary and sourced from the Electoral Commission's 7 November 2026 preliminary-results release. This page is an independent summary, not an official election results service. Check the Electoral Commission for certified results.</p></div></footer>
+  <footer><div class="wrap"><p><strong>ZL3TOM Election Desk</strong> · An independent New Zealand election information page.</p><p>Party vote and seat figures are provided by Election2026.nz, which processes preliminary Electoral Commission data. Its feed currently reports that new Commission data is not published, so figures may be out of date and may change when updated. This page is an independent summary, not an official election results service. Check the Electoral Commission for certified results.</p></div><p class="accessibility-footer-link"><a href="/guides/accessible-amateur-radio#using-this-website">Accessibility and website feedback</a></p></footer>
   <script>
     (() => {
       const target = new Date('2026-11-27T00:00:00+13:00');
@@ -225,9 +227,10 @@
         const progressEl = document.getElementById('results-progress');
         if (progressEl) progressEl.textContent = data.progress == null ? '—' : Number(data.progress).toFixed(1) + '%';
         updated.textContent = 'Last checked ' + new Date(data.fetchedAt).toLocaleString('en-NZ', {dateStyle:'medium',timeStyle:'short',timeZone:'Pacific/Auckland'}) + ' NZ time.';
-        status.textContent = data.sourceNote ? 'Official preliminary results loaded · checking for updates every 60 seconds' : 'Live Electoral Commission feed connected · checking every 60 seconds';
+        status.textContent = data.sourceNote ? 'Preliminary results loaded · checking source every 60 seconds' : 'Election data source checked · checking every 60 seconds';
         status.style.color = 'var(--teal)';
         if (data.sourceNote) updated.textContent += ' ' + data.sourceNote;
+        if (data.feedStatus === 'waiting') { status.textContent = 'Source feed waiting for new Electoral Commission data'; status.style.color = 'var(--gold)'; }
         hasData = true;
       }
       async function refresh() {
@@ -239,9 +242,9 @@
           if (!response.ok || !data.ok) throw new Error(data.message || 'Feed unavailable');
           render(data);
         } catch {
-          status.textContent = hasData ? 'Feed temporarily unavailable · showing last successful figures' : 'Waiting for the official results feed to respond';
+          status.textContent = hasData ? 'Feed temporarily unavailable · showing last successful figures' : 'Waiting for the election data source to respond';
           status.style.color = 'var(--gold)';
-          if (!hasData) body.innerHTML = '<tr><td colspan="6" style="padding:16px 8px;color:var(--muted)">The official feed is temporarily unavailable. This table will populate automatically when the source responds.</td></tr>';
+          if (!hasData) body.innerHTML = '<tr><td colspan="6" style="padding:16px 8px;color:var(--muted)">The election data source is temporarily unavailable. This table will update automatically when it responds.</td></tr>';
         } finally { busy = false; }
       }
 
@@ -364,5 +367,6 @@
       window.setInterval(refresh, 60000);
     })();
   </script>
+  <script src="/accessibility.js" defer></script>
 </body>
 </html>
