@@ -645,6 +645,92 @@ async function getArrlAudioNewsEpisodes() {
   } finally { clearTimeout(timeout); }
 }
 
+
+const electionResultsUrl = "https://electionresults.govt.nz/ge2026/";
+let electionResultsCache = { fetchedAt: 0, payload: null };
+let electionResultsRequest = null;
+
+function electionHtmlText(value) {
+  return String(value || "")
+    .replace(/<script\\b[\\s\\S]*?<\\/script>/gi, " ")
+    .replace(/<style\\b[\\s\\S]*?<\\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;|&#160;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/&#(\\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([\\da-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/\\s+/g, " ")
+    .trim();
+}
+
+function parseElectionResultsHtml(html) {
+  const rows = [];
+  for (const rowMatch of html.matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)) {
+    const cells = [...rowMatch[1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)]
+      .map((cell) => electionHtmlText(cell[1]));
+    if (cells.length < 6) continue;
+    const party = cells[0];
+    const votes = Number(cells[1].replace(/[^\\d]/g, ""));
+    if (!party || !Number.isFinite(votes) || !/party|total/i.test(party) && votes === 0) continue;
+    const share = Number.parseFloat(cells[2].replace("%", ""));
+    const electorateSeats = Number.parseInt(cells[3].replace(/[^\\d-]/g, ""), 10) || 0;
+    const listSeats = Number.parseInt(cells[4].replace(/[^\\d-]/g, ""), 10) || 0;
+    const totalSeats = Number.parseInt(cells[5].replace(/[^\\d-]/g, ""), 10) || 0;
+    rows.push({ party, votes, share: Number.isFinite(share) ? share : null, electorateSeats, listSeats, totalSeats });
+  }
+
+  const text = electionHtmlText(html);
+  const progressMatch = text.match(/Nationwide Party Votes\\s*[-–:]?\\s*(\\d+(?:\\.\\d+)?)%\\s*of results counted/i)
+    || text.match(/(\\d+(?:\\.\\d+)?)%\\s*of results counted/i);
+  const totalRow = rows.find((row) => /^total$/i.test(row.party));
+  const parties = rows.filter((row) => !/^total$/i.test(row.party) && !/party votes|% of votes|projected total seats/i.test(row.party));
+  if (!parties.length) throw new Error("The Electoral Commission results page did not contain a readable party-vote table.");
+
+  return {
+    progress: progressMatch ? Number(progressMatch[1]) : null,
+    totalPartyVotes: totalRow?.votes || parties.reduce((sum, row) => sum + row.votes, 0),
+    totalSeats: parties.reduce((sum, row) => sum + row.totalSeats, 0),
+    parties,
+    source: electionResultsUrl
+  };
+}
+
+async function getElectionResults() {
+  if (electionResultsCache.payload && Date.now() - electionResultsCache.fetchedAt < 60_000) {
+    return electionResultsCache.payload;
+  }
+  if (electionResultsRequest) return electionResultsRequest;
+
+  electionResultsRequest = (async () => {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15_000);
+    try {
+      const upstream = await fetch(electionResultsUrl, {
+        signal: controller.signal,
+        headers: {
+          "User-Agent": "ZL3TOM-Election-Desk/1.0 (+https://zl3tom.com/election)",
+          "Accept": "text/html,application/xhtml+xml"
+        }
+      });
+      if (!upstream.ok) throw new Error("Electoral Commission results returned HTTP " + upstream.status);
+      const html = await upstream.text();
+      if (html.length > 8_000_000) throw new Error("Electoral Commission results page was unexpectedly large.");
+      const parsed = parseElectionResultsHtml(html);
+      const payload = { ok: true, ...parsed, fetchedAt: new Date().toISOString(), updateIntervalSeconds: 60 };
+      electionResultsCache = { fetchedAt: Date.now(), payload };
+      return payload;
+    } finally {
+      clearTimeout(timeout);
+      electionResultsRequest = null;
+    }
+  })();
+  return electionResultsRequest;
+}
+
 const server = createServer(async (request, response) => {
   setSecurityHeaders(response);
   const requestUrl = new URL(request.url || "/", `http://${request.headers.host || "localhost"}`);
@@ -657,6 +743,23 @@ const server = createServer(async (request, response) => {
       "Cache-Control": "no-store"
     });
     response.end(request.method === "HEAD" ? undefined : body);
+    return;
+  }
+
+
+  if (requestUrl.pathname === "/api/election-results" && (request.method === "GET" || request.method === "HEAD")) {
+    try {
+      const results = await getElectionResults();
+      sendJson(response, 200, results, { "Cache-Control": "public, max-age=30, stale-while-revalidate=60" });
+    } catch (error) {
+      console.error("Election results feed unavailable:", error?.message || "Unknown results error");
+      sendJson(response, 502, {
+        ok: false,
+        message: "The Electoral Commission results feed is temporarily unavailable.",
+        source: electionResultsUrl,
+        lastSuccessfulUpdate: electionResultsCache.payload?.fetchedAt || null
+      });
+    }
     return;
   }
 
