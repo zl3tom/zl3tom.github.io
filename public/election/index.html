@@ -172,8 +172,9 @@
         const progressEl = document.getElementById('results-progress');
         if (progressEl) progressEl.textContent = data.progress == null ? '—' : Number(data.progress).toFixed(1) + '%';
         updated.textContent = 'Last checked ' + new Date(data.fetchedAt).toLocaleString('en-NZ', {dateStyle:'medium',timeStyle:'short',timeZone:'Pacific/Auckland'}) + ' NZ time.';
-        status.textContent = 'Connected · checking every 60 seconds';
+        status.textContent = data.sourceNote ? 'Official preliminary results loaded · checking for updates every 60 seconds' : 'Live Electoral Commission feed connected · checking every 60 seconds';
         status.style.color = 'var(--teal)';
+        if (data.sourceNote) updated.textContent += ' ' + data.sourceNote;
         hasData = true;
       }
       async function refresh() {
