@@ -428,12 +428,12 @@ const newGuides = [
       {
         id: "support-report",
         title: "Updates and reporting a useful problem",
-        html: `<p><strong>QSO One 4.2.5 release highlights:</strong></p><ul><li><strong>On the Net:</strong> plan nets in advance using Net Finder search. Net Control starts when the net begins; existing listings use their Net Finder link and new nets get a custom shareable link.</li><li><strong>iPhone:</strong> TidRadio speaker microphones now fully support the speaker, microphone and PTT button.</li><li><strong>AllStar:</strong> Bluetooth and wired speaker microphones now support full-duplex audio.</li><li><strong>Audio and compatibility fixes:</strong> accented talkgroup names display correctly across networks; AMBE server audio is smoother on weak Wi-Fi; Bluetooth call pop-ups and a false clock warning have been removed.</li><li><strong>Stability fixes:</strong> addressed a TalkBack crash, AllStar freezes and several iPhone issues, including keyboard dismissal, M17 setup-box readability, RX VOL speaker volume and a car-kit “call ended” loop.</li></ul><p>The developer also included smaller fixes based on user bug reports. Check <strong>What’s new</strong> in your installed version for the release notes that apply to your platform.</p><p>Check your installed version and build number in the app’s information screen. Use the official store, download site or updater for your installation. A support post about a beta build may describe behaviour that your release does not yet have.</p><p>If a problem persists, use <strong>Settings → Send Bug Report</strong> as directed by the <a href="https://qso1.net/faq">official support page</a>. Include:</p><ul><li>App version/build, operating system and device model.</li><li>The network and destination, and whether the issue affects receiving, transmitting or both.</li><li>Microphone, speaker/headset and external PTT device in use.</li><li>The steps to reproduce it, expected result and actual result.</li><li>Whether it also happens with on-screen PTT and the built-in audio devices.</li><li>Any error message, with passwords and other sensitive details removed from public attachments.</li></ul><p>Review the privacy policy before sending diagnostics. Detailed, reproducible reports are more useful than “it does not work”.</p><div class="guide-callout"><strong>Want to see what changed in earlier releases?</strong><p style="margin:.45rem 0 0">Open the version history for a summary of previous QSO One updates, new features and fixes.</p><button type="button" id="qso-one-changelog-open" class="button button-primary" aria-haspopup="dialog" aria-controls="qso-one-changelog">View version changelog</button></div>
+        html: `<p><strong>QSO One 4.2.5 release highlights:</strong></p><ul><li><strong>On the Net:</strong> plan nets in advance using Net Finder search. Net Control starts when the net begins; existing listings use their Net Finder link and new nets get a custom shareable link.</li><li><strong>iPhone:</strong> TidRadio speaker microphones now fully support the speaker, microphone and PTT button.</li><li><strong>AllStar:</strong> Bluetooth and wired speaker microphones now support full-duplex audio.</li><li><strong>Audio and compatibility fixes:</strong> accented talkgroup names display correctly across networks; AMBE server audio is smoother on weak Wi-Fi; Bluetooth call pop-ups and a false clock warning have been removed.</li><li><strong>Stability fixes:</strong> addressed a TalkBack crash, AllStar freezes and several iPhone issues, including keyboard dismissal, M17 setup-box readability, RX VOL speaker volume and a car-kit “call ended” loop.</li></ul><p>The developer also included smaller fixes based on user bug reports. Check <strong>What’s new</strong> in your installed version for the release notes that apply to your platform.</p><p>Check your installed version and build number in the app’s information screen. Use the official store, download site or updater for your installation. A support post about a beta build may describe behaviour that your release does not yet have.</p><p>If a problem persists, use <strong>Settings → Send Bug Report</strong> as directed by the <a href="https://qso1.net/faq">official support page</a>. Include:</p><ul><li>App version/build, operating system and device model.</li><li>The network and destination, and whether the issue affects receiving, transmitting or both.</li><li>Microphone, speaker/headset and external PTT device in use.</li><li>The steps to reproduce it, expected result and actual result.</li><li>Whether it also happens with on-screen PTT and the built-in audio devices.</li><li>Any error message, with passwords and other sensitive details removed from public attachments.</li></ul><p>Review the privacy policy before sending diagnostics. Detailed, reproducible reports are more useful than “it does not work”.</p><div class="guide-callout"><strong>Complete QSO One version history</strong><p style="margin:.45rem 0 0">The release-by-release changelog is displayed below, with the latest version first.</p></div>
 <style>.qso-changelog-version{border:1px solid #cbd5e1;border-radius:10px;margin:.75rem 0;overflow:hidden}.qso-changelog-version summary{cursor:pointer;padding:.9rem 1rem;background:#f8fafc;font-weight:700;color:#172033}.qso-changelog-version summary:focus-visible{outline:3px solid #2563eb;outline-offset:-3px}.qso-changelog-version-content{padding:.85rem 1rem}.qso-changelog-version-content h3{margin-top:0}</style>
-<dialog id="qso-one-changelog" aria-labelledby="qso-one-changelog-title" style="width:min( min(92vw, 760px), 760px);max-width:760px;max-height:85vh;padding:0;border:1px solid #cbd5e1;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.3);color:#172033;">
+<section id="qso-one-changelog" aria-labelledby="qso-one-changelog-title" style="width:100%;max-width:none;max-height:none;overflow:visible;padding:0;margin:1.5rem 0;border:1px solid #cbd5e1;border-radius:16px;box-shadow:0 4px 18px rgba(0,0,0,.08);color:#172033;background:#fff;">
 <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;background:#f1f5f9;border-bottom:1px solid #cbd5e1;position:sticky;top:0;">
 <h2 id="qso-one-changelog-title" style="margin:0;font-size:1.35rem;">QSO One version changelog</h2>
-<button type="button" id="qso-one-changelog-close" aria-label="Close changelog" style="font-size:1.4rem;line-height:1;padding:.35rem .65rem;border:1px solid #94a3b8;border-radius:8px;background:white;cursor:pointer;">×</button>
+
 </div>
 <div style="padding:1.1rem 1.35rem;overflow-y:auto;">
 <p style="margin-top:0;">A version-by-version summary of notable QSO One features and fixes. Release availability can differ between platforms and app stores.</p>
@@ -513,23 +513,7 @@ const newGuides = [
 <p><strong>Note:</strong> This is an edited summary, not a verbatim copy of every developer release note. For the most accurate platform-specific information, check the app’s <strong>What’s New</strong> screen and the official QSO One community.</p>
 <p><a href="https://www.reddit.com/r/QSOone/" target="_blank" rel="noopener noreferrer">Browse QSO One release announcements on Reddit ↗</a> · <a href="https://qso1.net/" target="_blank" rel="noopener noreferrer">Official QSO One website ↗</a></p>
 </div></div></details>
-</dialog>
-<script>(function () {
-  const dialog = document.getElementById('qso-one-changelog');
-  const openButton = document.getElementById('qso-one-changelog-open');
-  const closeButton = document.getElementById('qso-one-changelog-close');
-  if (!dialog || !openButton || !closeButton) return;
-  openButton.addEventListener('click', function () {
-    if (typeof dialog.showModal === 'function') dialog.showModal();
-    else dialog.setAttribute('open', '');
-    closeButton.focus();
-  });
-  closeButton.addEventListener('click', function () { dialog.close(); });
-  dialog.addEventListener('click', function (event) {
-    if (event.target === dialog) dialog.close();
-  });
-})();
-</script></script>`
+</section>`
       }
 
     ],
