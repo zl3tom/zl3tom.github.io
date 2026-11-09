@@ -339,6 +339,95 @@ const newGuides = [
         html: `<p>QSO One, developed by Frank KD8JKK, is a free internet voice client for licensed amateur radio operators. The Windows and Android releases connect to AllStarLink, EchoLink, IAX Direct, DMR, System Fusion (YSF) and M17. QSO One 4.2.5 adds advance net planning through On the Net, improved microphone support and a range of audio and stability fixes. iPhone, iPad and Mac users can access current Apple beta builds through TestFlight.</p><p>It uses your device’s microphone, speaker and internet connection to receive and transmit through these networks without a separate radio, hotspot or Raspberry Pi. Depending on the destination, your voice may reach other app users, linked nodes or RF repeaters. It is useful at home, when travelling, or when a traditional radio setup is difficult to access.</p><p>QSO One also provides directories, favourites, callsign lookup, contact logging and Net Finder. Access is free, with optional contributions to support development. You still need your amateur radio licence and any accounts required by your chosen network.</p>`
       },
       {
+        title: "QSO One version history",
+        html: `<div class="guide-callout"><strong>Complete QSO One version history</strong><p style="margin:.45rem 0 0">The release-by-release changelog is displayed below, with the latest version first.</p></div>
+<style>.qso-changelog-version{border:1px solid #cbd5e1;border-radius:10px;margin:.75rem 0;overflow:hidden}.qso-changelog-version summary{cursor:pointer;padding:.9rem 1rem;background:#f8fafc;font-weight:700;color:#172033}.qso-changelog-version summary:focus-visible{outline:3px solid #2563eb;outline-offset:-3px}.qso-changelog-version-content{padding:.85rem 1rem}.qso-changelog-version-content h3{margin-top:0}</style>
+<section id="qso-one-changelog" aria-labelledby="qso-one-changelog-title" style="width:100%;max-width:none;max-height:none;overflow:visible;padding:0;margin:1.5rem 0;border:1px solid #cbd5e1;border-radius:16px;box-shadow:0 4px 18px rgba(0,0,0,.08);color:#172033;background:#fff;">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;background:#f1f5f9;border-bottom:1px solid #cbd5e1;position:sticky;top:0;">
+<h2 id="qso-one-changelog-title" style="margin:0;font-size:1.35rem;">QSO One version changelog</h2>
+
+</div>
+<div style="padding:1.1rem 1.35rem;overflow-y:auto;">
+<p style="margin-top:0;">A version-by-version summary of notable QSO One features and fixes. Release availability can differ between platforms and app stores.</p>
+<details class="qso-changelog-version" open><summary>Version 4.2.5 — On the Net planning, speaker microphones and AllStar audio</summary><div class="qso-changelog-version-content">
+<ul>
+<li><strong>On the Net scheduling:</strong> plan a net ahead by choosing it from Net Finder with search. Net Control starts automatically when the scheduled net begins. Existing listed nets use their Net Finder link, while newly created nets receive a custom link.</li>
+<li><strong>TidRadio speaker microphones:</strong> full speaker, microphone and PTT-button operation is now supported on iPhone.</li>
+<li><strong>AllStar full duplex:</strong> Bluetooth and wired speaker microphones now support full-duplex audio.</li>
+<li><strong>Talkgroup names:</strong> accented talkgroup names are no longer garbled across networks.</li>
+<li><strong>Audio and connectivity:</strong> smoother AMBE server audio on weak Wi-Fi and fixes for AllStar freezes.</li>
+<li><strong>Bluetooth:</strong> removed disruptive Bluetooth call pop-ups.</li>
+<li><strong>Other fixes:</strong> corrected a false clock warning and a TalkBack crash; improved iPhone keyboard dismissal when tapping outside a text field, made M17 setup boxes easier to read, increased speaker output slightly through RX VOL, and fixed a car-kit “call ended” loop, along with many smaller fixes.</li>
+</ul>
+</div></details><details class="qso-changelog-version"><summary>Version 4.2.4 — Active Now, NXDN and safer transmitting</summary><div class="qso-changelog-version-content">
+<ul>
+<li><strong>Active Now:</strong> added a QSO One-built activity view for AllStar, IAX Direct, EchoLink, FreeDMR, AmComm, DMR+, D-STAR, P25, NXDN, M17 and YSF/FCS. It shows the network or destination where a current-version QSO One user is transmitting, without identifying the operator. Coverage grows as users update.</li>
+<li><strong>AllStar activity:</strong> red microphone indicators identify transmitting QSO One users in connected-node lists, Recently Heard and On the Net check-in lists.</li>
+<li><strong>NXDN (Experimental):</strong> added NXDN support, a dedicated parrot and audio-test support.</li>
+<li><strong>HamThings DMR (Experimental):</strong> added the HamThings DMR network.</li>
+<li><strong>On the Net:</strong> added Emergency Break, shared net-control handover that keeps the net running, Past Nets synchronisation between devices, multi-callsign check-ins and tappable chat links. The running-net screen was tightened so the chat box is no longer hidden behind the PTT bar.</li>
+<li><strong>Net-control moderation:</strong> net control and loggers can select a marked callsign to pause its transmission or ban it for 30 seconds up to the remainder of the net.</li>
+<li><strong>Accessibility:</strong> major NVDA and Narrator improvements on Windows and better VoiceOver support on iPhone and Mac.</li>
+<li><strong>Other additions:</strong> browsing without a callsign (browsing only), Bluetooth LE PTT buttons on Windows and playback of personal recordings inside the app.</li>
+<li><strong>Transmit-safety defaults:</strong> everyone was reset to Hold to Talk and a 60-second transmit timeout. A 10-second dead-air cutoff unkeys a silent transmission; DTMF keypad activity is exempt. Android and iPhone AllStar talk-over protection prevents keying over another station unless using earbuds or headphones. Several unintended automatic-transmit paths, mainly involving DMR, were closed.</li>
+<li><strong>4.2.4 fixes:</strong> corrected the audio test stopping when the operator is quiet, acceptance of microphones that are silent between words (including noise-gated headsets and muted mixers), and DMR+ Timeslot 2 talkgroup transmission.</li>
+<li><strong>Other fixes:</strong> password fields no longer autocorrect; improved sign-in reliability when the computer clock is wrong; fixed startup stalls; improved AllStar recovery after drops and hub refusals; improved DMR+ linking and playback; microphone gain now works with AGC; fixed UNIWA F400 wired speaker-mic and screen-off PTT behaviour; improved TIDRADIO microphone recognition; fixed a Mac microphone crash on wake; improved iPhone Bluetooth microphone recovery and restored iPhone speaker bass; plus brighter, more readable text and buttons.</li>
+</ul>
+<p><strong>4.2.3 follow-up:</strong> the developer specifically asks users who installed 4.2.3 from the Microsoft Store or qso1.net to update to 4.2.4, which addresses the three issues listed above.</p>
+<p><strong>Support development:</strong> the developer invites users to consider a monthly in-app subscription or a contribution through <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">QSO One support</a>.</p>
+</div></details><details class="qso-changelog-version"><summary>Version 4.2.0 — Weather, All Favorites and On the Net</summary><div class="qso-changelog-version-content">
+<ul>
+<li>Added Weather with current conditions, hourly and seven-day forecasts, radar, alerts and Weather Radio (US-focused).</li>
+<li>Added All Favorites, bringing saved destinations from different networks into one list with reordering and supported live activity.</li>
+<li>Expanded On the Net with special guest check-ins, chat replies and improved emoji support.</li>
+<li>Moved Net Finder into On the Net and added experimental BC-TRBO NextGen DMR support.</li>
+<li>Fixed issues involving DMR audio, Wi-Fi changes, EchoLink, AllStar/IAX, Windows accessibility tools, USB microphones and notifications.</li>
+</ul>
+<p><a href="https://www.reddit.com/r/QSOone/comments/1xdpt1g/qso_one_420_weather_and_on_the_net_updates/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.2.0 release notes ↗</a></p>
+</div></details><details class="qso-changelog-version"><summary>Version 4.1.9 — Weather Radio and refinements</summary><div class="qso-changelog-version-content">
+<ul>
+<li>Introduced Weather Radio and moved Net Finder into the On the Net area.</li>
+<li>Added experimental BC-TRBO NextGen DMR support.</li>
+<li>Improved DMR codec selection, TGIF connection recovery, notifications, small-screen menus and app reliability.</li>
+</ul>
+<a href="https://www.reddit.com/r/QSOone/comments/1xdexr0/qso_one_419_weather_radio_us_and_more/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.9 release notes ↗</a>
+</div></details><details class="qso-changelog-version"><summary>Version 4.1.5 — reliability and usability</summary><div class="qso-changelog-version-content">
+<ul>
+<li>Improved D-STAR and P25 directory refresh, favourites and audio behaviour.</li>
+<li>Added DMR scanning and clearer connection warnings.</li>
+<li>Improved Windows and Android PTT, Bluetooth, microphone selection and USB AMBE support.</li>
+<li>Fixed connection, audio, crash, notification and small-screen issues.</li>
+</ul>
+<a href="https://www.reddit.com/r/QSOone/comments/1x4xh63/qso_one_415_big_bugs_hopefully_squashed/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.5 release notes ↗</a>
+</div></details><details class="qso-changelog-version"><summary>Version 4.1.4 — D-STAR and P25</summary><div class="qso-changelog-version-content">
+<ul>
+<li>Introduced experimental D-STAR reflector support, including REF, XRF, DCS and XLX.</li>
+<li>Introduced experimental P25 talkgroups and FCS rooms for System Fusion.</li>
+<li>Improved M17 reflector support and made fixes across Windows audio, Bluetooth, logging and Net Finder.</li>
+</ul>
+<a href="https://www.reddit.com/r/QSOone/comments/1wzvypy/qso_one_414_dstar_and_p25_report_for_duty/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.4 release notes ↗</a>
+</div></details><details class="qso-changelog-version"><summary>Version 4.1.3 — DMR and connection fixes</summary><div class="qso-changelog-version-content">
+<ul>
+<li>Fixed BrandMeister audio stuttering after switching between Wi-Fi and mobile data.</li>
+<li>Improved DMR+ static talkgroups and corrected connection, registration and directory issues across networks.</li>
+<li>Improved Android Bluetooth audio routing and Windows microphone permission handling.</li>
+</ul>
+<a href="https://www.reddit.com/r/QSOone/comments/1wvi04o/qso_one_413_more_bugs_squashed/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.3 release notes ↗</a>
+</div></details><details class="qso-changelog-version"><summary>Version 4.1.1 — DMR networks and Net Finder</summary><div class="qso-changelog-version-content">
+<ul>
+<li>Added experimental DMR+ and ADN Systems, including live Last Heard for ADN Systems.</li>
+<li>Added separate login cards and account backup for DMR network credentials.</li>
+<li>Added more language options and improvements to audio, PTT, small-screen layouts and connection handling.</li>
+<li>Expanded Net Finder to include DMR+ and System X nets.</li>
+</ul>
+<a href="https://www.reddit.com/r/QSOone/comments/1wshf98/qso_one_411_is_here_changelog/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.1 release notes ↗</a>
+<hr>
+<p><strong>Note:</strong> This is an edited summary, not a verbatim copy of every developer release note. For the most accurate platform-specific information, check the app’s <strong>What’s New</strong> screen and the official QSO One community.</p>
+<p><a href="https://www.reddit.com/r/QSOone/" target="_blank" rel="noopener noreferrer">Browse QSO One release announcements on Reddit ↗</a> · <a href="https://qso1.net/" target="_blank" rel="noopener noreferrer">Official QSO One website ↗</a></p>
+</div></div></details>
+</section>`
+      },
+      {
         id: "beacon",
         title: "Beacon: QSO One's new experimental voice network",
         html: `<div class="guide-callout"><strong>Live on the web:</strong> Beacon, formerly QSO Earth, is QSO One's own voice network. Open <a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer">qso1.net/beacon</a>. It is experimental and arrives on the web first; integration into the QSO One app is planned for a later release.</div>
@@ -428,92 +517,7 @@ const newGuides = [
       {
         id: "support-report",
         title: "Updates and reporting a useful problem",
-        html: `<p><strong>QSO One 4.2.5 release highlights:</strong></p><ul><li><strong>On the Net:</strong> plan nets in advance using Net Finder search. Net Control starts when the net begins; existing listings use their Net Finder link and new nets get a custom shareable link.</li><li><strong>iPhone:</strong> TidRadio speaker microphones now fully support the speaker, microphone and PTT button.</li><li><strong>AllStar:</strong> Bluetooth and wired speaker microphones now support full-duplex audio.</li><li><strong>Audio and compatibility fixes:</strong> accented talkgroup names display correctly across networks; AMBE server audio is smoother on weak Wi-Fi; Bluetooth call pop-ups and a false clock warning have been removed.</li><li><strong>Stability fixes:</strong> addressed a TalkBack crash, AllStar freezes and several iPhone issues, including keyboard dismissal, M17 setup-box readability, RX VOL speaker volume and a car-kit “call ended” loop.</li></ul><p>The developer also included smaller fixes based on user bug reports. Check <strong>What’s new</strong> in your installed version for the release notes that apply to your platform.</p><p>Check your installed version and build number in the app’s information screen. Use the official store, download site or updater for your installation. A support post about a beta build may describe behaviour that your release does not yet have.</p><p>If a problem persists, use <strong>Settings → Send Bug Report</strong> as directed by the <a href="https://qso1.net/faq">official support page</a>. Include:</p><ul><li>App version/build, operating system and device model.</li><li>The network and destination, and whether the issue affects receiving, transmitting or both.</li><li>Microphone, speaker/headset and external PTT device in use.</li><li>The steps to reproduce it, expected result and actual result.</li><li>Whether it also happens with on-screen PTT and the built-in audio devices.</li><li>Any error message, with passwords and other sensitive details removed from public attachments.</li></ul><p>Review the privacy policy before sending diagnostics. Detailed, reproducible reports are more useful than “it does not work”.</p><div class="guide-callout"><strong>Complete QSO One version history</strong><p style="margin:.45rem 0 0">The release-by-release changelog is displayed below, with the latest version first.</p></div>
-<style>.qso-changelog-version{border:1px solid #cbd5e1;border-radius:10px;margin:.75rem 0;overflow:hidden}.qso-changelog-version summary{cursor:pointer;padding:.9rem 1rem;background:#f8fafc;font-weight:700;color:#172033}.qso-changelog-version summary:focus-visible{outline:3px solid #2563eb;outline-offset:-3px}.qso-changelog-version-content{padding:.85rem 1rem}.qso-changelog-version-content h3{margin-top:0}</style>
-<section id="qso-one-changelog" aria-labelledby="qso-one-changelog-title" style="width:100%;max-width:none;max-height:none;overflow:visible;padding:0;margin:1.5rem 0;border:1px solid #cbd5e1;border-radius:16px;box-shadow:0 4px 18px rgba(0,0,0,.08);color:#172033;background:#fff;">
-<div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;background:#f1f5f9;border-bottom:1px solid #cbd5e1;position:sticky;top:0;">
-<h2 id="qso-one-changelog-title" style="margin:0;font-size:1.35rem;">QSO One version changelog</h2>
-
-</div>
-<div style="padding:1.1rem 1.35rem;overflow-y:auto;">
-<p style="margin-top:0;">A version-by-version summary of notable QSO One features and fixes. Release availability can differ between platforms and app stores.</p>
-<details class="qso-changelog-version" open><summary>Version 4.2.5 — On the Net planning, speaker microphones and AllStar audio</summary><div class="qso-changelog-version-content">
-<ul>
-<li><strong>On the Net scheduling:</strong> plan a net ahead by choosing it from Net Finder with search. Net Control starts automatically when the scheduled net begins. Existing listed nets use their Net Finder link, while newly created nets receive a custom link.</li>
-<li><strong>TidRadio speaker microphones:</strong> full speaker, microphone and PTT-button operation is now supported on iPhone.</li>
-<li><strong>AllStar full duplex:</strong> Bluetooth and wired speaker microphones now support full-duplex audio.</li>
-<li><strong>Talkgroup names:</strong> accented talkgroup names are no longer garbled across networks.</li>
-<li><strong>Audio and connectivity:</strong> smoother AMBE server audio on weak Wi-Fi and fixes for AllStar freezes.</li>
-<li><strong>Bluetooth:</strong> removed disruptive Bluetooth call pop-ups.</li>
-<li><strong>Other fixes:</strong> corrected a false clock warning and a TalkBack crash; improved iPhone keyboard dismissal when tapping outside a text field, made M17 setup boxes easier to read, increased speaker output slightly through RX VOL, and fixed a car-kit “call ended” loop, along with many smaller fixes.</li>
-</ul>
-</div></details><details class="qso-changelog-version"><summary>Version 4.2.4 — Active Now, NXDN and safer transmitting</summary><div class="qso-changelog-version-content">
-<ul>
-<li><strong>Active Now:</strong> added a QSO One-built activity view for AllStar, IAX Direct, EchoLink, FreeDMR, AmComm, DMR+, D-STAR, P25, NXDN, M17 and YSF/FCS. It shows the network or destination where a current-version QSO One user is transmitting, without identifying the operator. Coverage grows as users update.</li>
-<li><strong>AllStar activity:</strong> red microphone indicators identify transmitting QSO One users in connected-node lists, Recently Heard and On the Net check-in lists.</li>
-<li><strong>NXDN (Experimental):</strong> added NXDN support, a dedicated parrot and audio-test support.</li>
-<li><strong>HamThings DMR (Experimental):</strong> added the HamThings DMR network.</li>
-<li><strong>On the Net:</strong> added Emergency Break, shared net-control handover that keeps the net running, Past Nets synchronisation between devices, multi-callsign check-ins and tappable chat links. The running-net screen was tightened so the chat box is no longer hidden behind the PTT bar.</li>
-<li><strong>Net-control moderation:</strong> net control and loggers can select a marked callsign to pause its transmission or ban it for 30 seconds up to the remainder of the net.</li>
-<li><strong>Accessibility:</strong> major NVDA and Narrator improvements on Windows and better VoiceOver support on iPhone and Mac.</li>
-<li><strong>Other additions:</strong> browsing without a callsign (browsing only), Bluetooth LE PTT buttons on Windows and playback of personal recordings inside the app.</li>
-<li><strong>Transmit-safety defaults:</strong> everyone was reset to Hold to Talk and a 60-second transmit timeout. A 10-second dead-air cutoff unkeys a silent transmission; DTMF keypad activity is exempt. Android and iPhone AllStar talk-over protection prevents keying over another station unless using earbuds or headphones. Several unintended automatic-transmit paths, mainly involving DMR, were closed.</li>
-<li><strong>4.2.4 fixes:</strong> corrected the audio test stopping when the operator is quiet, acceptance of microphones that are silent between words (including noise-gated headsets and muted mixers), and DMR+ Timeslot 2 talkgroup transmission.</li>
-<li><strong>Other fixes:</strong> password fields no longer autocorrect; improved sign-in reliability when the computer clock is wrong; fixed startup stalls; improved AllStar recovery after drops and hub refusals; improved DMR+ linking and playback; microphone gain now works with AGC; fixed UNIWA F400 wired speaker-mic and screen-off PTT behaviour; improved TIDRADIO microphone recognition; fixed a Mac microphone crash on wake; improved iPhone Bluetooth microphone recovery and restored iPhone speaker bass; plus brighter, more readable text and buttons.</li>
-</ul>
-<p><strong>4.2.3 follow-up:</strong> the developer specifically asks users who installed 4.2.3 from the Microsoft Store or qso1.net to update to 4.2.4, which addresses the three issues listed above.</p>
-<p><strong>Support development:</strong> the developer invites users to consider a monthly in-app subscription or a contribution through <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">QSO One support</a>.</p>
-</div></details><details class="qso-changelog-version"><summary>Version 4.2.0 — Weather, All Favorites and On the Net</summary><div class="qso-changelog-version-content">
-<ul>
-<li>Added Weather with current conditions, hourly and seven-day forecasts, radar, alerts and Weather Radio (US-focused).</li>
-<li>Added All Favorites, bringing saved destinations from different networks into one list with reordering and supported live activity.</li>
-<li>Expanded On the Net with special guest check-ins, chat replies and improved emoji support.</li>
-<li>Moved Net Finder into On the Net and added experimental BC-TRBO NextGen DMR support.</li>
-<li>Fixed issues involving DMR audio, Wi-Fi changes, EchoLink, AllStar/IAX, Windows accessibility tools, USB microphones and notifications.</li>
-</ul>
-<p><a href="https://www.reddit.com/r/QSOone/comments/1xdpt1g/qso_one_420_weather_and_on_the_net_updates/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.2.0 release notes ↗</a></p>
-</div></details><details class="qso-changelog-version"><summary>Version 4.1.9 — Weather Radio and refinements</summary><div class="qso-changelog-version-content">
-<ul>
-<li>Introduced Weather Radio and moved Net Finder into the On the Net area.</li>
-<li>Added experimental BC-TRBO NextGen DMR support.</li>
-<li>Improved DMR codec selection, TGIF connection recovery, notifications, small-screen menus and app reliability.</li>
-</ul>
-<a href="https://www.reddit.com/r/QSOone/comments/1xdexr0/qso_one_419_weather_radio_us_and_more/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.9 release notes ↗</a>
-</div></details><details class="qso-changelog-version"><summary>Version 4.1.5 — reliability and usability</summary><div class="qso-changelog-version-content">
-<ul>
-<li>Improved D-STAR and P25 directory refresh, favourites and audio behaviour.</li>
-<li>Added DMR scanning and clearer connection warnings.</li>
-<li>Improved Windows and Android PTT, Bluetooth, microphone selection and USB AMBE support.</li>
-<li>Fixed connection, audio, crash, notification and small-screen issues.</li>
-</ul>
-<a href="https://www.reddit.com/r/QSOone/comments/1x4xh63/qso_one_415_big_bugs_hopefully_squashed/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.5 release notes ↗</a>
-</div></details><details class="qso-changelog-version"><summary>Version 4.1.4 — D-STAR and P25</summary><div class="qso-changelog-version-content">
-<ul>
-<li>Introduced experimental D-STAR reflector support, including REF, XRF, DCS and XLX.</li>
-<li>Introduced experimental P25 talkgroups and FCS rooms for System Fusion.</li>
-<li>Improved M17 reflector support and made fixes across Windows audio, Bluetooth, logging and Net Finder.</li>
-</ul>
-<a href="https://www.reddit.com/r/QSOone/comments/1wzvypy/qso_one_414_dstar_and_p25_report_for_duty/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.4 release notes ↗</a>
-</div></details><details class="qso-changelog-version"><summary>Version 4.1.3 — DMR and connection fixes</summary><div class="qso-changelog-version-content">
-<ul>
-<li>Fixed BrandMeister audio stuttering after switching between Wi-Fi and mobile data.</li>
-<li>Improved DMR+ static talkgroups and corrected connection, registration and directory issues across networks.</li>
-<li>Improved Android Bluetooth audio routing and Windows microphone permission handling.</li>
-</ul>
-<a href="https://www.reddit.com/r/QSOone/comments/1wvi04o/qso_one_413_more_bugs_squashed/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.3 release notes ↗</a>
-</div></details><details class="qso-changelog-version"><summary>Version 4.1.1 — DMR networks and Net Finder</summary><div class="qso-changelog-version-content">
-<ul>
-<li>Added experimental DMR+ and ADN Systems, including live Last Heard for ADN Systems.</li>
-<li>Added separate login cards and account backup for DMR network credentials.</li>
-<li>Added more language options and improvements to audio, PTT, small-screen layouts and connection handling.</li>
-<li>Expanded Net Finder to include DMR+ and System X nets.</li>
-</ul>
-<a href="https://www.reddit.com/r/QSOone/comments/1wshf98/qso_one_411_is_here_changelog/" target="_blank" rel="noopener noreferrer">Read the developer’s 4.1.1 release notes ↗</a>
-<hr>
-<p><strong>Note:</strong> This is an edited summary, not a verbatim copy of every developer release note. For the most accurate platform-specific information, check the app’s <strong>What’s New</strong> screen and the official QSO One community.</p>
-<p><a href="https://www.reddit.com/r/QSOone/" target="_blank" rel="noopener noreferrer">Browse QSO One release announcements on Reddit ↗</a> · <a href="https://qso1.net/" target="_blank" rel="noopener noreferrer">Official QSO One website ↗</a></p>
-</div></div></details>
-</section>`
+        html: `<p><strong>QSO One 4.2.5 release highlights:</strong></p><ul><li><strong>On the Net:</strong> plan nets in advance using Net Finder search. Net Control starts when the net begins; existing listings use their Net Finder link and new nets get a custom shareable link.</li><li><strong>iPhone:</strong> TidRadio speaker microphones now fully support the speaker, microphone and PTT button.</li><li><strong>AllStar:</strong> Bluetooth and wired speaker microphones now support full-duplex audio.</li><li><strong>Audio and compatibility fixes:</strong> accented talkgroup names display correctly across networks; AMBE server audio is smoother on weak Wi-Fi; Bluetooth call pop-ups and a false clock warning have been removed.</li><li><strong>Stability fixes:</strong> addressed a TalkBack crash, AllStar freezes and several iPhone issues, including keyboard dismissal, M17 setup-box readability, RX VOL speaker volume and a car-kit “call ended” loop.</li></ul><p>The developer also included smaller fixes based on user bug reports. Check <strong>What’s new</strong> in your installed version for the release notes that apply to your platform.</p><p>Check your installed version and build number in the app’s information screen. Use the official store, download site or updater for your installation. A support post about a beta build may describe behaviour that your release does not yet have.</p><p>If a problem persists, use <strong>Settings → Send Bug Report</strong> as directed by the <a href="https://qso1.net/faq">official support page</a>. Include:</p><ul><li>App version/build, operating system and device model.</li><li>The network and destination, and whether the issue affects receiving, transmitting or both.</li><li>Microphone, speaker/headset and external PTT device in use.</li><li>The steps to reproduce it, expected result and actual result.</li><li>Whether it also happens with on-screen PTT and the built-in audio devices.</li><li>Any error message, with passwords and other sensitive details removed from public attachments.</li></ul><p>Review the privacy policy before sending diagnostics. Detailed, reproducible reports are more useful than “it does not work”.</p>`
       }
 
     ],
