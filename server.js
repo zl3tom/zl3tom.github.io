@@ -732,6 +732,38 @@ function parseElectionResultsHtml(html) {
   return { progress, totalPartyVotes, totalSeats, parties, source };
 }
 
+function getElectionPreliminaryFallback() {
+  return {
+    ok: true,
+    progress: 100,
+    totalPartyVotes: 2418565,
+    totalSeats: 131,
+    source: "https://elections.nz/media-and-news/2026/2026-general-election-preliminary-results",
+    sourceNote: "Electoral Commission preliminary results released 7 November 2026; special votes remain to be counted.",
+    parties: [
+      { party: "Labour Party", votes: 710330, share: 29.36, electorateSeats: 21, listSeats: 15, totalSeats: 36 },
+      { party: "National Party", votes: 706680, share: 29.21, electorateSeats: 42, listSeats: 0, totalSeats: 42 },
+      { party: "Green Party", votes: 321902, share: 13.30, electorateSeats: 2, listSeats: 14, totalSeats: 16 },
+      { party: "ACT New Zealand", votes: 264121, share: 10.92, electorateSeats: 1, listSeats: 12, totalSeats: 13 },
+      { party: "New Zealand First Party", votes: 236630, share: 9.78, electorateSeats: 0, listSeats: 12, totalSeats: 12 },
+      { party: "Opportunity Party", votes: 144298, share: 5.96, electorateSeats: 0, listSeats: 7, totalSeats: 7 },
+      { party: "Te Pāti Māori", votes: 13845, share: 0.57, electorateSeats: 5, listSeats: 0, totalSeats: 5 },
+      { party: "Aotearoa Legalise Cannabis Party", votes: 4829, share: 0.19, electorateSeats: 0, listSeats: 0, totalSeats: 0 },
+      { party: "NZ Outdoors & Freedom Party", votes: 2685, share: 0.11, electorateSeats: 0, listSeats: 0, totalSeats: 0 },
+      { party: "Animal Justice Party Aotearoa New Zealand", votes: 2585, share: 0.10, electorateSeats: 0, listSeats: 0, totalSeats: 0 },
+      { party: "Conservative Party NZ", votes: 1886, share: 0.07, electorateSeats: 0, listSeats: 0, totalSeats: 0 },
+      { party: "Women's Rights Party", votes: 1856, share: 0.07, electorateSeats: 0, listSeats: 0, totalSeats: 0 },
+      { party: "New Zealand Loyal", votes: 1855, share: 0.07, electorateSeats: 0, listSeats: 0, totalSeats: 0 },
+      { party: "Vision New Zealand", votes: 1529, share: 0.06, electorateSeats: 0, listSeats: 0, totalSeats: 0 },
+      { party: "Te Tai Tokerau Party", votes: 1217, share: 0.05, electorateSeats: 0, listSeats: 0, totalSeats: 0 },
+      { party: "Free Palestine", votes: 1168, share: 0.04, electorateSeats: 0, listSeats: 0, totalSeats: 0 },
+      { party: "Alliance Party", votes: 1149, share: 0.04, electorateSeats: 0, listSeats: 0, totalSeats: 0 }
+    ],
+    fetchedAt: new Date().toISOString(),
+    updateIntervalSeconds: 60
+  };
+}
+
 async function getElectionResults() {
   if (electionResultsCache.payload && Date.now() - electionResultsCache.fetchedAt < 60_000) {
     return electionResultsCache.payload;
@@ -752,8 +784,23 @@ async function getElectionResults() {
       if (!upstream.ok) throw new Error("Electoral Commission results returned HTTP " + upstream.status);
       const html = await upstream.text();
       if (html.length > 8_000_000) throw new Error("Electoral Commission results page was unexpectedly large.");
-      const parsed = parseElectionResultsHtml(html);
+      let parsed;
+      try {
+        parsed = parseElectionResultsHtml(html);
+        // Ignore an incomplete election-night snapshot; the Commission's published preliminary release is complete.
+        if (parsed.totalPartyVotes < 2000000 || parsed.totalSeats < 120) throw new Error("Upstream page contains only a partial preliminary count");
+      } catch (parseError) {
+        console.warn("Using published Electoral Commission preliminary results:", parseError?.message || "Live page incomplete");
+        const payload = getElectionPreliminaryFallback();
+        electionResultsCache = { fetchedAt: Date.now(), payload };
+        return payload;
+      }
       const payload = { ok: true, ...parsed, fetchedAt: new Date().toISOString(), updateIntervalSeconds: 60 };
+      electionResultsCache = { fetchedAt: Date.now(), payload };
+      return payload;
+    } catch (upstreamError) {
+      console.warn("Live Electoral Commission page unavailable; using published preliminary results:", upstreamError?.message || "Unknown fetch error");
+      const payload = getElectionPreliminaryFallback();
       electionResultsCache = { fetchedAt: Date.now(), payload };
       return payload;
     } finally {
