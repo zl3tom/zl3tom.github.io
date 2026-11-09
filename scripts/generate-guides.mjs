@@ -303,8 +303,8 @@ const newGuides = [
     cardTitle: "Accessible amateur radio",
     description: "Practical amateur radio options for disabled operators: accessible controls, screen readers, communication choices, comfortable station layouts and support from clubs.",
     keywords: "accessible amateur radio, disabled radio operators, screen readers, adaptive PTT, inclusive ham radio, ZL3TOM",
-    updatedIso: "2026-10-06",
-    updatedDisplay: "6 October 2026",
+    updatedIso: "2026-11-10",
+    updatedDisplay: "10 November 2026",
     asideTitle: "Start with your needs",
     asideHtml: `<p>Choose one activity you enjoy, identify the controls or communication barriers, and try a small adjustment first. Ask a club or trusted operator to help you test it.</p><a href="/contact?topic=website">Tell Thomas about an accessibility barrier</a>`,
     sections: [
@@ -328,15 +328,28 @@ const newGuides = [
     updatedIso: "2026-10-06",
     updatedDisplay: "6 October 2026",
     cardTitle: "QSO One setup",
-    description: "A step-by-step QSO One guide for licensed amateur radio operators using EchoLink, AllStarLink, IAX Direct, DMR, System Fusion and M17 on Windows or Android.",
+    description: "A step-by-step QSO One guide covering Beacon, its experimental browser voice network, plus EchoLink, AllStarLink, IAX Direct, DMR, System Fusion and M17.",
     keywords: "QSO One guide, QSO1 setup, QSO One Android, QSO One Google Play, QSO One EchoLink, QSO One AllStar, QSO One DMR, amateur radio app, ZL3TOM",
-    asideTitle: "Current platforms",
-    asideHtml: "<p>As checked on 6 October 2026, QSO One is available for Windows and Android. Windows 10/11 64-bit is available from the Microsoft Store, and Android 8.0+ is available from Google Play. iOS, macOS and Linux are listed as coming soon.</p><a href=\"https://apps.microsoft.com/detail/9NRWFPGK3L3W\" target=\"_blank\" rel=\"noopener noreferrer\">Get QSO One from the Microsoft Store ↗</a><br><a href=\"https://play.google.com/store/apps/details?id=com.qsoone.qso_one\" target=\"_blank\" rel=\"noopener noreferrer\">Get QSO One on Google Play ↗</a><br><a href=\"https://qso1.net/\" target=\"_blank\" rel=\"noreferrer\">Official QSO One site ↗</a>",
-    contentsHtml: `<nav aria-label="QSO One guide contents"><h2>Jump to help</h2><ul><li><a href="#network-setup">DMR, System Fusion and M17</a></li><li><a href="#iax-settings">IAX Direct settings</a></li><li><a href="#audio-help">Audio troubleshooting</a></li><li><a href="#ptt-help">PTT and background sessions</a></li><li><a href="#privacy-settings">Permissions and privacy</a></li><li><a href="#accessible-use">Accessible operation</a></li><li><a href="#support-report">Updates and support</a></li></ul></nav>`,
+    asideTitle: "Beacon is live on the web",
+    asideHtml: "<p>Beacon (formerly QSO Earth) is QSO One\u2019s experimental voice network. Use it now in your browser; app integration is planned for later.</p><a href=\"https://qso1.net/beacon\" target=\"_blank\" rel=\"noopener noreferrer\">Open Beacon ↗</a><br><a href=\"https://qso1.net/account/rooms\" target=\"_blank\" rel=\"noopener noreferrer\">Manage room subscriptions ↗</a><br><a href=\"https://qso1.net/\" target=\"_blank\" rel=\"noreferrer\">Official QSO One site ↗</a>",
+    contentsHtml: `<nav aria-label="QSO One guide contents"><h2>Jump to help</h2><ul><li><a href="#beacon">Beacon voice network</a></li><li><a href="#network-setup">DMR, System Fusion and M17</a></li><li><a href="#iax-settings">IAX Direct settings</a></li><li><a href="#audio-help">Audio troubleshooting</a></li><li><a href="#ptt-help">PTT and background sessions</a></li><li><a href="#privacy-settings">Permissions and privacy</a></li><li><a href="#accessible-use">Accessible operation</a></li><li><a href="#support-report">Updates and support</a></li></ul></nav>`,
     sections: [
       {
         title: "What QSO One is",
         html: `<p>QSO One, developed by Frank KD8JKK, is a free internet voice client for licensed amateur radio operators. One app connects to AllStarLink, EchoLink, IAX Direct, DMR, System Fusion (YSF) and M17 on Windows or Android.</p><p>It uses your device’s microphone, speaker and internet connection to receive and transmit through these networks without a separate radio, hotspot or Raspberry Pi. Depending on the destination, your voice may reach other app users, linked nodes or RF repeaters. It is useful at home, when travelling, or when a traditional radio setup is difficult to access.</p><p>QSO One also provides directories, favourites, callsign lookup, contact logging and Net Finder. Access is free, with optional contributions to support development. You still need your amateur radio licence and any accounts required by your chosen network.</p>`
+      },
+      {
+        id: "beacon",
+        title: "Beacon: QSO One's new experimental voice network",
+        html: `<div class="guide-callout"><strong>Live on the web:</strong> Beacon, formerly QSO Earth, is QSO One's own voice network. Open <a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer">qso1.net/beacon</a>. It is experimental and arrives on the web first; integration into the QSO One app is planned for a later release.</div>
+<p>Sign in with your existing QSO One account. Beacon runs in your browser, so there is no separate client to install. Allow microphone access, select your microphone and speaker, find a room, join and use the browser push-to-talk control. Listen before transmitting and identify with your callsign.</p>
+<h3>Rooms and voice features</h3>
+<ul><li><strong>Interactive globe:</strong> explore rooms and activity around the world.</li><li><strong>Public rooms:</strong> join Worldwide, Ragchew and Echo, along with country, US state and US county rooms where available.</li><li><strong>Echo room:</strong> hear your own voice played back privately as an audio check.</li><li><strong>Scanner:</strong> discover activity across available rooms.</li><li><strong>Social tools:</strong> follow the feed, find friends, send direct messages and use room text chat and voice messages.</li><li><strong>Digital QSL cards:</strong> exchange confirmations and use notifications to keep up with activity.</li></ul>
+<h3>Create and manage rooms</h3>
+<p>Supporters can create rooms with a name, location and description, and choose whether a room is public or private. Room owners can appoint moderators, manage a private-room allow list and ban disruptive users. Check the room settings and community rules before transmitting.</p>
+<h3>Room subscriptions</h3>
+<p>The supporter subscription is US$10 per month and includes one room. Additional rooms are US$10 per month each. Room bundles are available in quantities of 1, 3, 10 or other amounts up to 50. See <a href="https://qso1.net/account/rooms" target="_blank" rel="noopener noreferrer">QSO One room subscriptions ↗</a> for current options and payment details.</p>
+<div class="guide-callout"><strong>Experimental service:</strong> features and behaviour may change as Beacon develops. Report problems through the service or contact <a href="mailto:support@qso1.net">support@qso1.net</a>.</div>`
       },
       {
         title: "Download QSO One — now on Google Play",
