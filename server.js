@@ -668,8 +668,14 @@ function electionHtmlText(value) {
 }
 
 function parseElectionResultsHtml(html) {
+  const tables = [...html.matchAll(/<table\b[^>]*>[\s\S]*?<\/table>/gi)].map((match) => match[0]);
+  const resultsTable = tables.find((table) => {
+    const tableText = electionHtmlText(table).toLowerCase();
+    return tableText.includes("party votes") && tableText.includes("electorate seats") && tableText.includes("list seats");
+  });
+  const sourceHtml = resultsTable || html;
   const rows = [];
-  for (const rowMatch of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+  for (const rowMatch of sourceHtml.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
     const cells = [...rowMatch[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)]
       .map((cell) => electionHtmlText(cell[1]));
     if (cells.length < 6) continue;
