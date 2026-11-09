@@ -652,8 +652,8 @@ let electionResultsRequest = null;
 
 function electionHtmlText(value) {
   return String(value || "")
-    .replace(/<script\\b[\\s\\S]*?<\\/script>/gi, " ")
-    .replace(/<style\\b[\\s\\S]*?<\\/style>/gi, " ")
+    .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;|&#160;/gi, " ")
     .replace(/&amp;/gi, "&")
@@ -661,31 +661,31 @@ function electionHtmlText(value) {
     .replace(/&gt;/gi, ">")
     .replace(/&quot;/gi, '"')
     .replace(/&#39;|&apos;/gi, "'")
-    .replace(/&#(\\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
-    .replace(/&#x([\\da-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
-    .replace(/\\s+/g, " ")
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([\da-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/\s+/g, " ")
     .trim();
 }
 
 function parseElectionResultsHtml(html) {
   const rows = [];
-  for (const rowMatch of html.matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)) {
-    const cells = [...rowMatch[1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)]
+  for (const rowMatch of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const cells = [...rowMatch[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)]
       .map((cell) => electionHtmlText(cell[1]));
     if (cells.length < 6) continue;
     const party = cells[0];
-    const votes = Number(cells[1].replace(/[^\\d]/g, ""));
+    const votes = Number(cells[1].replace(/[^\d]/g, ""));
     if (!party || !Number.isFinite(votes) || !/party|total/i.test(party) && votes === 0) continue;
     const share = Number.parseFloat(cells[2].replace("%", ""));
-    const electorateSeats = Number.parseInt(cells[3].replace(/[^\\d-]/g, ""), 10) || 0;
-    const listSeats = Number.parseInt(cells[4].replace(/[^\\d-]/g, ""), 10) || 0;
-    const totalSeats = Number.parseInt(cells[5].replace(/[^\\d-]/g, ""), 10) || 0;
+    const electorateSeats = Number.parseInt(cells[3].replace(/[^\d-]/g, ""), 10) || 0;
+    const listSeats = Number.parseInt(cells[4].replace(/[^\d-]/g, ""), 10) || 0;
+    const totalSeats = Number.parseInt(cells[5].replace(/[^\d-]/g, ""), 10) || 0;
     rows.push({ party, votes, share: Number.isFinite(share) ? share : null, electorateSeats, listSeats, totalSeats });
   }
 
   const text = electionHtmlText(html);
-  const progressMatch = text.match(/Nationwide Party Votes\\s*[-–:]?\\s*(\\d+(?:\\.\\d+)?)%\\s*of results counted/i)
-    || text.match(/(\\d+(?:\\.\\d+)?)%\\s*of results counted/i);
+  const progressMatch = text.match(/Nationwide Party Votes\s*[-–:]?\s*(\d+(?:\.\d+)?)%\s*of results counted/i)
+    || text.match(/(\d+(?:\.\d+)?)%\s*of results counted/i);
   const totalRow = rows.find((row) => /^total$/i.test(row.party));
   const parties = rows.filter((row) => !/^total$/i.test(row.party) && !/party votes|% of votes|projected total seats/i.test(row.party));
   if (!parties.length) throw new Error("The Electoral Commission results page did not contain a readable party-vote table.");
