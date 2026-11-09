@@ -310,7 +310,7 @@
 
       async function loadDetailedResults(){
         try{
-          const response=await fetch('/api/election-detail-pages',{cache:'no-store',headers:{Accept:'application/json'}});
+          const response=await fetch('/api/election-detail-pages.json?v=20261109',{cache:'no-store',headers:{Accept:'application/json'}});
           if(!response.ok) throw new Error('The official detailed results are temporarily unavailable.');
           const payload=await response.json();
           if(!payload.pages || !payload.pages.status || !payload.pages.advance || !payload.pages.candidates) throw new Error('The live results proxy did not return all three official pages.');
@@ -357,13 +357,13 @@
             if(rows.length){candidateRows=[{party:'Successful candidates',candidates:rows.map(row=>({name:row[0],seat:row[1]}))}];}
           }
           if(candidateRows.length){renderCandidates();}else{candidateSummary.textContent='Showing the Electoral Commission live successful-candidates page below.';document.getElementById('candidate-embed').classList.add('is-visible');}
-          document.getElementById('detail-source-status').textContent='Official Electoral Commission data · automatically refreshed when available.';
+          document.getElementById('detail-source-status').textContent='Detailed results loaded from the Electoral Commission and refreshed every five minutes.';
         }catch(error){
           statusSummary.textContent='Live official results are displayed below.';
           advanceSummary.textContent='Live official results are displayed below.';
           candidateSummary.textContent='Live official results are displayed below.';
           ['status-embed','advance-embed','candidate-embed'].forEach(id=>document.getElementById(id).classList.add('is-visible'));
-          document.getElementById('detail-source-status').textContent='The embedded Electoral Commission pages are live sources and remain available if the data proxy is unavailable.';
+          document.getElementById('detail-source-status').textContent='Detailed results could not be loaded. The official source links remain available below.';
         }
       }
       loadDetailedResults();
