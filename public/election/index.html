@@ -277,8 +277,11 @@
       const cellsOf=row=>[...row.querySelectorAll('th,td')].map(textOf);
       function renderStatus(){
         const q=statusSearch.value.trim().toLocaleLowerCase('en-NZ');
-        const rows=statusRows.filter(row=>row.join(' ').toLocaleLowerCase('en-NZ').includes(q));
-        statusBody.innerHTML=rows.map(row=>'<tr>'+row.map((cell,i)=>'<td>'+(i===3?'<strong>'+esc(cell)+'</strong>':esc(cell||'—'))+'</td>').join('')+'</tr>').join('')||'<tr><td colspan="5">No matching electorates.</td></tr>';
+        const rows=statusRows.filter(row=>row.cells.join(' ').toLocaleLowerCase('en-NZ').includes(q));
+        statusBody.innerHTML=rows.map(row=>'<tr>'+row.cells.map((cell,i)=>{
+          if(i===0 && row.href){const url=new URL(row.href,'https://electionresults.govt.nz/electionresults_2026_preliminary/').href;return '<td><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(cell)+'</a></td>';}
+          return '<td>'+(i===3?'<strong>'+esc(cell)+'</strong>':esc(cell||'—'))+'</td>';
+        }).join('')+'</tr>').join('')||'<tr><td colspan="5">No matching electorates.</td></tr>';
         statusSummary.textContent=rows.length+' of '+statusRows.length+' electorates shown.';
       }
       function renderAdvance(){
@@ -304,7 +307,7 @@
           const statusDoc=parser.parseFromString(payload.pages.status,'text/html');
           const statusTable=getSourceTable(statusDoc,['leading candidate','2nd place','current margin']);
           if(statusTable){
-            statusRows=[...statusTable.querySelectorAll('tbody tr')].map(cellsOf).filter(row=>row.length>=5).map(row=>row.slice(0,5));
+            statusRows=[...statusTable.querySelectorAll('tbody tr')].map(tr=>({cells:cellsOf(tr).slice(0,5),href:tr.querySelector('a[href]')?.getAttribute('href')||''})).filter(row=>row.cells.length>=5);
             renderStatus();
           }else statusSummary.textContent='Could not read the electorate status table from the source page.';
 
