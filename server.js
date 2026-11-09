@@ -764,6 +764,120 @@ function getElectionPreliminaryFallback() {
   };
 }
 
+
+const election2026LatestUrl = "https://election2026.nz/data/live/latest.json";
+const election2026BundleUrl = "https://election2026.nz/data/live/bundle.json";
+let election2026Cache = { checkedAt: 0, latest: null, bundle: null, bundleVersion: null };
+let election2026Request = null;
+
+async function fetchElection2026Json(url) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+  try {
+    const upstream = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        "User-Agent": "ZL3TOM-Election-Desk/1.0 (+https://zl3tom.com/election)",
+        "Accept": "application/json"
+      }
+    });
+    if (!upstream.ok) throw new Error("Election2026.nz returned HTTP " + upstream.status);
+    const data = await upstream.json();
+    if (!data || typeof data !== "object" || Array.isArray(data)) throw new Error("Election2026.nz returned invalid JSON");
+    return data;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function getElection2026Results() {
+  if (election2026Cache.latest && Date.now() - election2026Cache.checkedAt < 60_000) {
+    return election2026Cache.latest;
+  }
+  if (election2026Request) return election2026Request;
+
+  election2026Request = (async () => {
+    try {
+      const latest = await fetchElection2026Json(election2026LatestUrl);
+      if (latest.demo === true || Number(latest.election?.year) !== 2026 || !latest.refVersion || !latest.national?.party) {
+        throw new Error("Election2026.nz data failed the 2026 election validation checks");
+      }
+
+      let bundle = election2026Cache.bundle;
+      if (!bundle || election2026Cache.bundleVersion !== latest.refVersion) {
+        bundle = await fetchElection2026Json(election2026BundleUrl + "?v=" + encodeURIComponent(latest.refVersion));
+        if (Number(bundle.election?.year) !== 2026 || !Array.isArray(bundle.parties) || !bundle.parties.length) {
+          throw new Error("Election2026.nz returned an invalid 2026 party bundle");
+        }
+      }
+
+      const partyNames = new Map(bundle.parties.map((party) => [String(party.no), party.name || party.full || party.abbr]));
+      const parties = Object.entries(latest.national.party).map(([partyNo, result]) => {
+        const party = partyNames.get(String(partyNo));
+        if (!party || !result || !Number.isFinite(Number(result.votes))) return null;
+        return {
+          party,
+          votes: Number(result.votes),
+          share: Number.isFinite(Number(result.pct)) ? Number(result.pct) : null,
+          electorateSeats: Number(result.elect) || 0,
+          listSeats: Number(result.list) || 0,
+          totalSeats: Number(result.total) || 0
+        };
+      }).filter(Boolean).sort((a, b) => b.votes - a.votes);
+
+      if (!parties.length) throw new Error("Election2026.nz contained no usable party results");
+      const totalPartyVotes = parties.reduce((sum, party) => sum + party.votes, 0);
+      const totalSeats = parties.reduce((sum, party) => sum + party.totalSeats, 0);
+      const feedUpdated = latest.feedUpdated || latest.national.updated || null;
+      const feedDate = feedUpdated ? new Date(feedUpdated) : null;
+      const feedDateText = feedDate && !Number.isNaN(feedDate.getTime())
+        ? feedDate.toLocaleString("en-NZ", { dateStyle: "medium", timeStyle: "short", timeZone: "Pacific/Auckland" })
+        : "not supplied";
+      const waiting = String(latest.status || "").toLowerCase() === "waiting";
+      const sourceNote = (waiting
+        ? "Election2026.nz reports that the Electoral Commission feed is not currently published. "
+        : "Preliminary data supplied by Election2026.nz. ")
+        + "Underlying results feed last updated: " + feedDateText
+        + ". This is a third-party processed preliminary snapshot, not a live Electoral Commission connection; special votes may change the figures.";
+
+      const payload = {
+        ok: true,
+        progress: Number.isFinite(Number(latest.national.pctPlaces)) ? Number(latest.national.pctPlaces) : null,
+        totalPartyVotes,
+        totalSeats,
+        parties,
+        source: "https://election2026.nz/live/",
+        sourceNote,
+        feedStatus: latest.status || "unknown",
+        feedMessage: latest.message || "",
+        feedUpdated,
+        sourceCheckedAt: latest.pollerTime || new Date().toISOString(),
+        refVersion: latest.refVersion,
+        fetchedAt: new Date().toISOString(),
+        updateIntervalSeconds: 60
+      };
+
+      election2026Cache = {
+        checkedAt: Date.now(),
+        latest: payload,
+        bundle,
+        bundleVersion: latest.refVersion
+      };
+      return payload;
+    } catch (error) {
+      if (election2026Cache.latest) {
+        console.warn("Election2026.nz refresh failed; retaining last successful snapshot:", error?.message || "Unknown error");
+        election2026Cache.checkedAt = Date.now();
+        return election2026Cache.latest;
+      }
+      throw error;
+    } finally {
+      election2026Request = null;
+    }
+  })();
+  return election2026Request;
+}
+
 async function getElectionResults() {
   if (electionResultsCache.payload && Date.now() - electionResultsCache.fetchedAt < 60_000) {
     return electionResultsCache.payload;
@@ -771,6 +885,14 @@ async function getElectionResults() {
   if (electionResultsRequest) return electionResultsRequest;
 
   electionResultsRequest = (async () => {
+    try {
+      const payload = await getElection2026Results();
+      electionResultsCache = { fetchedAt: Date.now(), payload };
+      return payload;
+    } catch (sourceError) {
+      console.warn("Election2026.nz data unavailable; using the existing Electoral Commission fallback:", sourceError?.message || "Unknown source error");
+    }
+
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 15_000);
     try {
