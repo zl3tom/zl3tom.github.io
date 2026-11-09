@@ -1,5 +1,6 @@
 /* Accessibility foundations shared by every page. */
 [hidden]{display:none!important}
+.skip-link{display:none!important}
 :focus-visible{outline:3px solid #173eac!important;outline-offset:4px!important;box-shadow:0 0 0 6px #fff!important}
 .skip-link{z-index:1000!important}
 main:focus{outline:none}
