@@ -66,6 +66,12 @@
     @media(max-width:850px){.stat{grid-column:span 6}.wide,.side{grid-column:span 12}}
     @media(max-width:600px){.wrap{width:min(100% - 28px,var(--max))}.topinner{min-height:62px}nav{gap:10px}nav a{font-size:11px}.hero{padding:48px 0 30px}.hero p{font-size:16px}.stat{grid-column:span 6;padding:16px}.card{padding:18px}.facts,.records{grid-template-columns:1fr}.timeline{grid-template-columns:1fr;gap:18px}.section-head{display:block}.section-head p{margin-top:9px}}
 
+
+    .official-embed{display:none;margin-top:14px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+    .official-embed.is-visible{display:block}
+    .official-embed iframe{display:block;width:100%;height:780px;border:0;background:#fff}
+    .embed-caption{padding:9px 12px;background:#0d1726;color:var(--muted);font-size:12px}
+    @media(max-width:650px){.official-embed iframe{height:700px}}
     .data-search{width:100%;max-width:460px;margin:8px 0 4px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#0d1726;color:var(--text);font:inherit}
     .table-scroll{width:100%;overflow-x:auto;margin-top:10px;border:1px solid var(--line);border-radius:12px}
     .data-table{width:100%;border-collapse:collapse;min-width:680px;font-size:13px}
@@ -161,13 +167,13 @@
         <label for="status-search" class="section-kicker">Search electorate or candidate</label>
         <input id="status-search" class="data-search" type="search" placeholder="Search electorate or candidate…" aria-label="Search electorate status">
         <p id="status-summary" class="source-note" aria-live="polite">Loading electorate status…</p>
-        <div class="table-scroll"><table class="data-table"><thead><tr><th>Electorate</th><th>Leading candidate</th><th>Second place</th><th>Margin</th><th>Places counted</th></tr></thead><tbody id="status-table"><tr><td colspan="5">Loading official electorate results…</td></tr></tbody></table></div>
+        <div class="table-scroll"><table class="data-table"><thead><tr><th>Electorate</th><th>Leading candidate</th><th>Second place</th><th>Margin</th><th>Places counted</th></tr></thead><tbody id="status-table"><tr><td colspan="5">Loading official electorate results…</td></tr></tbody></table></div><div id="status-embed" class="official-embed"><div class="embed-caption">Live official Electoral Commission electorate status</div><iframe title="Official Electoral Commission electorate status" loading="lazy" src="https://electionresults.govt.nz/ge2026/electorate-status.html"></iframe></div>
       </div>
 
       <div class="card" id="advance-votes" style="margin-top:16px">
         <div class="section-head"><div><span class="section-kicker">Advance voting</span><h2 style="font-size:24px">Advance party votes</h2></div><p>Advance-vote figures are a subset of the preliminary count. The seat allocation shown on the source page is indicative of advance votes only, not the overall election result.</p></div>
         <p id="advance-summary" class="source-note" aria-live="polite">Loading advance-vote results…</p>
-        <div class="table-scroll"><table class="data-table"><thead><tr><th>Party</th><th>Party votes</th><th>Vote %</th><th>Electorate seats</th><th>List seats</th><th>Total seats</th></tr></thead><tbody id="advance-table"><tr><td colspan="6">Loading official advance-vote results…</td></tr></tbody></table></div>
+        <div class="table-scroll"><table class="data-table"><thead><tr><th>Party</th><th>Party votes</th><th>Vote %</th><th>Electorate seats</th><th>List seats</th><th>Total seats</th></tr></thead><tbody id="advance-table"><tr><td colspan="6">Loading official advance-vote results…</td></tr></tbody></table></div><div id="advance-embed" class="official-embed"><div class="embed-caption">Live official Electoral Commission advance-vote results</div><iframe title="Official Electoral Commission advance-vote results" loading="lazy" src="https://electionresults.govt.nz/ge2026/advance-votes.html"></iframe></div>
       </div>
 
       <div class="card" id="successful-candidates" style="margin-top:16px">
@@ -175,7 +181,7 @@
         <label for="candidate-search" class="section-kicker">Find a candidate</label>
         <input id="candidate-search" class="data-search" type="search" placeholder="Search candidate, party or electorate…" aria-label="Search successful candidates">
         <p id="candidate-summary" class="source-note" aria-live="polite">Loading successful candidates…</p>
-        <div id="candidate-groups" class="candidate-groups"><p>Loading official candidate list…</p></div>
+        <div id="candidate-groups" class="candidate-groups"><p>Loading official candidate list…</p></div><div id="candidate-embed" class="official-embed"><div class="embed-caption">Live official Electoral Commission successful candidates</div><iframe title="Official Electoral Commission successful candidates" loading="lazy" src="https://electionresults.govt.nz/ge2026/successful-candidates.html"></iframe></div>
       </div>
 
       <div class="card" id="electorate-statistics" style="margin-top:16px">
@@ -302,6 +308,7 @@
           const response=await fetch('/api/election-detail-pages',{cache:'no-store',headers:{Accept:'application/json'}});
           if(!response.ok) throw new Error('The official detailed results are temporarily unavailable.');
           const payload=await response.json();
+          if(!payload.pages || !payload.pages.status || !payload.pages.advance || !payload.pages.candidates) throw new Error('The live results proxy did not return all three official pages.');
           const parser=new DOMParser();
 
           const statusDoc=parser.parseFromString(payload.pages.status,'text/html');
@@ -309,7 +316,7 @@
           if(statusTable){
             statusRows=[...statusTable.querySelectorAll('tbody tr')].map(tr=>({cells:cellsOf(tr).slice(0,5),href:tr.querySelector('a[href]')?.getAttribute('href')||''})).filter(row=>row.cells.length>=5);
             renderStatus();
-          }else statusSummary.textContent='Could not read the electorate status table from the source page.';
+          }else {statusSummary.textContent='Showing the Electoral Commission live results page below.';document.getElementById('status-embed').classList.add('is-visible');}
 
           const advanceDoc=parser.parseFromString(payload.pages.advance,'text/html');
           const advanceTable=getSourceTable(advanceDoc,['party votes','% of votes','electorate seats','list seats']);
@@ -318,7 +325,7 @@
             const note=textOf(advanceDoc.querySelector('.main-content-block p, main p, body'));
             advanceSummary.textContent=note.includes('advance')?note.slice(0,260):'Advance ordinary votes excluding special declaration votes. These votes are included in the total preliminary count.';
             renderAdvance();
-          }else advanceSummary.textContent='Could not read the advance-vote table from the source page.';
+          }else {advanceSummary.textContent='Showing the Electoral Commission live results page below.';document.getElementById('advance-embed').classList.add('is-visible');}
 
           const candidateDoc=parser.parseFromString(payload.pages.candidates,'text/html');
           const partyNames=['ACT New Zealand','Green Party','Labour Party','National Party','New Zealand First Party','Opportunity Party','Te Pāti Māori'];
@@ -344,13 +351,14 @@
             const rows=[...candidateDoc.querySelectorAll('table tr')].map(cellsOf).filter(row=>row.length>=2&&row[0]&&row[1]);
             if(rows.length){candidateRows=[{party:'Successful candidates',candidates:rows.map(row=>({name:row[0],seat:row[1]}))}];}
           }
-          renderCandidates();
-          document.getElementById('detail-source-status').textContent='Official Electoral Commission tables loaded · refreshed every 5 minutes.';
+          if(candidateRows.length){renderCandidates();}else{candidateSummary.textContent='Showing the Electoral Commission live successful-candidates page below.';document.getElementById('candidate-embed').classList.add('is-visible');}
+          document.getElementById('detail-source-status').textContent='Official Electoral Commission data · automatically refreshed when available.';
         }catch(error){
-          statusSummary.textContent='Electorate status could not be loaded right now.';
-          advanceSummary.textContent='Advance-vote data could not be loaded right now.';
-          candidateSummary.textContent='Successful candidate data could not be loaded right now.';
-          document.getElementById('detail-source-status').textContent=error.message||'Official detailed results unavailable.';
+          statusSummary.textContent='Live official results are displayed below.';
+          advanceSummary.textContent='Live official results are displayed below.';
+          candidateSummary.textContent='Live official results are displayed below.';
+          ['status-embed','advance-embed','candidate-embed'].forEach(id=>document.getElementById(id).classList.add('is-visible'));
+          document.getElementById('detail-source-status').textContent='The embedded Electoral Commission pages are live sources and remain available if the data proxy is unavailable.';
         }
       }
       loadDetailedResults();
