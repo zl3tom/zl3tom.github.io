@@ -818,7 +818,7 @@ async function getElectionDetailPages() {
   if (electionDetailPagesCache.payload && Date.now() - electionDetailPagesCache.fetchedAt < 300_000) return electionDetailPagesCache.payload;
   if (electionDetailPagesRequest) return electionDetailPagesRequest;
   electionDetailPagesRequest = (async () => {
-    const base = "https://electionresults.govt.nz/ge2026/";
+    const sourceBases = ["https://electionresults.govt.nz/electionresults_2026_preliminary/", "https://electionresults.govt.nz/ge2026/"];
     const pages = [
       ["status", "electorate-status.html"],
       ["advance", "advance-votes.html"],
@@ -828,20 +828,27 @@ async function getElectionDetailPages() {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 18_000);
       try {
-        const upstream = await fetch(base + file, {
-          signal: controller.signal,
-          headers: { "User-Agent": "ZL3TOM-Election-Desk/1.0 (+https://zl3tom.com/election)", "Accept": "text/html,application/xhtml+xml" }
-        });
-        if (!upstream.ok) throw new Error("Electoral Commission " + file + " returned HTTP " + upstream.status);
-        const html = await upstream.text();
-        if (html.length > 5_000_000) throw new Error("Unexpectedly large Electoral Commission page.");
-        return [key, html];
+        let lastError = null;
+        for (const base of sourceBases) {
+          try {
+            const upstream = await fetch(base + file, {
+              signal: controller.signal,
+              headers: { "User-Agent": "ZL3TOM-Election-Desk/1.0 (+https://zl3tom.com/election)", "Accept": "text/html,application/xhtml+xml" }
+            });
+            if (!upstream.ok) throw new Error("HTTP " + upstream.status);
+            const html = await upstream.text();
+            if (html.length > 5_000_000) throw new Error("Unexpectedly large Electoral Commission page.");
+            if (!html.trim()) throw new Error("Empty Electoral Commission page.");
+            return [key, html];
+          } catch (error) { lastError = error; }
+        }
+        throw lastError || new Error("No source page was available.");
       } catch (error) {
         console.warn("Could not load election detail page " + file + ":", error?.message || "Unknown error");
         return [key, ""];
       } finally { clearTimeout(timeout); }
     }));
-    const payload = { ok: true, pages: Object.fromEntries(entries), fetchedAt: new Date().toISOString(), source: base };
+    const payload = { ok: true, pages: Object.fromEntries(entries), fetchedAt: new Date().toISOString(), source: sourceBases[0] };
     electionDetailPagesCache.fetchedAt = Date.now();
     electionDetailPagesCache.payload = payload;
     return payload;
