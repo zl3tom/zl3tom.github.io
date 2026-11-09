@@ -119,12 +119,7 @@
       </div>
     </section>
 
-    <section class="wrap content" id="live-results" aria-labelledby="live-results-title">
-      <div class="card"><div class="section-head" style="margin-bottom:10px"><div><span class="section-kicker">Automatic results feed</span><h2 id="live-results-title" style="font-size:24px">Party vote and seats</h2></div><p id="feed-status" role="status" aria-live="polite">Connecting to the election data source…</p></div>
-        <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;min-width:620px;font-size:14px"><thead><tr style="color:var(--muted);text-align:left;border-bottom:1px solid var(--line)"><th style="padding:11px 8px">Party</th><th style="padding:11px 8px;text-align:right">Votes</th><th style="padding:11px 8px;text-align:right">Vote %</th><th style="padding:11px 8px;text-align:right">Electorate</th><th style="padding:11px 8px;text-align:right">List</th><th style="padding:11px 8px;text-align:right">Seats</th></tr></thead><tbody id="party-results"><tr><td colspan="6" style="padding:16px 8px;color:var(--muted)">Loading preliminary election figures…</td></tr></tbody></table></div>
-        <p class="source-note" style="margin-bottom:0">Data source: <a href="https://election2026.nz/live/" target="_blank" rel="noopener noreferrer">Election2026.nz</a> (third-party processed preliminary results). Automatically checked every 60 seconds while this page is open. <span id="feed-updated">Waiting for first update.</span></p>
-      </div>
-    </section>
+    
 
     <section class="wrap content" id="special-votes" aria-labelledby="special-title">
       <div class="section-head"><div><span class="section-kicker">The count continues</span><h2 id="special-title">The special-vote picture</h2></div><p>The election has happened and the preliminary count is complete. The Electoral Commission is now checking ordinary votes and counting special votes before declaring the official result.</p></div>
@@ -195,47 +190,14 @@
     </section>
   </main>
 
-  <footer><div class="wrap"><p><strong>ZL3TOM Election Desk</strong> · An independent New Zealand election information page.</p><p>Party vote and seat figures are provided by Election2026.nz, which processes preliminary Electoral Commission data. Its feed currently reports that new Commission data is not published, so figures may be out of date and may change when updated. This page is an independent summary, not an official election results service. Check the Electoral Commission for certified results.</p></div><p class="accessibility-footer-link"><a href="/guides/accessible-amateur-radio#using-this-website">Accessibility and website feedback</a></p></footer>
+  <footer><div class="wrap"><p><strong>ZL3TOM Election Desk</strong> · An independent New Zealand election information page.</p><p>This page summarises publicly available preliminary election information. Figures may change when the Electoral Commission publishes the official results. This page is an independent summary, not an official election results service. Check the Electoral Commission for certified results.</p></div><p class="accessibility-footer-link"><a href="/guides/accessible-amateur-radio#using-this-website">Accessibility and website feedback</a></p></footer>
   <script>
     (() => {
       const target = new Date('2026-11-27T00:00:00+13:00');
       const days = Math.max(0, Math.ceil((target - new Date()) / 86400000));
       const daysEl = document.getElementById('days-left');
       if (daysEl) daysEl.textContent = String(days);
-      const fmt = new Intl.NumberFormat('en-NZ');
-      const status = document.getElementById('feed-status');
-      const updated = document.getElementById('feed-updated');
-      const body = document.getElementById('party-results');
-      let hasData = false, busy = false;
       const esc = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-      function render(data) {
-        body.innerHTML = data.parties.map(row => '<tr style="border-bottom:1px solid #26374d"><td style="padding:11px 8px;font-weight:700">' + esc(row.party) + '</td><td style="padding:11px 8px;text-align:right">' + fmt.format(row.votes) + '</td><td style="padding:11px 8px;text-align:right">' + (row.share == null ? '—' : Number(row.share).toFixed(2) + '%') + '</td><td style="padding:11px 8px;text-align:right">' + fmt.format(row.electorateSeats) + '</td><td style="padding:11px 8px;text-align:right">' + fmt.format(row.listSeats) + '</td><td style="padding:11px 8px;text-align:right;font-weight:800;color:var(--teal)">' + fmt.format(row.totalSeats) + '</td></tr>').join('');
-        document.getElementById('party-votes').textContent = fmt.format(data.totalPartyVotes);
-        document.getElementById('total-seats').textContent = fmt.format(data.totalSeats);
-        const progressEl = document.getElementById('results-progress');
-        if (progressEl) progressEl.textContent = data.progress == null ? '—' : Number(data.progress).toFixed(1) + '%';
-        updated.textContent = 'Last checked ' + new Date(data.fetchedAt).toLocaleString('en-NZ', {dateStyle:'medium',timeStyle:'short',timeZone:'Pacific/Auckland'}) + ' NZ time.';
-        status.textContent = data.sourceNote ? 'Preliminary results loaded · checking source every 60 seconds' : 'Election data source checked · checking every 60 seconds';
-        status.style.color = 'var(--teal)';
-        if (data.sourceNote) updated.textContent += ' ' + data.sourceNote;
-        if (data.feedStatus === 'waiting') { status.textContent = 'Source feed waiting for new Electoral Commission data'; status.style.color = 'var(--gold)'; }
-        hasData = true;
-      }
-      async function refresh() {
-        if (busy) return;
-        busy = true;
-        try {
-          const response = await fetch('/api/election-results', {cache:'no-store',headers:{Accept:'application/json'}});
-          const data = await response.json();
-          if (!response.ok || !data.ok) throw new Error(data.message || 'Feed unavailable');
-          render(data);
-        } catch {
-          status.textContent = hasData ? 'Feed temporarily unavailable · showing last successful figures' : 'Waiting for the election data source to respond';
-          status.style.color = 'var(--gold)';
-          if (!hasData) body.innerHTML = '<tr><td colspan="6" style="padding:16px 8px;color:var(--muted)">The election data source is temporarily unavailable. This table will update automatically when it responds.</td></tr>';
-        } finally { busy = false; }
-      }
-
 
       const electorateNames = ["Auckland Central","Banks Peninsula","Botany","Christchurch Central","Christchurch East","Coromandel","Dunedin","East Cape","East Coast Bays","Epsom","Glendene","Hamilton East","Hamilton West","Henderson","Hutt South","Ilam","Invercargill","Kaikōura","Kaipara ki Mahurangi","Kapiti","Kenepuru","Māngere","Manurewa","Maungakiekie","Mt Albert","Mt Maunganui","Mt Roskill","Napier","Nelson","New Plymouth","North Shore","Northcote","Northland","Ōtāhuhu","Pakuranga","Palmerston North","Papakura","Port Waikato","Rangitata","Rangitīkei","Remutaka","Rotorua","Selwyn","Southland","Taieri","Takanini","Tāmaki","Taranaki-King Country","Taupō","Tauranga","Tukituki","Upper Harbour","Waikato","Waimakariri","Wairarapa","Waitākere","Waitaki","Wellington Bays","Wellington North","West Coast-Tasman","Whanganui","Whangaparāoa","Whangārei","Wigram","Hauraki-Waikato","Ikaroa-Rāwhiti","Tāmaki Makaurau","Te Tai Hauāuru","Te Tai Tokerau","Te Tai Tonga","Waiariki"];
       const statsBody = document.getElementById('statistics-table');
@@ -334,9 +296,7 @@
       loadDetailedResults();
       window.setInterval(loadDetailedResults,300000);
 
-      refresh();
-      window.setInterval(refresh, 60000);
-    })();
+})();
   </script>
   <script src="/accessibility.js" defer></script>
 </body>
