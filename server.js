@@ -819,11 +819,11 @@ async function getElectionDetailPages() {
   if (electionDetailPagesRequest) return electionDetailPagesRequest;
 
   electionDetailPagesRequest = (async () => {
-    // The current Electoral Commission results live under /ge2026/.
-    // Keep the preliminary directory as a fallback for archived copies.
+    // Prefer the exact preliminary-results directory supplied by the Electoral Commission.
+    // Keep /ge2026/ as a fallback in case the Commission moves individual pages.
     const sourceBases = [
-      "https://electionresults.govt.nz/ge2026/",
-      "https://electionresults.govt.nz/electionresults_2026_preliminary/"
+      "https://electionresults.govt.nz/electionresults_2026_preliminary/",
+      "https://electionresults.govt.nz/ge2026/"
     ];
     const pages = [
       ["status", "electorate-status.html"],
