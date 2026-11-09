@@ -346,12 +346,13 @@
             const rows=[...candidateDoc.querySelectorAll('table tr')].map(cellsOf).filter(row=>row.length>=2&&row[0]&&row[1]);
             if(rows.length){candidateRows=[{party:'Successful candidates',candidates:rows.map(row=>({name:row[0],seat:row[1]}))}];}
           }
-          if(candidateRows.length){renderCandidates();}else{candidateSummary.textContent='Showing the Electoral Commission live successful-candidates page below.';document.getElementById('candidate-embed').classList.add('is-visible');}
+          if(candidateRows.length){renderCandidates();}else{candidateSummary.textContent='The candidate list could not be read from the returned page. Use the official Electoral Commission list below.';candidateGroups.innerHTML='<p><a href="https://electionresults.govt.nz/electionresults_2026_preliminary/successful-candidates.html" target="_blank" rel="noopener noreferrer">Open the official successful-candidates list ↗</a></p>';document.getElementById('candidate-embed').classList.add('is-visible');}
           document.getElementById('detail-source-status').textContent='Detailed results loaded from the Electoral Commission and refreshed every five minutes.';
         }catch(error){
           statusSummary.textContent='Live official results are displayed below.';
           advanceSummary.textContent='Live official results are displayed below.';
-          candidateSummary.textContent='Live official results are displayed below.';
+          candidateSummary.textContent='The candidate list could not be loaded just now. You can still open the official Electoral Commission list.';
+          candidateGroups.innerHTML='<p><a href="https://electionresults.govt.nz/electionresults_2026_preliminary/successful-candidates.html" target="_blank" rel="noopener noreferrer">Open the official successful-candidates list ↗</a></p>';
           ['status-embed','advance-embed','candidate-embed'].forEach(id=>document.getElementById(id).classList.add('is-visible'));
           document.getElementById('detail-source-status').textContent='Detailed results could not be loaded. The official source links remain available below.';
         }
