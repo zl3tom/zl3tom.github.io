@@ -303,17 +303,17 @@
           const response=await fetch('/api/election-detail-pages.json?v=20261109a',{cache:'no-store',headers:{Accept:'application/json'}});
           if(!response.ok) throw new Error('The official detailed results are temporarily unavailable.');
           const payload=await response.json();
-          if(!payload.pages || !payload.pages.status || !payload.pages.advance || !payload.pages.candidates) throw new Error('The live results proxy did not return all three official pages.');
+          if(!payload.pages) throw new Error('The live results proxy did not return any official pages.');
           const parser=new DOMParser();
 
-          const statusDoc=parser.parseFromString(payload.pages.status,'text/html');
+          const statusDoc=parser.parseFromString(payload.pages.status || '', 'text/html');
           const statusTable=getSourceTable(statusDoc,['leading candidate','2nd place','current margin']);
           if(statusTable){
             statusRows=[...statusTable.querySelectorAll('tbody tr')].map(tr=>({cells:cellsOf(tr).slice(0,5),href:tr.querySelector('a[href]')?.getAttribute('href')||''})).filter(row=>row.cells.length>=5);
             renderStatus();
           }else {statusSummary.textContent='Showing the Electoral Commission live results page below.';document.getElementById('status-embed').classList.add('is-visible');}
 
-          const advanceDoc=parser.parseFromString(payload.pages.advance,'text/html');
+          const advanceDoc=parser.parseFromString(payload.pages.advance || '', 'text/html');
           const advanceTable=getSourceTable(advanceDoc,['party votes','% of votes','electorate seats','list seats']);
           if(advanceTable){
             advanceRows=[...advanceTable.querySelectorAll('tbody tr')].map(cellsOf).filter(row=>row.length>=5).map(row=>row.slice(0,6));
@@ -322,7 +322,7 @@
             renderAdvance();
           }else {advanceSummary.textContent='Showing the Electoral Commission live results page below.';document.getElementById('advance-embed').classList.add('is-visible');}
 
-          const candidateDoc=parser.parseFromString(payload.pages.candidates,'text/html');
+          const candidateDoc=parser.parseFromString(payload.pages.candidates || '', 'text/html');
           const partyNames=['ACT New Zealand','Green Party','Labour Party','National Party','New Zealand First Party','Opportunity Party','Te Pāti Māori'];
           const groups=new Map();
           let currentParty='';
