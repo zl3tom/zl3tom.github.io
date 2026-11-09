@@ -831,6 +831,8 @@ async function getElectionDetailPages() {
       ["candidates", "successful-candidates.html"]
     ];
 
+    // Fetch each official page independently. One unavailable table must not
+    // prevent the other result tables (especially successful candidates) loading.
     const entries = await Promise.all(pages.map(async ([key, file]) => {
       let lastError = null;
       for (const base of sourceBases) {
@@ -848,25 +850,25 @@ async function getElectionDetailPages() {
           const html = await upstream.text();
           if (!html.trim()) throw new Error("Empty Electoral Commission page: " + file);
           if (html.length > 5_000_000) throw new Error("Unexpectedly large Electoral Commission page: " + file);
-          return [key, { html, source: base + file }];
+          return [key, { html, source: base + file, error: null }];
         } catch (error) {
           lastError = error;
         } finally {
           clearTimeout(timeout);
         }
       }
-      throw lastError || new Error("No Electoral Commission source was available for " + file);
+      console.error("Election detail page unavailable:", file, lastError?.message || "Unknown error");
+      return [key, { html: "", source: "", error: lastError?.message || "Unavailable" }];
     }));
-
-    const missing = entries.filter(([, value]) => !value?.html);
-    if (missing.length) throw new Error("Missing detailed results pages: " + missing.map(([key]) => key).join(", "));
 
     const pageEntries = entries.map(([key, value]) => [key, value.html]);
     const pageSources = Object.fromEntries(entries.map(([key, value]) => [key, value.source]));
+    const pageErrors = Object.fromEntries(entries.filter(([, value]) => value.error).map(([key, value]) => [key, value.error]));
     const payload = {
       ok: true,
       pages: Object.fromEntries(pageEntries),
       pageSources,
+      pageErrors,
       fetchedAt: new Date().toISOString(),
       source: sourceBases[0]
     };
