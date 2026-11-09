@@ -169,7 +169,8 @@
         body.innerHTML = data.parties.map(row => '<tr style="border-bottom:1px solid #26374d"><td style="padding:11px 8px;font-weight:700">' + esc(row.party) + '</td><td style="padding:11px 8px;text-align:right">' + fmt.format(row.votes) + '</td><td style="padding:11px 8px;text-align:right">' + (row.share == null ? '—' : Number(row.share).toFixed(2) + '%') + '</td><td style="padding:11px 8px;text-align:right">' + fmt.format(row.electorateSeats) + '</td><td style="padding:11px 8px;text-align:right">' + fmt.format(row.listSeats) + '</td><td style="padding:11px 8px;text-align:right;font-weight:800;color:var(--teal)">' + fmt.format(row.totalSeats) + '</td></tr>').join('');
         document.getElementById('party-votes').textContent = fmt.format(data.totalPartyVotes);
         document.getElementById('total-seats').textContent = fmt.format(data.totalSeats);
-        document.getElementById('results-progress').textContent = data.progress == null ? '—' : Number(data.progress).toFixed(1) + '%';
+        const progressEl = document.getElementById('results-progress');
+        if (progressEl) progressEl.textContent = data.progress == null ? '—' : Number(data.progress).toFixed(1) + '%';
         updated.textContent = 'Last checked ' + new Date(data.fetchedAt).toLocaleString('en-NZ', {dateStyle:'medium',timeStyle:'short',timeZone:'Pacific/Auckland'}) + ' NZ time.';
         status.textContent = 'Connected · checking every 60 seconds';
         status.style.color = 'var(--teal)';
