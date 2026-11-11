@@ -3,7 +3,7 @@
   const start = () => {
     const card = document.querySelector(".countdown-card");
     if (!card) return;
-    const dateNode = card.querySelector("[data-next-date]");
+    const dateNode = document.querySelector("[data-next-date]");
     const noteNode = card.querySelector("[data-countdown-note]");
     const fields = {
       days: card.querySelector("[data-days]"),
