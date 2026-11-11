@@ -103,11 +103,12 @@
     const downloadCalendar = card.querySelector("[data-download-calendar]");
     const toCalendarDate = date => date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
     const eventDetails = () => {
-      const end = new Date(target.getTime() + 60 * 60 * 1000);
-      const title = "Avon Toastmasters meeting";
+      const start = new Date(target.getTime() + 30 * 60 * 1000);
+      const end = new Date(start.getTime() + 60 * 60 * 1000);
+      const title = "Avon Toastmasters — Club Meeting";
       const location = "St Albans Community Centre, 1049 Colombo Street, Christchurch, New Zealand";
-      const description = "Guests are welcome. Come along, meet our members and see how Toastmasters works. No obligation to speak. Meeting starts at 7:00 pm NZ local time.";
-      return { end, title, location, description };
+      const description = "You're invited to Avon Toastmasters!\n\nCome along to see how Toastmasters helps people build confidence in public speaking, communication and leadership in a friendly, supportive club. Guests are welcome, visits are free, and there is absolutely no obligation to speak.\n\nTIME: 7:30–8:30 pm (New Zealand local time). Please arrive 10–15 minutes early so we can welcome you.\n\nVENUE: St Albans Community Centre, 1049 Colombo Street, Christchurch, New Zealand.\n\nCAR PARKING: 126 Caledonian Road, Christchurch.\n\nFind out more: https://zl3tom.com/avontm/\nQuestions? hello@toastmasters.net.nz | 027 608 4338";
+      return { start, end, title, location, description };
     };
     if (googleCalendar) {
       googleCalendar.addEventListener("click", event => {
@@ -116,7 +117,7 @@
         const params = new URLSearchParams({
           action: "TEMPLATE",
           text: details.title,
-          dates: toCalendarDate(target) + "/" + toCalendarDate(details.end),
+          dates: toCalendarDate(details.start) + "/" + toCalendarDate(details.end),
           details: details.description,
           location: details.location,
           ctz: zone
@@ -140,12 +141,27 @@
           "BEGIN:VEVENT",
           "UID:avon-toastmasters-" + target.getTime() + "@zl3tom.com",
           "DTSTAMP:" + toCalendarDate(new Date()),
-          "DTSTART:" + toCalendarDate(target),
+          "DTSTART:" + toCalendarDate(details.start),
           "DTEND:" + toCalendarDate(details.end),
           "SUMMARY:" + escapeICS(details.title),
           "DESCRIPTION:" + escapeICS(details.description),
           "LOCATION:" + escapeICS(details.location),
           "URL:https://zl3tom.com/avontm/",
+          "BEGIN:VALARM",
+          "ACTION:DISPLAY",
+          "DESCRIPTION:" + escapeICS("Avon Toastmasters meeting in 2 days"),
+          "TRIGGER:-P2D",
+          "END:VALARM",
+          "BEGIN:VALARM",
+          "ACTION:DISPLAY",
+          "DESCRIPTION:" + escapeICS("Avon Toastmasters meeting tomorrow"),
+          "TRIGGER:-P1D",
+          "END:VALARM",
+          "BEGIN:VALARM",
+          "ACTION:DISPLAY",
+          "DESCRIPTION:" + escapeICS("Avon Toastmasters meeting starts in 3 hours"),
+          "TRIGGER:-PT3H",
+          "END:VALARM",
           "END:VEVENT",
           "END:VCALENDAR"
         ].join("\r\n");
