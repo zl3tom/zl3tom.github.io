@@ -148,3 +148,5 @@ p{max-width:75ch}
 .countdown-note{font-size:.82rem;color:#607078;margin:22px 0 0}
 @media(max-width:800px){.next-meeting-wrap{grid-template-columns:1fr}.countdown-card{max-width:560px;width:100%}}
 @media(max-width:420px){.countdown-card{padding:20px 15px}.countdown-grid{gap:6px}.countdown-grid>div{padding:14px 4px 11px}.countdown-grid strong{font-size:1.7rem}.countdown-grid span{font-size:.66rem}}
+
+.calendar-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.calendar-actions .btn{font-size:.85rem;padding:12px 15px}.calendar-actions .btn-blue{background:var(--blue);color:#fff}@media(max-width:700px){.calendar-actions{align-items:stretch;flex-direction:column}.calendar-actions .btn{justify-content:center}}
