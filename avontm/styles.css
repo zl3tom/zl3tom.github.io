@@ -106,3 +106,22 @@ body{font-weight:400;letter-spacing:0}
 h1,h2,h3,h4,h5,h6{font-weight:700;letter-spacing:-.025em}
 strong,b{font-weight:700}
 /* Keep brand typography clean: no decorative script, artificial shadows or distorted lettering. */
+
+
+/* Accessibility improvements: keyboard access, visible links and comfortable touch targets. */
+.skip-link{position:fixed;z-index:1000;top:12px;left:12px;padding:13px 18px;background:#fff;color:#004165;border:3px solid #004165;border-radius:3px;font-weight:800;transform:translateY(-160%);transition:transform .18s ease}
+.skip-link:focus{transform:translateY(0);outline:3px solid #f2df74;outline-offset:3px}
+:focus{scroll-margin-top:110px}
+:focus-visible{outline:3px solid #a66f00!important;outline-offset:4px!important}
+nav a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.menu{min-width:48px;min-height:48px;display:none;align-items:center;justify-content:center;padding:10px}
+nav a,.btn,.arrow-link,.footer a{min-height:24px}
+main a:not(.btn):not(.arrow-link),.copy a,.faq a,.meeting-panel a,.visit-card a{ text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+main a:not(.btn):not(.arrow-link):hover,.copy a:hover,.faq a:hover{ text-decoration-thickness:2px}
+body{line-height:1.6}
+p{max-width:75ch}
+.reveal{opacity:1;transform:none}
+.has-reveal .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.has-reveal .reveal.is-visible{opacity:1;transform:translateY(0)}
+@media(max-width:700px){.menu{display:flex}nav a{min-height:44px;display:flex;align-items:center}.btn{min-height:48px;justify-content:center}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.has-reveal .reveal{opacity:1;transform:none}}
