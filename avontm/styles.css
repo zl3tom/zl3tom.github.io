@@ -442,3 +442,30 @@ h1,h2,h3,h4,h5,h6,
 }
 .brand-copy small{font-family:"Source Sans 3","Arial",sans-serif}
 button,input,select,textarea{font-family:"Source Sans 3","Arial",sans-serif}
+
+
+/* Accessible contrast and refined visit card */
+.visit-card{background:var(--blue);color:#fff}
+.visit-card p,.visit-card li,.visit-card h3,.visit-card strong,.visit-card b{color:#fff}
+.visit-card b{color:var(--gold)}
+.visit-card em{color:var(--gold);font-style:normal}
+.visit-card a,.visit-card .arrow-link{color:#fff;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.visit-card a:hover,.visit-card a:focus-visible{color:var(--gold)}
+.visit-card .eyebrow{color:var(--gold)}
+
+/* Five clear stages: side-by-side on wide screens, fluid on smaller screens */
+.timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch}
+.timeline article{display:flex;flex-direction:column;gap:14px;min-width:0;margin:0;padding:22px 18px 24px;border:1px solid #dce5e7;border-top:4px solid var(--gold);border-left:1px solid #dce5e7;border-radius:6px;background:#fff;box-shadow:0 8px 24px #102f4010}
+.timeline-no{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#f5f0dc;color:var(--blue);font:800 1rem/1 "Montserrat",Arial,sans-serif}
+.timeline article>div:last-child{min-width:0}
+.timeline article h2{font-size:clamp(1.08rem,1.35vw,1.3rem);line-height:1.25;margin:4px 0 10px;color:var(--blue)}
+.timeline article p:not(.eyebrow){font-size:.94rem;line-height:1.62;color:#344b56}
+.timeline article .eyebrow{font-size:.65rem;line-height:1.4;letter-spacing:.1em;color:var(--blue);margin:0}
+@media(max-width:1050px){.timeline{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.timeline{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.timeline article{padding:19px 16px}}
+@media(max-width:520px){.timeline{grid-template-columns:minmax(0,1fr)}.timeline article{display:grid;grid-template-columns:42px minmax(0,1fr);gap:13px;padding:19px 17px}.timeline article>div:last-child{min-width:0}}
+
+/* Scroll reveals are decorative only: content remains available to assistive technology. */
+.has-reveal .reveal{opacity:0;transform:translateY(22px);transition:opacity 560ms ease,transform 560ms cubic-bezier(.2,.7,.2,1)}
+.has-reveal .reveal.is-visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.has-reveal .reveal,.has-reveal .reveal.is-visible{opacity:1;transform:none;transition:none!important}}
