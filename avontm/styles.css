@@ -518,3 +518,62 @@ button,input,select,textarea{font-family:"Source Sans 3","Arial",sans-serif}
 .meeting-summary-item .arrow-link{margin-top:3px;font-size:.9rem}
 @media(max-width:760px){.meeting-summary{grid-template-columns:1fr 1fr}.meeting-summary-item:nth-child(3){grid-column:1/-1;border-left:0;border-top:1px solid #dce5e7}}
 @media(max-width:520px){.meeting-summary{grid-template-columns:1fr}.meeting-summary-item{padding:19px 20px}.meeting-summary-item+.meeting-summary-item{border-left:0;border-top:1px solid #dce5e7}.meeting-summary-item:nth-child(3){grid-column:auto}}
+
+
+/* Experience page cards — Toastmasters brand-aligned editorial layout */
+.experience-page .timeline{gap:16px}
+.experience-page .timeline article{
+ position:relative;isolation:isolate;overflow:hidden;
+ padding:25px 20px 24px;border:1px solid #d8e1e3;
+ border-top:4px solid var(--blue);border-radius:8px;
+ background:#fff;box-shadow:0 7px 22px #0041650d;
+}
+.experience-page .timeline article::after{
+ content:"";position:absolute;z-index:-1;right:-34px;top:-42px;
+ width:112px;height:112px;border:1px solid #a9b2b155;border-radius:50%;
+}
+.experience-page .timeline-no{
+ width:44px;height:44px;background:var(--blue);color:#fff;
+ border:3px solid var(--gold);font-size:.94rem;flex:0 0 auto;
+}
+.experience-page .timeline article .eyebrow{color:var(--maroon);font-size:.64rem}
+.experience-page .timeline article h2{font-size:1.2rem;line-height:1.25}
+.experience-page .timeline article p:not(.eyebrow){font-size:.95rem;line-height:1.65}
+.experience-page .role-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.experience-page .role-card{
+ position:relative;display:flex;flex-direction:column;align-items:flex-start;
+ min-width:0;height:100%;padding:25px 23px 26px;
+ border:1px solid #d8e1e3;border-top:4px solid var(--blue);
+ border-radius:8px;background:#fff;box-shadow:0 8px 24px #0041650d;
+}
+.experience-page .role-card:nth-child(3n+2){border-top-color:var(--maroon)}
+.experience-page .role-card>span{
+ width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;
+ border:2px solid var(--gold);border-radius:50%;background:#f5f7f7;
+ color:var(--blue);font:800 .88rem/1 "Montserrat",Arial,sans-serif;
+}
+.experience-page .role-card h3{margin:17px 0 10px;color:var(--blue);font-size:1.16rem;line-height:1.3}
+.experience-page .role-card p{margin:0;color:#344b56;font-size:.96rem;line-height:1.68}
+.experience-page .role-card:hover{box-shadow:0 13px 30px #00416518;border-color:#a9b2b1}
+.experience-page .section-head{margin-bottom:34px}
+.experience-page .section-head>p{font-size:1rem;line-height:1.7;color:#344b56}
+@media(max-width:1050px){
+ .experience-page .timeline{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .experience-page .role-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+ .experience-page .timeline{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .experience-page .timeline article{padding:20px 16px}
+ .experience-page .role-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .experience-page .role-card{padding:21px 18px}
+}
+@media(max-width:520px){
+ .experience-page .timeline{grid-template-columns:minmax(0,1fr)}
+ .experience-page .timeline article{display:grid;grid-template-columns:44px minmax(0,1fr);gap:13px}
+ .experience-page .timeline article>div:last-child{min-width:0}
+ .experience-page .role-grid{grid-template-columns:minmax(0,1fr)}
+ .experience-page .role-card{padding:21px}
+}
+@media(prefers-reduced-motion:reduce){
+ .experience-page .role-card{transition:none!important}
+}
