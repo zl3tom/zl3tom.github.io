@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://toastmaster.net.nz/sitemap.xml
+
+Sitemap: https://zl3tom.com/avontm/sitemap.xml
