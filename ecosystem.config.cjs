@@ -12,6 +12,19 @@ module.exports = {
         HOST: "127.0.0.1",
         PORT: "3000"
       }
+    },
+    {
+      name: "avontm",
+      script: "./server.js",
+      cwd: __dirname + "/avontm",
+      instances: 1,
+      autorestart: true,
+      max_memory_restart: "100M",
+      env: {
+        NODE_ENV: "production",
+        HOST: "127.0.0.1",
+        PORT: "3001"
+      }
     }
   ]
 };
