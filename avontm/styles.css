@@ -125,3 +125,26 @@ p{max-width:75ch}
 .has-reveal .reveal.is-visible{opacity:1;transform:translateY(0)}
 @media(max-width:700px){.menu{display:flex}nav a{min-height:44px;display:flex;align-items:center}.btn{min-height:48px;justify-content:center}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.has-reveal .reveal{opacity:1;transform:none}}
+
+
+/* Live next-meeting feature */
+.next-meeting-section{background:linear-gradient(120deg,#003650,#004c70);color:#fff;padding:clamp(55px,7vw,88px) 0;position:relative;overflow:hidden}
+.next-meeting-section:after{content:"";position:absolute;width:430px;height:430px;border:1px solid #ffffff18;border-radius:50%;right:-170px;top:-240px;pointer-events:none}
+.next-meeting-wrap{display:grid;grid-template-columns:1fr .9fr;gap:clamp(35px,7vw,90px);align-items:center;position:relative;z-index:1}
+.next-meeting-section .eyebrow{color:var(--gold)}
+.next-meeting-copy h2{font-size:clamp(2.4rem,4.5vw,4rem);margin-bottom:20px}
+.next-meeting-copy h2 em{color:var(--gold)}
+.next-meeting-intro{max-width:570px;color:#d7e3e7;font-size:1.08rem}
+.next-meeting-meta{display:flex;flex-direction:column;gap:7px;margin:25px 0;color:#dce8eb;font-size:.94rem}
+.next-meeting-date{font:700 1.35rem var(--tm-heading-font);color:#fff}
+.next-meeting-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.next-parking-link{color:var(--gold);font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.countdown-card{background:#fff;color:var(--ink);padding:clamp(24px,4vw,38px);box-shadow:12px 12px 0 var(--gold);min-width:0}
+.countdown-label{font:800 .68rem var(--tm-heading-font);letter-spacing:.13em;color:var(--maroon);margin-bottom:25px}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.countdown-grid>div{background:#f1f5f6;padding:17px 8px 13px;text-align:center;min-width:0}
+.countdown-grid strong{display:block;font:800 clamp(1.7rem,3.5vw,2.7rem)/1.1 var(--tm-heading-font);color:var(--blue);font-variant-numeric:tabular-nums}
+.countdown-grid span{display:block;margin-top:8px;font-size:.72rem;font-weight:700;color:#607078}
+.countdown-note{font-size:.82rem;color:#607078;margin:22px 0 0}
+@media(max-width:800px){.next-meeting-wrap{grid-template-columns:1fr}.countdown-card{max-width:560px;width:100%}}
+@media(max-width:420px){.countdown-card{padding:20px 15px}.countdown-grid{gap:6px}.countdown-grid>div{padding:14px 4px 11px}.countdown-grid strong{font-size:1.7rem}.countdown-grid span{font-size:.66rem}}
