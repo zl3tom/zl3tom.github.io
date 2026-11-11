@@ -54,9 +54,14 @@
       try {
         const now = new Date();
         if (!target || target.getTime() <= now.getTime()) target = findNext(now);
-        dateNode.textContent = new Intl.DateTimeFormat("en-NZ", {
+        const dateParts = Object.fromEntries(new Intl.DateTimeFormat("en-NZ", {
           timeZone: zone, weekday: "long", day: "numeric", month: "long", year: "numeric"
-        }).format(target);
+        }).formatToParts(target).map(part => [part.type, part.value]));
+        const day = Number(dateParts.day);
+        const suffix = day % 100 >= 11 && day % 100 <= 13
+          ? "th"
+          : ({ 1: "st", 2: "nd", 3: "rd" }[day % 10] || "th");
+        dateNode.textContent = `${dateParts.weekday}, ${day}${suffix} ${dateParts.month} ${dateParts.year}`;
         let seconds = Math.max(0, Math.floor((target.getTime() - now.getTime()) / 1000));
         const values = {
           days: Math.floor(seconds / 86400),
