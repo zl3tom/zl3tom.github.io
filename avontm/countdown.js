@@ -81,7 +81,7 @@
     };
     const googleCalendar = card.querySelector("[data-google-calendar]");
     const downloadCalendar = card.querySelector("[data-download-calendar]");
-    const toCalendarDate = date => date.toISOString().replace(/[-:]/g, "").replace(/\\.\\d{3}/, "");
+    const toCalendarDate = date => date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
     const eventDetails = () => {
       const end = new Date(target.getTime() + 60 * 60 * 1000);
       const title = "Avon Toastmasters meeting";
@@ -109,7 +109,7 @@
         event.preventDefault();
         if (!target) return;
         const details = eventDetails();
-        const escapeICS = value => value.replace(/\\\\/g, "\\\\\\\\").replace(/,/g, "\\\\,").replace(/;/g, "\\\\;").replace(/\\r?\\n/g, "\\\\n");
+        const escapeICS = value => value.replace(/\\/g, "\\\\").replace(/,/g, "\\,").replace(/;/g, "\\;").replace(/\r?\n/g, "\\n");
         const ics = [
           "BEGIN:VCALENDAR",
           "VERSION:2.0",
@@ -128,7 +128,7 @@
           "URL:https://zl3tom.com/avontm/",
           "END:VEVENT",
           "END:VCALENDAR"
-        ].join("\\r\\n");
+        ].join("\r\n");
         const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
