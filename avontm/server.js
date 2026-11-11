@@ -50,8 +50,8 @@ http.createServer((req, res) => {
       "Content-Length": details.size,
       "X-Content-Type-Options": "nosniff",
       "Referrer-Policy": "strict-origin-when-cross-origin",
-      "Cache-Control": path.extname(filePath).toLowerCase() === ".html"
-        ? "no-cache"
+      "Cache-Control": [".html", ".js"].includes(path.extname(filePath).toLowerCase())
+        ? "no-cache, no-store, must-revalidate"
         : "public, max-age=3600"
     });
 
