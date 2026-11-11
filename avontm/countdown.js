@@ -159,8 +159,8 @@
           "END:VALARM",
           "BEGIN:VALARM",
           "ACTION:DISPLAY",
-          "DESCRIPTION:" + escapeICS("Avon Toastmasters meeting starts in 3 hours"),
-          "TRIGGER:-PT3H",
+          "DESCRIPTION:" + escapeICS("Avon Toastmasters meeting starts in 4 hours"),
+          "TRIGGER:-PT4H",
           "END:VALARM",
           "END:VEVENT",
           "END:VCALENDAR"
