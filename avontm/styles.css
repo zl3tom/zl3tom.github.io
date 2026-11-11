@@ -505,3 +505,16 @@ button,input,select,textarea{font-family:"Source Sans 3","Arial",sans-serif}
 @media(max-width:600px){.meeting-panel{padding:25px 21px}.countdown-card{padding:22px 17px;box-shadow:7px 7px 0 var(--gold)}.role-grid{grid-template-columns:minmax(0,1fr);gap:12px}.role-card{padding:21px 19px}.tiles{grid-template-columns:minmax(0,1fr)}.tiles article{padding:22px 20px}}
 @media(hover:none) and (pointer:coarse){.role-card:hover{transform:none;box-shadow:0 8px 24px #102f4010}}
 @media(prefers-reduced-motion:reduce){.role-card{transition:none!important}.role-card:hover{transform:none}}
+
+
+/* Compact meeting details: keep the live countdown as the main feature */
+.meeting-summary-section{padding-top:clamp(28px,4vw,46px);padding-bottom:clamp(28px,4vw,46px)}
+.meeting-summary{display:grid;grid-template-columns:1fr 1.25fr .8fr;gap:0;border:1px solid #dce5e7;border-radius:8px;overflow:hidden;background:#fff}
+.meeting-summary-item{min-width:0;padding:23px 25px;display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.meeting-summary-item+.meeting-summary-item{border-left:1px solid #dce5e7}
+.meeting-summary-item .eyebrow{margin:0 0 3px;font-size:.68rem;letter-spacing:.12em}
+.meeting-summary-item strong{color:var(--blue);font:700 1.05rem var(--tm-heading-font);line-height:1.35}
+.meeting-summary-item>span:not(.eyebrow){color:#405660;font-size:.9rem;line-height:1.5}
+.meeting-summary-item .arrow-link{margin-top:3px;font-size:.9rem}
+@media(max-width:760px){.meeting-summary{grid-template-columns:1fr 1fr}.meeting-summary-item:nth-child(3){grid-column:1/-1;border-left:0;border-top:1px solid #dce5e7}}
+@media(max-width:520px){.meeting-summary{grid-template-columns:1fr}.meeting-summary-item{padding:19px 20px}.meeting-summary-item+.meeting-summary-item{border-left:0;border-top:1px solid #dce5e7}.meeting-summary-item:nth-child(3){grid-column:auto}}
