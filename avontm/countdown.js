@@ -5,6 +5,8 @@
     if (!card) return;
     const dateNode = document.querySelector("[data-next-date]");
     const noteNode = card.querySelector("[data-countdown-note]");
+    const labelNode = card.querySelector(".countdown-label");
+    const gridNode = card.querySelector(".countdown-grid");
     const fields = {
       days: card.querySelector("[data-days]"),
       hours: card.querySelector("[data-hours]"),
@@ -31,6 +33,9 @@
       }
       return new Date(result);
     };
+    const isMeetingDay = (year, month, day) =>
+      new Date(Date.UTC(year, month - 1, day)).getUTCDay() === 2 &&
+      [1, 2, 4].includes(Math.floor((day - 1) / 7) + 1);
     const findNext = now => {
       const today = localParts(now);
       for (let offset = 0; offset < 15; offset++) {
@@ -53,7 +58,22 @@
     const render = () => {
       try {
         const now = new Date();
+        const today = localParts(now);
+        const meetingDay = isMeetingDay(today.year, today.month, today.day);
+        const minutesToday = today.hour * 60 + today.minute;
+        const meetingInProgress = meetingDay && minutesToday >= 19 * 60 && minutesToday < 20 * 60 + 45;
         if (!target || target.getTime() <= now.getTime()) target = findNext(now);
+        if (meetingInProgress) {
+          if (labelNode) labelNode.textContent = "AVON TOASTMASTERS IS UNDER WAY";
+          if (gridNode) gridNode.hidden = true;
+          dateNode.textContent = "Meeting in progress";
+          noteNode.textContent = "We're meeting now — you're welcome to join us!";
+          card.setAttribute("aria-label", "Avon Toastmasters meeting in progress");
+          return;
+        }
+        if (labelNode) labelNode.textContent = "COUNTING DOWN TO THE NEXT MEETING";
+        if (gridNode) gridNode.hidden = false;
+        card.setAttribute("aria-label", "Countdown to the next Avon Toastmasters meeting");
         const dateParts = Object.fromEntries(new Intl.DateTimeFormat("en-NZ", {
           timeZone: zone, weekday: "long", day: "numeric", month: "long", year: "numeric"
         }).formatToParts(target).map(part => [part.type, part.value]));
