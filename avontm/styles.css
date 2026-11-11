@@ -424,3 +424,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #a6
 @media(max-width:900px){.role-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.benefit-list{grid-template-columns:1fr}}
 @media(max-width:600px){.timeline article{grid-template-columns:38px minmax(0,1fr);gap:13px;padding:19px 16px}.timeline-no{font-size:1.35rem}.role-grid,.benefit-list{grid-template-columns:1fr}.role-card{padding:19px}.benefit-list article{grid-template-columns:43px minmax(0,1fr);gap:13px;padding:18px}.benefit-icon{width:40px;height:40px}.benefit-list h2{font-size:1.12rem}}
 @media(prefers-reduced-motion:reduce){.timeline article,.role-card,.benefit-list article{transition:none!important}}
+
+
+/* Toastmasters International Brand Manual v2.0 (2025/2026) */
+:root{
+ --blue:#004165; /* Loyal Blue */
+ --maroon:#772432; /* True Maroon */
+ --gray:#A9B2B1; /* Cool Gray */
+ --gold:#F2DF74; /* Happy Yellow accent */
+}
+body{font-family:"Source Sans 3","Arial",sans-serif}
+h1,h2,h3,h4,h5,h6,
+.brand-copy strong,.brand-copy>span,.facts b,.time,.steps b,
+.hero-photo figcaption strong,.footer-brand{
+ font-family:"Montserrat",Arial,sans-serif;
+ letter-spacing:normal;
+}
+.brand-copy small{font-family:"Source Sans 3","Arial",sans-serif}
+button,input,select,textarea{font-family:"Source Sans 3","Arial",sans-serif}
