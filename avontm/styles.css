@@ -40,7 +40,7 @@ nav .nav-cta{border-radius:3px;box-shadow:0 5px 14px #00416524}
 .hero-card-mark{width:112px;height:112px;border:1px solid #f2df7480;border-radius:50%;display:grid;place-items:center;margin:28px 0 22px;position:relative}
 .hero-card-mark:before,.hero-card-mark:after{content:"";position:absolute;border:1px solid #f2df7445;border-radius:50%;inset:10px}
 .hero-card-mark:after{inset:-10px}
-.hero-card-mark span{font:800 3.4rem Manrope;color:var(--gold)}
+.hero-card-mark img{width:76px;height:76px;object-fit:contain;display:block;position:relative;z-index:1}
 .hero-card-kicker,.flow-label,.local-label{font-size:.68rem;letter-spacing:.17em;font-weight:800;color:var(--gold)}
 .hero-card h2{font-size:clamp(2rem,3vw,2.8rem);margin-bottom:15px}
 .hero-card p:not(.hero-card-kicker){color:#d6e2e6;max-width:300px}
