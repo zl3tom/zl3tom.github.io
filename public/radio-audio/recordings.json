@@ -2,26 +2,16 @@
   {
     "published": true,
     "title": "Coffee, Coax & Computers",
-    "description": "A growing interview and discussion series exploring amateur radio, digital voice, radio technology and the people behind it. Start with the first featured episode and check back as more conversations are added.",
-    "date": "Podcast series · 1 episode available",
+    "description": "Interviews and discussions about amateur radio, digital voice and radio technology.",
+    "date": "Podcast series",
     "sortDate": "2026-11",
     "category": "interviews",
     "categoryLabel": "Interviews & Discussions",
     "collectionSlug": "coffee-coax-computers",
     "imageUrl": "https://i.postimg.cc/63JGYdYn/image.png",
     "tags": [
-      "Coffee, Coax & Computers",
-      "interviews",
-      "discussions",
-      "amateur radio",
-      "digital voice",
-      "ham radio",
-      "radio technology",
-      "QSO One",
-      "Frank KD8JKK",
-      "W9JAM",
-      "Beacon",
-      "QSO One app"
+      "Video",
+      "Audio"
     ]
   },
   {
@@ -907,20 +897,8 @@
     "categoryLabel": "Interviews & Discussions",
     "imageUrl": "https://i.postimg.cc/63JGYdYn/image.png",
     "tags": [
-      "Coffee, Coax & Computers",
-      "QSO One",
-      "Frank KD8JKK",
-      "W9JAM",
-      "digital voice",
-      "amateur radio",
-      "ham radio",
-      "radio interview",
-      "radio podcast",
-      "digital amateur radio",
-      "Beacon",
-      "QSO One app",
-      "voice over IP",
-      "ham radio technology"
+      "Video",
+      "Audio"
     ],
     "collectionSlug": "coffee-coax-computers",
     "slug": "coffee-coax-computers/qso-one-future-digital-voice"
