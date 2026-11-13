@@ -87,3 +87,9 @@
 .ccc-episode-tags{color:#789083;font-size:.72rem}
 .ccc-episode-arrow{margin-left:auto;color:#23834f;font-size:1.6rem}
 @media(max-width:600px){.ccc-episode-card{align-items:flex-start;gap:12px;padding:16px}.ccc-episode-number{font-size:.58rem}.ccc-episode-copy strong{font-size:1rem}.ccc-episode-arrow{font-size:1.2rem}}
+
+/* Episode format badges: match the clear, compact archive tags. */
+.ccc-episode-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.ccc-episode-tags span{display:inline-flex;align-items:center;padding:6px 10px;border:1px solid #d5e8dc;border-radius:999px;background:#f0f8f3;color:#246347;font-size:.68rem;font-weight:800;line-height:1}
+.ccc-episode-card{border-color:#dce6df;box-shadow:0 18px 45px #10241e0c}
+.ccc-episode-card:hover{border-color:#b9d5c5;box-shadow:0 18px 40px #10241e18}
