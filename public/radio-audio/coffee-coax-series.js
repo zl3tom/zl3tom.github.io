@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     list.innerHTML = rows.map((e,index) => {
       const href = "/radio-audio/" + String(e.slug || "").split("/").map(encodeURIComponent).join("/") + "/";
-      const tags = Array.isArray(e.tags) ? e.tags.slice(0,6).map(tag => '<span>'+esc(tag)+'</span>').join("") : "";
+      const tags = '<span>Video</span><span>Audio</span>';
       return '<a class="ccc-episode-card" href="'+esc(href)+'"><span class="ccc-episode-number">EPISODE '+String(index+1).padStart(2,"0")+'</span><span class="ccc-episode-copy"><strong>'+esc(e.title)+'</strong><small>'+esc(e.description || "")+'</small><span class="ccc-episode-tags">'+tags+'</span></span><span class="ccc-episode-arrow" aria-hidden="true">→</span></a>';
     }).join("");
   }
