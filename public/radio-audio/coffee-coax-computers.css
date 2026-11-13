@@ -76,3 +76,14 @@
 .ccc-back{margin-top:28px}
 @media(max-width:850px){.ccc-workspace{grid-template-columns:1fr}}
 @media(max-width:600px){.ccc-media-card{padding:17px}.ccc-player-heading{align-items:flex-start;flex-direction:column}.ccc-downloads a{flex:1}.ccc-tabs button{flex:1;padding-inline:9px;font-size:.82rem}.ccc-facts div{align-items:flex-start;flex-direction:column;gap:4px}.ccc-facts strong{text-align:left}}
+
+.ccc-episode-list{display:grid;gap:14px;margin-top:26px}
+.ccc-episode-card{display:flex;align-items:center;gap:20px;padding:24px;border:1px solid #dce9e1;border-radius:14px;background:#fff;text-decoration:none;box-shadow:0 12px 32px #102c1b0a;transition:transform .18s ease,box-shadow .18s ease}
+.ccc-episode-card:hover{transform:translateY(-2px);box-shadow:0 18px 40px #102c1b18}
+.ccc-episode-number{flex:0 0 auto;padding:10px 12px;border-radius:8px;background:#e9f6ee;color:#22613e;font-size:.68rem;font-weight:900;letter-spacing:.1em}
+.ccc-episode-copy{display:grid;gap:6px;min-width:0}
+.ccc-episode-copy strong{color:#153c29;font-size:1.12rem}
+.ccc-episode-copy small{color:#53685d;font-size:.88rem}
+.ccc-episode-tags{color:#789083;font-size:.72rem}
+.ccc-episode-arrow{margin-left:auto;color:#23834f;font-size:1.6rem}
+@media(max-width:600px){.ccc-episode-card{align-items:flex-start;gap:12px;padding:16px}.ccc-episode-number{font-size:.58rem}.ccc-episode-copy strong{font-size:1rem}.ccc-episode-arrow{font-size:1.2rem}}
