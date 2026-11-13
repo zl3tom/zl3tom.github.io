@@ -871,5 +871,32 @@
     "imageUrl": "https://i.postimg.cc/QMZ9YRyg/image.png",
     "collectionSlug": "ariss",
     "youtubeUrl": "https://www.youtube.com/watch?v=9IUDlHl4-yk"
+  },
+  {
+    "published": true,
+    "title": "QSO One: The Future of Digital Voice? LIVE with Developer Frank KD8JKK | W9JAM",
+    "description": "Live conversation with QSO One developer Frank KD8JKK, hosted by W9JAM, about QSO One and the future of digital voice in amateur radio. Watch the video or listen to the MP3/M4A audio versions.",
+    "date": "Featured episode",
+    "sortDate": "2026-11",
+    "category": "interviews",
+    "categoryLabel": "Interviews & Discussions",
+    "slug": "coffee-coax-computers",
+    "imageUrl": "https://i.postimg.cc/63JGYdYn/image.png",
+    "tags": [
+      "Coffee, Coax & Computers",
+      "QSO One",
+      "Frank KD8JKK",
+      "W9JAM",
+      "digital voice",
+      "amateur radio",
+      "ham radio",
+      "radio interview",
+      "radio podcast",
+      "digital amateur radio",
+      "Beacon",
+      "QSO One app",
+      "voice over IP",
+      "ham radio technology"
+    ]
   }
 ]
