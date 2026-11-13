@@ -12,3 +12,5 @@
 .nzart-episode-box .ra-episode-copy strong{white-space:normal}
 .nzart-episode-box .ra-episode.is-current{background:#eaf8ef;box-shadow:inset 3px 0 #0b9662}
 @media(max-width:620px){.nzart-episode-box{padding:12px}.nzart-episode-box .ra-episode{padding:12px 10px}}
+
+.ra-recording-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.ra-recording-tags>span{padding:4px 8px;border:1px solid #d5e8dc;border-radius:999px;background:#f0f8f3;color:#246347;font-size:.66rem;font-weight:750}.ra-recording-card-copy{min-width:0}
