@@ -184,17 +184,21 @@
 <span class="section-number" aria-hidden="true">02A</span>
 <div>
 <h2>QSO One recent updates and features</h2>
-<p><strong>Latest version: 4.2.7</strong> — A bug-fix update for Beacon, QSO One’s built-in voice and community network. Version 4.2.7 improves room sharing, invitations, audio controls, reliability and On the Net integration.</p>
+<p><strong>Latest version: 4.2.7</strong> — A Beacon-focused bug-fix release that improves room sharing and invitations, audio controls, room stability, network compatibility and On the Net integration. The update is rolling out gradually across platforms, so availability may vary.</p>
 <div class="guide-callout"><strong>Beacon is QSO One’s own voice network.</strong><p style="margin:.45rem 0 0">Explore free public rooms for countries, states and counties, plus Worldwide, Ragchew and Echo. Signed-in users can listen; licensed amateur operators can transmit. Beacon also includes room chat, friends, private and group messaging, private calls, a social feed and live activity maps.</p></div>
 <h3>What’s new in 4.2.7</h3>
 <ul>
-<li><strong>Room sharing:</strong> share public rooms and invite friends from the room menu or About tab. Room links open QSO One directly in the selected room.</li>
-<li><strong>Room invitations:</strong> invitations appear in the notification bell and as push notifications, ready to tap and join.</li>
-<li><strong>Beacon audio controls:</strong> dedicated audio levels are available under Settings → Audio; microphone gain is currently available on Android and Windows.</li>
-<li><strong>Stability:</strong> fixes address Android crashes when joining busy rooms, Windows freezes in large rooms, keyboard dismissal while typing, and room-count and layout issues.</li>
-<li><strong>Connectivity:</strong> Beacon now works on networks that block its previous server addresses and checks in less often to reduce server load.</li>
-<li><strong>On the Net:</strong> Beacon rooms work more consistently with live-net status and net-control tools, including the ability to pause or ban a talker.</li>
-<li><strong>Other fixes:</strong> improved home-router port handling for AllStar/EchoLink, DMR password error messages, device-specific station profile selection, notification clearing and screen-reader announcements.</li>
+<li><strong>Share rooms and invite friends:</strong> public-room sharing and friend invitations are available from the room menu and About tab. Links beginning <code>qso1.net/beacon/r/</code> open the app directly in that room.</li>
+<li><strong>Room notifications:</strong> room invitations appear in the notification bell and as push notifications; tap an invitation to join.</li>
+<li><strong>Beacon audio:</strong> Beacon has its own audio-level controls under Settings → Audio. Microphone Gain is currently available on Android and Windows.</li>
+<li><strong>Android and Windows stability:</strong> fixed Android crashes when joining busy rooms and freezing in large Windows rooms. The keyboard also stays open while typing in room chat.</li>
+<li><strong>Room display and counts:</strong> room counts now count people rather than connections, so a person using both the app and website counts once. Sidebar counts stay current, and the talking box remains pinned at the top of short room cards.</li>
+<li><strong>Beacon connectivity:</strong> fixed operation on networks that block the previous server addresses, and reduced how often Beacon checks in with the server to lower server load.</li>
+<li><strong>On the Net:</strong> “Net is live” appears regardless of how a public Beacon room was opened, including Favorites, Recents, the map or Net Finder. Net control can pause or ban a Beacon talker, check-ins use the room’s displayed name and place, and Add connection starts on the net’s own network.</li>
+<li><strong>AllStar and EchoLink:</strong> at home, QSO One asks the router via UPnP to open incoming ports, and repeats the request when Wi-Fi or the local address changes.</li>
+<li><strong>DMR:</strong> for ADN and HamThings, a refused personal password now reports a password problem rather than incorrectly referring to DMR ID registration.</li>
+<li><strong>Account and notifications:</strong> station-profile selection stays on the device where it was changed. The notification centre adds Clear all with confirmation, and clearing also marks Beacon messages and bug-report replies as read.</li>
+<li><strong>Accessibility:</strong> screen readers now announce Network Health links as links.</li>
 </ul>
 <p><strong>Looking ahead:</strong> the developer says work is underway toward linking Beacon with other networks and allowing repeater owners to connect repeaters to Beacon rooms. No release date has been announced.</p>
 <div class="guide-callout"><strong>Want to see earlier releases?</strong><p style="margin:.45rem 0 0">Open the version history for summaries of previous QSO One updates, features and fixes.</p><button type="button" id="qso-one-changelog-open" class="button button-primary" aria-haspopup="dialog" aria-controls="qso-one-changelog">View version changelog</button></div>
@@ -211,11 +215,16 @@
 <div style="padding:1.1rem 1.35rem;overflow-y:auto;">
 <p style="margin-top:0;">A version-by-version summary of notable QSO One features and fixes. Release availability can differ between platforms and app stores.</p>
 <details class="qso-changelog-version" open><summary>Version 4.2.7 — Beacon bug-fix update</summary><div class="qso-changelog-version-content"><ul>
-<li>Added public-room sharing and friend invitations; room links can open QSO One directly in the selected room.</li>
-<li>Added room invitations to the notification bell and push notifications, plus dedicated Beacon audio controls.</li>
-<li>Fixed Android crashes in busy rooms, Windows freezes in large rooms, chat keyboard behaviour, room counts, talker display positioning and Beacon connectivity.</li>
-<li>Improved Beacon integration with On the Net, including live-net status and net-control pause/ban controls.</li>
-<li>Also fixed home-router port handling for AllStar/EchoLink, DMR password messaging, station-profile selection, notification clearing and screen-reader link announcements.</li>
+<li><strong>Room sharing and invites:</strong> share public rooms and invite friends from the room menu or About tab. <code>qso1.net/beacon/r/</code> links open QSO One directly in the room. Invitations appear in the notification bell and as push notifications.</li>
+<li><strong>Beacon audio:</strong> added separate Beacon audio levels in Settings → Audio; Microphone Gain is currently supported on Android and Windows.</li>
+<li><strong>Android and Windows fixes:</strong> fixed crashes when joining busy Android rooms, freezing in large Windows rooms and the room-chat keyboard closing while typing.</li>
+<li><strong>Room counts and layout:</strong> counts now represent people rather than connections, so app and website sessions count once. Sidebar counts stay current and the talking box stays pinned at the top of short room cards.</li>
+<li><strong>Beacon networking:</strong> fixed Beacon on networks that block its former server addresses and reduced server check-in frequency to lower load.</li>
+<li><strong>On the Net:</strong> “Net is live” works regardless of how a public Beacon room was opened (Favorites, Recents, map or Net Finder). Net control can pause or ban Beacon talkers; check-ins use the room’s displayed name and place; Add connection starts on the net’s network.</li>
+<li><strong>AllStar and EchoLink:</strong> QSO One asks the home router via UPnP to open incoming ports and repeats the request when Wi-Fi or the local address changes.</li>
+<li><strong>DMR:</strong> ADN and HamThings now identify a refused personal password as a password issue rather than a DMR ID registration issue.</li>
+<li><strong>Account and notifications:</strong> station profiles remain selected independently on each device. The notification centre adds confirmed Clear all, which also marks Beacon messages and bug-report replies as read.</li>
+<li><strong>Accessibility:</strong> screen readers announce Network Health links as links.</li>
 </ul></div></details>
 <details class="qso-changelog-version" open><summary>Version 4.2.6 — Beacon (Experimental)</summary><div class="qso-changelog-version-content"><ul>
 <li>Launched Beacon, QSO One’s built-in voice network, with free public rooms for countries, states and counties, plus Worldwide, Ragchew and Echo.</li>
