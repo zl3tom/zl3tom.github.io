@@ -50,12 +50,14 @@
 <url><loc>https://zl3tom.com/radio-activity/anzel</loc><lastmod>2026-10-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://zl3tom.com/radio-activity/brandmeister</loc><lastmod>2026-10-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://zl3tom.com/radio-audio</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-<url><loc>https://zl3tom.com/radio-audio/ariss/</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://i.postimg.cc/QMZ9YRyg/image.png</image:loc><image:title>ARISS contact recording artwork</image:title><image:caption>Australian students speak with astronaut Chris Cassidy aboard the International Space Station on 24 August 2020</image:caption></image:image></url>
-<url><loc>https://zl3tom.com/radio-audio/arrl-audio-news/</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-<url><loc>https://zl3tom.com/radio-audio/arrl-on-the-air/</loc><lastmod>2026-11-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://zl3tom.com/radio-audio/ariss</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://zl3tom.com/radio-audio/arrl-audio-news</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://zl3tom.com/radio-audio/arrl-on-the-air</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://zl3tom.com/radio-audio/coffee-coax-computers</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://zl3tom.com/radio-audio/coffee-coax-computers/qso-one-future-digital-voice</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://i.postimg.cc/63JGYdYn/image.png</image:loc><image:title>QSO One: The Future of Digital Voice?</image:title><image:caption>Coffee, Coax &amp; Computers Episode 01 with developer Frank KD8JKK and W9JAM</image:caption></image:image></url>
 <url><loc>https://zl3tom.com/radio-audio/nzart</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://i.postimg.cc/CFrBm4dn/image.png</image:loc><image:title>NZART Official Broadcast artwork</image:title><image:caption>NZART Official Broadcasts, New Zealand amateur radio news and monthly podcast archive on ZL3TOM</image:caption></image:image></url>
-<url><loc>https://zl3tom.com/radio-audio/wia-news/</loc><lastmod>2026-11-03</lastmod><changefreq>daily</changefreq><priority>0.7</priority><image:image><image:loc>https://i.postimg.cc/G2VKvJky/image.png</image:loc><image:title>WIA News podcast artwork</image:title><image:caption>WIA News from Australia official RSS audio archive with episode listings and MP3 downloads on ZL3TOM</image:caption></image:image></url>
-<url><loc>https://zl3tom.com/radio-audio/world-amateur-radio-day/</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://zl3tom.com/radio-audio/wia-news</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://zl3tom.com/radio-audio/world-amateur-radio-day</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://zl3tom.com/radio-fun</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 <url><loc>https://zl3tom.com/tools</loc><lastmod>2026-09-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 <url><loc>https://zl3tom.com/tools/callsign-lookup</loc><lastmod>2026-09-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -69,6 +71,4 @@
 <url><loc>https://zl3tom.com/tools/repeater-offset-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://zl3tom.com/tools/swr-calculator</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://zl3tom.com/tools/watts-to-dbm</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-<url><loc>https://zl3tom.com/radio-audio/coffee-coax-computers/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://i.postimg.cc/63JGYdYn/image.png</image:loc><image:title>Coffee, Coax &amp; Computers</image:title><image:caption>Coffee, Coax &amp; Computers amateur radio interview and discussion series artwork</image:caption></image:image></url>
-<url><loc>https://zl3tom.com/radio-audio/coffee-coax-computers/qso-one-future-digital-voice</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><image:image><image:loc>https://i.postimg.cc/63JGYdYn/image.png</image:loc><image:title>QSO One: The Future of Digital Voice?</image:title><image:caption>Coffee, Coax &amp; Computers Episode 01 with developer Frank KD8JKK and W9JAM</image:caption></image:image></url>
 </urlset>

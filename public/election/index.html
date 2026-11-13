@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en-NZ">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B4BJQE9ET1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B4BJQE9ET1');
+</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
@@ -91,6 +99,26 @@
 
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
   </style>
+
+  <!-- ZL3TOM social sharing preview -->
+  <meta property="og:title" content="NZ Election 2026 | ZL3TOM Election Desk">
+  <meta property="og:description" content="An independent ZL3TOM election desk tracking New Zealand">
+  <meta property="og:url" content="https://zl3tom.com/">
+  <meta property="og:site_name" content="ZL3TOM Amateur Radio">
+  <meta property="og:locale" content="en_NZ">
+  <meta property="og:image" content="https://zl3tom.com/social-preview.png">
+  <meta property="og:image:secure_url" content="https://zl3tom.com/social-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ZL3TOM Amateur Radio — Thomas Bernard in Christchurch, New Zealand">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NZ Election 2026 | ZL3TOM Election Desk">
+  <meta name="twitter:description" content="An independent ZL3TOM election desk tracking New Zealand">
+  <meta name="twitter:image" content="https://zl3tom.com/social-preview.png">
+  <meta name="twitter:image:alt" content="ZL3TOM Amateur Radio — Thomas Bernard in Christchurch, New Zealand">
+  <link rel="me" href="https://www.facebook.com/zl3tom">
+  <!-- End ZL3TOM social sharing preview -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -119,7 +147,7 @@
       </div>
     </section>
 
-    
+
 
     <section class="wrap content" id="special-votes" aria-labelledby="special-title">
       <div class="section-head"><div><span class="section-kicker">The count continues</span><h2 id="special-title">The special-vote picture</h2></div><p>The election has happened and the preliminary count is complete. The Electoral Commission is now checking ordinary votes and counting special votes before declaring the official result.</p></div>
@@ -168,7 +196,7 @@
         <div class="section-head" style="margin-bottom:8px"><div><span class="section-kicker">Voting-place statistics</span><h2 style="font-size:24px">Electorate statistics and downloads</h2></div><p>Search all 71 electorates and open the Electoral Commission's spreadsheet or PDF report for each one.</p></div>
         <label for="electorate-filter" class="section-kicker" style="display:block;margin:12px 0 6px">Find an electorate</label>
         <input id="electorate-filter" class="data-search" type="search" placeholder="Search electorate…" aria-label="Search electorate statistics">
-        <div class="stats-scroll" role="region" aria-label="Scrollable list of electorate statistics and downloads" tabindex="0"><table class="data-table"><thead><tr><th>Electorate</th><th>Downloads</th></tr></thead><tbody id="statistics-table"></tbody></table></div>
+        <div class="stats-scroll" role="region" aria-label="Scrollable list of electorate statistics and downloads" tabindex="0"><table class="data-table"><thead><tr><th scope="col">Electorate</th><th scope="col">Downloads</th></tr></thead><tbody id="statistics-table"></tbody></table></div>
         <p id="electorate-count" class="source-note" aria-live="polite"></p>
       </div>
       <p class="source-note" id="detail-source-status" role="status" aria-live="polite">Loading official source tables…</p><p class="source-note">Source: <a href="https://electionresults.govt.nz/electionresults_2026_preliminary/" target="_blank" rel="noopener noreferrer">New Zealand Electoral Commission – 2026 General Election preliminary results</a>. The Commission states that these are not the formal declaration of results. The official results are expected on Friday 27 November, with detailed E9 information expected by Monday 14 December.</p>
@@ -248,7 +276,7 @@
         const total=candidateRows.reduce((sum,group)=>sum+group.candidates.length,0);
         candidateSummary.textContent=filtered.reduce((sum,group)=>sum+group.candidates.length,0)+' of '+total+' candidates shown across '+filtered.length+' parties.';
       }
-      
+
 
       async function loadDetailedResults(){
         try{
@@ -299,5 +327,6 @@
 })();
   </script>
   <script src="/accessibility.js" defer></script>
+<script src="/script.js?v=20261006-accessibility" defer></script>
 </body>
 </html>
