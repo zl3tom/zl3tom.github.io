@@ -16,7 +16,12 @@
       "amateur radio",
       "digital voice",
       "ham radio",
-      "radio technology"
+      "radio technology",
+      "QSO One",
+      "Frank KD8JKK",
+      "W9JAM",
+      "Beacon",
+      "QSO One app"
     ]
   },
   {
@@ -917,6 +922,7 @@
       "voice over IP",
       "ham radio technology"
     ],
-    "collectionSlug": "coffee-coax-computers"
+    "collectionSlug": "coffee-coax-computers",
+    "slug": "coffee-coax-computers/qso-one-future-digital-voice"
   }
 ]
