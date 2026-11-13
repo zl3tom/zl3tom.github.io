@@ -39,3 +39,40 @@
 @media(max-width:850px){.ccc-hero-grid{grid-template-columns:1fr;gap:28px}.ccc-hero-art img{width:min(78%,360px)}}
 @media(max-width:600px){.ccc-episode{grid-template-columns:1fr}.ccc-episode-art img{width:min(100%,230px);margin-inline:auto}.ccc-player-heading{align-items:flex-start;flex-direction:column}.ccc-downloads>span{width:100%}.ccc-downloads a{flex:1}.ccc-tabs button{flex:1;padding-inline:9px;font-size:.82rem}}
 @media(prefers-reduced-motion:reduce){.ccc-page *{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Match the shared Radio Audio programme page layout and component styling. */
+.ccc-page .nzart-hero-art img{display:block;width:min(100%,420px);max-height:320px;aspect-ratio:1;object-fit:contain;border-radius:16px;box-shadow:0 24px 65px #0005}
+.ccc-main{padding:76px 0 88px}
+.ccc-workspace{grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr)}
+.ccc-media-card{padding:25px}
+.ccc-player-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:24px 0 0}
+.ccc-player-heading h3{margin:0;color:#fff;font-size:1.4rem}
+.ccc-player-status{padding:7px 10px;border:1px solid #8cf0c04d;border-radius:999px;color:#9bffca;font-size:.65rem;font-weight:900;letter-spacing:.1em;white-space:nowrap}
+.ccc-media-card .ccc-overline{color:#8cf0c0}
+.ccc-tabs{display:flex;gap:9px;margin:18px 0 15px}
+.ccc-tabs button{min-height:43px;padding:10px 16px;border:1px solid #8cf0c05c;border-radius:8px;background:#ffffff0a;color:#d6eee2;font-weight:800;cursor:pointer}
+.ccc-tabs button.is-active{background:#8cf0c0;color:#09271c;border-color:#8cf0c0}
+.ccc-video-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#02090c}
+.ccc-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ccc-audio-panel{padding:20px;border:1px solid #ffffff1e;border-radius:12px;background:#06171d}
+.ccc-audio-panel label{display:block;margin-bottom:8px;color:#a8cfc0;font-size:.75rem;font-weight:850}
+.ccc-audio-panel select{width:100%;max-width:320px;min-height:43px;padding:8px 12px;border:1px solid #8cf0c077;border-radius:7px;background:#102d32;color:#fff}
+.ccc-audio-panel audio{display:block;width:100%;margin-top:17px}
+.ccc-audio-help,.ccc-player-note{color:#a8c3b8;font-size:.78rem;line-height:1.6}
+.ccc-downloads{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:17px;padding-top:16px;border-top:1px solid #ffffff20}
+.ccc-downloads>span{width:100%;color:#8ca9a0;font-size:.65rem;font-weight:900;letter-spacing:.14em}
+.ccc-downloads a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 13px;border:1px solid #8cf0c077;border-radius:8px;color:#aaffd0;font-size:.8rem;font-weight:850;text-decoration:none}
+.ccc-downloads a:hover{background:#8cf0c01c}
+.ccc-player-note{margin:12px 0 0}
+.ccc-info-art{display:block;width:min(100%,190px);aspect-ratio:1;object-fit:contain;margin:22px auto;border-radius:12px}
+.ccc-info-copy{color:#5e7168;line-height:1.75}
+.ccc-facts{display:grid;gap:0;margin-top:20px;border-top:1px solid #e7eee9}
+.ccc-facts div{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid #e7eee9}
+.ccc-facts span{color:#829087;font-size:.6rem;font-weight:900;letter-spacing:.1em}
+.ccc-facts strong{color:#18372b;font-size:.78rem;text-align:right}
+.ccc-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.ccc-tags span{padding:6px 10px;border:1px solid #d5e8dc;border-radius:999px;background:#f0f8f3;color:#246347;font-size:.72rem;font-weight:750}
+.ccc-back{margin-top:28px}
+@media(max-width:850px){.ccc-workspace{grid-template-columns:1fr}}
+@media(max-width:600px){.ccc-media-card{padding:17px}.ccc-player-heading{align-items:flex-start;flex-direction:column}.ccc-downloads a{flex:1}.ccc-tabs button{flex:1;padding-inline:9px;font-size:.82rem}.ccc-facts div{align-items:flex-start;flex-direction:column;gap:4px}.ccc-facts strong{text-align:left}}
