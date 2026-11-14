@@ -150,3 +150,19 @@
     margin: 5px 0 0;
   }
 }
+
+/* Live QSO One playback counters */
+.ccc-play-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 16px;
+  padding: 10px 13px;
+  border: 1px solid #8cf0c033;
+  border-radius: 8px;
+  background: #8cf0c00b;
+  color: #aaffd0;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}

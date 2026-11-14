@@ -22,11 +22,148 @@ document.addEventListener("DOMContentLoaded", () => {
   const status = $("ccc-player-status");
 
   const audioUrl = "https://ia601807.us.archive.org/1/items/news-coffee-coax-computers-qso-one-developer-frank-kd-8-jkk-reveals-whats-next-a/news%20-%20Coffee%2C%20Coax%20%26%20Computers%20-%20QSO%20One%20Developer%20Frank%20KD8JKK%20Reveals%20What's%20Next%21%20%EF%BD%9C%20App%20Store%20Announcement%20%26%20Interview.mp3";
-  const videoUrl = "https://www.youtube-nocookie.com/embed/aBx0-Kt4aZg?rel=0";
+  const videoUrl = "https://www.youtube-nocookie.com/embed/aBx0-Kt4aZg?enablejsapi=1&origin=https%3A%2F%2Fzl3tom.com&rel=0";
   const speeds = [1, 1.25, 1.5, 1.75, 2, 0.75];
+
 
   let speedIndex = 0;
   let seeking = false;
+  let videoPlayer = null;
+  const playTrackers = {
+    "qso-one-audio": { elapsed: 0, startedAt: null, timer: null, counted: false },
+    "qso-one-video": { elapsed: 0, startedAt: null, timer: null, counted: false }
+  };
+
+  const playLabels = {
+    "qso-one-audio": $("ccc-audio-plays"),
+    "qso-one-video": $("ccc-video-plays")
+  };
+
+  function updatePlayCounts(counts) {
+    for (const [mediaId, label] of Object.entries(playLabels)) {
+      if (label && Number.isFinite(counts?.[mediaId])) {
+        const name = mediaId.endsWith("-audio") ? "Audio" : "Video";
+        label.textContent = name + " plays: " + counts[mediaId].toLocaleString();
+      }
+    }
+  }
+
+  async function loadPlayCounts() {
+    try {
+      const response = await fetch("/api/media-plays", { cache: "no-store" });
+      if (!response.ok) throw new Error("Play counts unavailable");
+      const result = await response.json();
+      updatePlayCounts(result.counts);
+    } catch {
+      for (const label of Object.values(playLabels)) {
+        if (label) label.textContent = "Play count unavailable";
+      }
+    }
+  }
+
+  async function recordMediaPlay(mediaId) {
+    const tracker = playTrackers[mediaId];
+    if (!tracker || tracker.counted) return;
+
+    tracker.counted = true;
+
+    try {
+      const response = await fetch("/api/media-play", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mediaId })
+      });
+
+      if (!response.ok) throw new Error("Could not record playback");
+
+      const result = await response.json();
+      updatePlayCounts(result.counts);
+    } catch {
+      tracker.counted = false;
+    }
+  }
+
+  function stopPlayTimer(mediaId) {
+    const tracker = playTrackers[mediaId];
+    if (!tracker || tracker.startedAt === null) return;
+
+    tracker.elapsed += (performance.now() - tracker.startedAt) / 1000;
+    tracker.startedAt = null;
+    clearInterval(tracker.timer);
+    tracker.timer = null;
+  }
+
+  function resetPlaySession(mediaId) {
+    const tracker = playTrackers[mediaId];
+    if (!tracker) return;
+
+    stopPlayTimer(mediaId);
+    tracker.elapsed = 0;
+    tracker.counted = false;
+  }
+
+  function startPlayTimer(mediaId) {
+    const tracker = playTrackers[mediaId];
+    if (!tracker || tracker.startedAt !== null || tracker.counted) return;
+
+    tracker.startedAt = performance.now();
+
+    tracker.timer = setInterval(() => {
+      const total = tracker.elapsed +
+        (performance.now() - tracker.startedAt) / 1000;
+
+      if (total >= 10) {
+        stopPlayTimer(mediaId);
+        recordMediaPlay(mediaId);
+      }
+    }, 250);
+  }
+
+  function loadYouTubeApi() {
+    if (window.YT && window.YT.Player) {
+      initialiseYouTubePlayer();
+      return;
+    }
+
+    if (document.querySelector('script[data-zl3tom-youtube-api]')) return;
+
+    const script = document.createElement("script");
+    script.src = "https://www.youtube.com/iframe_api";
+    script.async = true;
+    script.dataset.zl3tomYoutubeApi = "true";
+    document.head.appendChild(script);
+  }
+
+  function initialiseYouTubePlayer() {
+    if (!window.YT || !window.YT.Player || videoPlayer) return;
+
+    videoPlayer = new window.YT.Player("ccc-video-frame", {
+      events: {
+        onStateChange(event) {
+          if (event.data === window.YT.PlayerState.PLAYING) {
+            startPlayTimer("qso-one-video");
+          } else {
+            stopPlayTimer("qso-one-video");
+
+            if (event.data === window.YT.PlayerState.ENDED) {
+              resetPlaySession("qso-one-video");
+            }
+          }
+        }
+      }
+    });
+  }
+
+  const previousYouTubeReady = window.onYouTubeIframeAPIReady;
+  window.onYouTubeIframeAPIReady = function () {
+    if (typeof previousYouTubeReady === "function") {
+      previousYouTubeReady();
+    }
+    initialiseYouTubePlayer();
+  };
+
+  loadPlayCounts();
+  loadYouTubeApi();
 
   const formatTime = value => {
     if (!Number.isFinite(value) || value < 0) return "--:--";
@@ -64,8 +201,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isVideo) {
       audio.pause();
     } else {
-      // Stop any video playback when switching to audio.
-      videoFrame.src = videoUrl;
+      // Stop video playback when switching to audio.
+      if (videoPlayer && typeof videoPlayer.pauseVideo === "function") {
+        videoPlayer.pauseVideo();
+      }
     }
   }
 
@@ -164,6 +303,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   audio.addEventListener("playing", () => {
     setMessage("You're listening to the QSO One episode.", "PLAYING");
+  });
+
+  audio.addEventListener("playing", () => {
+    startPlayTimer("qso-one-audio");
+  });
+
+  audio.addEventListener("pause", () => {
+    stopPlayTimer("qso-one-audio");
+  });
+
+  audio.addEventListener("waiting", () => {
+    stopPlayTimer("qso-one-audio");
+  });
+
+  audio.addEventListener("ended", () => {
+    resetPlaySession("qso-one-audio");
   });
 
   audio.addEventListener("waiting", () => {

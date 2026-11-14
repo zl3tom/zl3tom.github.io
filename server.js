@@ -7,6 +7,7 @@ import process, { loadEnvFile } from "node:process";
 import { fileURLToPath } from "node:url";
 import nodemailer from "nodemailer";
 import { createQrzService } from "./qrz-service.js";
+import { createMediaPlayService } from "./media-play-service.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -51,6 +52,7 @@ const contactConfigured = Boolean(
 );
 const contactAttempts = new Map();
 const qrzService = createQrzService({ rootDir: __dirname, env: process.env });
+const mediaPlayService = createMediaPlayService({ rootDir: __dirname });
 
 const mailTransport = smtpUser && smtpPass
   ? nodemailer.createTransport({
@@ -95,7 +97,7 @@ function setSecurityHeaders(response) {
   );
   response.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; media-src 'self' https://nzart.org.nz https://www.wia-files.com http://www.wia-files.com https://wia-files.com http://wia-files.com https://media.blubrry.com https://content.blubrry.com https://assets.blubrry.com https://archive.org https://*.us.archive.org; frame-src https://nzart.netlify.app https://challenges.cloudflare.com https://logbook.qrz.com https://archive.org https://www.youtube.com https://www.youtube-nocookie.com https://www.nzelection.co.nz; img-src 'self' https://i.postimg.cc https://assets.blubrry.com https://s01.flagcounter.com https://*.tile.openstreetmap.org https://unpkg.com data:; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://unpkg.com https://cdn.socket.io https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.tile.openstreetmap.org https://api.brandmeister.network wss://api.brandmeister.network wss://hose.brandmeister.network https://radioid.net"
+    "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; media-src 'self' https://nzart.org.nz https://www.wia-files.com http://www.wia-files.com https://wia-files.com http://wia-files.com https://media.blubrry.com https://content.blubrry.com https://assets.blubrry.com https://archive.org https://*.us.archive.org; frame-src https://nzart.netlify.app https://challenges.cloudflare.com https://logbook.qrz.com https://archive.org https://www.youtube.com https://www.youtube-nocookie.com https://www.nzelection.co.nz; img-src 'self' https://i.postimg.cc https://assets.blubrry.com https://s01.flagcounter.com https://*.tile.openstreetmap.org https://unpkg.com data:; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://unpkg.com https://cdn.socket.io https://static.cloudflareinsights.com https://www.youtube.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.tile.openstreetmap.org https://api.brandmeister.network wss://api.brandmeister.network wss://hose.brandmeister.network https://radioid.net"
   );
 }
 
@@ -873,6 +875,71 @@ const server = createServer(async (request, response) => {
     } catch {
       sendJson(response, 502, { ok: false, message: "NZ repeater data is temporarily unavailable." });
     }
+    return;
+  }
+
+  if (requestUrl.pathname === "/api/media-plays" && request.method === "GET") {
+    const mediaUrl = requestUrl.searchParams.get("url");
+
+    if (mediaUrl !== null) {
+      const count = mediaPlayService.getCount(mediaUrl);
+
+      if (count === null) {
+        sendJson(response, 400, { ok: false, message: "Invalid media URL." });
+        return;
+      }
+
+      sendJson(response, 200, { ok: true, count });
+      return;
+    }
+
+    sendJson(response, 200, {
+      ok: true,
+      counts: mediaPlayService.getCounts()
+    });
+    return;
+  }
+
+  if (requestUrl.pathname === "/api/media-play" && request.method === "POST") {
+    if (!isAllowedOrigin(request)) {
+      sendJson(response, 403, { ok: false, message: "Origin not allowed." });
+      return;
+    }
+
+    try {
+      const payload = await readJsonBody(request);
+      const mediaUrl = typeof payload?.mediaUrl === "string"
+        ? payload.mediaUrl
+        : "";
+      const mediaId = typeof payload?.mediaId === "string"
+        ? payload.mediaId
+        : "";
+
+      const media = mediaUrl || mediaId;
+
+      if (!mediaPlayService.recordPlay(media)) {
+        sendJson(response, 400, { ok: false, message: "Invalid media URL or ID." });
+        return;
+      }
+
+      sendJson(response, 200, {
+        ok: true,
+        count: mediaUrl
+          ? mediaPlayService.getCount(mediaUrl)
+          : undefined,
+        counts: mediaPlayService.getCounts()
+      });
+    } catch (error) {
+      const statusCode = Number.isInteger(error?.statusCode)
+        ? error.statusCode
+        : 400;
+
+      sendJson(response, statusCode, {
+        ok: false,
+        message: "Could not record playback."
+      });
+    }
+
     return;
   }
 

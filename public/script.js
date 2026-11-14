@@ -1,5 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  // Shared media play counters for native audio and video players.
+  if (!document.querySelector('script[data-media-play-tracker]')) {
+    const mediaTracker = document.createElement("script");
+    mediaTracker.src = "/media-play-tracker.js?v=20261114";
+    mediaTracker.dataset.mediaPlayTracker = "loaded";
+    mediaTracker.defer = true;
+    document.head.appendChild(mediaTracker);
+  }
+
+
   // Inject navigation styling so cached older site stylesheets cannot hide the submenu.
   if (!document.getElementById("radio-fun-nav-styles")) {
     const navStyles = document.createElement("style");
