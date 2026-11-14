@@ -88,6 +88,32 @@
 .qso-changelog-version summary:focus-visible{outline:3px solid #2563eb;outline-offset:-3px}
 .qso-changelog-version-content{padding:.85rem 1rem}
 .qso-changelog-version-content h3{margin-top:0}
+
+.qso-next-step{
+  margin:1.5rem 0;
+  padding:1.25rem;
+  border:1px solid #bfdbfe;
+  border-radius:16px;
+  background:#eff6ff;
+}
+.qso-next-step h2{margin-top:0;color:#172554}
+.qso-next-step-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:.75rem;
+  margin-top:1rem;
+}
+.qso-next-step-grid a{
+  display:block;
+  padding:1rem;
+  border:1px solid #bfdbfe;
+  border-radius:12px;
+  background:#fff;
+  text-decoration:none;
+}
+.qso-next-step-grid a strong{display:block;color:#1d4ed8;margin-bottom:.35rem}
+.qso-next-step-grid a span{color:#475569;font-size:.94rem}
+
 </style>
 </head>
 <body>
@@ -109,6 +135,26 @@
 <p id="qso-guide-search-status" aria-live="polite">Search across setup instructions, features, troubleshooting and FAQs.</p>
 </form>
       <nav aria-label="QSO One guide contents"><h2>Jump to help</h2><ul><li><a href="#mac-install">Install QSO One on Mac</a></li><li><a href="#beacon">Beacon voice network and getting started</a></li><li><a href="#network-setup">DMR, System Fusion and M17</a></li><li><a href="#iax-settings">IAX Direct settings</a></li><li><a href="#audio-help">Audio troubleshooting</a></li><li><a href="#ptt-help">PTT and background sessions</a></li><li><a href="#privacy-settings">Permissions and privacy</a></li><li><a href="#accessible-use">Accessible operation</a></li><li><a href="#support-report">Updates and support</a></li><li><a href="#qso-one-testflight-faq">QSO One FAQs</a></li><li><a href="#qso-one-getting-started">Getting started</a></li><li><a href="#qso-one-platforms">Platform comparison</a></li><li><a href="#qso-one-audio-hardware">Audio and hardware</a></li><li><a href="#qso-one-quick-links">Quick links and support</a></li></ul></nav>
+
+<section class="qso-next-step" aria-labelledby="qso-next-step-title">
+  <h2 id="qso-next-step-title">Explore more amateur radio resources</h2>
+  <p>Finished with QSO One, or looking to learn more about digital voice? Explore these useful ZL3TOM resources.</p>
+  <div class="qso-next-step-grid">
+    <a href="/guides/digital-voice-for-beginners">
+      <strong>Digital Voice for Beginners →</strong>
+      <span>Understand DMR, D-STAR, System Fusion and M17.</span>
+    </a>
+    <a href="/guides">
+      <strong>Browse All Guides →</strong>
+      <span>Explore practical amateur radio guides and tutorials.</span>
+    </a>
+    <a href="/tools">
+      <strong>Free Ham Radio Tools →</strong>
+      <span>Discover useful calculators and amateur radio tools.</span>
+    </a>
+  </div>
+</section>
+
       <section class="guide-section"><span class="section-number" aria-hidden="true">01</span><div><h2>What QSO One is</h2><p>QSO One, developed by Frank KD8JKK, is a free internet voice client for licensed amateur radio operators. It brings several voice networks into one app, including AllStarLink, EchoLink, IAX Direct, DMR, Yaesu System Fusion (YSF) and M17. Experimental features have also added D-STAR reflector support and P25 talkgroups; availability and behaviour can vary by app version.</p><p>Use your device’s microphone, speaker and internet connection to receive and transmit without a separate radio, hotspot or Raspberry Pi. Depending on the destination, your voice may reach other app users, linked nodes or RF repeaters. It is useful at home, when travelling, or when a traditional radio setup is difficult to access.</p><p>Tools include searchable directories, favourites, callsign lookup, QSO logging with ADIF export, Net Finder, received-audio recording and Net Runner tools for net control and transcription. Recent releases have added a unified On the Net area for finding live nets, sharing net links and helping net control publish scheduled nets. Audio options include automatic received-audio levelling and selectable voice-codec options, including the built-in codec and supported AMBE hardware/server options.</p><p>QSO One is free to use, with optional contributions supporting development. You still need an amateur radio licence and any accounts or IDs required by your chosen network. Experimental modes may have limitations, so check the installed version’s release notes before relying on them.</p>
 </div></section>
 
