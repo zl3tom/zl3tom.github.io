@@ -93,3 +93,60 @@
 .ccc-episode-tags span{display:inline-flex;align-items:center;padding:6px 10px;border:1px solid #d5e8dc;border-radius:999px;background:#f0f8f3;color:#246347;font-size:.68rem;font-weight:800;line-height:1}
 .ccc-episode-card{border-color:#dce6df;box-shadow:0 18px 45px #10241e0c}
 .ccc-episode-card:hover{border-color:#b9d5c5;box-shadow:0 18px 40px #10241e18}
+
+
+/* QSO One custom audio player: shared ARISS player controls. */
+.ccc-audio-panel[hidden] {
+  display: none !important;
+}
+
+.ccc-audio-panel {
+  margin-top: 0;
+  padding: 17px;
+  border: 1px solid #ffffff1e;
+  border-radius: 12px;
+  background: #06171d;
+}
+
+.ccc-audio-panel .nzart-record-art {
+  height: 190px;
+  margin: 5px 0 12px;
+}
+
+.ccc-audio-panel .nzart-track-meta h3 {
+  color: #fff;
+}
+
+.ccc-audio-panel .nzart-controls {
+  margin-top: 18px;
+}
+
+.ccc-audio-panel .nzart-progress-wrap input:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.ccc-audio-panel .nzart-secondary-controls button {
+  min-width: 39px;
+}
+
+.ccc-audio-panel .nzart-player-foot {
+  flex-wrap: wrap;
+}
+
+@media(max-width:600px) {
+  .ccc-audio-panel {
+    padding: 12px;
+  }
+
+  .ccc-audio-panel .nzart-control-row {
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+
+  .ccc-audio-panel .nzart-volume-wrap {
+    min-width: 100%;
+    flex-basis: 100%;
+    margin: 5px 0 0;
+  }
+}
