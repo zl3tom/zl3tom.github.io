@@ -325,18 +325,18 @@ const newGuides = [
   {
     slug: "qso-one-guide",
     title: "QSO One Setup Guide: DMR, EchoLink and AllStar",
-    updatedIso: "2026-11-10",
-    updatedDisplay: "10 November 2026",
+    updatedIso: "2026-11-17",
+    updatedDisplay: "17 November 2026",
     cardTitle: "QSO One setup",
     description: "A step-by-step QSO One guide covering Beacon, its experimental browser voice network, plus EchoLink, AllStarLink, IAX Direct, DMR, System Fusion and M17.",
     keywords: "QSO One guide, QSO1 setup, QSO One Android, QSO One Google Play, QSO One EchoLink, QSO One AllStar, QSO One DMR, amateur radio app, ZL3TOM",
     asideTitle: "QSO One downloads and Beacon",
-    asideHtml: "<p><strong>Latest release:</strong> QSO One 4.2.5 is out. Check the official store or updater for your platform.</p><p><strong>iPhone, iPad and Mac:</strong> join the TestFlight beta. Apple beta builds can take a little time to appear after an update.</p><p><a href=\"https://testflight.apple.com/join/QkqB2Npv\" target=\"_blank\" rel=\"noopener noreferrer\">Join the Apple beta on TestFlight ↗</a><br><a href=\"https://play.google.com/store/apps/details?id=com.qsoone.qso_one\" target=\"_blank\" rel=\"noopener noreferrer\">Get QSO One on Google Play ↗</a><br><a href=\"https://apps.microsoft.com/detail/9NRWFPGK3L3W\" target=\"_blank\" rel=\"noopener noreferrer\">Get QSO One for Windows ↗</a><br><a href=\"https://qso1.net/\" target=\"_blank\" rel=\"noreferrer\">Official QSO One website ↗</a></p><hr><p><strong>Beacon — experimental web voice network</strong><br>Beacon (formerly QSO Earth) is live in your browser. App integration is planned for a later release.</p><a href=\"https://qso1.net/beacon\" target=\"_blank\" rel=\"noopener noreferrer\">Open Beacon ↗</a><br><a href=\"https://qso1.net/account/rooms\" target=\"_blank\" rel=\"noopener noreferrer\">Manage Beacon room subscriptions ↗</a>",
+    asideHtml: "<p><strong>Latest release:</strong> QSO One 4.2.9 is now available. Highlights include HF Listen, improved PTT protection, new DMR and experimental D-STAR features, and extensive Beacon room, messaging and accessibility improvements. Check your platform's official store or updater.</p><p><strong>Support development:</strong> Consider a monthly subscription. The Beacon tier includes your own Beacon room. Subscribe in the app or at <a href='https://qso1.net/support' target='_blank' rel='noopener noreferrer'>qso1.net/support ↗</a>.</p>"<p><strong>iPhone, iPad and Mac:</strong> join the TestFlight beta. Apple beta builds can take a little time to appear after an update.</p><p><a href=\"https://testflight.apple.com/join/QkqB2Npv\" target=\"_blank\" rel=\"noopener noreferrer\">Join the Apple beta on TestFlight ↗</a><br><a href=\"https://play.google.com/store/apps/details?id=com.qsoone.qso_one\" target=\"_blank\" rel=\"noopener noreferrer\">Get QSO One on Google Play ↗</a><br><a href=\"https://apps.microsoft.com/detail/9NRWFPGK3L3W\" target=\"_blank\" rel=\"noopener noreferrer\">Get QSO One for Windows ↗</a><br><a href=\"https://qso1.net/\" target=\"_blank\" rel=\"noreferrer\">Official QSO One website ↗</a></p><hr><p><strong>Beacon — experimental web voice network</strong><br>Beacon (formerly QSO Earth) is live in your browser. App integration is planned for a later release.</p><a href=\"https://qso1.net/beacon\" target=\"_blank\" rel=\"noopener noreferrer\">Open Beacon ↗</a><br><a href=\"https://qso1.net/account/rooms\" target=\"_blank\" rel=\"noopener noreferrer\">Manage Beacon room subscriptions ↗</a>",
     contentsHtml: `<nav aria-label="QSO One guide contents"><h2>Jump to help</h2><ul><li><a href="#beacon">Beacon voice network</a></li><li><a href="#network-setup">DMR, System Fusion and M17</a></li><li><a href="#iax-settings">IAX Direct settings</a></li><li><a href="#audio-help">Audio troubleshooting</a></li><li><a href="#ptt-help">PTT and background sessions</a></li><li><a href="#privacy-settings">Permissions and privacy</a></li><li><a href="#accessible-use">Accessible operation</a></li><li><a href="#support-report">Updates and support</a></li></ul></nav>`,
     sections: [
       {
         title: "What QSO One is",
-        html: `<p>QSO One, developed by Frank KD8JKK, is a free internet voice client for licensed amateur radio operators. The Windows and Android releases connect to AllStarLink, EchoLink, IAX Direct, DMR, System Fusion (YSF) and M17. QSO One 4.2.5 adds advance net planning through On the Net, improved microphone support and a range of audio and stability fixes. iPhone, iPad and Mac users can access current Apple beta builds through TestFlight.</p><p>It uses your device’s microphone, speaker and internet connection to receive and transmit through these networks without a separate radio, hotspot or Raspberry Pi. Depending on the destination, your voice may reach other app users, linked nodes or RF repeaters. It is useful at home, when travelling, or when a traditional radio setup is difficult to access.</p><p>QSO One also provides directories, favourites, callsign lookup, contact logging and Net Finder. Access is free, with optional contributions to support development. You still need your amateur radio licence and any accounts required by your chosen network.</p>`
+        html: `<p>QSO One, developed by Frank KD8JKK, is an internet voice client for licensed amateur radio operators, bringing networks including AllStarLink, EchoLink, IAX Direct, DMR, System Fusion (YSF), M17 and experimental digital-voice options into one app. <strong>QSO One 4.2.9</strong> adds HF Listen for KiwiSDR shortwave receivers, stronger PTT protection when another station is talking, new DMR and experimental D-STAR capabilities, and extensive Beacon room, voice, messaging and map improvements. It also includes account, connection, Windows, mobile and accessibility fixes. Availability can vary by platform.</p><p>It uses your device’s microphone, speaker and internet connection to receive and transmit through these networks without a separate radio, hotspot or Raspberry Pi. Depending on the destination, your voice may reach other app users, linked nodes or RF repeaters. It is useful at home, when travelling, or when a traditional radio setup is difficult to access.</p><p>QSO One also provides directories, favourites, callsign lookup, contact logging and Net Finder. Access is free, with optional contributions to support development. You still need your amateur radio licence and any accounts required by your chosen network.</p>`
       },
       {
         title: "QSO One version history",
@@ -349,7 +349,86 @@ const newGuides = [
 </div>
 <div style="padding:1.1rem 1.35rem;overflow-y:auto;">
 <p style="margin-top:0;">A version-by-version summary of notable QSO One features and fixes. Release availability can differ between platforms and app stores.</p>
-<details class="qso-changelog-version" open><summary>Version 4.2.5 — On the Net planning, speaker microphones and AllStar audio</summary><div class="qso-changelog-version-content">
+<details class="qso-changelog-version" open><summary>Version 4.2.9 — HF Listen, PTT protection, DMR and Beacon upgrades</summary><div class="qso-changelog-version-content">
+<p><strong>QSO One 4.2.9</strong> is a substantial update across HF listening, PTT safety, digital voice networks, Beacon rooms and messaging, account handling, and accessibility.</p>
+<h3>HF Listen</h3><ul><li><strong>NEW:</strong> HF Listen in Tools lets you listen to KiwiSDR shortwave receivers directly in QSO One.</li>
+<li><strong>NEW:</strong> Add a receiver by address, tune by typing or stepping, and select AM, LSB, USB or CW.</li>
+<li><strong>NEW:</strong> Net Finder cards for nets with an HF frequency include a Listen on HF button.</li>
+<li><strong>NEW:</strong> Share an HF frequency with a link that opens HF Listen.</li></ul>
+<h3>PTT</h3><ul><li><strong>NEW:</strong> On EchoLink and DMR, every PTT source waits while another station is talking. On-screen, spacebar, Bluetooth, phone-key and volume-key PTT remain held until the other station stops, so your own over is not cut off.</li>
+<li><strong>NEW:</strong> The PTT button and collapsed pill dim while waiting, with an accessible explanation announced by screen readers in every language.</li>
+<li><strong>FIXED:</strong> Learning a phone side key also saves the phone's own PTT broadcast, allowing it to key with the screen off.</li>
+<li><strong>FIXED:</strong> Learning a BLE button on a microphone that also has classic Bluetooth no longer gets stuck on BLE.</li>
+<li><strong>FIXED:</strong> An unknown-type Bluetooth headset is treated as earbuds behind a Bluetooth PTT, keeping the call on the headset and its microphone.</li>
+<li><strong>FIXED:</strong> Android TIDRADIO microphones are marked button-only only after they have actually carried call audio.</li>
+<li><strong>FIXED:</strong> iPhone TIDRADIO continues working when the app goes into the background.</li></ul>
+<h3>D-STAR</h3><ul><li><strong>NEW:</strong> HamThings is available as an experimental D-STAR family, with talkgroups, scan and Net Finder links.</li>
+<li><strong>FIXED:</strong> The D-STAR heard list now shows the correct callsign suffix.</li></ul>
+<h3>DMR</h3><ul><li><strong>NEW:</strong> DVSPh Network is available as a built-in DMR network.</li>
+<li><strong>NEW:</strong> Talkgroup scanning is available on the HamThings Open DMR Terminal, like BrandMeister.</li>
+<li><strong>NEW:</strong> Custom DMR servers support optional Options text, which is saved and synced.</li>
+<li><strong>FIXED:</strong> Custom DMR servers retry the login key in the alternate format expected by some servers and clearly explain when a login is refused.</li>
+<li><strong>FIXED:</strong> Deleting the last custom server also removes its favourite talkgroups.</li>
+<li><strong>FIXED:</strong> DMR names now come from RadioID first; the network alias is used only as a fallback.</li>
+<li><strong>FIXED:</strong> DMR ESSID stays on each device for TGIF, System X and every ID-only network.</li></ul>
+<h3>AllStarLink and IAX</h3><ul><li><strong>FIXED:</strong> Your AllStar node number stays on each device and is never synced.</li>
+<li><strong>FIXED:</strong> A LAN router reflecting our own call no longer drops the real call.</li>
+<li><strong>FIXED:</strong> Incoming calls are answered more reliably.</li>
+<li><strong>FIXED:</strong> A saved IAX Direct node appears only once in Active.</li>
+<li><strong>FIXED:</strong> Duplicate IAX nodes are combined, and failed IAX Direct sign-ins explain why they failed.</li>
+<li><strong>FIXED:</strong> iPhone devices on IPv6-only cellular networks can reach AllStar and DMR.</li></ul>
+<h3>EchoLink, YSF and NXDN</h3><ul><li><strong>FIXED:</strong> A frequency in an EchoLink node's information no longer appears as a station.</li>
+<li><strong>FIXED:</strong> EchoLink drops a stale proxy session after repeated failures and selects a fresh one.</li>
+<li><strong>NEW:</strong> Enter a YSF DG-ID directly; Net Finder and address connections remember it.</li>
+<li><strong>FIXED:</strong> NXDN displays the talker's ID number instead of a guessed callsign.</li></ul>
+<h3>Beacon rooms and voice</h3><ul><li><strong>NEW:</strong> Net control can pause any talker for a set time from the person card, talker box or People list.</li>
+<li><strong>NEW:</strong> Rooms automatically rejoin after a drop and tolerate network gaps of up to 60 seconds.</li>
+<li><strong>NEW:</strong> Blocking someone also mutes and hides that person in rooms.</li>
+<li><strong>NEW:</strong> Extra-room packs are available on every platform.</li>
+<li><strong>NEW:</strong> The room PTT menu includes RX volume, mute and PTT lock.</li>
+<li><strong>NEW:</strong> A person's QSO One name is shown first, and callsign lookup is retried after a slow-network miss.</li>
+<li><strong>NEW:</strong> Person cards show callsign lookup details and actions including Log QSO, QRZ and badges.</li>
+<li><strong>FIXED:</strong> The microphone turns on when you first key, so your first words are heard.</li>
+<li><strong>FIXED:</strong> Only one talker has the floor; an active talker keeps it, while a stuck or silent key is cleared.</li>
+<li><strong>FIXED:</strong> Correct handling of TX when the room mutes your microphone, unkeying after a dropped connection, and preventing an open microphone after a quick release.</li>
+<li><strong>FIXED:</strong> Joining immediately after leaving no longer kicks you out, and failed joins no longer wedge the app on F400 or slow networks.</li>
+<li><strong>FIXED:</strong> Room joining works on Android 7, 8 and 9.</li>
+<li><strong>FIXED:</strong> Android continues playing with the screen off.</li>
+<li><strong>FIXED:</strong> Each talker is levelled independently; loud and quiet stations sound more even without your own level being pulled down while talking.</li>
+<li><strong>FIXED:</strong> Hearing aids remain in use when you join.</li>
+<li><strong>FIXED:</strong> Leaving a room yourself ends a scan.</li>
+<li><strong>FIXED:</strong> Shutting down from the menu on iPad leaves the room and stops audio and microphone activity.</li>
+<li><strong>FIXED:</strong> iPhone follows your selected Beacon output, feeds both car speakers and reports the car microphone picker accurately.</li>
+<li><strong>FIXED:</strong> iPhone AirPlay works on every network, and video in other apps no longer pauses every few seconds.</li>
+<li><strong>FIXED:</strong> Windows USB audio interfaces use the correct input; silent playback restarts itself; stopping a voice message no longer crashes; and the app starts on trimmed Windows installations.</li>
+<li><strong>FIXED:</strong> Tones and chirps follow the room's audio path.</li></ul>
+<h3>Beacon messages, feed and map</h3><ul><li><strong>NEW:</strong> Direct messages and group chats reach every device on your account.</li>
+<li><strong>NEW:</strong> Notifications open the relevant item—including DMs, calls, requests, groups and friend requests—even when the app was closed.</li>
+<li><strong>NEW:</strong> An in-app notice appears when a group message arrives while QSO One is open.</li>
+<li><strong>NEW:</strong> The feed has Refresh, inline comments and delete from its menu.</li>
+<li><strong>FIXED:</strong> Votes, polls and deletes preserve your place in the feed; a failed vote is rolled back.</li>
+<li><strong>NEW:</strong> The map shows connected people in gold and your own position in green; the Friends layer explains when nobody is in view.</li>
+<li><strong>NEW:</strong> My rooms has moved into the Menu. Room names appear on net cards, with Share and Invite on your own room page.</li>
+<li><strong>FIXED:</strong> The Rooms list and Net Finder scroll to the correct length with a steady scrollbar.</li>
+<li><strong>FIXED:</strong> The RX bar no longer blanks; emojis display on iPhone, iPad and Mac; and the chat box clears the keyboard.</li>
+<li><strong>FIXED:</strong> Busy and collision notices clear after five seconds.</li>
+<li><strong>FIXED:</strong> Wide windows switch to Map, Rooms and Feed tabs when the middle area becomes too narrow.</li></ul>
+<h3>Accounts</h3><ul><li><strong>NEW:</strong> A real callsign is required. Accounts without one are sent to the callsign screen, and made-up callsigns are refused.</li>
+<li><strong>FIXED:</strong> Changing an email address to one already attached to an account clearly explains the conflict.</li>
+<li><strong>FIXED:</strong> Sign-in clearly reports when the sign-in server cannot be reached from your network.</li></ul>
+<h3>Net Finder and On the Net</h3><ul><li><strong>NEW:</strong> Live On the Net cards include the favourite star, reminder bell and menu.</li>
+<li><strong>NEW:</strong> Recent connections show full Beacon room names and the DMR network.</li>
+<li><strong>NEW:</strong> Beacon contacts count towards the All Networks and 10 Countries trophies.</li>
+<li><strong>FIXED:</strong> Editing a net's time now saves correctly.</li>
+<li><strong>FIXED:</strong> Net chat keeps its scroll position while messages arrive.</li></ul>
+<h3>Chat, screens and accessibility</h3><ul><li><strong>NEW:</strong> Chat text can be selected and copied throughout the app. Long-press a room message for Copy and Report.</li>
+<li><strong>NEW:</strong> Links can be tapped in every chat, including Beacon, On the Net, EchoLink, M17 and notifications.</li>
+<li><strong>FIXED:</strong> Thai text fits on 240 × 320 screens.</li>
+<li><strong>FIXED:</strong> The simple layout on wide screens has working gear and network switcher controls, and Tab can reach the switcher.</li>
+<li><strong>FIXED:</strong> The UTC clock announces both 24-hour and 12-hour time to screen readers.</li>
+<li><strong>FIXED:</strong> The QSO log trash notice closes automatically.</li>
+<li><strong>FIXED:</strong> Screen-reader improvements have been made across the app.</li></ul>
+<p><strong>Support ongoing development:</strong> Consider a monthly subscription to help fund continued development. At the Beacon tier, you can also get your own Beacon room. Subscribe in the app or visit <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">qso1.net/support</a>.</p></div></details><details class="qso-changelog-version" open><summary>Version 4.2.5 — On the Net planning, speaker microphones and AllStar audio</summary><div class="qso-changelog-version-content">
 <ul>
 <li><strong>On the Net scheduling:</strong> plan a net ahead by choosing it from Net Finder with search. Net Control starts automatically when the scheduled net begins. Existing listed nets use their Net Finder link, while newly created nets receive a custom link.</li>
 <li><strong>TidRadio speaker microphones:</strong> full speaker, microphone and PTT-button operation is now supported on iPhone.</li>
@@ -517,7 +596,7 @@ const newGuides = [
       {
         id: "support-report",
         title: "Updates and reporting a useful problem",
-        html: `<p><strong>QSO One 4.2.5 release highlights:</strong></p><ul><li><strong>On the Net:</strong> plan nets in advance using Net Finder search. Net Control starts when the net begins; existing listings use their Net Finder link and new nets get a custom shareable link.</li><li><strong>iPhone:</strong> TidRadio speaker microphones now fully support the speaker, microphone and PTT button.</li><li><strong>AllStar:</strong> Bluetooth and wired speaker microphones now support full-duplex audio.</li><li><strong>Audio and compatibility fixes:</strong> accented talkgroup names display correctly across networks; AMBE server audio is smoother on weak Wi-Fi; Bluetooth call pop-ups and a false clock warning have been removed.</li><li><strong>Stability fixes:</strong> addressed a TalkBack crash, AllStar freezes and several iPhone issues, including keyboard dismissal, M17 setup-box readability, RX VOL speaker volume and a car-kit “call ended” loop.</li></ul><p>The developer also included smaller fixes based on user bug reports. Check <strong>What’s new</strong> in your installed version for the release notes that apply to your platform.</p><p>Check your installed version and build number in the app’s information screen. Use the official store, download site or updater for your installation. A support post about a beta build may describe behaviour that your release does not yet have.</p><p>If a problem persists, use <strong>Settings → Send Bug Report</strong> as directed by the <a href="https://qso1.net/faq">official support page</a>. Include:</p><ul><li>App version/build, operating system and device model.</li><li>The network and destination, and whether the issue affects receiving, transmitting or both.</li><li>Microphone, speaker/headset and external PTT device in use.</li><li>The steps to reproduce it, expected result and actual result.</li><li>Whether it also happens with on-screen PTT and the built-in audio devices.</li><li>Any error message, with passwords and other sensitive details removed from public attachments.</li></ul><p>Review the privacy policy before sending diagnostics. Detailed, reproducible reports are more useful than “it does not work”.</p>`
+        html: `<p><strong>QSO One 4.2.5 release highlights:</strong></p><ul><li><strong>On the Net:</strong> plan nets in advance using Net Finder search. Net Control starts when the net begins; existing listings use their Net Finder link and new nets get a custom shareable link.</li><li><strong>iPhone:</strong> TidRadio speaker microphones now fully support the speaker, microphone and PTT button.</li><li><strong>AllStar:</strong> Bluetooth and wired speaker microphones now support full-duplex audio.</li><li><strong>Audio and compatibility fixes:</strong> accented talkgroup names display correctly across networks; AMBE server audio is smoother on weak Wi-Fi; Bluetooth call pop-ups and a false clock warning have been removed.</li><li><strong>Stability fixes:</strong> addressed a TalkBack crash, AllStar freezes and several iPhone issues, including keyboard dismissal, M17 setup-box readability, RX VOL speaker volume and a car-kit “call ended” loop.</li></ul><p>The developer also included smaller fixes based on user bug reports. Check <strong>What’s new</strong> in your installed version for the release notes that apply to your platform.</p><p>Check your installed version and build number in the app’s information screen. Use the official store, download site or updater for your installation. A support post about a beta build may describe behaviour that your release does not yet have.</p><p>If a problem persists, use <strong>Settings → Send Bug Report</strong> as directed by the <a href="https://qso1.net/faq">official support page</a>. Include:</p><ul><li>App version/build, operating system and device model.</li><li>The network and destination, and whether the issue affects receiving, transmitting or both.</li><li>Microphone, speaker/headset and external PTT device in use.</li><li>The steps to reproduce it, expected result and actual result.</li><li>Whether it also happens with on-screen PTT and the built-in audio devices.</li><li>Any error message, with passwords and other sensitive details removed from public attachments.</li></ul><p>Review the privacy policy before sending diagnostics. <strong>Bug reports without an explanation will be ignored.</strong> The log tells the developer what the app saw, but not what you were trying to do. Explain the steps you took, what happened and what you expected.</p>`
       }
 
     ],
