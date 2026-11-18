@@ -533,8 +533,7 @@ const newGuides = [
 <hr>
 <p><strong>Note:</strong> This is an edited summary, not a verbatim copy of every developer release note. For the most accurate platform-specific information, check the app’s <strong>What’s New</strong> screen and the official QSO One community.</p>
 <p><a href="https://www.reddit.com/r/QSOone/" target="_blank" rel="noopener noreferrer">Browse QSO One release announcements on Reddit ↗</a> · <a href="https://qso1.net/" target="_blank" rel="noopener noreferrer">Official QSO One website ↗</a></p>
-</div></div></details>
-</section>`
+</div></section></details>`
       },
       {
         id: "beacon",
@@ -725,26 +724,27 @@ const newGuides = [
       {
         id: "qso-one-faq",
         title: "QSO One frequently asked questions",
-        html: `<h3>Can I install QSO One on a Mac?</h3>
-<p>Yes. Compatible Mac users can join the Apple beta through <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">TestFlight</a>. See <a href="#mac-install">Install and use QSO One on Mac</a> for the steps and audio setup advice.</p>
-<h3>How do I install QSO One on iPhone or iPad?</h3>
-<p>Join the Apple beta using the <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">QSO One TestFlight invitation</a>, accept it and install the available build through TestFlight.</p>
-<h3>Is QSO One available for Android and Windows?</h3>
-<p>Yes. Download it from <a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">Google Play</a> or the <a href="https://apps.microsoft.com/detail/9NRWFPGK3L3W" target="_blank" rel="noopener noreferrer">Microsoft Store</a>.</p>
-<h3>Can I use Bluetooth headsets and speaker microphones?</h3>
-<p>Many audio devices can be used, but microphone, speaker and physical PTT-button compatibility varies. See <a href="#audio-hardware">Audio equipment, speaker microphones and PTT</a> and test your exact accessory.</p>
-<h3>How does full-duplex AllStar audio work on mobile?</h3>
-<p>Audio behaviour depends on the device, operating system, app build and connected accessories. Headphones or earbuds can help prevent received audio feeding back into the microphone. Do not assume every Bluetooth speaker microphone supports every full-duplex arrangement. Test your setup before relying on it.</p>
-<h3>How do I connect to a DMR talkgroup?</h3>
-<p>Select DMR, choose the network you are registered with, enter the credentials required by that network and select the intended talkgroup. See <a href="#network-setup">Connect with DMR, System Fusion or M17</a>.</p>
-<h3>How do I connect to EchoLink or AllStar?</h3>
-<p>Use your validated EchoLink account or authorised AllStar connection details, search for the destination and listen before transmitting. See <a href="#network-setup">the network setup sections</a> and <a href="#iax-settings">IAX Direct settings</a>.</p>
-<h3>How do I find or schedule a net?</h3>
-<p>Use Net Finder to search for nets and check their time, network and joining instructions. A scheduled listing does not guarantee that a net is currently active. Follow the instructions shown for the particular listing.</p>
-<h3>Where can I use Beacon?</h3>
-<p>Beacon is available in the QSO One app and through <a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer">the Beacon website</a>. In the app, open Menu → My Rooms to manage your rooms.</p>
-<h3>Where can I get help or report a problem?</h3>
-<p>Use the in-app bug-report option when available or visit <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">official QSO One support</a>. Include your app version, device, operating-system version and clear steps to reproduce the issue. Never include passwords or private credentials.</p>`
+        html: `
+<style>
+.qso-faq-item{margin:0 0 .8rem;border:1px solid #cbd5e1;border-radius:10px;background:#fff;overflow:hidden}
+.qso-faq-item summary{cursor:pointer;padding:1rem 1.2rem;font-weight:700;color:#173b32;background:#f1f5f9;list-style:none}
+.qso-faq-item summary::-webkit-details-marker{display:none}
+.qso-faq-item summary::after{content:"+";float:right;font-size:1.25rem;font-weight:700}
+.qso-faq-item[open] summary::after{content:"−"}
+.qso-faq-item summary:focus-visible{outline:3px solid #2563eb;outline-offset:-3px}
+.qso-faq-answer{padding:.2rem 1.2rem 1rem}
+.qso-faq-answer p{margin-bottom:0}
+</style>
+<details class="qso-faq-item"><summary>Can I install QSO One on a Mac?</summary><div class="qso-faq-answer"><p>Yes. Compatible Mac users can join the Apple beta through <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">TestFlight</a>. See <a href="#mac-install">Install and use QSO One on Mac</a> for the steps and audio setup advice.</p></div></details>
+<details class="qso-faq-item"><summary>How do I install QSO One on iPhone or iPad?</summary><div class="qso-faq-answer"><p>Join the Apple beta using the <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">QSO One TestFlight invitation</a>, accept it and install the available build through TestFlight.</p></div></details>
+<details class="qso-faq-item"><summary>Is QSO One available for Android and Windows?</summary><div class="qso-faq-answer"><p>Yes. Download it from <a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">Google Play</a> or the <a href="https://apps.microsoft.com/detail/9NRWFPGK3L3W" target="_blank" rel="noopener noreferrer">Microsoft Store</a>.</p></div></details>
+<details class="qso-faq-item"><summary>Can I use Bluetooth headsets and speaker microphones?</summary><div class="qso-faq-answer"><p>Many audio devices can be used, but microphone, speaker and physical PTT-button compatibility varies. See <a href="#audio-hardware">Audio equipment, speaker microphones and PTT</a> and test your exact accessory.</p></div></details>
+<details class="qso-faq-item"><summary>How does full-duplex AllStar audio work on mobile?</summary><div class="qso-faq-answer"><p>Audio behaviour depends on the device, operating system, app build and connected accessories. Headphones or earbuds can help prevent received audio feeding back into the microphone. Do not assume every Bluetooth speaker microphone supports every full-duplex arrangement. Test your setup before relying on it.</p></div></details>
+<details class="qso-faq-item"><summary>How do I connect to a DMR talkgroup?</summary><div class="qso-faq-answer"><p>Select DMR, choose the network you are registered with, enter the credentials required by that network and select the intended talkgroup. See <a href="#network-setup">Connect with DMR, System Fusion or M17</a>.</p></div></details>
+<details class="qso-faq-item"><summary>How do I connect to EchoLink or AllStar?</summary><div class="qso-faq-answer"><p>Use your validated EchoLink account or authorised AllStar connection details, search for the destination and listen before transmitting. See <a href="#network-setup">the network setup sections</a> and <a href="#iax-settings">IAX Direct settings</a>.</p></div></details>
+<details class="qso-faq-item"><summary>How do I find or schedule a net?</summary><div class="qso-faq-answer"><p>Use Net Finder to search for nets and check their time, network and joining instructions. A scheduled listing does not guarantee that a net is currently active. Follow the instructions shown for the particular listing.</p></div></details>
+<details class="qso-faq-item"><summary>Where can I use Beacon?</summary><div class="qso-faq-answer"><p>Beacon is available in the QSO One app and through <a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer">the Beacon website</a>. In the app, open Menu → My Rooms to manage your rooms.</p></div></details>
+<details class="qso-faq-item"><summary>Where can I get help or report a problem?</summary><div class="qso-faq-answer"><p>Use the in-app bug-report option when available or visit <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">official QSO One support</a>. Include your app version, device, operating-system version and clear steps to reproduce the issue. Never include passwords or private credentials.</p></div></details>`
       }
 
     ],
