@@ -328,8 +328,8 @@ const newGuides = [
     updatedIso: "2026-11-18",
     updatedDisplay: "18 November 2026",
     cardTitle: "QSO One setup",
-    description: "A step-by-step QSO One guide covering Beacon, its experimental browser voice network, plus EchoLink, AllStarLink, IAX Direct, DMR, System Fusion and M17.",
-    keywords: "QSO One guide, QSO1 setup, QSO One Android, QSO One Google Play, QSO One EchoLink, QSO One AllStar, QSO One DMR, amateur radio app, ZL3TOM",
+    description: "QSO One 4.2.9 guide: setup and troubleshooting for AllStarLink, IAX Direct, UDP 4569 port forwarding, CGNAT, DMR credentials, TGIF, Beacon rooms, HF Listen and PTT on Android, iPhone and Windows.",
+    keywords: "QSO One guide, QSO One 4.2.9, QSO One setup, QSO One troubleshooting, QSO One AllStarLink, AllStar Node Mode, AllStar incoming connections, IAX Direct, UDP 4569, port forwarding, CGNAT, NAT loopback, QSO One DMR setup, DMR credentials, TGIF network, QSO One Beacon rooms, My Rooms, Beacon favourites, QSO One HF Listen, QSO One PTT, QSO One Android, QSO One iPhone, QSO One Windows, QSO1, amateur radio app, ZL3TOM",
     asideTitle: "QSO One downloads and Beacon",
     asideHtml: `<p><strong>Latest release:</strong> QSO One 4.2.9 is available. Highlights include HF Listen, improved PTT protection, new DMR and experimental D-STAR features, and extensive Beacon room, messaging and accessibility improvements. Check your platform's official store or updater.</p><p><strong>Support development:</strong> Consider a monthly subscription. The Beacon tier includes your own Beacon room. Subscribe in the app or at <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">qso1.net/support ↗</a>.</p><p><strong>iPhone, iPad and Mac:</strong> join the TestFlight beta. Apple beta builds can take a little time to appear after an update.</p><p><a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">Join the Apple beta on TestFlight ↗</a><br><a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">Get QSO One on Google Play ↗</a><br><a href="https://apps.microsoft.com/detail/9NRWFPGK3L3W" target="_blank" rel="noopener noreferrer">Get QSO One for Windows ↗</a><br><a href="https://qso1.net/" target="_blank" rel="noreferrer">Official QSO One website ↗</a></p><hr><p><strong>Beacon — experimental voice network</strong><br>Beacon is available in the QSO One app and in a browser. Manage your own rooms from Menu → My Rooms in version 4.2.9.</p><a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer">Open Beacon ↗</a><br><a href="https://qso1.net/account/rooms" target="_blank" rel="noopener noreferrer">Manage Beacon room subscriptions ↗</a>`,
     contentsHtml: `<nav aria-label="QSO One guide contents"><h2>Jump to help</h2><ul><li><a href="#beacon">Beacon voice network</a></li><li><a href="#network-setup">DMR, System Fusion and M17</a></li><li><a href="#iax-settings">IAX Direct settings</a></li><li><a href="#audio-help">Audio troubleshooting</a></li><li><a href="#ptt-help">PTT and background sessions</a></li><li><a href="#privacy-settings">Permissions and privacy</a></li><li><a href="#accessible-use">Accessible operation</a></li><li><a href="#support-report">Updates and support</a></li><li><a href="#community-troubleshooting">Common connection problems</a></li></ul></nav>`,
@@ -741,7 +741,9 @@ function guidePage(guide) {
         publisher: { "@type": "Person", name: "Thomas Bernard", alternateName: "ZL3TOM" },
         datePublished: updateIso,
         dateModified: guide.updatedIso ?? updateIso,
-        about: ["Amateur radio", guide.title]
+        about: ["Amateur radio", "QSO One 4.2.9", "QSO One setup and troubleshooting", "AllStarLink Node Mode and IAX Direct", "UDP 4569 port forwarding and CGNAT", "DMR network credentials and TGIF", "Beacon rooms and favourites", "HF Listen and PTT"],
+        keywords: guide.keywords,
+        articleSection: ["QSO One setup", "AllStarLink troubleshooting", "DMR setup", "Beacon rooms", "HF Listen", "PTT and audio"]
       },
       {
         "@type": "BreadcrumbList",
