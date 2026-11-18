@@ -329,19 +329,19 @@ const newGuides = [
     updatedDisplay: "19 November 2026",
     cardTitle: "QSO One setup",
     description: "Complete QSO One setup guide covering DMR, EchoLink, AllStarLink, IAX Direct, HF Listen, Beacon rooms, PTT, troubleshooting, connections and setup on Android, iPhone, Mac and Windows.",
-    keywords: "QSO One guide, QSO One setup, QSO One troubleshooting, QSO One AllStarLink, AllStar Node Mode, AllStar incoming connections, IAX Direct, UDP 4569, port forwarding, CGNAT, NAT loopback, QSO One DMR setup, DMR credentials, DMR TS1 TS2 timeslot, DMR talkgroups, Last Heard, TGIF network, QSO One Beacon rooms, My Rooms, Beacon favourites, QSO One HF Listen FM mode, KiwiSDR noise blanker, starred receivers sync, QSO One PTT, QSO One Android, QSO One iPhone, QSO One Mac, QSO One Windows, QSO1, amateur radio app, ZL3TOM",
+    keywords: "QSO One guide, QSO One setup, QSO One troubleshooting, QSO One AllStarLink, AllStar Node Mode, AllStar incoming connections, IAX Direct, UDP 4569, port forwarding, CGNAT, NAT loopback, QSO One DMR setup, DMR credentials, DMR TS1 TS2 timeslot, DMR talkgroups, Last Heard, TGIF network, QSO One Beacon rooms, My Rooms, Beacon favourites, QSO One HF Listen FM mode, KiwiSDR noise blanker, starred receivers sync, QSO One PTT, QSO One Android, QSO One iPhone, QSO One Mac, QSO One Mac installation, QSO One TestFlight, QSO One audio equipment, QSO One speaker microphone, QSO One Bluetooth headset, QSO One PTT button, QSO One FAQs, QSO One Windows, QSO1, amateur radio app, ZL3TOM",
     asideTitle: "QSO One downloads and Beacon",
     asideHtml: `<p><strong>Latest release:</strong> QSO One <strong>4.3.0</strong> is available. HF Listen adds FM mode, a noise blanker and synced starred receivers, with smarter receiver selection. DMR adds a TS1/TS2 talk-window toggle, an official talkgroup list and Last Heard for another network. The release also includes important Beacon, iPhone, Mac, Android, Bluetooth PTT, Net Finder and connection fixes. Check your platform's official store or updater.</p><p><strong>Support development:</strong> Consider a monthly subscription. The Beacon tier includes your own Beacon room. Subscribe in the app or at <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">qso1.net/support ↗</a>.</p><p><strong>iPhone, iPad and Mac:</strong> join the TestFlight beta. Apple beta builds can take a little time to appear after an update.</p><p><a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">Join the Apple beta on TestFlight ↗</a><br><a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">Get QSO One on Google Play ↗</a><br><a href="https://apps.microsoft.com/detail/9NRWFPGK3L3W" target="_blank" rel="noopener noreferrer">Get QSO One for Windows ↗</a><br><a href="https://qso1.net/" target="_blank" rel="noreferrer">Official QSO One website ↗</a></p><hr><p><strong>Beacon — experimental voice network</strong><br>Beacon is available in the QSO One app and in a browser. Manage your own rooms from Menu → My Rooms.</p><a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer">Open Beacon ↗</a><br><a href="https://qso1.net/account/rooms" target="_blank" rel="noopener noreferrer">Manage Beacon room subscriptions ↗</a>`,
-    contentsHtml: `<nav aria-label="QSO One guide contents"><h2>Jump to help</h2><ul><li><a href="#beacon">Beacon voice network</a></li><li><a href="#network-setup">DMR, System Fusion and M17</a></li><li><a href="#iax-settings">IAX Direct settings</a></li><li><a href="#audio-help">Audio troubleshooting</a></li><li><a href="#ptt-help">PTT and background sessions</a></li><li><a href="#privacy-settings">Permissions and privacy</a></li><li><a href="#accessible-use">Accessible operation</a></li><li><a href="#support-report">Updates and support</a></li><li><a href="#community-troubleshooting">Common connection problems</a></li></ul></nav>`,
+    contentsHtml: `<nav aria-label="QSO One guide contents"><h2>Jump to help</h2><ul><li><a href="#beacon">Beacon voice network</a></li><li><a href="#mac-install">Install QSO One on Mac</a></li><li><a href="#audio-hardware">Audio equipment and PTT</a></li><li><a href="#qso-one-faq">Frequently asked questions</a></li><li><a href="#network-setup">DMR, System Fusion and M17</a></li><li><a href="#iax-settings">IAX Direct settings</a></li><li><a href="#audio-help">Audio troubleshooting</a></li><li><a href="#ptt-help">PTT and background sessions</a></li><li><a href="#privacy-settings">Permissions and privacy</a></li><li><a href="#accessible-use">Accessible operation</a></li><li><a href="#support-report">Updates and support</a></li><li><a href="#qso-one-community">QSO One community</a></li><li><a href="#community-troubleshooting">Common connection problems</a></li></ul></nav>`,
     sections: [
       {
         title: "What QSO One is",
         html: `<p>QSO One, developed by Frank KD8JKK, is an internet voice client for licensed amateur radio operators, bringing networks including AllStarLink, EchoLink, IAX Direct, DMR, System Fusion (YSF), M17 and experimental digital-voice options into one app. <strong>QSO One 4.3.0</strong> adds FM mode, a noise blanker and synced starred receivers to HF Listen, plus new DMR TS1/TS2 controls, an official talkgroup list and Last Heard for another network. It also fixes HF Listen playback on iPhone and Mac, Beacon messaging and audio, PTT, Bluetooth, DMR time slots, YSF DG-ID reception, ClearNode IAX connections and Net Finder reliability. Availability can vary by platform.</p><p>It uses your device’s microphone, speaker and internet connection to receive and transmit through these networks without a separate radio, hotspot or Raspberry Pi. Depending on the destination, your voice may reach other app users, linked nodes or RF repeaters. It is useful at home, when travelling, or when a traditional radio setup is difficult to access.</p><p>QSO One also provides directories, favourites, callsign lookup, contact logging and Net Finder. Access is free, with optional contributions to support development. You still need your amateur radio licence and any accounts required by your chosen network.</p>`
       },
       {
-        title: "QSO One version history",
+        title: "QSO One recent updates and features",
         html: `<div class="guide-callout"><strong>QSO One 4.3.0 — latest release</strong><p style="margin:.45rem 0 0">HF Listen improvements, expanded DMR controls and lists, and fixes across Beacon, PTT, audio and connectivity. Use the button below to open the complete version-by-version changelog.</p></div>
-<details class="qso-changelog-toggle"><summary>View all QSO One version changelogs</summary>
+<details class="qso-changelog-toggle"><summary>View full version changelog</summary>
 <style>.qso-changelog-toggle{margin:1rem 0}.qso-changelog-toggle>summary{display:inline-flex;align-items:center;cursor:pointer;padding:.8rem 1.1rem;border:1px solid #64748b;border-radius:9px;background:#f1f5f9;color:#172033;font-weight:700}.qso-changelog-toggle>summary:focus-visible{outline:3px solid #2563eb;outline-offset:3px}.qso-changelog-toggle[open]>summary{margin-bottom:.75rem}.qso-changelog-version{border:1px solid #cbd5e1;border-radius:10px;margin:.75rem 0;overflow:hidden}.qso-changelog-version summary{cursor:pointer;padding:.9rem 1rem;background:#f8fafc;font-weight:700;color:#172033}.qso-changelog-version summary:focus-visible{outline:3px solid #2563eb;outline-offset:-3px}.qso-changelog-version-content{padding:.85rem 1rem}.qso-changelog-version-content h3{margin-top:0}</style>
 <section id="qso-one-changelog" aria-labelledby="qso-one-changelog-title" style="width:100%;max-width:none;max-height:none;overflow:visible;padding:0;margin:1.5rem 0;border:1px solid #cbd5e1;border-radius:16px;box-shadow:0 4px 18px rgba(0,0,0,.08);color:#172033;background:#fff;">
 <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;background:#f1f5f9;border-bottom:1px solid #cbd5e1;position:sticky;top:0;">
@@ -438,7 +438,27 @@ const newGuides = [
 <li><strong>FIXED:</strong> The UTC clock announces both 24-hour and 12-hour time to screen readers.</li>
 <li><strong>FIXED:</strong> The QSO log trash notice closes automatically.</li>
 <li><strong>FIXED:</strong> Screen-reader improvements have been made across the app.</li></ul>
-<p><strong>Support ongoing development:</strong> Consider a monthly subscription to help fund continued development. At the Beacon tier, you can also get your own Beacon room. Subscribe in the app or visit <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">qso1.net/support</a>.</p></div></details><details class="qso-changelog-version" open><summary>Version 4.2.5 — On the Net planning, speaker microphones and AllStar audio</summary><div class="qso-changelog-version-content">
+<p><strong>Support ongoing development:</strong> Consider a monthly subscription to help fund continued development. At the Beacon tier, you can also get your own Beacon room. Subscribe in the app or visit <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">qso1.net/support</a>.</p></div></details><details class="qso-changelog-version"><summary>Version 4.2.7 — Beacon bug-fix update</summary><div class="qso-changelog-version-content"><ul>
+<li><strong>Room sharing and invites:</strong> share public rooms and invite friends from the room menu or About tab. <code>qso1.net/beacon/r/</code> links open QSO One directly in the room. Invitations appear in the notification bell and as push notifications.</li>
+<li><strong>Beacon audio:</strong> added separate Beacon audio levels in Settings → Audio; Microphone Gain is currently supported on Android and Windows.</li>
+<li><strong>Android and Windows fixes:</strong> fixed crashes when joining busy Android rooms, freezing in large Windows rooms and the room-chat keyboard closing while typing.</li>
+<li><strong>Room counts and layout:</strong> counts now represent people rather than connections, so app and website sessions count once. Sidebar counts stay current and the talking box stays pinned at the top of short room cards.</li>
+<li><strong>Beacon networking:</strong> fixed Beacon on networks that block its former server addresses and reduced server check-in frequency to lower load.</li>
+<li><strong>On the Net:</strong> “Net is live” works regardless of how a public Beacon room was opened (Favorites, Recents, map or Net Finder). Net control can pause or ban Beacon talkers; check-ins use the room’s displayed name and place; Add connection starts on the net’s network.</li>
+<li><strong>AllStar and EchoLink:</strong> QSO One asks the home router via UPnP to open incoming ports and repeats the request when Wi-Fi or the local address changes.</li>
+<li><strong>DMR:</strong> ADN and HamThings now identify a refused personal password as a password issue rather than a DMR ID registration issue.</li>
+<li><strong>Account and notifications:</strong> station profiles remain selected independently on each device. The notification centre adds confirmed Clear all, which also marks Beacon messages and bug-report replies as read.</li>
+<li><strong>Accessibility:</strong> screen readers announce Network Health links as links.</li>
+</ul></div></details>
+<details class="qso-changelog-version"><summary>Version 4.2.6 — Beacon (Experimental)</summary><div class="qso-changelog-version-content"><ul>
+<li>Launched Beacon, QSO One’s built-in voice network, with free public rooms for countries, states and counties, plus Worldwide, Ragchew and Echo.</li>
+<li>Added a live map and globe, room activity discovery, push-to-talk, audio indicators, private Echo testing, room recording, chat, people and talker lists.</li>
+<li>Introduced friends, private and voice messages, group chats for up to 50, private calls, a social feed and Beacon notifications.</li>
+<li>Added custom rooms with moderators, private-room allow lists and room management. Beacon Supporters include one room; extra rooms cost $10/month. Public rooms remain free.</li>
+<li>Added station profiles, Korean and Simplified Chinese beta languages, custom DMR server networks, AllStar refinements, Windows Bluetooth PTT support and On the Net improvements.</li>
+<li>Beacon is also available on the web at <a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer">qso1.net/beacon</a> when signed in.</li>
+</ul></div></details>
+<details class="qso-changelog-version" open><summary>Version 4.2.5 — On the Net planning, speaker microphones and AllStar audio</summary><div class="qso-changelog-version-content">
 <ul>
 <li><strong>On the Net scheduling:</strong> plan a net ahead by choosing it from Net Finder with search. Net Control starts automatically when the scheduled net begins. Existing listed nets use their Net Finder link, while newly created nets receive a custom link.</li>
 <li><strong>TidRadio speaker microphones:</strong> full speaker, microphone and PTT-button operation is now supported on iPhone.</li>
@@ -519,19 +539,51 @@ const newGuides = [
       {
         id: "beacon",
         title: "Beacon: QSO One's new experimental voice network",
-        html: `<div class="guide-callout"><strong>Live on the web:</strong> Beacon, formerly QSO Earth, is QSO One's own voice network. Open <a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer">qso1.net/beacon</a>. It is experimental and arrives on the web first; integration into the QSO One app is planned for a later release.</div>
-<p>Sign in with your existing QSO One account. Beacon runs in your browser, so there is no separate client to install. Allow microphone access, select your microphone and speaker, find a room, join and use the browser push-to-talk control. Listen before transmitting and identify with your callsign.</p>
-<h3>Rooms and voice features</h3>
-<ul><li><strong>Interactive globe:</strong> explore rooms and activity around the world.</li><li><strong>Public rooms:</strong> join Worldwide, Ragchew and Echo, along with country, US state and US county rooms where available.</li><li><strong>Echo room:</strong> hear your own voice played back privately as an audio check.</li><li><strong>Scanner:</strong> discover activity across available rooms.</li><li><strong>Social tools:</strong> follow the feed, find friends, send direct messages and use room text chat and voice messages.</li><li><strong>Digital QSL cards:</strong> exchange confirmations and use notifications to keep up with activity.</li></ul>
-<h3>Create and manage rooms</h3>
-<p>Supporters can create rooms with a name, location and description, and choose whether a room is public or private. Room owners can appoint moderators, manage a private-room allow list and ban disruptive users. Check the room settings and community rules before transmitting.</p>
-<h3>Room subscriptions</h3>
-<p>The supporter subscription is US$10 per month and includes one room. Additional rooms are US$10 per month each. Room bundles are available in quantities of 1, 3, 10 or other amounts up to 50. See <a href="https://qso1.net/account/rooms" target="_blank" rel="noopener noreferrer">QSO One room subscriptions ↗</a> for current options and payment details.</p>
-<div class="guide-callout"><strong>Experimental service:</strong> features and behaviour may change as Beacon develops. Report problems through the service or contact <a href="mailto:support@qso1.net">support@qso1.net</a>.</div>`
+        html: `<div class="guide-callout"><strong>Available in the QSO One app and on the web — experimental:</strong> Beacon, previously known as QSO Earth, is QSO One's own voice network. Open <a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer">qso1.net/beacon</a> and sign in with your existing QSO One account.</div>
+<p>Beacon combines live voice rooms with social and messaging tools. It is available through the QSO One app and a web browser. As an experimental service, features and behaviour may change as development continues.</p>
+<h3>Getting started with Beacon</h3>
+<ol class="qso-step-list">
+<li>Open Beacon from the QSO One app, or visit <a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer">the Beacon website</a> in a supported browser.</li>
+<li>Sign in using your existing QSO One account.</li>
+<li>When prompted, allow microphone access. Select the microphone and speaker you want to use.</li>
+<li>Explore the live globe or room list, then join a public room such as Worldwide or Ragchew.</li>
+<li>Listen first. When ready to speak, use the app or browser push-to-talk control. Release the control when you finish transmitting.</li>
+</ol>
+<h3>Beacon features</h3>
+<ul>
+<li><strong>Live interactive globe:</strong> explore rooms and activity around the world.</li>
+<li><strong>Push-to-talk:</strong> transmit using the controls in the QSO One app or browser.</li>
+<li><strong>Room scanner:</strong> scan available rooms and listen to them one at a time.</li>
+<li><strong>Social feed:</strong> publish status updates and posts, and see updates from people you follow.</li>
+<li><strong>Friends and direct messages:</strong> connect with other users and have private conversations.</li>
+<li><strong>Room text chat:</strong> send and read text messages alongside voice activity.</li>
+<li><strong>Voice messages:</strong> record and send voice messages directly to friends.</li>
+<li><strong>Digital QSL cards:</strong> create and exchange digital QSL cards.</li>
+<li><strong>Notifications:</strong> receive activity notifications, including push notifications where supported.</li>
+</ul>
+<h3>Free public rooms</h3>
+<p>Public rooms are available to join for free. QSO One provides Worldwide, Ragchew and Echo, along with dedicated rooms for countries, US states and US counties where available. The Echo room plays your own voice back privately, making it useful for checking your microphone and audio. You can explore rooms near you or visit rooms elsewhere in the world.</p>
+<h3>Create and manage your own room</h3>
+<p>Supporters can create rooms with a name, location and description, and choose whether a room is public or private. Room owners can appoint moderators, manage an allow list for private rooms and ban disruptive users.</p>
+<p>Room subscriptions and available bundles can change. Check the <a href="https://qso1.net/account/rooms" target="_blank" rel="noopener noreferrer">official QSO One room management page</a> for current options, prices and payment details.</p>
+<div class="guide-callout"><strong>Experimental service and feedback:</strong> Beacon is still developing, so occasional problems or changes are possible. Report issues through the service or email <a href="mailto:support@qso1.net">support@qso1.net</a>.</div>
+<p><a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer"><strong>Open Beacon in your browser ↗</strong></a> · <a href="https://qso1.net/account/rooms" target="_blank" rel="noopener noreferrer">Manage your rooms ↗</a></p>`
       },
       {
         title: "Download QSO One or join the Apple beta",
-        html: `<div class="guide-callout"><strong>Current version: 4.2.5</strong> — available for Android and Windows. iPhone, iPad and Mac users can join the Apple beta through TestFlight.</div><h3>Choose your platform</h3><ul><li><strong>Android:</strong> <a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">Get QSO One from Google Play ↗</a>. Android 8.0 or later is supported.</li><li><strong>Windows:</strong> <a href="https://apps.microsoft.com/detail/9NRWFPGK3L3W" target="_blank" rel="noopener noreferrer">Get QSO One from the Microsoft Store ↗</a>, or use the official installer offered by QSO One.</li><li><strong>iPhone, iPad and Mac:</strong> <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">Join the QSO One beta through TestFlight ↗</a>. Apple beta builds may take time to appear after a new build is submitted.</li></ul><p>For release information, installation help and the latest platform availability, visit the <a href="https://qso1.net/" target="_blank" rel="noopener noreferrer">official QSO One website ↗</a>. Install updates only through the official store, TestFlight or QSO One’s own updater.</p>`
+        html: `<div class="guide-callout"><strong>Current version: 4.3.0</strong> — available for Android and Windows. iPhone, iPad and Mac users can join the Apple beta through TestFlight.</div><h3>Choose your platform</h3><ul><li><strong>Android:</strong> <a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">Get QSO One from Google Play ↗</a>. Android 8.0 or later is supported.</li><li><strong>Windows:</strong> <a href="https://apps.microsoft.com/detail/9NRWFPGK3L3W" target="_blank" rel="noopener noreferrer">Get QSO One from the Microsoft Store ↗</a>, or use the official installer offered by QSO One.</li><li><strong>iPhone, iPad and Mac:</strong> <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">Join the QSO One beta through TestFlight ↗</a>. Apple beta builds may take time to appear after a new build is submitted.</li></ul><p>For release information, installation help and the latest platform availability, visit the <a href="https://qso1.net/" target="_blank" rel="noopener noreferrer">official QSO One website ↗</a>. Install updates only through the official store, TestFlight or QSO One’s own updater.</p>`
+      },
+      {
+        id: "mac-install",
+        title: "Install and use QSO One on Mac",
+        html: `<p>QSO One is available for compatible Mac users through Apple's TestFlight beta programme. Beta availability and supported devices can change, so check the current invitation and TestFlight listing.</p>
+<h3>What you need</h3>
+<ul><li>A compatible Mac and an Apple Account.</li><li>The Apple TestFlight app.</li><li>The QSO One beta invitation: <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">Join the QSO One TestFlight beta ↗</a>.</li><li>An internet connection and a working microphone and speaker or headset.</li></ul>
+<h3>Installation steps</h3>
+<ol><li>Open the QSO One TestFlight invitation on your Mac while signed in with the Apple Account you want to use.</li><li>Accept the invitation and install TestFlight if it is not already installed.</li><li>Open the QSO One listing in TestFlight and install the available beta build.</li><li>Launch QSO One from TestFlight, Launchpad or Applications.</li><li>Allow microphone access when macOS asks for permission.</li><li>Check the selected microphone and speaker before connecting to a network.</li></ol>
+<h3>Audio and push-to-talk</h3>
+<p>For your first test, use the Mac's built-in microphone and speakers or a wired headset. Confirm that receive audio works, then make a short test transmission when appropriate. Start with the on-screen PTT control before configuring external buttons or specialist audio equipment. Keyboard shortcuts and accessory support can vary by build and device, so check the controls in your installed version.</p>
+<div class="guide-callout"><strong>Beta updates:</strong> install Apple beta updates through TestFlight. A new iPhone or iPad build does not necessarily appear on Mac at exactly the same time. If the invitation reports that the beta is unavailable or full, check the current TestFlight listing and official QSO One announcements.</div>`
       },
       {
         title: "QSO One video",
@@ -548,6 +600,23 @@ const newGuides = [
       {
         title: "First-run audio setup",
         html: `<ol><li>Allow microphone permission.</li><li>Select the correct microphone and speaker or headset.</li><li>Lower the microphone level if reports say your audio is distorted.</li><li>Receive and listen before transmitting.</li><li>Use headphones if you hear echo or feedback.</li></ol><p>If audio fails, close other voice applications temporarily to check for microphone contention. Some Windows applications can share an input; exclusive access settings can prevent this.</p>`
+      },
+      {
+        id: "audio-hardware",
+        title: "Audio equipment, speaker microphones and PTT",
+        html: `<p>QSO One can be used with built-in audio, wired headsets, Bluetooth devices, speaker microphones and compatible external push-to-talk controls. Compatibility depends on the operating system, app version, accessory model and connection method. Test each accessory rather than assuming every button or microphone function is supported.</p>
+<h3>Wired headsets and microphones</h3>
+<ul><li>Connect the headset before starting or reconnecting to QSO One.</li><li>Check that the operating system and app are using the intended microphone and audio output.</li><li>Test received audio, microphone audio and PTT separately.</li><li>If using an adapter, check that it supports the required microphone connection as well as headphones.</li></ul>
+<h3>Bluetooth headsets and earbuds</h3>
+<ul><li>Pair the headset with your device and check the selected input and output routes.</li><li>Test receiving and transmitting. Some Bluetooth devices change audio quality or routing when their microphone becomes active.</li><li>If audio stops after reconnecting, check the device's Bluetooth settings and select the headset again in the app if necessary.</li><li>For full-duplex operation, test the exact headset, device and network combination. Behaviour can differ between operating systems and accessories.</li></ul>
+<h3>Speaker microphones</h3>
+<p>A speaker microphone may provide working receive audio and microphone input without its physical PTT button being recognised. TidRadio speaker-microphone support was introduced in an earlier QSO One release, but that does not mean every model, connector or hardware revision has identical support. Check the current release notes and test your particular accessory.</p>
+<h3>External PTT buttons</h3>
+<ol><li>First confirm that the on-screen PTT control works.</li><li>Connect or pair the external button using the accessory manufacturer's instructions.</li><li>Check the app's available PTT or accessory settings.</li><li>Test both pressing and releasing the button. Confirm that transmission stops immediately when released.</li></ol>
+<p>If an external button appears stuck or does not release PTT correctly, disconnect it and use the on-screen control while troubleshooting.</p>
+<h3>Microphone level and received volume</h3>
+<p>Speak at a consistent distance from the microphone. Reduce microphone gain if your audio clips or distorts, and adjust receive volume to a comfortable level. Headphones can help prevent speaker audio feeding back into the microphone. Change one setting at a time so you can identify what improves the result.</p>
+<div class="guide-callout"><strong>Compatibility reminder:</strong> support can change between QSO One releases and accessory revisions. When reporting a problem, include the device model, operating-system version, app version and exact microphone or PTT model.</div>`
       },
       {
         title: "Connect with EchoLink",
@@ -583,7 +652,13 @@ const newGuides = [
       ,{
         id: "iax-settings",
         title: "IAX Direct: what goes in each field",
-        html: `<p>Ask the server operator for authorised connection details, then open <strong>Networks → IAX Direct → Add Credential</strong>. Do not substitute your website or AllStar portal password.</p><ul><li><strong>Host and port:</strong> the server address and port provided by its owner; the usual IAX port is 4569.</li><li><strong>Node number:</strong> the destination node hosted on that server which you are permitted to access.</li><li><strong>Username and password:</strong> the exact IAX account name and secret, including capitalisation.</li><li><strong>Caller ID name:</strong> use your callsign. If left empty, the app can use your AllStar account callsign; make sure an identity is available.</li><li><strong>Called context:</strong> normally <code>iaxrpt</code>, unless the operator supplies another value.</li></ul><p>An authentication failure usually points to credentials. A connection that immediately drops can indicate a wrong node, context or server dialplan. Ask the operator to check their configuration rather than repeatedly guessing passwords. See the <a href="https://qso1.net/guides/iax-direct">official IAX Direct guide</a>.</p>`
+        html: `<p>Ask the server operator for authorised connection details, then open <strong>Networks → IAX Direct → Add Credential</strong>. Do not substitute your website or AllStar portal password.</p><ul><li><strong>Host and port:</strong> the server address and port provided by its owner; the usual IAX port is 4569.</li><li><strong>Node number:</strong> the destination node hosted on that server which you are permitted to access.</li><li><strong>Username and password:</strong> the exact IAX account name and secret, including capitalisation.</li><li><strong>Caller ID name:</strong> use your callsign. If left empty, the app can use your AllStar account callsign; make sure an identity is available.</li><li><strong>Called context:</strong> normally <code>iaxrpt</code>, unless the operator supplies another value.</li></ul><p>An authentication failure usually points to incorrect credentials. A connection that immediately drops can indicate a wrong node, context or server dialplan. Ask the operator to check their configuration rather than repeatedly guessing passwords.</p>
+<h3>For AllStar node operators</h3>
+<p>On a standard AllStarLink 3 (ASL3) installation, the supplied <code>iaxrpt</code> configuration is normally ready for IAX Direct. The operator generally creates a separate user entry in <code>/etc/asterisk/custom/iax/iaxrpt-users.conf</code>, assigning a unique username and strong secret, then reloads IAX with:</p>
+<pre><code>asterisk -rx "iax2 reload"</code></pre>
+<p>The standard ASL3 dialplan can route the user to nodes hosted on that server, so a custom dialplan entry is usually unnecessary. Check the actual server configuration before making changes.</p>
+<p>HamVOIP and older ASL2 installations may need a manually configured IAX user and a matching dialplan entry for each permitted node. The Called Context entered in QSO One must match the server-side context. QSO One supports IAX2 call tokens; ASL3 operators do not need to disable call-token security for QSO One.</p>
+<div class="guide-callout"><strong>Official step-by-step IAX Direct setup</strong><p>The developer's guide covers ASL3, HamVOIP and legacy ASL2 server configuration, the fields to enter in QSO One and common connection errors.</p><p><a href="https://qso1.net/guides/iax-direct" target="_blank" rel="noopener noreferrer">Read the official IAX Direct setup guide ↗</a></p></div>`
       },
       {
         id: "audio-help",
@@ -635,6 +710,41 @@ const newGuides = [
 <h3>When you cannot submit an in-app bug report</h3>
 <p>If an accessibility issue prevents you reaching the report control, contact <a href="mailto:support@qso1.net">QSO One support by email</a> or use the <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">official support page</a>. Include your app version, device, operating-system version, network, destination and reproduction steps. Do not send passwords or private credentials.</p></details>
 `
+      },
+      {
+        id: "qso-one-community",
+        title: "Join the QSO One community",
+        html: `<p>Connect with other QSO One users, ask questions, share feedback and follow community discussions through these channels:</p>
+<ul>
+<li><a href="https://discord.gg/4N6Wc3fsEv" target="_blank" rel="noopener noreferrer"><strong>QSO One Discord community</strong></a> — community chat, questions and support.</li>
+<li><a href="https://www.facebook.com/groups/1483876283506992" target="_blank" rel="noopener noreferrer"><strong>QSO One Facebook group</strong></a> — connect with other users and discuss the app.</li>
+<li><a href="https://www.reddit.com/r/QSOone/" target="_blank" rel="noopener noreferrer"><strong>QSO One on Reddit</strong></a> — discussions, questions and release announcements.</li>
+</ul>
+<p>For official help with account or technical problems, also see <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">QSO One support</a>.</p>`
+      },
+      {
+        id: "qso-one-faq",
+        title: "QSO One frequently asked questions",
+        html: `<h3>Can I install QSO One on a Mac?</h3>
+<p>Yes. Compatible Mac users can join the Apple beta through <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">TestFlight</a>. See <a href="#mac-install">Install and use QSO One on Mac</a> for the steps and audio setup advice.</p>
+<h3>How do I install QSO One on iPhone or iPad?</h3>
+<p>Join the Apple beta using the <a href="https://testflight.apple.com/join/QkqB2Npv" target="_blank" rel="noopener noreferrer">QSO One TestFlight invitation</a>, accept it and install the available build through TestFlight.</p>
+<h3>Is QSO One available for Android and Windows?</h3>
+<p>Yes. Download it from <a href="https://play.google.com/store/apps/details?id=com.qsoone.qso_one" target="_blank" rel="noopener noreferrer">Google Play</a> or the <a href="https://apps.microsoft.com/detail/9NRWFPGK3L3W" target="_blank" rel="noopener noreferrer">Microsoft Store</a>.</p>
+<h3>Can I use Bluetooth headsets and speaker microphones?</h3>
+<p>Many audio devices can be used, but microphone, speaker and physical PTT-button compatibility varies. See <a href="#audio-hardware">Audio equipment, speaker microphones and PTT</a> and test your exact accessory.</p>
+<h3>How does full-duplex AllStar audio work on mobile?</h3>
+<p>Audio behaviour depends on the device, operating system, app build and connected accessories. Headphones or earbuds can help prevent received audio feeding back into the microphone. Do not assume every Bluetooth speaker microphone supports every full-duplex arrangement. Test your setup before relying on it.</p>
+<h3>How do I connect to a DMR talkgroup?</h3>
+<p>Select DMR, choose the network you are registered with, enter the credentials required by that network and select the intended talkgroup. See <a href="#network-setup">Connect with DMR, System Fusion or M17</a>.</p>
+<h3>How do I connect to EchoLink or AllStar?</h3>
+<p>Use your validated EchoLink account or authorised AllStar connection details, search for the destination and listen before transmitting. See <a href="#network-setup">the network setup sections</a> and <a href="#iax-settings">IAX Direct settings</a>.</p>
+<h3>How do I find or schedule a net?</h3>
+<p>Use Net Finder to search for nets and check their time, network and joining instructions. A scheduled listing does not guarantee that a net is currently active. Follow the instructions shown for the particular listing.</p>
+<h3>Where can I use Beacon?</h3>
+<p>Beacon is available in the QSO One app and through <a href="https://qso1.net/beacon" target="_blank" rel="noopener noreferrer">the Beacon website</a>. In the app, open Menu → My Rooms to manage your rooms.</p>
+<h3>Where can I get help or report a problem?</h3>
+<p>Use the in-app bug-report option when available or visit <a href="https://qso1.net/support" target="_blank" rel="noopener noreferrer">official QSO One support</a>. Include your app version, device, operating-system version and clear steps to reproduce the issue. Never include passwords or private credentials.</p>`
       }
 
     ],
@@ -676,7 +786,11 @@ function header(current = "guides") {
     ["Home", "/", "home"],
     ["About", "/about", "about"],
     ["Radio Fun", "/radio-fun", "radio"],
+    ["Live Monitor", "/radio-activity", "activity"],
+    ["Radio Audio", "/radio-audio", "audio"],
     ["Guides", "/guides", "guides"],
+    ["Tools", "/tools", "tools"],
+    ["Community", "/community", "community"],
     ["QSL", "/qsl", "qsl"],
     ["Contact", "/contact", "contact"]
   ].map(([label, href, key]) => `<a href="${href}"${key === current ? ' aria-current="page"' : ""}>${label}</a>`).join("");
@@ -690,11 +804,7 @@ function header(current = "guides") {
 }
 
 function footer() {
-  return `<footer class="site-footer"><div class="site-container footer-grid">
-  <div><a class="brand footer-brand" href="/"><span class="brand-icon">${radioIcon}</span><span><strong>ZL3TOM</strong><small>On air from Aotearoa</small></span></a><p>Thomas Bernard · ZL3TOM / ZL3KY<br>Christchurch, New Zealand</p></div>
-  <div><strong>Explore</strong><a href="/about">About Thomas</a><a href="/radio-fun">Station &amp; networks</a><a href="/guides">Radio guides</a></div>
-  <div><strong>Connect</strong><a href="/qsl">QSL confirmation</a><a href="/contact">Contact ZL3TOM</a><a href="https://www.facebook.com/zl3tom" target="_blank" rel="noopener noreferrer">ZL3TOM on Facebook ↗</a><a href="https://aprs.fi/info/a/ZL3TOM" target="_blank" rel="noreferrer">APRS position ↗</a></div>
-</div><div class="site-container footer-bottom"><span>© 2026 Thomas Bernard. 73!</span><span>Built for amateur radio operators everywhere.</span></div></footer>`;
+  return `<footer class="site-footer"><div class="site-container footer-grid"><div><strong>ZL3TOM</strong><p>Thomas Bernard · ZL3TOM / ZL3KY<br>Christchurch, New Zealand</p></div><div><strong>Quick links</strong><a href="/guides">Guides</a><a href="/tools">Tools</a><a href="/qsl">QSL</a></div><div><strong>Contact</strong><a href="/contact">Contact</a><a href="https://www.qrz.com/db/ZL3TOM" target="_blank" rel="noopener noreferrer">QRZ ↗</a><a href="https://www.facebook.com/zl3tom" target="_blank" rel="me noopener noreferrer">ZL3TOM on Facebook ↗</a></div></div><p class="accessibility-footer-link"><a href="/guides/accessible-amateur-radio#using-this-website">Accessibility and website feedback</a></p></footer>`;
 }
 
 function personSchema() {
@@ -713,6 +823,14 @@ function documentHead({ title, description, canonical, keywords, type = "article
   const safeTitle = escapeAttribute(title);
   const safeDescription = escapeAttribute(description);
   return `<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4BJQE9ET1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B4BJQE9ET1');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${safeTitle}</title>
@@ -721,6 +839,8 @@ function documentHead({ title, description, canonical, keywords, type = "article
   <meta name="author" content="Thomas Bernard — ZL3TOM">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="${canonical}">
+  <link rel="me" href="https://www.facebook.com/zl3tom">
+  <link rel="stylesheet" href="/accessibility.css?v=20261006">
   <link rel="stylesheet" href="/style.css?v=20260904-fullfix1">
   <link rel="stylesheet" href="/site-extras.css?v=20260904-fullfix1">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -730,9 +850,17 @@ function documentHead({ title, description, canonical, keywords, type = "article
   <meta property="og:title" content="${safeTitle}">
   <meta property="og:description" content="${safeDescription}">
   <meta property="og:url" content="${canonical}">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://zl3tom.com/social-preview.png">
+  <meta property="og:image:secure_url" content="https://zl3tom.com/social-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ZL3TOM amateur radio website">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${safeTitle}">
   <meta name="twitter:description" content="${safeDescription}">
+  <meta name="twitter:image" content="https://zl3tom.com/social-preview.png">
+  <meta name="twitter:image:alt" content="ZL3TOM amateur radio website">
 </head>`;
 }
 
@@ -752,9 +880,8 @@ function guidePage(guide) {
         publisher: { "@type": "Person", name: "Thomas Bernard", alternateName: "ZL3TOM" },
         datePublished: updateIso,
         dateModified: guide.updatedIso ?? updateIso,
-        about: ["Amateur radio", "QSO One 4.2.9", "QSO One setup and troubleshooting", "AllStarLink Node Mode and IAX Direct", "UDP 4569 port forwarding and CGNAT", "DMR network credentials and TGIF", "Beacon rooms and favourites", "HF Listen and PTT"],
-        keywords: guide.keywords,
-        articleSection: ["QSO One setup", "AllStarLink troubleshooting", "DMR setup", "Beacon rooms", "HF Listen", "PTT and audio"]
+        about: ["Amateur radio", guide.title],
+        keywords: guide.keywords
       },
       {
         "@type": "BreadcrumbList",
@@ -778,7 +905,7 @@ function guidePage(guide) {
 ${documentHead({ title: `${guide.title} | ZL3TOM`, description: guide.description, canonical, keywords: guide.keywords })}
 <body>
 ${header("guides")}
-<main id="main">
+<main id="main" tabindex="-1">
   <section class="page-hero"><div class="signal-grid" aria-hidden="true"></div><div class="site-container page-hero-inner"><div class="page-icon">${bookIcon}</div><div><p class="section-kicker">ZL3TOM beginner guide</p><h1>${guide.title}</h1><p>${guide.description}</p></div></div></section>
   <section class="inner-section light"><div class="site-container article-layout">
     <article class="article-content">
@@ -786,7 +913,7 @@ ${header("guides")}
       ${guide.contentsHtml ? `${guide.contentsHtml}\n      ` : ""}${sections}
       <section class="guide-sources" aria-labelledby="official-sources"><h2 id="official-sources">Official sources</h2><p>Software and network details change. Check these official pages before installing or entering account information.</p><ul>${sources}</ul></section>
       <section class="related-guides" aria-labelledby="related-guides"><h2 id="related-guides">Related guides</h2><div>${related}</div></section>
-      <footer class="guide-byline"><p><strong>Written by Thomas Bernard — ZL3TOM</strong></p><p>Last updated: <time datetime="${guide.updatedIso ?? updateIso}">${guide.updatedDisplay ?? updateDisplay}</time></p></footer>
+      <footer class="guide-byline"><p><strong>Written by Thomas Bernard — ZL3TOM</strong></p><p>Last updated: <time datetime="${guide.updatedIso ?? updateIso}">${guide.updatedDisplay ?? updateDisplay}</time></p><p class="accessibility-footer-link"><a href="/guides/accessible-amateur-radio#using-this-website">Accessibility and website feedback</a></p></footer>
     </article>
     <aside class="article-aside"><strong>${guide.asideTitle}</strong>${guide.asideHtml}</aside>
   </div></section>
@@ -794,7 +921,8 @@ ${header("guides")}
 </main>
 ${footer()}
 ${personSchema()}
-<script src="/script.js?v=20260904-fullfix1" defer></script>
+<script src="/script.js?v=20261006-accessibility" defer></script>
+<script src="/accessibility.js?v=20261006" defer></script>
 </body>
 </html>\n`;
 }
@@ -849,9 +977,7 @@ for (const guide of generatedGuides) {
   await writeFile(path.join(friendlyDirectory, "index.html"), html);
 }
 
-const indexHtml = guidesIndex();
-await writeFile(path.join(publicRoot, "guides.html"), indexHtml);
-await mkdir(path.join(publicRoot, "guides"), { recursive: true });
-await writeFile(path.join(publicRoot, "guides", "index.html"), indexHtml);
+// The main Guides index is maintained separately.
+// Do not overwrite public/guides.html or public/guides/index.html here.
 
-console.log(`Generated ${generatedGuides.length} guide pages and an index with ${allGuides.length} guides.`);
+console.log(`Generated ${generatedGuides.length} individual guide pages. The main Guides index was left untouched.`);
