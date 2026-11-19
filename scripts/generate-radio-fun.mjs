@@ -6,19 +6,55 @@ const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
 const publicRoot = path.join(projectRoot, "public");
 const radioIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"/><path d="M19.075 4.933a10 10 0 0 1 0 14.134"/><path d="M4.925 19.067a10 10 0 0 1 0-14.134"/><path d="M7.753 16.239a6 6 0 0 1 0-8.478"/><circle cx="12" cy="12" r="2"/></svg>`;
 
-const links = [
-  ["Home", "/"], ["About", "/about"], ["Radio Fun", "/radio-fun"],
-  ["Guides", "/guides"], ["QSL", "/qsl"], ["Contact", "/contact"]
-].map(([label, href]) => `<a href="${href}"${label === "Radio Fun" ? ' aria-current="page"' : ""}>${label}</a>`).join("");
+const links = `
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <div class="nav-dropdown">
+    <a href="/radio-fun" aria-current="page">Radio Fun</a>
+    <button class="nav-submenu-toggle" type="button" aria-expanded="false"
+      aria-controls="radio-fun-submenu" aria-label="Toggle Radio Fun submenu">
+      <span aria-hidden="true">⌄</span>
+    </button>
+    <div class="nav-submenu" id="radio-fun-submenu" aria-label="Radio Fun pages">
+      <a href="/radio-activity">Live Monitor</a>
+      <a href="/radio-audio">Radio Audio</a>
+    </div>
+  </div>
+  <a href="/guides">Guides</a>
+  <a href="/tools">Tools</a>
+  <a href="/community">Community</a>
+  <a href="/qsl">QSL</a>
+  <a href="/contact">Contact</a>
+`;
 
-const networks = [
-  ["BrandMeister DMR", "Worldwide TG 91"],
-  ["ZL DMR", "New Zealand channels"],
-  ["Zello", "International Radio Network"],
-  ["Network Radios", "Internet-linked radio community"],
-  ["ZMR Radio", "Zello and network radio"],
-  ["RemoteHams", "Remote amateur stations"]
-].map(([name, detail]) => `<div class="activity-chip"><strong>${name}</strong><span>${detail}</span></div>`).join("");
+const networks = `
+  <div class="activity-chip">
+    <strong>Zello</strong>
+    <span>Find me on Zello and these linked radio communities:</span>
+    <span>
+      <a href="https://irn.radio/" target="_blank" rel="noopener noreferrer">International Radio Network ↗</a> ·
+      <a href="https://zmr.godaddysites.com/" target="_blank" rel="noopener noreferrer">ZMR Radio ↗</a> ·
+      <a href="https://networkradios.weebly.com/" target="_blank" rel="noopener noreferrer">Network Radios ↗</a>
+    </span>
+  </div>
+  <a class="activity-chip" href="https://anzel.radio/" target="_blank" rel="noopener noreferrer">
+    <strong>ANZEL RADIO</strong>
+    <span>ANZEL Multimode VoIP / RoIP Network</span>
+    <span><em>My nodes are generally connected to this for almost 24/7 activity.</em></span>
+  </a>
+  <div class="activity-chip">
+    <strong>BrandMeister DMR</strong>
+    <span>Worldwide TG 91</span>
+  </div>
+  <div class="activity-chip">
+    <strong>ZL DMR</strong>
+    <span>New Zealand channels</span>
+  </div>
+  <div class="activity-chip">
+    <strong>RemoteHams</strong>
+    <span>Remote amateur stations</span>
+  </div>
+`;
 
 const schema = {
   "@context": "https://schema.org",
@@ -26,7 +62,7 @@ const schema = {
     {
       "@type": "WebPage",
       name: "ZL3TOM Amateur Radio Station, Nodes and Networks",
-      description: "Find ZL3TOM on EchoLink node 304602, AllStar node 40452, APRS, BrandMeister DMR TG 91, ZL DMR, Zello, Network Radios, ZMR Radio and RemoteHams.",
+      description: "Find ZL3TOM on EchoLink 304602, AllStar 40452, APRS, DMR and linked networks, plus DigiQSL digital QSL cards and amateur radio contact confirmations.",
       url: "https://zl3tom.com/radio-fun",
       inLanguage: "en-NZ",
       dateModified: "2026-09-03",
@@ -48,13 +84,14 @@ const html = `<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ZL3TOM Station, EchoLink, AllStar, DMR and APRS</title>
-  <meta name="description" content="Find ZL3TOM on EchoLink node 304602, AllStar node 40452, APRS, BrandMeister DMR TG 91, ZL DMR, Zello, Network Radios, ZMR Radio and RemoteHams.">
+  <meta name="description" content="Find ZL3TOM on EchoLink 304602, AllStar 40452, APRS, DMR and linked networks, plus DigiQSL digital QSL cards and amateur radio contact confirmations.">
   <meta name="keywords" content="ZL3TOM EchoLink 304602, ZL3TOM-L, AllStar node 40452, BrandMeister TG 91, ZL DMR, APRS Christchurch, amateur radio networks New Zealand">
   <meta name="author" content="Thomas Bernard — ZL3TOM">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://zl3tom.com/radio-fun">
   <link rel="stylesheet" href="/style.css?v=20260904-fullfix1">
   <link rel="stylesheet" href="/site-extras.css?v=20260904-fullfix1">
+  <link rel="stylesheet" href="/accessibility.css?v=20261006">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_NZ">
@@ -62,9 +99,26 @@ const html = `<!doctype html>
   <meta property="og:title" content="ZL3TOM Station, Nodes and Radio Networks">
   <meta property="og:description" content="EchoLink 304602, AllStar 40452, APRS, DMR and linked networks used by ZL3TOM in Christchurch, New Zealand.">
   <meta property="og:url" content="https://zl3tom.com/radio-fun">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://zl3tom.com/social-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:secure_url" content="https://zl3tom.com/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ZL3TOM Amateur Radio — Thomas Bernard in Christchurch, New Zealand">
+  <meta name="twitter:image" content="https://zl3tom.com/social-preview.png">
+  <meta name="twitter:image:alt" content="ZL3TOM Amateur Radio — Thomas Bernard in Christchurch, New Zealand">
+  <link rel="me" href="https://www.facebook.com/zl3tom">
   <meta name="twitter:title" content="ZL3TOM Station and Radio Networks">
   <meta name="twitter:description" content="Find Thomas Bernard, ZL3TOM, across EchoLink, AllStar, APRS, DMR and linked amateur radio networks.">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4BJQE9ET1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B4BJQE9ET1');
+  </script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -73,7 +127,7 @@ const html = `<!doctype html>
   <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
   <nav id="main-navigation" class="main-nav" aria-label="Main navigation">${links}<a class="nav-qrz" href="https://qrz.com/db/ZL3TOM" target="_blank" rel="noreferrer">View ZL3TOM on QRZ <span aria-hidden="true">↗</span></a></nav>
 </div></header>
-<main id="main">
+<main id="main" tabindex="-1">
   <section class="page-hero"><div class="signal-grid" aria-hidden="true"></div><div class="site-container page-hero-inner"><div class="page-icon">${radioIcon}</div><div><p class="section-kicker">ZL3TOM on the air</p><h1>My station, nodes and radio networks</h1><p>Station details, linked amateur radio nodes, APRS activity and networks used by ZL3TOM in Christchurch, New Zealand.</p></div></div></section>
 
   <section class="inner-section light station-overview-section"><div class="site-container">
@@ -85,6 +139,8 @@ const html = `<!doctype html>
   </div></section>
 
   <section class="radio-activity-section" aria-labelledby="active-networks-title"><div class="site-container"><header><p class="section-kicker">Around the airwaves</p><h2 id="active-networks-title">Networks where I am active</h2><p>I enjoy a mix of RF, linked amateur radio and network-radio communities. Availability changes, so call and listen for ZL3TOM.</p></header><div class="activity-chip-grid">${networks}</div></div></section>
+
+  <section class="inner-section light"><div class="site-container"><div class="content-title"><p class="section-kicker">Digital QSL cards</p><h2>DigiQSL</h2><p>I use <strong>DigiQSL</strong> as another way to share digital amateur radio QSL cards and contact confirmations. <a class="text-link" href="https://digiqsl.com/" target="_blank" rel="noopener noreferrer">Visit DigiQSL ↗</a></p></div></div></section>
 
   <section class="qrz-logbook-section" aria-labelledby="qrz-logbook-title"><div class="site-container"><header><p class="section-kicker">Recent radio contacts</p><h2 id="qrz-logbook-title">ZL3TOM QRZ Logbook</h2><p id="qrz-logbook-help">The logbook automatically enlarges on wider screens. On a phone, the text stays at a readable size and you can swipe sideways to see every column.</p></header>
     <div class="qrz-display-bar" aria-label="QRZ Logbook display controls"><div><strong>Readable display</strong><span>Choose the view that is most comfortable for you.</span></div><div class="qrz-display-actions" role="group" aria-label="Logbook display size"><button type="button" data-qrz-size="auto" aria-pressed="true">Auto</button><button type="button" data-qrz-size="1" aria-pressed="false">100%</button><button type="button" data-qrz-size="1.25" aria-pressed="false">Larger</button><a href="https://logbook.qrz.com/lbstat/ZL3TOM/" target="_blank" rel="noopener noreferrer">Open full-size ↗</a></div><span id="qrz-view-status" class="sr-only" aria-live="polite"></span></div>
@@ -98,9 +154,10 @@ const html = `<!doctype html>
   <div><a class="brand footer-brand" href="/"><span class="brand-icon">${radioIcon}</span><span><strong>ZL3TOM</strong><small>On air from Aotearoa</small></span></a><p>Thomas Bernard · ZL3TOM / ZL3KY<br>Christchurch, New Zealand</p></div>
   <div><strong>Explore</strong><a href="/about">About Thomas</a><a href="/radio-fun">Station &amp; networks</a><a href="/guides">Radio guides</a></div>
   <div><strong>Connect</strong><a href="/qsl">QSL confirmation</a><a href="/contact">Contact ZL3TOM</a><a href="https://www.facebook.com/zl3tom" target="_blank" rel="noopener noreferrer">ZL3TOM on Facebook ↗</a><a href="https://aprs.fi/info/a/ZL3TOM" target="_blank" rel="noreferrer">APRS position ↗</a></div>
-</div><div class="site-container footer-bottom"><span>© 2026 Thomas Bernard. 73!</span><span>Built for amateur radio operators everywhere.</span></div></footer>
+</div><p class="accessibility-footer-link"><a href="/guides/accessible-amateur-radio#using-this-website">Accessibility and website feedback</a></p><div class="site-container footer-bottom"><span>© 2026 Thomas Bernard. 73!</span><span>Built for amateur radio operators everywhere.</span></div></footer>
 <script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "Person", name: "Thomas Bernard", alternateName: ["ZL3TOM", "ZL3KY"], url: "https://zl3tom.com", address: { "@type": "PostalAddress", addressLocality: "Christchurch", addressCountry: "NZ" }, sameAs: ["https://qrz.com/db/ZL3TOM", "https://aprs.fi/info/a/ZL3TOM", "https://www.facebook.com/zl3tom"] })}</script>
-<script src="/script.js?v=20260904-fullfix1" defer></script>
+<script src="/script.js?v=20261006-accessibility" defer></script>
+<script src="/accessibility.js?v=20261006" defer></script>
 </body>
 </html>\n`;
 
