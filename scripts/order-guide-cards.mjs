@@ -16,14 +16,14 @@ for (const file of files) {
   const moved = [];
 
   for (const slug of newSlugs) {
-    const re = new RegExp(`<a href="/guides/${slug}" class="guide-card">[\\s\\S]*?<\\/a>`, "g");
+    const re = new RegExp(`<a href="/guides/${slug}"[^>]*>[\\s\\S]*?<\\/a>`, "g");
     const match = html.match(re)?.[0];
     if (!match) throw new Error(`Could not find guide card for ${slug} in ${file}`);
     moved.push(match);
     html = html.replace(re, "");
   }
 
-  const anchorRe = /<a href="\/guides\/peanut-amateur-radio-app" class="guide-card">[\s\S]*?<\/a>/;
+  const anchorRe = /<a href="\/guides\/peanut-amateur-radio-app"[^>]*>[\s\S]*?<\/a>/;
   const anchor = html.match(anchorRe)?.[0];
   if (!anchor) throw new Error(`Could not find guide 23 (Peanut) in ${file}`);
 
